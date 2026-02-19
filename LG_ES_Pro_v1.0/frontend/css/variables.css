@@ -1,0 +1,62 @@
+:root {
+  /* ── Gray Scale ── */
+  --gray-50:  #FAFAFA;
+  --gray-100: #F5F5F5;
+  --gray-200: #EEEEEE;
+  --gray-300: #E0E0E0;
+  --gray-400: #BDBDBD;
+  --gray-500: #9E9E9E;
+  --gray-600: #757575;
+  --gray-700: #616161;
+  --gray-800: #424242;
+  --gray-900: #212121;
+
+  /* ── Brand Colors ── */
+  --lg-red:        #A50034;
+  --lg-red-dark:   #BE0D3E;
+  --lg-red-bg:     #FEEBF1;
+
+  /* ── Background Colors ── */
+  --bg-app:        #F0ECE4;
+  --bg-sidebar:    #FAFAFA;
+  --bg-content:    #FFFFFF;
+
+  /* ── Semantic Colors ── */
+  --success:       #008000;
+  --text-main:     #000000;
+  --text-gray:     #9CA3AF;
+  --border-color:  #CCD2D8;
+  --green:         #16a34a;
+  --orange:        #ea580c;
+  --red-danger:    #c1121f;
+  --blue:          #2563eb;
+
+  /* ── Header (Dark Theme) ── */
+  --header-bg:     #181c22;
+  --header-text:   #f0f2f5;
+  --header-muted:  #9ca3af;
+  --header-border: rgba(255, 255, 255, 0.08);
+  --header-input-bg: #1e2329;
+  --header-input-border: rgba(255, 255, 255, 0.12);
+
+  /* ── Spacing ── */
+  --radius:    8px;
+  --radius-sm: 6px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow:    0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+  /* ── Transitions ── */
+  --transition: 150ms ease;
+
+  /* ── Typography ── */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-xs:  0.75rem;
+  --font-size-sm:  0.8125rem;
+  --font-size-base: 0.875rem;
+  --font-size-md:  1rem;
+  --font-size-lg:  1.1rem;
+  --font-size-xl:  1.2rem;
+}

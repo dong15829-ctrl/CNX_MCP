@@ -1,0 +1,68 @@
+<!-- GNB 상단 헤더 조각. Summary 페이지에 공통 삽입. 페이지 제목만 변경 -->
+<div class="gnb_wrap">
+    <div class="gnb_top">
+        <button class="gnb_hbg"></button>
+        <div class="gnb_tit">Executive Summary</div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Region / Local / Site:</div>
+            <ul class="gnb_option_sum">
+                <li class="icon"></li>
+                <li class="region" id="region">All</li>
+                <li class="country" id="country">All</li>
+                <li class="site" id="site">0</li>
+                <li class="icon_extension"></li>
+            </ul>
+            <div class="region_wrap" style="display: none;">
+                <!-- getCountry/getSiteCode 응답으로 동적 구성: #txt_region, #txt_country, #txt_site -->
+                <div class="section_wrap">
+                    <div class="section" id="tit_region"><div class="tit">Region</div></div>
+                    <div class="section" id="tit_country"><div class="tit">Local</div></div>
+                    <div class="section" id="tit_site"><div class="tit">Site</div></div>
+                </div>
+                <div class="section_body">
+                    <ul class="txt region" id="txt_region"></ul>
+                    <ul class="txt country" id="txt_country"></ul>
+                    <ul class="txt site" id="txt_site"></ul>
+                </div>
+                <div class="gnb_btn_update_wrap">
+                    <button class="gnb_btn_update" onclick="getUpdate()">Update</button>
+                </div>
+            </div>
+        </div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Date :</div>
+            <ul class="gnb_option_sum_date">
+                <li><input type="text" name="daterange" id="date" autocomplete="off" readonly></li>
+            </ul>
+        </div>
+        <div class="gnb_option_wrap noti_box">
+            <table class="data_type_table">
+                <tr>
+                    <td class="data_type" data-period="day">Daily</td>
+                    <td class="data_type" data-period="week">Weekly</td>
+                    <td class="data_type" data-period="month">Monthly</td>
+                    <td class="data_type" data-period="quarter">Quarterly</td>
+                </tr>
+            </table>
+        </div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_user_wrap">
+                <div class="icon_user"></div>
+                <div class="wrap_pop_user_pwd">
+                    <span class="pop_user_id"></span>
+                    <button class="btn_chg_pwd">Change Password</button>
+                    <div class="wrap_chg_pwd">
+                        <input type="password" placeholder="Current Password" id="current_pw">
+                        <input type="password" placeholder="New Password" id="new_pw">
+                        <input type="password" placeholder="Re-type New Password" id="renew_pw">
+                        <button class="btn_user_confirm" id="passwordChange">Confirm</button>
+                    </div>
+                    <button class="btn_logout">Log out</button>
+                </div>
+                <div class="user_name"></div>
+            </div>
+            <button class="btn_down_load" id="headerDownload">Download</button>
+            <div class="last_update">Last Update : <span></span></div>
+        </div>
+    </div>
+</div>

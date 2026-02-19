@@ -1,0 +1,36 @@
+<!-- 좌측 LNB (서브 내비게이션). Summary 페이지에 공통 삽입 -->
+<div class="lnb_wrap">
+    <button class="lnb_close"></button>
+    <div class="lnb_logo">
+        <img src="img/new_logo.jpg" alt="">
+    </div>
+    <ul class="lnb_menu">
+        <li class="home"><a href="javascript:moveMain()">Home</a></li>
+        <li class="menu_li"><a href="javascript:moveExecutive()">Executive Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveDevision()">Division Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveSalesAll()">Sales Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveOperationAll()">Operation Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveShopappOperation()">ShopApp Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveBotjourneyOperation()">Bot / AI Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveEpp_operation()">EPP / SMB Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveRetailer_operation()">Retailer Summary</a></li>
+        <li class="menu_li"><a href="javascript:moveMxFlagshipSummary()">MX Flagship Summary</a></li>
+        <li class="menu_li"><a href="javascript:movePerformanceSummary()">Performance Summary</a></li>
+        <li class="menu_li"><a href="javascript:fileDown()">Manual &amp; FAQ Download</a></li>
+    </ul>
+</div>
+
+<script>
+function moveMain() { location.href = '/globaldashboard/main'; }
+function moveExecutive() { location.href = '/globaldashboard/executiveSummary'; }
+function moveDevision() { location.href = '/globaldashboard/divisionSummary'; }
+function moveSalesAll() { location.href = '/globaldashboard/sales_all2'; }
+function moveOperationAll() { location.href = '/globaldashboard/operation_all2'; }
+function moveShopappOperation() { location.href = '/globaldashboard/shopapp_operation'; }
+function moveBotjourneyOperation() { location.href = '/globaldashboard/botjourney_operation'; }
+function moveEpp_operation() { location.href = '/globaldashboard/epp_operation'; }
+function moveRetailer_operation() { location.href = '/globaldashboard/retailer_operation'; }
+function moveMxFlagshipSummary() { location.href = '/globaldashboard/mxFlagshipSummary_pre'; }
+function movePerformanceSummary() { location.href = '/globaldashboard/performanceSummary'; }
+function fileDown() { window.open('/globaldashboard/ManualFAQ'); /* 실제 URL로 변경 */ }
+</script>

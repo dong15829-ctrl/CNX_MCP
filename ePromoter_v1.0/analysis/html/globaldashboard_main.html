@@ -1,0 +1,142 @@
+<!DOCTYPE html><html><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Samsung Global Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+
+    <!-- datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <!-- //datepicker -->
+
+</head>
+<body>
+<div class="body_wrap">
+    <div class="index_wrap">
+        <div class="index_tit">
+            <img src="./img/new_logo.jpg">
+        </div>
+        <ul class="index_menu_wrap">
+            <li class="index_menu">
+                <a href="/globaldashboard/executiveSummary">
+                    <div class="icon_wrap">
+                        <div class="icon_area img01"></div>
+                    </div>
+                    <div class="index_txt">Executive<br>Summary</div>
+                </a>
+            </li>
+            <li class="index_menu">
+                <a href="/globaldashboard/divisionSummary">
+                    <div class="icon_wrap">
+                        <div class="icon_area img12"></div>
+                    </div>
+                    <div class="index_txt">Division<br>Summary</div>
+                </a>
+            </li>
+            
+                
+                    
+                        
+                    
+                    
+                
+            
+            <li class="index_menu">
+                <a href="/globaldashboard/sales_all2">
+                    <div class="icon_wrap">
+                        <div class="icon_area img02"></div>
+                    </div>
+                    <div class="index_txt">Sales<br>Summary</div>
+                </a>
+            </li>
+            <li class="index_menu">
+                <a href="/globaldashboard/operation_all2">
+                    <div class="icon_wrap">
+                        <div class="icon_area img03"></div>
+                    </div>
+                    <div class="index_txt">Operation<br>Summary</div>
+                </a>
+            </li>
+            <!-- 20231116 ì¶ê° -->
+            <li class="index_menu">
+                <a href="/globaldashboard/shopapp_operation">
+                    <div class="icon_wrap">
+                        <div class="icon_area img15"></div>
+                    </div>
+                    <div class="index_txt">ShopApp<br>Summary</div>
+                </a>
+            </li>
+            <li class="index_menu">
+                <a href="/globaldashboard/botjourney_operation">
+                    <div class="icon_wrap">
+                        <div class="icon_area img16"></div>
+                    </div>
+                    <div class="index_txt">Bot / AI <br>Summary</div>
+                </a>
+            </li>
+            <li class="index_menu">
+                <a href="/globaldashboard/epp_operation">
+                    <div class="icon_wrap">
+                        <div class="icon_area img11"></div>
+                    </div>
+                    <div class="index_txt">EPP / SMB<br>Summary</div>
+                </a>
+            </li>
+            
+                
+                    
+                        
+                    
+                    
+                
+            
+            
+                <li class="index_menu">
+                    <a href="/globaldashboard/retailer_operation">
+                        <div class="icon_wrap">
+                            <div class="icon_area img10"></div>
+                        </div>
+                        <div class="index_txt">Retailer<br>Summary</div>
+                    </a>
+                </li>
+            
+            <li class="index_menu">
+                <a href="/globaldashboard/mxFlagshipSummary_pre">
+                    <div class="icon_wrap">
+                        <div class="icon_area h75 img14"></div>
+                    </div>
+                    <div class="index_txt">MX Flagship<br>Summary</div>
+                </a>
+            </li>
+            <li class="index_menu">
+                <a href="/globaldashboard/performanceSummary">
+                    <div class="icon_wrap">
+                        <div class="icon_area img13"></div>
+                    </div>
+                    <div class="index_txt">Performance<br>Summary</div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<script>
+    let popupCheck = 0;
+    let popupContents = '\nLocation: Global dashboard Index page\n\nPeriod: 1st~14th Jan. 2025 \n\nText: Due to the Subsidiary mapping, cases where the subsidiary differs between chat and sales data will be excluded during the conversion check starting 1st January.\n\nThe new logic will not affect any historical data. Please reach out to either Concentrix or Headquarters for assistance. We will gladly assist you with your request.';
+    window.onload = function() {
+        if(popupCheck == 1){
+            alert('[Notice]\n'+popupContents);
+        }
+        // alert('[Notice]\nKindly be informed November sales data is unavailable at the moment, data will be updated as soon as raw data is ready.\n'+
+        // 'We apologize for the inconvenience.')
+    }
+
+</script>
+</body></html>

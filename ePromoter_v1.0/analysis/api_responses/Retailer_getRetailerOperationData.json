@@ -1,0 +1,43 @@
+{
+  "ok": true,
+  "data": {
+    "current_date": "02/08 - 02/08",
+    "retailerData": {
+      "vProm_csat_p": 0.0,
+      "total_volume_p": 1.0,
+      "missed_p": 0.0,
+      "vProm_missed_c": 0.0,
+      "chat_handled_p": 1.0,
+      "vProm_total_c": 0.0,
+      "vProm_survey_p": 0.0,
+      "survey_count_c": 0.0,
+      "eprom_missed_offerd_volume_p": 1.0,
+      "vProm_csat_c": 0.0,
+      "vProm_answer_p": 0.0,
+      "csat_numerator_c": 0.0,
+      "vProm_survey_c": 0.0,
+      "survey_count_p": 1.0,
+      "vProm_missed_p": 0.0,
+      "vProm_answer_c": 0.0,
+      "eprom_missed_offerd_volume_c": 0.0,
+      "csat_numerator_p": 1.0,
+      "total_c": 1.0,
+      "total_handled_p": 1.0,
+      "prev_date": "01/08 - 01/08",
+      "vProm_aht_c": 0.0,
+      "missed_chat_p": 0.0,
+      "vProm_aht_p": 0.0,
+      "missed_c": 0.0,
+      "total_handled_c": 0.0,
+      "current_date": "02/08 - 02/08",
+      "vProm_total_p": 0.0,
+      "offered_volume_c": 0.0,
+      "total_p": 1.0,
+      "chat_handled_c": 0.0,
+      "offered_volume_p": 1.0,
+      "total_volume_c": 1.0,
+      "missed_chat_c": 0.0
+    },
+    "prev_date": "01/08 - 01/08"
+  }
+}

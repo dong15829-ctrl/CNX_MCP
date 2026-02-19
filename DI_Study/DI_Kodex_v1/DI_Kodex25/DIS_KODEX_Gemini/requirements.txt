@@ -1,0 +1,17 @@
+playwright
+scrapy
+yt-dlp
+pandas
+numpy
+openai
+python-dotenv
+beautifulsoup4
+lxml
+requests
+pillow
+pytesseract
+opencv-python-headless
+scikit-learn
+fake-useragent
+selenium-stealth
+undetected-chromedriver

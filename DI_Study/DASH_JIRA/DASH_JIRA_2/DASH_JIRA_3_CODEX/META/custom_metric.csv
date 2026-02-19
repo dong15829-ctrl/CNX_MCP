@@ -1,0 +1,200 @@
+Variable,Metric Name,Frequently Used,Description,Notes,DataFeed,DataFeed Notes
+Event,Event,,A success event is a metric used to measure when a user completes a specific goal or valuable action on your site. These events represent conversions and are essential for evaluating the performance of your digital properties.,"*Key Characteristics:
+- Goal-based: Events are tracked when users complete key actions aligned with business objectives.
+- Used with eVars: Events are typically attributed to eVars to understand which values influenced the conversion.",,
+event1,disabled,-,-,-,-,-
+event2,Hamburger Menu - Search bar Click (e2),No,Counts each Search bar click calls in hamburger menu,"Pairing with prop7
+Created : 24. 11. 15",post_event_list,Use event.tsv to match numeric values with custom event 2.
+event3,GNB Navigation Link Click (e3) ,No,Collects click action data for GNB menus ,-,post_event_list,Use event.tsv to match numeric values with custom event 3.
+event4,Footer Link Click (e4),No,Collects click action data for Footer menus,-,post_event_list,Use event.tsv to match numeric values with custom event 4.
+event5,Banner Slide Click / Swipe (e5),No,"Collects minor click action data such as arrow, indicator, pagination, swipe",-,post_event_list,Use event.tsv to match numeric values with custom event 5.
+event6,eCommerce - La Caixa Duplicated (e6),No,"Used for ES La caixa payment which is created to build calculated metric (duplication removed actual order) 
+This event collects duplicated order count ","Specific RS Only: ES, TEST",post_event_list,Use event.tsv to match numeric values with custom event 6.
+event7,eCommerce - Failed Order (e7),No,Used for ES La caixa payment which counts failed order,"Specific RS Only: ES, TEST",post_event_list,Use event.tsv to match numeric values with custom event 7.
+event8,eCommerce - Failed Units (e8),No,ES La caixa payment which counts failed order unit,"Specific RS Only: ES, TEST",post_event_list,Use event.tsv to match numeric values with custom event 8.
+event9,eCommerce - Failed Revenue (e9),No,ES La caixa payment which counts failed order revenue,"Specific RS Only: ES, TEST",post_event_list,Use event.tsv to match numeric values with custom event 9.
+event10,eCommerce - Approval Request (e10),No,Used for ES La caixa payment which counts the initial approval request when payment submission is sent to La Caixa,"Specific RS Only: ES, TEST",post_event_list,Use event.tsv to match numeric values with custom event 10.
+event11,Seach Result Click (e11),No,Counts click events for Seach result page contents,-,post_event_list,Use event.tsv to match numeric values with custom event 11.
+event12,eCommerce - Payment Success (e12),No,Collects the data of OTP verification success during checkout process,-,post_event_list,Use event.tsv to match numeric values with custom event 12.
+event13,eCommerce - Payment Failure (e13),No,Collects the data of OTP verification fail during checkout process,-,post_event_list,Use event.tsv to match numeric values with custom event 13.
+event14,Video Time (e14),No,Automatic Tracking with Video Code,-,post_event_list,Use event.tsv to match numeric values with custom event 14.
+event15,Video Views (e15),No,Counts the number of video views,Pairing with Video Name (v16),post_event_list,Use event.tsv to match numeric values with custom event 15.
+event16,Video Completes (e16),No,Counts the number of video view completion,Pairing with Video Name (v16),post_event_list,Use event.tsv to match numeric values with custom event 16.
+event17,Video Segment Views (e17),No,Automatic Tracking with Video Code,Technically cannot track MP4,post_event_list,Use event.tsv to match numeric values with custom event 17.
+event18,Video Milestones (25%) (e18),No,Automatic Tracking with Video Code,-,post_event_list,Use event.tsv to match numeric values with custom event 18.
+event19,Video Milestones (50%) (e19),No,Automatic Tracking with Video Code,-,post_event_list,Use event.tsv to match numeric values with custom event 19.
+event20,Video Milestones (75%) (e20),No,Automatic Tracking with Video Code,-,post_event_list,Use event.tsv to match numeric values with custom event 20.
+event21,Site Search (e21),Yes,This metric counts how often the search function is used within the site or app. It is captured when the search results page is loaded.,"Pairing with evar21, prop21 to identify which keywords were searched",post_event_list,Use event.tsv to match numeric values with custom event 21.
+event22,Store Locator (e22),No,Counts store locator CTA click and action triggered in store loactor page,"pairing with evar22, prop22",post_event_list,Use event.tsv to match numeric values with custom event 22.
+event23,Support Search (e23),No,Counts support search action,"pairing with evar23, prop23
+This event is fired when search result page is loaded",post_event_list,Use event.tsv to match numeric values with custom event 23.
+event24,Service Locator Search (e24),No,Counts Service Locator Search and Click action,"pairing with evar24, prop24",post_event_list,Use event.tsv to match numeric values with custom event 24.
+event25,Product Click (e25),No,"Counts click action which lead to PDP in dynamic page such as PF, PD, etc.",Paring with evar25,post_event_list,Use event.tsv to match numeric values with custom event 25.
+event26,Content Click (e26),Yes,"Content Click (e26) is used to capture user interactions with non-product-specific content elements. This includes clicks on buttons, text links, videos, and banner modules.",Pairing with evar26,post_event_list,Use event.tsv to match numeric values with custom event 26.
+event27,Gallery (e27),No,Counts various interaction data of gallery area,Pairing with evar27,post_event_list,Use event.tsv to match numeric values with custom event 27.
+event28,Compare (e28),No,Counts click action for compare feature ,Pairing with evar28,post_event_list,Use event.tsv to match numeric values with custom event 28.
+event29,Social Share (e29),No,Counts  social share / follow click action when social network icon is clicked,Pairing with evar29,post_event_list,Use event.tsv to match numeric values with custom event 29.
+event30,Request Submit (e30),No,Counts various types of request submit button click such as support FAQ and floating chat satisfaction survey submit buttons,Pairing with evar30,post_event_list,Use event.tsv to match numeric values with custom event 30.
+event31,Account (e31),Yes,"Account (e31) is used to collect interaction data related to user account activities. This includes actions taken within account-related pages or account-specific menus, such as login/logout or interactions with the wishlist.
+*After a successful login, the action tracking call is triggered once the page has loaded.",Pairing with evar31,post_event_list,Use event.tsv to match numeric values with custom event 31.
+event32,Download (e32),No,Counts number of file download action,Pairing with evar32,post_event_list,Use event.tsv to match numeric values with custom event 32.
+event33,Download-B2B (e33),No,Counts number of file download action in B2B pages,Pairing with evar32,post_event_list,Use event.tsv to match numeric values with custom event 33.
+event34,Support contents (e34),No,Counts click action for support contents and features ,Pairing with evar34,post_event_list,Use event.tsv to match numeric values with custom event 34.
+event35,Purchase Intention (e35),Yes,"Purchase Intention (e35) is used to track user intent to purchase by capturing click actions related to buying activities(where to buy, buy now, online retailer, stock alerts, etc.).","Pairing with evar35
+Pairing with evar35 and event55 for online retailer click action",post_event_list,Use event.tsv to match numeric values with custom event 35.
+event36,eCommerce- RETURN Count(e36),No,Counts product (single & multiple products) Return,-,post_event_list,Use event.tsv to match numeric values with custom event 36.
+event37,eCommerce- RETURN Revenue (e37),No,Collects product (single & multiple products) Returned revenue,-,post_event_list,Use event.tsv to match numeric values with custom event 37.
+event38,eCommerce- RETURN Q'ty (e38),No,Tracks product (single & multiple products) Returned Unit,-,post_event_list,Use event.tsv to match numeric values with custom event 38.
+event39,eCommerce- CANCEL Count (e39),No,Counts product (single & multiple products) order cancellation,-,post_event_list,Use event.tsv to match numeric values with custom event 39.
+event40,eCommerce- CANCEL Revenue (e40),No,Collects product (single & multiple products) order cancelled revenue,-,post_event_list,Use event.tsv to match numeric values with custom event 40.
+event41,eCommerce- CANCEL Q'ty (e41),No,Tracks Product (single & multiple products) order cancelled unit,-,post_event_list,Use event.tsv to match numeric values with custom event 41.
+event42,disabled,-,-,-,-,-
+event43,disabled,-,-,-,-,-
+event44,Filter and Sort (e44),Yes,Filter and Sort (e44) is used to collect user interaction data related to filtering and sorting functions on product listing or search result pages.,Pairing with evar44,post_event_list,Use event.tsv to match numeric values with custom event 44.
+event45,Microsite (e45),Yes,Microsite (e45) is used to capture user interaction data specifically within microsites and locally developed campaign pages.,Pairing with evar33,post_event_list,Use event.tsv to match numeric values with custom event 45.
+event46,Scroll (e46),Yes,"Scroll (e46) is used to track scroll depth as users scroll down the page. This variable helps identify how far users engage with the content vertically. ""scroll:100"" is not triggered if the footer is visible without scrolling.
+*Product Detail: 25,50,75,100
+*Flagship pdp(mkt page): 3,5,7,10,20,...,100
+*Other page(Home, Flagship Buy, PF,...): 100",Pairing with evar46,post_event_list,Use event.tsv to match numeric values with custom event 46.
+event47,B2B Search (e47),No,Counts B2B search action,"Pairing with evar47, prop45",post_event_list,Use event.tsv to match numeric values with custom event 47.
+event48,Home Content Click (e48),Yes,Home Content Click (e48) is used to capture click interactions on home page content modules. This variable is specifically scoped to homepage elements only.  It helps measure engagement with key content elements surfaced on the homepage.,Pairing with evar48,post_event_list,Use event.tsv to match numeric values with custom event 48.
+event49,Downloaded file (e49),No,Counts the number of files being downloaded,"Created : 25. 03. 31
+Specific RS Only: EBDC",post_event_list,Use event.tsv to match numeric values with custom event 49.
+event50,Undefined,-,-,-,-,-
+event51,Trade-in Discount (e51),No,"Collects the discount price by applying trade-in option in GPv2, P5 Hybris platforms",Created : 19. 07. 19,post_event_list,Use event.tsv to match numeric values with custom event 51.
+event52,List Price (Add to Cart) (e52),Yes,"Collects the list price of product when a product is added in the cart page.
+event52 is unit price times quantity. For instance, If you add one unit of SM-M105 ($100) to cart, event52 will be $100, and event 52 will be $200 if you add two units of SM-M105 at the same time.",Created : 19. 01. 23,post_event_list,Use event.tsv to match numeric values with custom event 52.
+event53,List Price (Order) (e53),No,"Collects the list price of product when the order process is completed 
+event53 is unit price times quantity. For instance, If you purchase one unit of SM-M105 for $100, event53 will be $100, and event 53 will be $200 if you purchase two.",-,post_event_list,Use event.tsv to match numeric values with custom event 53.
+event54,B2B contents (e54),No,Counts click action for B2B content and features ,Pairing with evar45,post_event_list,Use event.tsv to match numeric values with custom event 54.
+event55,Buy Online Retailer (e55),No,Counts click action for online retailer links,Pairing with event35 and evar35,post_event_list,Use event.tsv to match numeric values with custom event 55.
+event56,Email Sent (e56),No,Used for CIS & LATAM Region Campaign - AA integration which is triggered when the email is sent ,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 56.
+event57,Email Open (e57),No,Used for CIS & LATAM Region Campaign - AA integration which is triggered when the email is opened,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 57.
+event58,Selling Price (Add to Cart) (e58),Yes,"Collects the selling price of product, which is the price after giving a discount, when a product is added in the cart page.
+event58 is selling price times quantity. For instance, If you add one unit of SM-M105 ($80) to cart, event58 will be $80, and event58 will be $160 if you add two units of SM-M105 at the same time.",Created : 20. 11. 11,post_event_list,Use event.tsv to match numeric values with custom event 58.
+event59,Email Clicked (e59),No,Used for  CIS & LATAM Region Campaign - AA integration which counts the total number of email clicks ,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 59.
+event60,Email Person Clicks (e60),No,Used for CIS & LATAM Region Campaign - AA integration which counts the number of person who have clicked ,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 60.
+event61,Email Processed (e61),No,Used for CIS & LATAM Region Campaign - AA integration which counts the total number of processed emails,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 61.
+event62,Email Scheduled (e62),No,Used for CIS & LATAM Region Campaign - AA integration which counts the number of number of email messages that are scheduled for delivery.,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 62.
+event63,Email Total Bounces (e63),No,Used for CIS & LATAM Region Campaign - AA integration which counts number of email messages that were not delivered to recipients due to a delivery problem.,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 63.
+event64,Email Unique Clicks (e64),No,Used for CIS & LATAM Region Campaign - AA integration which counts number of distinct email clicks.,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 64.
+event65,Email Unique Opens (e65),No,Used for CIS & LATAM Region Campaign - AA integration which counts number of distinct email opens.,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 65.
+event66,Email Unsubscribed (e66),No,Used for CIS & LATAM Region Campaign - AA integration which counts the number of visitors who opened the email message but then clicked the Unsubscribe link to opt-out of future email messages from your organization.,"Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 66.
+event67,AF - Re-engagement (e67),No,Counts record of a user opening the app after engaging with a retargeting campaign.,Created : 24. 07. 02,post_event_list,Use event.tsv to match numeric values with custom event 67.
+event68,Review (e68),No,Counts review related content interactions ,Pairing with evar68,post_event_list,Use event.tsv to match numeric values with custom event 68.
+event69,AF - Install (e69),No,Counts shop app installs events. This event is generated when a user opens the app for the first time.,Created : 24. 06. 25,post_event_list,Use event.tsv to match numeric values with custom event 69.
+event70,AF - Re-attribution (e70),No,"Counts shop app re-attributions events. Re-attribution happens when an install is generated by a user who had previously uninstalled a shop app, having come back after viewing or clicking on a re-engagement
+campaign.",Created : 24. 06. 25,post_event_list,Use event.tsv to match numeric values with custom event 70.
+event71,disabled,-,-,-,-,-
+event72,disabled,-,-,-,-,-
+event73,disabled,-,-,-,-,-
+event74,disabled,-,-,-,-,-
+event75,Target Marketing (e75),No,Counts any interactions related with device detection target marketing such as floating banner display and banner click,Pairing with evar75,post_event_list,Use event.tsv to match numeric values with custom event 75.
+event76,disabled,-,-,-,-,-
+event77,disabled,-,-,-,-,-
+event78,disabled,-,-,-,-,-
+event79,disabled,-,-,-,-,-
+event80,disabled,-,-,-,-,-
+event81,Mobile App Interaction (e81),No,Mobile app only,"Created : 19. 01. 02
+Paring with evar80
+Specific RS Only: TEST, SEC, CN",post_event_list,Use event.tsv to match numeric values with custom event 81.
+event82,Personalized Impression (e82),No,"Counts impression for redeem points widget in Mypage Home, My Rewards page","Created : 25. 02. 27
+Specific RS Only: DE, MST, MST(dev), Test",post_event_list,Use event.tsv to match numeric values with custom event 82.
+event83,disabled,-,-,-,-,-
+event84,Media Data(main parameter)- Impressions (e84),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 84.
+event85,Media Data(main parameter)- Reach (e85),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 85.
+event86,Media Data(main parameter)- Clicks (e86),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 86.
+event87,My Credits Impression (e87),No,Count the impressions when the My Credits Toggle is shown to the user in My Rewards and My Credits pages.,"Created : 25. 05. 07
+Specific RS Only: UK, MST, MST(dev), Test,  (EU Org: UK, UK(dev))",post_event_list,Use event.tsv to match numeric values with custom event 87.
+event88,Media Data(main parameter)- Cost (e88),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 88.
+event89,Media Data(plan value)- Plan Impressions (e89),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 89.
+event90,Media Data(plan value)-- Plan Reach (e90),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 90.
+event91,Media Data(plan value)-- Plan Clicks (e91),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 91.
+event92,CO78 - Recommend Product (e92),No,Counts impression for CO78 component in Home and Shop page.,-,post_event_list,Use event.tsv to match numeric values with custom event 92.
+event93,Media Data(plan value)-- Budget (e93),No,-,"Specific RS Only: RU, TEST",post_event_list,Use event.tsv to match numeric values with custom event 93.
+event94,PDD34 - Recommend Product (e94),No,Count impressions when the PDD34 component is visible in the viewport of the PF or PD page.,-,post_event_list,Use event.tsv to match numeric values with custom event 94.
+event95,Live Commerce Player Interaction (e95),No,Counts click action for live commerce player,Pairing with evar95,post_event_list,Use event.tsv to match numeric values with custom event 95.
+event96,Link Tracking Taxonomy (e96),No,Counts click action data for Link Tracking Taxonomy,Pairing with evar96,post_event_list,Use event.tsv to match numeric values with custom event 96.
+event97,Social Commerce Widget - Bazaarvoice (e97),No,Collects data from Bazaarvoice,"Pairing with evar97
+Specific RS Only: UK, AU, BE, BR, DE, ES, FR, IT, NL, SE, US",post_event_list,Use event.tsv to match numeric values with custom event 97.
+event98,Undefined,-,-,-,-,-
+,disabled,No,-,,,
+,disabled,No,-,,,
+event101,Platform Sales (e101),Yes,"This metric shows the amount of Orders adjusted via Hybris API integration, which Adobe Analytics could not capture on its own.
+Event 101 is included as part of the Order metric.","Created : 19. 01. 24
+Hybris countries only",post_event_list,Use event.tsv to match numeric values with custom event 101.
+event102,Platform Revenue (e102),No,Collect revenue data when shop (platform) data is integrated,"Created : 19. 01. 24
+Specific RS Only: UK, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 102.
+event103,Platform Cancellations (e103),No,Count cancellation data when shop (platform) data is integrated,"Created : 19. 01. 24
+Specific RS Only: UK, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 103.
+event104,Platform Cancellations (Revenue) (e104),No,Collect revenue of cancellation shop (platform) data is integrated,"Created : 19. 01. 24
+Specific RS Only: UK, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 104.
+event105,Platform Returns (e105),No,Count return data when shop (platform) data is integrated,"Created : 19. 01. 24
+Specific RS Only: UK, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 105.
+event106,Platform Returns (Revenue) (e106),No,Collect revenue of return when shop (platform) data is integrated,"Created : 19. 01. 24
+Specific RS Only: UK, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 106.
+event107,Mouse Hover (e107),No,Collect mouse hover data on UK Home L0 menu,"Created : 22. 10. 18
+Specific RS Only: UK, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 107.
+event108,Instore mode Content Click (e108),No,Count click action data for instore page.,"Created : 23. 09. 07
+Pairing with evar108
+Specific RS Only: IN, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 108.
+event109,Time Spent on Content (e109),No,Tracks times users spent on consuming contents,"Created : 21. 06. 11
+Paring with evar90",post_event_list,Use event.tsv to match numeric values with custom event 109.
+event110,Community Search Result Click (e110),No,Counts click events for Seach result page contents of Community site,Created : 21. 01. 13,post_event_list,Use event.tsv to match numeric values with custom event 110.
+event111,Community Search (e111),No,Triggered if there are search results in Community site,Created : 21. 01. 13,post_event_list,Use event.tsv to match numeric values with custom event 111.
+event112,Community Search Fail (e112),No,Triggered if there is no search result in Community site,Created : 21. 01. 13,post_event_list,Use event.tsv to match numeric values with custom event 112.
+event113,Request ID (e113),No,Collects Request ID of recommended products,Created : 23. 09. 11,post_event_list,Use event.tsv to match numeric values with custom event 113.
+event114,Delivery Date (e114),No,Triggered when landing on PD page and collects delivery date of user by option,"Created : 22. 10. 14
+Paring with evar114",post_event_list,Use event.tsv to match numeric values with custom event 114.
+event115,Owned Product (e115),No,"Counts the event that collects the latest product’s model name and model code from Personalized Offering(PO) banner (usp, your message, banner,..etc)","Created : 24. 01. 29
+Pairing with evar115",post_event_list,Use event.tsv to match numeric values with custom event 115.
+event116,Undefined,-,-,-,-,-
+event117,Undefined,-,-,-,-,-
+event118,Undefined,-,-,-,-,-
+event119,Undefined,-,-,-,-,-
+event120,Undefined,-,-,-,-,-
+event121,Undefined,-,-,-,-,-
+event122,Undefined,-,-,-,-,-
+event123,Undefined,-,-,-,-,-
+event124,Undefined,-,-,-,-,-
+event125,Page Speed - TTI (e125),No,Collects page speed - TTI,-,post_event_list,Use event.tsv to match numeric values with custom event 125.
+event126,Page Speed - Page Load Time (e126),No,Collects page speed - Page Load Time,-,post_event_list,Use event.tsv to match numeric values with custom event 126.
+event127,Product Recommendation (e127),No,Collects information of product recommendation,"Created : 23. 05. 19
+pairing with evar127
+Specific RS Only: UK, MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 127.
+event128,Live Stream Join (e128),No,Counts the number of Live Stream join views,Created : 24. 04. 26,post_event_list,Use event.tsv to match numeric values with custom event 128.
+event129,Live Stream Quit (e129),No,Counts the number of Live Stream quit views,Created : 24. 04. 26,post_event_list,Use event.tsv to match numeric values with custom event 129.
+event130,Encrypted Email (e130),No,Collects user's email which is encrypted.,"Created : 24. 03. 27
+pairing with eVar130
+Specific RS Only: MST, MST(dev), TEST, CO,  CL, MX, AR, BR, PE",post_event_list,Use event.tsv to match numeric values with custom event 130.
+event131,Undefined,-,-,-,-,-
+event132,Undefined,-,-,-,-,-
+event133,Undefined,-,-,-,-,-
+event134,Undefined,-,-,-,-,-
+event135,Undefined,-,-,-,-,-
+event136,Personalized Offering (e136),No,"Counts Upsell/cross-sell, model category, product name, cs repair history, rewards, SKU information about registered product for Personalized Offering banner (data sent from BDC API)","Created : 24. 05. 23
+pairing with eVar136",post_event_list,Use event.tsv to match numeric values with custom event 136.
+event137,Owned Product List (e137),No,Counts Owned product list (model name and model code) from Registered product card (My page),"Created : 24. 05. 27
+pairing with eVar137",post_event_list,Use event.tsv to match numeric values with custom event 137.
+event138,Undefined,-,-,-,-,-
+event139,Product Cart Addition (e139),No,Collects Model Code during the product cart addition,"Created : 23. 06. 19
+pairing with evar139
+Specific RS Only: FR,  MST, MST(dev), TEST",post_event_list,Use event.tsv to match numeric values with custom event 139.
+event140,disabled,-,-,-,-,-
+event141,My SmartThings Impression (e141),No,"Counts first shown message from MYD12 your message or contents title from smartthings banner. 
+# PII data including user’s name should not be collected.",Created : 24. 10. 30,post_event_list,Use event.tsv to match numeric values with custom event 141.
+event142,disabled,-,-,-,-,-
+event143,Undefined,-,-,-,-,-
+event144,Undefined,-,-,-,-,-
+event145,Undefined,-,-,-,-,-
+event146,Undefined,-,-,-,-,-
+event147,Undefined,-,-,-,-,-
+event148,Undefined,-,-,-,-,-
+event149,Undefined,-,-,-,-,-
+event150,Undefined,-,-,-,-,-
+….,-,-,-,-,-,-
+event180,Category from BDC (v180),No,Count when 'categorySubTypeEngName' information in BDC API is collected.,"Created : 24. 12. 26
+pairing with eVar180",post_event_list,Use event.tsv to match numeric values with custom event 180.
+event181,Page type from BDC (e181),No,Count when 'pageType' information in BDC API is collected.,"Created : 25. 4. 25
+pairing with eVar181",post_event_list,Use event.tsv to match numeric values with custom event 181.
+….,-,-,-,-,-,-

@@ -1,0 +1,308 @@
+{
+  "ok": true,
+  "data": {
+    "tableAvgData": {
+      "total_offered_volume_c": 32501.54761904762,
+      "missed_chat_rate_c": 3.20238,
+      "missed_chat_rate_avg": 1.5,
+      "missed_chat_rate_p": 2.45476,
+      "missed_chat_c": 100.119
+    },
+    "tableData": [
+      {
+        "total_offered_volume_c": 174324.0,
+        "missed_chat_rate_c": 0.0,
+        "missed_chat_rate_p": 0.2,
+        "missed_chat_c": 0.0,
+        "subsidiary": "SEDA"
+      },
+      {
+        "total_offered_volume_c": 108799.0,
+        "missed_chat_rate_c": 0.2,
+        "missed_chat_rate_p": 0.3,
+        "missed_chat_c": 29.0,
+        "subsidiary": "SETK"
+      },
+      {
+        "total_offered_volume_c": 102085.0,
+        "missed_chat_rate_c": 0.0,
+        "missed_chat_rate_p": 0.0,
+        "missed_chat_c": 0.0,
+        "subsidiary": "SEPR"
+      },
+      {
+        "total_offered_volume_c": 79677.0,
+        "missed_chat_rate_c": 0.2,
+        "missed_chat_rate_p": 0.0,
+        "missed_chat_c": 50.0,
+        "subsidiary": "SIEL"
+      },
+      {
+        "total_offered_volume_c": 56476.0,
+        "missed_chat_rate_c": 0.1,
+        "missed_chat_rate_p": 0.1,
+        "missed_chat_c": 57.0,
+        "subsidiary": "SEC"
+      },
+      {
+        "total_offered_volume_c": 55579.0,
+        "missed_chat_rate_c": 3.2,
+        "missed_chat_rate_p": 3.3,
+        "missed_chat_c": 368.0,
+        "subsidiary": "SEF"
+      },
+      {
+        "total_offered_volume_c": 55287.0,
+        "missed_chat_rate_c": 0.1,
+        "missed_chat_rate_p": 0.3,
+        "missed_chat_c": 6.0,
+        "subsidiary": "SEEG"
+      },
+      {
+        "total_offered_volume_c": 45959.0,
+        "missed_chat_rate_c": 1.9,
+        "missed_chat_rate_p": 2.1,
+        "missed_chat_c": 153.0,
+        "subsidiary": "SAMCOL"
+      },
+      {
+        "total_offered_volume_c": 43707.0,
+        "missed_chat_rate_c": 0.8,
+        "missed_chat_rate_p": 1.2,
+        "missed_chat_c": 206.0,
+        "subsidiary": "SEUK"
+      },
+      {
+        "total_offered_volume_c": 43698.0,
+        "missed_chat_rate_c": 4.6,
+        "missed_chat_rate_p": 6.5,
+        "missed_chat_c": 745.0,
+        "subsidiary": "SEIB"
+      },
+      {
+        "total_offered_volume_c": 43038.0,
+        "missed_chat_rate_c": 0.0,
+        "missed_chat_rate_p": 0.0,
+        "missed_chat_c": 5.0,
+        "subsidiary": "SEM"
+      },
+      {
+        "total_offered_volume_c": 37080.0,
+        "missed_chat_rate_c": 0.2,
+        "missed_chat_rate_p": 0.3,
+        "missed_chat_c": 13.0,
+        "subsidiary": "SEAU"
+      },
+      {
+        "total_offered_volume_c": 36724.0,
+        "missed_chat_rate_c": 0.1,
+        "missed_chat_rate_p": 0.0,
+        "missed_chat_c": 2.0,
+        "subsidiary": "SESAR"
+      },
+      {
+        "total_offered_volume_c": 33979.0,
+        "missed_chat_rate_c": 0.2,
+        "missed_chat_rate_p": 0.5,
+        "missed_chat_c": 7.0,
+        "subsidiary": "SEIN"
+      },
+      {
+        "total_offered_volume_c": 32376.0,
+        "missed_chat_rate_c": 1.0,
+        "missed_chat_rate_p": 1.4,
+        "missed_chat_c": 44.0,
+        "subsidiary": "SEPCO"
+      },
+      {
+        "total_offered_volume_c": 32090.0,
+        "missed_chat_rate_c": 13.2,
+        "missed_chat_rate_p": 15.5,
+        "missed_chat_c": 245.0,
+        "subsidiary": "SEPAK"
+      },
+      {
+        "total_offered_volume_c": 31846.0,
+        "missed_chat_rate_c": 1.2,
+        "missed_chat_rate_p": 1.3,
+        "missed_chat_c": 53.0,
+        "subsidiary": "SEI"
+      },
+      {
+        "total_offered_volume_c": 30517.0,
+        "missed_chat_rate_c": 0.8,
+        "missed_chat_rate_p": 0.4,
+        "missed_chat_c": 60.0,
+        "subsidiary": "SEG"
+      },
+      {
+        "total_offered_volume_c": 30063.0,
+        "missed_chat_rate_c": 0.0,
+        "missed_chat_rate_p": 0.3,
+        "missed_chat_c": 0.0,
+        "subsidiary": "SECH"
+      },
+      {
+        "total_offered_volume_c": 29843.0,
+        "missed_chat_rate_c": 0.2,
+        "missed_chat_rate_p": 0.3,
+        "missed_chat_c": 4.0,
+        "subsidiary": "SGE"
+      },
+      {
+        "total_offered_volume_c": 26915.0,
+        "missed_chat_rate_c": 4.3,
+        "missed_chat_rate_p": 1.0,
+        "missed_chat_c": 115.0,
+        "subsidiary": "SESP"
+      },
+      {
+        "total_offered_volume_c": 21680.0,
+        "missed_chat_rate_c": 0.0,
+        "missed_chat_rate_p": 2.1,
+        "missed_chat_c": 0.0,
+        "subsidiary": "SEPOL"
+      },
+      {
+        "total_offered_volume_c": 21124.0,
+        "missed_chat_rate_c": 7.0,
+        "missed_chat_rate_p": 4.2,
+        "missed_chat_c": 277.0,
+        "subsidiary": "SEBN"
+      },
+      {
+        "total_offered_volume_c": 20610.0,
+        "missed_chat_rate_c": 1.0,
+        "missed_chat_rate_p": 0.2,
+        "missed_chat_c": 32.0,
+        "subsidiary": "SET"
+      },
+      {
+        "total_offered_volume_c": 19685.0,
+        "missed_chat_rate_c": 3.5,
+        "missed_chat_rate_p": 2.7,
+        "missed_chat_c": 116.0,
+        "subsidiary": "TSE"
+      },
+      {
+        "total_offered_volume_c": 18000.0,
+        "missed_chat_rate_c": 0.2,
+        "missed_chat_rate_p": 0.1,
+        "missed_chat_c": 3.0,
+        "subsidiary": "SELV"
+      },
+      {
+        "total_offered_volume_c": 16534.0,
+        "missed_chat_rate_c": 0.0,
+        "missed_chat_rate_p": 0.1,
+        "missed_chat_c": 0.0,
+        "subsidiary": "SEIL"
+      },
+      {
+        "total_offered_volume_c": 14973.0,
+        "missed_chat_rate_c": 4.8,
+        "missed_chat_rate_p": 3.1,
+        "missed_chat_c": 442.0,
+        "subsidiary": "SECA"
+      },
+      {
+        "total_offered_volume_c": 13824.0,
+        "missed_chat_rate_c": 26.3,
+        "missed_chat_rate_p": 0.8,
+        "missed_chat_c": 260.0,
+        "subsidiary": "SAVINA"
+      },
+      {
+        "total_offered_volume_c": 12499.0,
+        "missed_chat_rate_c": 1.1,
+        "missed_chat_rate_p": 1.1,
+        "missed_chat_c": 19.0,
+        "subsidiary": "SME"
+      },
+      {
+        "total_offered_volume_c": 12415.0,
+        "missed_chat_rate_c": 0.1,
+        "missed_chat_rate_p": 0.1,
+        "missed_chat_c": 1.0,
+        "subsidiary": "SECZ"
+      },
+      {
+        "total_offered_volume_c": 8184.0,
+        "missed_chat_rate_c": 7.8,
+        "missed_chat_rate_p": 4.1,
+        "missed_chat_c": 86.0,
+        "subsidiary": "SEHK"
+      },
+      {
+        "total_offered_volume_c": 8109.0,
+        "missed_chat_rate_c": 1.9,
+        "missed_chat_rate_p": 0.7,
+        "missed_chat_c": 18.0,
+        "subsidiary": "SSA"
+      },
+      {
+        "total_offered_volume_c": 7164.0,
+        "missed_chat_rate_c": 1.4,
+        "missed_chat_rate_p": 3.0,
+        "missed_chat_c": 20.0,
+        "subsidiary": "SEAS"
+      },
+      {
+        "total_offered_volume_c": 7025.0,
+        "missed_chat_rate_c": 5.6,
+        "missed_chat_rate_p": 5.6,
+        "missed_chat_c": 145.0,
+        "subsidiary": "SENA"
+      },
+      {
+        "total_offered_volume_c": 6566.0,
+        "missed_chat_rate_c": 4.0,
+        "missed_chat_rate_p": 6.0,
+        "missed_chat_c": 76.0,
+        "subsidiary": "SEAD"
+      },
+      {
+        "total_offered_volume_c": 5900.0,
+        "missed_chat_rate_c": 1.9,
+        "missed_chat_rate_p": 1.4,
+        "missed_chat_c": 7.0,
+        "subsidiary": "SEGR"
+      },
+      {
+        "total_offered_volume_c": 5544.0,
+        "missed_chat_rate_c": 4.3,
+        "missed_chat_rate_p": 4.0,
+        "missed_chat_c": 52.0,
+        "subsidiary": "SEROM"
+      },
+      {
+        "total_offered_volume_c": 5348.0,
+        "missed_chat_rate_c": 1.1,
+        "missed_chat_rate_p": 1.2,
+        "missed_chat_c": 16.0,
+        "subsidiary": "SENZ"
+      },
+      {
+        "total_offered_volume_c": 3954.0,
+        "missed_chat_rate_c": 20.4,
+        "missed_chat_rate_p": 11.2,
+        "missed_chat_c": 367.0,
+        "subsidiary": "SEH"
+      },
+      {
+        "total_offered_volume_c": 3067.0,
+        "missed_chat_rate_c": 0.0,
+        "missed_chat_rate_p": 0.3,
+        "missed_chat_c": 0.0,
+        "subsidiary": "SEMAG"
+      },
+      {
+        "total_offered_volume_c": 2798.0,
+        "missed_chat_rate_c": 9.8,
+        "missed_chat_rate_p": 16.1,
+        "missed_chat_c": 106.0,
+        "subsidiary": "SEB"
+      }
+    ]
+  }
+}

@@ -1,0 +1,3154 @@
+<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR70117V0007">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund0"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund0" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR70117V0007" data-ksd-fund-nm="TIGER Korea AI Elec Pwr Equip TOP3 Plus" title="TIGER Korea AI Elec Pwr Equip TOP3 Plus 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Theme</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR70117V0007','TIGER Korea AI Elec Pwr Equip TOP3 Plus');" title="상품상세 새창열림">TIGER Korea AI Elec Pwr Equip TOP3 Plus</a></div>
+						<div class="item-code">(0117V0)</div>
+						</div>
+				</td>
+				<td><span class="base-price">12,000</span></td>
+				<td><span class="total-assets">12,018.30</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR70117V0007" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR70117V0007";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR70117V0007";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR70117V0007&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-4.54</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>26.79</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>27.82</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7261070007">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund1"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund1" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7261070007" data-ksd-fund-nm="TIGER KOSDAQ150BIOTECH" title="TIGER KOSDAQ150BIOTECH 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Mid/Small cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7261070007','TIGER KOSDAQ150BIOTECH');" title="상품상세 새창열림">TIGER KOSDAQ150BIOTECH</a></div>
+						<div class="item-code">(261070)</div>
+						</div>
+				</td>
+				<td><span class="base-price">18,900</span></td>
+				<td><span class="total-assets">18,853.37</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7261070007" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7261070007";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7261070007";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7261070007&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>3.24</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>20.87</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>26.71</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>42.71</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>50.10</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>166.40</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>51.95</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>132.08</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7243890001">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund2"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund2" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7243890001" data-ksd-fund-nm="TIGER 200 ENERGY&CHEMICALS LEVERAGE" title="TIGER 200 ENERGY&CHEMICALS LEVERAGE 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7243890001','TIGER 200 ENERGY&CHEMICALS LEVERAGE');" title="상품상세 새창열림">TIGER 200 ENERGY&CHEMICALS LEVERAGE</a></div>
+						<div class="item-code">(243890)</div>
+						</div>
+				</td>
+				<td><span class="base-price">6,905</span></td>
+				<td><span class="total-assets">6,966.06</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7243890001" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7243890001";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7243890001";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7243890001&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-11.27</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>20.03</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>59.98</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>146.95</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>106.65</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-down"><span class="blind">하락</span>-39.03</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>137.33</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-down"><span class="blind">하락</span>-20.47</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7143860005">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund3"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund3" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7143860005" data-ksd-fund-nm="TIGER Health Care" title="TIGER Health Care 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7143860005','TIGER Health Care');" title="상품상세 새창열림">TIGER Health Care</a></div>
+						<div class="item-code">(143860)</div>
+						</div>
+				</td>
+				<td><span class="base-price">48,595</span></td>
+				<td><span class="total-assets">48,485.79</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7143860005" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7143860005";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7143860005";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7143860005&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>0.53</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>16.16</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>23.27</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>36.49</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>36.62</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>78.55</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>32.94</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>403.63</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7394670004">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund4"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund4" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7394670004" data-ksd-fund-nm="TIGER Global Lithium&amp;Battery" title="TIGER Global Lithium&amp;Battery 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Global</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Theme</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7394670004','TIGER Global Lithium&amp;Battery');" title="상품상세 새창열림">TIGER Global Lithium&amp;Battery</a></div>
+						<div class="item-code">(394670)</div>
+						</div>
+				</td>
+				<td><span class="base-price">9,700</span></td>
+				<td><span class="total-assets">9,786.86</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7394670004" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7394670004";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7394670004";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7394670004&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>1.25</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>14.82</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>43.90</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>73.94</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>45.93</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-down"><span class="blind">하락</span>-0.74</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>48.52</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>2.29</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7471780007">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund5"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund5" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7471780007" data-ksd-fund-nm="TIGER Korea Tech Active ETF" title="TIGER Korea Tech Active ETF 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Theme</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7471780007','TIGER Korea Tech Active ETF');" title="상품상세 새창열림">TIGER Korea Tech Active ETF</a></div>
+						<div class="item-code">(471780)</div>
+						</div>
+				</td>
+				<td><span class="base-price">16,065</span></td>
+				<td><span class="total-assets">16,080.79</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7471780007" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7471780007";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7471780007";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7471780007&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-1.74</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>14.55</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>59.92</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>105.02</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>111.91</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>110.72</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>67.61</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7243880002">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund6"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund6" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7243880002" data-ksd-fund-nm="TIGER 200 IT LEVERAGE" title="TIGER 200 IT LEVERAGE 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7243880002','TIGER 200 IT LEVERAGE');" title="상품상세 새창열림">TIGER 200 IT LEVERAGE</a></div>
+						<div class="item-code">(243880)</div>
+						</div>
+				</td>
+				<td><span class="base-price">70,940</span></td>
+				<td><span class="total-assets">70,735.19</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7243880002" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7243880002";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7243880002";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7243880002&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-12.70</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>14.35</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>147.29</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>267.80</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>224.14</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>127.43</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>243.47</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>713.58</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7105010003">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund7"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund7" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7105010003" data-ksd-fund-nm="TIGER Latin" title="TIGER Latin 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Emerging /etc</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Market index</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7105010003','TIGER Latin');" title="상품상세 새창열림">TIGER Latin</a></div>
+						<div class="item-code">(105010)</div>
+						</div>
+				</td>
+				<td><span class="base-price">5,595</span></td>
+				<td><span class="total-assets">5,602.59</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7105010003" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7105010003";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7105010003";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7105010003&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-0.96</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>13.06</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>22.04</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>23.83</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>38.45</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>64.72</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>39.39</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>57.92</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7364970004">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund8"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund8" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7364970004" data-ksd-fund-nm="TIGER BIO TOP10 ETF" title="TIGER BIO TOP10 ETF 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Theme</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7364970004','TIGER BIO TOP10 ETF');" title="상품상세 새창열림">TIGER BIO TOP10 ETF</a></div>
+						<div class="item-code">(364970)</div>
+						</div>
+				</td>
+				<td><span class="base-price">8,970</span></td>
+				<td><span class="total-assets">8,940.87</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7364970004" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7364970004";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7364970004";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7364970004&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>0.23</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>12.57</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>18.16</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>31.03</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>26.48</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>41.28</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>24.51</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-down"><span class="blind">하락</span>-9.85</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7476690003">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund9"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund9" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7476690003" data-ksd-fund-nm="TIGER GLOBAL OBESITY TREATMENT TOP 2 Plus ETF" title="TIGER GLOBAL OBESITY TREATMENT TOP 2 Plus ETF 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Global</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Theme</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7476690003','TIGER GLOBAL OBESITY TREATMENT TOP 2 Plus ETF');" title="상품상세 새창열림">TIGER GLOBAL OBESITY TREATMENT TOP 2 Plus ETF</a></div>
+						<div class="item-code">(476690)</div>
+						</div>
+				</td>
+				<td><span class="base-price">10,295</span></td>
+				<td><span class="total-assets">10,332.38</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7476690003" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7476690003";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7476690003";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7476690003&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>1.20</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>12.24</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>20.26</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>19.23</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>10.77</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>6.23</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>7.24</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7233160001">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund10"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund10" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7233160001" data-ksd-fund-nm="TIGER KOSDAQ150 LEVERAGE" title="TIGER KOSDAQ150 LEVERAGE 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Market index</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Mid/Small cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7233160001','TIGER KOSDAQ150 LEVERAGE');" title="상품상세 새창열림">TIGER KOSDAQ150 LEVERAGE</a></div>
+						<div class="item-code">(233160)</div>
+						</div>
+				</td>
+				<td><span class="base-price">12,405</span></td>
+				<td><span class="total-assets">12,386.04</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7233160001" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7233160001";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7233160001";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7233160001&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-5.44</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>12.03</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>40.30</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>81.43</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>65.73</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>65.85</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>79.40</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>27.32</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7307520007">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund11"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund11" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7307520007" data-ksd-fund-nm="TIGER HOLDINGS COMPANY" title="TIGER HOLDINGS COMPANY 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Theme</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7307520007','TIGER HOLDINGS COMPANY');" title="상품상세 새창열림">TIGER HOLDINGS COMPANY</a></div>
+						<div class="item-code">(307520)</div>
+						</div>
+				</td>
+				<td><span class="base-price">15,790</span></td>
+				<td><span class="total-assets">15,814.79</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7307520007" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7307520007";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7307520007";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7307520007&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-2.88</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>11.15</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>26.92</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>48.98</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>75.72</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>91.68</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>76.99</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>90.28</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7203780002">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund12"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund12" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7203780002" data-ksd-fund-nm=" TIGER NASDAQ BIO" title=" TIGER NASDAQ BIO 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">America</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7203780002',' TIGER NASDAQ BIO');" title="상품상세 새창열림"> TIGER NASDAQ BIO</a></div>
+						<div class="item-code">(203780)</div>
+						</div>
+				</td>
+				<td><span class="base-price">29,965</span></td>
+				<td><span class="total-assets">29,769.35</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7203780002" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7203780002";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7203780002";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7203780002&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>0.43</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>10.65</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>24.93</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>41.95</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>32.90</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>43.48</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>26.90</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>171.77</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7204480008">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund13"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund13" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7204480008" data-ksd-fund-nm="TIGER SYNTH-China A Leverage" title="TIGER SYNTH-China A Leverage 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">China</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Market index</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7204480008','TIGER SYNTH-China A Leverage');" title="상품상세 새창열림">TIGER SYNTH-China A Leverage</a></div>
+						<div class="item-code">(204480)</div>
+						</div>
+				</td>
+				<td><span class="base-price">25,520</span></td>
+				<td><span class="total-assets">25,775.92</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7204480008" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7204480008";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7204480008";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7204480008&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-2.93</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>10.50</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>30.85</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>56.84</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>43.76</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>42.74</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>29.64</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>164.21</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7139250005">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund14"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund14" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7139250005" data-ksd-fund-nm="TIGER 200 Energy" title="TIGER 200 Energy 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7139250005','TIGER 200 Energy');" title="상품상세 새창열림">TIGER 200 Energy</a></div>
+						<div class="item-code">(139250)</div>
+						</div>
+				</td>
+				<td><span class="base-price">14,050</span></td>
+				<td><span class="total-assets">14,045.41</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7139250005" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7139250005";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7139250005";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7139250005&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-5.21</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>10.38</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>28.43</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>62.05</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>54.16</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-down"><span class="blind">하락</span>-4.97</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>64.19</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>5.71</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7267770006">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund15"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund15" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7267770006" data-ksd-fund-nm="TIGER 200 FUTURES LEVERAGE" title="TIGER 200 FUTURES LEVERAGE 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Market index</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7267770006','TIGER 200 FUTURES LEVERAGE');" title="상품상세 새창열림">TIGER 200 FUTURES LEVERAGE</a></div>
+						<div class="item-code">(267770)</div>
+						</div>
+				</td>
+				<td><span class="base-price">29,255</span></td>
+				<td><span class="total-assets">29,272.16</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7267770006" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7267770006";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7267770006";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7267770006&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-8.64</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>10.23</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>74.23</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>157.01</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>181.66</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>182.50</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>201.95</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>213.09</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7123320004">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund16"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund16" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7123320004" data-ksd-fund-nm="TIGER Leverage" title="TIGER Leverage 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Market index</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7123320004','TIGER Leverage');" title="상품상세 새창열림">TIGER Leverage</a></div>
+						<div class="item-code">(123320)</div>
+						</div>
+				</td>
+				<td><span class="base-price">38,080</span></td>
+				<td><span class="total-assets">38,016.52</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7123320004" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7123320004";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7123320004";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7123320004&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-8.60</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>10.07</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>74.45</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>157.55</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>183.51</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>189.87</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>203.88</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>321.03</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7456680008">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund17"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund17" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7456680008" data-ksd-fund-nm="TIGER SYNTH-China EV LEVERAGE ETF" title="TIGER SYNTH-China EV LEVERAGE ETF 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">China</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7456680008','TIGER SYNTH-China EV LEVERAGE ETF');" title="상품상세 새창열림">TIGER SYNTH-China EV LEVERAGE ETF</a></div>
+						<div class="item-code">(456680)</div>
+						</div>
+				</td>
+				<td><span class="base-price">9,460</span></td>
+				<td><span class="total-assets">9,414.34</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7456680008" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7456680008";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7456680008";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7456680008&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-1.77</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>10.01</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>59.21</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>64.32</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>64.66</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>60.40</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>2.86</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7227540002">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund18"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund18" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7227540002" data-ksd-fund-nm="TIGER 200 HEALTH CARE" title="TIGER 200 HEALTH CARE 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7227540002','TIGER 200 HEALTH CARE');" title="상품상세 새창열림">TIGER 200 HEALTH CARE</a></div>
+						<div class="item-code">(227540)</div>
+						</div>
+				</td>
+				<td><span class="base-price">22,115</span></td>
+				<td><span class="total-assets">22,161.09</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7227540002" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7227540002";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7227540002";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7227540002&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-2.38</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>9.50</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>16.25</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>24.00</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>18.87</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>26.01</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>12.43</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+			</tr>
+		<tr data-tot-cnt="222" data-period-type="short"  data-ksd-fund="KR7494670003">
+				<!-- 하나의 데이타 -->
+				<!--   		통합검색에서는 체크박스가 빠짐 11.04 -->
+				<td>
+						<div class="item-check-box"><label for="cmprKsdFund19"  class="form-circle-box black large"><input type="checkbox" id="cmprKsdFund19" name="cmprPrdctKsdFund" onclick="return pGComparePrdct.setCompareProduct(this);" value="KR7494670003" data-ksd-fund-nm="TIGER Shipbuilding TOP 10" title="TIGER Shipbuilding TOP 10 선택하기"><span class="form-check-icon"><em class="blind">선택하기</em></span></label>
+						</div>
+					</td>
+				<!-- 통합검색에서는 체크박스가 빠짐 11.04-->
+				<td>
+					<div class="product-item">
+						<div class="item-cate">
+							<div class="label-group">
+								<div class="label-group-inner">
+									<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Domestic</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Equity</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Sector</div></div>
+										<div class="group-cell"><div class="label label-outline-whitegray label-size-middle">Large cap</div></div>
+										</div>
+							</div>
+						</div>
+						<div class="item-subject"><a href="javascript:cmmCtrl.getEtfDtlPop('KR7494670003','TIGER Shipbuilding TOP 10');" title="상품상세 새창열림">TIGER Shipbuilding TOP 10</a></div>
+						<div class="item-code">(494670)</div>
+						</div>
+				</td>
+				<td><span class="base-price">27,285</span></td>
+				<td><span class="total-assets">27,294.33</span></td>
+				<td><span class="character graph-img profit-line">
+		    <!-- 수익률그래프 -->
+		    <div id="smplLineChart_KR7494670003" class="wj-control wj-flexchart wj-treemap" style="width:120px;height:36px"></div>
+		    <div class="blind">
+			<table>
+				<caption>상품의 수익률추이를 위해 일자 및 기초지수 정보를 제공하는 수익률차트 테이블 표</caption>
+				<colgroup>
+					<col style="width:auto">
+					<col style="width:auto">
+				</colgroup>
+				<thead>
+				<tr>
+					<th>일자</th>
+					<th>기초지수</th>
+				</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//비동기 통신으로 데이터 조회
+				cmmCtrl.bscAjax(function(data){
+					var chartId = "#smplLineChart_KR7494670003";
+
+					if(data.rtnData != undefined && data.rtnData.length > 0)
+					{
+						var ksdFund = "KR7494670003";
+						getSmplLine(chartId, data.rtnData);
+
+						// 테이블 셋팅 0119
+						var table= $(chartId).next(".blind"), html;
+						data.rtnData.forEach(function(itm, idx){
+							html += "<tr><td>"+ itm.wkdateStr +"</td><td>"+ itm.jisu +"원 </td></tr>";
+						});
+
+						table.find("tbody").html(html);
+
+					}else{
+						$(chartId).html('해당기간 수익률 데이터가 없습니다');
+					}
+				}, contextPath + "/en/product/chart/prdct-profit-list.ajax?ksdFund=KR7494670003&strtDt=&endDt=&period=", "json", false)
+
+			})
+
+			//현업이 정해준 박스 색
+			function getSmplLine(chartId, data){
+				var simpleLineChart = new wijmo.chart.FlexChart(chartId, {
+					//차트 타입 설정
+					chartType: 'Area',
+					//y축 설정
+					axisY : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//x축 설정
+					axisX : {
+						labels:false,
+						axisLine : false,
+						majorGrid : false
+					},
+					//데이타 설정
+					series: [
+						//하나의 그래프 영역 시작
+						{
+							itemsSource: data, //실제 데이타 설정
+							binding: 'nav' ,
+							bindingX : 'wkdate',
+							style : {
+								stroke : 'rgba(214, 56, 56)', // 라인 색상 설정
+								strokeWidth : 2, // 라인 두께 설정
+								fill : 'rgba(255,0,0,0.1)' //심볼 배경 색상 설정
+							},
+							symbolSize : 0, //심볼 사이즈 설정
+							symbolStyle : {
+								strokeWidth : 0, //심볼 라인 두께 설정
+								fill : 'rgba(254,104,32,0.6)' //심볼 배경 색상 설정
+							}
+						},
+						// 하나의 그래프 영역 끝
+					],
+					plotMargin : 2, //그래프영역 마진값 설정
+					//툴팁 비활성화
+					tooltip : {
+						content : ""
+					}
+				});
+				$(simpleLineChart.hostElement).removeAttr('tabindex');
+
+				/* 20220126 수정 : svg 컨텐츠 초점 안잡히는 속성 추가 */
+				$(simpleLineChart.hostElement).find('> svg').attr({ 'tabindex' : -1 , 'aria-hidden' : 'true', 'role' : 'presentation' });
+			}
+		</script>
+	</span></td>
+				<!-- 1주 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-down"><span class="blind">하락</span>-0.74</span>
+				</td>
+				<!-- 1개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>9.27</span>
+				</td>
+				<!-- 3개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>24.49</span>
+				</td>
+				<!-- 6개월 -->
+				<td class="shortPeriod" style="display:">
+					<span class="color-up"><span class="blind">상승</span>56.73</span>
+				</td>
+
+				<!-- 1년 -->
+				<td class="longPeriod" style="display:none">
+
+					<span class="color-up"><span class="blind">상승</span>147.09</span>
+				</td>
+				<!-- 3년 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-none"><span class="blind">없음</span>-</span>
+				</td>
+				<!-- 연초이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>126.99</span>
+				</td>
+				<!-- 상장이후 -->
+				<td class="longPeriod" style="display:none">
+					<span class="color-up"><span class="blind">상승</span>185.26</span>
+				</td>
+			</tr>
+		

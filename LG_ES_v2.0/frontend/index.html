@@ -1,0 +1,3084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ES Contents Monitoring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* LG 톤앤매너 - gnb-logo 기준: #fff(흰색) + #000000(검정) / 악센트: #A50034, #BE0D3E / 보조: #9CA3AF, #CCD2D8, #FEEBF1 */
+    :root {
+      --lg-base-bg: #fff;
+      --lg-base-text: #000000;
+      --lg-accent: #A50034;
+      --lg-accent-hover: #BE0D3E;
+      --lg-border: #CCD2D8;
+      --gray-50: #FAFAFA;
+      --gray-100: #F5F5F5;
+      --gray-200: #EEEEEE;
+      --gray-300: #E0E0E0;
+      --gray-400: #BDBDBD;
+      --gray-500: #9E9E9E;
+      --gray-600: #757575;
+      --gray-700: #616161;
+      --gray-800: #424242;
+      --gray-900: #212121;
+      --red-50: #fa312e;
+      --red-100: #e00906;
+      --red-200: #c70805;
+      --red-muted: rgba(250,49,46,0.12);
+      --bg: #F0ECE4;
+      --bg-elevated: #FFFFFF;
+      --card: #FFFFFF;
+      --border: var(--gray-300);
+      --border-strong: var(--gray-400);
+      --text: var(--gray-900);
+      --text-secondary: var(--gray-700);
+      --lg-red: #A50034;
+      --lg-red-hover: var(--red-100);
+      --lg-red-muted: var(--red-muted);
+      --accent: var(--red-50);
+      --red: var(--red-200);
+      --radius-sm: 6px;
+      --top-bar-height: 120px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.5; }
+    .app-layout { display: flex; flex-direction: column; min-height: 100vh; background: #F0ECE4; }
+    .app-top-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 101; display: flex; flex-shrink: 0; align-items: stretch; height: var(--top-bar-height); min-height: var(--top-bar-height); }
+    .gnb-logo { width: 297px; height: var(--top-bar-height); min-height: var(--top-bar-height); flex-shrink: 0; padding: 0.25rem 1.25rem 0.75rem; display: flex; align-items: center; justify-content: flex-start; background: #F0ECE4; border-right: 1px solid #CCD2D8; box-sizing: border-box; }
+    .gnb-logo a { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 0.35rem; text-decoration: none; color: inherit; }
+    .gnb-logo img { height: 42px; width: auto; }
+    .app-top-bar .page-header { flex: 1; margin: 0; border-bottom: none; min-width: 0; height: var(--top-bar-height); min-height: var(--top-bar-height); display: flex; align-items: stretch; }
+    .app-top-bar .page-header .container { flex: 1; display: flex; flex-direction: column; justify-content: center; min-height: 0; overflow-y: auto; }
+    .app-top-bar .header-inner { border-bottom: none; }
+    .app-body { display: flex; flex: 1; min-height: 0; overflow: hidden; padding-left: 297px; padding-top: var(--top-bar-height); position: relative; }
+    .gnb-sidebar { position: fixed; left: 0; top: var(--top-bar-height); bottom: 0; width: 297px; z-index: 100; background: #F0ECE4; border-right: 1px solid #CCD2D8; border-top: 1px solid #CCD2D8; display: flex; flex-direction: column; overflow: hidden; }
+    .gnb-nav { flex: 1; padding: 0; min-height: 0; overflow-y: auto; }
+    .gnb-nav a { display: block; padding: 0.65rem 1.25rem; color: #000000; font-weight: 600; font-size: 1.0625rem; text-decoration: none; transition: background 0.2s, color 0.2s; background: #F0ECE4; border-bottom: 1px solid #CCD2D8; white-space: nowrap; position: relative; }
+    .gnb-nav a:hover { background: #FEEBF1; color: #000000; }
+    .gnb-nav a.active { background: #A50034; color: #fff; }
+    .gnb-nav a.active::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #000; z-index: 1; }
+    .gnb-user-profile { margin-top: auto; padding: 0.75rem 1rem; flex-shrink: 0; border-top: 1px solid var(--border); }
+    .gnb-user-profile-inner { display: flex; align-items: center; gap: 0.5rem; }
+    .gnb-user-avatar { width: 32px; height: 32px; border-radius: 50%; background: #E5E7EB; color: #6B7280; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 500; flex-shrink: 0; }
+    .gnb-user-info { min-width: 0; flex: 1; }
+    .gnb-user-name { font-weight: 500; font-size: 0.8125rem; color: var(--text); margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .gnb-user-account { font-size: 0.6875rem; color: var(--text-secondary); margin: 0.1rem 0 0; }
+    .gnb-user-profile-inner .gnb-profile-logout { flex-shrink: 0; padding: 0.25rem 0.5rem; font-size: 0.75rem; font-weight: 500; color: var(--text-secondary); background: none; border: none; border-radius: 4px; cursor: pointer; }
+    .gnb-user-profile-inner .gnb-profile-logout:hover { color: var(--text); background: var(--gray-100); }
+    .app-main { flex: 1; display: flex; flex-direction: column; min-width: 0; overflow: auto; }
+    .container { max-width: 1440px; margin: 0 auto; padding: 0 1.5rem; width: 100%; }
+    .page-header { position: sticky; top: 0; z-index: 100; background: var(--bg-elevated); border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+    .header-inner { padding: 0.5rem 0 0.6rem; border-bottom: 1px solid var(--border); }
+    .header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+    .page-title { margin: 0; font-size: 1.5rem; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 0.5rem; }
+    .page-title a { color: inherit; text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; }
+    .page-title a:hover { opacity: 0.9; }
+    .page-title-logo { height: 28px; width: auto; display: block; flex-shrink: 0; }
+    .header-global { display: flex; align-items: center; gap: 0.5rem; }
+    .nav-tabs-b2b2c { display: inline-flex; gap: 0.15rem; }
+    .nav-tabs-b2b2c a { padding: 0.4rem 0.75rem 0.5rem; border-radius: 0; text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.8125rem; border-bottom: none; margin-bottom: 0; display: inline-block; width: max-content; position: relative; }
+    .nav-tabs-b2b2c a:hover { color: var(--text); }
+    .nav-tabs-b2b2c a.active { color: var(--text); font-weight: 700; }
+    .nav-tabs-b2b2c a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--lg-red); }
+    .header-utils { position: relative; display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; border: none; padding: 0; box-shadow: none; }
+    .download-dropdown { display: none; position: absolute; top: 100%; right: 0; margin-top: 0.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem; min-width: 160px; z-index: 110; box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+    .header-utils.open .download-dropdown { display: block; }
+    .download-dropdown button { display: block; width: 100%; padding: 0.5rem 0.75rem; border: none; background: none; color: var(--text-secondary); font-size: 0.8125rem; text-align: left; cursor: pointer; border-radius: 4px; }
+    .download-dropdown button:hover { background: var(--gray-100); color: var(--text); }
+    .header-utils a, .header-utils button { background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: 0.35rem 0.5rem; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; font-size: inherit; font-family: inherit; text-decoration: none; }
+    .header-utils a:hover, .header-utils button:hover { color: var(--text); background: var(--gray-100); }
+    .header-link-tab { font-weight: 600; }
+    .header-row-2 { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; padding: 0.2rem 0 0; margin-top: 0.2rem; border-top: none; }
+    .nav-lv1 { display: inline-flex; gap: 0.2rem; margin-left: 0.5rem; }
+    .nav-lv1 a { padding: 0.4rem 0.8rem 0.5rem; border-radius: 0; text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.8125rem; border-bottom: none; margin-bottom: 0; display: inline-block; width: max-content; position: relative; }
+    .nav-lv1 a:hover { color: var(--text); }
+    .nav-lv1 a.active { color: var(--text); font-weight: 700; }
+    .nav-lv1 a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--lg-red); }
+    .header-filters { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .header-filters-line2 { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-left: auto; }
+    .header-row-3 { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; padding: 0.1rem 0 0; margin-top: 0.05rem; border-top: none; }
+    .header-filters-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-left: auto; }
+    .nav-lv2 { display: inline-flex; gap: 0.2rem; margin-left: 1rem; }
+    .nav-lv2 a { padding: 0.35rem 0.7rem 0.45rem; border-radius: 0; text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.75rem; border-bottom: none; margin-bottom: 0; display: inline-block; width: max-content; position: relative; }
+    .nav-lv2 a:hover { color: var(--text); }
+    .nav-lv2 a.active { color: var(--text); font-weight: 700; }
+    .nav-lv2 a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--lg-red); }
+    .filter-group { display: flex; align-items: center; gap: 0.5rem; }
+    .filter-group span { font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+    .filter-group select { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 0.45rem 0.65rem; border-radius: 6px; font-size: 0.8125rem; min-width: 100px; }
+    .multiselect-wrap { position: relative; }
+    .multiselect-btn { background: var(--card); border: 1px solid var(--border); color: var(--text-secondary); padding: 0.45rem 0.75rem; border-radius: 6px; font-size: 0.8125rem; font-weight: 600; cursor: pointer; min-width: 90px; }
+    .multiselect-btn:hover { background: var(--gray-100); color: var(--text); }
+    .multiselect-panel { display: none; position: absolute; top: 100%; left: 0; margin-top: 0.25rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.5rem; max-height: 220px; overflow-y: auto; z-index: 10; box-shadow: 0 4px 12px rgba(0,0,0,0.12); min-width: 160px; }
+    .multiselect-wrap.open .multiselect-panel { display: block; }
+    .multiselect-panel label { display: block; padding: 0.35rem 0.5rem; cursor: pointer; font-size: 0.8125rem; }
+    .multiselect-panel label:hover { background: var(--gray-100); }
+    .main-content { padding: 1.5rem 0 2rem; background: #F0ECE4; min-height: calc(100vh - 120px); width: 100%; }
+    .summary-dashboard-header { background: #fff; padding: 1rem 1.5rem; margin-bottom: 1rem; }
+    .summary-dashboard-title { text-align: center; margin: 0 0 1rem; font-size: 1.25rem; font-weight: 700; color: var(--text); }
+    .summary-dashboard-toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .summary-score-tabs { display: inline-flex; gap: 0; }
+    .summary-score-tabs a { padding: 0.5rem 1rem; font-weight: 600; font-size: 0.875rem; text-decoration: none; border: 1px solid var(--border); background: #fff; color: var(--text); }
+    .summary-score-tabs a:first-child { border-radius: 4px 0 0 4px; }
+    .summary-score-tabs a:last-child { border-radius: 0 4px 4px 0; border-left: none; }
+    .summary-score-tabs a:hover { background: var(--gray-100); }
+    .summary-score-tabs a.active { background: #A50034; color: #fff; border-color: #A50034; }
+    .summary-date-fields { display: flex; gap: 1.5rem; align-items: flex-end; flex-wrap: wrap; }
+    .summary-date-field { display: flex; flex-direction: column; gap: 0.25rem; }
+    .summary-date-field label { font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); }
+    .summary-date-field input { padding: 0.4rem 0.6rem; border: 1px solid var(--border); border-radius: 4px; background: #fff; color: var(--text); font-size: 0.875rem; min-width: 140px; }
+    .header-row-3 { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .header-date-fields { display: flex; gap: 1.5rem; align-items: flex-end; margin-left: auto; }
+    .page-header .summary-score-tabs--header { border: none; background: transparent; gap: 1.5rem; }
+    .page-header .summary-score-tabs--header a { color: #AAAAAA; background: transparent; border: none !important; border-radius: 0; text-decoration: none; padding-bottom: 0.5rem; }
+    .page-header .summary-score-tabs--header a:hover { color: #fff; }
+    .page-header .summary-score-tabs--header a.active { background: transparent; color: #FFFFFF; box-shadow: inset 0 -3px 0 0 #E42D42; }
+    .page-header .header-date-fields label { color: #9ca3af !important; }
+    .page-header .header-date-fields input { background: #1e2329 !important; border-color: rgba(255,255,255,0.2) !important; color: #f0f2f5 !important; }
+    .summary-view-panel { display: none; }
+    .summary-view-panel.active { display: block; }
+    .score-by-country-card { padding: 1.25rem; }
+    .score-by-country-layout { display: flex; gap: 1.5rem; min-height: 300px; }
+    .score-by-country-region-panel { width: 180px; flex-shrink: 0; }
+    .country-region-selector { display: flex; flex-direction: column; gap: 0.5rem; }
+    .country-region-btn { padding: 0.875rem 1.25rem; font-weight: 600; font-size: 0.9375rem; border-radius: 12px; border: 1px solid #DD829F; background: #fff; color: #333333; cursor: pointer; text-align: center; transition: background 0.2s, color 0.2s; }
+    .country-region-btn:hover { background: #FEEBF1; }
+    .country-region-btn.active { background: #FEEBF1; border-color: #DD829F; border-width: 2px; color: #CC3366; font-weight: 700; }
+    .score-by-country-chart-panel { flex: 1; min-width: 0; }
+    .country-filter-row { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.625rem; }
+    .country-filter-label { font-size: 0.9375rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+    .country-filter-select { padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 8px; font-size: 0.875rem; min-width: 160px; background: var(--card); color: var(--text); }
+    .score-by-country-chart-panel .chart-wrap { height: 320px; min-height: 280px; }
+    .summary-dashboard-layout { display: flex; gap: 2rem; padding: 0 1.5rem; min-height: calc(100vh - 220px); max-width: 100%; }
+.summary-dashboard-left { flex: 1; min-width: 0; }
+.summary-dashboard-right { width: 340px; flex-shrink: 0; }
+    .summary-perf-tab { background: #CCD2D8; color: #000000; padding: 0.5rem 1rem; font-weight: 600; font-size: 0.8125rem; margin-bottom: 1rem; display: inline-block; }
+    .summary-perf-tab.active { background: #A50034; color: #fff; }
+    .operational-summary-card { background: #fff; border: 1px solid #CCD2D8; border-radius: var(--radius-sm); overflow: hidden; }
+    .operational-summary-header { background: #CCD2D8; color: #000000; padding: 0.75rem 1rem; font-weight: 600; font-size: 0.875rem; display: flex; align-items: center; gap: 0.5rem; }
+    .operational-summary-body { padding: 1rem; }
+    .operational-summary-section { margin-bottom: 1rem; }
+    .operational-summary-section:last-child { margin-bottom: 0; }
+.operational-summary-section h4 { margin: 0 0 0.5rem; font-size: 0.875rem; font-weight: 700; color: var(--text); }
+.operational-summary-section ul { margin: 0; padding-left: 1.25rem; font-size: 0.875rem; line-height: 1.6; color: var(--text); }
+    .content-section { display: none; }
+    .content-section.active { display: block; }
+    .summary-sub-panel { display: none; }
+    .summary-sub-panel.active { display: block; }
+.card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.5rem; margin-bottom: 1.5rem; }
+.card-title { margin: 0 0 1rem; font-size: 1.125rem; font-weight: 600; color: var(--text); }
+    .summary-extra-card { padding: 1rem; }
+    .summary-table-section { padding: 0 1.5rem 2rem; }
+    .summary-table-filter-select { padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.875rem; min-width: 120px; background: var(--card); color: var(--text); }
+    .report-title-wrap { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .report-title-wrap .report-title-left { flex: 1; min-width: 0; }
+    .report-download-wrap { flex-shrink: 0; display: flex; align-items: center; gap: 0.5rem; }
+    .btn-secondary { padding: 0.3rem 0.6rem; font-size: 0.8125rem; font-weight: 500; color: var(--text-secondary); background: none; border: none; border-radius: 4px; cursor: pointer; }
+    .btn-secondary:hover { color: var(--text); background: var(--gray-100); }
+    .btn-primary { padding: 0.35rem 0.75rem; font-size: 0.8125rem; font-weight: 500; color: #fff; background: var(--lg-red); border: none; border-radius: 4px; cursor: pointer; }
+    .btn-primary:hover { background: var(--lg-accent-hover); }
+    .report-table-filter { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+    .report-table-filter label { font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+    .report-table-filter select { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 0.45rem 0.65rem; border-radius: 6px; font-size: 0.8125rem; min-width: 120px; }
+    .report-date { margin: 0; font-size: 0.875rem; color: var(--text-secondary); }
+    .loading { padding: 1rem; color: var(--text-secondary); }
+    .error { color: var(--red); padding: 0.75rem; font-size: 0.875rem; }
+    .board-list-wrap, .qna-list-wrap { margin-top: 1rem; }
+    .board-table .th-num { width: 4rem; text-align: center; }
+    .board-table .th-title { min-width: 10rem; }
+    .board-table .th-date { width: 6.5rem; text-align: center; }
+    .board-table .th-author { width: 6rem; text-align: center; }
+    .board-table .th-status { width: 4rem; text-align: center; }
+    .board-empty { padding: 1.5rem; text-align: center; color: var(--text-secondary); font-size: 0.875rem; margin: 0; }
+    .board-detail-wrap { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+    .board-detail-header { margin-bottom: 1rem; }
+    .board-detail-title { margin: 0 0 0.25rem; font-size: 1rem; font-weight: 600; }
+    .board-detail-date { font-size: 0.8125rem; color: var(--text-secondary); }
+    .board-detail-body { padding: 0.75rem 0; font-size: 0.875rem; line-height: 1.6; white-space: pre-wrap; word-break: break-word; }
+    .board-subtitle { margin: 0 0 0.75rem; font-size: 0.9375rem; font-weight: 600; }
+    .board-form .form-row { margin-bottom: 0.75rem; }
+    .board-form .form-row label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.25rem; }
+    .board-form .form-row input, .board-form .form-row textarea { width: 100%; max-width: 400px; padding: 0.5rem 0.65rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.875rem; background: var(--card); color: var(--text); }
+    .board-form .form-row textarea { min-height: 100px; resize: vertical; }
+    .board-form .btn-primary { margin-top: 0.5rem; }
+    .board-error { color: var(--red); font-size: 0.875rem; margin: 0.5rem 0 0; }
+    .board-success { color: var(--green, #0d7d4d); font-size: 0.875rem; margin: 0.5rem 0 0; }
+    .qna-write-wrap { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
+    .board-card-header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .board-card-header .card-title { margin: 0; }
+    .board-detail-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    .btn-danger { background: var(--red); color: #fff; border: 1px solid var(--red); padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.8125rem; font-weight: 600; cursor: pointer; }
+    .btn-danger:hover { opacity: 0.9; }
+    .notice-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+    .notice-modal-overlay.show { display: flex; }
+    .notice-modal { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; min-width: 360px; max-width: 90vw; width: 480px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .notice-modal h3 { margin: 0 0 1rem; font-size: 1rem; }
+    .notice-modal .form-row { margin-bottom: 0.75rem; }
+    .notice-modal .form-row label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.25rem; }
+    .notice-modal .form-row input, .notice-modal .form-row textarea { width: 100%; padding: 0.5rem 0.65rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.875rem; box-sizing: border-box; background: var(--card); color: var(--text); }
+    .notice-modal .form-row textarea { min-height: 120px; resize: vertical; }
+    .notice-modal-actions { margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; }
+    .rank-cell { font-weight: 600; }
+    .rank-cell.rank-up { color: #0d7d4d; }
+    .rank-cell.rank-down { color: var(--red); }
+    .rank-cell.rank-same { color: var(--text-secondary); }
+    .cell-clickable { cursor: pointer; }
+    .cell-clickable:hover { background: var(--gray-200) !important; }
+    .raw-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1001; align-items: center; justify-content: center; }
+    .raw-modal-overlay.show { display: flex; }
+    .raw-modal { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; max-width: 96vw; width: 900px; max-height: 85vh; display: flex; flex-direction: column; box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+    .raw-modal h3 { margin: 0 0 0.75rem; font-size: 1rem; flex-shrink: 0; }
+    .raw-modal .raw-modal-body { overflow: auto; flex: 1; min-height: 0; }
+    .raw-modal .raw-modal-body table { width: 100%; border-collapse: collapse; font-size: 0.75rem; }
+    .raw-modal .raw-modal-body th, .raw-modal .raw-modal-body td { border: 1px solid var(--border); padding: 0.35rem 0.5rem; text-align: left; }
+    .raw-modal .raw-modal-body th { background: var(--gray-100); font-weight: 600; white-space: nowrap; }
+    .raw-modal .raw-modal-body tbody tr:nth-child(even) td { background: var(--gray-50); }
+    .raw-modal .raw-modal-body td a { color: var(--lg-red); text-decoration: underline; word-break: break-all; }
+    .raw-modal .raw-modal-body td a:hover { color: var(--lg-red-hover); }
+    .raw-modal-actions { margin-top: 0.75rem; flex-shrink: 0; }
+    .sheet-empty-state { display: block; padding: 1.25rem; margin: 0.5rem 0; background: var(--gray-100); border: 1px dashed var(--gray-400); border-radius: var(--radius-sm); color: var(--text-secondary); font-size: 0.875rem; text-align: center; }
+    .sheet-empty-state::before { content: '∅ '; font-weight: 700; color: var(--gray-500); margin-right: 0.35rem; }
+    .summary-sheet-wrap { max-height: calc(100vh - 200px); min-height: 420px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--gray-50); }
+    .summary-sheet-table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+    .summary-sheet-table th, .summary-sheet-table td { border: 1px solid var(--border); padding: 0.5rem 0.6rem; text-align: left; vertical-align: middle; min-width: 5rem; max-width: 12rem; white-space: normal; word-break: break-word; line-height: 1.35; }
+    .summary-sheet-table thead { position: sticky; top: 0; z-index: 2; background: var(--card); box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    .summary-sheet-table th { background: var(--gray-100); color: var(--text); font-weight: 600; font-size: 0.75rem; white-space: nowrap; }
+    .blog-panel-toolbar { display: flex; align-items: center; gap: 0.75rem; justify-content: flex-end; margin-bottom: 0.75rem; }
+    .blog-filter-label { font-size: 0.875rem; font-weight: 500; color: var(--text-secondary); }
+    .blog-sheet-table th { background: #4B5563; color: #fff; }
+    .blog-sheet-table td a { color: var(--lg-red); text-decoration: underline; }
+    .blog-sheet-table td a:hover { color: var(--lg-accent-hover); }
+    .summary-sheet-table tbody tr:nth-child(even) td { background: var(--gray-50); }
+    .summary-sheet-table tbody tr:hover td { background: var(--gray-100); }
+.chart-wrap { height: 320px; min-height: 280px; }
+.charts-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.chart-half { flex: 1; min-width: 340px; }
+.chart-half .chart-wrap { height: 320px; min-height: 280px; }
+    /* Score summary: card section */
+.score-summary { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.875rem; margin-bottom: 1.25rem; }
+.score-summary-item { display: flex; flex-direction: column; gap: 0.35rem; background: #fff; border: 1px solid #DD829F; border-radius: 12px; padding: 1rem 1.25rem; min-height: 4rem; justify-content: center; align-items: center; text-align: center; }
+.score-summary-item .label { font-size: 0.8125rem; color: #333333; font-weight: 500; line-height: 1.35; }
+.score-summary-item .value { font-size: 1.0625rem; font-weight: 700; color: var(--text); }
+.score-summary-item--primary { border-color: #DD829F; background: #fff; }
+.score-summary-item--primary .label { color: #333333; }
+.score-summary-item--primary .value { font-size: 1.375rem; font-weight: 700; color: #CC3366; }
+.chart-subtitle { margin: 0 0 0.625rem; font-size: 0.9375rem; font-weight: 600; color: var(--text-secondary); }
+    .table-wrap { overflow-x: auto; }
+    table.data-table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+    table.data-table th, table.data-table td { border: 1px solid var(--border); padding: 0.4rem 0.5rem; }
+    table.data-table th { background: var(--gray-100); color: var(--text); font-weight: 600; }
+    table.data-table tbody tr:nth-child(even) td { background: var(--gray-50); }
+    table.data-table tbody tr:hover td { background: var(--gray-100); }
+    table.summary-report-table { table-layout: fixed; width: 100%; }
+    table.summary-report-table th { white-space: normal; word-wrap: break-word; line-height: 1.25; min-height: 2.5em; vertical-align: middle; }
+    table.summary-report-table th.th-nowrap { white-space: nowrap; }
+    table.summary-report-table th.th-two-line { white-space: pre-line; }
+    table.summary-report-table td { word-wrap: break-word; }
+    table.summary-report-table td.num { white-space: nowrap; }
+    .th-dark { background: var(--gray-100) !important; color: var(--text) !important; }
+    .th-blue { background: var(--lg-red-muted) !important; color: var(--text) !important; }
+    .data-table th.sortable { cursor: pointer; user-select: none; padding-right: 1.25rem; position: relative; }
+    .data-table th.sortable:hover { opacity: 0.9; }
+    .data-table th .sort-indicator { position: absolute; right: 0.35rem; top: 50%; transform: translateY(-50%); font-size: 0.65rem; opacity: 0.6; }
+    .data-table th.sort-asc .sort-indicator::after { content: '▲'; }
+    .data-table th.sort-desc .sort-indicator::after { content: '▼'; }
+    .num { text-align: right; }
+    /* Monitoring Detail: screenshot slide */
+    .monitoring-detail-content { padding: 0.5rem 0; }
+    .monitoring-detail-content .card-title { margin-bottom: 0.25rem; font-size: 1.25rem; font-weight: 700; }
+    .monitoring-detail-subtitle { color: var(--text-secondary); font-size: 0.875rem; margin: 0 0 1rem; }
+    .monitoring-detail-image-wrap { max-width: 100%; margin-top: 1rem; }
+    .monitoring-detail-image { max-width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); display: block; }
+    .checklist-month-row { margin-bottom: 0.75rem; }
+    .checklist-month-row label { margin-right: 0.5rem; }
+
+    /* Header: dark mode */
+    .page-header {
+      background: #181c22 !important;
+      border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+      box-shadow: none !important;
+    }
+    .page-header .header-inner { border-bottom-color: rgba(255,255,255,0.1) !important; }
+    .page-header .page-title { color: #f0f2f5 !important; }
+    .page-header .header-utils {
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    .page-header .header-utils a,
+    .page-header .header-utils button { color: #9ca3af !important; }
+    .page-header .header-utils a:hover,
+    .page-header .header-utils button:hover { color: #f0f2f5 !important; background: rgba(255,255,255,0.06) !important; }
+    .page-header .nav-tabs-b2b2c a { color: #9ca3af !important; }
+    .page-header .nav-tabs-b2b2c a:hover { color: #f0f2f5 !important; }
+    .page-header .nav-tabs-b2b2c a.active { color: #f0f2f5 !important; }
+    .page-header .nav-tabs-b2b2c a.active::after { background: #C41E3A !important; }
+    .page-header .nav-lv1 a,
+    .page-header .nav-lv2 a { color: #9ca3af !important; }
+    .page-header .nav-lv1 a:hover,
+    .page-header .nav-lv2 a:hover { color: #f0f2f5 !important; }
+    .page-header .nav-lv1 a.active,
+    .page-header .nav-lv2 a.active { color: #f0f2f5 !important; }
+    .page-header .nav-lv1 a.active::after,
+    .page-header .nav-lv2 a.active::after { background: #C41E3A !important; }
+    .page-header .filter-group span { color: #9ca3af !important; }
+    .page-header .filter-group select {
+      background: #1e2329 !important;
+      border-color: rgba(255,255,255,0.1) !important;
+      color: #9ca3af !important;
+    }
+    .page-header .multiselect-btn {
+      background: #1e2329 !important;
+      border-color: rgba(255,255,255,0.1) !important;
+      color: #9ca3af !important;
+    }
+    .page-header .multiselect-btn:hover { background: #181c22 !important; color: #f0f2f5 !important; }
+    .page-header .multiselect-panel {
+      background: #1e2329 !important;
+      border-color: rgba(255,255,255,0.1) !important;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4) !important;
+      color: #e0e0e0 !important;
+    }
+    .page-header .multiselect-panel label { color: #e0e0e0 !important; }
+    .page-header .multiselect-panel label:hover { background: rgba(255,255,255,0.06) !important; }
+    .multiselect-panel-actions { display: flex; gap: 0.25rem; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); flex-shrink: 0; }
+    .page-header .multiselect-panel .multiselect-panel-actions { border-bottom-color: rgba(255,255,255,0.1); }
+    .multiselect-panel-actions button { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.06); color: #9ca3af; cursor: pointer; }
+    .multiselect-panel-actions button:hover { background: rgba(255,255,255,0.1); color: #f0f2f5; }
+    .multiselect-panel-actions button svg { width: 14px; height: 14px; display: block; }
+    .page-header .multiselect-panel .multiselect-panel-actions button { background: rgba(255,255,255,0.06); color: #9ca3af; border-color: rgba(255,255,255,0.2); }
+    .page-header .multiselect-panel .multiselect-panel-actions button:hover { background: rgba(255,255,255,0.1); color: #f0f2f5; }
+    /* Admin user management */
+    .nav-lv1-sub a { font-size: 0.8125rem; }
+    .admin-users-add-form { margin-bottom: 1.25rem; padding: 1rem; background: var(--gray-50); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+    .admin-users-add-title { margin: 0 0 0.75rem; font-size: 0.9375rem; font-weight: 600; color: var(--text); }
+    .admin-users-add-row { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .admin-users-add-row label { font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+    .admin-users-add-row input, .admin-users-add-row select { padding: 0.45rem 0.65rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.8125rem; }
+    .admin-users-add-row input[type="email"] { min-width: 200px; }
+    .admin-users-add-row input[type="password"] { min-width: 120px; }
+    .admin-users-add-row .btn-add-user { padding: 0.45rem 0.9rem; background: var(--lg-red); color: #fff; border: none; border-radius: 6px; font-size: 0.8125rem; font-weight: 600; cursor: pointer; }
+    .admin-users-add-row .btn-add-user:hover { background: var(--lg-red-hover); }
+    .admin-users-add-error { margin: 0.5rem 0 0; font-size: 0.8125rem; color: var(--red); }
+    .admin-users-toolbar { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .admin-users-toolbar .btn-refresh { padding: 0.45rem 0.75rem; background: var(--lg-red); color: #fff; border: none; border-radius: 6px; font-size: 0.8125rem; font-weight: 600; cursor: pointer; }
+    .admin-users-toolbar .btn-refresh:hover { background: var(--lg-red-hover); }
+    .admin-users-table .btn-role, .admin-users-table .btn-active { padding: 0.25rem 0.5rem; margin: 0 0.2rem; font-size: 0.75rem; border-radius: 4px; cursor: pointer; border: 1px solid var(--border); background: var(--gray-100); color: var(--text); }
+    .admin-users-table .btn-role:hover, .admin-users-table .btn-active:hover, .admin-users-table .btn-pw:hover, .admin-users-table .btn-delete:hover { background: var(--gray-200); }
+    .admin-users-table .btn-pw { padding: 0.25rem 0.5rem; margin: 0 0.2rem; font-size: 0.75rem; border-radius: 4px; cursor: pointer; border: 1px solid var(--border); background: var(--gray-100); color: var(--text); }
+    .admin-users-table .btn-delete { padding: 0.25rem 0.5rem; margin: 0 0.2rem; font-size: 0.75rem; border-radius: 4px; cursor: pointer; border: 1px solid var(--border); background: #ffebee; color: #c62828; }
+    .admin-users-table .badge { display: inline-block; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; }
+    .admin-users-table .badge-admin { background: var(--lg-red-muted); color: var(--red-100); }
+    .admin-users-table .badge-user { background: var(--gray-200); color: var(--gray-700); }
+    .admin-users-table .badge-active { background: #e8f5e9; color: #2e7d32; }
+    .admin-users-table .badge-inactive { background: #ffebee; color: #c62828; }
+    .admin-sub-nav { margin-bottom: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }
+    .admin-sub-panel { display: none; }
+    .admin-sub-panel.active { display: block; }
+    .admin-usage-section { margin-bottom: 1.5rem; }
+    .admin-usage-section .card-title { margin: 0 0 0.75rem; font-size: 1rem; }
+    .admin-usage-section .table-wrap { overflow-x: auto; }
+    .admin-usage-section .data-table { font-size: 0.8125rem; }
+    .admin-usage-empty { padding: 1rem; color: var(--text-secondary); font-size: 0.875rem; text-align: center; }
+    .pw-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+    .pw-modal-overlay.show { display: flex; }
+    .pw-modal { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; min-width: 320px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+    .pw-modal h3 { margin: 0 0 1rem; font-size: 1rem; }
+    .pw-modal label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.35rem; }
+    .pw-modal input { width: 100%; padding: 0.5rem 0.65rem; border: 1px solid var(--border); border-radius: 6px; font-size: 0.875rem; box-sizing: border-box; }
+    .pw-modal .pw-modal-actions { margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; }
+    .pw-modal .pw-modal-actions button { padding: 0.45rem 0.9rem; border-radius: 6px; font-size: 0.8125rem; font-weight: 600; cursor: pointer; border: 1px solid var(--border); background: var(--gray-100); }
+    .pw-modal .pw-modal-actions button.btn-confirm { background: var(--lg-red); color: #fff; border-color: var(--lg-red); }
+    .pw-modal .pw-modal-actions button.btn-confirm:hover { background: var(--lg-red-hover); }
+    .pw-modal .pw-modal-error { margin-top: 0.5rem; font-size: 0.8125rem; color: var(--red); display: none; }
+    .pw-modal .pw-modal-error.show { display: block; }
+    .page-header .nav-lv1-sub a { color: #9ca3af !important; }
+    .page-header .nav-lv1-sub a:hover { color: #f0f2f5 !important; }
+    .page-header .nav-lv1-sub a.active { color: #f0f2f5 !important; }
+    .header-link-admin { padding: 0.35rem 0.5rem; margin-right: 0.25rem; color: #9ca3af; font-size: 0.8125rem; font-weight: 600; text-decoration: none; border-radius: 4px; }
+    .header-link-admin:hover { color: #f0f2f5; background: rgba(255,255,255,0.06); }
+    .header-link-admin.active { color: #f0f2f5; background: rgba(255,255,255,0.08); }
+    .page-header .header-global { display: flex; align-items: center; gap: 0.25rem; }
+    /* Web dashboard: responsive main content */
+    @media (max-width: 1100px) {
+      .summary-dashboard-layout { flex-direction: column; min-height: auto; }
+      .summary-dashboard-right { width: 100%; max-width: 100%; }
+    }
+    @media (max-width: 768px) {
+      .chart-half { min-width: 100%; }
+      .chart-wrap, .chart-half .chart-wrap { height: 280px; }
+      .score-summary { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="apiBanner" style="display:none; margin:1rem 1.5rem; padding:1rem; background:#c2410c; color:#fff; border-radius:8px;">
+    <strong>Opened as file.</strong> Open via server URL to view data →
+    <a id="apiBannerLink" href="#" style="color:#fff; font-weight:700;">Click here</a>
+    <span id="apiBannerUrl"></span>
+  </div>
+  <div class="app-layout">
+    <div class="app-top-bar">
+      <div class="gnb-logo"><a href="#" id="linkToHome" title="Go to home"><img src="assets/images/lg-logo.svg" alt="LG" /></a></div>
+      <header class="page-header" style="flex:1;">
+        <div class="container header-inner">
+          <div class="header-row">
+            <h1 class="page-title" id="pageTitle">ES Content Monitoring DashBoard</h1>
+            <div class="header-global">
+              <a href="#" id="tabPageAdminUsers" class="header-link-admin" style="display:none;">User Management</a>
+              <div class="header-utils" id="headerUtilsWrap">
+                <a href="/login" id="linkLogin" class="header-link-tab">Login</a>
+              </div>
+            </div>
+          </div>
+          <div id="hiddenFilters" style="display:none;">
+            <select id="yearB2B"></select>
+            <select id="monthB2B"></select>
+            <select id="weekB2B"><option value="">All</option></select>
+            <div id="regionB2BWrap"><button type="button" id="regionB2BBtn">All</button><div id="regionB2BPanel"></div></div>
+            <div id="countryB2BWrap"><button type="button" id="countryB2BBtn">All</button><div id="countryB2BPanel"></div></div>
+          </div>
+          <div class="header-row-3" id="summarySubRow">
+            <nav class="nav-lv1" style="display:none;" id="legacyNavLv1" aria-hidden="true">
+              <a href="#" id="tabSummary" class="active">Summary</a>
+              <a href="#" id="tabInfo">INFO</a>
+            </nav>
+            <nav class="nav-lv2" id="subNavSummary" style="display:none;">
+              <a href="#" id="tabScoreByRegion" class="active">Score by Region</a>
+              <a href="#" id="tabScoreByCountry">Score by Country</a>
+            </nav>
+            <nav class="nav-lv2" id="subNavB2C" style="display:none;">
+              <a href="#" id="tabB2CAll" class="active">All</a>
+              <a href="#" id="tabB2CFeatureCard">Feature Card</a>
+              <a href="#" id="tabB2C360">360</a>
+              <a href="#" id="tabB2CGnbStructure">GNB Structure</a>
+            </nav>
+            <nav class="nav-lv2" id="subNavB2B" style="display:none;">
+              <a href="#" id="tabB2BAll" class="active">All</a>
+              <a href="#" id="tabB2BBlog">blog</a>
+              <a href="#" id="tabB2BNewContents">New Contents</a>
+              <a href="#" id="tabB2BContentsError">Contents Error</a>
+            </nav>
+            <nav class="nav-lv1" id="subNavInfo" style="display:none;">
+              <a href="#" id="tabNotice" class="active">Notice</a>
+              <a href="#" id="tabQna">Q&amp;A</a>
+            </nav>
+            <div class="header-date-fields" id="headerDateFields">
+              <div class="summary-date-field" id="reportDateField">
+                <label>Report Date</label>
+                <input type="text" id="reportDate1" readonly value="" placeholder="YYYY.MM.DD(Wn)" />
+              </div>
+              <div class="summary-date-field">
+                <label>last updated</label>
+                <input type="text" id="lastUpdated" readonly value="" placeholder="YYYY.MM.DD(Wn)" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="app-body">
+      <aside class="gnb-sidebar">
+        <nav class="gnb-nav">
+          <a href="#" id="gnbMonitoringItem">Monitoring Item</a>
+          <a href="#" id="gnbSummary" class="active">Summary Dashboard</a>
+          <a href="#" id="gnbB2C">B2C Dashboard</a>
+          <a href="#" id="gnbB2B">B2B Dashboard</a>
+          <a href="#" id="gnbFaq">FAQ</a>
+        </nav>
+        <div class="gnb-user-profile">
+          <div class="gnb-user-profile-inner">
+            <div class="gnb-user-avatar" id="gnbUserAvatar">--</div>
+            <div class="gnb-user-info">
+              <p class="gnb-user-name" id="gnbUserName">-</p>
+              <p class="gnb-user-account" id="gnbUserAccount">User</p>
+            </div>
+            <button type="button" id="btnLogoutSidebar" class="gnb-profile-logout" title="Logout" aria-label="Logout">Logout</button>
+          </div>
+        </div>
+      </aside>
+  <main class="app-main">
+  <div class="container main-content">
+    <div id="contentMonitoringItem" class="content-section">
+      <div class="card">
+        <p class="board-empty" style="color:var(--text-secondary);">자료 업데이트 예정입니다.</p>
+      </div>
+    </div>
+    <div id="contentSummary" class="content-section active">
+      <div class="summary-dashboard-layout">
+        <div class="summary-dashboard-left">
+      <div id="summaryPanelDashboard" class="summary-sub-panel active">
+        <div id="dashboardB2B" class="dashboard-panel active">
+          <div id="panelScoreByRegion" class="summary-view-panel active">
+          <div class="card">
+            <h2 class="card-title" id="dashboardScoreTitle">Average Total Score by Region (B2B)</h2>
+            <div id="scoreSummaryB2B" class="score-summary"></div>
+            <div class="charts-row">
+              <div class="chart-half">
+                <h3 class="chart-subtitle">Average SEO & Content Items by Region</h3>
+                <div class="chart-wrap"><canvas id="chartScoreByRegion"></canvas></div>
+              </div>
+              <div class="chart-half">
+                <h3 class="chart-subtitle" id="chartTotalVsJulTitle">Total Score by Region (Last 3 Months)</h3>
+                <div class="chart-wrap"><canvas id="chartTotalVsJul"></canvas></div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div id="panelScoreByCountry" class="summary-view-panel">
+          <div class="card score-by-country-card">
+            <div class="score-by-country-layout">
+              <div class="score-by-country-region-panel">
+                <div id="countryRegionSelector" class="country-region-selector"></div>
+              </div>
+              <div class="score-by-country-chart-panel">
+                <div class="country-filter-row">
+                  <label for="countryFilterSelect" class="country-filter-label">Country</label>
+                  <select id="countryFilterSelect" class="country-filter-select">
+                    <option value="">All</option>
+                  </select>
+                </div>
+                <div class="chart-wrap"><canvas id="chartScoreByCountry"></canvas></div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+        </div>
+        <div class="summary-dashboard-right" id="operationalSummaryWrap">
+          <div class="operational-summary-card">
+            <div class="operational-summary-header">Operational Summary</div>
+            <div class="operational-summary-body">
+              <div class="operational-summary-section">
+                <h4>Top Performers (Based on Total Score)</h4>
+                <div id="topPerformersList" class="score-summary" style="grid-template-columns: repeat(2, 1fr);"></div>
+              </div>
+              <div class="operational-summary-section">
+                <h4>Strengths</h4>
+                <ul id="strengthsList"></ul>
+              </div>
+              <div class="operational-summary-section">
+                <h4>Weaknesses</h4>
+                <ul id="weaknessesList"></ul>
+              </div>
+              <div class="operational-summary-section">
+                <h4>Action Plan</h4>
+                <ul id="actionPlanList"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="summaryTableSection" class="summary-table-section" style="display:none;">
+        <div class="card summary-report-card">
+          <div class="report-title-wrap">
+            <div class="report-title-left">
+              <select id="tableScoreFilterB2B" class="summary-table-filter-select">
+                <option value="">All</option>
+                <option value="bottom30">Bottom 30%</option>
+              </select>
+            </div>
+            <div class="report-download-wrap">
+              <button type="button" id="btnRawData" class="btn-secondary">Raw data</button>
+              <button type="button" id="btnFeatureCard" class="btn-secondary" style="display:none;">Feature Card</button>
+              <button type="button" id="btnGnbStructure" class="btn-secondary" style="display:none;">GNB Structure</button>
+            </div>
+          </div>
+          <div id="tableLoadingB2B" class="loading" style="display:none;">Loading…</div>
+          <p id="tableErrorB2B" class="error" style="display:none;"></p>
+          <div class="table-wrap summary-sheet-wrap">
+            <table class="summary-report-table data-table" id="tableSummaryB2B">
+              <colgroup id="tableSummaryColgroup"></colgroup>
+              <thead><tr id="tableSummaryHeadRow"></tr></thead>
+              <tbody id="tableBodyB2B"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div id="rawDataModalOverlay" class="raw-modal-overlay" aria-hidden="true">
+        <div class="raw-modal">
+          <h3 id="rawDataModalTitle">Raw data</h3>
+          <div class="raw-modal-body">
+            <div id="rawDataModalLoading" class="loading" style="display:none;">Loading…</div>
+            <div id="rawDataModalTableWrap" class="table-wrap" style="display:none; overflow:auto;"><table class="data-table" id="rawDataModalTable"><thead id="rawDataModalThead"></thead><tbody id="rawDataModalTbody"></tbody></table></div>
+            <p id="rawDataModalEmpty" class="admin-usage-empty" style="display:none;">No raw rows for this selection.</p>
+          </div>
+          <div class="raw-modal-actions">
+            <button type="button" id="rawDataModalClose" class="btn-secondary">Close</button>
+          </div>
+        </div>
+      </div>
+      <div id="summaryPanelPlp" class="summary-sub-panel">
+        <div class="card summary-extra-card">
+          <h3 class="card-title">PLP_BUSINESS</h3>
+          <div id="sheetPlpLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="sheetPlpError" class="error" style="display:none;"></div>
+          <div id="sheetPlpWrap" class="table-wrap summary-sheet-wrap" style="display:none;">
+            <table class="summary-sheet-table"><thead><tr id="sheetPlpHead"></tr></thead><tbody id="sheetPlpBody"></tbody></table>
+          </div>
+        </div>
+      </div>
+      <div id="summaryPanelProductCategory" class="summary-sub-panel">
+        <div class="card summary-extra-card">
+          <h3 class="card-title">Product Category</h3>
+          <div id="sheetProductCategoryLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="sheetProductCategoryError" class="error" style="display:none;"></div>
+          <div id="sheetProductCategoryWrap" class="table-wrap summary-sheet-wrap" style="display:none;">
+            <table class="summary-sheet-table"><thead><tr id="sheetProductCategoryHead"></tr></thead><tbody id="sheetProductCategoryBody"></tbody></table>
+          </div>
+        </div>
+      </div>
+      <div id="summaryPanelBlog" class="summary-sub-panel">
+        <div class="card summary-extra-card blog-panel-card">
+          <div class="blog-panel-toolbar">
+            <label for="blogCountryFilter" class="blog-filter-label">Country</label>
+            <select id="blogCountryFilter" class="country-filter-select">
+              <option value="">All</option>
+            </select>
+            <button type="button" id="btnBlogDownload" class="btn-secondary">Download</button>
+          </div>
+          <div id="sheetBlogLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="sheetBlogError" class="error" style="display:none;"></div>
+          <div id="sheetBlogWrap" class="table-wrap summary-sheet-wrap blog-sheet-wrap" style="display:none;">
+            <table class="summary-sheet-table blog-sheet-table"><thead><tr id="sheetBlogHead"></tr></thead><tbody id="sheetBlogBody"></tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contentNotice" class="content-section">
+      <div class="card">
+        <div class="board-card-header">
+          <h2 class="card-title">Notice</h2>
+          <button type="button" id="noticeWriteBtn" class="btn-primary" style="display:none;">New Notice</button>
+        </div>
+        <div id="noticeLoading" class="loading" style="display:none;">Loading…</div>
+        <div id="noticeError" class="error" style="display:none;"></div>
+        <div id="noticeListWrap" class="board-list-wrap">
+          <table class="data-table board-table" id="noticeTable">
+            <thead>
+              <tr>
+                <th class="th-num">No.</th>
+                <th class="th-title">Title</th>
+                <th class="th-date">Date</th>
+              </tr>
+            </thead>
+            <tbody id="noticeTableBody"></tbody>
+          </table>
+          <p id="noticeEmpty" class="board-empty" style="display:none;">No notices yet.</p>
+        </div>
+        <div id="noticeDetailWrap" class="board-detail-wrap" style="display:none;">
+          <div class="board-detail-header">
+            <h3 id="noticeDetailTitle" class="board-detail-title"></h3>
+            <span id="noticeDetailDate" class="board-detail-date"></span>
+          </div>
+          <div id="noticeDetailBody" class="board-detail-body"></div>
+          <div class="board-detail-actions">
+            <button type="button" id="noticeDetailBack" class="btn-secondary">List</button>
+            <button type="button" id="noticeDetailDelete" class="btn-danger" style="display:none;">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div id="noticeWriteModalOverlay" class="notice-modal-overlay">
+        <div class="notice-modal">
+          <h3>New Notice</h3>
+          <div class="form-row">
+            <label for="noticeWriteTitle">Title</label>
+            <input type="text" id="noticeWriteTitle" placeholder="Title" maxlength="200" />
+          </div>
+          <div class="form-row">
+            <label for="noticeWriteBody">Content</label>
+            <textarea id="noticeWriteBody" rows="6" placeholder="Enter content"></textarea>
+          </div>
+          <p id="noticeWriteError" class="board-error" style="display:none;"></p>
+          <div class="notice-modal-actions">
+            <button type="button" id="noticeWriteCancel" class="btn-secondary">Cancel</button>
+            <button type="button" id="noticeWriteSubmit" class="btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contentQna" class="content-section">
+      <div class="card">
+        <h2 class="card-title">Q&amp;A</h2>
+        <p class="board-desc" style="color:var(--text-secondary); font-size:0.875rem; margin:0 0 1rem;">Leave a question and we will reply after review.</p>
+        <div class="qna-write-wrap" id="qnaWriteWrap">
+          <h3 class="board-subtitle">Ask a question</h3>
+          <div class="board-form">
+            <div class="form-row">
+              <label for="qnaAuthor">Name</label>
+              <input type="text" id="qnaAuthor" placeholder="Name" maxlength="50" />
+            </div>
+            <div class="form-row">
+              <label for="qnaEmail">Email</label>
+              <input type="email" id="qnaEmail" placeholder="email@example.com" />
+            </div>
+            <div class="form-row">
+              <label for="qnaSubject">Subject</label>
+              <input type="text" id="qnaSubject" placeholder="Subject" maxlength="200" />
+            </div>
+            <div class="form-row">
+              <label for="qnaContent">Content</label>
+              <textarea id="qnaContent" rows="5" placeholder="Enter your question"></textarea>
+            </div>
+            <button type="button" id="qnaSubmitBtn" class="btn-primary">Submit</button>
+          </div>
+          <p id="qnaSubmitError" class="board-error" style="display:none;"></p>
+          <p id="qnaSubmitSuccess" class="board-success" style="display:none;">Your question has been submitted. We will reply after review.</p>
+        </div>
+        <div class="qna-list-wrap" id="qnaListWrap">
+          <h3 class="board-subtitle">Q&amp;A List</h3>
+          <div id="qnaLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="qnaError" class="error" style="display:none;"></div>
+          <table class="data-table board-table" id="qnaTable">
+            <thead>
+              <tr>
+                <th class="th-num">No.</th>
+                <th class="th-title">Subject</th>
+                <th class="th-author">Author</th>
+                <th class="th-date">Date</th>
+                <th class="th-status">Reply</th>
+              </tr>
+            </thead>
+            <tbody id="qnaTableBody"></tbody>
+          </table>
+          <p id="qnaEmpty" class="board-empty" style="display:none;">No questions yet.</p>
+        </div>
+      </div>
+    </div>
+    <div id="contentMonitoringDetail" class="content-section">
+      <div class="card monitoring-detail-content">
+        <h2 class="card-title">LG.com B2B Monitoring items in detail</h2>
+        <p class="monitoring-detail-subtitle">LGE Internal Use Only · 5 SEO items + 2 content basic items</p>
+        <div class="monitoring-detail-image-wrap">
+          <img src="assets/images/monitoring-detail.png" alt="LG.com B2B Monitoring items in detail - Title, Description, H1, Canonical, Alt text, Product Category, Blog" class="monitoring-detail-image" id="monitoringDetailImg" />
+        </div>
+      </div>
+    </div>
+    <div id="contentChecklist" class="content-section">
+      <div class="card">
+        <h2 class="card-title">Checklist & Criteria</h2>
+        <div class="checklist-month-row">
+          <label>Report month:</label>
+          <select id="monthChecklist"><option value="">B2B Latest</option></select>
+        </div>
+        <div id="checklistLoading" class="loading" style="display:none;">Loading…</div>
+        <div id="checklistError" class="error" style="display:none;"></div>
+        <div id="checklistTableWrap" style="display:none;">
+          <table class="data-table" id="checklistTable"><tbody id="checklistTableBody"></tbody></table>
+        </div>
+      </div>
+    </div>
+    <!-- Admin: User management + Usage & Logs -->
+    <div id="contentAdminUsers" class="content-section">
+      <nav class="nav-lv2 admin-sub-nav" id="adminSubNav">
+        <a href="#" id="tabAdminUsers" class="active">Users</a>
+        <a href="#" id="tabAdminUsageLogs">Usage & Logs</a>
+      </nav>
+      <div id="adminPanelUsers" class="admin-sub-panel active">
+      <div class="card">
+        <h2 class="card-title">User Management</h2>
+        <p class="admin-users-desc" style="color:var(--text-secondary); font-size:0.875rem; margin:0 0 1rem;">Change roles, activate/deactivate accounts, change password, delete accounts</p>
+        <div class="admin-users-add-form" id="adminUsersAddForm">
+          <h3 class="admin-users-add-title">Add new user</h3>
+          <div class="admin-users-add-row">
+            <label for="adminAddEmail">Email</label>
+            <input type="email" id="adminAddEmail" placeholder="user@example.com" autocomplete="off" />
+            <label for="adminAddPassword">Password</label>
+            <input type="password" id="adminAddPassword" placeholder="Min. 6 characters" autocomplete="new-password" />
+            <label for="adminAddRole">Role</label>
+            <select id="adminAddRole">
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </select>
+            <button type="button" id="adminUsersAddBtn" class="btn-add-user">Add</button>
+          </div>
+          <p id="adminUsersAddError" class="admin-users-add-error" style="display:none;"></p>
+        </div>
+        <div class="admin-users-toolbar">
+          <div class="filter-group">
+            <span>Role</span>
+            <select id="adminUsersRoleFilter">
+              <option value="">All</option>
+              <option value="admin">Admin</option>
+              <option value="user">User</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <span>Status</span>
+            <select id="adminUsersStatusFilter">
+              <option value="">All</option>
+              <option value="active">Active</option>
+              <option value="pending">Pending</option>
+            </select>
+          </div>
+          <button type="button" id="adminUsersRefresh" class="btn-refresh">Refresh</button>
+        </div>
+        <div id="adminUsersLoading" class="loading" style="display:none;">Loading…</div>
+        <div id="adminUsersError" class="error" style="display:none;"></div>
+        <div class="table-wrap" id="adminUsersTableWrap" style="display:none;">
+          <table class="data-table admin-users-table" id="adminUsersTable">
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Joined</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="adminUsersTableBody"></tbody>
+          </table>
+        </div>
+        <div id="adminUsersPagination" class="admin-users-pagination" style="display:none; margin-top:0.75rem; font-size:0.8125rem; color:var(--text-secondary);"></div>
+      </div>
+      </div>
+      <div id="adminPanelUsageLogs" class="admin-sub-panel">
+        <div class="card admin-usage-section">
+          <h2 class="card-title">Per-user usage</h2>
+          <div id="usageSummaryLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="usageSummaryError" class="error" style="display:none;"></div>
+          <div class="table-wrap" id="usageSummaryWrap" style="display:none;">
+            <table class="data-table" id="usageSummaryTable">
+              <thead><tr><th>User</th><th>Role</th><th>Last login</th><th>Sessions (7d)</th><th>Downloads (7d)</th></tr></thead>
+              <tbody id="usageSummaryBody"></tbody>
+            </table>
+          </div>
+          <p id="usageSummaryEmpty" class="admin-usage-empty" style="display:none;">No usage data.</p>
+        </div>
+        <div class="card admin-usage-section">
+          <h2 class="card-title">Data pipeline & interface status</h2>
+          <div id="pipelineStatusLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="pipelineStatusError" class="error" style="display:none;"></div>
+          <div class="table-wrap" id="pipelineStatusWrap" style="display:none;">
+            <table class="data-table" id="pipelineStatusTable">
+              <thead><tr><th>Name</th><th>Type</th><th>Last run</th><th>Status</th><th>Next run / Note</th></tr></thead>
+              <tbody id="pipelineStatusBody"></tbody>
+            </table>
+          </div>
+          <p id="pipelineStatusEmpty" class="admin-usage-empty" style="display:none;">No pipeline data.</p>
+        </div>
+        <div class="card admin-usage-section">
+          <h2 class="card-title">Download history</h2>
+          <div id="downloadLogLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="downloadLogError" class="error" style="display:none;"></div>
+          <div class="table-wrap" id="downloadLogWrap" style="display:none;">
+            <table class="data-table" id="downloadLogTable">
+              <thead><tr><th>Time</th><th>User</th><th>Type</th><th>Period / Detail</th></tr></thead>
+              <tbody id="downloadLogBody"></tbody>
+            </table>
+          </div>
+          <p id="downloadLogEmpty" class="admin-usage-empty" style="display:none;">No download history.</p>
+        </div>
+        <div class="card admin-usage-section">
+          <h2 class="card-title">Activity log</h2>
+          <div id="activityLogLoading" class="loading" style="display:none;">Loading…</div>
+          <div id="activityLogError" class="error" style="display:none;"></div>
+          <div class="table-wrap" id="activityLogWrap" style="display:none;">
+            <table class="data-table" id="activityLogTable">
+              <thead><tr><th>Time</th><th>User</th><th>Action</th><th>Detail</th></tr></thead>
+              <tbody id="activityLogBody"></tbody>
+            </table>
+          </div>
+          <p id="activityLogEmpty" class="admin-usage-empty" style="display:none;">No activity log.</p>
+        </div>
+      </div>
+      <div id="pwChangeModal" class="pw-modal-overlay" aria-hidden="true">
+        <div class="pw-modal">
+          <h3 id="pwModalTitle">Change password</h3>
+          <label for="pwModalInput">New password (min. 6 characters)</label>
+          <input type="password" id="pwModalInput" placeholder="Enter 6+ characters" autocomplete="new-password" />
+          <p id="pwModalError" class="pw-modal-error"></p>
+          <div class="pw-modal-actions">
+            <button type="button" id="pwModalCancel">Cancel</button>
+            <button type="button" id="pwModalConfirm" class="btn-confirm">Update</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+  <script>
+if (typeof ChartDataLabels !== 'undefined') Chart.register(ChartDataLabels);
+  </script>
+  <script>
+(function(){
+  window.API_BASE = window.location.origin;
+})();
+var API = window.API_BASE || '';
+var currentUser = { username: '', role: 'user' };
+
+function fetchWithAuth(url, opts) {
+  opts = opts || {};
+  opts.credentials = 'include';
+  return fetch(url, opts).then(function(r) {
+    if (r.status === 401) { window.location.href = '/login'; return Promise.reject(new Error('Unauthorized')); }
+    return r;
+  });
+}
+var chartScoreByRegion = null;
+var chartScoreByCountry = null;
+var selectedCountryRegion = 'ASIA';
+var selectedCountryForChart = '';
+var chartTotalVsJul = null;
+var lastSummary = [];
+var currentReportType = 'B2B';
+var summaryTableSort = { colIndex: -1, dir: 1 };
+
+function getReports() {
+  return fetchWithAuth(API + '/api/reports').then(parseJsonOrThrow).then(function(l) { if (!Array.isArray(l)) throw new Error('Invalid'); return l; });
+}
+function getFilters(reportType, month, selectedRegions) {
+  var q = new URLSearchParams();
+  q.set('report_type', reportType);
+  q.set('month', month);
+  if (selectedRegions && selectedRegions.length) selectedRegions.forEach(function(r) { q.append('region', r); });
+  return fetchWithAuth(API + '/api/filters?' + q).then(parseJsonOrThrow);
+}
+function buildSummaryParams(reportType, month, regions, countries) {
+  var q = new URLSearchParams();
+  q.set('report_type', reportType);
+  q.set('month', month);
+  if (regions && regions.length) regions.forEach(function(r) { q.append('region', r); });
+  if (countries && countries.length) countries.forEach(function(c) { q.append('country', c); });
+  return q.toString();
+}
+function parseJsonOrThrow(r) {
+  return r.json().then(function(body) {
+    if (!r.ok) {
+      var msg = body.message || 'Request failed';
+      if (body.detail !== undefined) {
+        if (Array.isArray(body.detail)) msg = body.detail.map(function(d) { return d.msg || d.message || (typeof d === 'string' ? d : JSON.stringify(d)); }).join('; ');
+        else if (typeof body.detail === 'string') msg = body.detail;
+        else msg = String(body.detail);
+      }
+      throw new Error(msg);
+    }
+    return body;
+  });
+}
+function getSummary(reportType, month, regions, countries) {
+  return fetchWithAuth(API + '/api/summary?' + buildSummaryParams(reportType, month, regions, countries)).then(parseJsonOrThrow);
+}
+function getStats(reportType, month, regions, countries) {
+  return fetchWithAuth(API + '/api/stats?' + buildSummaryParams(reportType, month, regions, countries)).then(parseJsonOrThrow);
+}
+function getChecklist(month) {
+  var url = API + '/api/checklist' + (month ? '?month=' + encodeURIComponent(month) : '');
+  return fetchWithAuth(url).then(function(r) { return r.json(); });
+}
+function getSheet(month, sheet) {
+  var url = API + '/api/sheet?month=' + encodeURIComponent(month) + '&sheet=' + encodeURIComponent(sheet);
+  return fetchWithAuth(url).then(function(r) { if (!r.ok) throw new Error('Failed to load sheet'); return r.json(); });
+}
+
+function getMonthParam() {
+  var y = (document.getElementById('yearB2B') || {}).value;
+  var m = (document.getElementById('monthB2B') || {}).value;
+  if (!y || y === 'latest') return 'latest';
+  if (!m) return y + '-01';
+  return y + '-' + (String(m).length === 1 ? '0' + m : m);
+}
+
+function formatReportDateDisplay(monthStr) {
+  var m = (monthStr || '').match(/^(\d{4})-M?(\d{1,2})$/i);
+  if (!m) return '';
+  var y = m[1], mo = m[2].length === 1 ? '0' + m[2] : m[2];
+  var day = 13;
+  var w = Math.ceil(day / 7) || 2;
+  return y + '.' + mo + '.' + (day < 10 ? '0' + day : day) + '(W' + w + ')';
+}
+
+function updateSummaryDateFields(month) {
+  var fmt = formatReportDateDisplay(month || getMonthParam());
+  var d1 = document.getElementById('reportDate1');
+  var lu = document.getElementById('lastUpdated');
+  if (d1) d1.value = fmt || '';
+  var now = new Date();
+  var luStr = now.getFullYear() + '.' + String(now.getMonth() + 1).padStart(2, '0') + '.' + String(now.getDate()).padStart(2, '0') + '(W' + Math.ceil(now.getDate() / 7) + ')';
+  if (lu) lu.value = luStr;
+}
+
+function getPreviousMonthLiteral(month) {
+  if (!month || month === 'latest') return null;
+  var match = String(month).match(/^(\d{4})-(\d{1,2})$/);
+  if (!match) return null;
+  var y = parseInt(match[1], 10);
+  var m = parseInt(match[2], 10);
+  if (m <= 1) return (y - 1) + '-12';
+  return y + '-' + (m < 11 ? '0' : '') + (m - 1);
+}
+
+/** Return the immediately preceding month from report list. currentMonth = selected month or 'latest'. */
+function getImmediatelyPreviousMonth(reports, reportType, currentMonth) {
+  var all = (reports || []).filter(function(r) { return (r.report_type || r.reportType) === reportType; }).map(function(r) { return r.month; });
+  var literal = all.filter(function(m) { return m && m !== 'latest'; });
+  literal.sort(function(a, b) { return b.localeCompare(a); });
+  if (literal.length < 2) return null;
+  var current = (currentMonth === 'latest' || !currentMonth) ? literal[0] : currentMonth;
+  var idx = literal.indexOf(current);
+  if (idx < 0 || idx >= literal.length - 1) return null;
+  return literal[idx + 1];
+}
+
+/** Resolved month for fetch. If 'latest', use first (newest) month in list. */
+function resolveCurrentMonthForFetch(reports, reportType, selectedMonth) {
+  var literal = (reports || []).filter(function(r) { return (r.report_type || r.reportType) === reportType; }).map(function(r) { return r.month; }).filter(function(m) { return m && m !== 'latest'; });
+  literal.sort(function(a, b) { return b.localeCompare(a); });
+  if (selectedMonth === 'latest' || !selectedMonth) return literal[0] || 'latest';
+  return selectedMonth;
+}
+
+function rowKey(r, reportType) {
+  var k = (r.region || '') + '|' + (r.country || '');
+  if (reportType === 'B2C') k += '|' + (r.division || '');
+  return k;
+}
+
+function assignRanksAndChange(currentRows, prevRows, reportType) {
+  var score = function(r) {
+    var v = r.total_score_pct != null ? r.total_score_pct : r.total_score;
+    return v != null && v !== '' ? Number(v) : -Infinity;
+  };
+  currentRows.forEach(function(r) { r.rank = null; r.rankChange = null; });
+  var sortedCurrent = currentRows.slice().sort(function(a, b) { return score(b) - score(a); });
+  var rank = 1;
+  for (var i = 0; i < sortedCurrent.length; i++) {
+    if (i > 0 && score(sortedCurrent[i]) < score(sortedCurrent[i - 1])) rank = i + 1;
+    sortedCurrent[i].rank = rank;
+  }
+  var prevRankMap = {};
+  if (prevRows && prevRows.length) {
+    var sortedPrev = prevRows.slice().sort(function(a, b) { return score(b) - score(a); });
+    var pr = 1;
+    for (var j = 0; j < sortedPrev.length; j++) {
+      if (j > 0 && score(sortedPrev[j]) < score(sortedPrev[j - 1])) pr = j + 1;
+      prevRankMap[rowKey(sortedPrev[j], reportType)] = pr;
+    }
+    currentRows.forEach(function(r) {
+      if (r.rank != null) {
+        var pk = prevRankMap[rowKey(r, reportType)];
+        r.rankChange = pk != null ? r.rank - pk : null;
+      }
+    });
+  }
+}
+
+function fillYearMonthSelect(reportType, reports) {
+  var months = [...new Set((reports || []).filter(function(r) { return (r.report_type || r.reportType) === reportType; }).map(function(r) { return r.month; }))];
+  months.sort(function(a, b) {
+    if (a === 'latest') return -1;
+    if (b === 'latest') return 1;
+    return b.localeCompare(a);
+  });
+  var years = ['latest'];
+  var monthMap = {};
+  months.forEach(function(m) {
+    if (m === 'latest') return;
+    var match = String(m).match(/^(\d{4})-(\d{1,2})$/);
+    if (match) {
+      var yr = match[1], mo = match[2];
+      if (years.indexOf(yr) === -1) years.push(yr);
+      if (!monthMap[yr]) monthMap[yr] = [];
+      if (monthMap[yr].indexOf(mo) === -1) monthMap[yr].push(mo);
+    }
+  });
+  years.sort(function(a, b) { if (a === 'latest') return -1; if (b === 'latest') return 1; return Number(b) - Number(a); });
+  var yearSel = document.getElementById('yearB2B');
+  var monthSel = document.getElementById('monthB2B');
+  if (yearSel) yearSel.innerHTML = years.map(function(y) { return '<option value="' + y + '">' + y + '</option>'; }).join('');
+  function fillMonths() {
+    var y = yearSel ? yearSel.value : 'latest';
+    var list = (y && y !== 'latest' && monthMap[y]) ? monthMap[y].sort(function(a,b){ return Number(a) - Number(b); }) : ['01','02','03','04','05','06','07','08','09','10','11','12'];
+    if (monthSel) {
+      monthSel.innerHTML = '<option value="">All</option>' + list.map(function(m) { return '<option value="' + m + '">' + m + '</option>'; }).join('');
+    }
+  }
+  fillMonths();
+  if (yearSel) yearSel.onchange = fillMonths;
+  return months[0] || 'latest';
+}
+
+function getSelectedRegions() {
+  var panel = document.getElementById('regionB2BPanel');
+  if (!panel) return [];
+  return Array.from(panel.querySelectorAll('input:checked')).map(function(el) { return el.value; });
+}
+function getSelectedCountries() {
+  var panel = document.getElementById('countryB2BPanel');
+  if (!panel) return [];
+  return Array.from(panel.querySelectorAll('input:checked')).map(function(el) { return el.value; });
+}
+
+function updateMultiselectButtonLabels(regionList, countryList) {
+  var selectedR = getSelectedRegions();
+  var selectedC = getSelectedCountries();
+  var rBtn = document.getElementById('regionB2BBtn');
+  var cBtn = document.getElementById('countryB2BBtn');
+  if (rBtn) {
+    if (!selectedR.length || selectedR.length === (regionList || []).length) rBtn.textContent = 'All';
+    else if (selectedR.length <= 3) rBtn.textContent = selectedR.join(', ');
+    else rBtn.textContent = selectedR.length + '';
+  }
+  if (cBtn) {
+    if (!selectedC.length || selectedC.length === (countryList || []).length) cBtn.textContent = 'All';
+    else if (selectedC.length <= 5) cBtn.textContent = selectedC.join(', ');
+    else cBtn.textContent = selectedC.length + '';
+  }
+}
+
+function escapeHtml(s) {
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+var SUMMARY_SHEET_CONFIG = [
+  { sheet: 'PLP_BUSINESS', bodyId: 'sheetPlpBody', headId: 'sheetPlpHead', loadingId: 'sheetPlpLoading', errorId: 'sheetPlpError', wrapId: 'sheetPlpWrap' },
+  { sheet: 'Product Category', bodyId: 'sheetProductCategoryBody', headId: 'sheetProductCategoryHead', loadingId: 'sheetProductCategoryLoading', errorId: 'sheetProductCategoryError', wrapId: 'sheetProductCategoryWrap' },
+  { sheet: 'Blog', bodyId: 'sheetBlogBody', headId: 'sheetBlogHead', loadingId: 'sheetBlogLoading', errorId: 'sheetBlogError', wrapId: 'sheetBlogWrap' }
+];
+
+function renderSheetRow(arr, colCount, tag) {
+  tag = tag || 'td';
+  var cells = [];
+  for (var i = 0; i < colCount; i++) {
+    var v = i < arr.length ? arr[i] : null;
+    var text = (v == null || v === '') ? '' : String(v);
+    var titleAttr = (tag === 'th' && text) ? ' title="' + String(text).replace(/"/g, '&quot;') + '"' : '';
+    cells.push('<' + tag + titleAttr + '>' + escapeHtml(text) + '</' + tag + '>');
+  }
+  return '<tr>' + cells.join('') + '</tr>';
+}
+
+function buildBlogSheetBody(rows, colCount) {
+  if (!rows.length) return '';
+  var mergeCol = 0, rowspanStart = [], rowspanLen = [];
+  var urlCol = 2;
+  for (var i = 0; i < rows.length; i++) {
+    var arr = Array.isArray(rows[i]) ? rows[i] : [];
+    var val = arr[mergeCol];
+    var s = String(val != null ? val : '');
+    if (i === 0 || s !== String((Array.isArray(rows[i - 1]) ? rows[i - 1] : [])[mergeCol] != null ? (Array.isArray(rows[i - 1]) ? rows[i - 1] : [])[mergeCol] : '')) {
+      rowspanStart[i] = true;
+      var count = 1;
+      while (i + count < rows.length) {
+        var nextArr = Array.isArray(rows[i + count]) ? rows[i + count] : [];
+        if (String(nextArr[mergeCol] != null ? nextArr[mergeCol] : '') === s) count++;
+        else break;
+      }
+      rowspanLen[i] = count;
+    } else rowspanStart[i] = false;
+  }
+  var html = [];
+  for (var r = 0; r < rows.length; r++) {
+    var arr = Array.isArray(rows[r]) ? rows[r] : [];
+    var cells = [];
+    if (rowspanStart[r]) cells.push('<td rowspan="' + rowspanLen[r] + '">' + escapeHtml((arr[0] == null || arr[0] === '') ? '' : String(arr[0])) + '</td>');
+    for (var c = 1; c < colCount; c++) {
+      var v = c < arr.length ? arr[c] : null;
+      var s = (v == null || v === '') ? '' : String(v);
+      if (c === urlCol && /^https?:\/\//i.test(s.trim())) {
+        var safeHref = s.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/&/g, '&amp;');
+        cells.push('<td><a href="' + safeHref + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(s) + '</a></td>');
+      } else {
+        cells.push('<td>' + escapeHtml(s) + '</td>');
+      }
+    }
+    html.push('<tr>' + cells.join('') + '</tr>');
+  }
+  return html.join('');
+}
+function buildSheetBodyWithMerge(rows, colCount) {
+  if (!rows.length) return '';
+  var mergeCol = 0, rowspanStart = [], rowspanLen = [];
+  for (var i = 0; i < rows.length; i++) {
+    var arr = Array.isArray(rows[i]) ? rows[i] : [];
+    var val = arr[mergeCol];
+    var s = String(val != null ? val : '');
+    if (i === 0 || s !== String((Array.isArray(rows[i - 1]) ? rows[i - 1] : [])[mergeCol] != null ? (Array.isArray(rows[i - 1]) ? rows[i - 1] : [])[mergeCol] : '')) {
+      rowspanStart[i] = true;
+      var count = 1;
+      while (i + count < rows.length) {
+        var nextArr = Array.isArray(rows[i + count]) ? rows[i + count] : [];
+        if (String(nextArr[mergeCol] != null ? nextArr[mergeCol] : '') === s) count++;
+        else break;
+      }
+      rowspanLen[i] = count;
+    } else rowspanStart[i] = false;
+  }
+  var html = [];
+  for (var r = 0; r < rows.length; r++) {
+    var arr = Array.isArray(rows[r]) ? rows[r] : [];
+    var cells = [];
+    if (rowspanStart[r]) cells.push('<td rowspan="' + rowspanLen[r] + '">' + escapeHtml((arr[0] == null || arr[0] === '') ? '' : String(arr[0])) + '</td>');
+    for (var c = 1; c < colCount; c++) {
+      var v = c < arr.length ? arr[c] : null;
+      cells.push('<td>' + escapeHtml((v == null || v === '') ? '' : String(v)) + '</td>');
+    }
+    html.push('<tr>' + cells.join('') + '</tr>');
+  }
+  return html.join('');
+}
+
+function isRowEmpty(arr) {
+  if (!Array.isArray(arr) || !arr.length) return true;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] != null && String(arr[i]).trim() !== '') return false;
+  }
+  return true;
+}
+
+async function loadSheetSection(month, cfg) {
+  var loading = document.getElementById(cfg.loadingId), errEl = document.getElementById(cfg.errorId), wrap = document.getElementById(cfg.wrapId), tbody = document.getElementById(cfg.bodyId), headRow = document.getElementById(cfg.headId);
+  if (wrap) wrap.style.display = 'none';
+  if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; errEl.className = 'error'; }
+  if (loading) loading.style.display = 'block';
+  try {
+    var rows = await getSheet(month, cfg.sheet);
+    if (loading) loading.style.display = 'none';
+    if (!Array.isArray(rows) || rows.length === 0) {
+      if (errEl) {
+        errEl.className = 'sheet-empty-state';
+        errEl.style.display = 'block';
+        errEl.textContent = 'No data for month (' + (month || '') + ') in [' + (cfg.sheet || '') + '].';
+      }
+      return;
+    }
+    var colCount = Math.max.apply(null, rows.map(function(r) { return Array.isArray(r) ? r.length : 0; })) || 1;
+    var dataRows = rows;
+    if (headRow && rows.length > 1) {
+      var first = Array.isArray(rows[0]) ? rows[0] : [];
+      headRow.innerHTML = renderSheetRow(first, colCount, 'th');
+      dataRows = rows.slice(1);
+    } else if (headRow) headRow.innerHTML = '';
+    dataRows = dataRows.filter(function(row) { return !isRowEmpty(Array.isArray(row) ? row : []); });
+    if (cfg.sheet === 'Blog') {
+      window._blogSheetRows = dataRows;
+      window._blogSheetColCount = colCount;
+      var blogFilter = document.getElementById('blogCountryFilter');
+      if (blogFilter) {
+        var sel = blogFilter.value || '';
+        blogFilter.innerHTML = '<option value="">All</option>';
+        var seen = {};
+        dataRows.forEach(function(r) { var arr = Array.isArray(r) ? r : []; var c = (arr[1] != null ? String(arr[1]) : '').trim(); if (c && !seen[c]) { seen[c] = true; var opt = document.createElement('option'); opt.value = c; opt.textContent = c; blogFilter.appendChild(opt); } });
+        blogFilter.value = (sel && seen[sel]) ? sel : '';
+      }
+      var blogCountry = (blogFilter || {}).value || '';
+      var filtered = blogCountry ? dataRows.filter(function(r) { var arr = Array.isArray(r) ? r : []; var c = (arr[1] != null ? String(arr[1]) : '').trim(); return c === blogCountry; }) : dataRows;
+      tbody.innerHTML = buildBlogSheetBody(filtered, colCount);
+    } else {
+      tbody.innerHTML = buildSheetBodyWithMerge(dataRows, colCount);
+    }
+    if (wrap) wrap.style.display = 'block';
+  } catch (e) {
+    if (loading) loading.style.display = 'none';
+    if (errEl) {
+      errEl.className = 'error';
+      errEl.style.display = 'block';
+      errEl.textContent = 'Load failed: ' + (e.message || String(e)) + '. Run the backend and open via ' + (window.API_BASE || '') + '.';
+    }
+  }
+}
+
+function loadSummarySheets(month) {
+  if (!month) return;
+  SUMMARY_SHEET_CONFIG.forEach(function(cfg) { loadSheetSection(month, cfg); });
+}
+
+function fmtNum(v) { return (v != null && v !== '') ? Number(v).toFixed(2) : '—'; }
+function rankFmt(v) { return (v != null && v !== '') ? Math.round(Number(v)) : '—'; }
+
+// B2B Summary columns: REGION, COUNTRY, SKU, Rank, Rank change, Total Score %, 1.Title ~ 5.Alt
+var SUMMARY_TABLE_COLS_B2B = [
+  { key: 'region', label: 'REGION', num: false },
+  { key: 'country', label: 'COUNTRY', num: false },
+  { key: 'sku_count', label: 'SKU', num: true },
+  { key: '_rank', label: 'Rank', num: true },
+  { key: '_rank_change', label: '▲▼', num: true },
+  { key: 'total_score_pct', label: 'Total\nScore', num: true, altKeys: ['total_score'] },
+  { key: 'title_tag_score', label: '1. Title', num: true, altKeys: ['title_score'] },
+  { key: 'description_tag_score', label: '2. Description', num: true, altKeys: ['description_score'] },
+  { key: 'h1_tag_score', label: '3. H1', num: true, altKeys: ['h1_score'] },
+  { key: 'canonical_link_score', label: '4. Canonical Link', num: true, altKeys: ['canonical_score'] },
+  { key: 'feature_alt_score', label: '5. Alt text_ Feature Cards', num: true, altKeys: ['alt_feature_score', 'alt_text_score'] }
+];
+// B2C Summary: headers show 1~10, full text in title (tooltip)
+var SUMMARY_TABLE_COLS_B2C = [
+  { key: 'region', label: 'REGION', num: false },
+  { key: 'country', label: 'COUNTRY', num: false },
+  { key: 'sku_count', label: 'SKU', num: true },
+  { key: '_rank', label: 'Rank', num: true },
+  { key: '_rank_change', label: '▲▼', num: true },
+  { key: 'total_score_pct', label: 'Total\nScore', num: true },
+  { key: 'ufn_score', label: '1', num: true, fullLabel: '1. UFN' },
+  { key: 'basic_assets_score', label: '2', num: true, fullLabel: '2. Basic Assets' },
+  { key: 'spec_summary_score', label: '3', num: true, fullLabel: '3. Spec Summary' },
+  { key: 'faq_score', label: '4', num: true, fullLabel: '4. FAQ' },
+  { key: 'title_score', label: '5', num: true, fullLabel: '5. Tag <Title>' },
+  { key: 'description_score', label: '6', num: true, fullLabel: '6. Tag <Description>' },
+  { key: 'h1_score', label: '7', num: true, fullLabel: '7. Tag <H1>' },
+  { key: 'canonical_score', label: '8', num: true, fullLabel: '8. Tag <Canonical Link>' },
+  { key: 'alt_feature_score', label: '9', num: true, fullLabel: '9. Tag <Alt text> (Feature Cards)' },
+  { key: 'alt_front_score', label: '10', num: true, fullLabel: '10. Tag <Alt text> (Front Image)' }
+];
+
+function setSummaryTableHeader(reportType) {
+  var tr = document.getElementById('tableSummaryHeadRow');
+  if (!tr) return;
+  var cols = reportType === 'B2C' ? SUMMARY_TABLE_COLS_B2C : SUMMARY_TABLE_COLS_B2B;
+  tr.innerHTML = cols.map(function(c, i) {
+    var isDark = (c.key === 'region' || c.key === 'country');
+    var cl = isDark ? 'th-dark' : 'th-blue';
+    if (c.key === 'sku_count' || c.key === '_rank' || c.key === '_rank_change') cl += ' th-nowrap';
+    if (c.key === 'total_score_pct') cl += ' th-two-line';
+    var titleAttr = '';
+    if (c.fullLabel) titleAttr = ' title="' + escapeHtml(c.fullLabel) + '"';
+    else if (c.key === '_rank') titleAttr = ' title="Rank by Total Score %"';
+    else if (c.key === '_rank_change') titleAttr = ' title="Rank change vs. previous period"';
+    else if (c.key === 'total_score_pct') titleAttr = ' title="Total Score %"';
+    else if (c.key && c.key.indexOf('_') !== 0) titleAttr = ' title="' + escapeHtml(c.key) + '"';
+    return '<th class="' + cl + ' sortable" data-col-index="' + i + '"' + titleAttr + '>' + escapeHtml(c.label) + '<span class="sort-indicator" aria-hidden="true"></span></th>';
+  }).join('');
+  var table = tr.closest('table');
+  var cg = table && (table.querySelector('#tableSummaryColgroup') || table.querySelector('colgroup'));
+  if (cg) {
+    var identityW = 10;
+    var identityCount = 2;
+    var skuW = 5.5;
+    var rankW = 4.5;
+    var rankChgW = 5;
+    var reserved = identityCount * identityW + skuW + rankW + rankChgW;
+    var equalCount = cols.length - identityCount - 3;
+    var equalW = equalCount > 0 ? ((100 - reserved) / equalCount).toFixed(1) + '%' : '10%';
+    cg.innerHTML = cols.map(function(c) {
+      if (c.key === 'region' || c.key === 'country') return '<col class="col-identity" style="width:' + identityW + '%" />';
+      if (c.key === 'sku_count') return '<col class="col-sku" style="width:' + skuW + '%" />';
+      if (c.key === '_rank') return '<col class="col-rank" style="width:' + rankW + '%" />';
+      if (c.key === '_rank_change') return '<col class="col-rank-chg" style="width:' + rankChgW + '%" />';
+      return '<col class="col-score-equal" style="width:' + equalW + '" />';
+    }).join('');
+  }
+  updateSummaryTableHeaderSortIcons();
+}
+
+function sortSummaryRows(rows, colIndex, dir, reportType) {
+  if (!rows || !rows.length || colIndex < 0) return rows;
+  var cols = reportType === 'B2C' ? SUMMARY_TABLE_COLS_B2C : SUMMARY_TABLE_COLS_B2B;
+  var c = cols[colIndex];
+  if (!c) return rows;
+  var copy = rows.slice();
+  copy.sort(function(a, b) {
+    var va = getRowCellValue(a, c);
+    var vb = getRowCellValue(b, c);
+    var anum = c.num;
+    var cmp = 0;
+    if (anum) {
+      var na = (va != null && va !== '') ? Number(va) : -Infinity;
+      var nb = (vb != null && vb !== '') ? Number(vb) : -Infinity;
+      cmp = na < nb ? -1 : na > nb ? 1 : 0;
+    } else {
+      var sa = (va != null && va !== '') ? String(va) : '';
+      var sb = (vb != null && vb !== '') ? String(vb) : '';
+      cmp = sa.localeCompare(sb, undefined, { numeric: true });
+    }
+    return dir > 0 ? cmp : -cmp;
+  });
+  return copy;
+}
+
+function updateSummaryTableHeaderSortIcons() {
+  var tr = document.getElementById('tableSummaryHeadRow');
+  if (!tr) return;
+  var ths = tr.querySelectorAll('th.sortable');
+  ths.forEach(function(th, i) {
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (i === summaryTableSort.colIndex) {
+      th.classList.add(summaryTableSort.dir > 0 ? 'sort-asc' : 'sort-desc');
+    }
+  });
+}
+
+function refreshSummaryTable() {
+  var filterEl = document.getElementById('tableScoreFilterB2B');
+  var filterType = filterEl ? filterEl.value || '' : '';
+  var filtered = applyScoreFilter(lastSummary, filterType);
+  var cols = currentReportType === 'B2C' ? SUMMARY_TABLE_COLS_B2C : SUMMARY_TABLE_COLS_B2B;
+  var sorted = sortSummaryRows(filtered, summaryTableSort.colIndex, summaryTableSort.dir, currentReportType);
+  renderTableB2B(sorted);
+  updateSummaryTableHeaderSortIcons();
+}
+
+var SCORE_SUMMARY_KEYS_B2B = [
+  { key: 'total_score_pct', label: 'Total Score %' },
+  { key: 'title_tag_score', label: '1. Title' },
+  { key: 'description_tag_score', label: '2. Description' },
+  { key: 'h1_tag_score', label: '3. H1' },
+  { key: 'canonical_link_score', label: '4. Canonical Link' },
+  { key: 'feature_alt_score', label: '5. Alt text_ Feature Cards' }
+];
+var SCORE_SUMMARY_KEYS_B2C = [
+  { key: 'total_score_pct', label: 'Total Score %' },
+  { key: 'ufn_score', label: '1. UFN' },
+  { key: 'basic_assets_score', label: '2. Basic Assets' },
+  { key: 'spec_summary_score', label: '3. Spec Summary' },
+  { key: 'faq_score', label: '4. FAQ' },
+  { key: 'title_score', label: '5. Tag <Title>' },
+  { key: 'description_score', label: '6. Tag <Description>' },
+  { key: 'h1_score', label: '7. Tag <H1>' },
+  { key: 'canonical_score', label: '8. Tag <Canonical Link>' },
+  { key: 'alt_feature_score', label: '9. Tag <Alt text>_(Feature Cards)' },
+  { key: 'alt_front_score', label: '10. Tag <Alt text>_(Front Image)' }
+];
+function renderScoreSummaryB2B(rows) {
+  var el = document.getElementById('scoreSummaryB2B');
+  if (!el) return;
+  if (!rows || !rows.length) { el.innerHTML = ''; return; }
+  var keys = currentReportType === 'B2C' ? SCORE_SUMMARY_KEYS_B2C : SCORE_SUMMARY_KEYS_B2B;
+  var html = [];
+  keys.forEach(function(item, idx) {
+    var sum = 0, count = 0;
+    rows.forEach(function(r) {
+      var v = r[item.key];
+      if (v != null && v !== '') { sum += Number(v); count++; }
+    });
+    var avg = count ? (sum / count).toFixed(2) : '—';
+    var cardClass = 'score-summary-item' + (idx === 0 ? ' score-summary-item--primary' : '');
+    html.push('<div class="' + cardClass + '"><span class="label">' + escapeHtml(item.label) + '</span><span class="value">' + escapeHtml(String(avg)) + '</span></div>');
+  });
+  el.innerHTML = html.join('');
+}
+
+function renderOperationalSummary(rows, reportType) {
+  var topEl = document.getElementById('topPerformersList');
+  var strengthsEl = document.getElementById('strengthsList');
+  var weaknessesEl = document.getElementById('weaknessesList');
+  var actionEl = document.getElementById('actionPlanList');
+  if (!rows || !rows.length) {
+    if (topEl) topEl.innerHTML = '';
+    if (strengthsEl) strengthsEl.innerHTML = '<li>No data</li>';
+    if (weaknessesEl) weaknessesEl.innerHTML = '';
+    if (actionEl) actionEl.innerHTML = '';
+    return;
+  }
+  var keyScore = reportType === 'B2C' ? 'total_score_pct' : 'total_score_pct';
+  var keyCountry = reportType === 'B2C' ? 'division' : 'country';
+  var keyRegion = reportType === 'B2C' ? 'region' : 'region';
+  var sorted = rows.slice().sort(function(a, b) {
+    var va = parseFloat(a[keyScore]) || 0;
+    var vb = parseFloat(b[keyScore]) || 0;
+    return vb - va;
+  });
+  var top4 = sorted.slice(0, 4);
+  if (topEl) {
+    topEl.innerHTML = top4.map(function(r, i) {
+      var name = r[keyCountry] || r.country || r.division || '—';
+      var score = (parseFloat(r[keyScore]) || 0).toFixed(1);
+      return '<div class="score-summary-item"><span class="label">' + (i + 1) + 'st</span><span class="value">' + escapeHtml(name) + ' ' + score + '</span></div>';
+    }).join('');
+  }
+  var avgScore = rows.reduce(function(s, r) { return s + (parseFloat(r[keyScore]) || 0); }, 0) / rows.length;
+  var highCount = rows.filter(function(r) { return (parseFloat(r[keyScore]) || 0) >= 95; }).length;
+  var lowRows = rows.filter(function(r) { return (parseFloat(r[keyScore]) || 0) < 70; });
+  if (strengthsEl) {
+    var strengths = [];
+    if (avgScore >= 90) strengths.push('Strong regional average: ' + avgScore.toFixed(1) + '%');
+    if (highCount > 0) strengths.push('Top performance: ' + highCount + ' countries scored 95+');
+    strengthsEl.innerHTML = strengths.length ? strengths.map(function(s) { return '<li>' + escapeHtml(s) + '</li>'; }).join('') : '<li>—</li>';
+  }
+  if (weaknessesEl) {
+    var weaknesses = lowRows.slice(0, 3).map(function(r) { return (r[keyCountry] || r.country || '—') + ': ' + (parseFloat(r[keyScore]) || 0).toFixed(1) + '%'; });
+    weaknessesEl.innerHTML = weaknesses.length ? weaknesses.map(function(w) { return '<li>' + escapeHtml(w) + '</li>'; }).join('') : '<li>None significant</li>';
+  }
+  if (actionEl) {
+    var actions = lowRows.length ? ['Mentoring: Share best practices from top performers to improve lower-scoring regions'] : [];
+    actions.push('Review and iterate on low-scoring evaluation items');
+    actionEl.innerHTML = actions.map(function(a) { return '<li>' + escapeHtml(a) + '</li>'; }).join('');
+  }
+}
+
+function applyScoreFilter(rows, filterType) {
+  if (!rows || !rows.length || !filterType) return rows;
+  var n = rows.length;
+  var take = Math.max(1, Math.ceil(n * 0.3));
+  var score = function(r) { var v = r.total_score_pct != null ? r.total_score_pct : r.total_score; return v != null && v !== '' ? Number(v) : -Infinity; };
+  if (filterType === 'top30') {
+    return rows.slice().sort(function(a, b) { return score(b) - score(a); }).slice(0, take);
+  }
+  if (filterType === 'bottom30') {
+    return rows.slice().sort(function(a, b) { return score(a) - score(b); }).slice(0, take);
+  }
+  return rows;
+}
+
+function getRowCellValue(r, c) {
+  if (c.key === '_rank') return r.rank != null ? r.rank : null;
+  if (c.key === '_rank_change') return r.rankChange != null ? r.rankChange : null;
+  var v = r[c.key];
+  if (v != null && v !== '') return v;
+  if (c.altKeys) {
+    for (var i = 0; i < c.altKeys.length; i++) {
+      v = r[c.altKeys[i]];
+      if (v != null && v !== '') return v;
+    }
+  }
+  return null;
+}
+
+var CLICKABLE_KEYS_BLACKLIST = { region: 1, country: 1, division: 1, sku_count: 1, _rank: 1, _rank_change: 1 };
+function renderTableB2B(rows) {
+  var t = document.getElementById('tableBodyB2B');
+  if (!t) return;
+  var cols = currentReportType === 'B2C' ? SUMMARY_TABLE_COLS_B2C : SUMMARY_TABLE_COLS_B2B;
+  t.innerHTML = (rows || []).map(function(r) {
+    var region = (r.region != null && r.region !== '') ? String(r.region) : '';
+    var country = (r.country != null && r.country !== '') ? String(r.country) : '';
+    var division = (r.division != null && r.division !== '') ? String(r.division) : '';
+    var trAttrs = ' data-region="' + escapeHtml(region) + '" data-country="' + escapeHtml(country) + '"';
+    if (currentReportType === 'B2C') trAttrs += ' data-division="' + escapeHtml(division) + '"';
+    return '<tr' + trAttrs + '>' + cols.map(function(c) {
+      var v = getRowCellValue(r, c);
+      var clickable = c.num && !CLICKABLE_KEYS_BLACKLIST[c.key];
+      var tdClass = 'num';
+      if (c.key === '_rank') {
+        return '<td class="' + tdClass + '">' + (v != null && v !== '' ? Number(v) : '—') + '</td>';
+      }
+      if (c.key === '_rank_change') {
+        if (v == null || v === '') return '<td class="num rank-cell" title="No previous period data">—</td>';
+        var n = Number(v);
+        var cl = n > 0 ? 'rank-down' : (n < 0 ? 'rank-up' : 'rank-same');
+        var sym = n > 0 ? '▼' : (n < 0 ? '▲' : '—');
+        var num = n !== 0 ? Math.abs(n) : 0;
+        var title = n > 0 ? 'Rank down ' + num : (n < 0 ? 'Rank up ' + num : 'No change');
+        var text = n === 0 ? '—' : (sym + ' ' + num);
+        return '<td class="num rank-cell ' + cl + '" title="' + title + '">' + text + '</td>';
+      }
+      if (c.num) {
+        if (c.key === 'sku_count') return '<td class="num">' + (v != null && v !== '' ? Math.round(Number(v)) : '—') + '</td>';
+        if (clickable) tdClass += ' cell-clickable';
+        return '<td class="' + tdClass + '">' + fmtNum(v) + '</td>';
+      }
+      return '<td>' + escapeHtml(v != null && v !== '' ? String(v) : '') + '</td>';
+    }).join('') + '</tr>';
+  }).join('');
+}
+
+var AGGREGATE_CHART_KEYS_B2B = [
+  { dataKey: 'title_tag_score', avgKey: 'avg_title' }, { dataKey: 'description_tag_score', avgKey: 'avg_desc' },
+  { dataKey: 'h1_tag_score', avgKey: 'avg_h1' }, { dataKey: 'canonical_link_score', avgKey: 'avg_canon' }, { dataKey: 'feature_alt_score', avgKey: 'avg_alt' }
+];
+var AGGREGATE_CHART_KEYS_B2C = [
+  { dataKey: 'ufn_score', avgKey: 'avg_ufn' }, { dataKey: 'basic_assets_score', avgKey: 'avg_basic_assets' }, { dataKey: 'spec_summary_score', avgKey: 'avg_spec_summary' }, { dataKey: 'faq_score', avgKey: 'avg_faq' },
+  { dataKey: 'title_score', avgKey: 'avg_title' }, { dataKey: 'description_score', avgKey: 'avg_desc' }, { dataKey: 'h1_score', avgKey: 'avg_h1' }, { dataKey: 'canonical_score', avgKey: 'avg_canon' }, { dataKey: 'alt_feature_score', avgKey: 'avg_alt_feature' }, { dataKey: 'alt_front_score', avgKey: 'avg_alt_front' }
+];
+
+function aggregateByRegion(rows, reportType) {
+  if (!rows || !rows.length) return [];
+  var rtype = reportType || currentReportType || 'B2B';
+  var chartKeys = rtype === 'B2C' ? AGGREGATE_CHART_KEYS_B2C : AGGREGATE_CHART_KEYS_B2B;
+  var byRegion = {};
+  rows.forEach(function(r) {
+    var region = r.region || '';
+    if (!byRegion[region]) {
+      var o = { region: region, sum_total: 0, count_total: 0 };
+      chartKeys.forEach(function(k) { o['sum_' + k.avgKey] = 0; o['count_' + k.avgKey] = 0; });
+      byRegion[region] = o;
+    }
+    var o = byRegion[region];
+    var total = r.total_score_pct != null ? r.total_score_pct : r.total_score;
+    if (total != null && total !== '') { o.sum_total += Number(total); o.count_total++; }
+    chartKeys.forEach(function(k) {
+      var v = r[k.dataKey];
+      if (v != null && v !== '') { o['sum_' + k.avgKey] += Number(v); o['count_' + k.avgKey]++; }
+    });
+  });
+  return Object.keys(byRegion).sort().map(function(k) {
+    var o = byRegion[k];
+    var out = { region: o.region, avg_total_score: o.count_total ? o.sum_total / o.count_total : null };
+    chartKeys.forEach(function(c) { out[c.avgKey] = o['count_' + c.avgKey] ? o['sum_' + c.avgKey] / o['count_' + c.avgKey] : null; });
+    return out;
+  });
+}
+
+/* LG Normal grey: Red 50 #fa312e, Gray 600-800 */
+var CHART_SCORE_KEYS_B2B = [
+  { key: 'avg_title', label: '1. Title', color: 'rgba(250,49,46,0.85)' },
+  { key: 'avg_desc', label: '2. Description', color: 'rgba(250,49,46,0.65)' },
+  { key: 'avg_h1', label: '3. H1', color: 'rgba(117,117,117,0.85)' },
+  { key: 'avg_canon', label: '4. Canonical', color: 'rgba(97,97,97,0.8)' },
+  { key: 'avg_alt', label: '5. Alt text', color: 'rgba(250,49,46,0.5)' }
+];
+var CHART_SCORE_KEYS_B2C = [
+  { key: 'avg_ufn', label: '1. UFN', color: 'rgba(250,49,46,0.85)' },
+  { key: 'avg_basic_assets', label: '2. Basic Assets', color: 'rgba(250,49,46,0.75)' },
+  { key: 'avg_spec_summary', label: '3. Spec Summary', color: 'rgba(117,117,117,0.85)' },
+  { key: 'avg_faq', label: '4. FAQ', color: 'rgba(97,97,97,0.8)' },
+  { key: 'avg_title', label: '5. Tag <Title>', color: 'rgba(250,49,46,0.65)' },
+  { key: 'avg_desc', label: '6. Tag <Description>', color: 'rgba(250,49,46,0.55)' },
+  { key: 'avg_h1', label: '7. Tag <H1>', color: 'rgba(117,117,117,0.75)' },
+  { key: 'avg_canon', label: '8. Tag <Canonical>', color: 'rgba(97,97,97,0.75)' },
+  { key: 'avg_alt_feature', label: '9. Alt Feature', color: 'rgba(250,49,46,0.5)' },
+  { key: 'avg_alt_front', label: '10. Alt Front', color: 'rgba(250,49,46,0.45)' }
+];
+
+function renderChartScoreByRegion(rows) {
+  var ctx = document.getElementById('chartScoreByRegion');
+  if (!ctx) return null;
+  if (chartScoreByRegion) chartScoreByRegion.destroy();
+  var rtype = currentReportType || 'B2B';
+  var agg = aggregateByRegion(rows || [], rtype);
+  var chartKeys = rtype === 'B2C' ? CHART_SCORE_KEYS_B2C : CHART_SCORE_KEYS_B2B;
+  var labels = agg.map(function(a) { return a.region; });
+  var datasets = chartKeys.map(function(item) {
+    return {
+      label: item.label,
+      data: agg.map(function(a) { var v = a[item.key]; return v != null ? Math.round(v * 100) / 100 : null; }),
+      backgroundColor: item.color
+    };
+  });
+  chartScoreByRegion = new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: { labels: labels, datasets: datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+        legend: { position: 'top' },
+        datalabels: {
+          anchor: 'end',
+          align: 'start',
+          offset: 2,
+          clamp: true,
+          color: '#fff',
+          font: { size: 9, weight: 'bold' },
+          formatter: function(value) { return value != null ? Number(value).toFixed(1) : ''; },
+          display: function(context) { return context.raw != null && context.raw >= 2; }
+        }
+      }
+    }
+  });
+  return chartScoreByRegion;
+}
+
+var CHART_3MONTH_COLORS = ['rgba(250,49,46,0.85)', 'rgba(117,117,117,0.8)', 'rgba(97,97,97,0.75)'];
+
+function renderChartTotalVsJul(monthsWithRows) {
+  var ctx = document.getElementById('chartTotalVsJul');
+  if (!ctx) return null;
+  if (chartTotalVsJul) chartTotalVsJul.destroy();
+  if (!monthsWithRows || !monthsWithRows.length) {
+    chartTotalVsJul = new Chart(ctx.getContext('2d'), { type: 'bar', data: { labels: [], datasets: [] }, options: { responsive: true, maintainAspectRatio: false } });
+    return chartTotalVsJul;
+  }
+  var aggPerMonth = monthsWithRows.map(function(m) { return aggregateByRegion(m.rows || [], currentReportType || 'B2B'); });
+  var regionSet = {};
+  aggPerMonth.forEach(function(agg) { agg.forEach(function(a) { if (a.region) regionSet[a.region] = true; }); });
+  var labels = Object.keys(regionSet).sort();
+  var datasets = monthsWithRows.map(function(m, i) {
+    var agg = aggPerMonth[i] || [];
+    var byRegion = {};
+    agg.forEach(function(a) { byRegion[a.region] = a; });
+    return {
+      label: m.month || ('Month ' + (i + 1)),
+      data: labels.map(function(reg) {
+        var a = byRegion[reg];
+        return (a && a.avg_total_score != null) ? Math.round(a.avg_total_score * 100) / 100 : null;
+      }),
+      backgroundColor: CHART_3MONTH_COLORS[i % CHART_3MONTH_COLORS.length]
+    };
+  });
+  chartTotalVsJul = new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: { labels: labels, datasets: datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+        legend: { position: 'top' },
+        datalabels: {
+          anchor: 'end',
+          align: 'start',
+          offset: 2,
+          clamp: true,
+          color: '#212121',
+          font: { size: 9, weight: 'bold' },
+          formatter: function(value) { return value != null ? Number(value).toFixed(1) : ''; }
+        }
+      }
+    }
+  });
+  return chartTotalVsJul;
+}
+
+var COUNTRY_REGION_LIST = ['ASIA', 'CIS', 'EU', 'INDIA', 'LATAM', 'MEA', 'NA'];
+
+function renderCountryRegionSelector() {
+  var el = document.getElementById('countryRegionSelector');
+  if (!el) return;
+  var regions = COUNTRY_REGION_LIST.slice();
+  if (lastSummary && lastSummary.length) {
+    var fromData = {};
+    lastSummary.forEach(function(r) { var k = (r.region || '').trim(); if (k) fromData[k] = true; });
+    Object.keys(fromData).forEach(function(k) { if (regions.indexOf(k) < 0) regions.push(k); });
+  }
+  regions.sort();
+  if (regions.length && regions.indexOf(selectedCountryRegion) < 0) selectedCountryRegion = regions[0];
+  el.innerHTML = regions.map(function(r) {
+    var active = (r === selectedCountryRegion) ? ' active' : '';
+    return '<button type="button" class="country-region-btn' + active + '" data-region="' + escapeHtml(r) + '">' + escapeHtml(r) + '</button>';
+  }).join('');
+  el.querySelectorAll('.country-region-btn').forEach(function(btn) {
+    btn.onclick = function() {
+      selectedCountryRegion = btn.getAttribute('data-region') || '';
+      el.querySelectorAll('.country-region-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      renderCountryFilterSelect();
+      renderChartScoreByCountry();
+    };
+  });
+}
+
+function renderCountryFilterSelect() {
+  var sel = document.getElementById('countryFilterSelect');
+  if (!sel) return;
+  var rows = (lastSummary || []).filter(function(r) { return (r.region || '').trim() === selectedCountryRegion; });
+  var keyCountry = (currentReportType || 'B2B') === 'B2C' ? 'division' : 'country';
+  var countries = [];
+  var seen = {};
+  rows.forEach(function(r) {
+    var c = (r[keyCountry] || r.country || r.division || '').trim();
+    if (c && !seen[c]) { seen[c] = true; countries.push(c); }
+  });
+  countries.sort();
+  var curVal = sel.value;
+  sel.innerHTML = '<option value="">All</option>' + countries.map(function(c) {
+    return '<option value="' + escapeHtml(c) + '">' + escapeHtml(c) + '</option>';
+  }).join('');
+  sel.value = curVal && countries.indexOf(curVal) >= 0 ? curVal : '';
+  selectedCountryForChart = sel.value || '';
+}
+
+function renderChartScoreByCountry() {
+  var ctx = document.getElementById('chartScoreByCountry');
+  if (!ctx) return null;
+  if (chartScoreByCountry) chartScoreByCountry.destroy();
+  chartScoreByCountry = null;
+  var rows = (lastSummary || []).filter(function(r) {
+    if ((r.region || '').trim() !== selectedCountryRegion) return false;
+    if (selectedCountryForChart) {
+      var keyCountry = (currentReportType || 'B2B') === 'B2C' ? 'division' : 'country';
+      var c = (r[keyCountry] || r.country || r.division || '').trim();
+      return c === selectedCountryForChart;
+    }
+    return true;
+  });
+  var agg = aggregateByRegion(rows, currentReportType || 'B2B');
+  var rtype = currentReportType || 'B2B';
+  var chartKeys = rtype === 'B2C' ? CHART_SCORE_KEYS_B2C : CHART_SCORE_KEYS_B2B;
+  var labels = chartKeys.map(function(k) { return k.label; });
+  var first = agg.length ? agg[0] : null;
+  var data = chartKeys.map(function(k) {
+    var v = first ? first[k.key] : null;
+    return v != null ? Math.round(v * 100) / 100 : null;
+  });
+  var barColor = 'rgba(250,49,46,0.85)';
+  chartScoreByCountry = new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{ label: selectedCountryForChart || selectedCountryRegion || 'Region', data: data, backgroundColor: barColor }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true, max: 10 } },
+      plugins: {
+        legend: { display: false },
+        datalabels: {
+          anchor: 'end',
+          align: 'start',
+          offset: 2,
+          clamp: true,
+          color: '#212121',
+          font: { size: 9, weight: 'bold' },
+          formatter: function(value) { return value != null ? Number(value).toFixed(1) : ''; }
+        }
+      }
+    }
+  });
+  return chartScoreByCountry;
+}
+
+async function loadDashboard(reportType, month, regions, countries) {
+  setSummaryTableHeader(reportType);
+  var titleEl = document.getElementById('dashboardScoreTitle');
+  var reportTitleEl = document.getElementById('dashboardReportTitle');
+  if (titleEl) titleEl.textContent = 'Average Total Score by Region (' + reportType + ')';
+  if (reportTitleEl) reportTitleEl.textContent = reportType + ' Monitoring Report by Country';
+  var tableBody = document.getElementById('tableBodyB2B');
+  var tableLoading = document.getElementById('tableLoadingB2B');
+  var tableError = document.getElementById('tableErrorB2B');
+  if (tableBody) tableBody.innerHTML = '';
+  if (tableLoading) tableLoading.style.display = 'block';
+  if (tableError) tableError.style.display = 'none';
+  try {
+    var reports = await getReports();
+    var currentMonthForFetch = resolveCurrentMonthForFetch(reports, reportType, month);
+    var prevMonth = getImmediatelyPreviousMonth(reports, reportType, month);
+    var summary = await getSummary(reportType, currentMonthForFetch, regions || [], countries || []);
+    var summaryArr = Array.isArray(summary) ? summary : [];
+    var prevArr = [];
+    if (prevMonth) {
+      try {
+        var prevRes = await getSummary(reportType, prevMonth, regions || [], countries || []);
+        prevArr = Array.isArray(prevRes) ? prevRes : [];
+      } catch (e) { prevArr = []; }
+    }
+    assignRanksAndChange(summaryArr, prevArr, reportType);
+    lastSummary = summaryArr;
+    summaryTableSort = { colIndex: 3, dir: 1 };
+    var filterType = (document.getElementById('tableScoreFilterB2B') || {}).value || '';
+    var filtered = applyScoreFilter(summaryArr, filterType);
+    var sorted = sortSummaryRows(filtered, summaryTableSort.colIndex, summaryTableSort.dir, reportType);
+    renderScoreSummaryB2B(summaryArr);
+    renderTableB2B(sorted);
+    updateSummaryTableHeaderSortIcons();
+    renderOperationalSummary(summaryArr, reportType);
+    renderChartScoreByRegion(summaryArr);
+    renderCountryRegionSelector();
+    renderCountryFilterSelect();
+    renderChartScoreByCountry();
+    var tableLoading = document.getElementById('tableLoadingB2B');
+    if (tableLoading) tableLoading.style.display = 'none';
+    updateSummaryDateFields(currentMonthForFetch || month);
+    renderChartTotalVsJul([]);
+    (function loadTrendChart() {
+      getReports().then(function(reports) {
+        var allMonths = [...new Set((reports || []).filter(function(r) { return (r.report_type || r.reportType) === reportType; }).map(function(r) { return r.month; }))];
+        function monthKey(m) {
+          var match = (m || '').match(/^(\d{4})-M?(\d{1,2})$/i);
+          return match ? parseInt(match[1], 10) * 12 + parseInt(match[2], 10) : 0;
+        }
+        allMonths.sort(function(a, b) { return monthKey(a) - monthKey(b); });
+        var monthsForChart = allMonths.slice(-3);
+        return Promise.all(monthsForChart.map(function(m) { return getSummary(reportType, m, regions || [], countries || []); })).then(function(rowsPerMonth) {
+          var monthsWithRows = monthsForChart.map(function(m, i) { return { month: m, rows: Array.isArray(rowsPerMonth[i]) ? rowsPerMonth[i] : [] }; });
+          if (currentReportType === reportType) renderChartTotalVsJul(monthsWithRows);
+        });
+      }).catch(function() {});
+    })();
+  } catch (e) {
+    var tableErr = document.getElementById('tableErrorB2B');
+    var tableLoad = document.getElementById('tableLoadingB2B');
+    if (tableErr) { tableErr.style.display = 'block'; tableErr.textContent = 'Connection failed: ' + (e.message || String(e)) + '. Open via ' + API + '.'; }
+    if (tableLoad) tableLoad.style.display = 'none';
+  }
+}
+
+function downloadAsPdf() {
+  var el = document.getElementById('dashboardB2B');
+  if (!el || typeof html2canvas === 'undefined' || typeof jspdf === 'undefined') return;
+  html2canvas(el, { scale: 2, useCORS: true, logging: false }).then(function(canvas) {
+    var imgData = canvas.toDataURL('image/png');
+    var pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+    var pdfW = pdf.internal.pageSize.getWidth();
+    var pdfH = pdf.internal.pageSize.getHeight();
+    var margin = 10;
+    var maxW = pdfW - margin * 2;
+    var maxH = pdfH - margin * 2;
+    var imgW = maxW;
+    var imgH = (canvas.height * imgW) / canvas.width;
+    if (imgH > maxH) { imgH = maxH; imgW = (canvas.width * imgH) / canvas.height; }
+    pdf.addImage(imgData, 'PNG', margin, margin, imgW, imgH);
+    var month = getMonthParam() || '';
+    pdf.save('LG_ES_Monitoring_' + currentReportType + '_' + (month || 'report') + '.pdf');
+  }).catch(function(err) { console.error(err); alert('An error occurred while generating PDF.'); });
+}
+
+function buildRawDownloadParams() {
+  var q = new URLSearchParams();
+  q.set('report_type', currentReportType);
+  getSelectedRegions().forEach(function(r) { q.append('region', r); });
+  getSelectedCountries().forEach(function(c) { q.append('country', c); });
+  return q.toString();
+}
+
+function parseCSVToRows(csvText) {
+  var rows = [];
+  var lines = csvText.split(/\r?\n/);
+  for (var i = 0; i < lines.length; i++) {
+    var line = lines[i];
+    var fields = [];
+    var idx = 0;
+    while (idx < line.length) {
+      if (line[idx] === '"') {
+        var end = idx + 1;
+        var s = '';
+        while (end < line.length) {
+          if (line[end] === '"') {
+            if (line[end + 1] === '"') { s += '"'; end += 2; continue; }
+            break;
+          }
+            s += line[end]; end++;
+        }
+        fields.push(s);
+        idx = end + 1;
+        if (idx < line.length && line[idx] === ',') idx++;
+        continue;
+      }
+      var comma = line.indexOf(',', idx);
+      if (comma === -1) { fields.push(line.slice(idx)); break; }
+      fields.push(line.slice(idx, comma));
+      idx = comma + 1;
+    }
+    rows.push(fields);
+  }
+  return rows;
+}
+
+var EXCEL_HEADER_FILL = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFEFE6E6' } };
+var EXCEL_BORDER_THIN = { top: { style: 'thin' }, left: { style: 'thin' }, bottom: { style: 'thin' }, right: { style: 'thin' } };
+
+function applySheetStyle(worksheet, headerRowIndex) {
+  worksheet.eachRow(function(row, rowNumber) {
+    row.eachCell(function(cell) {
+      cell.border = EXCEL_BORDER_THIN;
+      if (rowNumber === headerRowIndex) {
+        cell.fill = EXCEL_HEADER_FILL;
+        cell.font = { bold: true };
+      }
+    });
+  });
+}
+
+function downloadAsExcel() {
+  if (!lastSummary.length) {
+    alert('No table data to download.');
+    return;
+  }
+  var month = getMonthParam() || '';
+  var periodLabel = month ? 'Period: ' + month : 'Period: latest';
+  var cols = currentReportType === 'B2C' ? SUMMARY_TABLE_COLS_B2C : SUMMARY_TABLE_COLS_B2B;
+  var headers = cols.map(function(c) { return c.label; });
+  var summaryDataRows = lastSummary.map(function(r) {
+    return cols.map(function(c) {
+      if (c.key === '_rank') return r.rank != null ? r.rank : '';
+      if (c.key === '_rank_change') {
+        if (r.rankChange == null || r.rankChange === '') return '—';
+        var n = Number(r.rankChange);
+        return n > 0 ? '▼ ' + n : (n < 0 ? '▲ ' + Math.abs(n) : '—');
+      }
+      return getRowCellValue(r, c);
+    });
+  });
+
+  function buildWithExcelJS(rawRows) {
+    if (typeof ExcelJS === 'undefined') return buildWithXLSX(rawRows);
+    var wb = new ExcelJS.Workbook();
+    wb.creator = 'LG ES Monitoring';
+    var wsSummary = wb.addWorksheet('Summary', { views: [{ showGridLines: true }] });
+    wsSummary.getCell(1, 1).value = periodLabel;
+    wsSummary.getCell(1, 1).font = { bold: true };
+    wsSummary.addRow(headers);
+    summaryDataRows.forEach(function(row) { wsSummary.addRow(row); });
+    var summaryHeaderRowIndex = 2;
+    applySheetStyle(wsSummary, summaryHeaderRowIndex);
+
+    if (rawRows && rawRows.length) {
+      var wsRaw = wb.addWorksheet('Raw', { views: [{ showGridLines: true }] });
+      wsRaw.getCell(1, 1).value = periodLabel;
+      wsRaw.getCell(1, 1).font = { bold: true };
+      rawRows.forEach(function(row, i) { wsRaw.addRow(row); });
+      applySheetStyle(wsRaw, 2);
+    }
+
+    return wb.xlsx.writeBuffer().then(function(buffer) {
+      var blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'LG_ES_Monitoring_' + currentReportType + '_' + (month || 'report') + '.xlsx';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  }
+
+  function buildWithXLSX(rawRows) {
+    var summaryRows = lastSummary.map(function(r) {
+      var row = {};
+      cols.forEach(function(c) {
+        var label = c.label;
+        if (c.key === '_rank') row[label] = r.rank != null ? r.rank : '';
+        else if (c.key === '_rank_change') {
+          if (r.rankChange == null || r.rankChange === '') row[label] = '—';
+          else { var n = Number(r.rankChange); row[label] = n > 0 ? '▼ ' + n : (n < 0 ? '▲ ' + Math.abs(n) : '—'); }
+        } else row[label] = getRowCellValue(r, c);
+      });
+      return row;
+    });
+    var wsSummary = XLSX.utils.json_to_sheet(summaryRows);
+    var wb = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, wsSummary, 'Summary');
+    if (rawRows && rawRows.length && typeof XLSX !== 'undefined') {
+      var wsRaw = XLSX.utils.aoa_to_sheet(rawRows);
+      XLSX.utils.book_append_sheet(wb, wsRaw, 'Raw');
+    }
+    XLSX.writeFile(wb, 'LG_ES_Monitoring_' + currentReportType + '_' + (month || 'report') + '.xlsx');
+    return Promise.resolve();
+  }
+
+  var rawUrl = API + '/api/raw/download?' + buildRawDownloadParams();
+  fetchWithAuth(rawUrl).then(function(res) {
+    if (!res.ok) return Promise.reject(new Error('Could not load Raw data.'));
+    return res.text();
+  }).then(function(csvText) {
+    var rawRows = (csvText && csvText.trim()) ? parseCSVToRows(csvText.trim()) : null;
+    return buildWithExcelJS(rawRows);
+  }).catch(function(err) {
+    console.error(err);
+    return buildWithExcelJS(null).then(function() {
+      alert('Saved Summary sheet only. Could not load Raw data.');
+    });
+  }).then(function() {
+    fetchWithAuth(API + '/api/admin/log-download', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ download_type: 'Excel (Summary + Raw)', period_or_detail: periodLabel }) }).catch(function() {});
+  });
+}
+
+var MULTISELECT_ACTIONS_HTML = '<div class="multiselect-panel-actions"><button type="button" class="multiselect-select-all" title="Select all" aria-label="Select all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></button><button type="button" class="multiselect-deselect-all" title="Deselect all" aria-label="Deselect all"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg></button></div>';
+
+function fillRegionCountryPanels(regions, countries, autoSelectAllCountries) {
+  var rPanel = document.getElementById('regionB2BPanel');
+  var cPanel = document.getElementById('countryB2BPanel');
+  var selectedR = getSelectedRegions();
+  var selectedC = getSelectedCountries();
+  if (rPanel) rPanel.innerHTML = MULTISELECT_ACTIONS_HTML + (regions || []).map(function(r) { var checked = selectedR.indexOf(r) !== -1 ? ' checked' : ''; return '<label><input type="checkbox" value="' + escapeHtml(r) + '"' + checked + '> ' + escapeHtml(r) + '</label>'; }).join('');
+  if (cPanel) {
+    var countryList = countries || [];
+    if (autoSelectAllCountries && countryList.length) selectedC = countryList;
+    cPanel.innerHTML = MULTISELECT_ACTIONS_HTML + countryList.map(function(c) { var checked = selectedC.indexOf(c) !== -1 ? ' checked' : ''; return '<label><input type="checkbox" value="' + escapeHtml(c) + '"' + checked + '> ' + escapeHtml(c) + '</label>'; }).join('');
+  }
+  updateMultiselectButtonLabels(regions, countries);
+}
+
+async function loadChecklist(month) {
+  var wrap = document.getElementById('checklistTableWrap'), loading = document.getElementById('checklistLoading'), err = document.getElementById('checklistError'), tbody = document.getElementById('checklistTableBody');
+  if (wrap) wrap.style.display = 'none';
+  if (err) { err.style.display = 'none'; err.textContent = ''; }
+  if (loading) loading.style.display = 'block';
+  try {
+    var rows = await getChecklist(month);
+    if (loading) loading.style.display = 'none';
+    if (!Array.isArray(rows) || rows.length === 0) {
+      if (err) { err.style.display = 'block'; err.textContent = 'No data.'; }
+      return;
+    }
+    var colCount = Math.max.apply(null, rows.map(function(r) { return Array.isArray(r) ? r.length : 0; })) || 1;
+    tbody.innerHTML = rows.map(function(row) {
+      var arr = Array.isArray(row) ? row : [];
+      return '<tr>' + Array.from({ length: colCount }, function(_, i) { return '<td>' + escapeHtml(i < arr.length && arr[i] != null ? String(arr[i]) : '') + '</td>'; }).join('') + '</tr>';
+    }).join('');
+    if (wrap) wrap.style.display = 'block';
+  } catch (e) {
+    if (loading) loading.style.display = 'none';
+    if (err) { err.style.display = 'block'; err.textContent = 'Load failed: ' + (e.message || String(e)); }
+  }
+}
+
+(async function init() {
+  // Lv1/Lv2 tabs and filter row are always bound regardless of API result
+  var contentMonitoringItem = document.getElementById('contentMonitoringItem');
+  var contentSummary = document.getElementById('contentSummary');
+  var contentNotice = document.getElementById('contentNotice');
+  var contentQna = document.getElementById('contentQna');
+  var contentMonitoringDetail = document.getElementById('contentMonitoringDetail');
+  var contentChecklist = document.getElementById('contentChecklist');
+  var subNavSummary = document.getElementById('subNavSummary');
+  var subNavB2C = document.getElementById('subNavB2C');
+  var subNavB2B = document.getElementById('subNavB2B');
+  var subNavInfo = document.getElementById('subNavInfo');
+  var filtersRowEl = document.getElementById('headerFiltersRow');
+  var summarySubRow = document.getElementById('summarySubRow');
+
+  var meRes = await fetchWithAuth(API + '/auth/me').then(function(r) { return r.json(); }).catch(function() { return {}; });
+  currentUser.username = meRes.username || '';
+  currentUser.role = meRes.role || 'user';
+  (function renderGnbUserProfile() {
+    var u = (currentUser.username || '').trim();
+    var displayName = u ? (u.split(/[\s._-]/).map(function(s) { return s.charAt(0).toUpperCase() + s.slice(1).toLowerCase(); }).join(' ')) : '-';
+    var parts = u.split(/[\s._-]+/).filter(Boolean);
+    var initials = u ? (parts.length >= 2 ? parts.slice(0, 2).map(function(s) { return (s.charAt(0) || '').toUpperCase(); }).join('') : u.slice(0, 2).toUpperCase()) : '--';
+    var accountLabel = currentUser.role === 'admin' ? 'Admin' : 'User';
+    var avatarEl = document.getElementById('gnbUserAvatar');
+    var nameEl = document.getElementById('gnbUserName');
+    var accountEl = document.getElementById('gnbUserAccount');
+    if (avatarEl) avatarEl.textContent = initials;
+    if (nameEl) nameEl.textContent = displayName;
+    if (accountEl) accountEl.textContent = accountLabel;
+  })();
+  var linkLogin = document.getElementById('linkLogin');
+  var btnLogoutSidebar = document.getElementById('btnLogoutSidebar');
+  if (linkLogin) linkLogin.style.display = currentUser.username ? 'none' : '';
+  if (btnLogoutSidebar) btnLogoutSidebar.style.display = currentUser.username ? '' : 'none';
+  var tabPageAdminUsers = document.getElementById('tabPageAdminUsers');
+  var contentAdminUsers = document.getElementById('contentAdminUsers');
+  var dashboardSubNav = null;
+  if (currentUser.role === 'admin' && tabPageAdminUsers) tabPageAdminUsers.style.display = '';
+  var noticeWriteBtn = document.getElementById('noticeWriteBtn');
+  if (noticeWriteBtn) noticeWriteBtn.style.display = currentUser.role === 'admin' ? '' : 'none';
+  window._noticeList = window._noticeList || [];
+
+  function showDashboardPage() {
+    if (tabPageAdminUsers) tabPageAdminUsers.classList.remove('active');
+    if (summarySubRow) summarySubRow.style.display = '';
+    if (contentAdminUsers) contentAdminUsers.classList.remove('active');
+    if (contentMonitoringItem) contentMonitoringItem.classList.remove('active');
+    if (contentSummary) contentSummary.classList.add('active');
+    if (contentNotice) contentNotice.classList.remove('active');
+    if (contentQna) contentQna.classList.remove('active');
+    if (contentMonitoringDetail) contentMonitoringDetail.classList.remove('active');
+    if (contentChecklist) contentChecklist.classList.remove('active');
+    var panel = document.getElementById('summaryPanelDashboard');
+    if (panel) { document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); }); panel.classList.add('active'); }
+    document.getElementById('tabSummary').classList.add('active');
+    document.getElementById('tabInfo').classList.remove('active');
+    if (subNavSummary) subNavSummary.style.display = '';
+    if (subNavB2C) subNavB2C.style.display = 'none';
+    if (subNavB2B) subNavB2B.style.display = 'none';
+    if (subNavInfo) subNavInfo.style.display = 'none';
+    var reportDateFieldEl = document.getElementById('reportDateField');
+    if (reportDateFieldEl) reportDateFieldEl.style.display = '';
+    var summaryTableSection = document.getElementById('summaryTableSection');
+    if (summaryTableSection) summaryTableSection.style.display = 'none';
+  }
+  function showAdminPage(showUsageLogs) {
+    if (tabPageAdminUsers) tabPageAdminUsers.classList.add('active');
+    if (summarySubRow) summarySubRow.style.display = '';
+    if (contentMonitoringItem) contentMonitoringItem.classList.remove('active');
+    if (contentSummary) contentSummary.classList.remove('active');
+    var summaryTableSection = document.getElementById('summaryTableSection');
+    if (summaryTableSection) summaryTableSection.style.display = 'none';
+    if (contentNotice) contentNotice.classList.remove('active');
+    if (contentQna) contentQna.classList.remove('active');
+    if (contentMonitoringDetail) contentMonitoringDetail.classList.remove('active');
+    if (contentChecklist) contentChecklist.classList.remove('active');
+    if (contentAdminUsers) contentAdminUsers.classList.add('active');
+    var tabUsers = document.getElementById('tabAdminUsers');
+    var tabUsageLogs = document.getElementById('tabAdminUsageLogs');
+    var panelUsers = document.getElementById('adminPanelUsers');
+    var panelUsageLogs = document.getElementById('adminPanelUsageLogs');
+    if (showUsageLogs && panelUsageLogs && tabUsageLogs) {
+      if (panelUsers) panelUsers.classList.remove('active');
+      panelUsageLogs.classList.add('active');
+      if (tabUsers) tabUsers.classList.remove('active');
+      tabUsageLogs.classList.add('active');
+      loadAdminUsageLogs();
+    } else {
+      if (panelUsageLogs) panelUsageLogs.classList.remove('active');
+      if (panelUsers) panelUsers.classList.add('active');
+      if (tabUsageLogs) tabUsageLogs.classList.remove('active');
+      if (tabUsers) tabUsers.classList.add('active');
+      loadAdminUsers();
+    }
+  }
+  function showAdminSubTab(which) {
+    var panelUsers = document.getElementById('adminPanelUsers');
+    var panelUsageLogs = document.getElementById('adminPanelUsageLogs');
+    var tabUsers = document.getElementById('tabAdminUsers');
+    var tabUsageLogs = document.getElementById('tabAdminUsageLogs');
+    if (which === 'usage') {
+      if (panelUsers) panelUsers.classList.remove('active');
+      if (panelUsageLogs) panelUsageLogs.classList.add('active');
+      if (tabUsers) tabUsers.classList.remove('active');
+      if (tabUsageLogs) tabUsageLogs.classList.add('active');
+      loadAdminUsageLogs();
+    } else {
+      if (panelUsageLogs) panelUsageLogs.classList.remove('active');
+      if (panelUsers) panelUsers.classList.add('active');
+      if (tabUsageLogs) tabUsageLogs.classList.remove('active');
+      if (tabUsers) tabUsers.classList.add('active');
+      loadAdminUsers();
+    }
+  }
+  if (tabPageAdminUsers) tabPageAdminUsers.addEventListener('click', function(e) { e.preventDefault(); if (currentUser.role !== 'admin') return; showAdminPage(false); });
+  var tabAdminUsageLogs = document.getElementById('tabAdminUsageLogs');
+  var tabAdminUsers = document.getElementById('tabAdminUsers');
+  if (tabAdminUsageLogs) tabAdminUsageLogs.addEventListener('click', function(e) { e.preventDefault(); showAdminSubTab('usage'); });
+  if (tabAdminUsers) tabAdminUsers.addEventListener('click', function(e) { e.preventDefault(); showAdminSubTab('users'); });
+  var linkToHome = document.getElementById('linkToHome');
+  if (linkToHome) linkToHome.addEventListener('click', function(e) { e.preventDefault(); showLv1MonitoringItem(); updateGnbActive('gnbMonitoringItem'); updatePageTitle('ES Content Monitoring DashBoard'); });
+
+  function showLv1Summary() {
+    if (contentAdminUsers && contentAdminUsers.classList.contains('active')) {
+      showDashboardPage();
+      return;
+    }
+    var tabSummary = document.getElementById('tabSummary');
+    var tabInfo = document.getElementById('tabInfo');
+    if (tabSummary) tabSummary.classList.add('active');
+    if (tabInfo) tabInfo.classList.remove('active');
+    if (contentMonitoringItem) contentMonitoringItem.classList.remove('active');
+    if (contentSummary) contentSummary.classList.add('active');
+    if (contentNotice) contentNotice.classList.remove('active');
+    if (contentQna) contentQna.classList.remove('active');
+    if (contentMonitoringDetail) contentMonitoringDetail.classList.remove('active');
+    if (contentChecklist) contentChecklist.classList.remove('active');
+    if (summarySubRow) summarySubRow.style.display = '';
+    if (subNavSummary) subNavSummary.style.display = '';
+    if (subNavB2C) subNavB2C.style.display = 'none';
+    if (subNavB2B) subNavB2B.style.display = 'none';
+    if (subNavInfo) subNavInfo.style.display = 'none';
+    if (filtersRowEl) filtersRowEl.style.display = '';
+    var reportDateFieldEl = document.getElementById('reportDateField');
+    if (reportDateFieldEl) reportDateFieldEl.style.display = '';
+    document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); });
+    var panel = document.getElementById('summaryPanelDashboard');
+    if (panel) panel.classList.add('active');
+  }
+  function showLv1MonitoringItem() {
+    if (contentAdminUsers && contentAdminUsers.classList.contains('active')) { return; }
+    if (contentSummary) contentSummary.classList.remove('active');
+    if (contentNotice) contentNotice.classList.remove('active');
+    if (contentQna) contentQna.classList.remove('active');
+    if (contentMonitoringDetail) contentMonitoringDetail.classList.remove('active');
+    if (contentChecklist) contentChecklist.classList.remove('active');
+    if (contentMonitoringItem) contentMonitoringItem.classList.add('active');
+    if (summarySubRow) summarySubRow.style.display = '';
+    if (subNavSummary) subNavSummary.style.display = 'none';
+    if (subNavB2C) subNavB2C.style.display = 'none';
+    if (subNavB2B) subNavB2B.style.display = 'none';
+    if (subNavInfo) subNavInfo.style.display = 'none';
+    if (filtersRowEl) filtersRowEl.style.display = 'none';
+    var reportDateFieldEl = document.getElementById('reportDateField');
+    if (reportDateFieldEl) reportDateFieldEl.style.display = 'none';
+    var summaryTableSection = document.getElementById('summaryTableSection');
+    if (summaryTableSection) summaryTableSection.style.display = 'none';
+  }
+  function showLv1B2C() {
+    if (contentAdminUsers && contentAdminUsers.classList.contains('active')) { return; }
+    if (contentMonitoringItem) contentMonitoringItem.classList.remove('active');
+    if (contentSummary) contentSummary.classList.add('active');
+    if (contentNotice) contentNotice.classList.remove('active');
+    if (contentQna) contentQna.classList.remove('active');
+    if (contentMonitoringDetail) contentMonitoringDetail.classList.remove('active');
+    if (contentChecklist) contentChecklist.classList.remove('active');
+    if (summarySubRow) summarySubRow.style.display = '';
+    if (subNavSummary) subNavSummary.style.display = 'none';
+    if (subNavB2C) subNavB2C.style.display = '';
+    if (subNavB2B) subNavB2B.style.display = 'none';
+    if (subNavInfo) subNavInfo.style.display = 'none';
+    if (filtersRowEl) filtersRowEl.style.display = '';
+    var reportDateFieldEl = document.getElementById('reportDateField');
+    if (reportDateFieldEl) reportDateFieldEl.style.display = '';
+    var summaryTableSection = document.getElementById('summaryTableSection');
+    if (summaryTableSection) summaryTableSection.style.display = '';
+    var panel = document.getElementById('summaryPanelDashboard');
+    if (panel) { document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); }); panel.classList.add('active'); }
+    if (typeof currentReportType !== 'undefined') currentReportType = 'B2C';
+    getReports().then(function(reports) {
+      var firstMonth = fillYearMonthSelect('B2C', reports);
+      var month = getMonthParam() || firstMonth || 'latest';
+      return getFilters('B2C', month, []).then(function(f) {
+        fillRegionCountryPanels(f.regions || [], f.countries || [], false);
+        if (month) return loadDashboard('B2C', getMonthParam() || month, [], []);
+      });
+    });
+  }
+  function showLv1B2B() {
+    if (contentAdminUsers && contentAdminUsers.classList.contains('active')) { return; }
+    if (contentMonitoringItem) contentMonitoringItem.classList.remove('active');
+    if (contentSummary) contentSummary.classList.add('active');
+    if (contentNotice) contentNotice.classList.remove('active');
+    if (contentQna) contentQna.classList.remove('active');
+    if (contentMonitoringDetail) contentMonitoringDetail.classList.remove('active');
+    if (contentChecklist) contentChecklist.classList.remove('active');
+    if (summarySubRow) summarySubRow.style.display = '';
+    if (subNavSummary) subNavSummary.style.display = 'none';
+    if (subNavB2C) subNavB2C.style.display = 'none';
+    if (subNavB2B) subNavB2B.style.display = '';
+    if (subNavInfo) subNavInfo.style.display = 'none';
+    if (filtersRowEl) filtersRowEl.style.display = '';
+    var reportDateFieldEl = document.getElementById('reportDateField');
+    if (reportDateFieldEl) reportDateFieldEl.style.display = '';
+    var summaryTableSection = document.getElementById('summaryTableSection');
+    if (summaryTableSection) summaryTableSection.style.display = '';
+    var panel = document.getElementById('summaryPanelDashboard');
+    if (panel) { document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); }); panel.classList.add('active'); }
+    if (typeof currentReportType !== 'undefined') currentReportType = 'B2B';
+    getReports().then(function(reports) {
+      var firstMonth = fillYearMonthSelect('B2B', reports);
+      var month = getMonthParam() || firstMonth || 'latest';
+      return getFilters('B2B', month, []).then(function(f) {
+        fillRegionCountryPanels(f.regions || [], f.countries || [], false);
+        if (month) return loadDashboard('B2B', getMonthParam() || month, [], []);
+      });
+    });
+  }
+  function showLv1Info(activeInfoSub) {
+    if (contentAdminUsers && contentAdminUsers.classList.contains('active')) {
+      if (tabPageAdminUsers) tabPageAdminUsers.classList.remove('active');
+      contentAdminUsers.classList.remove('active');
+      if (summarySubRow) summarySubRow.style.display = '';
+      if (contentSummary) contentSummary.classList.add('active');
+    }
+    document.getElementById('tabSummary').classList.remove('active');
+    document.getElementById('tabInfo').classList.add('active');
+    if (contentMonitoringItem) contentMonitoringItem.classList.remove('active');
+    if (contentSummary) contentSummary.classList.remove('active');
+    if (subNavSummary) subNavSummary.style.display = 'none';
+    if (subNavB2C) subNavB2C.style.display = 'none';
+    if (subNavB2B) subNavB2B.style.display = 'none';
+    if (subNavInfo) subNavInfo.style.display = '';
+    if (filtersRowEl) filtersRowEl.style.display = 'none';
+    var reportDateFieldEl = document.getElementById('reportDateField');
+    if (reportDateFieldEl) reportDateFieldEl.style.display = 'none';
+    var summaryTableSection = document.getElementById('summaryTableSection');
+    if (summaryTableSection) summaryTableSection.style.display = 'none';
+    var tabs = ['tabNotice', 'tabQna'];
+    tabs.forEach(function(id) { var el = document.getElementById(id); if (el) el.classList.remove('active'); });
+    if (contentNotice) contentNotice.classList.remove('active');
+    if (contentQna) contentQna.classList.remove('active');
+    if (contentMonitoringDetail) contentMonitoringDetail.classList.remove('active');
+    if (contentChecklist) contentChecklist.classList.remove('active');
+    if (activeInfoSub === 'notice') {
+      if (contentNotice) contentNotice.classList.add('active');
+      document.getElementById('tabNotice').classList.add('active');
+      loadNoticeList();
+    } else {
+      if (contentQna) contentQna.classList.add('active');
+      document.getElementById('tabQna').classList.add('active');
+      loadQnaList();
+    }
+  }
+
+  function loadNoticeList() {
+    var table = document.getElementById('noticeTable');
+    var tbody = document.getElementById('noticeTableBody');
+    var listWrap = document.getElementById('noticeListWrap');
+    var detailWrap = document.getElementById('noticeDetailWrap');
+    var emptyEl = document.getElementById('noticeEmpty');
+    if (detailWrap) detailWrap.style.display = 'none';
+    if (listWrap) listWrap.style.display = '';
+    if (!tbody) return;
+    tbody.innerHTML = '';
+    var list = (window._noticeList || []).slice().sort(function(a, b) { return (b.id || 0) - (a.id || 0); });
+    if (list.length === 0) {
+      if (table) table.style.display = 'none';
+      if (emptyEl) emptyEl.style.display = 'block';
+      return;
+    }
+    if (table) table.style.display = 'table';
+    if (emptyEl) emptyEl.style.display = 'none';
+    list.forEach(function(item, idx) {
+      var tr = document.createElement('tr');
+      tr.setAttribute('data-notice-id', String(item.id));
+      tr.style.cursor = 'pointer';
+      tr.innerHTML = '<td class="th-num">' + (idx + 1) + '</td><td class="th-title">' + escapeHtml(item.title || '') + '</td><td class="th-date">' + (item.date || '') + '</td>';
+      tr.addEventListener('click', function() { showNoticeDetail(item.id); });
+      tbody.appendChild(tr);
+    });
+  }
+  function escapeHtml(s) {
+    var div = document.createElement('div');
+    div.textContent = s;
+    return div.innerHTML;
+  }
+  function showNoticeDetail(id) {
+    var list = window._noticeList || [];
+    var item = list.find(function(n) { return n.id === id; });
+    if (!item) return;
+    document.getElementById('noticeListWrap').style.display = 'none';
+    document.getElementById('noticeDetailWrap').style.display = 'block';
+    document.getElementById('noticeDetailTitle').textContent = item.title || '';
+    document.getElementById('noticeDetailDate').textContent = item.date || '';
+    document.getElementById('noticeDetailBody').textContent = item.body || '';
+    var delBtn = document.getElementById('noticeDetailDelete');
+    if (delBtn) {
+      delBtn.style.display = currentUser.role === 'admin' ? '' : 'none';
+      delBtn.dataset.noticeId = String(id);
+    }
+  }
+  function loadQnaList() {
+    var table = document.getElementById('qnaTable');
+    var tbody = document.getElementById('qnaTableBody');
+    var emptyEl = document.getElementById('qnaEmpty');
+    if (tbody) tbody.innerHTML = '';
+    if (table) table.style.display = 'none';
+    if (emptyEl) emptyEl.style.display = 'block';
+  }
+
+  function updateGnbActive(gnbId) {
+    var links = document.querySelectorAll('.gnb-nav a');
+    links.forEach(function(a) { a.classList.remove('active'); });
+    var el = document.getElementById(gnbId);
+    if (el) el.classList.add('active');
+  }
+  function updatePageTitle(title) {
+    var el = document.getElementById('pageTitle');
+    if (el) el.textContent = 'ES Content Monitoring DashBoard';
+  }
+  document.getElementById('tabSummary').onclick = function(e) { e.preventDefault(); showLv1Summary(); };
+  document.getElementById('tabInfo').onclick = function(e) { e.preventDefault(); showLv1Info('notice'); };
+  document.getElementById('tabNotice').onclick = function(e) { e.preventDefault(); showLv1Info('notice'); };
+  document.getElementById('tabQna').onclick = function(e) { e.preventDefault(); showLv1Info('qna'); };
+  var gnbMonitoringItem = document.getElementById('gnbMonitoringItem');
+  if (gnbMonitoringItem) gnbMonitoringItem.onclick = function(e) { e.preventDefault(); showLv1MonitoringItem(); updateGnbActive('gnbMonitoringItem'); updatePageTitle('ES Content Monitoring DashBoard'); };
+  var gnbSummary = document.getElementById('gnbSummary');
+  if (gnbSummary) gnbSummary.onclick = function(e) { e.preventDefault(); showLv1Summary(); var tab = document.getElementById('tabScoreByRegion'); if (tab) tab.click(); updateGnbActive('gnbSummary'); updatePageTitle('ES Content Monitoring DashBoard'); };
+  var gnbB2B = document.getElementById('gnbB2B');
+  if (gnbB2B) gnbB2B.onclick = function(e) { e.preventDefault(); showLv1B2B(); updateGnbActive('gnbB2B'); updatePageTitle('ES Content Monitoring DashBoard'); };
+  var gnbB2C = document.getElementById('gnbB2C');
+  if (gnbB2C) gnbB2C.onclick = function(e) { e.preventDefault(); showLv1B2C(); updateGnbActive('gnbB2C'); updatePageTitle('ES Content Monitoring DashBoard'); };
+  var gnbMonitoringDetail = document.getElementById('gnbMonitoringDetail');
+  if (gnbMonitoringDetail) gnbMonitoringDetail.onclick = function(e) { e.preventDefault(); showLv1Info('monitoring'); updateGnbActive('gnbMonitoringDetail'); updatePageTitle('Monitoring Detail'); };
+  var gnbFaq = document.getElementById('gnbFaq');
+  if (gnbFaq) gnbFaq.onclick = function(e) { e.preventDefault(); showLv1Info('qna'); updateGnbActive('gnbFaq'); updatePageTitle('ES Content Monitoring DashBoard'); };
+  var gnbChecklist = document.getElementById('gnbChecklist');
+  if (gnbChecklist) gnbChecklist.onclick = function(e) { e.preventDefault(); showLv1Info('checklist'); updateGnbActive('gnbChecklist'); updatePageTitle('Checklist & Criteria'); };
+
+  var noticeDetailBack = document.getElementById('noticeDetailBack');
+  if (noticeDetailBack) noticeDetailBack.onclick = function() {
+    document.getElementById('noticeDetailWrap').style.display = 'none';
+    document.getElementById('noticeListWrap').style.display = '';
+  };
+  var noticeDetailDelete = document.getElementById('noticeDetailDelete');
+  if (noticeDetailDelete) noticeDetailDelete.onclick = function() {
+    var id = parseInt(noticeDetailDelete.dataset.noticeId, 10);
+    if (!id) return;
+    if (!confirm('Delete this notice?')) return;
+    window._noticeList = (window._noticeList || []).filter(function(n) { return n.id !== id; });
+    document.getElementById('noticeDetailWrap').style.display = 'none';
+    document.getElementById('noticeListWrap').style.display = '';
+    loadNoticeList();
+  };
+  var noticeWriteModalOverlay = document.getElementById('noticeWriteModalOverlay');
+  if (noticeWriteBtn) noticeWriteBtn.onclick = function() {
+    document.getElementById('noticeWriteTitle').value = '';
+    document.getElementById('noticeWriteBody').value = '';
+    var errEl = document.getElementById('noticeWriteError');
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+    if (noticeWriteModalOverlay) noticeWriteModalOverlay.classList.add('show');
+  };
+  var noticeWriteCancel = document.getElementById('noticeWriteCancel');
+  if (noticeWriteCancel) noticeWriteCancel.onclick = function() {
+    if (noticeWriteModalOverlay) noticeWriteModalOverlay.classList.remove('show');
+  };
+  var noticeWriteSubmit = document.getElementById('noticeWriteSubmit');
+  if (noticeWriteSubmit) noticeWriteSubmit.onclick = function() {
+    var title = (document.getElementById('noticeWriteTitle') || {}).value || '';
+    var body = (document.getElementById('noticeWriteBody') || {}).value || '';
+    var errEl = document.getElementById('noticeWriteError');
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+    if (!title.trim()) { if (errEl) { errEl.textContent = 'Please enter a title.'; errEl.style.display = 'block'; } return; }
+    var id = Date.now();
+    var date = new Date().toISOString().slice(0, 10);
+    window._noticeList = window._noticeList || [];
+    window._noticeList.push({ id: id, title: title.trim(), body: body.trim(), date: date });
+    if (noticeWriteModalOverlay) noticeWriteModalOverlay.classList.remove('show');
+    loadNoticeList();
+  };
+  if (noticeWriteModalOverlay) noticeWriteModalOverlay.onclick = function(e) {
+    if (e.target === noticeWriteModalOverlay) noticeWriteModalOverlay.classList.remove('show');
+  };
+  var qnaSubmitBtn = document.getElementById('qnaSubmitBtn');
+  if (qnaSubmitBtn) qnaSubmitBtn.onclick = function() {
+    var subject = (document.getElementById('qnaSubject') || {}).value || '';
+    var content = (document.getElementById('qnaContent') || {}).value || '';
+    var errEl = document.getElementById('qnaSubmitError');
+    var okEl = document.getElementById('qnaSubmitSuccess');
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+    if (okEl) okEl.style.display = 'none';
+    if (!subject.trim()) { if (errEl) { errEl.textContent = 'Please enter a subject.'; errEl.style.display = 'block'; } return; }
+    if (!content.trim()) { if (errEl) { errEl.textContent = 'Please enter content.'; errEl.style.display = 'block'; } return; }
+    if (okEl) okEl.style.display = 'block';
+    document.getElementById('qnaAuthor').value = '';
+    document.getElementById('qnaEmail').value = '';
+    document.getElementById('qnaSubject').value = '';
+    document.getElementById('qnaContent').value = '';
+  };
+
+  function loadAdminUsers() {
+    var wrap = document.getElementById('adminUsersTableWrap');
+    var loading = document.getElementById('adminUsersLoading');
+    var errEl = document.getElementById('adminUsersError');
+    var tbody = document.getElementById('adminUsersTableBody');
+    var roleFilter = (document.getElementById('adminUsersRoleFilter') || {}).value || '';
+    var statusFilter = (document.getElementById('adminUsersStatusFilter') || {}).value || '';
+    if (loading) loading.style.display = 'block';
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+    if (wrap) wrap.style.display = 'none';
+    var q = '?limit=300&offset=0';
+    if (roleFilter) q += '&role=' + encodeURIComponent(roleFilter);
+    if (statusFilter === 'pending') q += '&pending_only=true';
+    else if (statusFilter === 'active') q += '&active_only=true';
+    fetchWithAuth(API + '/api/admin/users' + q)
+      .then(function(r) {
+        if (r.status === 403) { throw new Error('Permission denied.'); }
+        if (!r.ok) return r.text().then(function(t) { try { var b = JSON.parse(t); throw new Error(b.detail || t); } catch (e) { if (e instanceof Error && e.message && e.message !== t) throw e; throw new Error(t || 'Request failed (status ' + r.status + ')'); } });
+        return r.json();
+      })
+      .then(function(data) {
+        if (loading) loading.style.display = 'none';
+        var items = data.items || [];
+        var total = data.total != null ? data.total : items.length;
+        tbody.innerHTML = items.map(function(u) {
+          var roleBadge = u.role === 'admin' ? '<span class="badge badge-admin">Admin</span>' : '<span class="badge badge-user">User</span>';
+          var statusBadge = u.is_active ? '<span class="badge badge-active">Active</span>' : '<span class="badge badge-inactive">Inactive</span>';
+          var created = (u.created_at || '').slice(0, 10);
+          var roleBtn = u.role === 'admin'
+            ? '<button type="button" class="btn-role" data-id="' + u.id + '" data-role="user">Set User</button>'
+            : '<button type="button" class="btn-role" data-id="' + u.id + '" data-role="admin">Set Admin</button>';
+          var activeBtn = u.is_active
+            ? '<button type="button" class="btn-active" data-id="' + u.id + '" data-active="false">Deactivate</button>'
+            : '<button type="button" class="btn-active" data-id="' + u.id + '" data-active="true">Activate</button>';
+          var pwBtn = '<button type="button" class="btn-pw" data-id="' + u.id + '">Change password</button>';
+          var deleteBtn = '<button type="button" class="btn-delete" data-id="' + u.id + '" onclick="window.doAdminDeleteUser(this); return false;">Delete</button>';
+          return '<tr><td>' + escapeHtml(u.email) + '</td><td>' + roleBadge + '</td><td>' + statusBadge + '</td><td>' + escapeHtml(created) + '</td><td>' + roleBtn + ' ' + activeBtn + ' ' + pwBtn + ' ' + deleteBtn + '</td></tr>';
+        }).join('');
+        if (wrap) wrap.style.display = 'block';
+        document.getElementById('adminUsersPagination').style.display = 'block';
+        document.getElementById('adminUsersPagination').textContent = 'Total ' + total;
+      })
+      .catch(function(e) {
+        if (loading) loading.style.display = 'none';
+        if (errEl) { errEl.style.display = 'block'; errEl.textContent = e.message || 'Load failed'; }
+      });
+  }
+
+  function loadAdminUsageLogs() {
+    var usageLoading = document.getElementById('usageSummaryLoading');
+    var usageWrap = document.getElementById('usageSummaryWrap');
+    var usageBody = document.getElementById('usageSummaryBody');
+    var usageEmpty = document.getElementById('usageSummaryEmpty');
+    var usageError = document.getElementById('usageSummaryError');
+    var pipelineLoading = document.getElementById('pipelineStatusLoading');
+    var pipelineWrap = document.getElementById('pipelineStatusWrap');
+    var pipelineBody = document.getElementById('pipelineStatusBody');
+    var pipelineEmpty = document.getElementById('pipelineStatusEmpty');
+    var pipelineError = document.getElementById('pipelineStatusError');
+    var downloadLoading = document.getElementById('downloadLogLoading');
+    var downloadWrap = document.getElementById('downloadLogWrap');
+    var downloadBody = document.getElementById('downloadLogBody');
+    var downloadEmpty = document.getElementById('downloadLogEmpty');
+    var downloadError = document.getElementById('downloadLogError');
+    var activityLoading = document.getElementById('activityLogLoading');
+    var activityWrap = document.getElementById('activityLogWrap');
+    var activityBody = document.getElementById('activityLogBody');
+    var activityEmpty = document.getElementById('activityLogEmpty');
+    var activityError = document.getElementById('activityLogError');
+    function show(el, visible) { if (el) el.style.display = visible ? '' : 'none'; }
+    if (usageLoading) usageLoading.style.display = 'block';
+    if (pipelineLoading) pipelineLoading.style.display = 'block';
+    if (downloadLoading) downloadLoading.style.display = 'block';
+    if (activityLoading) activityLoading.style.display = 'block';
+    [usageError, pipelineError, downloadError, activityError].forEach(function(el) { if (el) { el.style.display = 'none'; el.textContent = ''; } });
+    [usageWrap, pipelineWrap, downloadWrap, activityWrap].forEach(function(el) { show(el, false); });
+    [usageEmpty, pipelineEmpty, downloadEmpty, activityEmpty].forEach(function(el) { show(el, false); });
+
+    Promise.all([
+      fetchWithAuth(API + '/api/admin/usage').then(function(r) { if (!r.ok) throw new Error('Usage'); return r.json(); }),
+      fetchWithAuth(API + '/api/admin/pipeline-status').then(function(r) { if (!r.ok) throw new Error('Pipeline'); return r.json(); }),
+      fetchWithAuth(API + '/api/admin/download-log?limit=100').then(function(r) { if (!r.ok) throw new Error('Download log'); return r.json(); }),
+      fetchWithAuth(API + '/api/admin/activity-log?limit=100').then(function(r) { if (!r.ok) throw new Error('Activity log'); return r.json(); })
+    ]).then(function(results) {
+      var usage = results[0];
+      var pipeline = results[1];
+      var download = results[2];
+      var activity = results[3];
+      if (usageLoading) usageLoading.style.display = 'none';
+      if (pipelineLoading) pipelineLoading.style.display = 'none';
+      if (downloadLoading) downloadLoading.style.display = 'none';
+      if (activityLoading) activityLoading.style.display = 'none';
+      var items = usage.items || [];
+      if (items.length && usageBody) {
+        usageBody.innerHTML = items.map(function(u) {
+          return '<tr><td>' + escapeHtml(u.email || '') + '</td><td>' + escapeHtml(u.role || '') + '</td><td>' + (u.last_login || '—') + '</td><td>' + (u.sessions_7d != null ? u.sessions_7d : '—') + '</td><td>' + (u.downloads_7d != null ? u.downloads_7d : '—') + '</td></tr>';
+        }).join('');
+        show(usageWrap, true);
+      } else if (usageEmpty) { show(usageEmpty, true); }
+      items = pipeline.items || [];
+      if (items.length && pipelineBody) {
+        pipelineBody.innerHTML = items.map(function(p) {
+          return '<tr><td>' + escapeHtml(p.name || '') + '</td><td>' + escapeHtml(p.type || '') + '</td><td>' + (p.last_run || '—') + '</td><td>' + escapeHtml(p.status || '—') + '</td><td>' + escapeHtml(p.note || '') + '</td></tr>';
+        }).join('');
+        show(pipelineWrap, true);
+      } else if (pipelineEmpty) { show(pipelineEmpty, true); }
+      items = download.items || [];
+      if (items.length && downloadBody) {
+        downloadBody.innerHTML = items.map(function(d) {
+          return '<tr><td>' + escapeHtml(d.ts || '') + '</td><td>' + escapeHtml(d.email || '') + '</td><td>' + escapeHtml(d.download_type || '') + '</td><td>' + escapeHtml(d.period_or_detail || '') + '</td></tr>';
+        }).join('');
+        show(downloadWrap, true);
+      } else if (downloadEmpty) { show(downloadEmpty, true); }
+      items = activity.items || [];
+      if (items.length && activityBody) {
+        activityBody.innerHTML = items.map(function(a) {
+          return '<tr><td>' + escapeHtml(a.ts || '') + '</td><td>' + escapeHtml(a.email || '') + '</td><td>' + escapeHtml(a.action || '') + '</td><td>' + escapeHtml(a.detail || '') + '</td></tr>';
+        }).join('');
+        show(activityWrap, true);
+      } else if (activityEmpty) { show(activityEmpty, true); }
+    }).catch(function(e) {
+      if (usageLoading) usageLoading.style.display = 'none';
+      if (pipelineLoading) pipelineLoading.style.display = 'none';
+      if (downloadLoading) downloadLoading.style.display = 'none';
+      if (activityLoading) activityLoading.style.display = 'none';
+      var msg = e.message || 'Load failed';
+      if (usageError) { usageError.textContent = msg; usageError.style.display = 'block'; }
+      if (pipelineError) { pipelineError.textContent = msg; pipelineError.style.display = 'block'; }
+      if (downloadError) { downloadError.textContent = msg; downloadError.style.display = 'block'; }
+      if (activityError) { activityError.textContent = msg; activityError.style.display = 'block'; }
+    });
+  }
+
+  var pwChangeUserId = null;
+  function openPwChangeModal(userId) {
+    pwChangeUserId = userId;
+    var modal = document.getElementById('pwChangeModal');
+    var input = document.getElementById('pwModalInput');
+    var errEl = document.getElementById('pwModalError');
+    if (modal) modal.classList.add('show');
+    if (input) { input.value = ''; input.focus(); }
+    if (errEl) { errEl.textContent = ''; errEl.classList.remove('show'); }
+  }
+  function closePwChangeModal() {
+    var modal = document.getElementById('pwChangeModal');
+    if (modal) modal.classList.remove('show');
+    pwChangeUserId = null;
+  }
+  document.getElementById('pwModalCancel').onclick = closePwChangeModal;
+  document.getElementById('pwModalConfirm').onclick = function() {
+    var input = document.getElementById('pwModalInput');
+    var errEl = document.getElementById('pwModalError');
+    var newPw = (input && input.value) ? input.value : '';
+    if (newPw.length < 6) {
+      if (errEl) { errEl.textContent = 'Password must be at least 6 characters.'; errEl.classList.add('show'); }
+      return;
+    }
+    if (!pwChangeUserId) return;
+    if (errEl) { errEl.classList.remove('show'); errEl.textContent = ''; }
+    fetchWithAuth(API + '/api/admin/users/' + pwChangeUserId, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ password: newPw }) })
+      .then(function(r) {
+        return r.text().then(function(t) {
+          var b;
+          try { b = t ? JSON.parse(t) : {}; } catch (_) { throw new Error(t || 'Update failed'); }
+          if (!r.ok) throw new Error(b.detail || t || 'Update failed');
+          return b;
+        });
+      })
+      .then(function() {
+        closePwChangeModal();
+        alert('Password has been updated.');
+        loadAdminUsers();
+      })
+      .catch(function(e) {
+        if (errEl) { errEl.textContent = e.message || 'Update failed'; errEl.classList.add('show'); }
+      });
+  };
+  document.getElementById('pwChangeModal').onclick = function(e) {
+    if (e.target.id === 'pwChangeModal') closePwChangeModal();
+  };
+  document.getElementById('pwModalInput').onkeydown = function(e) {
+    if (e.key === 'Enter') document.getElementById('pwModalConfirm').click();
+  };
+
+  var adminRoleFilter = document.getElementById('adminUsersRoleFilter');
+  var adminStatusFilter = document.getElementById('adminUsersStatusFilter');
+  var adminRefresh = document.getElementById('adminUsersRefresh');
+  if (adminRoleFilter) adminRoleFilter.onchange = loadAdminUsers;
+  if (adminStatusFilter) adminStatusFilter.onchange = loadAdminUsers;
+  if (adminRefresh) adminRefresh.onclick = loadAdminUsers;
+
+  window.doAdminDeleteUser = function(btn) {
+    if (!btn || !btn.getAttribute) return;
+    var id = parseInt(btn.getAttribute('data-id'), 10);
+    var row = btn.closest('tr');
+    var email = row && row.querySelector('td') ? (row.querySelector('td').textContent || '').trim() : '';
+    if (!id) return;
+    if (!confirm('Really delete account "' + (email || 'this account') + '"?\nDeleted accounts cannot be recovered.')) return;
+    var baseUrl = window.API_BASE || window.location.origin || '';
+    fetch(baseUrl + '/api/admin/users/' + id, { method: 'DELETE', credentials: 'include' })
+      .then(function(r) {
+        if (r.status === 401) { window.location.href = '/login'; return Promise.reject(new Error('Unauthorized')); }
+        if (!r.ok) return r.text().then(function(t) { try { var b = JSON.parse(t); throw new Error(b.detail || t); } catch (err) { throw err instanceof Error ? err : new Error(t || 'Delete failed'); } });
+        return r.status === 204 ? {} : r.json();
+      })
+      .then(function() { loadAdminUsers(); })
+      .catch(function(e) { alert(e.message || 'Delete failed'); });
+  };
+
+  var adminTable = document.getElementById('adminUsersTable');
+  if (adminTable) {
+    adminTable.addEventListener('click', function(e) {
+      var btn = e.target.closest('button[data-id]');
+      if (!btn || !btn.classList.contains('btn-role') && !btn.classList.contains('btn-active') && !btn.classList.contains('btn-pw')) return;
+      if (btn.classList.contains('btn-delete')) return;
+      e.preventDefault();
+      e.stopPropagation();
+      var id = parseInt(btn.getAttribute('data-id'), 10);
+      if (!id) return;
+      if (btn.classList.contains('btn-pw')) {
+        openPwChangeModal(id);
+        return;
+      }
+      if (btn.classList.contains('btn-role')) {
+        var role = btn.getAttribute('data-role');
+        if (!role) return;
+        fetchWithAuth(API + '/api/admin/users/' + id, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ role: role }), credentials: 'include' })
+          .then(function(r) { return r.json(); })
+          .then(function() { loadAdminUsers(); })
+          .catch(function(e) { alert(e.message || 'Update failed'); });
+        return;
+      }
+      if (btn.classList.contains('btn-active')) {
+        var active = btn.getAttribute('data-active') === 'true';
+        fetchWithAuth(API + '/api/admin/users/' + id, { method: 'PATCH', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ is_active: active }), credentials: 'include' })
+          .then(function(r) { return r.json(); })
+          .then(function() { loadAdminUsers(); })
+          .catch(function(e) { alert(e.message || 'Update failed'); });
+      }
+    });
+  }
+
+  document.getElementById('adminUsersAddBtn').onclick = function() {
+    var emailEl = document.getElementById('adminAddEmail');
+    var pwEl = document.getElementById('adminAddPassword');
+    var roleEl = document.getElementById('adminAddRole');
+    var errEl = document.getElementById('adminUsersAddError');
+    var email = (emailEl && emailEl.value || '').trim();
+    var password = pwEl && pwEl.value || '';
+    var role = roleEl && roleEl.value || 'user';
+    if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; }
+    if (!email) { if (errEl) { errEl.style.display = 'block'; errEl.textContent = 'Please enter email.'; } return; }
+    if (password.length < 6) { if (errEl) { errEl.style.display = 'block'; errEl.textContent = 'Password must be at least 6 characters.'; } return; }
+    fetchWithAuth(API + '/api/admin/users', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, password: password, role: role }) })
+      .then(function(r) {
+        return r.text().then(function(t) {
+          var b;
+          try { b = t ? JSON.parse(t) : {}; } catch (_) { throw new Error(r.status === 405 ? 'Please restart the server and try again. (Method Not Allowed)' : (t || 'Add failed (status ' + r.status + ')')); }
+          if (!r.ok) throw new Error(b.detail || t || 'Add failed');
+          return b;
+        });
+      })
+      .then(function() {
+        if (emailEl) emailEl.value = '';
+        if (pwEl) pwEl.value = '';
+        if (errEl) errEl.style.display = 'none';
+        loadAdminUsers();
+      })
+      .catch(function(e) { if (errEl) { errEl.style.display = 'block'; errEl.textContent = e.message || 'Add failed'; } });
+  };
+
+  setSummaryTableHeader(currentReportType || 'B2B');
+
+  try {
+    var reports = await getReports();
+    if (!reports.length) {
+      var te = document.getElementById('tableErrorB2B');
+      if (te) { te.style.display = 'block'; te.textContent = 'No data. Check .env DB connection (MYSQL_*) and refresh the dashboard.'; }
+      return;
+    }
+    var firstMonth = fillYearMonthSelect('B2B', reports);
+    var month = getMonthParam() || firstMonth || 'latest';
+    var filters = await getFilters('B2B', month, []);
+    var regions = filters.regions || [];
+    var countries = filters.countries || [];
+    fillRegionCountryPanels(regions, countries, false);
+    if (subNavSummary) subNavSummary.style.display = '';
+    if (subNavB2C) subNavB2C.style.display = 'none';
+    if (subNavB2B) subNavB2B.style.display = 'none';
+    if (firstMonth) {
+      var match = String(firstMonth).match(/^(\d{4})-(\d{1,2})$/);
+      if (match) {
+        var yEl = document.getElementById('yearB2B'), mEl = document.getElementById('monthB2B');
+        if (yEl) yEl.value = match[1];
+        if (mEl) mEl.value = (match[2].length === 1 ? '0' + match[2] : match[2]);
+      }
+      await loadDashboard('B2B', getMonthParam() || firstMonth, [], []);
+    }
+    var monthsB2B = [...new Set(reports.filter(function(r) { return (r.report_type || r.reportType) === 'B2B'; }).map(function(r) { return r.month; }))].sort();
+    document.getElementById('monthChecklist').innerHTML = '<option value="">B2B Latest</option>' + monthsB2B.map(function(m) { return '<option value="' + m + '">' + m + '</option>'; }).join('');
+
+    var filterEl = document.getElementById('tableScoreFilterB2B');
+    if (filterEl) filterEl.onchange = function() { refreshSummaryTable(); };
+
+    var tabScoreByRegion = document.getElementById('tabScoreByRegion');
+    var tabScoreByCountry = document.getElementById('tabScoreByCountry');
+    var panelScoreByRegion = document.getElementById('panelScoreByRegion');
+    var panelScoreByCountry = document.getElementById('panelScoreByCountry');
+    if (tabScoreByRegion) tabScoreByRegion.onclick = function(e) {
+      e.preventDefault();
+      tabScoreByRegion.classList.add('active');
+      if (tabScoreByCountry) tabScoreByCountry.classList.remove('active');
+      if (panelScoreByRegion) panelScoreByRegion.classList.add('active');
+      if (panelScoreByCountry) panelScoreByCountry.classList.remove('active');
+      var opWrap = document.getElementById('operationalSummaryWrap');
+      if (opWrap) opWrap.style.display = '';
+    };
+    if (tabScoreByCountry) tabScoreByCountry.onclick = function(e) {
+      e.preventDefault();
+      tabScoreByCountry.classList.add('active');
+      if (tabScoreByRegion) tabScoreByRegion.classList.remove('active');
+      if (panelScoreByCountry) panelScoreByCountry.classList.add('active');
+      if (panelScoreByRegion) panelScoreByRegion.classList.remove('active');
+      var opWrap = document.getElementById('operationalSummaryWrap');
+      if (opWrap) opWrap.style.display = 'none';
+      renderCountryRegionSelector();
+      renderCountryFilterSelect();
+      renderChartScoreByCountry();
+    };
+    var countryFilterSelectEl = document.getElementById('countryFilterSelect');
+    if (countryFilterSelectEl) countryFilterSelectEl.onchange = function() {
+      selectedCountryForChart = this.value || '';
+      renderChartScoreByCountry();
+    };
+
+    function setActiveInNav(navId, activeId) {
+      var nav = document.getElementById(navId);
+      if (!nav) return;
+      nav.querySelectorAll('a').forEach(function(a) { a.classList.remove('active'); });
+      var el = document.getElementById(activeId);
+      if (el) el.classList.add('active');
+    }
+    ['tabB2CAll','tabB2CFeatureCard','tabB2C360','tabB2CGnbStructure'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.onclick = function(e) { e.preventDefault(); setActiveInNav('subNavB2C', id); };
+    });
+    function switchB2BSubTab(tabId) {
+      setActiveInNav('subNavB2B', tabId);
+      var layout = document.querySelector('.summary-dashboard-layout');
+      var tableSection = document.getElementById('summaryTableSection');
+      var dashboardPanel = document.getElementById('summaryPanelDashboard');
+      var blogPanel = document.getElementById('summaryPanelBlog');
+      if (tabId === 'tabB2BBlog') {
+        if (layout) layout.style.display = 'none';
+        if (tableSection) tableSection.style.display = 'none';
+        document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); });
+        if (blogPanel) blogPanel.classList.add('active');
+        var month = getMonthParam() || 'latest';
+        var blogCfg = SUMMARY_SHEET_CONFIG.find(function(c) { return c.sheet === 'Blog'; });
+        if (blogCfg) loadSheetSection(month, blogCfg);
+      } else {
+        if (layout) layout.style.display = '';
+        if (tableSection) tableSection.style.display = '';
+        document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); });
+        if (dashboardPanel) dashboardPanel.classList.add('active');
+      }
+    }
+    ['tabB2BAll','tabB2BBlog','tabB2BNewContents','tabB2BContentsError'].forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.onclick = function(e) { e.preventDefault(); switchB2BSubTab(id); };
+    });
+    var blogCountryFilterEl = document.getElementById('blogCountryFilter');
+    if (blogCountryFilterEl) blogCountryFilterEl.onchange = function() {
+      var rows = window._blogSheetRows || [];
+      var colCount = window._blogSheetColCount || 0;
+      var blogCfg = SUMMARY_SHEET_CONFIG.find(function(c) { return c.sheet === 'Blog'; });
+      if (!blogCfg) return;
+      var tbody = document.getElementById(blogCfg.bodyId);
+      var country = this.value || '';
+      var filtered = country ? rows.filter(function(r) { var arr = Array.isArray(r) ? r : []; var c = (arr[1] != null ? String(arr[1]) : '').trim(); return c === country; }) : rows;
+      if (tbody) tbody.innerHTML = buildBlogSheetBody(filtered, colCount);
+    };
+    var btnBlogDownload = document.getElementById('btnBlogDownload');
+    if (btnBlogDownload) btnBlogDownload.onclick = function() {
+      var rows = window._blogSheetRows || [];
+      if (!rows.length) return;
+      var country = (document.getElementById('blogCountryFilter') || {}).value || '';
+      if (country) rows = rows.filter(function(r) { var arr = Array.isArray(r) ? r : []; var c = (arr[1] != null ? String(arr[1]) : '').trim(); return c === country; });
+      var headRow = document.getElementById('sheetBlogHead');
+      var headers = headRow ? Array.from(headRow.querySelectorAll('th')).map(function(th) { return th.textContent || ''; }) : [];
+      var lines = [headers.join('\t')];
+      rows.forEach(function(r) { var arr = Array.isArray(r) ? r : []; lines.push(arr.map(function(c) { var s = (c != null && c !== '') ? String(c).replace(/\t/g, ' ').replace(/\n/g, ' ') : ''; return s; }).join('\t')); });
+      var blob = new Blob([lines.join('\n')], { type: 'text/tab-separated-values' });
+      var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'blog_' + (getMonthParam() || 'latest') + '.tsv'; a.click(); URL.revokeObjectURL(a.href);
+    };
+
+    var tableSummary = document.getElementById('tableSummaryB2B');
+    if (tableSummary) tableSummary.addEventListener('click', function(e) {
+      var th = e.target && e.target.closest && e.target.closest('th.sortable');
+      if (!th) return;
+      var colIndex = parseInt(th.getAttribute('data-col-index'), 10);
+      if (isNaN(colIndex)) return;
+      if (summaryTableSort.colIndex === colIndex) {
+        summaryTableSort.dir = -summaryTableSort.dir;
+      } else {
+        summaryTableSort.colIndex = colIndex;
+        summaryTableSort.dir = 1;
+      }
+      refreshSummaryTable();
+    });
+
+    function openRawDataModal(region, country) {
+      var overlay = document.getElementById('rawDataModalOverlay');
+      var titleEl = document.getElementById('rawDataModalTitle');
+      var loadingEl = document.getElementById('rawDataModalLoading');
+      var tableWrap = document.getElementById('rawDataModalTableWrap');
+      var theadEl = document.getElementById('rawDataModalThead');
+      var tbodyEl = document.getElementById('rawDataModalTbody');
+      var emptyEl = document.getElementById('rawDataModalEmpty');
+      if (titleEl) titleEl.textContent = 'Raw data: ' + (region || '—') + ' / ' + (country || '—');
+      if (loadingEl) loadingEl.style.display = 'block';
+      if (tableWrap) tableWrap.style.display = 'none';
+      if (emptyEl) emptyEl.style.display = 'none';
+      if (overlay) overlay.classList.add('show');
+      var q = '?report_type=' + encodeURIComponent(currentReportType || 'B2B') + '&limit=500';
+      if (region) q += '&region=' + encodeURIComponent(region);
+      if (country) q += '&country=' + encodeURIComponent(country);
+      fetchWithAuth(API + '/api/raw' + q).then(function(r) {
+        if (!r.ok) throw new Error('Load failed');
+        return r.json();
+      }).then(function(data) {
+        if (loadingEl) loadingEl.style.display = 'none';
+        var items = data.items || [];
+        if (items.length === 0) {
+          if (emptyEl) emptyEl.style.display = 'block';
+          return;
+        }
+        var keys = Object.keys(items[0]);
+        if (theadEl) {
+          theadEl.innerHTML = '<tr>' + keys.map(function(k) { return '<th>' + escapeHtml(k) + '</th>'; }).join('') + '</tr>';
+        }
+        if (tbodyEl) {
+          tbodyEl.innerHTML = items.map(function(row) {
+            return '<tr>' + keys.map(function(k) {
+              var v = row[k];
+              var s = (v != null && v !== '') ? String(v) : '';
+              var url = s.trim();
+              var isUrl = /^https?:\/\//i.test(url);
+              if (isUrl) {
+                var safeHref = url.replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/&/g, '&amp;');
+                return '<td><a href="' + safeHref + '" target="_blank" rel="noopener noreferrer">' + escapeHtml(s) + '</a></td>';
+              }
+              return '<td>' + escapeHtml(s) + '</td>';
+            }).join('') + '</tr>';
+          }).join('');
+        }
+        if (tableWrap) tableWrap.style.display = 'block';
+      }).catch(function(err) {
+        if (loadingEl) loadingEl.style.display = 'none';
+        if (emptyEl) { emptyEl.textContent = err.message || 'Load failed.'; emptyEl.style.display = 'block'; }
+      });
+    }
+    function closeRawDataModal() {
+      var overlay = document.getElementById('rawDataModalOverlay');
+      if (overlay) overlay.classList.remove('show');
+    }
+    document.getElementById('rawDataModalClose').onclick = closeRawDataModal;
+    document.getElementById('rawDataModalOverlay').onclick = function(e) {
+      if (e.target.id === 'rawDataModalOverlay') closeRawDataModal();
+    };
+
+    var tableSummary2 = document.getElementById('tableSummaryB2B');
+    if (tableSummary2) tableSummary2.addEventListener('click', function(e) {
+      var td = e.target && e.target.closest && e.target.closest('td.cell-clickable');
+      if (!td) return;
+      var tr = td.closest('tr');
+      if (!tr) return;
+      var region = (tr.getAttribute('data-region') || '').trim();
+      var country = (tr.getAttribute('data-country') || '').trim();
+      openRawDataModal(region, country);
+    });
+
+    function onYearMonthChange() {
+      var m = getMonthParam();
+      getFilters(currentReportType, m, []).then(function(f) {
+        fillRegionCountryPanels(f.regions || [], f.countries || [], false);
+        loadDashboard(currentReportType, m, getSelectedRegions(), getSelectedCountries());
+      });
+    }
+    var yearEl = document.getElementById('yearB2B'), monthEl = document.getElementById('monthB2B');
+    if (yearEl) yearEl.onchange = onYearMonthChange;
+    if (monthEl) monthEl.onchange = onYearMonthChange;
+    document.getElementById('regionB2BPanel').addEventListener('change', function() {
+      var month = getMonthParam();
+      var selectedR = getSelectedRegions();
+      getFilters(currentReportType, month, selectedR).then(function(f) {
+        var countriesInRegion = f.countries || [];
+        fillRegionCountryPanels(f.regions || [], countriesInRegion, true);
+        loadDashboard(currentReportType, month, selectedR, getSelectedCountries());
+      });
+    });
+    document.getElementById('countryB2BPanel').addEventListener('change', function() {
+      updateMultiselectButtonLabels(
+        Array.from(document.getElementById('regionB2BPanel').querySelectorAll('input')).map(function(i) { return i.value; }),
+        Array.from(document.getElementById('countryB2BPanel').querySelectorAll('input')).map(function(i) { return i.value; })
+      );
+      loadDashboard(currentReportType, getMonthParam(), getSelectedRegions(), getSelectedCountries());
+    });
+
+    function applyMultiselectAll(panelId, selectAll) {
+      var panel = document.getElementById(panelId);
+      if (!panel) return;
+      panel.querySelectorAll('input[type="checkbox"]').forEach(function(cb) { cb.checked = selectAll; });
+      if (panelId === 'regionB2BPanel') {
+        var month = getMonthParam();
+        var selectedR = getSelectedRegions();
+        getFilters(currentReportType, month, selectedR).then(function(f) {
+          fillRegionCountryPanels(f.regions || [], f.countries || [], true);
+          loadDashboard(currentReportType, month, selectedR, getSelectedCountries());
+        });
+      } else {
+        updateMultiselectButtonLabels(
+          Array.from(document.getElementById('regionB2BPanel').querySelectorAll('input')).map(function(i) { return i.value; }),
+          Array.from(document.getElementById('countryB2BPanel').querySelectorAll('input')).map(function(i) { return i.value; })
+        );
+        loadDashboard(currentReportType, getMonthParam(), getSelectedRegions(), getSelectedCountries());
+      }
+    }
+    document.getElementById('regionB2BPanel').addEventListener('click', function(e) {
+      var sel = e.target.closest && e.target.closest('.multiselect-select-all');
+      var des = e.target.closest && e.target.closest('.multiselect-deselect-all');
+      if (sel) { e.preventDefault(); applyMultiselectAll('regionB2BPanel', true); }
+      else if (des) { e.preventDefault(); applyMultiselectAll('regionB2BPanel', false); }
+    });
+    document.getElementById('countryB2BPanel').addEventListener('click', function(e) {
+      var sel = e.target.closest && e.target.closest('.multiselect-select-all');
+      var des = e.target.closest && e.target.closest('.multiselect-deselect-all');
+      if (sel) { e.preventDefault(); applyMultiselectAll('countryB2BPanel', true); }
+      else if (des) { e.preventDefault(); applyMultiselectAll('countryB2BPanel', false); }
+    });
+
+    document.querySelectorAll('.multiselect-wrap').forEach(function(wrap) {
+      var btn = wrap.querySelector('.multiselect-btn');
+      if (btn) btn.onclick = function(e) { e.stopPropagation(); wrap.classList.toggle('open'); };
+      var panel = wrap.querySelector('.multiselect-panel');
+      if (panel) panel.onclick = function(e) { e.stopPropagation(); }
+    });
+    document.addEventListener('click', function() { document.querySelectorAll('.multiselect-wrap.open').forEach(function(w) { w.classList.remove('open'); }); });
+
+    document.getElementById('monthChecklist').onchange = function() { loadChecklist(this.value); };
+
+    var downloadWrap = document.getElementById('downloadWrapB2B');
+    var btnDownload = document.getElementById('btnDownload');
+    var downloadDropdown = document.getElementById('downloadDropdown');
+    if (btnDownload && downloadDropdown && downloadWrap) {
+      btnDownload.onclick = function(e) { e.stopPropagation(); downloadWrap.classList.toggle('open'); };
+      document.getElementById('btnDownloadExcel').onclick = function(e) { e.stopPropagation(); downloadWrap.classList.remove('open'); downloadAsExcel(); };
+    }
+    var btnLogoutSidebar = document.getElementById('btnLogoutSidebar');
+    if (btnLogoutSidebar) {
+      btnLogoutSidebar.onclick = function(e) {
+        e.preventDefault();
+        fetchWithAuth(API + '/auth/logout', { method: 'POST' }).then(function() { window.location.href = '/login'; }).catch(function() { window.location.href = '/login'; });
+      };
+    }
+    document.addEventListener('click', function() { if (downloadWrap) downloadWrap.classList.remove('open'); });
+  } catch (e) {
+    var te = document.getElementById('tableErrorB2B');
+    if (te) { te.style.display = 'block'; te.textContent = 'Connection failed: ' + (e.message || String(e)) + '. Open via ' + API + '.'; }
+  }
+})();
+  </script>
+</body>
+</html>

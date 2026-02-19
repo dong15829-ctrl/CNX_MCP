@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "word": "Serendipity",
+        "definition": "The occurrence and development of events by chance in a happy or beneficial way.",
+        "example": "It was pure serendipity that we met at the coffee shop right before the rain started.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/serendipity--_gb_1.mp3"
+    },
+    {
+        "id": 2,
+        "word": "Ephemeral",
+        "definition": "Lasting for a very short time.",
+        "example": "Fashions are ephemeral, changing with every season.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/ephemeral--_gb_1.mp3"
+    },
+    {
+        "id": 3,
+        "word": "Luminous",
+        "definition": "Full of or shedding light; bright or shining, especially in the dark.",
+        "example": "The luminous dial on his watch showed that it was past midnight.",
+        "audioUrl": "https://ssl.gstatic.com/dictionary/static/sounds/oxford/luminous--_gb_1.mp3"
+    }
+]

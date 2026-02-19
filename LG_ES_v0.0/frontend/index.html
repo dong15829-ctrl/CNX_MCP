@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LG.com ES Contents Monitoring</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0f1216;
+      --bg-elevated: #181c22;
+      --card: #1e2329;
+      --border: rgba(255,255,255,0.1);
+      --border-strong: rgba(255,255,255,0.15);
+      --text: #f0f2f5;
+      --text-secondary: #9ca3af;
+      --lg-red: #C41E3A;
+      --lg-red-hover: #a81930;
+      --lg-red-muted: rgba(196,30,58,0.2);
+      --accent: #C41E3A;
+      --red: #e53935;
+      --radius-sm: 6px;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5; }
+    .container { max-width: 1440px; margin: 0 auto; padding: 0 1.5rem; }
+    .page-header { position: sticky; top: 0; z-index: 100; background: var(--bg-elevated); border-bottom: none; }
+    .header-inner { padding: 0.5rem 0 0.6rem; border-bottom: 1px solid var(--border); }
+    .header-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+    .page-title { margin: 0; font-size: 1.25rem; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 0.5rem; }
+    .page-title-logo { height: 28px; width: auto; display: block; flex-shrink: 0; }
+    .header-global { display: flex; align-items: center; gap: 0.5rem; }
+    .nav-tabs-b2b2c { display: inline-flex; gap: 0.15rem; }
+    .nav-tabs-b2b2c a { padding: 0.4rem 0.75rem 0.5rem; border-radius: 0; text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.8125rem; border-bottom: none; margin-bottom: 0; display: inline-block; width: max-content; position: relative; }
+    .nav-tabs-b2b2c a:hover { color: var(--text); }
+    .nav-tabs-b2b2c a.active { color: var(--text); font-weight: 700; }
+    .nav-tabs-b2b2c a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--lg-red); }
+    .header-utils { position: relative; display: inline-flex; align-items: center; gap: 0.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 0.4rem; }
+    .download-dropdown { display: none; position: absolute; top: 100%; right: 0; margin-top: 0.25rem; background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem; min-width: 160px; z-index: 110; box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+    .header-utils.open .download-dropdown { display: block; }
+    .download-dropdown button { display: block; width: 100%; padding: 0.5rem 0.75rem; border: none; background: none; color: var(--text-secondary); font-size: 0.8125rem; text-align: left; cursor: pointer; border-radius: 4px; }
+    .download-dropdown button:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+    .header-utils a, .header-utils button { background: none; border: none; color: var(--text-secondary); cursor: pointer; padding: 0.35rem; border-radius: 4px; display: inline-flex; align-items: center; justify-content: center; }
+    .header-utils a:hover, .header-utils button:hover { color: var(--text); background: rgba(255,255,255,0.06); }
+    .header-row-2 { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; padding: 0.2rem 0 0; margin-top: 0.2rem; border-top: none; }
+    .nav-lv1 { display: inline-flex; gap: 0.2rem; margin-left: 0.5rem; }
+    .nav-lv1 a { padding: 0.4rem 0.8rem 0.5rem; border-radius: 0; text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.8125rem; border-bottom: none; margin-bottom: 0; display: inline-block; width: max-content; position: relative; }
+    .nav-lv1 a:hover { color: var(--text); }
+    .nav-lv1 a.active { color: var(--text); font-weight: 700; }
+    .nav-lv1 a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--lg-red); }
+    .header-filters { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .header-filters-line2 { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-left: auto; }
+    .header-row-3 { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; padding: 0.1rem 0 0; margin-top: 0.05rem; border-top: none; }
+    .nav-lv2 { display: inline-flex; gap: 0.2rem; margin-left: 1rem; }
+    .nav-lv2 a { padding: 0.35rem 0.7rem 0.45rem; border-radius: 0; text-decoration: none; color: var(--text-secondary); font-weight: 600; font-size: 0.75rem; border-bottom: none; margin-bottom: 0; display: inline-block; width: max-content; position: relative; }
+    .nav-lv2 a:hover { color: var(--text); }
+    .nav-lv2 a.active { color: var(--text); font-weight: 700; }
+    .nav-lv2 a.active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--lg-red); }
+    .filter-group { display: flex; align-items: center; gap: 0.5rem; }
+    .filter-group span { font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+    .filter-group select { background: var(--card); border: 1px solid var(--border); color: var(--text-secondary); padding: 0.45rem 0.65rem; border-radius: 6px; font-size: 0.8125rem; min-width: 100px; }
+    .multiselect-wrap { position: relative; }
+    .multiselect-btn { background: var(--card); border: 1px solid var(--border); color: var(--text-secondary); padding: 0.45rem 0.75rem; border-radius: 6px; font-size: 0.8125rem; font-weight: 600; cursor: pointer; min-width: 90px; }
+    .multiselect-btn:hover { background: var(--bg-elevated); color: var(--text); }
+    .multiselect-panel { display: none; position: absolute; top: 100%; left: 0; margin-top: 0.25rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.5rem; max-height: 220px; overflow-y: auto; z-index: 10; box-shadow: 0 8px 24px rgba(0,0,0,0.4); min-width: 160px; }
+    .multiselect-wrap.open .multiselect-panel { display: block; }
+    .multiselect-panel label { display: block; padding: 0.35rem 0.5rem; cursor: pointer; font-size: 0.8125rem; }
+    .multiselect-panel label:hover { background: rgba(255,255,255,0.06); }
+    .main-content { padding: 1.25rem 0 2rem; }
+    .content-section { display: none; }
+    .content-section.active { display: block; }
+    .summary-sub-panel { display: none; }
+    .summary-sub-panel.active { display: block; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.25rem; margin-bottom: 1.25rem; }
+    .card-title { margin: 0 0 0.75rem; font-size: 1.05rem; font-weight: 600; }
+    .summary-extra-card { padding: 1rem; }
+    .report-title-wrap { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+    .report-title-wrap .report-title-left { flex: 1; min-width: 0; }
+    .report-table-filter { display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0; }
+    .report-table-filter label { font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); white-space: nowrap; }
+    .report-table-filter select { background: var(--card); border: 1px solid var(--border); color: var(--text-secondary); padding: 0.45rem 0.65rem; border-radius: 6px; font-size: 0.8125rem; min-width: 120px; }
+    .report-date { margin: 0; font-size: 0.875rem; color: var(--text-secondary); }
+    .loading { padding: 1rem; color: var(--text-secondary); }
+    .error { color: var(--red); padding: 0.75rem; font-size: 0.875rem; }
+    .sheet-empty-state { display: block; padding: 1.25rem; margin: 0.5rem 0; background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.2); border-radius: var(--radius-sm); color: var(--text-secondary); font-size: 0.875rem; text-align: center; }
+    .sheet-empty-state::before { content: '∅ '; font-weight: 700; color: rgba(255,255,255,0.45); margin-right: 0.35rem; }
+    .summary-sheet-wrap { max-height: calc(100vh - 200px); min-height: 420px; overflow: auto; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--bg-elevated); }
+    .summary-sheet-table { width: max-content; min-width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+    .summary-sheet-table th, .summary-sheet-table td { border: 1px solid var(--border); padding: 0.5rem 0.6rem; text-align: left; vertical-align: middle; min-width: 5rem; max-width: 12rem; white-space: normal; word-break: break-word; line-height: 1.35; }
+    .summary-sheet-table thead { position: sticky; top: 0; z-index: 2; background: var(--bg-elevated); box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+    .summary-sheet-table th { background: var(--bg-elevated); color: var(--text); font-weight: 600; font-size: 0.75rem; white-space: nowrap; }
+    .summary-sheet-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+    .summary-sheet-table tbody tr:hover td { background: rgba(255,255,255,0.06); }
+    .chart-wrap { height: 280px; }
+    .charts-row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .chart-half { flex: 1; min-width: 320px; }
+    .chart-half .chart-wrap { height: 280px; }
+    .score-summary { display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin-bottom: 1rem; padding: 0.75rem 0; border-bottom: 1px solid var(--border); }
+    .score-summary-item { display: flex; flex-direction: column; gap: 0.2rem; }
+    .score-summary-item .label { font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; }
+    .score-summary-item .value { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .chart-subtitle { margin: 0 0 0.5rem; font-size: 0.875rem; font-weight: 600; color: var(--text-secondary); }
+    .table-wrap { overflow-x: auto; }
+    table.data-table { width: 100%; border-collapse: collapse; font-size: 0.8125rem; }
+    table.data-table th, table.data-table td { border: 1px solid var(--border); padding: 0.4rem 0.5rem; }
+    table.data-table th { background: var(--bg-elevated); color: var(--text-secondary); font-weight: 600; }
+    table.data-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.02); }
+    .th-dark { background: var(--bg-elevated) !important; color: var(--text-secondary) !important; }
+    .th-blue { background: var(--lg-red-muted) !important; color: var(--text) !important; }
+    .num { text-align: right; }
+    /* Monitoring Detail: 스크린샷 슬라이드 스타일 */
+    .monitoring-detail-content { padding: 0.5rem 0; }
+    .monitoring-detail-content .card-title { margin-bottom: 0.25rem; font-size: 1.25rem; font-weight: 700; }
+    .monitoring-detail-subtitle { color: var(--text-secondary); font-size: 0.875rem; margin: 0 0 1rem; }
+    .monitoring-detail-image-wrap { max-width: 100%; margin-top: 1rem; }
+    .monitoring-detail-image { max-width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--border); display: block; }
+    .checklist-month-row { margin-bottom: 0.75rem; }
+    .checklist-month-row label { margin-right: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="container" id="apiBanner" style="display:none; margin-bottom:1rem; padding:1rem; background:#c2410c; color:#fff; border-radius:8px;">
+    <strong>파일로 열리셨습니다.</strong> 데이터를 보려면 서버 주소로 열어주세요 →
+    <a id="apiBannerLink" href="#" style="color:#fff; font-weight:700;">여기 클릭</a>
+    <span id="apiBannerUrl"></span>
+  </div>
+  <header class="page-header">
+    <div class="container header-inner">
+      <div class="header-row">
+        <h1 class="page-title"><img src="assets/images/lg-logo-white.svg" alt="LG" class="page-title-logo" /> LG.com ES Contents Monitoring</h1>
+        <div class="header-global">
+          <nav class="nav-tabs-b2b2c">
+            <a href="#" id="tabB2B" class="active">B2B</a>
+            <a href="#" id="tabB2C">B2C</a>
+          </nav>
+          <div class="header-utils" id="headerUtilsWrap">
+            <button type="button" id="btnDownload" title="다운로드" aria-label="다운로드"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+            <div class="download-dropdown" id="downloadDropdown">
+              <button type="button" id="btnDownloadPdf">PDF로 다운로드</button>
+              <button type="button" id="btnDownloadExcel">엑셀로 다운로드</button>
+            </div>
+            <button type="button" title="설정" aria-label="설정"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="header-row-2">
+        <nav class="nav-lv1">
+          <a href="#" id="tabSummary" class="active">Summary</a>
+          <a href="#" id="tabMonitoringDetail">Monitoring Detail</a>
+          <a href="#" id="tabChecklist">Checklist & Criteria</a>
+        </nav>
+        <div class="header-filters" id="headerFiltersWrap">
+          <div class="filter-group"><span>Month</span><select id="monthB2B"></select></div>
+        </div>
+      </div>
+      <div class="header-row-3" id="summarySubRow" style="display:flex;">
+        <nav class="nav-lv2" id="summarySubTabs">
+          <a href="#" id="summarySubDashboard" class="active">Dashboard</a>
+          <a href="#" id="summarySubPlp">PLP_BUSINESS</a>
+          <a href="#" id="summarySubProductCategory">Product Category</a>
+          <a href="#" id="summarySubBlog">Blog</a>
+        </nav>
+        <div class="header-filters-line2" id="headerFiltersLine2">
+          <div class="filter-group multiselect-wrap" id="regionB2BWrap">
+            <span>Region</span>
+            <div>
+              <button type="button" class="multiselect-btn" id="regionB2BBtn">전체</button>
+              <div class="multiselect-panel" id="regionB2BPanel"></div>
+            </div>
+          </div>
+          <div class="filter-group multiselect-wrap" id="countryB2BWrap">
+            <span>Country</span>
+            <div>
+              <button type="button" class="multiselect-btn" id="countryB2BBtn">전체</button>
+              <div class="multiselect-panel" id="countryB2BPanel"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="container main-content">
+    <div id="contentSummary" class="content-section active">
+      <div id="summaryPanelDashboard" class="summary-sub-panel active">
+        <div id="dashboardB2B" class="dashboard-panel active">
+          <div class="card">
+            <h2 class="card-title">Region별 평균 Total Score (B2B)</h2>
+            <div id="scoreSummaryB2B" class="score-summary"></div>
+            <div class="charts-row">
+              <div class="chart-half">
+                <h3 class="chart-subtitle">Region별 SEO·콘텐츠 항목 평균</h3>
+                <div class="chart-wrap"><canvas id="chartScoreByRegion"></canvas></div>
+              </div>
+              <div class="chart-half">
+                <h3 class="chart-subtitle" id="chartTotalVsJulTitle">Region별 Total Score (최근 3개월)</h3>
+                <div class="chart-wrap"><canvas id="chartTotalVsJul"></canvas></div>
+              </div>
+            </div>
+          </div>
+          <div class="card report-card">
+            <div class="report-title-wrap">
+              <div class="report-title-left">
+                <h2 class="card-title" id="dashboardReportTitle">B2B Monitoring Report by Country</h2>
+                <p class="report-date" id="reportDateB2B">Crawling Date : —</p>
+              </div>
+              <div class="report-table-filter">
+                <label for="tableScoreFilterB2B">Total Score</label>
+                <select id="tableScoreFilterB2B">
+                  <option value="">전체</option>
+                  <option value="top30">Top 30%</option>
+                  <option value="bottom30">Bottom 30%</option>
+                </select>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table" id="tableSummaryB2B">
+                <thead>
+                  <tr>
+                    <th class="th-dark">REGION</th>
+                    <th class="th-dark">COUNTRY</th>
+                    <th class="th-dark">GP1 Status</th>
+                    <th class="th-blue">SKU</th>
+                    <th class="th-blue">JUL</th>
+                    <th class="th-dark">GAP</th>
+                    <th class="th-blue">Total Score</th>
+                    <th class="th-blue">JUL</th>
+                    <th class="th-dark">GAP</th>
+                    <th class="th-blue">1. Title</th>
+                    <th class="th-blue">2. Description</th>
+                    <th class="th-blue">3. H1</th>
+                    <th class="th-blue">4. Canonical</th>
+                    <th class="th-blue">5. Alt text</th>
+                    <th class="th-blue">Category</th>
+                    <th class="th-blue">Blog</th>
+                    <th class="th-dark">July Rank</th>
+                    <th class="th-dark">August Rank</th>
+                    <th class="th-dark">Change</th>
+                  </tr>
+                </thead>
+                <tbody id="tableBodyB2B"></tbody>
+              </table>
+            </div>
+            <div id="tableLoadingB2B" class="loading" style="display:none;">Loading...</div>
+            <div id="tableErrorB2B" class="error" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+      <div id="summaryPanelPlp" class="summary-sub-panel">
+        <div class="card summary-extra-card">
+          <h3 class="card-title">PLP_BUSINESS</h3>
+          <div id="sheetPlpLoading" class="loading" style="display:none;">로딩 중…</div>
+          <div id="sheetPlpError" class="error" style="display:none;"></div>
+          <div id="sheetPlpWrap" class="table-wrap summary-sheet-wrap" style="display:none;">
+            <table class="summary-sheet-table"><thead><tr id="sheetPlpHead"></tr></thead><tbody id="sheetPlpBody"></tbody></table>
+          </div>
+        </div>
+      </div>
+      <div id="summaryPanelProductCategory" class="summary-sub-panel">
+        <div class="card summary-extra-card">
+          <h3 class="card-title">Product Category</h3>
+          <div id="sheetProductCategoryLoading" class="loading" style="display:none;">로딩 중…</div>
+          <div id="sheetProductCategoryError" class="error" style="display:none;"></div>
+          <div id="sheetProductCategoryWrap" class="table-wrap summary-sheet-wrap" style="display:none;">
+            <table class="summary-sheet-table"><thead><tr id="sheetProductCategoryHead"></tr></thead><tbody id="sheetProductCategoryBody"></tbody></table>
+          </div>
+        </div>
+      </div>
+      <div id="summaryPanelBlog" class="summary-sub-panel">
+        <div class="card summary-extra-card">
+          <h3 class="card-title">Blog</h3>
+          <div id="sheetBlogLoading" class="loading" style="display:none;">로딩 중…</div>
+          <div id="sheetBlogError" class="error" style="display:none;"></div>
+          <div id="sheetBlogWrap" class="table-wrap summary-sheet-wrap" style="display:none;">
+            <table class="summary-sheet-table"><thead><tr id="sheetBlogHead"></tr></thead><tbody id="sheetBlogBody"></tbody></table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="contentMonitoringDetail" class="content-section">
+      <div class="card monitoring-detail-content">
+        <h2 class="card-title">LG.com B2B Monitoring items in detail</h2>
+        <p class="monitoring-detail-subtitle">LGE Internal Use Only · 5 SEO items + 2 content basic items</p>
+        <div class="monitoring-detail-image-wrap">
+          <img src="assets/images/monitoring-detail.png" alt="LG.com B2B Monitoring items in detail - Title, Description, H1, Canonical, Alt text, Product Category, Blog" class="monitoring-detail-image" id="monitoringDetailImg" />
+        </div>
+      </div>
+    </div>
+    <div id="contentChecklist" class="content-section">
+      <div class="card">
+        <h2 class="card-title">Checklist & Criteria</h2>
+        <div class="checklist-month-row">
+          <label>기준 리포트 월:</label>
+          <select id="monthChecklist"><option value="">B2B 최신</option></select>
+        </div>
+        <div id="checklistLoading" class="loading" style="display:none;">로딩 중…</div>
+        <div id="checklistError" class="error" style="display:none;"></div>
+        <div id="checklistTableWrap" style="display:none;">
+          <table class="data-table" id="checklistTable"><tbody id="checklistTableBody"></tbody></table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script>
+if (typeof ChartDataLabels !== 'undefined') Chart.register(ChartDataLabels);
+  </script>
+  <script>
+(function(){
+  var loc = window.location;
+  var SERVER_URL = 'http://localhost:8001';
+  if (loc.protocol === 'file:') {
+    window.API_BASE = SERVER_URL;
+    var b = document.getElementById('apiBanner');
+    if (b) b.style.display = 'block';
+    var link = document.getElementById('apiBannerLink');
+    if (link) { link.href = SERVER_URL + '/'; link.textContent = '여기 클릭'; }
+    var url = document.getElementById('apiBannerUrl');
+    if (url) url.textContent = ' (' + SERVER_URL + ')';
+    var img = document.getElementById('monitoringDetailImg');
+    if (img) img.src = SERVER_URL + '/assets/images/monitoring-detail.png';
+  } else {
+    window.API_BASE = loc.origin;
+  }
+})();
+var API = window.API_BASE || '';
+var chartScoreByRegion = null;
+var chartTotalVsJul = null;
+var lastSummary = [];
+var currentReportType = 'B2B';
+
+function getReports() {
+  return fetch(API + '/api/reports').then(function(r) { if (!r.ok) throw new Error('Failed'); return r.json(); }).then(function(l) { if (!Array.isArray(l)) throw new Error('Invalid'); return l; });
+}
+function getFilters(reportType, month, selectedRegions) {
+  var q = new URLSearchParams();
+  q.set('report_type', reportType);
+  q.set('month', month);
+  if (selectedRegions && selectedRegions.length) selectedRegions.forEach(function(r) { q.append('region', r); });
+  return fetch(API + '/api/filters?' + q).then(function(r) { return r.json(); });
+}
+function buildSummaryParams(reportType, month, regions, countries) {
+  var q = new URLSearchParams();
+  q.set('report_type', reportType);
+  q.set('month', month);
+  if (regions && regions.length) regions.forEach(function(r) { q.append('region', r); });
+  if (countries && countries.length) countries.forEach(function(c) { q.append('country', c); });
+  return q.toString();
+}
+function getSummary(reportType, month, regions, countries) {
+  return fetch(API + '/api/summary?' + buildSummaryParams(reportType, month, regions, countries)).then(function(r) { return r.json(); });
+}
+function getStats(reportType, month, regions, countries) {
+  return fetch(API + '/api/stats?' + buildSummaryParams(reportType, month, regions, countries)).then(function(r) { return r.json(); });
+}
+function getChecklist(month) {
+  var url = API + '/api/checklist' + (month ? '?month=' + encodeURIComponent(month) : '');
+  return fetch(url).then(function(r) { return r.json(); });
+}
+function getSheet(month, sheet) {
+  var url = API + '/api/sheet?month=' + encodeURIComponent(month) + '&sheet=' + encodeURIComponent(sheet);
+  return fetch(url).then(function(r) { if (!r.ok) throw new Error('Failed to load sheet'); return r.json(); });
+}
+
+function fillMonthSelect(reportType, reports) {
+  var months = [...new Set((reports || []).filter(function(r) { return (r.report_type || r.reportType) === reportType; }).map(function(r) { return r.month; }))].sort();
+  var sel = document.getElementById('monthB2B');
+  if (sel) sel.innerHTML = months.map(function(m) { return '<option value="' + m + '">' + m + '</option>'; }).join('');
+  return months[0] || '';
+}
+
+function getSelectedRegions() {
+  var panel = document.getElementById('regionB2BPanel');
+  if (!panel) return [];
+  return Array.from(panel.querySelectorAll('input:checked')).map(function(el) { return el.value; });
+}
+function getSelectedCountries() {
+  var panel = document.getElementById('countryB2BPanel');
+  if (!panel) return [];
+  return Array.from(panel.querySelectorAll('input:checked')).map(function(el) { return el.value; });
+}
+
+function updateMultiselectButtonLabels(regionList, countryList) {
+  var selectedR = getSelectedRegions();
+  var selectedC = getSelectedCountries();
+  var rBtn = document.getElementById('regionB2BBtn');
+  var cBtn = document.getElementById('countryB2BBtn');
+  if (rBtn) {
+    if (!selectedR.length || selectedR.length === (regionList || []).length) rBtn.textContent = '전체';
+    else if (selectedR.length <= 3) rBtn.textContent = selectedR.join(', ');
+    else rBtn.textContent = selectedR.length + '개';
+  }
+  if (cBtn) {
+    if (!selectedC.length || selectedC.length === (countryList || []).length) cBtn.textContent = '전체';
+    else if (selectedC.length <= 5) cBtn.textContent = selectedC.join(', ');
+    else cBtn.textContent = selectedC.length + '개';
+  }
+}
+
+function escapeHtml(s) {
+  var d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+var SUMMARY_SHEET_CONFIG = [
+  { sheet: 'PLP_BUSINESS', bodyId: 'sheetPlpBody', headId: 'sheetPlpHead', loadingId: 'sheetPlpLoading', errorId: 'sheetPlpError', wrapId: 'sheetPlpWrap' },
+  { sheet: 'Product Category', bodyId: 'sheetProductCategoryBody', headId: 'sheetProductCategoryHead', loadingId: 'sheetProductCategoryLoading', errorId: 'sheetProductCategoryError', wrapId: 'sheetProductCategoryWrap' },
+  { sheet: 'Blog', bodyId: 'sheetBlogBody', headId: 'sheetBlogHead', loadingId: 'sheetBlogLoading', errorId: 'sheetBlogError', wrapId: 'sheetBlogWrap' }
+];
+
+function renderSheetRow(arr, colCount, tag) {
+  tag = tag || 'td';
+  var cells = [];
+  for (var i = 0; i < colCount; i++) {
+    var v = i < arr.length ? arr[i] : null;
+    var text = (v == null || v === '') ? '' : String(v);
+    var titleAttr = (tag === 'th' && text) ? ' title="' + String(text).replace(/"/g, '&quot;') + '"' : '';
+    cells.push('<' + tag + titleAttr + '>' + escapeHtml(text) + '</' + tag + '>');
+  }
+  return '<tr>' + cells.join('') + '</tr>';
+}
+
+function buildSheetBodyWithMerge(rows, colCount) {
+  if (!rows.length) return '';
+  var mergeCol = 0, rowspanStart = [], rowspanLen = [];
+  for (var i = 0; i < rows.length; i++) {
+    var arr = Array.isArray(rows[i]) ? rows[i] : [];
+    var val = arr[mergeCol];
+    var s = String(val != null ? val : '');
+    if (i === 0 || s !== String((Array.isArray(rows[i - 1]) ? rows[i - 1] : [])[mergeCol] != null ? (Array.isArray(rows[i - 1]) ? rows[i - 1] : [])[mergeCol] : '')) {
+      rowspanStart[i] = true;
+      var count = 1;
+      while (i + count < rows.length) {
+        var nextArr = Array.isArray(rows[i + count]) ? rows[i + count] : [];
+        if (String(nextArr[mergeCol] != null ? nextArr[mergeCol] : '') === s) count++;
+        else break;
+      }
+      rowspanLen[i] = count;
+    } else rowspanStart[i] = false;
+  }
+  var html = [];
+  for (var r = 0; r < rows.length; r++) {
+    var arr = Array.isArray(rows[r]) ? rows[r] : [];
+    var cells = [];
+    if (rowspanStart[r]) cells.push('<td rowspan="' + rowspanLen[r] + '">' + escapeHtml((arr[0] == null || arr[0] === '') ? '' : String(arr[0])) + '</td>');
+    for (var c = 1; c < colCount; c++) {
+      var v = c < arr.length ? arr[c] : null;
+      cells.push('<td>' + escapeHtml((v == null || v === '') ? '' : String(v)) + '</td>');
+    }
+    html.push('<tr>' + cells.join('') + '</tr>');
+  }
+  return html.join('');
+}
+
+function isRowEmpty(arr) {
+  if (!Array.isArray(arr) || !arr.length) return true;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] != null && String(arr[i]).trim() !== '') return false;
+  }
+  return true;
+}
+
+async function loadSheetSection(month, cfg) {
+  var loading = document.getElementById(cfg.loadingId), errEl = document.getElementById(cfg.errorId), wrap = document.getElementById(cfg.wrapId), tbody = document.getElementById(cfg.bodyId), headRow = document.getElementById(cfg.headId);
+  if (wrap) wrap.style.display = 'none';
+  if (errEl) { errEl.style.display = 'none'; errEl.textContent = ''; errEl.className = 'error'; }
+  if (loading) loading.style.display = 'block';
+  try {
+    var rows = await getSheet(month, cfg.sheet);
+    if (loading) loading.style.display = 'none';
+    if (!Array.isArray(rows) || rows.length === 0) {
+      if (errEl) {
+        errEl.className = 'sheet-empty-state';
+        errEl.style.display = 'block';
+        errEl.textContent = '해당 월(' + (month || '') + ')에는 [' + (cfg.sheet || '') + '] 데이터가 없습니다.';
+      }
+      return;
+    }
+    var colCount = Math.max.apply(null, rows.map(function(r) { return Array.isArray(r) ? r.length : 0; })) || 1;
+    var dataRows = rows;
+    if (headRow && rows.length > 1) {
+      var first = Array.isArray(rows[0]) ? rows[0] : [];
+      headRow.innerHTML = renderSheetRow(first, colCount, 'th');
+      dataRows = rows.slice(1);
+    } else if (headRow) headRow.innerHTML = '';
+    dataRows = dataRows.filter(function(row) { return !isRowEmpty(Array.isArray(row) ? row : []); });
+    tbody.innerHTML = buildSheetBodyWithMerge(dataRows, colCount);
+    if (wrap) wrap.style.display = 'block';
+  } catch (e) {
+    if (loading) loading.style.display = 'none';
+    if (errEl) {
+      errEl.className = 'error';
+      errEl.style.display = 'block';
+      errEl.textContent = '로드 실패: ' + (e.message || String(e)) + '. 백엔드 실행 및 ' + (window.API_BASE || '') + ' 로 열어주세요.';
+    }
+  }
+}
+
+function loadSummarySheets(month) {
+  if (!month) return;
+  SUMMARY_SHEET_CONFIG.forEach(function(cfg) { loadSheetSection(month, cfg); });
+}
+
+function fmtNum(v) { return (v != null && v !== '') ? Number(v).toFixed(2) : '—'; }
+function rankFmt(v) { return (v != null && v !== '') ? Math.round(Number(v)) : '—'; }
+
+var SCORE_SUMMARY_KEYS = [
+  { key: 'total_score', label: 'Total Score' },
+  { key: 'title_score', label: '1. Title' },
+  { key: 'description_score', label: '2. Description' },
+  { key: 'h1_score', label: '3. H1' },
+  { key: 'canonical_score', label: '4. Canonical' },
+  { key: 'alt_text_score', label: '5. Alt text' },
+  { key: 'product_category_score', label: 'Category' },
+  { key: 'blog_score', label: 'Blog' }
+];
+function renderScoreSummaryB2B(rows) {
+  var el = document.getElementById('scoreSummaryB2B');
+  if (!el) return;
+  if (!rows || !rows.length) { el.innerHTML = ''; return; }
+  var n = rows.length;
+  var html = [];
+  SCORE_SUMMARY_KEYS.forEach(function(item) {
+    var sum = 0, count = 0;
+    rows.forEach(function(r) {
+      var v = r[item.key];
+      if (v != null && v !== '') { sum += Number(v); count++; }
+    });
+    var avg = count ? (sum / count).toFixed(2) : '—';
+    html.push('<div class="score-summary-item"><span class="label">' + escapeHtml(item.label) + '</span><span class="value">' + escapeHtml(String(avg)) + '</span></div>');
+  });
+  el.innerHTML = html.join('');
+}
+
+function applyScoreFilter(rows, filterType) {
+  if (!rows || !rows.length || !filterType) return rows;
+  var n = rows.length;
+  var take = Math.max(1, Math.ceil(n * 0.3));
+  var score = function(r) { return r.total_score != null && r.total_score !== '' ? Number(r.total_score) : -Infinity; };
+  if (filterType === 'top30') {
+    return rows.slice().sort(function(a, b) { return score(b) - score(a); }).slice(0, take);
+  }
+  if (filterType === 'bottom30') {
+    return rows.slice().sort(function(a, b) { return score(a) - score(b); }).slice(0, take);
+  }
+  return rows;
+}
+
+function renderTableB2B(rows) {
+  var t = document.getElementById('tableBodyB2B');
+  if (!t) return;
+  t.innerHTML = (rows || []).map(function(r) {
+    return '<tr>' +
+      '<td>' + (r.region || '') + '</td><td>' + (r.country || '') + '</td><td>' + (r.gp1_status || '') + '</td>' +
+      '<td class="num">' + (r.sku != null ? Math.round(r.sku) : '—') + '</td><td class="num">' + (r.sku_oct != null ? Math.round(r.sku_oct) : '—') + '</td><td class="num">' + fmtNum(r.gap_sku) + '</td>' +
+      '<td class="num">' + fmtNum(r.total_score) + '</td><td class="num">' + fmtNum(r.total_score_oct) + '</td><td class="num">' + fmtNum(r.gap_score) + '</td>' +
+      '<td class="num">' + fmtNum(r.title_score) + '</td><td class="num">' + fmtNum(r.description_score) + '</td><td class="num">' + fmtNum(r.h1_score) + '</td>' +
+      '<td class="num">' + fmtNum(r.canonical_score) + '</td><td class="num">' + fmtNum(r.alt_text_score) + '</td>' +
+      '<td class="num">' + fmtNum(r.product_category_score) + '</td><td class="num">' + fmtNum(r.blog_score) + '</td>' +
+      '<td class="num">' + rankFmt(r.prev_rank) + '</td><td class="num">' + rankFmt(r.curr_rank) + '</td><td class="num">' + (r.rank_change != null ? (r.rank_change > 0 ? '+' : '') + r.rank_change : '—') + '</td>' +
+    '</tr>';
+  }).join('');
+}
+
+function aggregateByRegion(rows) {
+  if (!rows || !rows.length) return [];
+  var byRegion = {};
+  rows.forEach(function(r) {
+    var region = r.region || '';
+    if (!byRegion[region]) {
+      byRegion[region] = { region: region, n: 0, sum_total: 0, sum_total_oct: 0, sum_title: 0, sum_desc: 0, sum_h1: 0, sum_canon: 0, sum_alt: 0, sum_cat: 0, sum_blog: 0, count_total: 0, count_total_oct: 0, count_title: 0, count_desc: 0, count_h1: 0, count_canon: 0, count_alt: 0, count_cat: 0, count_blog: 0 };
+    }
+    var o = byRegion[region];
+    o.n++;
+    if (r.total_score != null && r.total_score !== '') { o.sum_total += Number(r.total_score); o.count_total++; }
+    if (r.total_score_oct != null && r.total_score_oct !== '') { o.sum_total_oct += Number(r.total_score_oct); o.count_total_oct++; }
+    if (r.title_score != null && r.title_score !== '') { o.sum_title += Number(r.title_score); o.count_title++; }
+    if (r.description_score != null && r.description_score !== '') { o.sum_desc += Number(r.description_score); o.count_desc++; }
+    if (r.h1_score != null && r.h1_score !== '') { o.sum_h1 += Number(r.h1_score); o.count_h1++; }
+    if (r.canonical_score != null && r.canonical_score !== '') { o.sum_canon += Number(r.canonical_score); o.count_canon++; }
+    if (r.alt_text_score != null && r.alt_text_score !== '') { o.sum_alt += Number(r.alt_text_score); o.count_alt++; }
+    if (r.product_category_score != null && r.product_category_score !== '') { o.sum_cat += Number(r.product_category_score); o.count_cat++; }
+    if (r.blog_score != null && r.blog_score !== '') { o.sum_blog += Number(r.blog_score); o.count_blog++; }
+  });
+  return Object.keys(byRegion).sort().map(function(k) {
+    var o = byRegion[k];
+    return {
+      region: o.region,
+      avg_total_score: o.count_total ? o.sum_total / o.count_total : null,
+      avg_total_score_oct: o.count_total_oct ? o.sum_total_oct / o.count_total_oct : null,
+      avg_title: o.count_title ? o.sum_title / o.count_title : null,
+      avg_desc: o.count_desc ? o.sum_desc / o.count_desc : null,
+      avg_h1: o.count_h1 ? o.sum_h1 / o.count_h1 : null,
+      avg_canon: o.count_canon ? o.sum_canon / o.count_canon : null,
+      avg_alt: o.count_alt ? o.sum_alt / o.count_alt : null,
+      avg_cat: o.count_cat ? o.sum_cat / o.count_cat : null,
+      avg_blog: o.count_blog ? o.sum_blog / o.count_blog : null
+    };
+  });
+}
+
+var CHART_SCORE_KEYS = [
+  { key: 'avg_title', label: '1. Title', color: 'rgba(196,30,58,0.75)' },
+  { key: 'avg_desc', label: '2. Description', color: 'rgba(196,30,58,0.55)' },
+  { key: 'avg_h1', label: '3. H1', color: 'rgba(120,130,140,0.85)' },
+  { key: 'avg_canon', label: '4. Canonical', color: 'rgba(90,100,110,0.9)' },
+  { key: 'avg_alt', label: '5. Alt text', color: 'rgba(196,30,58,0.4)' },
+  { key: 'avg_cat', label: 'Category', color: 'rgba(70,78,88,0.95)' },
+  { key: 'avg_blog', label: 'Blog', color: 'rgba(55,65,75,0.9)' }
+];
+
+function renderChartScoreByRegion(rows) {
+  var ctx = document.getElementById('chartScoreByRegion');
+  if (!ctx) return null;
+  if (chartScoreByRegion) chartScoreByRegion.destroy();
+  var agg = aggregateByRegion(rows || []);
+  var labels = agg.map(function(a) { return a.region; });
+  var datasets = CHART_SCORE_KEYS.map(function(item) {
+    return {
+      label: item.label,
+      data: agg.map(function(a) { var v = a[item.key]; return v != null ? Math.round(v * 100) / 100 : null; }),
+      backgroundColor: item.color
+    };
+  });
+  chartScoreByRegion = new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: { labels: labels, datasets: datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+        legend: { position: 'top' },
+        datalabels: {
+          anchor: 'end',
+          align: 'start',
+          offset: 2,
+          clamp: true,
+          color: '#fff',
+          font: { size: 9, weight: 'bold' },
+          formatter: function(value) { return value != null ? Number(value).toFixed(1) : ''; },
+          display: function(context) { return context.raw != null && context.raw >= 2; }
+        }
+      }
+    }
+  });
+  return chartScoreByRegion;
+}
+
+var CHART_3MONTH_COLORS = ['rgba(196,30,58,0.8)', 'rgba(120,130,140,0.75)', 'rgba(80,90,100,0.7)'];
+
+function renderChartTotalVsJul(monthsWithRows) {
+  var ctx = document.getElementById('chartTotalVsJul');
+  if (!ctx) return null;
+  if (chartTotalVsJul) chartTotalVsJul.destroy();
+  if (!monthsWithRows || !monthsWithRows.length) {
+    chartTotalVsJul = new Chart(ctx.getContext('2d'), { type: 'bar', data: { labels: [], datasets: [] }, options: { responsive: true, maintainAspectRatio: false } });
+    return chartTotalVsJul;
+  }
+  var aggPerMonth = monthsWithRows.map(function(m) { return aggregateByRegion(m.rows || []); });
+  var regionSet = {};
+  aggPerMonth.forEach(function(agg) { agg.forEach(function(a) { if (a.region) regionSet[a.region] = true; }); });
+  var labels = Object.keys(regionSet).sort();
+  var datasets = monthsWithRows.map(function(m, i) {
+    var agg = aggPerMonth[i] || [];
+    var byRegion = {};
+    agg.forEach(function(a) { byRegion[a.region] = a; });
+    return {
+      label: m.month || ('Month ' + (i + 1)),
+      data: labels.map(function(reg) {
+        var a = byRegion[reg];
+        return (a && a.avg_total_score != null) ? Math.round(a.avg_total_score * 100) / 100 : null;
+      }),
+      backgroundColor: CHART_3MONTH_COLORS[i % CHART_3MONTH_COLORS.length]
+    };
+  });
+  chartTotalVsJul = new Chart(ctx.getContext('2d'), {
+    type: 'bar',
+    data: { labels: labels, datasets: datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: { y: { beginAtZero: true } },
+      plugins: {
+        legend: { position: 'top' },
+        datalabels: {
+          anchor: 'end',
+          align: 'start',
+          offset: 2,
+          clamp: true,
+          color: '#fff',
+          font: { size: 9, weight: 'bold' },
+          formatter: function(value) { return value != null ? Number(value).toFixed(1) : ''; }
+        }
+      }
+    }
+  });
+  return chartTotalVsJul;
+}
+
+async function loadDashboard(reportType, month, regions, countries) {
+  var titleEl = document.getElementById('dashboardScoreTitle');
+  var reportTitleEl = document.getElementById('dashboardReportTitle');
+  if (titleEl) titleEl.textContent = 'Region별 평균 Total Score (' + reportType + ')';
+  if (reportTitleEl) reportTitleEl.textContent = reportType + ' Monitoring Report by Country';
+  document.getElementById('reportDateB2B').textContent = 'Crawling Date : ' + (month || '—');
+  document.getElementById('tableBodyB2B').innerHTML = '';
+  document.getElementById('tableLoadingB2B').style.display = 'block';
+  document.getElementById('tableErrorB2B').style.display = 'none';
+  try {
+    var summary = await getSummary(reportType, month, regions || [], countries || []);
+    var summaryArr = Array.isArray(summary) ? summary : [];
+    lastSummary = summaryArr;
+    var filterType = (document.getElementById('tableScoreFilterB2B') || {}).value || '';
+    var filtered = applyScoreFilter(summaryArr, filterType);
+    renderScoreSummaryB2B(summaryArr);
+    renderTableB2B(filtered);
+    renderChartScoreByRegion(summaryArr);
+    var reports = await getReports();
+    var allMonths = [...new Set((reports || []).filter(function(r) { return (r.report_type || r.reportType) === reportType; }).map(function(r) { return r.month; }))];
+    function monthKey(m) {
+      var match = (m || '').match(/^(\d{4})-M?(\d{1,2})$/i);
+      return match ? parseInt(match[1], 10) * 12 + parseInt(match[2], 10) : 0;
+    }
+    allMonths.sort(function(a, b) { return monthKey(a) - monthKey(b); });
+    var monthsForChart = allMonths.slice(-3);
+    var rowsPerMonth = await Promise.all(monthsForChart.map(function(m) { return getSummary(reportType, m, regions || [], countries || []); }));
+    var monthsWithRows = monthsForChart.map(function(m, i) { return { month: m, rows: Array.isArray(rowsPerMonth[i]) ? rowsPerMonth[i] : [] }; });
+    renderChartTotalVsJul(monthsWithRows);
+  } catch (e) {
+    document.getElementById('tableErrorB2B').style.display = 'block';
+    document.getElementById('tableErrorB2B').textContent = '연결 실패: ' + (e.message || String(e)) + '. ' + API + ' 로 열어주세요.';
+  }
+  document.getElementById('tableLoadingB2B').style.display = 'none';
+}
+
+function downloadAsPdf() {
+  var el = document.getElementById('dashboardB2B');
+  if (!el || typeof html2canvas === 'undefined' || typeof jspdf === 'undefined') return;
+  html2canvas(el, { scale: 2, useCORS: true, logging: false }).then(function(canvas) {
+    var imgData = canvas.toDataURL('image/png');
+    var pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+    var pdfW = pdf.internal.pageSize.getWidth();
+    var pdfH = pdf.internal.pageSize.getHeight();
+    var margin = 10;
+    var maxW = pdfW - margin * 2;
+    var maxH = pdfH - margin * 2;
+    var imgW = maxW;
+    var imgH = (canvas.height * imgW) / canvas.width;
+    if (imgH > maxH) { imgH = maxH; imgW = (canvas.width * imgH) / canvas.height; }
+    pdf.addImage(imgData, 'PNG', margin, margin, imgW, imgH);
+    var month = (document.getElementById('monthB2B') || {}).value || '';
+    pdf.save('LG_ES_Monitoring_' + currentReportType + '_' + (month || 'report') + '.pdf');
+  }).catch(function(err) { console.error(err); alert('PDF 생성 중 오류가 발생했습니다.'); });
+}
+
+function downloadAsExcel() {
+  if (!lastSummary.length || typeof XLSX === 'undefined') {
+    alert('다운로드할 표 데이터가 없습니다.');
+    return;
+  }
+  var ws = XLSX.utils.json_to_sheet(lastSummary);
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, 'Summary');
+  var month = (document.getElementById('monthB2B') || {}).value || '';
+  XLSX.writeFile(wb, 'LG_ES_Monitoring_' + currentReportType + '_' + (month || 'report') + '.xlsx');
+}
+
+function fillRegionCountryPanels(regions, countries, autoSelectAllCountries) {
+  var rPanel = document.getElementById('regionB2BPanel');
+  var cPanel = document.getElementById('countryB2BPanel');
+  var selectedR = getSelectedRegions();
+  var selectedC = getSelectedCountries();
+  if (rPanel) rPanel.innerHTML = (regions || []).map(function(r) { var checked = selectedR.indexOf(r) !== -1 ? ' checked' : ''; return '<label><input type="checkbox" value="' + escapeHtml(r) + '"' + checked + '> ' + escapeHtml(r) + '</label>'; }).join('');
+  if (cPanel) {
+    var countryList = countries || [];
+    if (autoSelectAllCountries && countryList.length) selectedC = countryList;
+    cPanel.innerHTML = countryList.map(function(c) { var checked = selectedC.indexOf(c) !== -1 ? ' checked' : ''; return '<label><input type="checkbox" value="' + escapeHtml(c) + '"' + checked + '> ' + escapeHtml(c) + '</label>'; }).join('');
+  }
+  updateMultiselectButtonLabels(regions, countries);
+}
+
+async function loadChecklist(month) {
+  var wrap = document.getElementById('checklistTableWrap'), loading = document.getElementById('checklistLoading'), err = document.getElementById('checklistError'), tbody = document.getElementById('checklistTableBody');
+  if (wrap) wrap.style.display = 'none';
+  if (err) { err.style.display = 'none'; err.textContent = ''; }
+  if (loading) loading.style.display = 'block';
+  try {
+    var rows = await getChecklist(month);
+    if (loading) loading.style.display = 'none';
+    if (!Array.isArray(rows) || rows.length === 0) {
+      if (err) { err.style.display = 'block'; err.textContent = '데이터 없음.'; }
+      return;
+    }
+    var colCount = Math.max.apply(null, rows.map(function(r) { return Array.isArray(r) ? r.length : 0; })) || 1;
+    tbody.innerHTML = rows.map(function(row) {
+      var arr = Array.isArray(row) ? row : [];
+      return '<tr>' + Array.from({ length: colCount }, function(_, i) { return '<td>' + escapeHtml(i < arr.length && arr[i] != null ? String(arr[i]) : '') + '</td>'; }).join('') + '</tr>';
+    }).join('');
+    if (wrap) wrap.style.display = 'block';
+  } catch (e) {
+    if (loading) loading.style.display = 'none';
+    if (err) { err.style.display = 'block'; err.textContent = '로드 실패: ' + (e.message || String(e)); }
+  }
+}
+
+(async function init() {
+  try {
+    var reports = await getReports();
+    if (!reports.length) {
+      document.getElementById('tableErrorB2B').style.display = 'block';
+      document.getElementById('tableErrorB2B').textContent = '데이터가 없습니다. scripts/load_data.py 를 실행하세요.';
+      return;
+    }
+    var monthB2B = fillMonthSelect('B2B', reports);
+    var month = monthB2B || '';
+    var filters = await getFilters('B2B', month, []);
+    var regions = filters.regions || [];
+    var countries = filters.countries || [];
+    fillRegionCountryPanels(regions, countries, false);
+    if (monthB2B) {
+      document.getElementById('monthB2B').value = monthB2B;
+      await loadDashboard('B2B', monthB2B, [], []);
+    }
+    var monthsB2B = [...new Set(reports.filter(function(r) { return (r.report_type || r.reportType) === 'B2B'; }).map(function(r) { return r.month; }))].sort();
+    document.getElementById('monthChecklist').innerHTML = '<option value="">B2B 최신</option>' + monthsB2B.map(function(m) { return '<option value="' + m + '">' + m + '</option>'; }).join('');
+
+    var sectionTabs = [
+      { tab: 'tabSummary', content: 'contentSummary' },
+      { tab: 'tabMonitoringDetail', content: 'contentMonitoringDetail' },
+      { tab: 'tabChecklist', content: 'contentChecklist' }
+    ];
+    sectionTabs.forEach(function(item) {
+      var tabEl = document.getElementById(item.tab), contentEl = document.getElementById(item.content);
+      if (!tabEl || !contentEl) return;
+      tabEl.onclick = function(e) {
+        e.preventDefault();
+        sectionTabs.forEach(function(s) {
+          document.getElementById(s.tab).classList.remove('active');
+          document.getElementById(s.content).classList.remove('active');
+        });
+        tabEl.classList.add('active');
+        contentEl.classList.add('active');
+        var subRow = document.getElementById('summarySubRow');
+        if (subRow) subRow.style.display = 'flex';
+        var subTabs = document.getElementById('summarySubTabs');
+        if (subTabs) {
+          subTabs.style.display = (item.tab === 'tabSummary') ? '' : 'none';
+          subTabs.classList.toggle('hidden', item.tab !== 'tabSummary');
+        }
+        if (item.tab === 'tabSummary') {
+          document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); });
+          document.getElementById('summaryPanelDashboard').classList.add('active');
+          document.querySelectorAll('#summarySubTabs a').forEach(function(a) { a.classList.remove('active'); });
+          var dashTab = document.getElementById('summarySubDashboard');
+          if (dashTab) dashTab.classList.add('active');
+        } else {
+          document.querySelectorAll('#summarySubTabs a').forEach(function(a) { a.classList.remove('active'); });
+        }
+        if (item.tab === 'tabChecklist') loadChecklist(document.getElementById('monthChecklist').value);
+      };
+    });
+
+    document.getElementById('summarySubDashboard').onclick = function(e) {
+      e.preventDefault();
+      document.querySelectorAll('#summarySubTabs a').forEach(function(a) { a.classList.remove('active'); });
+      document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); });
+      this.classList.add('active');
+      document.getElementById('summaryPanelDashboard').classList.add('active');
+    };
+    var summarySubTabs = [
+      { tab: 'summarySubPlp', panel: 'summaryPanelPlp', cfg: SUMMARY_SHEET_CONFIG[0] },
+      { tab: 'summarySubProductCategory', panel: 'summaryPanelProductCategory', cfg: SUMMARY_SHEET_CONFIG[1] },
+      { tab: 'summarySubBlog', panel: 'summaryPanelBlog', cfg: SUMMARY_SHEET_CONFIG[2] }
+    ];
+    summarySubTabs.forEach(function(item) {
+      var tabEl = document.getElementById(item.tab), panelEl = document.getElementById(item.panel);
+      if (!tabEl || !panelEl) return;
+      tabEl.onclick = function(e) {
+        e.preventDefault();
+        document.querySelectorAll('#summarySubTabs a').forEach(function(a) { a.classList.remove('active'); });
+        document.querySelectorAll('.summary-sub-panel').forEach(function(p) { p.classList.remove('active'); });
+        tabEl.classList.add('active');
+        panelEl.classList.add('active');
+        var m = document.getElementById('monthB2B') ? document.getElementById('monthB2B').value : '';
+        if (m && item.cfg) loadSheetSection(m, item.cfg);
+      };
+    });
+
+    document.getElementById('tableScoreFilterB2B').onchange = function() {
+      var filterType = this.value || '';
+      var filtered = applyScoreFilter(lastSummary, filterType);
+      renderTableB2B(filtered);
+    };
+
+    document.getElementById('monthB2B').onchange = function() {
+      var m = this.value;
+      getFilters(currentReportType, m, []).then(function(f) {
+        fillRegionCountryPanels(f.regions || [], f.countries || [], false);
+        loadDashboard(currentReportType, m, getSelectedRegions(), getSelectedCountries());
+      });
+    };
+    document.getElementById('tabB2B').onclick = function(e) {
+      e.preventDefault();
+      if (currentReportType === 'B2B') return;
+      currentReportType = 'B2B';
+      document.getElementById('tabB2B').classList.add('active');
+      document.getElementById('tabB2C').classList.remove('active');
+      getReports().then(function(reports) {
+        var month = fillMonthSelect('B2B', reports);
+        document.getElementById('monthB2B').value = month || '';
+        return getFilters('B2B', month, []).then(function(f) {
+          fillRegionCountryPanels(f.regions || [], f.countries || [], false);
+          if (month) return loadDashboard('B2B', month, [], []);
+        });
+      });
+    };
+    document.getElementById('tabB2C').onclick = function(e) {
+      e.preventDefault();
+      if (currentReportType === 'B2C') return;
+      currentReportType = 'B2C';
+      document.getElementById('tabB2B').classList.remove('active');
+      document.getElementById('tabB2C').classList.add('active');
+      getReports().then(function(reports) {
+        var month = fillMonthSelect('B2C', reports);
+        document.getElementById('monthB2B').value = month || '';
+        return getFilters('B2C', month, []).then(function(f) {
+          fillRegionCountryPanels(f.regions || [], f.countries || [], false);
+          if (month) return loadDashboard('B2C', month, [], []);
+        });
+      });
+    };
+    document.getElementById('regionB2BPanel').addEventListener('change', function() {
+      var month = document.getElementById('monthB2B').value;
+      var selectedR = getSelectedRegions();
+      getFilters(currentReportType, month, selectedR).then(function(f) {
+        var countriesInRegion = f.countries || [];
+        fillRegionCountryPanels(f.regions || [], countriesInRegion, true);
+        loadDashboard(currentReportType, month, selectedR, getSelectedCountries());
+      });
+    });
+    document.getElementById('countryB2BPanel').addEventListener('change', function() {
+      updateMultiselectButtonLabels(
+        Array.from(document.getElementById('regionB2BPanel').querySelectorAll('input')).map(function(i) { return i.value; }),
+        Array.from(document.getElementById('countryB2BPanel').querySelectorAll('input')).map(function(i) { return i.value; })
+      );
+      loadDashboard(currentReportType, document.getElementById('monthB2B').value, getSelectedRegions(), getSelectedCountries());
+    });
+
+    document.querySelectorAll('.multiselect-wrap').forEach(function(wrap) {
+      var btn = wrap.querySelector('.multiselect-btn');
+      if (btn) btn.onclick = function(e) { e.stopPropagation(); wrap.classList.toggle('open'); };
+      var panel = wrap.querySelector('.multiselect-panel');
+      if (panel) panel.onclick = function(e) { e.stopPropagation(); }
+    });
+    document.addEventListener('click', function() { document.querySelectorAll('.multiselect-wrap.open').forEach(function(w) { w.classList.remove('open'); }); });
+
+    document.getElementById('monthChecklist').onchange = function() { loadChecklist(this.value); };
+
+    var headerUtilsWrap = document.getElementById('headerUtilsWrap');
+    var btnDownload = document.getElementById('btnDownload');
+    var downloadDropdown = document.getElementById('downloadDropdown');
+    if (btnDownload && downloadDropdown) {
+      btnDownload.onclick = function(e) { e.stopPropagation(); headerUtilsWrap.classList.toggle('open'); };
+      document.getElementById('btnDownloadPdf').onclick = function(e) { e.stopPropagation(); headerUtilsWrap.classList.remove('open'); downloadAsPdf(); };
+      document.getElementById('btnDownloadExcel').onclick = function(e) { e.stopPropagation(); headerUtilsWrap.classList.remove('open'); downloadAsExcel(); };
+    }
+    document.addEventListener('click', function() { if (headerUtilsWrap) headerUtilsWrap.classList.remove('open'); });
+  } catch (e) {
+    document.getElementById('tableErrorB2B').style.display = 'block';
+    document.getElementById('tableErrorB2B').textContent = '서버에 연결할 수 없습니다. ' + API + ' 로 열어주세요.';
+  }
+})();
+  </script>
+</body>
+</html>

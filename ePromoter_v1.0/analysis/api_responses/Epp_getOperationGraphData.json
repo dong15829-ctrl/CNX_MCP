@@ -1,0 +1,28 @@
+{
+  "ok": true,
+  "data": {
+    "eppOperationActualArray": [
+      {
+        "AHT_c": 0.0,
+        "smb_wait_time_seconds_c": 0.0,
+        "smb_avg_response_time_c": 0.0,
+        "smb_survey_count_c": 0.0,
+        "smb_prom_chat_handled_c": 0.0,
+        "smb_csat_numerator_c": 0.0,
+        "smb_AHT_c": 0.0,
+        "survey_count_c": 39.0,
+        "prom_chat_handled_c": 465.0,
+        "smb_offered_volume_c": 0.0,
+        "prom_missed_chat_c": 5.0,
+        "csat_numerator_c": 32.0,
+        "wait_time_seconds_c": 59.379690949227374,
+        "smb_chat_handled_c": 0.0,
+        "convert_date": "02/08",
+        "offered_volume_c": 470.0,
+        "smb_prom_missed_chat_c": 0.0,
+        "avg_response_time_c": 89.93275488069415,
+        "chat_handled_c": 465.0
+      }
+    ]
+  }
+}

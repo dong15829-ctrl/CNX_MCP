@@ -1,0 +1,210 @@
+{
+  "global": {
+    "max_concurrency": 2,
+    "retry_limit": 2,
+    "retry_backoff_seconds": [
+      8,
+      25
+    ]
+  },
+  "jobs": [
+    {
+      "id": "google_serp_basic",
+      "source": "google_basic",
+      "enabled": true,
+      "keywords": [
+        "미국 S&P500 ETF",
+        "미국 ETF 추천",
+        "KODEX S&P500"
+      ],
+      "params": {
+        "max_results": 20,
+        "output_dir": "data/raw/google",
+        "time_range": "1m"
+      }
+    },
+    {
+      "id": "naver_blog_mobile",
+      "source": "naver_blog_mobile",
+      "enabled": true,
+      "keywords": [
+        "미국 ETF 투자 후기",
+        "KODEX 미국 S&P500",
+        "TIGER 미국 ETF 비교"
+      ],
+      "params": {
+        "max_posts": 20,
+        "output_dir": "data/raw/naver"
+      }
+    },
+    {
+      "id": "naver_cafe_mobile",
+      "source": "naver_cafe_mobile",
+      "enabled": true,
+      "keywords": [
+        "미국 ETF 커뮤니티",
+        "S&P500 투자 카페",
+        "KODEX ETF 후기"
+      ],
+      "params": {
+        "max_posts": 20,
+        "output_dir": "data/raw/naver"
+      }
+    },
+    {
+      "id": "naver_blog_advanced",
+      "source": "naver_blog_advanced",
+      "enabled": true,
+      "keywords": [
+        "미국 S&P500 장기 투자",
+        "ETF 분배금",
+        "인덱스 펀드 비교"
+      ],
+      "params": {
+        "max_posts": 25,
+        "date_range": "1m"
+      }
+    },
+    {
+      "id": "naver_cafe_advanced",
+      "source": "naver_cafe_advanced",
+      "enabled": true,
+      "keywords": [
+        "TIGER vs KODEX",
+        "미국 배당 ETF 커뮤니티",
+        "ETF 세금 질문"
+      ],
+      "params": {
+        "max_posts": 25,
+        "date_range": "1m"
+      }
+    },
+    {
+      "id": "naver_stock_cafe",
+      "source": "naver_stock_cafe",
+      "enabled": true,
+      "keywords": [
+        "S&P500",
+        "나스닥100",
+        "배당 ETF"
+      ],
+      "params": {
+        "max_posts": 24
+      }
+    },
+    {
+      "id": "google_serp_advanced",
+      "source": "google_advanced",
+      "enabled": true,
+      "keywords": [
+        "ETF 포트폴리오 추천",
+        "미국 증시 분산 투자",
+        "인덱스 투자 방법"
+      ],
+      "params": {
+        "max_results": 18,
+        "time_range": "1m"
+      }
+    },
+    {
+      "id": "youtube_standard",
+      "source": "youtube_standard",
+      "enabled": true,
+      "keywords": [
+        "KODEX 미국 ETF",
+        "미국 S&P500 투자법",
+        "S&P500 배당 전략"
+      ],
+      "params": {
+        "max_videos": 12,
+        "collect_comments": true,
+        "max_comments_per_video": 30,
+        "output_dir": "data/raw/youtube",
+        "upload_date_filter": "1m"
+      }
+    },
+    {
+      "id": "youtube_ultra",
+      "source": "youtube_ultra",
+      "enabled": false,
+      "keywords": [
+        "TIGER 미국 ETF",
+        "미국 ETF 단기 투자",
+        "미국 증시 전망"
+      ],
+      "params": {
+        "max_videos": 10,
+        "collect_comments": true,
+        "max_comments_per_video": 40,
+        "output_dir": "data/raw/youtube",
+        "upload_date_filter": "1m"
+      }
+    },
+    {
+      "id": "dcinside_stock",
+      "source": "dcinside_stock",
+      "enabled": true,
+      "keywords": [
+        "S&P500",
+        "KODEX",
+        "TIGER"
+      ],
+      "params": {
+        "max_posts": 30,
+        "max_age_days": 32
+      }
+    },
+    {
+      "id": "fmkorea_stock",
+      "source": "fmkorea_stock",
+      "enabled": false,
+      "keywords": [
+        "S&P500",
+        "KODEX",
+        "TIGER"
+      ],
+      "params": {
+        "max_posts": 25
+      }
+    },
+    {
+      "id": "ppomppu_stock",
+      "source": "ppomppu_stock",
+      "enabled": true,
+      "keywords": [
+        "S&P500",
+        "KODEX",
+        "TIGER"
+      ],
+      "params": {
+        "max_posts": 25
+      }
+    },
+    {
+      "id": "naver_stock_discussion",
+      "source": "naver_stock_discussion",
+      "enabled": true,
+      "keywords": [
+        "379800",
+        "360750",
+        "133690"
+      ],
+      "params": {
+        "max_posts": 20
+      }
+    },
+    {
+      "id": "miraeasset_etf",
+      "source": "miraeasset_etf",
+      "enabled": true,
+      "keywords": [
+        "S&P500",
+        "미국 배당",
+        "나스닥100"
+      ],
+      "params": {
+        "max_items": 40
+      }
+    }
+  ]
+}

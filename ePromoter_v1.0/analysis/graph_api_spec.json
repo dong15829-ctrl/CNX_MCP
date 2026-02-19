@@ -1,0 +1,114 @@
+{
+  "specs": [
+    {
+      "menu": "Bot / AI Summary",
+      "menu_path": "/globaldashboard/botjourney_operation",
+      "chart_id": "—",
+      "chart_class": "half_2nd sum layout_border chart_pb",
+      "section_title": "Bot Total Chat (=Offered Chat, Handled Chat)\nDownload\nBot Total Chat ePromoter Total Chat\nTotal Chat\n02.08\n50\n100\n500\n1,",
+      "graph_api": "/BotJourney/ajax/getOperationAllGraphData",
+      "api_short_name": "getOperationAllGraphData",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "chart_id": "—",
+      "chart_class": "half_1st overview layout_border chart_pbx",
+      "section_title": "Promoter Handled Chat – by Division \nDownload\nTotal MX VD DA Cross Products Not Applicable\n02/08\n0\n2K\n4K\n6K\ndate\tTotal\tM",
+      "graph_api": "/divisionSummary/ajax/getDivisionGraphData",
+      "api_short_name": "getDivisionGraphData",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "chart_id": "—",
+      "chart_class": "half_1st overview layout_border chart_pbx",
+      "section_title": "Promoter Revenue / Promoter H/C / Revenue per Promoter\nRank\tCountry\tPromoter revenue\tPromoter H/C\tRevenue per promoter\nR",
+      "graph_api": "/divisionSummary/ajax/getDivisionGraphData",
+      "api_short_name": "getDivisionGraphData",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "chart_id": "—",
+      "chart_class": "—",
+      "section_title": "(메뉴별 차트 영역)",
+      "graph_api": "/Epp/ajax/getOperationGraphData",
+      "api_short_name": "getOperationGraphData",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "chart_id": "—",
+      "chart_class": "—",
+      "section_title": "(메뉴별 차트 영역)",
+      "graph_api": "/executiveSummary/ajax/getExecutiveGraphData",
+      "api_short_name": "getExecutiveGraphData",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "chart_id": "—",
+      "chart_class": "half_2nd sum layout_border chart_pb",
+      "section_title": "Visit to Chat Ratio / Missed Chat\nDownload\nVisit to Chat Ratio Missed Chat\n\nMissed Chat\nVisit to Chat\nRatio (%)\n02.08\n0",
+      "graph_api": "/operationSummary/ajax/getOperationAllGraphData",
+      "api_short_name": "getOperationAllGraphData",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "chart_id": "—",
+      "chart_class": "half_1st sum mg_r20 layout_border chart_pb",
+      "section_title": "",
+      "graph_api": "/operationSummary/ajax/getOperationAllGraphData",
+      "api_short_name": "getOperationAllGraphData",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "chart_id": "—",
+      "chart_class": "—",
+      "section_title": "(메뉴별 차트 영역)",
+      "graph_api": "/Retailer/ajax/getRetailerOperationGraphData",
+      "api_short_name": "getRetailerOperationGraphData",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "chart_id": "—",
+      "chart_class": "—",
+      "section_title": "(메뉴별 차트 영역)",
+      "graph_api": "/Sales/ajax/getSalesSummaryGraphDataNew",
+      "api_short_name": "getSalesSummaryGraphDataNew",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "chart_id": "—",
+      "chart_class": "half_2nd sum layout_border chart_pb",
+      "section_title": "Visit to Chat Ratio / Missed Chat\nDownload\nVisit to Chat Ratio Missed Chat\n\nMissed Chat\nVisit to Chat\nRatio (%)\n02.08\n0",
+      "graph_api": "/ShopApp/ajax/getOperationAllGraphData",
+      "api_short_name": "getOperationAllGraphData",
+      "response_schema_sample": "—"
+    }
+  ],
+  "source": "menu_*.json + menu_config.json + api_responses"
+}

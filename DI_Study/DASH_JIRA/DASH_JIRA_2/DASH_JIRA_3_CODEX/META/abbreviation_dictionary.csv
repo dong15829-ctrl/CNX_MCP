@@ -1,0 +1,131 @@
+약어,풀이,삼성닷컴/CNX,예시
+AA,Adobe Analytics,삼성닷컴,
+AAP,Aggregated Advaced Privacy,AppsFlyer,"AAP는 유저의 ATT 팝업 옵트인-아웃에 따라 유저레벨 데이터의 사용을 제한하는 것으로, 이 옵션이 켜져있을 경우 유저가 샵에 ATT 옵트인을 한 경우에만 유저레벨 데이터 사용이 가능합니다.
+앱스플라이어가 어도비에 전달하는 데이터는 유저레벨 데이터로, 안드로이드에서는 이와 같은 제약이 없으나 iOS에서는 어도비로 전달하는 포스트백이 AAP의 제약을 받습니다.
+"
+ACT,Analytics with Creative Thinking,CNX,
+AEM,Adobe Experience Manager,삼성닷컴,
+ATC,Add To Cart (cart add/ sc add),삼성닷컴,
+ATT,App Tracking Transparency,삼성닷컴,Apple's opt-in privacy framework that requires all iOS apps to ask users for permission to share their data.
+B2B,Business to Business,삼성닷컴,
+B2C,Business-to-Consumer,삼성닷컴,
+BC,Buying Configurator,삼성닷컴/CNX,Buy page에서 일어난 특정 트래픽 데이터 추출을 요청하는 뜻으로 'BC' 라고 칭하는 고객의 경우 참고 바람
+BIS,Business Insight powered by Science-technology,CNX,
+BKC,Bandra Kurla Complex ,삼성닷컴,"Retail 대시보드 프로젝트 일부로 3개의 Pilot 국가 중, 인도 뭄바이에 위치한 삼성 오프라인 스토어 (In-Store)에 상주 건물 이름. BKC는 Commercial hub로 business/apartment complex가 합쳐져 있다고 함"
+BOPIS,Buy Online Pickup In Store ,삼성닷컴,
+BP,Best Practice,삼성닷컴,
+BQ,Big Query ,삼성닷컴,
+BRD,Business Requirements Document,삼성닷컴,
+CA,"Customer Analytics ""CA그륩"" ",삼성닷컴,
+CDA,Cross Device Analysis,삼성닷컴/Adobe,
+CE,,삼성닷컴,
+CEJ,Customer Experience Journey,삼성닷컴,
+CIP,Concentrix Incentive plan,CNX,회계연도 동안 회사의 성과와 개인의 성과에 따라 자격*을 갖춘 직원에게 매년 동기를 부여하고 보상하기 위해 고안된 재량 인센티브 프로그램 (1월 지급)
+CL,Career Level,CNX,
+CLV,Customer Lifetime Value,삼성닷컴,
+CMP,"Consent Management Platform, 고객동의 관리 플랫폼",삼성닷컴,EU의 GDPR/ BR의 LGPD/ California CCPA과 같은 데이터 보호법 및 규정에 따라 개인 정보 및 동의를 수집하고 관리하는 데 도움을 주는 소프트웨어 솔루션
+cntry_cd,country code,삼성닷컴,"예) Canada (CA, CAN) Korea (KR, KOR)"
+Co.A,"Company A (경쟁사 ""Apple"")",삼성닷컴,"분석 요청을 받을 때 Apple을 가르키는 뜻으로, 'Apple'社 라고 적지 않고 Company A 라는 뜻으로 Co.A 라고 기재됨. "
+CST,Client Side Tagging,CNX,
+CTA,Call To Action,삼성닷컴,
+CTR,Click Through Rate,삼성닷컴,
+CVR,ConVersion Rate,삼성닷컴,
+D2C,Direct-to-Consumer,삼성닷컴,
+D2C RS 그륩,Retail Strategy Group,삼성닷컴,삼성전자 D2C센터- Operation Group (GMO) 아래 그륩 명칭
+D2D,Door-to-Door,삼성닷컴,"비즈니스 모델; 소비자의 집에 영업사원을 파견해 상품이나 서비스를 판매하고, 고객과의 관계를 구축하고, 판매를 성사시키는 것은 간단하지만 효과적인 전략입니다."
+DA,Digital Appliance: 생활가전. 과거엔 Home Appliance,삼성닷컴,
+DASH,Digital Acceleration through Smart Horizons,CNX,
+DI,Digital Intelligence,CNX,
+DMA,"Digital Markets Act, 디지털 시장법",삼성닷컴,
+DMA,"Digital Markets Act,",삼성닷컴,[legal] 디지털 시장법
+DPO,Data Protection Officer,삼성닷컴,"특정 회사의 데이터 개인 정보 보호 및 보호 조치의 구현 및 시행을 감독하는 사람. DPO는 ""대규모"" 데이터 처리에 관여하는 모든 회사에 대해 GDPR에 따라 요구됨."
+DS,Device Solutions,삼성전자,
+DX,Device eXperience,삼성전자,
+DYOR,Do Your Own Research,삼성닷컴,"""너가 직접 찾아봐"""
+EA,Estore Analytics,삼성닷컴,Jira 플랫폼의 프로젝트 카테고리 기준 (EA-4) 
+ECP,Employee Communication Plan,CNX,
+ED,Estore Dashboard,삼성닷컴,Jira 플랫폼의 프로젝트 카테고리 기준 (ED-4755) 
+ENH,Enhancement,삼성닷컴,"Hybris 데이터 원천 플랫폼과 소통 시 자주 나타나는 키워드, 보통 '개선작업' 을 뜻하는 코드명(prefix) 이다. 예: ENH-75-RC-2"
+EO,European Office,삼성닷컴,
+EOD,End Of Day,삼성닷컴,(고객소통) deadline을 뜻할 때 사용됨.
+EPP,Employee Purchase Program,삼성닷컴,
+EU,European Union,삼성닷컴,
+FAB,Floating Action Banner,삼성닷컴,
+FRD,Functional Resolution Document,삼성닷컴,
+"FW, FWD",Forward,삼성닷컴,이메일 전달하기 (기능)
+FYI,For Your Information,삼성닷컴,참고
+GA,Google Analytics,삼성닷컴,
+GBC,Global Business Centre(센터),삼성닷컴,
+GBM,Global Business Management,삼성닷컴,"(2006.04.02) 삼성전자 조직개편 내용 중 GBM이란, 글로벌 사업단위 체제를 의미함. 삼성닷컴 데이터 분석에서는 gbm 혹은 division(사업부) 라고 칭하며 MX/VD/DA를 가리킴."
+GD,Global Dashboard,삼성닷컴,현: Global eStore BI (대시보드 페이지)를 뜻하는 옛날 이름. 해외 법인들 커뮤니케이션 중 아직도 GD라는 용어에 익숙해 GD 라고 메일에 언급될 때도 있음
+GDPR,General Data Protection Regulation,삼성닷컴/CNX,
+GMC,Global Marketing Center(센터),삼성닷컴,
+GMO,Global Marketing Office(실) (23년초 승격됨),삼성닷컴,
+GRO,Global Roll Out,삼성닷컴,
+GSA,Global Shop App,삼성닷컴,
+GSC,Google Search Console,삼성닷컴/CNX,
+GU ID ,"Globally Unique Identifier, 고유 식별자",삼성닷컴,"고유 식별자가 필요한 모든 컴퓨터 및 네트워크에서 사용할 수 있는 128비트 정수(16바이트)
+e.g., 국가에서 입수되는 Data에 고객 식별 가능한 GUID 정보의 유무"
+GWP,Great Work Place,CNX,
+HA,,삼성닷컴,DA' 사업부의 과거 이름
+HCR,Help Contents Resolution,삼성닷컴,
+HQ,Head Quarter,삼성닷컴,본사
+ILP,Intent-Led Personalization,삼성닷컴,제품 체험하고 느낄 수 있는 팝업 플레이스에 대한 페이지가 예시인데 풀이가 맞는지 확인이 필요합니다~
+IM,,삼성닷컴,MX' 사업부의 과거 이름
+IMPT,Important,삼성닷컴,중요하다는 내용을 강조하기 위한 키워드
+ISO,International Organization for Standardization,삼성닷컴,"국제 표준을 개발하고 출판하는 기관. 예) ISO Week number, ISO country code(2 letters) (3 letters)"
+KT,Knowledge Transfer,삼성닷컴,(개발자) 정보 인수 인계 
+MA,MobileApp,삼성닷컴,Jira 플랫폼의 프로젝트 카테고리 기준 (MA-9004) 
+MBO,Multi Buy Offer,삼성닷컴,여러 개를 사면 할인해주는 방식
+MLP,Marketing Landing Page,삼성닷컴,
+MSG,Marketing Strategy Group,삼성닷컴/CNX,
+MST,Multi-Suite Tagging,삼성닷컴,
+MST,Multi-Suite Tagging,삼성닷컴/CNX,
+MX,Mobile eXperience,삼성닷컴/CNX,
+NC,New PC,삼성닷컴,"Tablet, PC"
+NPS,Net Promoter Score,삼성닷컴,
+O2O,Online-to-Offline,삼성닷컴,
+OCG,Online Contents Group,삼성닷컴/CNX,
+OOO,Out Of Office,삼성닷컴,본인이 사무실에 없다는/휴가 중이라는 상태 알림 키워드 
+OOS,Out Of Stock,삼성닷컴,재고 없음의 상태
+OSM,Online Support Manager,삼성닷컴,
+PCD​,Product Category Details​,삼성닷컴,https://www.samsung.com/uk/smartphones/​
+PF​,Product Finder​,삼성닷컴,https://www.samsung.com/uk/smartphones/all-smartphones​
+PFS​,Product Family Showcase​,삼성닷컴,https://www.samsung.com/uk/mobile​
+PI,purchase intention,삼성닷컴,
+PII,"Personally Identifiable Information, 개인 식별 번호",삼성닷컴,
+PLA,Product List Ads (이미지위주) vs paid search(텍스트위주),삼성닷컴,
+PNZ,Personalization,삼성닷컴,홈 PNZ. PNZ API 확인
+PO ID,Purchasing Order ID,삼성닷컴,"BI 대시보드에서 사용, 주문번호"
+POD,Point of Difference,삼성닷컴,
+PR,Pull Request ,"삼성닷컴, 샵앱",삼성 웹/앱 서비스 내 수정사항에 대해 정식으로 올리는 건의사항
+Q/Visit,Qualified Visit (바운스를 제외한 visit),삼성닷컴,
+QA,Quality Assurance,삼성닷컴,
+QC,Quality Check,삼성닷컴,
+RDD,Required Delivery Rate,삼성닷컴,
+RGPD,Le Règlement Général de Protection des Données,삼성닷컴/CNX,[법률] GDPR 규제를 프랑스에서 채택한 공식 용어인 RGPD로 사용
+RHQ,Regional Head Quarter,삼성닷컴,"(해외)지역 본부 예) EU RHQ, MENA HRQ"
+ROAS,"Return On Ad Spend, 광고 투자 대비 수익률",삼성닷컴/CNX,
+S/W,Software,삼성닷컴,
+SCB,Samsung Care+ for Business,삼성닷컴,
+SE,"Samsung Electronics Ltd.,",삼성닷컴,삼성전자
+SEM,Search Engine Marketing,삼성닷컴,
+SEO,Search Engine Optimization,삼성닷컴/CNX,
+SEPOE,Samsung estore Platform Operation and Enhancement ,삼성닷컴,eStore 프로젝트 관리 플랫폼 중 '컨플루언스(Confluence)'에서 지정된 카테고리 명칭
+SES,Samsung Experience Shop,삼성닷컴,"O2O 세일즈를 위한 오프라인 스토어 e.g., [SEUK] liverpool, edinburgh, trafford, norwich, canary wharf, westfield london"
+site_cd,site code,삼성닷컴,
+SKU,Stock Keeping Unit,삼성닷컴,"제품을 식별하고 추적하는 데 사용되는 고유한 코드로, 각각의 상품이나 상품의 변형(색상, 크기, 스타일 등)을 구별하는 데 사용됩니다. 예를 들어, 동일한 티셔츠의 경우에도 색상이나 사이즈가 다르면 각기 다른 SKU가 부여됩니다. SKU는 재고 관리 시스템에서 매우 중요하며, 재고의 위치, 수량, 판매 추적 및 분석에 도움"
+SMB,Small to Medium-sized Business,삼성닷컴,100명 이하 직원수 (5~25명 직원수도 SMB에 속함)
+SMC+,Samsung Care Plus,삼성닷컴,삼성닷컴 Buy page에서 제품 구매 시 선택추가 옵션 중 하나. 핸드폰 기기 보험 약정
+SME,Small and Medium-sized Enterprises,삼성닷컴,"101~500명 범위의 직원 수, annual revenue: $10M ~ $1B"
+SRP,Search Result Page,삼성닷컴/CNX,검색을 한 이후 랜딩 되는 결과 페이지
+SST,Server Side Tagging,CNX,
+Subs,Subsidiary/Subsidiaries,삼성닷컴,삼성전자 해외법인을 가리키는 약어 
+ToS,Time on Site (duration time),삼성닷컴,
+ToS,Term of Services,삼성닷컴,
+TWS,True Wireless Stereo (TWS),삼성닷컴,"무선이어폰 e.g., Galaxy Buds Pro, Galaxy Buds "
+VRS,Virtual Report Suite,삼성닷컴/CNX,
+WIP,Work In Progress ,삼성닷컴,(고객소통) 아직 작업중 이라는 상태를 뜻할 때 사용됨.
+리빌,리포트빌더 Report Builder ,삼성닷컴,리포트빌더 Report Builder 기능 (Adobe Analytics 메뉴)
+웍스,웍스페이스 (Adobe) Workspace,삼성닷컴,Freedom table을 생성할 수 있는 기능 (Adobe Analytics 메뉴)
+칼메,Calculated Metrics ,삼성닷컴,"계산식이 들어간 세그먼트 ( ) , +, x, -, / (Adobe Analytics 메뉴)"

@@ -1,0 +1,1421 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ShopApp Summary</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/glyphicons.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"> </script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/googleChart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <!-- //datepicker -->
+
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="css/datatables.css">
+    <script type="text/javascript" src="js/datatables.js"></script>
+    <!-- //datatable -->
+
+
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css"><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script></head>
+<body>
+<div class="body_wrap">
+    <!-- header -->
+    
+
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+    svg > g > g:last-child { pointer-events: none }
+</style>
+
+<div class="gnb_wrap">
+    <div class="gnb_top">
+        <button class="gnb_hbg"></button>
+        <div class="gnb_tit">ShopApp Summary</div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Region / Local / Site:</div>
+            <ul class="gnb_option_sum">
+                <li class="icon"></li>
+                
+                
+                
+                
+                    
+                    
+                    
+                        <li class="region" id="region">All</li>
+                    
+                    
+                    
+                
+                
+                
+                <li class="country" id="country">All</li>
+                <li class="site" id="site">66</li>
+                <li class="icon_extension"></li>
+            </ul>
+
+            
+            <div class="region_wrap" style="display: none;">
+                <div class="section_wrap">
+                    <div class="section" id="tit_region">
+                        <div class="tit">Region</div>
+                    </div>
+                    <div class="section" id="tit_country">
+                        <div class="tit">Local</div>
+                    </div>
+                    <div class="section" id="tit_site">
+                        <div class="tit">Site</div>
+                    </div>
+                </div>
+                <div class="section_body">
+                    <ul class="txt region" id="txt_region">
+                        
+                        
+                        
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq0" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq0" style="cursor: pointer;">All<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq1" type="checkbox" vpromoter="0" audio="1" sns="0" style="">
+                                            <label for="rhq1" style="cursor: pointer;">AFRICA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq2" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq2" style="cursor: pointer;">Americas<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq3" type="checkbox" vpromoter="1" audio="0" sns="1" style="">
+                                            <label for="rhq3" style="cursor: pointer;">APAC<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq4" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq4" style="cursor: pointer;">EHQ<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq5" type="checkbox" vpromoter="1" audio="1" sns="0" style="">
+                                            <label for="rhq5" style="cursor: pointer;">G.CN<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq6" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq6" style="cursor: pointer;">KOREA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq7" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq7" style="cursor: pointer;">MENA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq8" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq8" style="cursor: pointer;">SWA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                        
+                        
+                    </ul>
+                    <ul class="txt country" id="txt_country"><li>   <input name="country" id="country0" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country0" style="cursor:pointer" data-id="All">All<span></span></label></li><li>   <input name="country" id="country1" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country1" style="cursor:pointer" data-id="SAMCOL">SAMCOL<span></span></label></li><li>   <input name="country" id="country2" type="checkbox" vpromoter="1" audio="0" sns="0" style="">   <label for="country2" style="cursor:pointer" data-id="SAVINA">SAVINA<span></span></label></li><li>   <input name="country" id="country3" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country3" style="cursor:pointer" data-id="SEAD">SEAD<span></span></label></li><li>   <input name="country" id="country4" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country4" style="cursor:pointer" data-id="SEAS">SEAS<span></span></label></li><li>   <input name="country" id="country5" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country5" style="cursor:pointer" data-id="SEAU">SEAU<span></span></label></li><li>   <input name="country" id="country6" type="checkbox" vpromoter="1" audio="1" sns="0" style="">   <label for="country6" style="cursor:pointer" data-id="SEB">SEB<span></span></label></li><li>   <input name="country" id="country7" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country7" style="cursor:pointer" data-id="SEBN">SEBN<span></span></label></li><li>   <input name="country" id="country8" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country8" style="cursor:pointer" data-id="SEC">SEC<span></span></label></li><li>   <input name="country" id="country9" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country9" style="cursor:pointer" data-id="SECA">SECA<span></span></label></li><li>   <input name="country" id="country10" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country10" style="cursor:pointer" data-id="SECH">SECH<span></span></label></li><li>   <input name="country" id="country11" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country11" style="cursor:pointer" data-id="SECZ">SECZ<span></span></label></li><li>   <input name="country" id="country12" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country12" style="cursor:pointer" data-id="SEDA">SEDA<span></span></label></li><li>   <input name="country" id="country13" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country13" style="cursor:pointer" data-id="SEEG">SEEG<span></span></label></li><li>   <input name="country" id="country14" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country14" style="cursor:pointer" data-id="SEF">SEF<span></span></label></li><li>   <input name="country" id="country15" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country15" style="cursor:pointer" data-id="SEG">SEG<span></span></label></li><li>   <input name="country" id="country16" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country16" style="cursor:pointer" data-id="SEGR">SEGR<span></span></label></li><li>   <input name="country" id="country17" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country17" style="cursor:pointer" data-id="SEH">SEH<span></span></label></li><li>   <input name="country" id="country18" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country18" style="cursor:pointer" data-id="SEHK">SEHK<span></span></label></li><li>   <input name="country" id="country19" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country19" style="cursor:pointer" data-id="SEI">SEI<span></span></label></li><li>   <input name="country" id="country20" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country20" style="cursor:pointer" data-id="SEIB">SEIB<span></span></label></li><li>   <input name="country" id="country21" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country21" style="cursor:pointer" data-id="SEIL">SEIL<span></span></label></li><li>   <input name="country" id="country22" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country22" style="cursor:pointer" data-id="SEIN">SEIN<span></span></label></li><li>   <input name="country" id="country23" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country23" style="cursor:pointer" data-id="SELV">SELV<span></span></label></li><li>   <input name="country" id="country24" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country24" style="cursor:pointer" data-id="SEM">SEM<span></span></label></li><li>   <input name="country" id="country25" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country25" style="cursor:pointer" data-id="SEMAG">SEMAG<span></span></label></li><li>   <input name="country" id="country26" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country26" style="cursor:pointer" data-id="SENA">SENA<span></span></label></li><li>   <input name="country" id="country27" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country27" style="cursor:pointer" data-id="SENZ">SENZ<span></span></label></li><li>   <input name="country" id="country28" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country28" style="cursor:pointer" data-id="SEPAK">SEPAK<span></span></label></li><li>   <input name="country" id="country29" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country29" style="cursor:pointer" data-id="SEPCO">SEPCO<span></span></label></li><li>   <input name="country" id="country30" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country30" style="cursor:pointer" data-id="SEPOL">SEPOL<span></span></label></li><li>   <input name="country" id="country31" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country31" style="cursor:pointer" data-id="SEPR">SEPR<span></span></label></li><li>   <input name="country" id="country32" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country32" style="cursor:pointer" data-id="SEROM">SEROM<span></span></label></li><li>   <input name="country" id="country33" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country33" style="cursor:pointer" data-id="SESAR">SESAR<span></span></label></li><li>   <input name="country" id="country34" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country34" style="cursor:pointer" data-id="SESP">SESP<span></span></label></li><li>   <input name="country" id="country35" type="checkbox" vpromoter="1" audio="1" sns="0" style="">   <label for="country35" style="cursor:pointer" data-id="SET">SET<span></span></label></li><li>   <input name="country" id="country36" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country36" style="cursor:pointer" data-id="SETK">SETK<span></span></label></li><li>   <input name="country" id="country37" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country37" style="cursor:pointer" data-id="SEUK">SEUK<span></span></label></li><li>   <input name="country" id="country38" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country38" style="cursor:pointer" data-id="SGE">SGE<span></span></label></li><li>   <input name="country" id="country39" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country39" style="cursor:pointer" data-id="SIEL">SIEL<span></span></label></li><li>   <input name="country" id="country40" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country40" style="cursor:pointer" data-id="SME">SME<span></span></label></li><li>   <input name="country" id="country41" type="checkbox" vpromoter="0" audio="1" sns="0" style="">   <label for="country41" style="cursor:pointer" data-id="SSA">SSA<span></span></label></li><li>   <input name="country" id="country42" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country42" style="cursor:pointer" data-id="TSE">TSE<span></span></label></li></ul>
+                    <ul class="txt site" id="txt_site"><li>   <input name="site" id="site0" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site0" style="cursor:pointer" data-id="All"><span class="site_span">All</span><span></span></label></li><li>   <input name="site" id="site1" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site1" style="cursor:pointer" data-id="AE"><span class="site_span">AE</span><span></span></label></li><li>   <input name="site" id="site2" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site2" style="cursor:pointer" data-id="AE_AR"><span class="site_span">AE_AR</span><span></span></label></li><li>   <input name="site" id="site3" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site3" style="cursor:pointer" data-id="AL"><span class="site_span">AL</span><span></span></label></li><li>   <input name="site" id="site4" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label class="has_noti" for="site4" style="cursor:pointer" data-id="AT"><span class="site_span">AT</span><span></span></label></li><li>   <input name="site" id="site5" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label class="has_noti" for="site5" style="cursor:pointer" data-id="AU"><span class="site_span">AU</span><span></span></label></li><li>   <input name="site" id="site6" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site6" style="cursor:pointer" data-id="BA"><span class="site_span">BA</span><span></span></label></li><li>   <input name="site" id="site7" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site7" style="cursor:pointer" data-id="BE"><span class="site_span">BE</span><span></span></label></li><li>   <input name="site" id="site8" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site8" style="cursor:pointer" data-id="BE_FR"><span class="site_span">BE_FR</span><span></span></label></li><li>   <input name="site" id="site9" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site9" style="cursor:pointer" data-id="BG"><span class="site_span">BG</span><span></span></label></li><li>   <input name="site" id="site10" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site10" style="cursor:pointer" data-id="BR"><span class="site_span">BR</span><span></span></label></li><li>   <input name="site" id="site11" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site11" style="cursor:pointer" data-id="CA"><span class="site_span">CA</span><span></span></label></li><li>   <input name="site" id="site12" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site12" style="cursor:pointer" data-id="CA_FR"><span class="site_span">CA_FR</span><span></span></label></li><li>   <input name="site" id="site13" type="checkbox" vpromoter="1" audio="0" sns="0" checked="" style="">   <label for="site13" style="cursor:pointer" data-id="CH"><span class="site_span">CH</span><span></span></label></li><li>   <input name="site" id="site14" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site14" style="cursor:pointer" data-id="CH_FR"><span class="site_span">CH_FR</span><span></span></label></li><li>   <input name="site" id="site15" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site15" style="cursor:pointer" data-id="CL"><span class="site_span">CL</span><span></span></label></li><li>   <input name="site" id="site16" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site16" style="cursor:pointer" data-id="CO"><span class="site_span">CO</span><span></span></label></li><li>   <input name="site" id="site17" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site17" style="cursor:pointer" data-id="CZ"><span class="site_span">CZ</span><span></span></label></li><li>   <input name="site" id="site18" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site18" style="cursor:pointer" data-id="DE"><span class="site_span">DE</span><span></span></label></li><li>   <input name="site" id="site19" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site19" style="cursor:pointer" data-id="DK"><span class="site_span">DK</span><span></span></label></li><li>   <input name="site" id="site20" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site20" style="cursor:pointer" data-id="EE"><span class="site_span">EE</span><span></span></label></li><li>   <input name="site" id="site21" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site21" style="cursor:pointer" data-id="EG"><span class="site_span">EG</span><span></span></label></li><li>   <input name="site" id="site22" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site22" style="cursor:pointer" data-id="ES"><span class="site_span">ES</span><span></span></label></li><li>   <input name="site" id="site23" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site23" style="cursor:pointer" data-id="FI"><span class="site_span">FI</span><span></span></label></li><li>   <input name="site" id="site24" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site24" style="cursor:pointer" data-id="FR"><span class="site_span">FR</span><span></span></label></li><li>   <input name="site" id="site25" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site25" style="cursor:pointer" data-id="GR"><span class="site_span">GR</span><span></span></label></li><li>   <input name="site" id="site26" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site26" style="cursor:pointer" data-id="HK"><span class="site_span">HK</span><span></span></label></li><li>   <input name="site" id="site27" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site27" style="cursor:pointer" data-id="HK_EN"><span class="site_span">HK_EN</span><span></span></label></li><li>   <input name="site" id="site28" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site28" style="cursor:pointer" data-id="HR"><span class="site_span">HR</span><span></span></label></li><li>   <input name="site" id="site29" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site29" style="cursor:pointer" data-id="HU"><span class="site_span">HU</span><span></span></label></li><li>   <input name="site" id="site30" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site30" style="cursor:pointer" data-id="ID"><span class="site_span">ID</span><span></span></label></li><li>   <input name="site" id="site31" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site31" style="cursor:pointer" data-id="IE"><span class="site_span">IE</span><span></span></label></li><li>   <input name="site" id="site32" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site32" style="cursor:pointer" data-id="IL"><span class="site_span">IL</span><span></span></label></li><li>   <input name="site" id="site33" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site33" style="cursor:pointer" data-id="IN"><span class="site_span">IN</span><span></span></label></li><li>   <input name="site" id="site34" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site34" style="cursor:pointer" data-id="IQ_AR"><span class="site_span">IQ_AR</span><span></span></label></li><li>   <input name="site" id="site35" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site35" style="cursor:pointer" data-id="IT"><span class="site_span">IT</span><span></span></label></li><li>   <input name="site" id="site36" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site36" style="cursor:pointer" data-id="KR"><span class="site_span">KR</span><span></span></label></li><li>   <input name="site" id="site37" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site37" style="cursor:pointer" data-id="LEVANT"><span class="site_span">LEVANT</span><span></span></label></li><li>   <input name="site" id="site38" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site38" style="cursor:pointer" data-id="LEVANT_AR"><span class="site_span">LEVANT_AR</span><span></span></label></li><li>   <input name="site" id="site39" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site39" style="cursor:pointer" data-id="LT"><span class="site_span">LT</span><span></span></label></li><li>   <input name="site" id="site40" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site40" style="cursor:pointer" data-id="LV"><span class="site_span">LV</span><span></span></label></li><li>   <input name="site" id="site41" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site41" style="cursor:pointer" data-id="MK"><span class="site_span">MK</span><span></span></label></li><li>   <input name="site" id="site42" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site42" style="cursor:pointer" data-id="MX"><span class="site_span">MX</span><span></span></label></li><li>   <input name="site" id="site43" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site43" style="cursor:pointer" data-id="MY"><span class="site_span">MY</span><span></span></label></li><li>   <input name="site" id="site44" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site44" style="cursor:pointer" data-id="NL"><span class="site_span">NL</span><span></span></label></li><li>   <input name="site" id="site45" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site45" style="cursor:pointer" data-id="NO"><span class="site_span">NO</span><span></span></label></li><li>   <input name="site" id="site46" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site46" style="cursor:pointer" data-id="NZ"><span class="site_span">NZ</span><span></span></label></li><li>   <input name="site" id="site47" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site47" style="cursor:pointer" data-id="N_AFRICA"><span class="site_span">N_AFRICA</span><span></span></label></li><li>   <input name="site" id="site48" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site48" style="cursor:pointer" data-id="PE"><span class="site_span">PE</span><span></span></label></li><li>   <input name="site" id="site49" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site49" style="cursor:pointer" data-id="PH"><span class="site_span">PH</span><span></span></label></li><li>   <input name="site" id="site50" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site50" style="cursor:pointer" data-id="PK"><span class="site_span">PK</span><span></span></label></li><li>   <input name="site" id="site51" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site51" style="cursor:pointer" data-id="PL"><span class="site_span">PL</span><span></span></label></li><li>   <input name="site" id="site52" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site52" style="cursor:pointer" data-id="PT"><span class="site_span">PT</span><span></span></label></li><li>   <input name="site" id="site53" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site53" style="cursor:pointer" data-id="RO"><span class="site_span">RO</span><span></span></label></li><li>   <input name="site" id="site54" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site54" style="cursor:pointer" data-id="RS"><span class="site_span">RS</span><span></span></label></li><li>   <input name="site" id="site55" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site55" style="cursor:pointer" data-id="SA"><span class="site_span">SA</span><span></span></label></li><li>   <input name="site" id="site56" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site56" style="cursor:pointer" data-id="SA_EN"><span class="site_span">SA_EN</span><span></span></label></li><li>   <input name="site" id="site57" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site57" style="cursor:pointer" data-id="SE"><span class="site_span">SE</span><span></span></label></li><li>   <input name="site" id="site58" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site58" style="cursor:pointer" data-id="SG"><span class="site_span">SG</span><span></span></label></li><li>   <input name="site" id="site59" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site59" style="cursor:pointer" data-id="SI"><span class="site_span">SI</span><span></span></label></li><li>   <input name="site" id="site60" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site60" style="cursor:pointer" data-id="SK"><span class="site_span">SK</span><span></span></label></li><li>   <input name="site" id="site61" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site61" style="cursor:pointer" data-id="TH"><span class="site_span">TH</span><span></span></label></li><li>   <input name="site" id="site62" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site62" style="cursor:pointer" data-id="TR"><span class="site_span">TR</span><span></span></label></li><li>   <input name="site" id="site63" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site63" style="cursor:pointer" data-id="TW"><span class="site_span">TW</span><span></span></label></li><li>   <input name="site" id="site64" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site64" style="cursor:pointer" data-id="UK"><span class="site_span">UK</span><span></span></label></li><li>   <input name="site" id="site65" type="checkbox" vpromoter="1" audio="0" sns="0" checked="" style="">   <label for="site65" style="cursor:pointer" data-id="VN"><span class="site_span">VN</span><span></span></label></li><li>   <input name="site" id="site66" type="checkbox" vpromoter="0" audio="1" sns="0" checked="" style="">   <label for="site66" style="cursor:pointer" data-id="ZA"><span class="site_span">ZA</span><span></span></label></li></ul>
+                </div>
+                <div class="gnb_btn_update_wrap">
+                    <button class="gnb_btn_update" onclick="getUpdate()">Update</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Date :</div>
+            <ul class="gnb_option_sum_date">
+                <li>
+                    <input class="" type="text" name="daterange" value="" id="date" autocomplete="off" readonly="" style="">
+                </li>
+            </ul>
+        </div>
+        
+        <div class="gnb_option_wrap noti_box">
+            <table class="data_type_table">
+                <tbody>
+                <tr>
+                    
+                        
+                        
+                            <td class="data_type" data-period="day">
+                                Daily
+                            </td>
+                            <td class="data_type" data-period="week">
+                                Weekly
+                            </td>
+                            <td class="data_type" data-period="month">
+                                Monthly
+                            </td>
+                            <td class="data_type" data-period="quarter">
+                                Quarterly
+                            </td>
+                        
+                    
+                </tr>
+                </tbody>
+            </table>
+            <span class="box_inner" style="position:absolute;top:12px;right: 0;">
+                    <span class="icon_noti">
+                        <div class="noti_tooltip lefty caution">
+                            When click Daily/Weekly/Monthly/Quarterly, the indicators on the top line and the ranking tables will shown as average of selected data period.
+                        </div>
+                    </span>
+                </span>
+        </div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_user_wrap">
+                <div class="icon_user"></div>
+                <!-- 20200624 ë¡ê·¸ìì -->
+                <div class="wrap_pop_user_pwd">
+                    <span class="pop_user_id">
+                        
+                        dongil.kim
+                        
+                    </span>
+                    <button class="btn_chg_pwd">Change Password</button>
+                    <div class="wrap_chg_pwd">
+                        <input type="password" placeholder="Current Password" class="chg_pwd_input" id="current_pw" autocomplete="off" style="">
+                        <input type="password" placeholder="New Password" class="chg_pwd_input" id="new_pw" autocomplete="off" style="">
+                        <input type="password" placeholder="Re-type New Password" class="chg_pwd_input" id="renew_pw" autocomplete="off" style="">
+                        <button class="btn_user_confirm" id="passwordChange">Confirm</button>
+                    </div>
+                    <span class="pop_border_bottom"></span>
+                    <button class="btn_logout">Log out</button>
+                </div>
+                <!-- 20200624 ë¡ê·¸ìì -->
+                <div class="user_name">
+                    
+                    dongil.kim
+                </div>
+            </div>
+            
+                <button class="btn_down_load" id="headerDownload">Download</button>
+            
+            <div class="last_update">Last Update : <span>2026.02.08</span>  </div>
+        </div>
+    </div>
+
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $(".has_noti").hover(function(e) {
+            $("#tit_site").append("<div class='test'>In case there are more than one Site in the selected Local, sales related indicators and graphs will be shown as a combined result of each site.</div>");
+            $(".test").css("display","block");
+            //   var pageX = $(this).offset().left -40;
+            //   var pageY = $(this).offset().top - 60;
+            //   $(".test").css({left : pageX + "px", top : pageY + "px"});
+        }, function() {
+            $(".test").remove();
+        });
+
+        function getCookie(name) {
+            var parts = document.cookie.split(name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+
+        function expireCookie(name) {
+            document.cookie = name + "="+encodeURIComponent("FALSE")+"; expires=";
+        }
+
+        var downloadTimer;
+
+        function blockUI() {
+            expireCookie("fileDownloadToken");
+            document.getElementById("loading-page").style.display ="block";
+            downloadTimer = setInterval(function() {
+                var token = getCookie("fileDownloadToken");
+                if(token == "TRUE") {
+                    unBlockUI();
+                }
+            }, 1000 );
+        }
+
+        function unBlockUI() {
+            document.getElementById("loading-page").style.display ="none";
+            clearInterval(downloadTimer);
+        }
+
+        $('#headerDownload').off();
+        $('#headerDownload').on('click',function(){
+            blockUI();
+            var param = getParam();
+            param.type ='0';
+            param.product_division = 'ALL';
+            let form = document.createElement('form');
+            form.setAttribute("method","POST");
+            form.setAttribute("action","/globaldashboard/CommonExcelDownload");
+            let hiddenField = document.createElement('input');
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "data");
+            hiddenField.setAttribute("value", JSON.stringify(param));
+
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+
+            form.submit();
+        });
+
+        $('#passwordChange').off();
+        $('#passwordChange').on('click',function(){
+            let current_pw = $('#current_pw').val();
+            let new_pw = $('#new_pw').val();
+            let renew_pw = $('#renew_pw').val();
+
+            if(current_pw == ''){
+                alert('Please input Current Password.');
+                return;
+            }
+
+            if(new_pw == ''){
+                alert('Please input New Password.');
+                return;
+            }
+
+            if(renew_pw == ''){
+                alert('Please input Re-type New Password.');
+                return;
+            }
+
+            if(new_pw != renew_pw){
+                alert('New Password and Re-type New Password do not Macth.');
+                return;
+            }
+
+            let param = {
+                current_pw : md5(current_pw),
+                new_pw : new_pw
+            }
+
+            ajax.post("/changePassword",param,"",function(respon){
+                if(respon.ok){
+                    let data = respon.data;
+                    if(data == 'Failed'){
+                        alert('Current Password do not Macth');
+                        return;
+                    }else{
+                        alert('Your password has been changed. Please log in again.');
+                        location.href = '/globaldashboard';
+                    }
+                }
+            })
+
+        });
+
+        $('.btn_logout').off();
+        $('.btn_logout').on('click',function(){
+            if(confirm('Are you sure you want to log out?')){
+                location.href = '/globaldashboard';
+            }
+        })
+    })
+
+    function getUpdate(){
+        if(document.querySelectorAll('input[name="site"]:checked').length == 0){
+            alert('Please Select Site');
+            return;
+        }
+
+        getCurrentSite();
+    }
+    function getCurrentSite() {
+        document.querySelector('.gnb_selected_info').innerHTML = '';
+
+        let html = '';
+        let site = '';
+
+        if(document.getElementById('region').innerText == 'All' && document.getElementById('country').innerText == 'All' && document.getElementById('site').innerText == 'All') {
+            document.querySelector('.gnb_selected_info').innerHTML = '<span class="icon_noti selected">';
+        } else {
+
+            if (document.querySelectorAll('input[name="site"]:checked').length != 0) {
+                document.querySelectorAll('input[name="site"]:checked').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="site"]:checked').length - 1 == i) {
+                            site += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                        }
+                    } else if (document.querySelectorAll('input[name="site"]:checked').length == 1) {
+                        if (e.nextSibling.nextSibling.innerText == 'All') {
+                            document.querySelectorAll('input[name="site"]').forEach((e, i) => {
+                                if (e.nextSibling.nextSibling.innerText != 'All') {
+                                    if (document.querySelectorAll('input[name="site"]').length - 1 == i) {
+                                        site += e.nextSibling.nextSibling.dataset.id;
+                                    } else {
+                                        site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                                    }
+                                }
+                            })
+                        }
+                    }
+                })
+            } else {
+                document.querySelectorAll('input[name="site"]').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="site"]').length - 1 == i) {
+                            site += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                        }
+                    }
+                })
+            }
+
+            html += 'Now : <span class="site_val">' + site + '</span>';
+            html += '<span class="icon_noti selected">...';
+            html += '<div class="noti_tooltip center">' + site + '</div></span></div>';
+
+            document.querySelector('.gnb_selected_info').innerHTML = html;
+
+            document.querySelector('.icon_noti.selected').style.display = site.length > 120 ? 'inline' : 'none';
+        }
+
+        getData();
+    }
+
+    function getVpromoterCount() {
+        let vPromoterSite = 0;
+        let audioSite = 0;
+        let snsSite = 0;
+
+        // ì íëê² ìì ê²½ì°
+        if(document.querySelectorAll('input[name="site"]:checked').length == 0) {
+            // vPromoter êµ­ê° ì¹´ì´í
+            document.querySelectorAll('input[name="site"]').forEach(e=> {
+                if(e.nextSibling.nextSibling.innerText != 'All') {
+                    if(e.getAttribute('vpromoter') == 1) {
+                        vPromoterSite++;
+                    }
+                    if(e.getAttribute('audio') == 1) {
+                        audioSite++;
+                    }
+                    if(e.getAttribute('sns') == 1) {
+                        snsSite++;
+                    }
+                }
+            });
+        } else if(document.querySelectorAll('input[name="site"]:checked').length == 1) {
+            if(document.querySelector('input[name="site"]:checked').nextSibling.nextSibling.innerText == 'All') {
+                document.querySelectorAll('input[name="site"]').forEach(e=> {
+                    if(e.nextSibling.nextSibling.innerText != 'All') {
+                        if(e.getAttribute('vpromoter') == 1) {
+                            vPromoterSite++;
+                        }
+                        if(e.getAttribute('audio') == 1) {
+                            audioSite++;
+                        }
+                        if(e.getAttribute('sns') == 1) {
+                            snsSite++;
+                        }
+                    }
+                });
+            } else {
+                vPromoterSite = document.querySelector('input[name="site"]:checked').getAttribute('vpromoter');
+                audioSite = document.querySelector('input[name="site"]:checked').getAttribute('audio');
+                snsSite = document.querySelector('input[name="site"]:checked').getAttribute('sns');
+            }
+        } else {
+            document.querySelectorAll('input[name="site"]:checked').forEach(e=> {
+                if(e.getAttribute('vpromoter') == 1) {
+                    vPromoterSite++;
+                }
+                if(e.getAttribute('audio') == 1) {
+                    audioSite++;
+                }
+                if(e.getAttribute('sns') == 1) {
+                    snsSite++;
+                }
+            })
+        }
+
+        // vpromoter, audio, sns ì¡´ì¬ ì¬ë¶ì ë°ë¼ tab show & hide
+            document.querySelectorAll('.gnb_new_tab li')[1].style.display = vPromoterSite != 0 ? 'block' : 'none';
+            document.querySelectorAll('.gnb_new_tab li')[2].style.display = audioSite != 0 ? 'block' : 'none';
+            document.querySelectorAll('.gnb_new_tab li')[3].style.display = snsSite != 0 ? 'block' : 'none';
+    }
+
+    let lastUpdated = '2026-02-08';
+    let currentRegionArray = [];
+    let currentLocalArray = [];
+    let currentSiteArray = [];
+    let vLocalCount = '0';
+    let vSiteCount = '0';
+    let currentRetailerRegionArray =[];
+    let currentRetailerLocalArray =[];
+    let currentRetailerSiteArray=[];
+
+    let sessionRegionArray;
+    let sessionLocalArray;
+    let sessionSiteArray;
+
+    let first = true;
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+
+    
+
+    document.querySelectorAll('.last_update span')[0].innerHTML = lastUpdated.replaceAll('-', '.');
+
+    
+
+    let host = 'server';
+</script>
+
+
+
+    
+    <div class="gnb_new_tab_wrap">
+        <ul class="gnb_new_tab">
+            <li class="on" onclick="moveShopappOperation()">Operation</li>
+            <li onclick="moveShopappSales()">Sales</li>
+            <div class="gnb_selected_info os">Now : <span class="site_val">AE / AE_AR / AL / AT / AU / BA / BE / BE_FR / BG / BR / CA / CA_FR / CH / CH_FR / CL / CO / CZ / DE / DK / EE / EG / ES / FI / FR / GR / HK / HK_EN / HR / HU / ID / IE / IL / IN / IQ_AR / IT / KR / LEVANT / LEVANT_AR / LT / LV / MK / MX / MY / NL / NO / NZ / N_AFRICA / PE / PH / PK / PL / PT / RO / RS / SA / SA_EN / SE / SG / SI / SK / TH / TR / TW / UK / VN / ZA</span><span class="icon_noti selected" style="display: inline;">...<div class="noti_tooltip center">AE / AE_AR / AL / AT / AU / BA / BE / BE_FR / BG / BR / CA / CA_FR / CH / CH_FR / CL / CO / CZ / DE / DK / EE / EG / ES / FI / FR / GR / HK / HK_EN / HR / HU / ID / IE / IL / IN / IQ_AR / IT / KR / LEVANT / LEVANT_AR / LT / LV / MK / MX / MY / NL / NO / NZ / N_AFRICA / PE / PH / PK / PL / PT / RO / RS / SA / SA_EN / SE / SG / SI / SK / TH / TR / TW / UK / VN / ZA</div></span></div>
+            <div class="btn_down_kpi on">
+                <button class="btn_down_load_type2" onclick="ExcelDownload('1')">Download</button>
+            </div>
+        </ul>
+        <div class="conbox on">
+            <div class="content_wrap">
+                <div class="chatType_wrap">
+                    ShopApp Operation
+                </div>
+                <ul class="summary_wrap new">
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> Traffic (All)
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        ShopApp Traffic (All) = Total Traffic (B2C + EPP + SMB), [APP] Shopper visit
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">0</div>
+                        <div class="summary_neutral">0.0%</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>863,645</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>0</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> Total Chat
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Total numbers that clicks to start the chat bot journey on ShopApp
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">1.7K</div>
+                        <div class="summary_down">40.4%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>2,897</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>1,727</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> Offered Chat
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Number of cases assigned to e-Promoter at ShopApp
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">1.1K</div>
+                        <div class="summary_down">43.8%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>1,992</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>1,119</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> Handled Chat
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Number of chat cases handled by ShopApp
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">1.1K</div>
+                        <div class="summary_down">43.4%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>1,963</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>1,111</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> Missed Chat
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Number of chats not handled by e-Promoter
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">8</div>
+                        <div class="summary_down_type2">72.4%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>29</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>8</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> Missed Chat Rate
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        ShopApp Missed Chat Rate = ShopApp Missed Chat / ShopApp Offered Chat
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">0.7%</div>
+                        <div class="summary_down_type2">0.7%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>1.5%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>0.7%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> Visit to Chat Rate
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        ShopApp Visit to Chat Rate = Shop App offered chat / (B2C+EPP+SMB [APP] Shopper visit)
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">0.00%</div>
+                        <div class="summary_down_type2">0.23%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>0.23%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>0.00%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            ShopApp<br> CSAT
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        CSAT = (number of CSAT scored 3,4, 5) / (Total number of CSAT scored 1, 2, 3, 4, 5)
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">90.0%</div>
+                        <div class="summary_up">6.2%</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>83.8%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>90.0%</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="layout_full">
+                    <div class="half_1st sum mg_r20 layout_border">
+                        <div class="content_tit">Visit to Chat Ratio / Missed Chat
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('2')">Download</button>
+                        </div>
+                        <div class="graph_indicators clickable" id="traffic_con">
+                            <span class="ep_01">Visit to Chat Ratio</span>
+                            <span class="ep_08">Missed Chat</span>
+                        </div>
+                        <script>
+                            $(function() {
+                                $('#traffic_con .ep_01').click( function() {
+                                    $('#traffic_con .ep_01').toggleClass('dis');
+                                });
+
+                                $('#traffic_con .ep_08').click( function() {
+                                    $('#traffic_con .ep_08').toggleClass('dis');
+                                });
+
+
+                            });
+
+                        </script>
+                        <div class="graph_indicators percent3">
+                            <span><br>Missed Chat</span>
+                            <span>Visit to Chat<br>Ratio (%)</span>
+                        </div>
+                        <div class="graph_wrap" id="traffic_line"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 385px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="385" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clipPath id="_ABSTRACT_RENDERER_ID_1"><rect x="62" y="52" width="697" height="281"></rect></clipPath></defs><rect x="0" y="0" width="820" height="385" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="52" width="697" height="281" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/shopapp_operation#_ABSTRACT_RENDERER_ID_1)"><g><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="52" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="297" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="262" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="227" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="192" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="157" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="122" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="87" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="52" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="304" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="276" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="248" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="220" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="192" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="164" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="136" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="108" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="80" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g><g><g></g><g></g></g></g><g><circle cx="410.5" cy="332.5" r="3.5" stroke="none" stroke-width="0" fill="#4771d3"></circle><circle cx="410.5" cy="52.5" r="3.5" stroke="none" stroke-width="0" fill="#d0e0fc"></circle></g><g><g><text text-anchor="middle" x="410.5" y="350.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02.08</text></g><g><text text-anchor="end" x="50" y="336.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="end" x="50" y="266.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">2</text></g><g><text text-anchor="end" x="50" y="196.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">4</text></g><g><text text-anchor="end" x="50" y="126.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">6</text></g><g><text text-anchor="end" x="50" y="56.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">8</text></g><g><text text-anchor="start" x="771" y="336.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="start" x="771" y="280.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0.01</text></g><g><text text-anchor="start" x="771" y="224.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0.02</text></g><g><text text-anchor="start" x="771" y="168.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0.03</text></g><g><text text-anchor="start" x="771" y="112.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0.04</text></g><g><text text-anchor="start" x="771" y="56.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0.05</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>Visit to Chat Rate</th><th>Missed Chat</th></tr></thead><tbody><tr><td>02.08</td><td>0%</td><td>8</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 395px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">0.05</div><div></div></div></div>
+                    </div>
+                    <div class="half_2nd sum layout_border chart_pb">
+                        <div class="content_tit">Operation Key Metrics</div>
+                        <div class="graph_indicators percent4">
+                            <span class="ep_01"></span>
+                            <span class="ep_08"></span>
+                        </div>
+                        <div class="funnel_table_wrap rank_list visible_on">
+                            <div id="rank_type5_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table rank_type4 dataTable" aria-describedby="rank_type5_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px;">Rank</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 189.625px;">Country</th><th id="offerd_chat_column_table" class="sorting sorting_desc" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Offered Chat: activate to sort column ascending" style="width: 189.625px;" aria-sort="descending">Offered Chat</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Handled Chat: activate to sort column ascending" style="width: 189.625px;">Handled Chat</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 189.625px;">Missed Chat Rate</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 336px; width: 100%;"><table class="f_t_table rank_type4 dataTable" id="rank_type5" aria-describedby="rank_type5_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Country</div></th><th id="offerd_chat_column_table" class="sorting sorting_asc" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Offered Chat: activate to sort column descending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Offered Chat</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Handled Chat: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Handled Chat</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Missed Chat Rate</div></th></tr>
+                                </thead><tfoot id="traffic_total_table"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 61.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">1,119</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">1,111</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">0.7%</div></th></tr></tfoot>
+                                
+                                <tbody id="traffic_table"><tr class="odd"><td class="">1</td><td>Korea</td><td class="sorting_1">439</td><td>439</td><td>0%</td></tr><tr class="even"><td class="">2</td><td>Mexico</td><td class="sorting_1">336</td><td>336</td><td>0%</td></tr><tr class="odd"><td class="">3</td><td>India</td><td class="sorting_1">88</td><td>88</td><td>0%</td></tr><tr class="even"><td class="">4</td><td>UK</td><td class="sorting_1">67</td><td>67</td><td>0%</td></tr><tr class="odd"><td class="">5</td><td>Colombia</td><td class="sorting_1">44</td><td>39</td><td>11.4%</td></tr><tr class="even"><td class="">6</td><td>Canada</td><td class="sorting_1">28</td><td>28</td><td>0%</td></tr><tr class="odd"><td class="">7</td><td>Peru</td><td class="sorting_1">24</td><td>24</td><td>0%</td></tr><tr class="even"><td class="">8</td><td>Germany</td><td class="sorting_1">13</td><td>13</td><td>0%</td></tr><tr class="odd"><td class="">9</td><td>Taiwan</td><td class="sorting_1">12</td><td>12</td><td>0%</td></tr><tr class="even"><td class="">10</td><td>Australia</td><td class="sorting_1">10</td><td>10</td><td>0%</td></tr><tr class="odd"><td class="">11</td><td>Indonesia</td><td class="sorting_1">9</td><td>9</td><td>0%</td></tr><tr class="even"><td class="">12</td><td>Philippines</td><td class="sorting_1">8</td><td>8</td><td>0%</td></tr><tr class="odd"><td class="">13</td><td>Turkey</td><td class="sorting_1">7</td><td>5</td><td>28.6%</td></tr><tr class="even"><td class="">14</td><td>Saudi Arabia</td><td class="sorting_1">6</td><td>6</td><td>0%</td></tr><tr class="odd"><td class="">15</td><td>Hong Kong</td><td class="sorting_1">5</td><td>4</td><td>20%</td></tr><tr class="even"><td class="">16</td><td>Malaysia</td><td class="sorting_1">5</td><td>5</td><td>0%</td></tr><tr class="odd"><td class="">17</td><td>Singapore</td><td class="sorting_1">5</td><td>5</td><td>0%</td></tr><tr class="even"><td class="">18</td><td>Thailand</td><td class="sorting_1">4</td><td>4</td><td>0%</td></tr><tr class="odd"><td class="">19</td><td>UAE</td><td class="sorting_1">3</td><td>3</td><td>0%</td></tr><tr class="even"><td class="">20</td><td>Netherlands</td><td class="sorting_1">3</td><td>3</td><td>0%</td></tr><tr class="odd"><td class="">21</td><td>Sweden</td><td class="sorting_1">1</td><td>1</td><td>0%</td></tr><tr class="even"><td class="">22</td><td>Chile</td><td class="sorting_1">1</td><td>1</td><td>0%</td></tr><tr class="odd"><td class="">23</td><td>Hungary</td><td class="sorting_1">1</td><td>1</td><td>0%</td></tr><tr class="even"><td class="">24</td><td>Belgium</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">25</td><td>Czech</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">26</td><td>New Zealand</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">27</td><td>Romania</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">28</td><td>Albania</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">29</td><td>France</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">30</td><td>Ireland</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">31</td><td>Slovenia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">32</td><td>Brazil</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">33</td><td>Egypt</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">34</td><td>Levant</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">35</td><td>Norway</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">36</td><td>Serbia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">37</td><td>Austria</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">38</td><td>Croatia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">39</td><td>Greece</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">40</td><td>Italy</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">41</td><td>Portugal</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">42</td><td>Spain</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">43</td><td>Vietnam</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">44</td><td>Finland</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">45</td><td>Iraq</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">46</td><td>Macedonia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">47</td><td>Slovakia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">48</td><td>Bosnia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">49</td><td>Denmark</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">50</td><td>Latvia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">51</td><td>North Africa</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">52</td><td>Switzerland</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">53</td><td>Israel</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">54</td><td>Poland</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">55</td><td>South Africa</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">56</td><td>Bulgaria</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">57</td><td>Estonia</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="even"><td class="">58</td><td>Lithuania</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr><tr class="odd"><td class="">59</td><td>Pakistan</td><td class="sorting_1">0</td><td>0</td><td>0%</td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table rank_type4 dataTable" aria-describedby="rank_type5_info" style="margin-left: 0px; width: 820px;"><tfoot id="traffic_total_table"><tr><th rowspan="1" colspan="1" style="width: 61.5px;">-</th><th rowspan="1" colspan="1" style="width: 189.625px;">Total</th><th rowspan="1" colspan="1" style="width: 189.625px;">1,119</th><th rowspan="1" colspan="1" style="width: 189.625px;">1,111</th><th rowspan="1" colspan="1" style="width: 189.625px;">0.7%</th></tr></tfoot></table></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout_full">
+                    <div class="half_1st mg_r20 sum layout_border ">
+                        <div class="content_tit">ShopApp Total Chat
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('3')">Download</button>
+                        </div>
+                        <div class="graph_indicators">
+                            <span class="ep_01 square">ShopApp Total Chat</span>
+                            <span class="ep_08 square">ePromoter Total Chat</span>
+
+                        </div>
+                        <div class="graph_indicators percent2">
+                            <span></span>
+                            <span>Total Chat</span>
+                        </div>
+                        <div class="graph_wrap" id="total_chat_column"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 240px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="240" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"><clipPath id="_ABSTRACT_RENDERER_ID_3"><rect x="62" y="32" width="697" height="175"></rect></clipPath></defs><rect x="0" y="0" width="820" height="240" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="32" width="697" height="175" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/shopapp_operation#_ABSTRACT_RENDERER_ID_3)"><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="163" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="119" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="76" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="32" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="184" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="141" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="97" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="54" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="195" y="199" width="431" height="7" stroke="none" stroke-width="0" fill="#4771d3"></rect><rect x="195" y="65" width="431" height="133" stroke="none" stroke-width="0" fill="#d0e0fc"></rect></g><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="410.5" y="224.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02.08</text></g><g><text text-anchor="start" x="771" y="210.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="start" x="771" y="167.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">10,000</text></g><g><text text-anchor="start" x="771" y="123.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">20,000</text></g><g><text text-anchor="start" x="771" y="80.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">30,000</text></g><g><text text-anchor="start" x="771" y="36.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">40,000</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>ShopApp Total Chat</th><th>ePromoter Total Chat</th></tr></thead><tbody><tr><td>02.08</td><td>1,727</td><td>30,933</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 250px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">40,000</div><div></div></div></div>
+                    </div>
+                    <div class="half_2nd sum layout_border">
+                        <div class="content_tit">ShopApp Offered Chat
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('4')">Download</button>
+                        </div>
+                        <div class="graph_indicators">
+                            <span class="ep_01 square">ShopApp Offered Chat</span>
+                            <span class="ep_08 square">ePromoter Offered Chat</span>
+
+                        </div>
+                        <div class="graph_indicators percent2">
+                            <span></span>
+                            <span>Offered Chat</span>
+                        </div>
+                        <div class="graph_wrap" id="offerd_chat_column"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 240px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="240" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_4"><clipPath id="_ABSTRACT_RENDERER_ID_5"><rect x="62" y="32" width="697" height="175"></rect></clipPath></defs><rect x="0" y="0" width="820" height="240" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="32" width="697" height="175" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/shopapp_operation#_ABSTRACT_RENDERER_ID_5)"><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="163" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="119" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="76" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="32" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="184" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="141" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="97" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="54" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="195" y="183" width="431" height="23" stroke="none" stroke-width="0" fill="#4771d3"></rect><rect x="195" y="67" width="431" height="115" stroke="none" stroke-width="0" fill="#d0e0fc"></rect></g><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="410.5" y="224.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02.08</text></g><g><text text-anchor="start" x="771" y="210.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="start" x="771" y="167.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">2,000</text></g><g><text text-anchor="start" x="771" y="123.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">4,000</text></g><g><text text-anchor="start" x="771" y="80.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">6,000</text></g><g><text text-anchor="start" x="771" y="36.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">8,000</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>ShopApp Offered Chat</th><th>ePromoter Offered Chat</th></tr></thead><tbody><tr><td>02.08</td><td>1,119</td><td>5,296</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 250px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">8,000</div><div></div></div></div>
+                    </div>
+                </div>
+                <div class="layout_full">
+                    <div class="half_1st mg_r20 sum layout_border ">
+                        <div class="content_tit">ShopApp Handled Chat
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('5')">Download</button>
+                        </div>
+                        <div class="graph_indicators">
+                            <span class="ep_01 square">ShopApp Handled Chat</span>
+                            <span class="ep_08 square">ePromoter Handled Chat</span>
+
+                        </div>
+                        <div class="graph_indicators percent2">
+                            <span></span>
+                            <span>Handled Chat</span>
+                        </div>
+                        <div class="graph_wrap" id="chat_handled_column"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 240px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="240" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_6"><clipPath id="_ABSTRACT_RENDERER_ID_7"><rect x="62" y="32" width="697" height="175"></rect></clipPath></defs><rect x="0" y="0" width="820" height="240" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="32" width="697" height="175" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/shopapp_operation#_ABSTRACT_RENDERER_ID_7)"><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="163" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="119" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="76" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="32" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="184" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="141" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="97" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="54" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="195" y="183" width="431" height="23" stroke="none" stroke-width="0" fill="#4771d3"></rect><rect x="195" y="69" width="431" height="113" stroke="none" stroke-width="0" fill="#d0e0fc"></rect></g><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="410.5" y="224.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02.08</text></g><g><text text-anchor="start" x="771" y="210.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="start" x="771" y="167.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">2,000</text></g><g><text text-anchor="start" x="771" y="123.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">4,000</text></g><g><text text-anchor="start" x="771" y="80.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">6,000</text></g><g><text text-anchor="start" x="771" y="36.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">8,000</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>ShopApp Handled Chat</th><th>ePromoter Handled Chat</th></tr></thead><tbody><tr><td>02.08</td><td>1,111</td><td>5,224</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 250px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">8,000</div><div></div></div></div>
+                    </div>
+                    <div class="half_2nd sum layout_border">
+                        <div class="content_tit">ShopApp Missed Chat
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('6')">Download</button>
+                        </div>
+                        <div class="graph_indicators">
+                            <span class="ep_01 square">ShopApp Missed Chat</span>
+                            <span class="ep_08 square">ePromoter Missed Chat</span>
+
+                        </div>
+                        <div class="graph_indicators percent2">
+                            <span></span>
+                            <span>Missed Chat</span>
+                        </div>
+                        <div class="graph_wrap" id="missed_chat_column"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 240px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="240" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_8"><clipPath id="_ABSTRACT_RENDERER_ID_9"><rect x="62" y="32" width="697" height="175"></rect></clipPath></defs><rect x="0" y="0" width="820" height="240" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="32" width="697" height="175" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/shopapp_operation#_ABSTRACT_RENDERER_ID_9)"><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="163" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="119" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="76" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="32" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="184" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="141" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="97" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="54" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="195" y="190" width="431" height="16" stroke="none" stroke-width="0" fill="#4771d3"></rect><rect x="195" y="33" width="431" height="156" stroke="none" stroke-width="0" fill="#d0e0fc"></rect></g><g><rect x="62" y="206" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="410.5" y="224.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02.08</text></g><g><text text-anchor="start" x="771" y="210.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="start" x="771" y="167.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">20</text></g><g><text text-anchor="start" x="771" y="123.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">40</text></g><g><text text-anchor="start" x="771" y="80.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">60</text></g><g><text text-anchor="start" x="771" y="36.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">80</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>ShopApp Missed Chat</th><th>ePromoter Missed Chat</th></tr></thead><tbody><tr><td>02.08</td><td>8</td><td>72</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 250px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">...</div><div></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- lnb -->
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<div class="gnb_extension">
+    <div class="lnb_dimed"></div>
+    <div class="lnb_wrap">
+        <div class="lnb_top_wrap">
+            <button class="lnb_close"></button>
+            <div class="lnb_logo">
+                <img src="img/new_logo.jpg">
+            </div>
+        </div>
+        <ul class="lnb_menu">
+            <li class="home">
+                <a href="javascript:moveMain()">Home</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveExecutive()">Executive Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveDevision()">Division Summary</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveSalesAll()">Sales Summary</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveOperationAll()">Operation Summary</a>
+            </li>
+            
+            <li class="menu_li active">
+                
+                
+                <a href="javascript:moveShopappOperation()">ShopApp Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveBotjourneyOperation()">Bot / AI Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveEpp_operation()">EPP / SMB Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+                
+                    <li class="menu_li">
+                
+                <a href="javascript:moveRetailer_operation()">Retailer Summary</a>
+                </li>
+            
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveMxFlagshipSummary()">MX Flagship Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:movePerformanceSummary()">Performance Summary</a>
+            </li>
+            <li class="menu_li">
+                <a href="javascript:fileDown()">Manual &amp; FAQ Download</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div id="loading-page" style="display: none;">
+    <div class="loading">
+        <div class="circle1 circle"></div>
+        <div class="circle2 circle"></div>
+        <div class="circle3 circle"></div>
+        <div class="circle4 circle"></div>
+        <div class="circle5 circle"></div>
+        <div class="circle6 circle"></div>
+        <div class="circle7 circle"></div>
+        <div class="circle8 circle"></div>
+        <div class="circle9 circle"></div>
+        <div class="circle10 circle"></div>
+        <div class="circle11 circle"></div>
+        <div class="circle12 circle"></div>
+    </div>
+</div>
+<!-- datepicker -->
+<script>
+    let title = 'ShopApp Summary';
+    let graphSalesData;
+    let graphData = [];
+    let startDate = '2026-02-08';
+    let endDate = '2026-02-08';
+    let defaultDate = '2026-02-08';
+    let order_line_data;
+    let dateMod;
+    let portionData =[];
+
+    var ComboChartOption2 = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 385,
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "73%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                // maxValue : 3,
+                format: 'short',
+                gridlines: {count: 2},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                maxValue : 0.05,
+                format: 'short',
+                gridlines: {count: 2}
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'line',
+        series: getLineColorTable2(),
+
+    };
+
+    var ColumnChartOption01 = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 240,
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "73%"
+        },
+        vAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        hAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                maxValue : 60,
+                format: 'short',
+                gridlines: {count: 1},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                format: 'short'
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'bars',
+        series: {
+            0: { pointSize: 5, targetAxisIndex:1, color: '#4771d3'},
+            1: {pointSize :5, targetAxisIndex:1, color: '#d0e0fc'}
+        },
+        isStacked: true,
+    };
+
+    function getBaseData(){
+        document.getElementById("loading-page").style.display ="block";
+        document.querySelector(".region_wrap").style.display ="none";
+
+        pendingCheck(function(){
+            getShopAppOperationData();
+            document.getElementById("loading-page").style.display ="none";
+
+        });
+    }
+
+    function getShopAppOperationData() {
+
+        let param = getParam();
+
+        ajax.post("/ShopApp/ajax/getShopAppOperationSummaryData", param, "", function (respon) {
+
+            if(respon.ok){
+                graphSalesData = respon.data;
+
+                let actualData = graphSalesData.operationSummaryActual;
+
+                let current_date = actualData.convert_date_c;
+                let prev_date = actualData.convert_date_p;
+
+                dateMod = getDateMod();
+
+                graphSalesData["shopApp_total_chat_c"] = actualData.shopApp_total_chat_c / dateMod ;
+                graphSalesData["shopApp_all_traffic_c"] = actualData.shopApp_all_traffic_c / dateMod ;
+                graphSalesData["shopApp_offerd_chat_c"] = (actualData.shopApp_chat_handled_c + actualData.shopApp_missed_chat_c) / dateMod;
+                graphSalesData["shopApp_chat_handled_c"] = actualData.shopApp_chat_handled_c / dateMod;
+                graphSalesData["shopApp_missed_chat_c"] = actualData.shopApp_missed_chat_c / dateMod;
+                graphSalesData["shopApp_missed_rate_c"] = (actualData.shopApp_chat_handled_c + actualData.shopApp_missed_chat_c) / dateMod == 0 ? 0 : (actualData.shopApp_missed_chat_c / dateMod) / ((actualData.shopApp_chat_handled_c + actualData.shopApp_missed_chat_c) / dateMod) * 100;
+                graphSalesData["shopApp_visit_to_chat_rate_c"] = (actualData.shopApp_all_traffic_c / dateMod) == 0 ? 0 : ((actualData.shopApp_chat_handled_c + actualData.shopApp_missed_chat_c) / dateMod) / ( actualData.shopApp_all_traffic_c / dateMod) * 100;
+                graphSalesData["shopApp_csat_c"] = actualData.shopApp_survey_count_c / dateMod == 0 ? 0 : (actualData.shopApp_CSAT_numerator_c / dateMod) / (actualData.shopApp_survey_count_c / dateMod) * 100;
+
+                graphSalesData["shopApp_total_chat_p"] = actualData.shopApp_total_chat_p / dateMod ;
+                graphSalesData["shopApp_all_traffic_p"] = actualData.shopApp_all_traffic_p / dateMod ;
+                graphSalesData["shopApp_offerd_chat_p"] = (actualData.shopApp_chat_handled_p + actualData.shopApp_missed_chat_p) / dateMod;
+                graphSalesData["shopApp_chat_handled_p"] = actualData.shopApp_chat_handled_p / dateMod;
+                graphSalesData["shopApp_missed_chat_p"] = actualData.shopApp_missed_chat_p / dateMod;
+                graphSalesData["shopApp_missed_rate_p"] = (actualData.shopApp_chat_handled_p + actualData.shopApp_missed_chat_p) / dateMod == 0 ? 0 : (actualData.shopApp_missed_chat_p / dateMod) / ((actualData.shopApp_chat_handled_p + actualData.shopApp_missed_chat_p) / dateMod) * 100;
+                graphSalesData["shopApp_visit_to_chat_rate_p"] = (actualData.shopApp_all_traffic_p / dateMod) == 0 ? 0 : ((actualData.shopApp_chat_handled_p + actualData.shopApp_missed_chat_p) / dateMod) / ( actualData.shopApp_all_traffic_p / dateMod) * 100;
+                graphSalesData["shopApp_csat_p"] = actualData.shopApp_survey_count_p / dateMod == 0 ? 0 : (actualData.shopApp_CSAT_numerator_p / dateMod) / (actualData.shopApp_survey_count_p / dateMod) * 100;
+
+                let summary_big = document.getElementsByClassName("summary_big");
+
+                summary_big[0].innerText = shortCutNum(graphSalesData["shopApp_all_traffic_c"].toFixed(0));
+                summary_big[1].innerText = shortCutNum(graphSalesData["shopApp_total_chat_c"].toFixed(0));
+                summary_big[2].innerText = shortCutNum(graphSalesData["shopApp_offerd_chat_c"].toFixed(0));
+                summary_big[3].innerText = shortCutNum(graphSalesData["shopApp_chat_handled_c"].toFixed(0));
+                summary_big[4].innerText = shortCutNum(graphSalesData["shopApp_missed_chat_c"].toFixed(0));
+                summary_big[5].innerText = graphSalesData["shopApp_missed_rate_c"].toFixed(1)+'%';
+                summary_big[6].innerText = graphSalesData["shopApp_visit_to_chat_rate_c"].toFixed(2)+'%';
+                summary_big[7].innerText = graphSalesData["shopApp_csat_c"].toFixed(1)+'%';
+
+
+                let all_traffic_growth = graphSalesData["shopApp_all_traffic_p"] == 0 ? 0 : (graphSalesData["shopApp_all_traffic_c"] / graphSalesData["shopApp_all_traffic_p"] -1)*100;
+                let total_growth = graphSalesData["shopApp_total_chat_p"] == 0 ? 0 : (graphSalesData["shopApp_total_chat_c"] / graphSalesData["shopApp_total_chat_p"] -1)*100;
+                let offerd_growth = graphSalesData["shopApp_offerd_chat_p"] == 0 ? 0 : (graphSalesData["shopApp_offerd_chat_c"] / graphSalesData["shopApp_offerd_chat_p"] -1)*100;
+                let handled_growth = graphSalesData["shopApp_chat_handled_p"] == 0 ? 0 : (graphSalesData["shopApp_chat_handled_c"] / graphSalesData["shopApp_chat_handled_p"] -1)*100;
+                let missed_growth = graphSalesData["shopApp_missed_chat_p"] == 0 ? 0 : (graphSalesData["shopApp_missed_chat_c"] / graphSalesData["shopApp_missed_chat_p"] -1)*100;
+                let missed_rate_growth = graphSalesData["shopApp_missed_rate_c"] - graphSalesData["shopApp_missed_rate_p"];
+                let visit_to_chat_rate_growth = graphSalesData["shopApp_visit_to_chat_rate_c"] - graphSalesData["shopApp_visit_to_chat_rate_p"];
+                let csat_growth = graphSalesData["shopApp_csat_c"] - graphSalesData["shopApp_csat_p"];
+
+                getGrwoth(0, all_traffic_growth);
+                getGrwoth(1, total_growth);
+                getGrwoth(2, offerd_growth);
+                getGrwoth(3, handled_growth);
+                getGrwoth4(4, missed_growth);
+                getGrwoth4(5, missed_rate_growth, "%p");
+                getGrwoth4(6, visit_to_chat_rate_growth, "%p",'',2);
+                getGrwoth3(7, csat_growth);
+
+                let prev_value = document.querySelectorAll(".summary_box p.prev");
+
+                prev_value[0].innerHTML = '<span class="prev_date"></span>' +setComma(graphSalesData["shopApp_all_traffic_p"].toFixed(0));
+                prev_value[1].innerHTML = '<span class="prev_date"></span>' +setComma(graphSalesData["shopApp_total_chat_p"].toFixed(0));
+                prev_value[2].innerHTML = '<span class="prev_date"></span>' +setComma(graphSalesData["shopApp_offerd_chat_p"].toFixed(0));
+                prev_value[3].innerHTML = '<span class="prev_date"></span>' +setComma(graphSalesData["shopApp_chat_handled_p"].toFixed(0));
+                prev_value[4].innerHTML = '<span class="prev_date"></span>' +setComma(graphSalesData["shopApp_missed_chat_p"].toFixed(0));
+                prev_value[5].innerHTML = '<span class="prev_date"></span>' +(graphSalesData["shopApp_missed_rate_p"].toFixed(1))+'%';
+                prev_value[6].innerHTML = '<span class="prev_date"></span>' +(graphSalesData["shopApp_visit_to_chat_rate_p"].toFixed(2))+'%';
+                prev_value[7].innerHTML = '<span class="prev_date"></span>' +(graphSalesData["shopApp_csat_p"].toFixed(1))+'%';
+
+                let current_value = document.querySelectorAll(".summary_box p.current");
+
+                current_value[0].innerHTML = '<span class="current_date"></span>' +setComma(graphSalesData["shopApp_all_traffic_c"].toFixed(0));
+                current_value[1].innerHTML = '<span class="current_date"></span>' +setComma(graphSalesData["shopApp_total_chat_c"].toFixed(0));
+                current_value[2].innerHTML = '<span class="current_date"></span>' +setComma(graphSalesData["shopApp_offerd_chat_c"].toFixed(0));
+                current_value[3].innerHTML = '<span class="current_date"></span>' +setComma(graphSalesData["shopApp_chat_handled_c"].toFixed(0));
+                current_value[4].innerHTML = '<span class="current_date"></span>' +setComma(graphSalesData["shopApp_missed_chat_c"].toFixed(0));
+                current_value[5].innerHTML = '<span class="current_date"></span>' +graphSalesData["shopApp_missed_rate_c"].toFixed(1)+'%';
+                current_value[6].innerHTML = '<span class="current_date"></span>' +graphSalesData["shopApp_visit_to_chat_rate_c"].toFixed(2)+'%';
+                current_value[7].innerHTML = '<span class="current_date"></span>' +graphSalesData["shopApp_csat_c"].toFixed(1)+'%';
+
+                let prev= document.querySelectorAll(".summary_box span.prev_date");
+                let current= document.querySelectorAll(".summary_box span.current_date");
+
+                prev[0].innerText =prev_date;
+                prev[1].innerText =prev_date;
+                prev[2].innerText =prev_date;
+                prev[3].innerText =prev_date;
+                prev[4].innerText =prev_date;
+                prev[5].innerText =prev_date;
+                prev[6].innerText =prev_date;
+                prev[7].innerText =prev_date;
+
+                current[0].innerText = current_date;
+                current[1].innerText = current_date;
+                current[2].innerText = current_date;
+                current[3].innerText = current_date;
+                current[4].innerText = current_date;
+                current[5].innerText = current_date;
+                current[6].innerText = current_date;
+                current[7].innerText = current_date;
+
+                getOperationTableData();
+
+            }
+        });
+    }
+
+    function getOperationTableData(){
+        let param = getParam();
+        ajax.post("/ShopApp/ajax/getOperationTableData",param, "",function(respon){
+            if (respon.ok) {
+                let data = respon.data;
+                let trafficData = data.operationTableData;
+                let transferData = data.transferTableData;
+                let html = '';
+                let html2 = '';
+                $('#rank_type5').DataTable().clear().destroy();
+                $('#rank_type6').DataTable().clear().destroy();
+
+                $.each(trafficData, function(key,val){
+                    if(key == 0){
+                        html2 += '<tr>';
+                        html2 += '<th>-</th>';
+                        html2 += '<th>Total</th>';
+                        html2 += '<th>'+setComma((val.offered_volume / dateMod).toFixed(0))+'</th>';
+                        html2 += '<th>'+setComma((val.chat_handled /dateMod).toFixed(0))+'</th>';
+                        if(val.offered_volume /dateMod != 0) html2 += '<th>'+  Number((( (val.missed_chat /dateMod) / (val.offered_volume /dateMod))*100).toFixed(1))+'%</th>';
+                        else html2 += '<th>0%</th>';
+                        html2 += '</tr>';
+
+                        $('#traffic_total_table').html(html2)
+                    }else{
+                        html += '<tr>';
+                        html += '<td>'+key+'</td>';
+                        html += '<td>'+val.country+'</td>';
+                        html += '<td>'+setComma((val.offered_volume / dateMod).toFixed(0))+'</td>';
+                        html += '<td>'+setComma((val.chat_handled /dateMod).toFixed(0))+'</td>';
+                        if(val.offered_volume /dateMod != 0) html += '<td>'+  Number((( (val.missed_chat /dateMod) / (val.offered_volume /dateMod))*100).toFixed(1))+'%</td>';
+                        else html += '<td>0%</td>';
+                        html += '</tr>';
+                    }
+                })
+                $('#traffic_table').html(html);
+
+                getOperationChatTable();
+                document.getElementById("offerd_chat_column_table").click();
+                document.getElementById("offerd_chat_column_table").click();
+            }
+            getEngagementGraphData();
+        });
+    }
+
+    function getEngagementGraphData() {
+        let param = getParam();
+        ajax.post("/ShopApp/ajax/getOperationAllGraphData", param, "", function (respon) {
+
+            if (respon.ok) {
+
+                graphData = respon.data.graphArray;
+                //let portionGraphData = respon.data.portionGraphData;
+
+                let current_date = respon.data.current_date;
+                let prev_date = respon.data.prev_date;
+
+                //portionData=[];
+
+                $.each(graphData, function(key,val){
+                    val["visit_rate"] = val.traffic == 0 ? 0 : Number((((val.shopApp_chat_handled + val.shopApp_missed_chat) / val.traffic) *100).toFixed(4));
+                    val["shopApp_offerd_chat"] = Number(val.shopApp_chat_handled + val.shopApp_missed_chat);
+                    val["eProm_offerd_chat"] = Number(val.eProm_chat_handled + val.eProm_missed_chat);
+                });
+
+                 google.charts.setOnLoadCallback(setGraph);
+            }
+        });
+    }
+
+    function setGraph(){
+
+        let traffic_line = document.getElementById("traffic_line");
+        let traffic_line_data = getGoogleChartDataSet(graphData,['visit_rate','shopApp_missed_chat'],['Visit to Chat Rate','Missed Chat']);
+        drawChart(traffic_line,'combo',traffic_line_data,ComboChartOption2,false,true,1,'#.##',function(chart,opt,data){
+            let indicatorList = document.querySelectorAll('#traffic_con span');
+            indicatorList = document.querySelectorAll('#traffic_con span');
+            indicatorList.forEach(elem=>{
+                elem.addEventListener('click',e=>{
+                    let $this = e.target;
+                    let hides = [];
+                    let newColor = [];
+                    indicatorList.forEach((elem,index)=>{
+                        let check = elem.classList.contains("dis");
+                        if(check){
+                            hides.push(index+1);
+                        }else{
+
+                            newColor.push(getLineColorTable2()[index]);
+                        }
+                    })
+                    if(newColor.length ==0){
+                        hides =[];
+                        newColor.push(getLineColorTable2()[0]);
+                        newColor.push(getLineColorTable2()[1]);
+                        // newColor.push(getLineColorTable2()[2]);
+                        document.querySelector("#traffic_con .ep_01").classList.remove("dis");
+                        document.querySelector("#traffic_con .ep_08").classList.remove("dis");
+                        document.querySelector("#traffic_con .ep_02").classList.remove("dis");
+                    }
+                    opt.series = newColor;
+                    let view = new google.visualization.DataView(data);
+                    view.hideColumns(hides);
+                    chart.draw(view, opt);
+                })
+            })
+        });
+
+        let total_chat_column = document.getElementById("total_chat_column");
+        let total_chat_column_data = getGoogleChartDataSet(graphData,['shopApp_total_chat','eProm_total_chat'],['ShopApp Total Chat','ePromoter Total Chat']);
+        drawChart(total_chat_column,'column',total_chat_column_data,ColumnChartOption01,false,true,0);
+
+        let offerd_chat_column = document.getElementById("offerd_chat_column");
+        let offerd_chat_column_data = getGoogleChartDataSet(graphData,['shopApp_offerd_chat','eProm_offerd_chat'],['ShopApp Offered Chat','ePromoter Offered Chat']);
+        drawChart(offerd_chat_column,'column',offerd_chat_column_data,ColumnChartOption01,false,true,0);
+
+        let chat_handled_column = document.getElementById("chat_handled_column");
+        let chat_handled_column_data = getGoogleChartDataSet(graphData,['shopApp_chat_handled','eProm_chat_handled'],['ShopApp Handled Chat','ePromoter Handled Chat']);
+        drawChart(chat_handled_column,'column',chat_handled_column_data,ColumnChartOption01,false,true,0);
+
+        let missed_chat_column = document.getElementById("missed_chat_column");
+        let missed_chat_column_data = getGoogleChartDataSet(graphData,['shopApp_missed_chat','eProm_missed_chat'],['ShopApp Missed Chat','ePromoter Missed Chat']);
+        drawChart(missed_chat_column,'column',missed_chat_column_data,ColumnChartOption01,false,true,0);
+
+        document.getElementById("loading-page").style.display ="none";
+    }
+
+    function getLineColorTable2(){
+        return {
+            0: { pointSize: 5, targetAxisIndex:1,  color: '#4771d3'},
+            1: { pointSize: 5, targetAxisIndex:0,  color: '#d0e0fc'},
+            2: {pointSize :5, targetAxisIndex:0,  color: '#ffb121'},
+            3: {pointSize :5, targetAxisIndex:1,  color: '#bfbfbf'}
+        }
+    }
+
+    function getOperationChatTable(){
+        $('#rank_type5').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            scrollCollapse: true,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "336px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+                null,
+            ]
+        });
+
+        tableColumnRankInitialize('rank_type5');
+    }
+
+    function getCookie(name) {
+        var parts = document.cookie.split(name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+
+    function expireCookie(name) {
+        document.cookie = name + "="+encodeURIComponent("FALSE")+"; expires=";
+    }
+
+    var downloadTimer;
+
+    function blockUI() {
+        expireCookie("fileDownloadToken");
+        document.getElementById("loading-page").style.display ="block";
+        downloadTimer = setInterval(function() {
+            var token = getCookie("fileDownloadToken");
+            if(token == "TRUE") {
+                unBlockUI();
+            }
+        }, 1000 );
+    }
+
+    function unBlockUI() {
+        document.getElementById("loading-page").style.display ="none";
+        clearInterval(downloadTimer);
+        expireCookie("fileDownloadToken");
+    }
+    function ExcelDownload(type) {
+        blockUI();
+
+        var param = getParam();
+        param.type = type;
+        param.flag = 'operation';
+        param.chat = 'Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram';
+        param.chat_missed = 'Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,total';
+        param.excelTitle = 'All';
+        let form = document.createElement('form');
+        form.setAttribute("method","POST");
+        form.setAttribute("action","/globaldashboard/ShopAppOperationExcelDownload");
+        let hiddenField = document.createElement('input');
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "data");
+        hiddenField.setAttribute("value", JSON.stringify(param));
+
+        form.appendChild(hiddenField);
+        document.body.appendChild(form);
+
+        form.submit();
+    }
+
+</script>
+
+
+<div class="daterangepicker ltr show-ranges show-calendar opensright"><div class="date-ouput-wrap"><ul style="display: none;"><li class="tit">Start : </li><li class="txt"><span class="drp-selected" id="option-date-from"></span></li></ul><ul style="display: none;"><li class="tit">End : </li><li class="txt"><span class="drp-selected" id="option-date-to"></span></li></ul></div><div class="calendar-wrap"><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div></div><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 14 Days">Last 14 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="Last Week">Last Week</li><li data-range-key="Last Month">Last Month</li></ul></div><div class="drp-buttons"><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div></body></html>

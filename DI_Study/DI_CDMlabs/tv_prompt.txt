@@ -1,0 +1,58 @@
+다음 기준으로 ASIN별 TV 스펙 추출을 진행해 주세요. (조건 누락 없이 모두 반영)
+
+[추출 컬럼 (순서 고정)]
+brand_1	 brand_2	resolution_1	resolution_2	inch	display_technology	led_type	others_yn
+
+[입력/출력 규칙]
+- 입력으로 제공한 SKU(ASIN) 순서를 그대로 유지하여 출력.
+- 출력은 컬럼명(헤더) 없이, 위 8개 컬럼 순서로만 작성.
+- 각 행은 탭( \t )으로 구분된 TSV로 제공.
+- 결과 전체를 하나의 “copy code” 코드 블록(```)으로 감싸되, **언어 식별자(tsv, plaintext 등)를 절대 쓰지 마세요.** (그냥 ``` 만 사용할 것)
+
+[매우 중요: 제목(Title) 신뢰 원칙]
+1. 검색 결과가 없어도, **Title에 브랜드, 인치, 해상도가 명시되어 있다면 절대 빈칸으로 두지 말고 기입하십시오.**
+2. 예: Title이 "Samsung 55 Inch 4K..."라면 Brand=Samsung, Inch=55, Resolution=3840 x 2160으로 확정.
+3. [Raw Data 해석]: 텍스트가 깨져 있거나(Broken Tables), PDF 덤프처럼 보여도 `Spec`, `Size`, `Hz` 등의 키워드 주변 숫자를 적극적으로 해석하여 기입하십시오.
+
+[필드 기입 규칙]
+- brand_1, brand_2: 동일한 브랜드명. (Title의 첫 단어가 브랜드일 확률 높음).
+- resolution_1: 해상도는 ‘가로 x 세로’ 표준 형식 준수 (예: 3840 x 2160). 'UHD', '4K' 등 텍스트 절대 금지. 오타 방지 확인.
+- resolution_2: 반드시 채울 것(생략 금지). 아래 ‘resolution_2 강제 매핑 규칙’을 우선 적용하고, 매핑 불가 시 ‘-’.
+- inch: 숫자만 기입(예: 55).
+  * **Smart Rounding**: 54.6 -> 55, 49.5 -> 50 등 **'표준 마케팅 인치'**로 반올림하여 기입할 것. (51, 56 등 비표준 사이즈 지양).
+- display_technology: 'OLED' 또는 ‘LCD’ 중 선택. (OLED가 아닌 제품은 모두 LCD로 처리).
+- led_type: OLED / QLED / Mini LED / - 중 선택. (OLED, QLED, Mini LED가 아닌 제품은 '-'로 처리).
+- others_yn: ‘-’ 또는 ‘Others’ 중 선택. Others 분류 조건은 아래 참고.
+- Others 분류 조건(아래 하나라도 해당 시 Others):
+  • TV가 아닌 제품, 번들 제품(키보드·PC 본체 등과 묶음)  
+  • 9인치 미만  
+  • portable, touch, signage, renewed, 2pack, bundle
+      1) B2B Commercial Signage
+      2) Tuner 미포함 제품(= TV 제품군 분류 불가)
+      3) Monitor/Smart Monitor 계열(= TV 아님)
+      - 추가로 Movingstyle도 TV 제외 대상으로 요청
+      - others_yn이 Others인 경우: 브랜드를 제외한 나머지 스펙(resolution_1, resolution_2, refresh_rate, inch, display_technology)은 모두 ‘-’로 채움.
+
+[resolution_2 강제 매핑 규칙]
+- 매핑 전 정규화: 해상도 표기는 ‘가로 x 세로’로 통일(소문자 x, 앞뒤 공백 유지), 숫자·공백·x 이외 문자는 제거, NBSP 등 특수 공백은 일반 공백으로 치환.
+- 아래 해상도 → resolution_2 레이블을 강제 적용(동일 해상도는 동일 라벨 사용). 나열 외 해상도는 패턴 판단 후 해당 라벨이 없으면 ‘-’.
+
+  • HD↓:
+    1280 x 720, 1366 x 768, 1366 x 768, 1280 x 720, 1366 x 768, 1366 x 768, 1440 x 900, 1366 x 768, 1366 x 768, 1400 x 900
+
+  • FHD:
+    1920 x 1080, 1920 x 1080, 1920 x 1080, 1920 x 1080, 1920 x 1080, 1920 x 1080, 1920 x 1080
+
+  • QHD:
+    3440 x 1440, 2560 x 1440, 3440 x 1440
+
+  • 4K:
+    3840 x 2160, 3840 x 2160, 3840 x 2160, 3840 x 2160, 3840 x 2160, 3840 x 2160, 3840 x 2160
+
+  • 8K:
+    7680 x 4320
+
+[검증/보정]
+- others_yn = Others이면: brand_1/brand_2만 채우고 나머지 6개 필드는 ‘-’.
+- 그 외 케이스에서 resolution_2가 공란이거나 규칙에 어긋나면 재계산하여 반드시 위 매핑 중 하나 또는 ‘-’로 채움.
+

@@ -1,0 +1,88 @@
+#,Rollout,Sub,Country,Store Type,Store Name,Commerce Platform / (Hybris Y/N),Go-live (App Store release) / AOS,Go-live (App Store release) / iOS,Remark
+1,-,SIEL,India,B2C,in,N (GPv2),-,-,
+2,-,SIEL,India,Internal EPP,Samsung Employee,N (GPv2),-,-,https://www.samsung.com/in/multistore/1001/
+3,-,SIEL,India,Corporate EPP,Corporate,N (GPv2),-,-,https://www.samsung.com/in/multistore/corporate/
+4,-,SIEL,India,Student EPP,Student Purchase Program,N (GPv2),-,-,https://www.samsung.com/in/multistore/campus/
+5,Pilot,SEUK,UK,B2C,uk,Y,2022. 9. 28 ,2023. 11. 21 ,Soft launch for SEUK employees: 2022. 7. 28 
+6,Pilot,SEUK,UK,Student EPP,uk_student,Y,2022. 9. 28,-,"For initial iOS launch, SEUK confirmed for submission without Student EPP."
+6,Pilot,SEUK,UK,Student EPP,uk_student,Y,2022. 9. 28,-,Later EPP enabled in iOS.
+7,GRO1,SEBN-NL,Netherlands,B2C,nl,Y,2023. 6. 8 ,2023. 11. 21,
+8,GRO1,SEIB-ES,Spain,B2C,es,Y,2023. 6. 16 ,2023. 11. 21,
+9,GRO1,SEIB-ES,Spain,Student EPP,educacion,Y,2023. 9. 26 ,-,"For initial iOS launch, SEIB confirmed for submission without Student EPP."
+9,GRO1,SEIB-ES,Spain,Student EPP,educacion,Y,2023. 9. 26 ,-,Later EPP enabled in iOS.
+10,GRO1,SEG,Germany,B2C,de,Y,2023. 6. 28 ,2023. 11. 21,
+11,GRO2,SEAU,Australia,B2C,au,Y,2023. 9. 26 ,2023. 11. 21,
+12,GRO2,SEAU,Australia,Student EPP,samsung_education_au,Y,2023. 9. 26 ,2023. 11. 21,
+13,GRO2,SEAU,Australia,Governance EPP,government_au,Y,2024. Oct or Nov,2024. Oct or Nov ,Around October or November 2024.
+14,GRO2,SAVINA,Vietnam,B2C,vn,Y,2023. 9. 26 ,2023. 11. 21,
+15,GRO2,SAVINA,Vietnam,Student EPP,vn_giaoducd,Y,2023. 9. 26 ,2023. 11. 21,
+16,GRO2,SEIN,Indonesia,B2C,id,Y,2023. 9. 26 ,2023. 11. 21,
+17,GRO2,SEIN,Indonesia,Student EPP,upp,Y,2023. 9. 26 ,2023. 11. 21,
+18,GRO2,TSE,Thailand,B2C,th,Y,2023. 9. 26 ,2023. 11. 21,
+19,GRO2,TSE,Thailand,Student EPP,th_genzapp,Y,2023. 11. 1 ,2023. 11. 21,"With hotfix deployment for TSE EPP on 10/31, epp open delayed to 11/1"
+20,GRO2,SEM,Mexico,B2C,mx,Y,2023. 9. 26,2023. 11. 29 ,
+21,GRO2,SEM,Mexico,Student EPP,estudiantes_mx,Y,2023. 9. 26,2023. 11. 29 ,
+22,GRO2,SEPR,Peru,B2C,pe,Y,2023. 9. 26,2023. 11. 29 ,
+23,GRO2,SEPR,Peru,Student EPP,ventaestudiantes,Y,2023. 9. 26,2023. 11. 29 ,
+24,GRO3,SECA,Canada,B2C,ca / ca_fr,Y,2023. 12. 5 ,2023. 12. 25,GRO3 Google Play Store Submission: 12/5
+25,GRO3,SECA,Canada,Student EPP,education1,Y,2023. 12. 5 ,2023. 12. 25,"Released around 2AM KST, 12/6"
+26,GRO3,SECH,Chile,B2C,cl,Y,2023. 12. 5 ,2023. 12. 25,
+27,GRO3,SECH,Chile,Student EPP,estudiantes_chile,Y,2023. 12. 5 ,2023. 12. 25,"SG/MY/TW: 1AM, 12/6"
+28,GRO3,SAMCOL,Colombia,B2C,co,Y,2023. 12. 5 ,2023. 12. 25,SA: 8PM 12/5
+29,GRO3,SAMCOL,Colombia,Student EPP,estudiantes_co,Y,2023. 12. 5 ,2023. 12. 25,AE: 9PM 12/5
+30,GRO3,SAMCOL,Colombia,Corporate EPP,alianzas_co,Y,2025. 5. 6 ,2025. 5. 6 ,EO: 6PM 12/5
+31,GRO3,SEI,Italy,B2C,it,Y,2023. 12. 5 ,2023. 12. 25,CA/CO: 12PM 12/5
+32,GRO3,SEI,Italy,Student EPP,student,Y,2023. 12. 5 ,2023. 12. 25,CL: 2PM 12/5
+33,GRO3,SENA,Sweden,B2C,se,Y,2023. 12. 5 ,2023. 12. 25,GRO3 App Store Submission:
+34,GRO3,SEF,France,B2C,fr,Y,2023. 12. 5 ,2023. 12. 25,(Initial) 12/5 → Rejected on 12/6 
+35,GRO3,SEF,France,VIP EPP,samsung_plus,Y,2023. 12. 28 ,2023. 12. 28 ,Enabling of additional Corporate EPP (refer to 
+36,GRO3,SEPOL,Poland,B2C,pl,Y,2023. 12. 5 ,2023. 12. 25 ,GSA-2704 - Request for SAMCOL's coporate EPP open Closed )
+37,GRO3,SESAR,Saudi Arabia,B2C,sa / sa_en,Y,2023. 12. 5 ,2023. 12. 25 ,
+38,GRO3,SESAR,Saudi Arabia,Student EPP,saudistudents,Y,2023. 12. 5 ,2023. 12. 25 ,
+39,GRO3,SGE,UAE,B2C,ae / ae_ar,Y,2023. 12. 5 ,2023. 12. 25 ,
+40,GRO3,SGE,UAE,Student EPP,student_direct_program,Y,2023. 12. 5 ,2023. 12. 25 ,
+41,GRO3,SESP,Singapore,B2C,sg,Y,2023. 12. 5 ,2023. 12. 25 ,
+42,GRO3,SESP,Singapore,Student EPP,samsung_education_sg,Y,2023. 12. 5 ,2023. 12. 25 ,
+43,GRO3,SME,Malaysia,B2C,my,Y,2023. 12. 5 ,2023. 12. 25 ,
+44,GRO3,SME,Malaysia,Student EPP,epp_education,Y,2023. 12. 5 ,2023. 12. 25 ,
+45,GRO3,SET,Taiwan,B2C,tw,Y,2023. 12. 5 ,2023. 12. 25 ,
+46,GRO3,SET,Taiwan,Student EPP,edu,Y,2023. 12. 5 ,2023. 12. 25 ,
+47,-,SEUK,UK,Secret Store,uk_exclusiveoffers,Y,2024. 3. 20 ,X,"SEUK confirmed MX product for 1st batch of secret sales, thus requested not to enable secret store on iOS (March 12th, 2024)"
+48,O2O,SME,Malaysia,Instore,my_ea,Y,2024. 4. 19,2024. 4. 22,
+49,O2O,SESP,Singapore,Instore,o2o,Y,2024. 4. 24,X,SESP confirmed to not enable Instore on iOS due to MX products not allowd
+50,O2O,SAVINA,Vietnam,Instore,ea,Y,2024. 4. 24,2024. 4. 24,
+51,SEDA,SEDA,Brazil,B2C,br,N (Vtex),2024. 5. 8,2024. 7. 2 (has been approved to submit),AOS: Samsung Shop – Applications sur Google Play
+51,SEDA,SEDA,Brazil,B2C,br,N (Vtex),2024. 5. 8,2024. 7. 2 (has been approved to submit),AOS Global Shop App initial submission and go-live on May 8th
+51,SEDA,SEDA,Brazil,B2C,br,N (Vtex),2024. 5. 8,2024. 7. 2 (has been approved to submit),"AOS update with name change to ""Samsung Shop"" submitted and released on May 23th"
+51,SEDA,SEDA,Brazil,B2C,br,N (Vtex),2024. 5. 8,2024. 7. 2 (has been approved to submit),iOS: 
+51,SEDA,SEDA,Brazil,B2C,br,N (Vtex),2024. 5. 8,2024. 7. 2 (has been approved to submit),Initial submission on 2024. 5. 4  
+52,SCIC,SCIC,China,B2C,cn,Y,2024. 5. 14,2024. 7. 19 ,EPP Stores submission on 2024. 5. 18 
+53,SCIC,SCIC,China,Student EPP,cn_student,Y,2024. 5. 18,2024. 7. 19 ,"Android: Galaxy store, Baidu, VIVO 제출 완료"
+54,SCIC,SCIC,China,Corporate EPP,cn_corporate,Y,2024. 5. 18,2024. 7. 19 ,iOS: App store 승인 2024. 7. 19 (B2C/EPP)
+55,SCIC,SCIC,China,Internal EPP,cn_internal,Y,2024. 5. 18,2024. 7. 19 ,
+56,O2O,SEIN,Indonesia,Instore,sein_o2o,Y,2024. 5. 27,2024. 5. 27,
+57,O2O,TSE,Thailand,Instore,th_ea_one,Y,2024. 5. 27,2024. 5. 27,
+58,SETK,SETK,Türkiye,B2C,tr,Y,2024. 6. 4,2024. 6. 5 ,AOS App name: Samsung Shop: Resmi Uygulama
+58,SETK,SETK,Türkiye,B2C,tr,Y,2024. 6. 4,2024. 6. 5 ,Subtitle added due to the existing app of the same title. (TR local app)
+58,SETK,SETK,Türkiye,B2C,tr,Y,2024. 6. 4,2024. 6. 5 ,iOS  App name: Samsung Shop: Resmi Uygulama
+59,SETK,SETK,Türkiye,Student EPP,tr_egitim,Y,2024. 6. 4,2024. 6. 5 ,Approved by App Store with MX Contents/Category enabled on June 5th 
+60,GRO4,SEAS-AT,Austria,B2C,at,Y,2024. 6. 22,2024. 7. 2 ,AOS:
+61,GRO4,SEAS-AT,Austria,Student EPP,at_education,Y,2024. 6. 22,2024. 7. 2 ,Submisssion: 6/22 12:30 AM KST → Approved around 6/22 1AM KST
+62,GRO4,SECZ-CZ,Czech Republic,B2C,cz,Y,2024. 6. 22,2024. 7. 2 ,iOS:
+63,GRO4,SEPCO,Philippines,B2C,ph,Y,2024. 6. 22,2024. 7. 2 ,Submission: 6/22 12:30AM KST → Rejected around 6/22 9PM KST
+64,GRO4,SEPCO,Philippines,Student EPP,edu_uno,Y,2024. 6. 22,2024. 7. 2 ,
+65,GRO4,SENZ,New Zealand,B2C,nz,Y,2024. 6. 22,2024. 7. 2 ,
+66,GRO4,SENZ,New Zealand,Student EPP,samsung_edu,Y,2024. 6. 22,2024. 7. 2 ,
+67,GRO5,SSA,South Africa,B2C,za,Y,2024. 10. 7 ,2024. 10. 7 ,AOS: 
+68,GRO5,SSA,South Africa,Student EPP,ssa_student,Y,2024. 10. 7 ,2024. 10. 7 ,Submisssion: 10/7 8:00 PM KST → Approved around 10/8 12AM KST
+69,GRO5,SEROM-RO,Romania,B2C,ro,Y,2024. 10. 7 ,2024. 10. 7 ,100% released around 10/8 2PM KST
+70,GRO5,SEH,Hungary,B2C,hu,Y,2024. 10. 7 ,2024. 10. 7 ,iOS:
+71,GRO5,SEHK,Hong Kong,B2C,hk / hk_en,Y,2024. 10. 7 ,2024. 10. 7 ,Submisssion: 10/7 8:00 PM KST → Approved around 10/8 5AM KST
+72,GRO5,SEHK,Hong Kong,Student EPP,hkeducation,Y,2024. 10. 7 ,2024. 10. 7 ,100% released around 10/8 2PM KST
+73,GRO6,SEJ,Japan,B2C,jp,Y,TBD,TBD,"Initial plan was to release in June 2025, but it has been put on hold"
+74,GRO6,SEJ,Japan,EPP,jpeducationepp,Y,TBD,TBD,"Initial plan was to release in June 2025, but it has been put on hold"
+75,GRO6,SEBN-BE,Belgium,B2C,be / be_fr,Y,TBD,TBD,"Initial plan was to release in June 2025, but it has been put on hold"
+76,GRO6,SEIB-PT,Portugal,B2C,pt,Y,TBD,TBD,"Initial plan was to release in June 2025, but it has been put on hold"
+77,GRO6,SEIB-PT,Portugal,EPP,pteducacaoepp,Y,TBD,TBD,"Initial plan was to release in June 2025, but it has been put on hold"
+78,GRO6,SEAS-CH,Switzerland,B2C,ch / ch_fr,Y,TBD,TBD,"Initial plan was to release in June 2025, but it has been put on hold"
+79,GRO6,SEAS-CH,Switzerland,EPP,samsung_switzerland_epp_iamstudent,Y,TBD,TBD,"Initial plan was to release in June 2025, but it has been put on hold"

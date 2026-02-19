@@ -1,0 +1,477 @@
+Variable,Diemsion Name,Frequently Used,Paired Event,Description,Example,Notes,DataFeed
+eVar,eVar,,,"An eVar is a conversion variable used to identify which dimensions contribute to success events. Unlike props, eVars are persistent, meaning the value remains available beyond the hit it was set on, based on the configured expiration setting.
+
+eVars are primarily used to attribute conversion events to earlier user interactions. This makes them essential for understanding the customer journey and evaluating the impact of marketing efforts or content engagement.",-,"eVars have a 255-byte limit in reports. 
+Adobe supports up to 250 eVars.
+
+*key Characteristics:
+- Persistent across hits (Expire after visit)
+- Tied to success events for attribution
+- Suitable for conversion funnel and path analysis",
+eVar1,Site Code (v1),Yes,Site Code (v1) Instances,"Site Code (v1) collects the first-depth Site Code information every time a page is loaded. This Site Code represents the primary categorization of the webpage, helping to identify which website the user is visiting.
+
+Since both Web and App data, as well as B2C and B2B data, are being ingested into a single Report Suite, this dimension serves as a key reference for distinguishing data by platform and business type.","eVar1=""uk""
+eVar1=""uk-app""
+eVar1=""uk-smb""
+eVar1=""uk-smb-app""
+eVar1=""uk-epp""
+eVar1=""uk-epp-app""","SMB: Pages with the URL pattern shop.samsung.com/uk/business/.
+
+EPP: Pages with URLs like www.samsung.com/uk/multistore/ or shop.samsung.com/uk/multistore/.
+
+The rest of pages including samsung.com/uk and samsung.com/uk/business are classified as B2C data and will be displayed under the 'uk' site code.",post_evar1
+eVar2,Site Top Navigation (v2),No,Site Top Navigation (v2) Instances,"Site Top Navigation (v2) collects the 2nd-level site section, typically indicating the top-level category of the website. This value is collected when each page is loaded and helps classify which major content area (e.g., Mobile, TV, Home Appliances) the user is browsing. 
+*This variable is not generated for native app pages without URLs.","eVar2=""uk:home""
+eVar2=""uk:mobile""
+eVar2=""uk:television""
+eVar2=""uk:shop""
+eVar2=""uk:mypage""",-,post_evar2
+eVar3,Third Level Site Section (v3),No,Third Level Site Section (v3) Instances,"Third Level Site Section (v3) collects the 3rd-level site section, indicating a sub-category within the top-level category. It gives more granular information about the user's browsing path. 
+*This variable is not generated for native app pages without URLs.","eVar3=""uk:mobile:smartphones""
+eVar3=""uk:mobile:watches""
+eVar3=""uk:mobile:mobile accessories""
+eVar3=""uk:television:tvs""
+eVar3=""uk:shop:cart""",-,post_evar3
+eVar4,Fourth Level Site Section (v4),No,Fourth Level Site Section (v4) Instances,"Fourth Level Site Section (v4) collects the 4th-level site section, usually reflecting a product series or brand line within a sub-category.
+*This variable is not generated for native app pages without URLs.","eVar4=""uk:mobile:smartphones:galaxy s""
+eVar4=""uk:mobile:watches:finder""
+eVar4=""uk:mobile:watches:galaxy fit""
+eVar4=""uk:television:tvs:uhd 4k tv""
+eVar4=""uk:display:monitors:gaming""",-,post_evar4
+eVar5,Fifth Level Site Section (v5),No,Fifth Level Site Section (v5) Instances,"Fifth Level Site Section (v5) records the fifth-level site section, representing the most detailed breakdown of site navigation. It is often used for tracking very specific content, such as a product variant page or a subcategory within a fourth-level section.
+*This variable is not generated for native app pages without URLs.","eVar5=""uk:mobile:smartphones:galaxy s:galaxy-s25""
+eVar5=""uk:mobile:smartphones:galaxy s:galaxy-s25-ultra""
+eVar5=""uk:mobile:watches:galaxy watch:galaxy-watch7""
+eVar5=""uk:mobile:rings:galaxy ring:galaxy-ring""
+eVar5=""uk:computers:computers:galaxy book:galaxy-book5-pro""",-,post_evar5
+eVar6,All Page Track (v6),Yes,All Page Track (v6) Instances,"All Page Track (v6) categorizes each page into a specific page type, such as Home, Product Detail, Cart, etc. This classification enables analysts to segment traffic and user actions by the type of page being viewed.","eVar6=""home""
+eVar6=""product family showcase""
+eVar6=""product detail""
+eVar6=""flagship pdp""
+eVar6=""shop cart""",-,post_evar6
+eVar7,Internal Promotion Content (v7),No,Internal Promotion Content (v7) Instances,"Collects click action data for Shop Home KV, Banner, Event Banners click
+Used in both web and mobile app. 
+If data collects in app, 'app' is added as a prefix. ","eVar7=""br_offer banner_page1_no1""
+eVar7=""fr_offer banner_page1_no7""
+eVar7=""ca shop_home_kv1_ shop now""
+eVar7=""ru shop_home_contents_image_buy now""
+eVar7=""th_offer_kv1_CE Mode_link_20200416""",-,post_evar7
+eVar8,Product Category (v8),No,Product Category (v8) Instances,"Product Category (v8) classifies each product-related page into a high-level product category, such as Mobile, TV, or Home Appliances. The value is determined based on the second-level depth of the page name at the time the page is loaded.","eVar8=""mobile""
+eVar8=""tv""
+eVar8=""home appliances""
+eVar8=""it""
+eVar8=""memory and storage""",-,post_evar8
+eVar9,disabled,-,-,-,-,-,-
+eVar10,disabled,-,-,-,-,-,-
+eVar11,PVI Product Type (v11),Yes,PVI Product Type (v11) Instances,"PVI Product Type (v11) collects the high-level product category based on the PVI  classification. In cases where multiple products are purchased in a single order, they are generated as a comma-separated list","eVar11=""Mobile""
+eVar11=""TV""
+eVar11=""Refrigerator""
+
+# Purchase event with multiple products
+eVar11=""mobile,mobile,shop program""",-,post_evar11
+eVar12,PVI Product Sub-type (v12),Yes,PVI Product Sub-type (v12) Instances,"PVI Product Sub-type (v12) collects the sub-category of the PVI Product Type for a more granular classification of products. In cases where multiple products are purchased in a single order, they are generated as a comma-separated list","eVar12=""Smartphone""
+eVar12=""QLED""
+eVar12=""Top Freezer""
+
+# Purchase event with multiple products
+eVar12=""smartphone,wearable,trade-in""",-,post_evar12
+eVar13,PIM Product Sub-type (v13),Yes,PIM Product Sub-type (v13) Instances,"PIM Product Sub-type (v13) collects the sub-category information from the PIM system. In cases where multiple products are purchased in a single order, they are generated as a comma-separated list
+*PIM: Product Information Management
+","eVar13=""galaxy s""
+eVar13=""qled tv""
+eVar13=""top mount freezer""
+
+# Purchase event with multiple products
+eVar13=""galaxy s,galaxy buds,trade-in""",-,post_evar13
+eVar14,disabled,-,-,-,-,-,-
+eVar15,Display Name (v15),Yes,Display Name (v15) Instances,"Display Name (v15) collects the exact product name as displayed on the Product Detail Page. The Display Name may be shown in the local language. In cases where multiple products are purchased in a single order, they are generated as a semicolon-separated list.","eVar15=“Galaxy Watch Ultra LTE (47mm)”
+eVar15=“65” Neo QLED 4K QN90D Smart AI TV (2025)”
+
+# Purchase event with multiple products
+eVar15=“galaxy s25 (samsung.com only);galaxy buds3""",-,post_evar15
+eVar16,Video Name (v16),No,"Video Views (e15)
+Video Completes (e16)",Collects Video Caption,"eVar16=""prd^sph^detail^s20^highlights:meet-galaxy-s20:video:play:expert-review-highlights""",-,post_evar16
+eVar17,Video Segments (v17),No,"Video Views (e15)
+Video Completes (e16)",Automatic Tracking with Video Code,"eVar17=""1:M:0-25""",-,post_evar17
+eVar18,Site Section (v18),Yes,Site Section (v18) Instances,"Site Section (v18) collects traffic data by section, where a section represents the highest level of categorization of Samsung.com pages.","eVar18=“home”  -> Home page section
+eVar18=“explore” ->  Explore section 
+eVar18=“consumer” → Product-related pages (includes PFS, PCD, PF, and PD)
+eVar18=""campaign""→ Campaign landing pages
+eVar18=""shop"" → Samsung.com Shop section (for e-commerce, excluding AEM pages)",-,post_evar18
+eVar19,Video Embedded URL (v19),No,"Video Views (e15)
+Video Completes (e16)",Automatic Tracking with Video Code,"eVar19=""https://my.samsung.fr/""",-,post_evar19
+eVar20,Video Referrer (v20),No,"Video Views (e15)
+Video Completes (e16)",Automatic Tracking with Video Code,"eVar20=""https://www.samsung.com/fr/offer/l-efficacite-au-quotidien/""",-,post_evar20
+eVar21,Site Search (v21),Yes,Site Search (e21),"Site Search (v21) collects site search keywords that users enter into the Samsung.com search bar and receive at least one result.
+*Triggered via action tracking after the search results page is loaded.","eVar21=“<searched keyword>” 
+eVar21 = ""galaxy s25 ultra""
+eVar21 = ""gaming monitor""
+eVar21 = ""repair""
+eVar21 = ""tablet""
+eVar21 = ""fast charger""",-,post_evar21
+eVar22,Store Locator (v22),No,Store Locator (e22),"Store Locator (v22) collects data related to user interactions within the store locator tool, including successful store search keywords (i.e., searches that return at least one result).","eVar22=“locator”
+eVar22=“filter:distance:1mile”
+eVar22=“store detail view:samsung three london”
+eVar22=“store detail view:samsung three london:email”
+eVar22=""keyword:Warszawa""",-,post_evar22
+eVar23,Support Search (v23),No,Support Search (e23),Collects support search keywords which have search result,"eVar23 =“<all page track>:<keyword>”
+eVar23=“suppoart main:galaxy” ",-,post_evar23
+eVar24,Service Locator Search (v24),No,Service Locator Search (e24),Collects click action data triggered in support service locator page and also collect service locator search keywords which have search result,"eVar24=“tab:mobile devices”
+eVar24=“distance:100km”
+eVar24=“back to list”
+eVar24=“tab:home appliances_laundry”
+eVar24=""keyword:hyderabad""",-,post_evar24
+eVar25,Product Click (v25),No,Product Click (e25),"Product Click (v25) captures click actions that lead users to the Product Detail Page (PDP). This is specifically used on dynamic modules such as Product Finder (PF), Product Display (PD), Offers, Product Comparison, and Recently Viewed Products.","eVar25=""pf product card:image click""
+eVar25=“pd buying tool:learn more click”
+eVar25=“how it stacks up:image click”
+eVar25=“recently viewed:product click”",-,post_evar25
+eVar26,Content Click (v26),Yes,Content Click (e26),"Content Click (v26) is used to capture user interactions with non-product-specific content elements. This includes clicks on buttons, text links, videos, and banner modules, but excludes clicks that lead directly to Product Detail Pages (those are tracked in eVar25).","eVar26=“category slider1:refrigerators”
+eVar26=“get connected, get closer to your family:see all refrigerators”
+eVar26=“galaxy s25 ultra 5g:learn more”
+eVar26=“how it stacks up:galaxy a80”",-,post_evar26
+eVar27,Gallery (v27),No,Gallery (e27),Collects various interaction data of gallery area,"eVar27=“product gallery:gallery:image”
+eVar27=“product gallery:gallery:video”
+eVar27=“product gallery:gallery:360view”
+eVar27=""feature gallery:at home in your home:image1""
+eVar27=""feature gallery:gallery:video2:play video""",-,post_evar27
+eVar28,Compare (v28),No,Compare (e28),Collects click action data for compare feature ,"eVar28=“<product code>” (product code, delimiter “^”)
+
+<In case of click on ""Difference  or ALL"">
+eVar28=“<difference/all>:<product code>^<product code>” (product code, delimiter “^”)",-,post_evar28
+eVar29,Social Share (v29),No,Social Share (e29),"Collects  Social share / follow action data when social network icon is clicked in P5
+Used in both web and mobile app. If data collects in app, 'app' is added as a prefix. ","eVar29 =""follow:facebook""
+eVar29 =""share:facebook""",-,post_evar29
+eVar30,Request Submit (v30),No,Request Submit (e30),Collects various types of request submit button click data such as support FAQ satisfaction survey submit button and floating chat satisfaction survey submit button,"[Support Help Content Satisfaction Survey]
+eVar30=“au:satisfaction survey:faq:1063160:helpful:na:very satisfied with the helpful information”
+
+[Floating Chat Satisfaction Survey]
+eVar30=""floating chat:product&promotions:survey:q1_5stars:q2_no comment_submit""",-,post_evar30
+eVar31,Account (v31),Yes,Account (e31),"Account (v31) is used to collect interaction data related to user account activities. This includes actions taken within account-related pages or account-specific menus, such as login/logout or interactions with the wishlist.
+*After a successful login, the action tracking call is triggered once the page has loaded.","eVar31=“gnb:login”
+eVar31=“gnb:logout” 
+eVar31=“wishlist:add to wishlist”
+eVar31=“wishlist:remove from wishlist”
+eVar31=“wishlist:continue shopping”
+eVar31=“login:success:samsung account”",-,post_evar31
+eVar32,Download (v32),No,"Download (e32)
+Download-B2B (e33)",Collects downloaded file name data,"eVar32=“Samsung_Magician_Installer.zip""
+eVar32=“Samsung Data Migration Setup.exe""
+eVar32=“Samsung_NVM_Express_Driver_3.3.exe""
+eVar32=“7508832""
+eVar32=“Samsung_NVMeDriver_InstallationGuide.pdf""",-,post_evar32
+eVar33,Microsite (v33),Yes,Microsite (e45),Microsite (v33) is used to capture user interaction data specifically within microsites and locally developed campaign pages.,"eVar33=""nl:welcome:search-bar:click""
+eVar33=""nl:welcome:search-bar:submit:click""
+eVar33=""ru:shop-offer-popup:close-button""
+eVar33=""nbr:campaign:seda:suacasa:home:comodos:scroll""
+eVar33=""sec:bespoke_experience:EXPclick_start""",-,post_evar33
+eVar34,Support Contents (v34),No,Support contents (e34),Collects click action data for support contents and features ,"eVar34=""contact us:live chat""
+eVar34=""downloads:select your product_step1:computing""
+eVar34=""download center_step2:notebook""
+eVar34=""contact us:online_learn more""
+eVar34=""send an email:technical support""",-,post_evar34
+eVar35,Purchase Intention (v35),Yes,"Purchase Intention (e35)
+Buy Online Retailer (e55)",Purchase Intention (v35) is used to track user intent to purchase by capturing click actions related to buying activities.,"eVar35=“buy now”
+eVar35=“where to buy”
+eVar35=""buy online""
+eVar35=“stock alert”",-,post_evar35
+eVar36,eCommerce - Unspecified (v36),Yes,eCommerce - Unspecified (v36)  Instances,"eCommerce - Unspecified (v36) is used to track user interactions throughout the checkout process, providing visibility into how users move through the various checkout steps before completing a purchase.","eVar36=""cart:proceed to checkout""
+eVar36=""checkout:delivery option:next""
+eVar36=""checkout:customer details:continue to delivery options""
+eVar36=""checkout:payment:pay now""",-,post_evar36
+eVar37,eCommerce - Payment Method (v37),Yes,"Checkouts (event), Order (purchase event)","eCommerce - Payment Method (v37) is used to collect the selected payment method in shop pages. This variable is triggered during both the checkout event and the final purchase event.
+The eVar37 variable can have different values for the checkout and order events.","eVar37=“credit card”
+eVar37=“paypal”
+eVar37=“samsung finance”
+eVar37=“cash on delivery”",-,post_evar37
+eVar38,Content ID/Name (v38),No,Content ID/Name (v38) Instances,"Collects  Content ID or Page ID for offer detail pages, explore detail pages, B2B insight detail pages, B2B Solution Detail pages, etc.","eVar38=""offer:d199dd57f7383df98cd6de2c8f6d0c10c1a5e8e8d4a4d7aab2523b8a22496fa8""
+eVar38=""solution:system-air-conditioner-solutions:c80537b79c41d59f1ba0686f6f9377a8c7ec9736fb290360f3f4ee41e425e5d5""
+eVar38=""explore:d199dd57f7383df98cd6de2c8f6d0c10c1a5e8e8d4a4d7aab2523b8a22496fa8""",-,post_evar38
+eVar39,URL (v39),Yes,URL (v39) Instances,"The URL (v39) Captures the full URL of the current page when each page is loaded. This includes the domain, path, and any query parameters that may be present in the URL.","eVar39=""https://www.samsung.com/uk/smartphones/all-smartphones/?galaxy-s+256gb""
+eVar39=""https://eu.community.samsung.com/t5/other-smartphones/one-ui-7-with-android-15-list-of-eligible-galaxy-devices/td-p/11506136""",-,post_evar39
+eVar40,PageName (v40),Yes,PageName (v40) Instances,"PageName (v40) is used to collect the unique page name when each page is loaded. This variable provides a clear and structured name for each page, making it easier to understand where user actions occurred during analysis.","eVar40=""uk:home""
+eVar40=""uk:mobile:smartphones""
+eVar40=""uk:mobile:smartphones:galaxy s:galaxy-s25-ultra:buy""
+eVar40=""uk:shop:cart""
+eVar40=""uk:shop:mypage""",-,post_evar40
+eVar41,Model Code (v41),Yes,"Cart Add (event), Checkouts (event), Order (purchase event)","Model Code (v41) is used to collect the product's model code, also referred to as SKU. In cases where multiple products are purchased in a single order, they are generated as a comma-separated list","eVar41=""SM-G988BZADEUB	""
+eVar41=""SM-S938BAKDEUB""""
+
+#Multiple Products
+eVar41=""SM-S931BZDGEUB,SM-R530NZAAEUA,TRADE-IN""",-,post_evar41
+eVar42,Document Referrer (v42),No,Page Views,"Document Referrer (v42)  is used to capture the referring domain of the current page when it's loaded. This variable helps identify where the user came from before landing on the current page (e.g., another website, search engine, etc.).
+It is primarily used in Marketing Channel Processing Rules to detect natural (organic) search traffic.","eVar42=""https://www.google.com/""
+eVar42=""http://m.facebook.com/""",-,post_evar42
+eVar43,Clicktale ID (v43),No,Clicktale ID (v43) Instances,Local used variable for specific purposes ,"eVar43=""1797016447221844.76""",Specific RS Only: EU Subs,post_evar43
+eVar44,Filter and Sort (v44),Yes,Filter and Sort (e44),Filter and Sort (v44) is used to collect user interaction data related to filtering and sorting functions on product listing or search result pages.,"eVar44=“sort:newest”
+eVar44=“tag filter:lorem ipsum”
+eVar44=“filter:type”
+eVar44=“filter:open”
+eVar44=“filter:type:full hd certified tvs”",-,post_evar44
+eVar45,B2B Contents (v45),No,B2B contents (e54),Collects click action data for B2B content and features ,"eVar45=""home_powerful products:galaxy s20 ultra""
+eVar45=""business industry landing:indoor:wind-free™_learn more""
+eVar45=""home_industry:retail""
+eVar45=""pd:documentation_download""
+eVar45=""home_powerful products:smartphones""",-,post_evar45
+eVar46,Scroll (v46),Yes,Scroll (e46),"Scroll (v46) is used to track scroll depth as users scroll down the page. This variable helps identify how far users engage with the content vertically. ""scroll:100"" is not triggered if the footer is visible without scrolling.
+*Product Detail: 25,50,75,100
+*MX Flagship pd: 3,5,7,10,20,...,100
+*Other page(Home, Flagship Buy, PF,...): 100","eVar46=""scroll:3""
+eVar46=""scroll:5""
+eVar46=""scroll:25""
+eVar46=""scroll:50""
+eVar46=""scroll:75""
+eVar46=""scroll:100""",-,post_evar46
+eVar47,B2B Search (v47),No,B2B Search (e47),Collects B2B search keywords which have search result,"eVar47=""<search keyword>""",-,post_evar47
+eVar48,Home Content Click (v48),Yes,Home Content Click (e48),Home Content Click (v48) is used to capture click interactions on home page content modules. This variable is specifically scoped to homepage elements only. Clicks that occur outside of the homepage should be captured using other variables such as Content Click (v26). It helps measure engagement with key content elements surfaced on the homepage.,"eVar48=“kv1:galaxy s20 ultra 5g:button2:learn more:20200302”
+eVar48=“product marketing:im:galaxy z flip”
+eVar48=“merchandising:mobile:im:galaxy z flip thom browne edition”
+eVar48=“exlplore slider:the real millie bobby brown:eyebrow:samsung within”
+eVar48=“popular search:keyword submit”",-,post_evar48
+eVar49,Undefined,Yes,AF - Media Source (v49) Instances,"AF - Media Source (v49) captures the mobileadnetwork field, which is populated via AppsFlyer postback data using the pid parameter. This parameter identifies the source media platform and the captured value is used to classify traffic sources for attribution and performance analysis.",,-,
+eVar50,PurchaseID (v50),Yes,Order (purchase event),"PurchaseID (v50) captures the unique Purchase ID (or Order Number) for each completed transaction on Samsung.com. Each order is associated with one unique Purchase ID, which allows precise tracking of transactions and linkage with backend sales data (e.g., from Hybris). 
+eVar50 starts capturing data when the user lands on the cart page.
+*This variable contains a large number of unique values, so it is likely to be classified as “Low Traffic” in Adobe Analytics.","eVar50=""de180902-17064715""
+eVar50=""11058331016""
+eVar50=""UK3636994738""",-,post_evar50
+eVar51,Opinion Lab- Survey Tab Click (v51),No,Opinion Lab- Survey Tab Click (v51) Instances,Collects Opinion Lab feedback bab click action data,"eVar51=""ol survey tab click""",-,post_evar51
+eVar52,Opinion Lab- Survey Completion (v52),No,Opinion Lab- Survey Completion (v52) Instances,Collects data when Opinion Lab survey is completed,"eVar52=""ol results survey thank you page""",-,post_evar52
+eVar53,Cart ID (v53),No,Cart ID (v53) Instances,"Collects cart ID data when cart, checkout, order confirmation page is loaded","eVar53=""27819457-7885-469f-b5bc-e672d11bea12""
+eVar53=""00966b14-7c15-4c0a-888d-62c040e44052""","Specific RS Only: IN, EE,  LV,  LT, ID, PL, RO, PH, AE, AE_AR, SK, CZ, UK, BE, BE_FR,  NL, FR,  DE, MST, MST(dev), TEST",post_evar53
+eVar54,Sale/Non Sale Product (v54),No,Sale/Non Sale Product (v54) Instances,"Collects the data whether the product is sold in Shop or not when PDP is loaded
+If there is no Shop API to distinguish sale / no sale data, please collect tagging value as 'null'","eVar54=""sale""
+eVar54=""no sale""
+eVar54=""null""",-,post_evar54
+eVar55,eCommerce - Program (v55),No,Order (purchase event),Collects data whether Shop Benefit Program is applied or not when users make purchase,"eVar55=""trade in_yes:samsung mobile care_no:upgrade programme_no"" ",-,post_evar55
+eVar56,eCommerce - Order Status (v56),No,Order (purchase event),"Collect order status data when shop (platform) data is integrated (ES La caixa payment, UK specific)",eVar56=“payment not authorized”,"Specific RS Only: ES, UK, RU, MST, MST(dev), TEST",post_evar56
+eVar57,AC - Campaign ID (v57),No,AC - Campaign ID (v57) Instances,Email Delivery's internal name as seen in Adobe Campaign.,"eVar57=""samDM20553""
+eVar57=""samDM19794""","Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_evar57
+eVar58,AC - Broadlog ID (v58),No,AC - Broadlog ID (v58) Instances,-,"eVar58=""1072811211""
+eVar58=""1128953661""","Specific RS Only: JP, CIS & LATAM (RU, KZ_RU, KZ_KZ, UA, UA_RU, UZ, UZ_RU, AR, PY, UY, BR, CL, CO, LATIN, LATIN_EN, PE, MX), MST, MST(dev), TEST",post_evar58
+eVar59,Platform Order Number (v59),No,Order (purchase event),Collects Purchase ID data for each order when shop (platform) data is integrated,"eVar59=""uk180902-17064715""","Created : 19. 01. 24
+Specific RS Only: UK, Test",post_evar59
+eVar60,Origin Platform (v60),Yes,Origin Platform (v60) Instances,Origin Platform (v60) is used as a correction field to more accurately determine whether the session is truly from a shop app.,"eVar60=""app""","Origin Platform (v60) is used only when the platform is confidently identified as ""app"". If the platform cannot be reliably verified as app-based, eVar60 remains empty.
+Created : 24.11.04 ",post_evar60
+eVar61,Site Search- Popular Keyword (v61),No,Seach Result Click (e11),Collects search related click action data in search layer drop box and search result page,"eVar61=“search layer:search history:<keyword>”
+eVar61=“search layer:suggested searches:galaxy buds”
+eVar61=“search layer:related searches:galaxy s20”
+eVar61=“search layer:matched contents:support:[galaxy note9] update galaxy apps”
+eVar61=“search result click:all:product:product click:page1:result1”",-,post_evar61
+eVar62,Campaign Search Keyword (v62),No,Campaign Search Keyword (v62) Instances,Local used variable for specific purposes which collects campaign search keyword ,"eVar62=""smartwatch""
+eVar62=""samsung.nl""
+eVar62=""samsung ophaalservice""
+eVar62=""samsung reparatie service""
+eVar62=""samsung""","Specific RS Only: NL, BE, BE_FR, MST, MST(dev), TEST",post_evar62
+eVar63,Visitor ID (v63),Yes,"Unique Visitor, Visits","Visitor ID (v63) captures the Visitor ID, a persistent identifier assigned by the Adobe web server when a user visits the site. This ID is commonly based on the Experience Cloud ID (ECID).
+*This variable contains a large number of unique values, so it is likely to be classified as “Low Traffic” in Adobe Analytics.","eVar63=""01969343649642537292398364845721107085""
+eVar63=""72204423848786642493025059164702060513""","*key feature
+- Persistence: The Visitor ID remains consistent across visits as long as the user’s browser retains the relevant cookies.
+- Cookie Deletion Impact: If a user clears their cookies, a new ECID is generated, resulting in a new Visitor ID. In this case, Adobe Analytics treats the same user as a new visitor, and any previous tracking continuity is lost.
+- Dependency on ECID: The Visitor ID (v63) is only populated if the ECID exists on the page. If the ECID is missing or improperly set (e.g., via a custom or non-standard implementation), the v63 value may not be collected.
+
+* To be compliant with GDPR and CNIL, data is collected as 'no consent' unless users consent to the deposit of tracers by a clear positive act (such as clicking on ""I accept"" in a cookie banner) in FR, FR EPP sites.",post_evar63
+eVar64,UID (v64),Yes,"Unique Visitor, Visits","UID (v64) collects Samsung Account GUID when a user is logged in with their Samsung Account. This variable is used in both web and mobile app. Once collected, the login UID is stored and maintained for 90 days.
+*This variable contains a large number of unique values, so it is likely to be classified as “Low Traffic” in Adobe Analytics.","eVar64=""s1ohx665kt""
+eVar64=""1zpb4g6usb""","* To be compliant with GDPR and CNIL, data is collected as 'no consent' unless users consent to the deposit of tracers by a clear positive act (such as clicking on ""I accept"" in a cookie banner) in FR, FR EPP sites.",post_evar64
+eVar65,Local UID (v65),No,"Unique Visitor, Visits","Collects data which is contained a URL parameter defined by subs
+- FR : uid
+- NL, BE, BE_FR : sci
+- RU : cui","If the entry URL is 'www.samsung.com/fr/?uid=2106635108',
+eVar65=""2106635108""","Specific RS Only: NL, BE, BE_FR, RU, FR, MST, MST(dev), TEST",post_evar65
+eVar66,Local Campaign Type (v66),No,Local Campaign Type (v66) Instances,Local requested specific variable (only s_code),"eVar66=""seo""
+eVar66=""dir""
+eVar66=""ref""
+eVar66=""email""
+eVar66=""seo>ref>seo""","Specific RS Only: NL, BE, BE_FR, RU, FR, MST, MST(dev), TEST",post_evar66
+eVar67,Hashed GCRM ID (v67),No,Hashed GCRM ID (v67) Instances,"Created to collect GCRM hashed ID which is contained a URL parameter, named samid.
+In case of AU and TH, collects hashed ID (encrypted) from cookie exceptionally
+* To be compliant with GDPR and CNIL, data is collected as 'no consent' unless users consent to the deposit of tracers by a clear positive act (such as clicking on ""I accept"" in a cookie banner) in FR, FR EPP sites.","If the entry URL is 'www.samsung.com/uk/?samid=0x114705293C69EECEFEF0F29A15C8D33E6676FE44343FE77514E9D694EA8',
+eVar67=""0x114705293C69EECEFEF0F29A15C8D33E6676FE44343FE77514E9D694EA8""",-,post_evar67
+eVar68,Review (v68),No,Review (e68),Collects reivew related content interactions ,"eVar68=“read review”
+eVar68=""write review""
+eVar68=“search:galaxy”
+eVar68=“helpful:yes”
+eVar68=“rating filter:1star”",-,post_evar68
+eVar69,Personalization (v69),No,Personalization (v69) Instances,Local used variable for specific purposes regarding personalization,"eVar69=""pzn_galaxy_s8_subnav_specs_b""
+eVar69=""pzn_smartphone_product_images_not_clickable_a""","Specific RS Only: AE, AE_AR, UK, DE, ES,  FR,  SE, PL, NO,  NL,FI,  DK,  MST, MST(dev), TEST",post_evar69
+eVar70,ePromoter Agent ID (v70),No,ePromoter Agent ID (v70) Instances,Collects ePromoter agent ID ,"eVar70=""369416559393""
+eVar70=""Pratham""","Created : 18. 06. 20
+Specific RS Only: AE, AE_AR, AU, BR, CA, CA_FR, CN, ES, FR, ID, IN, LATIN, LATIN_EN, MY, NZ, PH, PL, SG, TH, TR, TW, VN, MST, MST(dev), TEST",post_evar70
+eVar71,Client ID (v71),No,Client ID (v71) Instances,"Collects Client ID, created by google analytics cookie to identify an unique user.","eVar71=""1069276447.1588299718""
+eVar71=""748320611.1587390471""","Created : 19. 11. 15
+Specific RS Only: TEST, TH, EU Subs, MST, MST (dev)",post_evar71
+eVar72,Jet - Campaign ID (v72),No,Jet - Campaign ID (v72) Instances,"Created to collect Jet Campaign ID which is contained a URL parameter, named jetid.
+* Jet: Local CRM operator",-,"Created : 19. 04. 04
+Specific RS Only: MST, MST (dev), TEST, RU, JP",post_evar72
+eVar73,Multistore ID/Name (v73),Yes,Multistore ID/Name (v73) Instances,"Multistore ID/Name (v73) collects the multistore name (e.g., employee) when a user visits a multistore version of the site. This data is captured across both AEM pages and Shop pages within the multistore environment.","eVar73=""corporate""
+eVar73=""employee""
+eVar73=""students""
+eVar73=""networks""",Created : 18. 10. 07,post_evar73
+eVar74,Search Ads 360 (Click ID) (v74),No,Search Ads 360 (Click ID) (v74) Instances,"Collects a Google click ID which is contained a URL parameter, named gclid, to integrate AA on-site data with Google Search Ads.","eVar74=""EAIaIQobChMI76-f_ey33AIVAaaaCh0V2AlUEAAYASAAEgIupvD_BwE""","Specific RS Only: PL, FR, NL, BE, BE_FR, MST, MST(dev), TEST",post_evar74
+eVar75,Target Marketing (v75),No,Target Marketing (e75),Collects device detection target marketing data such as floating banner display and banner click,"eVar75=""galaxys6:barshade:galaxy device:display""
+eVar75=""support home:floatingbanner:apple:display""",-,post_evar75
+eVar76,Star Rating (v76),No,Star Rating (v76) Instances,Collects star rating scores in review (PD19 Component),-,-,post_evar76
+eVar77,SEO Keyword (v77),No,SEO Keyword (v77) Instances,Created to integrate Adobe Analytics with seoClarity by Data Connectors,-,"Specific RS Only: EU (AL, AT, BE, BE_FR, BG, CH, CH_FR, CZ, DE, DK, EE, ES, FI, FR, GR, HR, HU, IE, IT, LT, LV, MK, NL, NO, PL, PT, RO, RS, SE, SI, SK, UK), MST, MST(dev), TEST",post_evar77
+eVar78,SEO Landing Page URL (v78),No,SEO Landing Page URL (v78) Instances,Created to integrate Adobe Analytics with seoClarity by Data Connectors,"eVar78=""https://www.samsung.com/sec/""
+eVar78=""https://www.samsung.com/br/""","Specific RS Only: EU (AL, AT, BE, BE_FR, BG, CH, CH_FR, CZ, DE, DK, EE, ES, FI, FR, GR, HR, HU, IE, IT, LT, LV, MK, NL, NO, PL, PT, RO, RS, SE, SI, SK, UK), MST, MST(dev), TEST",post_evar78
+eVar79,Trade-in Device (v79),No,Trade-in Device (v79) Instances,"The Trade-in Device (v79) collects information in the format <brand>_<device>, representing the brand and model of the trade-in device selected by the user. The data is captured on the GPv2 platform and is specifically triggered when a purchase event occurs.","eVar79=""Apple_iPhone XS - 512 GB""
+eVar79=""Samsung_Galaxy S7 Edge | 32 Go""",Created : 19. 07. 19,post_evar79
+eVar80,App Link Name (v80),Yes,App Link Name (v80) Instances,"App Link Name (v80) includes all native app event type data. The App Link Name is fired when user clicks CTA or makes screen view, widget view etc.","eVar80=""Home""
+eVar80=""click_widget""
+eVar80=""ViewWidget""
+eVar80=""screen_view""",Created : 19. 01. 02,post_evar80
+eVar81,App Install Name (v81),No,Mobile App Interaction (e81),"The App Install Name captures the exact name of the application as it is registered upon installation on a user's device. This value may vary depending on the operating system (e.g., Android vs. iOS) or regional app store configurations. ",-,"Created : 19. 01. 02
+Specific RS Only: TEST, SEC, CN",post_evar81
+eVar82,App ID (v82),No,App ID (v82) Instances,"The App ID (v82) captures a standardized application identifier to ensure consistency in data analysis across different operating systems (e.g., Android, iOS) and app build versions. This normalization allows for more accurate segmentation, filtering, and reporting in Adobe Analytics and other analytics tools by mitigating discrepancies caused by platform-specific or version-specific naming conventions.","eVar82=""Samsung Shop 1.0.71 (2258)""
+eVar82=""Samsung Shop 1.0.73 (2579)""","Specific RS Only: TEST, SEC, CN",post_evar82
+eVar83,A/B Testing (v83),No,A/B Testing (v83) Instances,Collects if a user experience new version or old version during A/B testing,"eVar83=""new version""
+eVar83=""old version""",-,post_evar83
+eVar84,Bandwidth (v84),No,Bandwidth (v84) Instances,"Measure a type of bandwidth, which is defined as a range within a band of frequencies or wavelengths","eVar84=""low bandwidth""
+eVar84=""high bandwidth""",-,post_evar84
+eVar85,Redirection (v85),No,Page Views,"Created to collect value, contained a URL parameter '?page'
+The parameter is only added only if the page is automatically redirected to flagship pdp from Samsung.com Home after unpacked","If URL is 'https://www.samsung.com/<sitecode>/smartphones/galaxy-note20/?page=home', eVar85=""home"".",-,post_evar85
+eVar86,GA UTM Code (v86),No,Page Views,"GA UTM Code (v86) Collects Google Analytics campaign data from URL parameters named UTM. Even if only one UTM parameter is present in the URL, all five UTM parameters are populated in v86, with missing values marked as 'none'.UTM data collected in v86 is shown in the order below
+The data in v86 follows this order:
+utm_source, utm_medium, utm_campaign, utm_term, utm_content","If URL is 'https://www.samsung.com/uk/?utm_campaign=summer-sale&utm_source=summer-mailer&utm_medium=email',
+eVar86=""utm_source=summer-mailer&utm_medium=email&utm_campaign=summer-sale&utm_term=none&utm_content=none""",Created : 20. 08. 25,post_evar86
+eVar87,Vendor ID (v87),No,Vendor ID (v87) Instances,Collects vendor ID for VD Enterprise Business download center,-,"Created : 25. 03. 31
+Specific RS Only: EBDC, Nextgen",post_evar87
+eVar88,Http Protocol Version (v88),No,Http Protocol Version (v88) Instances,"Captures the user's HTTP protocol version (e.g., h2, h3) at the time of purchase. Used to analyze conversion rate changes before and after HTTP/3 adoption. ","evar88=""h2""
+evar88=""h3""
+evar88=""unknown""",Created : 25. 05. 23,post_evar88
+eVar89,Vendor Company Name (v89),No,Vendor Company Name (v89) Instances,Collects vendor company name for VD Enterprise Business download center,-,"Created : 25. 06. 18
+Specific RS Only: EBDC, Nextgen",post_evar89
+eVar90,Time Spent on Content (v90),No,Time Spent on Content (e109),Collects times users spent on consuming contents,-, Created : 21. 01. 13,post_evar90
+eVar91,Contentsquare (v91),No,Contentsquare (v91) Instances,Created to integrate Contentsquare with Adobe Analytics,"evar91=""0.960149581285372_1589193109039"""," Created : 20. 10. 14
+Specific RS Only: FR DE, SE, UK, MST, MST(dev), TEST, ES,  IT,  NL,  BE,  PL, AL, AT, BA, BG, CH, CH_FR, CZ, DK, EE, FI, GR, HR, HU, IE, LT, LV, MK, PT, RO, RS, SI, SK, UA, NO",post_evar91
+eVar92,URL without Parameter (v92),Yes,URL without Parameter (v92) Instances,"URL without Parameter (v92) captures the core URL structure without unnecessary elements such query parameters, hypertext transfer protocols (https, http), trailing slashes, or anchors(/#reviews).","If a user visits https://www.samsung.com/uk/smartphones/all-smartphones/?galaxy-s,
+eVar92= ""www.samsung.com/uk/smartphones/all-smartphones""
+
+If a user visits https://www.samsung.com/uk/tvs/qledtv-q950t/QE85Q950TSTXXU/#reviews,
+eVar92=""www.samsung.com/uk/tvs/qledtv-q950t/QE85Q950TSTXXU""","When filtering or creating segments using URL data, apply the ""contains"" condition to account for variations caused by parameters. For example, instead of filtering ""https://www.samsung.com/de/mobile-content-page/?ref=promo"", you should use ""contains 'mobile-content-page'"" to capture all variations",post_evar92
+eVar93,AF - Media Source (v93),Yes,AF - Media Source (v93) Instances,"AF - Media Source (v93) captures the mobileadnetwork field, which is populated via AppsFlyer postback data using the pid parameter. This parameter identifies the source media platform and the captured value is used to classify traffic sources for attribution and performance analysis.",,,post_evar93
+eVar94,GDPR Consent (v94),Yes,GDPR Consent (v94) Instances,"GDPR Consent (v94) is used to store cookie consent information in accordance with GDPR regulations. These variables capture which categories of cookies the user has consented to. 
+They are only meaningful in countries where TrustArc, Samsung’s cookie consent solution, has been implemented. These include EU countries, , Canada (CA, CA_FR), and Turkey (TR). 
+","All consents given (1 to 4): 'permit 1,2,3,4'
+Consent given up to category 3: 'permit 1,2,3'
+Consent given only for categories 1 and 3: 'permit 1,3'
+Consent given only for categories 1 and 2 (functional cookies): 'permit 1,2 functional'
+All optional consents declined (required only): 'permit 1 required'
+In non-TrustArc markets (default): 'no consent' ","In non-TrustArc markets, 'no consent' is a default and should not be interpreted as actual rejection.
+
+In some cases, ""permit ..."" values may appear for non-TrustArc regions if users previously visited a consent-enabled region and didn't clear cache.
+
+In TrustArc markets, 'no consent' is recorded when there is no cookie value present. This can occur in situations where, even after consent has been initially given, the cookie is deleted—such as when the user manually clears their browser cookies or when an ad blocker deletes them.
+
+*France: A Special Case
+Unlike other EU countries, France allows AA data collection regardless of user consent due to local regulations and its specific TrustArc configuration.
+In France, analytics tools are categorized under category 2 (Performance Cookies) instead of category 3.
+To ensure consistency with other EU countries where only consented data is collected, the ""[FR] RGPD Consent Only"" segment was created.
+This segment filters data to include only sessions where eVar94 or prop64 contains ""2"", indicating user consent for analytics based on the French TrustArc setup.
+
+*India: 
+India collects  ‘permit 1,2,3,4’ value due to legacy issues. Please review or exclude this data to ensure reporting accuracy.
+
+Created : 21. 03. 18",post_evar94
+eVar95,Live Commerce Player Interaction (v95),No,Live Commerce Player Interaction (e95),Collects Live Commerce content value,-,Created : 21. 09. 30,post_evar95
+eVar96,Link Tracking Taxonomy (v96),No,Link Tracking Taxonomy (e96),"Collects click action data with URL, excluding parameter, to view all actions that occurred on a specific page at once
+Triggered in US only","eVar96=""https://www.samsung.com/us>navigation>gnb>mobile:smartphones""
+eVar96=""https://www.samsung.com/us/tvs/uhdtv-ru8000/UE65RU8000UXXU>buy cta>where to buy>buy online:amazon""",-,post_evar96
+evar97,Social Commerce Widget - Bazaarvoice (v97),No,Social Commerce Widget - Bazaarvoice (e97),Collects data from Bazaarvoice,-,"Specific RS Only: UK, AU, BE, BR, DE, ES, FR, IT, NL, SE, US, TEST",post_evar97
+evar98,Support Help Content ID (v98),No,-,Collects content ID from Support Help Content Page,"eVar98=""support:<Page ID>""",Created : 21. 11. 24,post_evar98
+eVar99,Undefined,-,-,-,-,-,-
+eVar100,Undefined,-,-,-,-,-,-
+eVar101,Undefined,-,-,-,-,-,-
+eVar102,Undefined,-,-,-,-,-,-
+eVar103,Undefined,-,-,-,-,-,-
+eVar104,Undefined,-,-,-,-,-,-
+eVar105,Undefined,-,-,-,-,-,-
+eVar106,Undefined,-,-,-,-,-,-
+evar107,Mouse Hover (v107),No,Mouse Hover (v107) Instances,Collect mouse hover data on UK Home L0 menu,-,"Created : 22. 10. 18
+Specific RS Only: UK, MST, MST(dev), TEST",post_evar107
+eVar108,Instore mode Content Click (v108),No,Instore mode Content Click (e108),Count click action data for instore page.,"evar108=""welcome to samsung bkc:view all reservations""","Specific RS Only: IN, MST, MST(dev), TEST",post_evar108
+eVar109,Rewards User (v109),No,Page Views,"Collects whether a Samsung Account login user is under rewards registered member or not
+The variable is triggered AA page view call
+
+If sites didn't launch a rewards program
+- before logging in : evar109=""undefined-logged out""
+- after logging in : evar109=""undefined-logged in""
+
+If sites launched a rewards program
+- before logging in : evar109=""undefined-logged out""
+- after logging in : evar109=""undefined-logged in"" 
+                                 or evar109=""rewards user""","evar109=""undefined-logged out""
+evar109=""undefined-logged in""
+evar109=""rewards user""",Created : 21. 02. 09,post_evar109
+eVar110,K1 ID (v110),No,K1 ID (v110) Instances,"Collects hashed K1 ID
+Tagging value should be collected 'null' if there is no ID collected","evar110=""null""",Created : 20. 11. 04,post_evar110
+eVar111,Community Search (v111),No,Community Search (v111) Instances,Collects search search data in Community site,-,Created : 21. 01. 13,post_evar111
+eVar112,Undefined,-,-,-,-,-,-
+eVar113,Request ID (v113),No,Request ID (v113) Instances,Collects Request ID of recommended products,-,"Created : 21. 07. 13
+Specific RS Only: MST, MST(dev), TEST, UK, DE, AU, FR,IT, ES, PT",post_evar113
+eVar114, Delivery Date (v114),No, Delivery Date (v114) Instances,Triggered when landing on PD page and collects delivery date of user by option,-,Created : 22. 10. 14,post_evar114
+eVar115,Owned Product (v115),No,Owned Product (e115),"Collect the latest product’s model name and model code from Personalized Offering (PO) banner (usp, your message, banner,..etc)",-,Created : 24. 01. 29,post_evar115
+eVar116,Insider Data Category (v116),No,Insider Data Category (v116) Instances,"Collects category data from Insider, the marketing tool which generates popup. ",-,"Created : 21. 07. 01
+Specific RS Only: MST, MST(dev), TEST, MENA (EG,  IRAN, IL, LB, LEVANT, LEVANT_AR, N_AFRICA,  PK, PS, SA, SA_EN, TR, AE, AE_AR,, PE, MX, AR, CL, CO,  BR)",post_evar116
+eVar117,Insider Data Action (v117),No,Insider Data Action (v117) Instances,"Collects action data from Insider, the marketing tool which generates popup. ",-,"Created : 21. 07. 01
+Specific RS Only: MST, MST(dev), TEST, MENA (EG,  IRAN, IL, LB, LEVANT, LEVANT_AR, N_AFRICA,  PK, PS, SA, SA_EN, TR, AE, AE_AR,, PE, MX, AR, CL, CO,  BR)",post_evar117
+eVar118,Insider Data Label (v118),No,Insider Data Label (v118) Instances,"Collects scenario ID data from Insider, the marketing tool which generates popup. ",-,"Created : 21. 07. 01
+Specific RS Only: MST, MST(dev), TEST, MENA (EG,  IRAN, IL, LB, LEVANT, LEVANT_AR, N_AFRICA,  PK, PS, SA, SA_EN, TR, AE, AE_AR,, PE, MX, AR, CL, CO,  BR)",post_evar118
+eVar119,Insider Data Value (v119),No,Insider Data Value (v119) Instances,"Collects value such as product price or discounted price from Insider, the marketing tool which generates popup. ",-,"Created : 21. 07. 01
+Specific RS Only: MST, MST(dev), TEST, MENA (EG,  IRAN, IL, LB, LEVANT, LEVANT_AR, N_AFRICA,  PK, PS, SA, SA_EN, TR, AE, AE_AR,, PE, MX, AR, CL, CO,  BR)",post_evar119
+eVar120,eCommerce - Coupon/Promotion Code (v120),No,eCommerce - Coupon/Promotion Code (v120) Instances,"Collects product's coupon/promotion data
+Tagging value should be collected the first three digits","evar120=""S36""","Created : 21. 09. 02
+Specific RS Only: MST, MST(dev), RU,  TEST
+",post_evar120
+eVar121,eCommerce - Customer ID (v121),No,eCommerce - Customer ID (v121) Instances,Collects product's customer ID data,"evar121=""3d6210d2-4773-46ab-8df2-1e35e8edb8eb""","Created : 21. 09. 02
+Specific RS Only: MST, MST(dev), RU, TEST
+",post_evar121
+eVar122,eCommerce - Shipping City (v122),No,eCommerce - Shipping City (v122) Instances,Collects product's Shipping City data,"evar122=""дп Лесной Городок г Одинцово""","Created : 21. 09. 02
+Specific RS Only: MST, MST(dev), RU,  TEST
+",post_evar122
+eVar123,eCommerce - eCommerce - Registed Visitor (v123),No,eCommerce - eCommerce - Registed Visitor (v123) Instances,Collects if visitor is registered or not(REGISTERED/GUEST),"evar123=""registered""","Created : 21. 09. 02
+Specific RS Only: MST, MST(dev), RU,  TEST
+",post_evar123
+eVar124,eCommerce - Delivery Option (v124),No,eCommerce - Delivery Option (v124) Instances,"Collect delivery option information ""YES"" or ""NO""","evar124=""yes""","Created : 21. 09. 02
+Specific RS Only: MST, MST(dev), RU,  TEST
+",post_evar124
+eVar125,Undefined,-,-,-,-,-,-
+eVar126,Undefined,-,-,-,-,-,-
+eVar127, Product Recommendation (v127),No,Product Recommendation (e127),Collects information of product recommendation,"evar127=""pzn:uk:homepage:For You tab added""","Created : 23. 05. 19
+Specific RS Only: UK, MST, MST(dev), TEST",post_evar127
+eVar128,Undefined,-,-,-,-,-,-
+eVar129,Undefined,-,-,-,-,-,-
+eVar130,Encrypted Email (v130),No,Encrypted Email (e130),Collects user's email which is encrypted.,-,"Created : 24. 03. 27
+Specific RS Only: MST, MST(dev), TEST, CO, CL, MX,, AR, BR, PE",post_evar130
+eVar131,Video Mode (v131),No,Video Mode (v131) Instances,Collects Video Type,-,Created : 24. 04. 26,post_evar131
+eVar132,Video ID (v132),No,Video ID (v132) Instances,Collects Encoded ID,-,Created : 24. 04. 26,post_evar132
+eVar133,Video Feed ID (v133),No,Video Feed ID (v133) Instances,Collects widget ID,-,Created : 24. 04. 26,post_evar133
+eVar134,Playlist ID (v134),No,Playlist ID (v134) Instances,Collects Playlist ID,-,Created : 24. 04. 26,post_evar134
+eVar135,Hashtag (v135),No,Hashtag (v135) Instances,Collects Hashtag keywords,-,Created : 24. 04. 26,post_evar135
+eVar136,Personalized Offering (v136),No,Personalized Offering (e136),"Collects Upsell/cross-sell, model category, product name, cs repair history, rewards, SKU information about registered product for Personalized Offering banner (data sent from BDC API)",-,Created : 24. 05. 23,post_evar136
+eVar137,Owned Product List (v137),No,Owned Product List (e137),Collects Owned product list (model name and model code) from Registered product card (My page),-,Created : 24. 05. 27,post_evar137
+eVar138,Cart Condition (v138),No,Cart Condition (v138) Instances,"Collects cart condition data to distinguish whether cart is empty or filled.
+ (data sent from BDC API)",-,Created : 24. 09. 02,post_evar138
+eVar139,Product Cart Addition (v139),No,Product Cart Addition (e139),Collects Model Code during the product cart addition and abandonment,"evar139=""SM-S918BZKHEUB""","Created : 23. 06. 19
+Specific RS Only: FR, MST, MST(dev), TEST",post_evar139
+eVar140,disabled,-,-,-,-,-,-
+eVar141,My SmartThings Impression (v141),No,My SmartThings Impression (e141),"Collects first shown message from MYD12 your message or contents title from smartthings banner. 
+# PII data including user’s name should not be collected.",-,Created : 24. 10. 30,post_evar141
+eVar142,Personalized cookie value (v142),No,Personalized cookie value (e142),Collect the home_pnz value in a cookie when a page view call occurs on the home or offer page.,-,Created : 24. 11. 05,post_evar142
+….,disabled,-,-,-,-,-,-
+eVar173,Offline  Store ID/Name (v173),No,Offline  Store ID/Name (v173) Instances,Collects offline store  id or name.,-,Created : 24. 09. 03,post_evar173
+….,disabled,-,-,-,-,-,-
+eVar180,Category from BDC (v180),No,Category from BDC (v180) Instances,Collect 'categorySubTypeEngName' information in BDC API.,-,Created : 24. 12. 26,post_evar180
+eVar181,Page type from BDC (v181),No,Page type  from BDC (e181),Collect 'pageType' information in BDC API.,"evar181=""my_smartthings_na""",Created : 25. 04. 25	,post_evar181
+eVar182,AC - Image URL (v182),No,AC - Image URL (v182) Instances,"Collects  the image URL of the product added to cart. Also standardized to the SKU-level image URL as displayed in the cart
+This variable is defined specifically for the Cart Abandonment CRM Campaign under CRM 2.0 project.","evar182=""https://images.samsung.com/is/image/samsung/p6pim/…-s937bzsgeub-546085996?$ORIGIN_PNG$?$450_450_PNG$""",Created : 25. 05. 26,post_evar182
+eVar183,AC - Model Name(SKU) (v183),No,AC - Model Name(SKU) (v183) Instances,"Collects the specific SKU (model name) of the product added to cart.
+This variable is defined specifically for the Cart Abandonment CRM Campaign under CRM 2.0 project. ","evar183=""SM-S937""",Created : 25. 05. 26,post_evar183
+eVar184,AC - Model Code (v184),No,AC - Model Code (v184) Instances,"Collects the internal model code of the product added to the cart. 
+This variable is defined specifically for the Cart Abandonment CRM Campaign under CRM 2.0 project.","evar184=""SM-S937BZSGEUB""",Created : 25. 05. 26,post_evar184
+eVar185,AC - Display Name (v185),No,AC - Display Name (v185) Instances,"Collects the fmyMarketingName shown in the CRM message. 
+This variable is defined specifically for the Cart Abandonment CRM Campaign under CRM 2.0 project.","evar185=""Galaxy S25 Edge""",Created : 25. 05. 26,post_evar185
+eVar186,AC - URL (v186),No,"AC - URL (v186) 
+Instances","Collects the full URL of the page where the Cart Abandonment trigger occurred.
+This variable is defined specifically for the Cart Abandonment CRM Campaign under CRM 2.0 project.","evar186=""https://www.samsung.com/uk/smartphones/galaxy-s25-edge/buy/""",Created : 25. 05. 26,post_evar186
+….,disabled,-,-,-,-,-,-
+eVar250,Event Type (v250),No,Event Type (v250) Instances,-,-,Created : 23. 11. 30,post_evar250

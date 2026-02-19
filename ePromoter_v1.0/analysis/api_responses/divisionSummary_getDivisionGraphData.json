@@ -1,0 +1,27 @@
+{
+  "ok": true,
+  "data": {
+    "divisionSummaryActual": [
+      {
+        "vd_prom_revenue": 89376.54162399872,
+        "prom_chat_handled_mx": 1893.0,
+        "cross_prom_chat_handled": 103.0,
+        "bespoke": 127263.32630780835,
+        "prom_chat_handled_vd": 544.0,
+        "im_prom_revenue": 186195.92520110784,
+        "qled": 0.0,
+        "prom_chat_handled_macro": 3497.0,
+        "estore_revenue": 8646912.46603064,
+        "prom_unit_sold": 946.0,
+        "prom_revenue": 404091.502783497,
+        "convert_date": "02/08",
+        "prom_chat_handled": 5224.0,
+        "da_prom_revenue": 127263.32630780835,
+        "prom_chat_handled_applicable": 474.0,
+        "galaxy": 129515.99812465727,
+        "flagship_rev": 129515.99812465727,
+        "prom_chat_handled_da": 483.0
+      }
+    ]
+  }
+}

@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ES Contents Monitoring – Study</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    /* ─── Design Tokens ─── */
+    :root {
+      --gray-50:#FAFAFA;--gray-100:#F5F5F5;--gray-200:#EEEEEE;--gray-300:#E0E0E0;
+      --gray-400:#BDBDBD;--gray-500:#9E9E9E;--gray-600:#757575;--gray-700:#616161;
+      --gray-800:#424242;--gray-900:#212121;
+      --red-50:#fa312e;--red-100:#e00906;--red-200:#c70805;--red-muted:rgba(250,49,46,0.10);
+      --green:#16a34a;--green-muted:rgba(22,163,74,0.10);
+      --blue:#2563eb;--blue-muted:rgba(37,99,235,0.10);
+      --orange:#ea580c;--orange-muted:rgba(234,88,12,0.10);
+      --bg:var(--gray-50);--card:#FFFFFF;--border:var(--gray-300);
+      --text:var(--gray-900);--text-secondary:var(--gray-600);
+      --lg-red:var(--red-50);--lg-red-hover:var(--red-100);
+      --radius:8px;--radius-sm:6px;
+      --shadow-sm:0 1px 2px rgba(0,0,0,0.05);
+      --shadow:0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+      --shadow-lg:0 4px 12px rgba(0,0,0,0.12);
+      --transition:150ms ease;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;}
+    .container{max-width:1440px;margin:0 auto;padding:0 1.5rem;}
+
+    /* ─── Header (Dark) ─── */
+    .page-header{position:sticky;top:0;z-index:100;background:#181c22;border-bottom:1px solid rgba(255,255,255,0.08);}
+    .header-inner{padding:0.5rem 0 0.5rem;}
+    .header-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.75rem;}
+    .page-title{font-size:1.2rem;font-weight:700;color:#f0f2f5;display:flex;align-items:center;gap:0.5rem;}
+    .page-title svg{height:24px;width:auto;flex-shrink:0;}
+    .header-actions{display:flex;align-items:center;gap:0.5rem;}
+    .header-row-2{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap;padding:0.25rem 0 0;margin-top:0.15rem;border-top:1px solid rgba(255,255,255,0.06);}
+    .header-row-3{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;flex-wrap:wrap;padding:0.15rem 0 0;margin-top:0.05rem;}
+
+    /* Tabs */
+    .nav-tabs{display:inline-flex;gap:0.15rem;}
+    .nav-tabs a{padding:0.4rem 0.8rem 0.5rem;text-decoration:none;color:#9ca3af;font-weight:600;font-size:0.8125rem;position:relative;cursor:pointer;transition:color var(--transition);}
+    .nav-tabs a:hover{color:#e0e0e0;}
+    .nav-tabs a.active{color:#f0f2f5;}
+    .nav-tabs a.active::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2px;background:#C41E3A;border-radius:1px;}
+
+    /* Filters */
+    .header-filters{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;}
+    .filter-group{display:flex;align-items:center;gap:0.4rem;}
+    .filter-group span{font-size:0.8125rem;font-weight:600;color:#9ca3af;white-space:nowrap;}
+    .filter-group select{background:#1e2329;border:1px solid rgba(255,255,255,0.12);color:#ccc;padding:0.4rem 0.6rem;border-radius:var(--radius-sm);font-size:0.8125rem;min-width:90px;cursor:pointer;transition:border-color var(--transition);}
+    .filter-group select:hover{border-color:rgba(255,255,255,0.25);}
+    .filter-group select:focus{outline:none;border-color:#C41E3A;}
+
+    /* Multiselect */
+    .ms-wrap{position:relative;}
+    .ms-btn{background:#1e2329;border:1px solid rgba(255,255,255,0.12);color:#9ca3af;padding:0.4rem 0.7rem;border-radius:var(--radius-sm);font-size:0.8125rem;font-weight:600;cursor:pointer;min-width:80px;transition:all var(--transition);}
+    .ms-btn:hover{background:#252a31;color:#e0e0e0;}
+    .ms-panel{display:none;position:absolute;top:100%;left:0;margin-top:4px;background:#1e2329;border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-sm);padding:0.5rem;max-height:240px;overflow-y:auto;z-index:120;box-shadow:0 8px 24px rgba(0,0,0,0.4);min-width:160px;}
+    .ms-wrap.open .ms-panel{display:block;}
+    .ms-panel-actions{display:flex;gap:0.25rem;margin-bottom:0.4rem;padding-bottom:0.4rem;border-bottom:1px solid rgba(255,255,255,0.1);}
+    .ms-panel-actions button{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:4px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.06);color:#9ca3af;cursor:pointer;font-size:0.7rem;}
+    .ms-panel-actions button:hover{background:rgba(255,255,255,0.12);color:#f0f2f5;}
+    .ms-panel label{display:flex;align-items:center;gap:0.4rem;padding:0.3rem 0.5rem;cursor:pointer;font-size:0.8125rem;color:#ccc;border-radius:4px;transition:background var(--transition);}
+    .ms-panel label:hover{background:rgba(255,255,255,0.06);}
+    .ms-panel input[type="checkbox"]{accent-color:#C41E3A;}
+
+    /* ─── Main Content ─── */
+    .main-content{padding:1.25rem 0 2rem;}
+    .content-section{display:none;}
+    .content-section.active{display:block;}
+
+    /* Cards */
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;margin-bottom:1.25rem;box-shadow:var(--shadow-sm);transition:box-shadow var(--transition);}
+    .card:hover{box-shadow:var(--shadow);}
+    .card-title{margin:0 0 0.75rem;font-size:1rem;font-weight:600;color:var(--text);}
+    .card-subtitle{margin:0 0 0.5rem;font-size:0.875rem;font-weight:600;color:var(--text-secondary);}
+
+    /* Score Cards */
+    .score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.75rem;margin-bottom:1.25rem;}
+    .score-card{display:flex;flex-direction:column;gap:0.25rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem 1rem;transition:transform var(--transition),box-shadow var(--transition);}
+    .score-card:hover{transform:translateY(-1px);box-shadow:var(--shadow);}
+    .score-card .label{font-size:0.75rem;color:var(--text-secondary);font-weight:600;line-height:1.3;}
+    .score-card .value{font-size:1.05rem;font-weight:700;}
+    .score-card--primary{border-color:var(--lg-red);background:var(--red-muted);}
+    .score-card--primary .value{font-size:1.3rem;color:var(--lg-red);}
+    .score-card--green{border-color:var(--green);background:var(--green-muted);}
+    .score-card--green .value{color:var(--green);}
+    .score-card--blue{border-color:var(--blue);background:var(--blue-muted);}
+    .score-card--blue .value{color:var(--blue);}
+
+    /* Charts */
+    .charts-row{display:flex;gap:1rem;flex-wrap:wrap;}
+    .chart-half{flex:1;min-width:320px;}
+    .chart-wrap{height:300px;position:relative;}
+
+    /* Tables */
+    .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--card);}
+    table.data-table{width:100%;border-collapse:collapse;font-size:0.8125rem;}
+    table.data-table th,table.data-table td{border:1px solid var(--border);padding:0.5rem 0.6rem;}
+    table.data-table th{background:var(--gray-100);color:var(--text);font-weight:600;white-space:nowrap;position:sticky;top:0;z-index:2;}
+    table.data-table tbody tr:nth-child(even) td{background:var(--gray-50);}
+    table.data-table tbody tr:hover td{background:#e8eaed;}
+    table.data-table tbody tr{transition:background var(--transition);}
+    .th-dark{background:var(--gray-200)!important;}
+    .th-blue{background:var(--red-muted)!important;}
+    .num{text-align:right;font-variant-numeric:tabular-nums;}
+    th.sortable{cursor:pointer;user-select:none;padding-right:1.25rem;position:relative;}
+    th.sortable:hover{background:var(--gray-200)!important;}
+    th .sort-arrow{position:absolute;right:0.35rem;top:50%;transform:translateY(-50%);font-size:0.6rem;opacity:0.5;}
+    th.sort-asc .sort-arrow::after{content:'▲';}
+    th.sort-desc .sort-arrow::after{content:'▼';}
+
+    /* Report card header */
+    .report-header{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:0.75rem;}
+    .report-header-right{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;}
+    .report-filter{display:flex;align-items:center;gap:0.35rem;}
+    .report-filter label{font-size:0.8125rem;font-weight:600;color:var(--text-secondary);white-space:nowrap;}
+    .report-filter select{background:var(--card);border:1px solid var(--border);color:var(--text);padding:0.4rem 0.6rem;border-radius:var(--radius-sm);font-size:0.8125rem;min-width:100px;}
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:0.35rem;padding:0.45rem 0.85rem;border-radius:var(--radius-sm);font-size:0.8125rem;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text);transition:all var(--transition);}
+    .btn:hover{background:var(--gray-100);box-shadow:var(--shadow-sm);}
+    .btn svg{width:14px;height:14px;}
+    .btn-primary{background:var(--lg-red);color:#fff;border-color:var(--lg-red);}
+    .btn-primary:hover{background:var(--lg-red-hover);border-color:var(--lg-red-hover);}
+
+    /* Detail content */
+    .detail-content{padding:0.5rem 0;}
+    .detail-content h3{font-size:1.1rem;font-weight:700;margin-bottom:0.25rem;}
+    .detail-subtitle{color:var(--text-secondary);font-size:0.875rem;margin-bottom:1rem;}
+    .detail-section{margin-bottom:2rem;}
+    .detail-section h4{font-size:0.9375rem;font-weight:600;margin-bottom:0.75rem;color:var(--text);border-left:3px solid var(--lg-red);padding-left:0.75rem;}
+    .detail-table{width:100%;border-collapse:collapse;font-size:0.8125rem;}
+    .detail-table th,.detail-table td{border:1px solid var(--border);padding:0.5rem 0.65rem;text-align:left;}
+    .detail-table th{background:var(--gray-100);font-weight:600;width:180px;white-space:nowrap;}
+    .detail-table td{color:var(--text-secondary);}
+    .detail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;}
+
+    /* Checklist */
+    .checklist-table{width:100%;border-collapse:collapse;font-size:0.8125rem;}
+    .checklist-table th,.checklist-table td{border:1px solid var(--border);padding:0.6rem 0.75rem;text-align:left;vertical-align:top;}
+    .checklist-table th{background:var(--gray-100);font-weight:600;}
+    .checklist-table tr:nth-child(even) td{background:var(--gray-50);}
+    .checklist-item-no{width:3rem;text-align:center;font-weight:600;color:var(--text-secondary);}
+    .checklist-max{width:5rem;text-align:center;font-weight:600;color:var(--lg-red);}
+
+    /* Empty state */
+    .empty-state{padding:2rem;text-align:center;color:var(--text-secondary);font-size:0.875rem;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .container{padding:0 1rem;}
+      .charts-row{flex-direction:column;}
+      .chart-half{min-width:100%;}
+      .score-grid{grid-template-columns:repeat(2,1fr);}
+      .header-row,.header-row-2,.header-row-3{gap:0.5rem;}
+      .detail-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <!-- ─── HEADER ─── -->
+  <header class="page-header">
+    <div class="container header-inner">
+      <div class="header-row">
+        <h1 class="page-title">
+          <svg viewBox="0 0 72 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="24" fill="#fff" font-family="Inter,sans-serif" font-weight="700" font-size="22">LG</text>
+            <rect x="36" y="6" width="1" height="20" fill="rgba(255,255,255,0.3)"/>
+            <text x="44" y="22" fill="#9ca3af" font-family="Inter,sans-serif" font-weight="400" font-size="11">ES</text>
+          </svg>
+          ES Contents Monitoring
+        </h1>
+        <div class="header-actions">
+          <button class="btn" id="btnDownloadCSV" title="Download CSV">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            CSV
+          </button>
+        </div>
+      </div>
+      <!-- Row 2: Main nav + Year/Month -->
+      <div class="header-row-2">
+        <nav class="nav-tabs" id="mainNav">
+          <a href="#" class="active" data-section="dashboard">Dashboard</a>
+          <a href="#" data-section="summary">Summary Table</a>
+          <a href="#" data-section="detail">Monitoring Detail</a>
+          <a href="#" data-section="checklist">Checklist &amp; Criteria</a>
+        </nav>
+        <div class="header-filters">
+          <div class="filter-group"><span>Year</span><select id="selYear"></select></div>
+          <div class="filter-group"><span>Month</span><select id="selMonth"></select></div>
+        </div>
+      </div>
+      <!-- Row 3: B2B/B2C + Region/Country -->
+      <div class="header-row-3">
+        <nav class="nav-tabs" id="subNav">
+          <a href="#" class="active" data-type="b2b">B2B</a>
+          <a href="#" data-type="b2c">B2C</a>
+        </nav>
+        <div class="header-filters">
+          <div class="filter-group ms-wrap" id="regionWrap">
+            <span>Region</span>
+            <div>
+              <button type="button" class="ms-btn" id="regionBtn">All</button>
+              <div class="ms-panel" id="regionPanel"></div>
+            </div>
+          </div>
+          <div class="filter-group ms-wrap" id="countryWrap">
+            <span>Country</span>
+            <div>
+              <button type="button" class="ms-btn" id="countryBtn">All</button>
+              <div class="ms-panel" id="countryPanel"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── MAIN CONTENT ─── -->
+  <div class="container main-content">
+
+    <!-- ===== DASHBOARD ===== -->
+    <div id="sectionDashboard" class="content-section active">
+      <!-- Score Summary Cards -->
+      <div class="card">
+        <h2 class="card-title" id="dashTitle">Average Total Score by Region (B2B)</h2>
+        <div class="score-grid" id="scoreCards"></div>
+        <div class="charts-row">
+          <div class="chart-half">
+            <h3 class="card-subtitle">Average SEO &amp; Content Items by Region</h3>
+            <div class="chart-wrap"><canvas id="chartBar"></canvas></div>
+          </div>
+          <div class="chart-half">
+            <h3 class="card-subtitle" id="trendTitle">Total Score Trend (Last 3 Months)</h3>
+            <div class="chart-wrap"><canvas id="chartTrend"></canvas></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== SUMMARY TABLE ===== -->
+    <div id="sectionSummary" class="content-section">
+      <div class="card">
+        <div class="report-header">
+          <h2 class="card-title" id="summaryTableTitle">B2B Monitoring Report by Country</h2>
+          <div class="report-header-right">
+            <div class="report-filter">
+              <label for="scoreFilter">Total Score</label>
+              <select id="scoreFilter">
+                <option value="">All</option>
+                <option value="top30">Top 30%</option>
+                <option value="bottom30">Bottom 30%</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="table-wrap" style="max-height:calc(100vh - 280px);overflow:auto;">
+          <table class="data-table" id="summaryTable">
+            <thead id="summaryThead"></thead>
+            <tbody id="summaryTbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== MONITORING DETAIL ===== -->
+    <div id="sectionDetail" class="content-section">
+      <div class="card">
+        <div class="detail-content">
+          <h3>Monitoring Detail</h3>
+          <p class="detail-subtitle">SEO &amp; Content quality monitoring criteria and examples</p>
+
+          <div class="detail-section">
+            <h4>B2B SEO Monitoring Items</h4>
+            <div class="detail-grid">
+              <table class="detail-table">
+                <tr><th>1. Title Tag</th><td>Each product page should have a unique, descriptive title tag (max 60 chars) with brand + product name + key feature.</td></tr>
+                <tr><th>2. Description Tag</th><td>Meta description (max 160 chars) summarizing product benefits and specs for search snippets.</td></tr>
+                <tr><th>3. H1 Tag</th><td>Single H1 tag matching the product name for proper page hierarchy.</td></tr>
+              </table>
+              <table class="detail-table">
+                <tr><th>4. Canonical Link</th><td>Canonical URL tag to avoid duplicate content across regional pages.</td></tr>
+                <tr><th>5. Feature Alt Text</th><td>All feature card images should include descriptive alt text for accessibility and SEO.</td></tr>
+              </table>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h4>B2C Additional Monitoring Items</h4>
+            <div class="detail-grid">
+              <table class="detail-table">
+                <tr><th>UFN (URL Friendly Name)</th><td>Clean URL structure with product category and model name.</td></tr>
+                <tr><th>Basic Assets</th><td>Required product images (front, side, lifestyle shots) are present.</td></tr>
+                <tr><th>Spec Summary</th><td>Key specifications displayed prominently on the page.</td></tr>
+              </table>
+              <table class="detail-table">
+                <tr><th>FAQ</th><td>Frequently asked questions section with structured data markup.</td></tr>
+                <tr><th>Alt Feature / Alt Front</th><td>Feature and front-facing images have proper alt text.</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== CHECKLIST & CRITERIA ===== -->
+    <div id="sectionChecklist" class="content-section">
+      <div class="card">
+        <h2 class="card-title">B2B Scoring Criteria (Total: 85 points)</h2>
+        <div class="table-wrap" style="margin-bottom:1.25rem;">
+          <table class="checklist-table">
+            <thead>
+              <tr><th class="checklist-item-no">No</th><th>Item</th><th>Description</th><th class="checklist-max">Max Score</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="checklist-item-no">1</td><td><strong>Title Tag</strong></td><td>Product page title tag exists, unique per page, within 60 characters, includes brand name + product name.</td><td class="checklist-max">20</td></tr>
+              <tr><td class="checklist-item-no">2</td><td><strong>Description Tag</strong></td><td>Meta description exists, within 160 characters, unique summary of product benefits.</td><td class="checklist-max">20</td></tr>
+              <tr><td class="checklist-item-no">3</td><td><strong>H1 Tag</strong></td><td>Single H1 tag present, matches product title, not duplicated with other headings.</td><td class="checklist-max">15</td></tr>
+              <tr><td class="checklist-item-no">4</td><td><strong>Canonical Link</strong></td><td>Canonical URL properly set to prevent duplicate content issues across locales.</td><td class="checklist-max">15</td></tr>
+              <tr><td class="checklist-item-no">5</td><td><strong>Feature Alt Text</strong></td><td>Feature card images include descriptive alt text for accessibility and SEO.</td><td class="checklist-max">15</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h2 class="card-title">B2C Scoring Criteria (Total: 100 points)</h2>
+        <div class="table-wrap">
+          <table class="checklist-table">
+            <thead>
+              <tr><th class="checklist-item-no">No</th><th>Item</th><th>Description</th><th class="checklist-max">Max Score</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="checklist-item-no">1</td><td><strong>UFN</strong></td><td>URL-friendly name is clean, descriptive, and follows product hierarchy.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">2</td><td><strong>Basic Assets</strong></td><td>Essential product images are available (front, side, lifestyle).</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">3</td><td><strong>Spec Summary</strong></td><td>Key specifications are displayed prominently on the product page.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">4</td><td><strong>FAQ</strong></td><td>FAQ section present with schema.org FAQ structured data.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">5</td><td><strong>Title Tag</strong></td><td>Title tag exists, unique, optimized with brand + product name.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">6</td><td><strong>Description Tag</strong></td><td>Meta description summarizes product benefits, within 160 chars.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">7</td><td><strong>H1 Tag</strong></td><td>Single H1 tag matching product name, proper heading hierarchy.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">8</td><td><strong>Canonical Link</strong></td><td>Canonical URL properly set, self-referencing on localized pages.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">9</td><td><strong>Alt Feature</strong></td><td>Feature card images have descriptive alt text.</td><td class="checklist-max">10</td></tr>
+              <tr><td class="checklist-item-no">10</td><td><strong>Alt Front</strong></td><td>Front-facing product images have descriptive alt text.</td><td class="checklist-max">10</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── JAVASCRIPT ─── -->
+  <script>
+  /* ══════════════════════════════════════════════
+     SAMPLE DATA
+     ══════════════════════════════════════════════ */
+  const SAMPLE = {
+    b2b: {
+      columns: ['region','country','sku_count','title_tag','description_tag','h1_tag','canonical_link','feature_alt','total_score_pct'],
+      columnLabels: ['Region','Country','SKU','1. Title\n(20)','2. Description\n(20)','3. H1\n(15)','4. Canonical\n(15)','5. Feature Alt\n(15)','Total Score %'],
+      scoreColumns: ['title_tag','description_tag','h1_tag','canonical_link','feature_alt'],
+      scoreLabels: ['Title','Description','H1','Canonical','Feature Alt'],
+      maxScores: [20,20,15,15,15],
+      totalMax: 85,
+      data: [
+        {region:'NA',country:'US',sku_count:245,title_tag:18.5,description_tag:17.2,h1_tag:14.1,canonical_link:14.8,feature_alt:12.3,year:2025,month:1},
+        {region:'NA',country:'CA',sku_count:198,title_tag:17.8,description_tag:16.5,h1_tag:13.5,canonical_link:14.2,feature_alt:11.8,year:2025,month:1},
+        {region:'NA',country:'MX',sku_count:156,title_tag:16.2,description_tag:15.1,h1_tag:12.8,canonical_link:13.5,feature_alt:10.5,year:2025,month:1},
+        {region:'EU',country:'DE',sku_count:210,title_tag:19.1,description_tag:18.0,h1_tag:14.5,canonical_link:14.9,feature_alt:13.1,year:2025,month:1},
+        {region:'EU',country:'UK',sku_count:188,title_tag:18.8,description_tag:17.5,h1_tag:14.2,canonical_link:14.6,feature_alt:12.8,year:2025,month:1},
+        {region:'EU',country:'FR',sku_count:175,title_tag:17.5,description_tag:16.8,h1_tag:13.8,canonical_link:14.1,feature_alt:12.0,year:2025,month:1},
+        {region:'EU',country:'IT',sku_count:162,title_tag:17.0,description_tag:16.2,h1_tag:13.2,canonical_link:13.8,feature_alt:11.5,year:2025,month:1},
+        {region:'ASIA',country:'KR',sku_count:320,title_tag:19.5,description_tag:18.8,h1_tag:14.8,canonical_link:15.0,feature_alt:14.2,year:2025,month:1},
+        {region:'ASIA',country:'JP',sku_count:280,title_tag:18.2,description_tag:17.8,h1_tag:14.0,canonical_link:14.5,feature_alt:13.0,year:2025,month:1},
+        {region:'ASIA',country:'IN',sku_count:195,title_tag:15.8,description_tag:14.5,h1_tag:12.0,canonical_link:13.0,feature_alt:10.0,year:2025,month:1},
+        {region:'LATAM',country:'BR',sku_count:145,title_tag:16.5,description_tag:15.8,h1_tag:12.5,canonical_link:13.2,feature_alt:10.8,year:2025,month:1},
+        {region:'LATAM',country:'AR',sku_count:98,title_tag:15.0,description_tag:14.2,h1_tag:11.8,canonical_link:12.5,feature_alt:9.5,year:2025,month:1},
+        {region:'MEA',country:'AE',sku_count:125,title_tag:17.2,description_tag:16.0,h1_tag:13.0,canonical_link:13.8,feature_alt:11.2,year:2025,month:1},
+        {region:'MEA',country:'SA',sku_count:110,title_tag:16.0,description_tag:15.5,h1_tag:12.2,canonical_link:13.0,feature_alt:10.5,year:2025,month:1},
+        // Month 2
+        {region:'NA',country:'US',sku_count:252,title_tag:18.8,description_tag:17.5,h1_tag:14.3,canonical_link:14.9,feature_alt:12.8,year:2025,month:2},
+        {region:'NA',country:'CA',sku_count:205,title_tag:18.0,description_tag:16.8,h1_tag:13.8,canonical_link:14.4,feature_alt:12.2,year:2025,month:2},
+        {region:'NA',country:'MX',sku_count:160,title_tag:16.8,description_tag:15.5,h1_tag:13.0,canonical_link:13.8,feature_alt:11.0,year:2025,month:2},
+        {region:'EU',country:'DE',sku_count:218,title_tag:19.3,description_tag:18.2,h1_tag:14.6,canonical_link:15.0,feature_alt:13.5,year:2025,month:2},
+        {region:'EU',country:'UK',sku_count:195,title_tag:19.0,description_tag:17.8,h1_tag:14.4,canonical_link:14.8,feature_alt:13.0,year:2025,month:2},
+        {region:'EU',country:'FR',sku_count:180,title_tag:17.8,description_tag:17.0,h1_tag:14.0,canonical_link:14.3,feature_alt:12.5,year:2025,month:2},
+        {region:'EU',country:'IT',sku_count:168,title_tag:17.5,description_tag:16.5,h1_tag:13.5,canonical_link:14.0,feature_alt:12.0,year:2025,month:2},
+        {region:'ASIA',country:'KR',sku_count:330,title_tag:19.8,description_tag:19.0,h1_tag:15.0,canonical_link:15.0,feature_alt:14.5,year:2025,month:2},
+        {region:'ASIA',country:'JP',sku_count:290,title_tag:18.5,description_tag:18.0,h1_tag:14.2,canonical_link:14.8,feature_alt:13.5,year:2025,month:2},
+        {region:'ASIA',country:'IN',sku_count:200,title_tag:16.2,description_tag:15.0,h1_tag:12.5,canonical_link:13.5,feature_alt:10.5,year:2025,month:2},
+        {region:'LATAM',country:'BR',sku_count:150,title_tag:17.0,description_tag:16.2,h1_tag:13.0,canonical_link:13.5,feature_alt:11.2,year:2025,month:2},
+        {region:'LATAM',country:'AR',sku_count:102,title_tag:15.5,description_tag:14.8,h1_tag:12.0,canonical_link:12.8,feature_alt:10.0,year:2025,month:2},
+        {region:'MEA',country:'AE',sku_count:130,title_tag:17.5,description_tag:16.5,h1_tag:13.5,canonical_link:14.0,feature_alt:11.8,year:2025,month:2},
+        {region:'MEA',country:'SA',sku_count:115,title_tag:16.5,description_tag:15.8,h1_tag:12.5,canonical_link:13.2,feature_alt:11.0,year:2025,month:2},
+        // Month 3
+        {region:'NA',country:'US',sku_count:260,title_tag:19.0,description_tag:17.8,h1_tag:14.5,canonical_link:15.0,feature_alt:13.2,year:2025,month:3},
+        {region:'NA',country:'CA',sku_count:210,title_tag:18.2,description_tag:17.0,h1_tag:14.0,canonical_link:14.5,feature_alt:12.5,year:2025,month:3},
+        {region:'NA',country:'MX',sku_count:165,title_tag:17.0,description_tag:15.8,h1_tag:13.2,canonical_link:14.0,feature_alt:11.5,year:2025,month:3},
+        {region:'EU',country:'DE',sku_count:225,title_tag:19.5,description_tag:18.5,h1_tag:14.8,canonical_link:15.0,feature_alt:14.0,year:2025,month:3},
+        {region:'EU',country:'UK',sku_count:200,title_tag:19.2,description_tag:18.0,h1_tag:14.5,canonical_link:14.9,feature_alt:13.2,year:2025,month:3},
+        {region:'EU',country:'FR',sku_count:185,title_tag:18.0,description_tag:17.2,h1_tag:14.2,canonical_link:14.5,feature_alt:12.8,year:2025,month:3},
+        {region:'EU',country:'IT',sku_count:170,title_tag:17.8,description_tag:16.8,h1_tag:13.8,canonical_link:14.2,feature_alt:12.2,year:2025,month:3},
+        {region:'ASIA',country:'KR',sku_count:340,title_tag:20.0,description_tag:19.2,h1_tag:15.0,canonical_link:15.0,feature_alt:14.8,year:2025,month:3},
+        {region:'ASIA',country:'JP',sku_count:295,title_tag:18.8,description_tag:18.2,h1_tag:14.5,canonical_link:14.9,feature_alt:13.8,year:2025,month:3},
+        {region:'ASIA',country:'IN',sku_count:210,title_tag:16.5,description_tag:15.5,h1_tag:12.8,canonical_link:13.8,feature_alt:11.0,year:2025,month:3},
+        {region:'LATAM',country:'BR',sku_count:155,title_tag:17.5,description_tag:16.5,h1_tag:13.2,canonical_link:13.8,feature_alt:11.5,year:2025,month:3},
+        {region:'LATAM',country:'AR',sku_count:108,title_tag:16.0,description_tag:15.0,h1_tag:12.2,canonical_link:13.0,feature_alt:10.5,year:2025,month:3},
+        {region:'MEA',country:'AE',sku_count:135,title_tag:17.8,description_tag:16.8,h1_tag:13.8,canonical_link:14.2,feature_alt:12.2,year:2025,month:3},
+        {region:'MEA',country:'SA',sku_count:120,title_tag:16.8,description_tag:16.0,h1_tag:12.8,canonical_link:13.5,feature_alt:11.2,year:2025,month:3},
+      ],
+    },
+    b2c: {
+      columns: ['region','country','division','sku_count','ufn','basic_assets','spec_summary','faq','title_tag','description_tag','h1_tag','canonical_link','alt_feature','alt_front','total_score_pct'],
+      columnLabels: ['Region','Country','Division','SKU','UFN\n(10)','Basic\nAssets\n(10)','Spec\nSummary\n(10)','FAQ\n(10)','Title\n(10)','Description\n(10)','H1\n(10)','Canonical\n(10)','Alt\nFeature\n(10)','Alt\nFront\n(10)','Total\nScore %'],
+      scoreColumns: ['ufn','basic_assets','spec_summary','faq','title_tag','description_tag','h1_tag','canonical_link','alt_feature','alt_front'],
+      scoreLabels: ['UFN','Basic Assets','Spec Summary','FAQ','Title','Description','H1','Canonical','Alt Feature','Alt Front'],
+      maxScores: [10,10,10,10,10,10,10,10,10,10],
+      totalMax: 100,
+      data: [
+        {region:'NA',country:'US',division:'HA',sku_count:180,ufn:9.2,basic_assets:8.5,spec_summary:8.0,faq:7.5,title_tag:9.0,description_tag:8.8,h1_tag:9.1,canonical_link:9.5,alt_feature:7.8,alt_front:8.2,year:2025,month:1},
+        {region:'NA',country:'US',division:'HE',sku_count:150,ufn:8.8,basic_assets:8.2,spec_summary:7.5,faq:7.0,title_tag:8.5,description_tag:8.5,h1_tag:8.8,canonical_link:9.2,alt_feature:7.5,alt_front:7.8,year:2025,month:1},
+        {region:'NA',country:'CA',division:'HA',sku_count:120,ufn:8.5,basic_assets:7.8,spec_summary:7.8,faq:7.2,title_tag:8.2,description_tag:8.0,h1_tag:8.5,canonical_link:9.0,alt_feature:7.2,alt_front:7.5,year:2025,month:1},
+        {region:'EU',country:'DE',division:'HA',sku_count:165,ufn:9.5,basic_assets:9.0,spec_summary:8.5,faq:8.0,title_tag:9.2,description_tag:9.0,h1_tag:9.3,canonical_link:9.5,alt_feature:8.5,alt_front:8.8,year:2025,month:1},
+        {region:'EU',country:'DE',division:'HE',sku_count:140,ufn:9.0,basic_assets:8.5,spec_summary:8.0,faq:7.5,title_tag:8.8,description_tag:8.5,h1_tag:9.0,canonical_link:9.2,alt_feature:8.0,alt_front:8.2,year:2025,month:1},
+        {region:'EU',country:'UK',division:'HA',sku_count:135,ufn:9.0,basic_assets:8.8,spec_summary:8.2,faq:7.8,title_tag:9.0,description_tag:8.8,h1_tag:9.0,canonical_link:9.4,alt_feature:8.2,alt_front:8.5,year:2025,month:1},
+        {region:'ASIA',country:'KR',division:'HA',sku_count:220,ufn:9.8,basic_assets:9.5,spec_summary:9.0,faq:8.5,title_tag:9.5,description_tag:9.2,h1_tag:9.5,canonical_link:9.8,alt_feature:9.0,alt_front:9.2,year:2025,month:1},
+        {region:'ASIA',country:'KR',division:'HE',sku_count:190,ufn:9.5,basic_assets:9.2,spec_summary:8.8,faq:8.2,title_tag:9.2,description_tag:9.0,h1_tag:9.2,canonical_link:9.5,alt_feature:8.8,alt_front:9.0,year:2025,month:1},
+        {region:'ASIA',country:'JP',division:'HA',sku_count:175,ufn:9.2,basic_assets:8.8,spec_summary:8.5,faq:7.8,title_tag:9.0,description_tag:8.5,h1_tag:9.0,canonical_link:9.2,alt_feature:8.2,alt_front:8.5,year:2025,month:1},
+        {region:'LATAM',country:'BR',division:'HA',sku_count:110,ufn:8.0,basic_assets:7.5,spec_summary:7.2,faq:6.8,title_tag:8.0,description_tag:7.8,h1_tag:8.0,canonical_link:8.5,alt_feature:7.0,alt_front:7.2,year:2025,month:1},
+        {region:'MEA',country:'AE',division:'HA',sku_count:95,ufn:8.5,basic_assets:8.0,spec_summary:7.5,faq:7.0,title_tag:8.2,description_tag:8.0,h1_tag:8.2,canonical_link:8.8,alt_feature:7.5,alt_front:7.8,year:2025,month:1},
+        // Month 2
+        {region:'NA',country:'US',division:'HA',sku_count:185,ufn:9.3,basic_assets:8.8,spec_summary:8.2,faq:7.8,title_tag:9.2,description_tag:9.0,h1_tag:9.2,canonical_link:9.5,alt_feature:8.0,alt_front:8.5,year:2025,month:2},
+        {region:'NA',country:'US',division:'HE',sku_count:155,ufn:9.0,basic_assets:8.5,spec_summary:7.8,faq:7.2,title_tag:8.8,description_tag:8.5,h1_tag:9.0,canonical_link:9.2,alt_feature:7.8,alt_front:8.0,year:2025,month:2},
+        {region:'NA',country:'CA',division:'HA',sku_count:125,ufn:8.8,basic_assets:8.0,spec_summary:8.0,faq:7.5,title_tag:8.5,description_tag:8.2,h1_tag:8.8,canonical_link:9.2,alt_feature:7.5,alt_front:7.8,year:2025,month:2},
+        {region:'EU',country:'DE',division:'HA',sku_count:170,ufn:9.5,basic_assets:9.2,spec_summary:8.8,faq:8.2,title_tag:9.5,description_tag:9.2,h1_tag:9.5,canonical_link:9.5,alt_feature:8.8,alt_front:9.0,year:2025,month:2},
+        {region:'EU',country:'DE',division:'HE',sku_count:145,ufn:9.2,basic_assets:8.8,spec_summary:8.2,faq:7.8,title_tag:9.0,description_tag:8.8,h1_tag:9.2,canonical_link:9.2,alt_feature:8.2,alt_front:8.5,year:2025,month:2},
+        {region:'EU',country:'UK',division:'HA',sku_count:140,ufn:9.2,basic_assets:9.0,spec_summary:8.5,faq:8.0,title_tag:9.2,description_tag:9.0,h1_tag:9.2,canonical_link:9.5,alt_feature:8.5,alt_front:8.8,year:2025,month:2},
+        {region:'ASIA',country:'KR',division:'HA',sku_count:228,ufn:9.8,basic_assets:9.5,spec_summary:9.2,faq:8.8,title_tag:9.5,description_tag:9.5,h1_tag:9.5,canonical_link:9.8,alt_feature:9.2,alt_front:9.5,year:2025,month:2},
+        {region:'ASIA',country:'KR',division:'HE',sku_count:195,ufn:9.5,basic_assets:9.2,spec_summary:9.0,faq:8.5,title_tag:9.5,description_tag:9.2,h1_tag:9.2,canonical_link:9.5,alt_feature:9.0,alt_front:9.2,year:2025,month:2},
+        {region:'ASIA',country:'JP',division:'HA',sku_count:180,ufn:9.5,basic_assets:9.0,spec_summary:8.8,faq:8.0,title_tag:9.2,description_tag:8.8,h1_tag:9.2,canonical_link:9.5,alt_feature:8.5,alt_front:8.8,year:2025,month:2},
+        {region:'LATAM',country:'BR',division:'HA',sku_count:115,ufn:8.2,basic_assets:7.8,spec_summary:7.5,faq:7.0,title_tag:8.2,description_tag:8.0,h1_tag:8.2,canonical_link:8.8,alt_feature:7.2,alt_front:7.5,year:2025,month:2},
+        {region:'MEA',country:'AE',division:'HA',sku_count:100,ufn:8.8,basic_assets:8.2,spec_summary:7.8,faq:7.2,title_tag:8.5,description_tag:8.2,h1_tag:8.5,canonical_link:9.0,alt_feature:7.8,alt_front:8.0,year:2025,month:2},
+        // Month 3
+        {region:'NA',country:'US',division:'HA',sku_count:190,ufn:9.5,basic_assets:9.0,spec_summary:8.5,faq:8.0,title_tag:9.5,description_tag:9.2,h1_tag:9.5,canonical_link:9.5,alt_feature:8.5,alt_front:8.8,year:2025,month:3},
+        {region:'NA',country:'US',division:'HE',sku_count:160,ufn:9.2,basic_assets:8.8,spec_summary:8.0,faq:7.5,title_tag:9.0,description_tag:8.8,h1_tag:9.2,canonical_link:9.5,alt_feature:8.0,alt_front:8.2,year:2025,month:3},
+        {region:'NA',country:'CA',division:'HA',sku_count:128,ufn:9.0,basic_assets:8.2,spec_summary:8.2,faq:7.8,title_tag:8.8,description_tag:8.5,h1_tag:9.0,canonical_link:9.2,alt_feature:7.8,alt_front:8.0,year:2025,month:3},
+        {region:'EU',country:'DE',division:'HA',sku_count:175,ufn:9.8,basic_assets:9.5,spec_summary:9.0,faq:8.5,title_tag:9.5,description_tag:9.5,h1_tag:9.5,canonical_link:9.8,alt_feature:9.0,alt_front:9.2,year:2025,month:3},
+        {region:'EU',country:'DE',division:'HE',sku_count:148,ufn:9.5,basic_assets:9.0,spec_summary:8.5,faq:8.0,title_tag:9.2,description_tag:9.0,h1_tag:9.2,canonical_link:9.5,alt_feature:8.5,alt_front:8.8,year:2025,month:3},
+        {region:'EU',country:'UK',division:'HA',sku_count:145,ufn:9.5,basic_assets:9.2,spec_summary:8.8,faq:8.2,title_tag:9.5,description_tag:9.2,h1_tag:9.5,canonical_link:9.5,alt_feature:8.8,alt_front:9.0,year:2025,month:3},
+        {region:'ASIA',country:'KR',division:'HA',sku_count:235,ufn:10.0,basic_assets:9.8,spec_summary:9.5,faq:9.0,title_tag:9.8,description_tag:9.5,h1_tag:9.8,canonical_link:10.0,alt_feature:9.5,alt_front:9.5,year:2025,month:3},
+        {region:'ASIA',country:'KR',division:'HE',sku_count:200,ufn:9.8,basic_assets:9.5,spec_summary:9.2,faq:8.8,title_tag:9.5,description_tag:9.2,h1_tag:9.5,canonical_link:9.8,alt_feature:9.2,alt_front:9.5,year:2025,month:3},
+        {region:'ASIA',country:'JP',division:'HA',sku_count:185,ufn:9.5,basic_assets:9.2,spec_summary:9.0,faq:8.2,title_tag:9.5,description_tag:9.0,h1_tag:9.5,canonical_link:9.5,alt_feature:8.8,alt_front:9.0,year:2025,month:3},
+        {region:'LATAM',country:'BR',division:'HA',sku_count:118,ufn:8.5,basic_assets:8.0,spec_summary:7.8,faq:7.2,title_tag:8.5,description_tag:8.2,h1_tag:8.5,canonical_link:9.0,alt_feature:7.5,alt_front:7.8,year:2025,month:3},
+        {region:'MEA',country:'AE',division:'HA',sku_count:105,ufn:9.0,basic_assets:8.5,spec_summary:8.0,faq:7.5,title_tag:8.8,description_tag:8.5,h1_tag:8.8,canonical_link:9.2,alt_feature:8.0,alt_front:8.2,year:2025,month:3},
+      ],
+    }
+  };
+
+  /* ──── Add total_score_pct to each row ──── */
+  SAMPLE.b2b.data.forEach(r => {
+    const sum = SAMPLE.b2b.scoreColumns.reduce((a, c) => a + (r[c]||0), 0);
+    r.total_score_pct = +(sum / SAMPLE.b2b.totalMax * 100).toFixed(1);
+  });
+  SAMPLE.b2c.data.forEach(r => {
+    const sum = SAMPLE.b2c.scoreColumns.reduce((a, c) => a + (r[c]||0), 0);
+    r.total_score_pct = +(sum / SAMPLE.b2c.totalMax * 100).toFixed(1);
+  });
+
+  /* ══════════════════════════════════════════════
+     STATE
+     ══════════════════════════════════════════════ */
+  let state = {
+    type: 'b2b',         // 'b2b' | 'b2c'
+    year: 2025,
+    month: 3,            // latest month
+    selectedRegions: [],  // empty = all
+    selectedCountries: [],
+    section: 'dashboard',
+    sortCol: null,
+    sortDir: 'asc',
+  };
+
+  /* ══════════════════════════════════════════════
+     DOM REFS
+     ══════════════════════════════════════════════ */
+  const $ = id => document.getElementById(id);
+  const selYear = $('selYear');
+  const selMonth = $('selMonth');
+  const scoreCards = $('scoreCards');
+  const dashTitle = $('dashTitle');
+  const trendTitle = $('trendTitle');
+  const summaryTableTitle = $('summaryTableTitle');
+  const summaryThead = $('summaryThead');
+  const summaryTbody = $('summaryTbody');
+  const scoreFilter = $('scoreFilter');
+
+  /* ══════════════════════════════════════════════
+     HELPERS
+     ══════════════════════════════════════════════ */
+  function getCfg() { return SAMPLE[state.type]; }
+
+  function getFilteredData() {
+    const cfg = getCfg();
+    let d = cfg.data.filter(r => r.year === state.year && r.month === state.month);
+    if (state.selectedRegions.length) d = d.filter(r => state.selectedRegions.includes(r.region));
+    if (state.selectedCountries.length) d = d.filter(r => state.selectedCountries.includes(r.country));
+    return d;
+  }
+
+  function getAllFilteredData() {
+    const cfg = getCfg();
+    let d = cfg.data.filter(r => r.year === state.year);
+    if (state.selectedRegions.length) d = d.filter(r => state.selectedRegions.includes(r.region));
+    if (state.selectedCountries.length) d = d.filter(r => state.selectedCountries.includes(r.country));
+    return d;
+  }
+
+  function avg(arr, key) {
+    if (!arr.length) return 0;
+    return arr.reduce((s, r) => s + (r[key]||0), 0) / arr.length;
+  }
+
+  function groupBy(arr, key) {
+    const m = {};
+    arr.forEach(r => { (m[r[key]] = m[r[key]]||[]).push(r); });
+    return m;
+  }
+
+  const REGION_COLORS = {
+    'NA': '#2563eb',
+    'EU': '#16a34a',
+    'ASIA': '#ea580c',
+    'LATAM': '#8b5cf6',
+    'MEA': '#ec4899',
+  };
+
+  function regionColor(r) { return REGION_COLORS[r] || '#6b7280'; }
+
+  /* ══════════════════════════════════════════════
+     INIT FILTERS
+     ══════════════════════════════════════════════ */
+  function initFilters() {
+    // Years
+    const years = [...new Set(SAMPLE.b2b.data.map(r => r.year))].sort();
+    selYear.innerHTML = years.map(y => `<option value="${y}" ${y===state.year?'selected':''}>${y}</option>`).join('');
+
+    // Months
+    const months = [...new Set(SAMPLE.b2b.data.filter(r => r.year === state.year).map(r => r.month))].sort((a,b) => a-b);
+    selMonth.innerHTML = months.map(m => `<option value="${m}" ${m===state.month?'selected':''}>${String(m).padStart(2,'0')}</option>`).join('');
+
+    selYear.onchange = () => { state.year = +selYear.value; initFilters(); refresh(); };
+    selMonth.onchange = () => { state.month = +selMonth.value; refresh(); };
+  }
+
+  function buildMultiselect(wrapId, btnId, panelId, items, stateKey) {
+    const wrap = $(wrapId);
+    const btn = $(btnId);
+    const panel = $(panelId);
+
+    let html = `<div class="ms-panel-actions">
+      <button type="button" title="Select All" onclick="msAll('${stateKey}','${panelId}')">All</button>
+      <button type="button" title="Deselect All" onclick="msNone('${stateKey}','${panelId}')">None</button>
+    </div>`;
+    items.forEach(v => {
+      const checked = state[stateKey].length === 0 || state[stateKey].includes(v) ? 'checked' : '';
+      html += `<label><input type="checkbox" value="${v}" ${checked} onchange="msChange('${stateKey}','${btnId}','${panelId}')" /> ${v}</label>`;
+    });
+    panel.innerHTML = html;
+
+    btn.onclick = (e) => { e.stopPropagation(); wrap.classList.toggle('open'); };
+    updateMsBtn(stateKey, btnId, panelId);
+  }
+
+  window.msChange = function(stateKey, btnId, panelId) {
+    const boxes = $(panelId).querySelectorAll('input[type="checkbox"]');
+    const checked = [...boxes].filter(b => b.checked).map(b => b.value);
+    const allChecked = checked.length === boxes.length;
+    state[stateKey] = allChecked ? [] : checked;
+    updateMsBtn(stateKey, btnId, panelId);
+    refresh();
+  };
+
+  window.msAll = function(stateKey, panelId) {
+    $(panelId).querySelectorAll('input[type="checkbox"]').forEach(b => b.checked = true);
+    state[stateKey] = [];
+    updateMsBtn(stateKey, panelId.replace('Panel','Btn'), panelId);
+    refresh();
+  };
+
+  window.msNone = function(stateKey, panelId) {
+    $(panelId).querySelectorAll('input[type="checkbox"]').forEach(b => b.checked = false);
+    state[stateKey] = ['__none__'];
+    updateMsBtn(stateKey, panelId.replace('Panel','Btn'), panelId);
+    refresh();
+  };
+
+  function updateMsBtn(stateKey, btnId, panelId) {
+    const boxes = $(panelId).querySelectorAll('input[type="checkbox"]');
+    const checked = [...boxes].filter(b => b.checked).map(b => b.value);
+    $(btnId).textContent = checked.length === boxes.length || state[stateKey].length === 0 ? 'All' :
+      checked.length === 0 ? 'None' : checked.length <= 2 ? checked.join(', ') : `${checked.length} selected`;
+  }
+
+  function refreshMultiselects() {
+    const cfg = getCfg();
+    const currentData = cfg.data.filter(r => r.year === state.year && r.month === state.month);
+    const regions = [...new Set(currentData.map(r => r.region))].sort();
+    const filteredForCountry = state.selectedRegions.length
+      ? currentData.filter(r => state.selectedRegions.includes(r.region))
+      : currentData;
+    const countries = [...new Set(filteredForCountry.map(r => r.country))].sort();
+
+    buildMultiselect('regionWrap','regionBtn','regionPanel', regions, 'selectedRegions');
+    buildMultiselect('countryWrap','countryBtn','countryPanel', countries, 'selectedCountries');
+  }
+
+  // Close dropdowns on outside click
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.ms-wrap.open').forEach(w => w.classList.remove('open'));
+  });
+  document.querySelectorAll('.ms-wrap').forEach(w => w.addEventListener('click', e => e.stopPropagation()));
+
+  /* ══════════════════════════════════════════════
+     CHARTS
+     ══════════════════════════════════════════════ */
+  let chartBar = null;
+  let chartTrend = null;
+
+  function renderCharts() {
+    const cfg = getCfg();
+    const data = getFilteredData();
+    const byRegion = groupBy(data, 'region');
+    const regions = Object.keys(byRegion).sort();
+
+    // Bar chart: score items by region
+    const datasets = cfg.scoreColumns.map((col, i) => ({
+      label: cfg.scoreLabels[i],
+      data: regions.map(r => +avg(byRegion[r], col).toFixed(1)),
+      backgroundColor: `hsla(${i * 360 / cfg.scoreColumns.length}, 65%, 55%, 0.8)`,
+      borderRadius: 3,
+      maxBarThickness: 28,
+    }));
+
+    if (chartBar) chartBar.destroy();
+    chartBar = new Chart($('chartBar'), {
+      type: 'bar',
+      data: { labels: regions, datasets },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, padding: 12, font: { size: 11 } } },
+        },
+        scales: {
+          y: { beginAtZero: true, max: Math.max(...cfg.maxScores) + 2, grid: { color: 'rgba(0,0,0,0.06)' } },
+          x: { grid: { display: false } },
+        },
+      }
+    });
+
+    // Trend chart: total score by region over months
+    const allData = getAllFilteredData();
+    const months = [...new Set(allData.map(r => r.month))].sort((a,b) => a-b);
+    const trendDatasets = regions.map(r => {
+      const regionData = allData.filter(d => d.region === r);
+      return {
+        label: r,
+        data: months.map(m => {
+          const monthData = regionData.filter(d => d.month === m);
+          return monthData.length ? +avg(monthData, 'total_score_pct').toFixed(1) : null;
+        }),
+        borderColor: regionColor(r),
+        backgroundColor: regionColor(r) + '20',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 4,
+        pointHoverRadius: 6,
+        borderWidth: 2,
+      };
+    });
+
+    trendTitle.textContent = `Total Score Trend (${state.year})`;
+
+    if (chartTrend) chartTrend.destroy();
+    chartTrend = new Chart($('chartTrend'), {
+      type: 'line',
+      data: {
+        labels: months.map(m => `${state.year}-${String(m).padStart(2,'0')}`),
+        datasets: trendDatasets,
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { boxWidth: 12, padding: 12, font: { size: 11 } } },
+        },
+        scales: {
+          y: { min: 50, max: 100, grid: { color: 'rgba(0,0,0,0.06)' }, ticks: { callback: v => v + '%' } },
+          x: { grid: { display: false } },
+        },
+        interaction: { intersect: false, mode: 'index' },
+      }
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     SCORE CARDS
+     ══════════════════════════════════════════════ */
+  function renderScoreCards() {
+    const cfg = getCfg();
+    const data = getFilteredData();
+    const byRegion = groupBy(data, 'region');
+    const regions = Object.keys(byRegion).sort();
+
+    // Overall average
+    const overallAvg = data.length ? +avg(data, 'total_score_pct').toFixed(1) : 0;
+    const totalSku = data.reduce((s, r) => s + (r.sku_count||0), 0);
+
+    let html = `
+      <div class="score-card score-card--primary">
+        <span class="label">Overall Average</span>
+        <span class="value">${overallAvg}%</span>
+      </div>
+      <div class="score-card score-card--blue">
+        <span class="label">Total SKUs</span>
+        <span class="value">${totalSku.toLocaleString()}</span>
+      </div>
+    `;
+
+    regions.forEach(r => {
+      const ra = +avg(byRegion[r], 'total_score_pct').toFixed(1);
+      const isHigh = ra >= 90;
+      html += `
+        <div class="score-card${isHigh ? ' score-card--green' : ''}">
+          <span class="label">${r}</span>
+          <span class="value">${ra}%</span>
+        </div>`;
+    });
+    scoreCards.innerHTML = html;
+
+    const typeLabel = state.type === 'b2b' ? 'B2B' : 'B2C';
+    dashTitle.textContent = `Average Total Score by Region (${typeLabel})`;
+  }
+
+  /* ══════════════════════════════════════════════
+     SUMMARY TABLE
+     ══════════════════════════════════════════════ */
+  function renderSummaryTable() {
+    const cfg = getCfg();
+    let data = [...getFilteredData()];
+
+    summaryTableTitle.textContent = `${state.type.toUpperCase()} Monitoring Report by Country`;
+
+    // Score filter
+    const sf = scoreFilter.value;
+    if (sf && data.length) {
+      const sorted = [...data].sort((a,b) => b.total_score_pct - a.total_score_pct);
+      const cut = Math.ceil(sorted.length * 0.3);
+      if (sf === 'top30') data = sorted.slice(0, cut);
+      else data = sorted.slice(-cut);
+    }
+
+    // Sort
+    if (state.sortCol) {
+      data.sort((a, b) => {
+        const va = a[state.sortCol], vb = b[state.sortCol];
+        if (typeof va === 'number') return state.sortDir === 'asc' ? va - vb : vb - va;
+        return state.sortDir === 'asc' ? String(va).localeCompare(String(vb)) : String(vb).localeCompare(String(va));
+      });
+    }
+
+    // Header
+    const cols = cfg.columns;
+    const labels = cfg.columnLabels;
+    summaryThead.innerHTML = `<tr>${cols.map((c, i) => {
+      const isScore = cfg.scoreColumns.includes(c) || c === 'total_score_pct';
+      const isMeta = c === 'region' || c === 'country' || c === 'division';
+      const cls = [
+        isMeta ? 'th-dark' : (isScore ? 'th-blue' : 'th-dark'),
+        'sortable',
+        state.sortCol === c ? (state.sortDir === 'asc' ? 'sort-asc' : 'sort-desc') : '',
+      ].filter(Boolean).join(' ');
+      return `<th class="${cls}" data-col="${c}" style="white-space:pre-line">${labels[i]}<span class="sort-arrow"></span></th>`;
+    }).join('')}</tr>`;
+
+    // Body
+    summaryTbody.innerHTML = data.map(row => {
+      return `<tr>${cols.map(c => {
+        const v = row[c];
+        if (c === 'total_score_pct') {
+          const color = v >= 90 ? 'var(--green)' : v >= 70 ? 'var(--orange)' : 'var(--red-200)';
+          return `<td class="num" style="font-weight:700;color:${color}">${v}%</td>`;
+        }
+        if (typeof v === 'number' && c !== 'sku_count') return `<td class="num">${v.toFixed(1)}</td>`;
+        if (c === 'sku_count') return `<td class="num">${v.toLocaleString()}</td>`;
+        return `<td>${v}</td>`;
+      }).join('')}</tr>`;
+    }).join('') || `<tr><td colspan="${cols.length}" class="empty-state">No data found.</td></tr>`;
+
+    // Sort handlers
+    summaryThead.querySelectorAll('th.sortable').forEach(th => {
+      th.onclick = () => {
+        const col = th.dataset.col;
+        if (state.sortCol === col) state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc';
+        else { state.sortCol = col; state.sortDir = 'asc'; }
+        renderSummaryTable();
+      };
+    });
+  }
+
+  /* ══════════════════════════════════════════════
+     CSV DOWNLOAD
+     ══════════════════════════════════════════════ */
+  $('btnDownloadCSV').onclick = () => {
+    const cfg = getCfg();
+    const data = getFilteredData();
+    const headers = cfg.columnLabels.map(l => l.replace(/\n/g,' '));
+    const rows = data.map(r => cfg.columns.map(c => r[c]));
+    const csv = [headers, ...rows].map(r => r.join(',')).join('\n');
+    const blob = new Blob(['\uFEFF' + csv], { type: 'text/csv;charset=utf-8;' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `ES_${state.type.toUpperCase()}_${state.year}_M${String(state.month).padStart(2,'0')}.csv`;
+    link.click();
+    URL.revokeObjectURL(link.href);
+  };
+
+  /* ══════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════ */
+  // Main nav
+  $('mainNav').querySelectorAll('a').forEach(a => {
+    a.onclick = e => {
+      e.preventDefault();
+      $('mainNav').querySelectorAll('a').forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+      state.section = a.dataset.section;
+      document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+      $('section' + state.section.charAt(0).toUpperCase() + state.section.slice(1)).classList.add('active');
+    };
+  });
+
+  // B2B/B2C tabs
+  $('subNav').querySelectorAll('a').forEach(a => {
+    a.onclick = e => {
+      e.preventDefault();
+      $('subNav').querySelectorAll('a').forEach(x => x.classList.remove('active'));
+      a.classList.add('active');
+      state.type = a.dataset.type;
+      state.selectedRegions = [];
+      state.selectedCountries = [];
+      state.sortCol = null;
+      refresh();
+    };
+  });
+
+  // Score filter
+  scoreFilter.onchange = () => renderSummaryTable();
+
+  /* ══════════════════════════════════════════════
+     REFRESH
+     ══════════════════════════════════════════════ */
+  function refresh() {
+    refreshMultiselects();
+    renderScoreCards();
+    renderCharts();
+    renderSummaryTable();
+  }
+
+  /* ══════════════════════════════════════════════
+     INIT
+     ══════════════════════════════════════════════ */
+  initFilters();
+  refresh();
+  </script>
+</body>
+</html>

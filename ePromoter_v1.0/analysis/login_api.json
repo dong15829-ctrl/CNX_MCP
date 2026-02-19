@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://www.globalsess.com/globaldashboard/css/login.css",
+    "method": "GET",
+    "post_data": null
+  },
+  {
+    "url": "https://www.globalsess.com/globaldashboard/img/login_02.png",
+    "method": "GET",
+    "post_data": null
+  },
+  {
+    "url": "https://www.globalsess.com/globaldashboard//login",
+    "method": "POST",
+    "post_data": "{\"user_id\":\"dongil.kim@concentrix.com\",\"user_pw\":\"Ssgdb001!\"}"
+  }
+]

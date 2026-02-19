@@ -1,0 +1,298 @@
+Note,Diemsion Name,Frequently Used,Description,Example,Notes,DataFeed Column,DataFeed Notes,Useful Link
+Campaign,Marketing channel,Yes,"The Marketing Channel dimension categorizes inbound traffic based on predefined or customized rules. It helps you understand how visitors arrive at your site or app—whether through paid ads, organic search, email campaigns, direct visits, or other sources.
+
+Each visit is attributed to one marketing channel, determined by a set of processing rules configured in the Marketing Channel Manager within the Admin Console. These rules evaluate incoming data such as referrer, tracking codes, campaign parameters, etc., and assign the visit to the appropriate channel.","Natural Search
+Display
+Social Media Campaigns
+Paid Search
+PLA","The Marketing Channel dimension uses Last Touch attribution by default. But when you use it with certain conversion metrics—like Orders, Revenue, Units, or custom events based on eVars—you can change the attribution model (e.g. First Touch, Linear, Time Decay) and also adjust the lookback window.
+
+Expiration: 30 days of inactivity",va_closer_id,Use Ref) Datafeed_va_closer_id sheet to match numeric values.,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/marketing-channel
+Campaign,Marketing channel detail,Yes,"The marketing channel detail uses the dimension that serves as the classification criterion in the marketing channel processing rule as its detail value. For example, if the Tracking Code dimension is used as the classification criterion, the marketing channel detail value will be the tracking code. Typically, paid channels use the tracking code, while organic channels use referrer information.",uk_paid_affiliate_awin-Skimlinks_0_none_Sub Networks_0_none_none,It's recommended to use Marketing Channel Detail dimension when looking into specific campaigns by breaking down Marketing Channel.,va_closer_detail,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/marketing-detail
+Campaign,Tracking code,Yes,"The ‘Tracking Code’ dimension lists the names of tracking codes on your site. You can place links with different query string parameter values in different places across the internet. This dimension helps you understand which links were the most successful in driving traffic to your site.
+
+Appending tracking code query strings are common in emails, advertisements, social media posts, and other marketing efforts that your organization uses.","in_ow_display_widgetbanner_cbcc_launch_samsung-card_20230822_none
+br_ow_app_galaxyshop_none_none_weblinkapp_bookmark_202008_none","For S.com, Tracking Code is set to be expired 30 days after it is first set, while Marketing Channel expires after 30 days of inactivity. 
+Due to this independence, discrepancies may arise when the tracking code expires before the marketing channel. In such cases, breaking down marketing channel by tracking code may lead to misinterpretation.
+
+Expiration: after 30 days ",post_campaign,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/tracking-code
+Geo Segmentation,Cities,No,"The ‘Cities’ dimension reports the city where the hit originated from. This dimension is useful to help determine what the most popular cities visitors originate from when visiting your site. You could use this data to focus on local advertising in these cities, such as billboards or commercials.","London (London, United Kingdom)
+Birmingham (Birmingham, United Kingdom)
+Barnet (Barnet, United Kingdom)
+Manchester (Manchester, United Kingdom)
+Croydon (Croydon, United Kingdom)",This is based on the IP address,geo_city,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/cities
+Geo Segmentation,Countries,No,"The ‘Countries’ dimension reports the country where the hit originated from. This dimension is useful to help determine what the most popular countries visitors originate from when visiting your site. You could use this data to focus on marketing efforts in these countries, or make sure that your site experience is optimal in countries that have different primary languages.","India
+Germany
+Brazil
+South Korea
+China",This is based on the IP address,geo_country,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/countries
+Geo Segmentation,Regions,No,"The ‘Regions’ dimension reports the geographic region of the visitor. It is a geographic area that is smaller than a country but larger than a city. In some countries, a region is a state, province, or prefecture. In other areas, it is a constituent country, department, or metropolitan region. Using this dimension is valuable if you want insight more granular than Countries but not as granular as Cities.","London (United Kingdom)
+Birmingham (United Kingdom)
+Croydon (United Kingdom)
+Kent (United Kingdom)
+Barnet (United Kingdom)",This is based on the IP address,geo_region,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/regions
+Mobile,Mobile device,Yes, The 'mobile device' dimension shows the specific model of the mobile device a visitor used to access your website or app.,"Samsung Galaxy S24 Ultra (SM-S928B)
+Samsung Galaxy S23 Ultra (SM-S918B)
+Samsung Galaxy S23 (SM-S911B)
+Samsung Galaxy S24 (SM-S921B)
+Apple iPhone","This is based on the User Agent
+
+For samsung, 'Mobile Device' is collected by individual product models (e.g., Galaxy S25, Galaxy S25 Ultra), whereas Apple device are grouped under broader categories such as 'iPhone' and 'iPad'.
+As a result, breaking down 'Mobile Device Type' by 'Mobile Device' may lead to the misinterpretation that Apple has the highest share.
+
+To avoid this, it is recommended to analyze the data by breaking down in the order of: Device Type > Manufacturer > Device.",N/A,"To retrieve the necessary information, use the mobile_id column and request the mobile_attribution.tsv file from Adobe. Then, refer to the device column within the mobile_attribution.tsv data.","https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/mobile-dimensions
+
+Datafeed: https://experienceleague.adobe.com/en/docs/analytics/export/analytics-data-feed/data-feed-contents/dynamic-lookups "
+Mobile,Mobile device type,Yes," The type of mobile device. Example values include ""Mobile phone"", ""Tablet"", ""Media player"", and ""Gaming console"".","Mobile Phone
+Other
+Tablet
+Television
+Set-top Box","This is based on the User Agent
+""Other"" considered as Desktop (PC)",N/A,"To retrieve the necessary information, use the mobile_id column and request the mobile_attribution.tsv file from Adobe. Then, refer to the device type column within the mobile_attribution.tsv data.","https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/mobile-dimensions
+
+Datafeed: https://experienceleague.adobe.com/en/docs/analytics/export/analytics-data-feed/data-feed-contents/dynamic-lookups "
+Mobile,Mobile manufacturer,Yes," Classifies mobile devices by manufacturer. Example values include ""Apple"", ""Samsung"", ""Huawei"", and ""Motorola"".","Samsung
+Apple
+Vivo
+Redmi
+Oppo","This is based on the User Agent
+
+Due to Chrome's User-Agent reduction, the share of manufacturer = Unknown increased between late April and early August 2023.
+After switching to Clients Hints as an alternative to the User-Agent, the proportion of Unknown values decreased.",N/A,"To retrieve the necessary information, use the mobile_id column and request the mobile_attribution.tsv file from Adobe. Then, refer to the manufacture column within the mobile_attribution.tsv data.","https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/mobile-dimensions
+
+Datafeed: https://experienceleague.adobe.com/en/docs/analytics/export/analytics-data-feed/data-feed-contents/dynamic-lookups "
+App,App Id,Yes,"The App ID refers to the full application name (e.g., Samsung Shop) and its associated version number (e.g., 1.0.46(1826))
+
+These details are captured along with lifecycle events. When a lifecycle event is recorded, the App ID is defined as a dimension","Samsung Shop 2.0.40293 (1600040293)
+Samsung Shop 1.0.70 (2146)
+Samsung Shop 2.0.40314 (1600040314)","The app goes through regular updates.
+Since tagging fixes are not applied to previous versions, related issues may persist for a while even after fix is completed.",post_mobileappid,-,https://developer.adobe.com/client-sdks/home/base/mobile-core/lifecycle/metrics/
+Product,Product,Yes,"The ‘Product’ dimension reports the name of the product in the hit. It is useful for implementations that use the products variable and want to see metrics around products, such as top sellers or most viewed.","SM-S931B/DS
+SM-S936B/DS
+SM-S938B/DS
+SM-S9310
+SM-X920","A core metric collected across key product-related events-page views, cart add, checkout, and order-typically used together with Model Code (evar41), especially when multiple products are involved.",post_product_list,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/product
+Site Content,Pages not found,No,"The ‘Pages not found’ dimension shows URLs that contained an error. This dimension is useful when you want to lower the number of errors that visitor get on your site.
+
+You can use this dimension in a Flow visualization to see which pages visitors click through to reach the error. You can then work with development teams in your organization to fix the link on each page.
+You can use this dimension with the ‘Referrer’ dimension to see where visitors arrive to your site from external links. You can then either implement redirects to the desired location, or work with the third party to get the link fixed.","https://www.samsung.com/uk/multistore/uk_partners
+https://www.samsung.com/uk/web/mypage/orders","You can also use All page track(evar6, prop6) = 'page not found'.",post_pagename,post_pagename where page_type is not null,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/page
+Site Content,Site section,Yes,"The ‘Site section’ dimension lists the names of site sections on your site. For large sites, it is helpful to group pages into sections. This dimension is useful to see the top-viewed or top-performing site sections.","consumer
+campaign
+home
+support
+shop",The 'Stie Section' is captured at the time of the page view. Pages without a Site Section value are excluded from the Shopper Visit of S.com.,post_channel,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/site-section
+Site Content,Page(s),Yes,"The ‘Page’ dimension lists the names of pages on your site. It is one of the most common dimensions used in Adobe Analytics, as it provides insight on which pages on your site perform the best.","uk:home
+uk:mobile:smartphones:finder
+uk:mobile:smartphones:galaxy s:galaxy-s25-ultra:buy	","When used in combination with action events or conversion events, the value appears as 0, as they are not triggered with this dimension.
+To identify which page the event occurred on, use the PageName (v40). ",post_pagename,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/page
+Site Content,Entry Page,Yes,"The 'Entry Page' indicates the first page viewed during a visit to your site. Entry Page helps identify the most common entry points, enabling optimization of key landing pages and more effective guidance of inbound traffic toward strategic contents.","uk:home
+uk:mobile:smartphones:finder
+uk:mobile:smartphones:galaxy s:galaxy-s25-ultra:buy	","Since 'Entry Page' is a persistent value across all hits within a visit, it should not be used as part of a sequential segment.
+For example, a sequence like ""Entry Page A then Page B"" does not mean that the user landed on Page A and immediately moved to Page B.",N/A,FIRST(post_pagename ORDER BY date_time) AS entry_page where post_pagename is not null,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/entry-dimensions
+Site Content,Exit Page,No,The 'Exit Page' indicates the final page viewed before a visitor leaves your site during a visit. This insight can be usered to assess drop-off points and evaluate where users tend to end their sessions.,"uk:home
+uk:mobile:smartphones:finder
+uk:mobile:smartphones:galaxy s:galaxy-s25-ultra:buy	","Exit Page' is retroactively applied to all hits within a visit, so it should not be used in sequential segments.
+For example, a segment such as ""Page A then Exit Page B"" does not imply that Page A was viewed immediately before the user exited from Page B.",N/A,LAST(post_pagename ORDER BY date_time) AS exit_page where post_pagename is not null,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/exit-dimensions
+Time,Minute,No,"The ‘Minute’ dimension reports the minute that a given metric occurred (rounded down). The first dimension item is the first minute in the date range, and the last dimension item is the last minute in the date range. This dimension is valuable for trended reports, as it allows you to see metrics over time. Given how granular this dimension is, Adobe recommends limiting the reporting date range to one or two days.","2024-10-01T00:00:00
+2024-10-01T00:01:00
+2024-10-01T00:02:00
+2024-10-01T00:03:00
+2024-10-01T00:04:00",Not available in the Segment Builder.,date_time,"date_trunc('minute', cast(date_time as TIMESTAMP))",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/minute
+Time,Hour,No,"The ‘Hour’ dimension reports the hour that a given metric occurred (rounded down). The first dimension item is the first hour in the date range, and the last dimension item is the last hour in the date range. This dimension is valuable for trended reports, as it allows you to see metrics over time.","00:00 2024-01-01
+01:00 2024-01-01
+02:00 2024-01-01
+03:00 2024-01-01
+04:00 2024-01-01","- When using Time dimension in a segment, ensure they align with the project's date range - otherwise, no data will be returned.
+For example, if the project's date range is set to 2025 but the segment includes a condition for a period in 2024, the result will be zero.
+- If you need to analyze recurring time periods(e.g., 1Q, 1H), use 'Day of Month' or 'Month of Year' dimension.
+- When Using a fixed Date Range(purple), data will be returned regardingless of the project's overall date range.",date_time,"	date_trunc('hour', cast(date_time as TIMESTAMP))",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/hour
+Time,Day,Yes,"The ‘Day’ dimension reports the day that a given metric occurred. The first dimension item is the first day in the date range, and the last dimension item is the last day in the date range. This dimension is vital for trended reports, as it allows you to see metrics over time.","Jan 1, 2025
+Jan 2, 2025
+Jan 3, 2025
+Jan 4, 2025
+Jan 5, 2025","- When using Time dimension in a segment, ensure they align with the project's date range-otherwise, no data will be returned.
+For example, if the project's date range is set to 2025 but the segment includes a condition for a period in 2024, the result will be zero.
+- If you need to analyze recurring time periods(e.g., 1Q, 1H), use 'Day of Month' or 'Month of Year' dimension.
+- When Using a fixed Date Range(purple), data will be returned regardingless of the project's overall date range.",date_time,day(case(date_time as date)),https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/day
+Time,Week,Yes,"The ‘Week’ dimension reports the week that a given metric occurred. The first dimension item is the first week in the date range, and the last dimension item is the last week in the date range. This dimension is vital for trended reports, as it allows you to see metrics over time.","Jan 6, 2025
+Jan 13, 2025
+Jan 20, 2025
+Jan 27, 2025
+Feb 3, 2025","- When using Time dimension in a segment, ensure they align with the project's date range-otherwise, no data will be returned.
+For example, if the project's date range is set to 2025 but the segment includes a condition for a period in 2024, the result will be zero.
+- If you need to analyze recurring time periods(e.g., 1Q, 1H), use 'Day of Month' or 'Month of Year' dimension.
+- When Using a fixed Date Range(purple), data will be returned regardingless of the project's overall date range.",date_time,week(cast(date_time as date)),https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/week
+Time,Month,Yes,"The ‘Month’ dimension reports the month that a given metric occurred. The first dimension item is the first month in the date range, and the last dimension item is the last month in the date range. This dimension is vital for trended reports, as it allows you to see metrics over time.","Jan 2025
+Feb 2025
+Mar 2025","- When using Time dimension in a segment, ensure they align with the project's date range-otherwise, no data will be returned.
+For example, if the project's date range is set to 2025 but the segment includes a condition for a period in 2024, the result will be zero.
+- If you need to analyze recurring time periods(e.g., 1Q, 1H), use 'Day of Month' or 'Month of Year' dimension.
+- When Using a fixed Date Range(purple), data will be returned regardingless of the project's overall date range.",date_time,month(cast(date_time as date)),https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/month
+Time,Quarter,Yes,"The ‘Quarter’ dimension reports the quarter that a given metric occurred. The first dimension item is the first quarter in the date range, and the last dimension item is the last quarter in the date range. This dimension is ideal for trended reports, as it allows you to see metrics over time.","Jul 2024 - Sep 2024
+Oct 2024 - Dec 2024
+Jan 2025 - Mar 2025","- When using Time dimension in a segment, ensure they align with the project's date range-otherwise, no data will be returned.
+For example, if the project's date range is set to 2025 but the segment includes a condition for a period in 2024, the result will be zero.
+- If you need to analyze recurring time periods(e.g., 1Q, 1H), use 'Day of Month' or 'Month of Year' dimension.
+- When Using a fixed Date Range(purple), data will be returned regardingless of the project's overall date range.",date_time,quarter(cast(date_time as date)),https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/quarter
+Time,Year,Yes,"The ‘Year’ dimension reports the year that a given metric occurred. The first dimension item is the first year in the date range, and the last dimension item is the most recent year in the date range.","2023 (Jan 1-Dec 31)
+2024 (Jan 1-Dec 31)
+2025 (Jan 1-Dec 31)","- When using Time dimension in a segment, ensure they align with the project's date range-otherwise, no data will be returned.
+For example, if the project's date range is set to 2025 but the segment includes a condition for a period in 2024, the result will be zero.
+- If you need to analyze recurring time periods(e.g., 1Q, 1H), use 'Day of Month' or 'Month of Year' dimension.
+- When Using a fixed Date Range(purple), data will be returned regardingless of the project's overall date range.",date_time,year(cast(date_time as date)),https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/year
+Time,Days since last visit,No,"The ‘Days since last visit’ dimension measures the amount of time passed between the current hit of the visitor and their previous visit (if there is one). This dimension helps you understand behavior visitors make after visiting your site. Examples include:
+
+How frequently do users revisit the site?
+How does return frequency correlate with conversion? Do repeat buyers visit frequently or infrequently?
+Do users who click through campaigns return frequently?
+First-time visitors are not included in this dimension.","0 days
+1 days
+2 days
+3 days
+4 days",-,N/A,floor((cast(cust_hit_time_gmt as bigint) -cast(last_hit_time_gmt as bigint))/ 86400) ,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/days-since-last-visit
+Time,Days before first purchase,No,"The ‘Days before first purchase’ dimension reports the number of days that pass between the first time a visitor reaches your site and when they make a purchase. For example, if a visitor makes a purchase one day after first visiting, then any subsequent visit or event belongs to the “1 day” dimension item.
+
+After a visitor makes their first purchase, they belong to the same dimension item for the remainder of the visitor’s cookie lifetime.","Same Day
+1 Day
+2 Days
+3 Days
+4 Days",-,N/A,"floor((CAST(cust_hit_time_gmt AS BIGINT) - CAST(first_hit_time_gmt AS BIGINT))/86400 )
+where regexp_matches(',' || post_event_list || ',', '.*,1,.*') and cust_hit_time_gmt!=0",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/days-before-first-purchase
+Time,Days since last purchase,Yes,"The ‘Days since last purchase’ dimension measures the amount of time passed between the current hit of the visitor and their most recent purchase at that time. This dimension helps you understand behavior visitors make after purchasing something on your site.
+
+Visitors that have never purchased something are not included in this dimension. Additionally, hits fired before a visitor’s first purchase are not included either. Only hits after the visitor’s first purchase are included.","Same Day
+1 Day
+2 Days
+3 Days
+4 Days",-,N/A,"It is calculated using last_purchae_time_gmt and post_cust_hit_time_gmt. 
+e.g., (DATEDIFF(day TO_TIMESTAMP(CAST(COALESCE(last_purchase_time_gmt, null)AS INT))TO_TIMESTAMP(CAST(COALESCE(post_cust_hit_time_gmt, null)AS INT))))",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/days-since-last-purchase
+Time,Time spent on page,No,"The ‘Time spent on page’ dimension records the amount of time a visitor spent on the page. It uses the following steps to measure calculation:
+
+For a given hit, look at the timestamp.
+Compare this hit with the timestamp of the next hit in the visit. Both page view and link tracking hits count.
+The amount of time that elapsed between these two hits contributes to the time spent.
+This dimension is valuable when you want to understand how long visitors interact with a given metric on your site.","less than 15 seconds
+15 to 29 seconds
+30 to 59 seconds
+1 to 3 minutes
+3 to 5 minutes","Unit: Seconds
+
+Bounced visits are excluded from time spent calculations.",N/A,"  COALESCE(
+    CASE  WHEN LEAD(post_pagename) OVER (PARTITION BY visitID ORDER BY CAST(cust_hit_time_gmt AS BIGINT)) = post_pagename 
+      THEN LEAD(CAST(cust_hit_time_gmt AS BIGINT)) OVER (PARTITION BY visitID ORDER BY CAST(cust_hit_time_gmt AS BIGINT)) 
+           - CAST(cust_hit_time_gmt AS BIGINT)
+      ELSE 0
+    END )",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/time-spent-on-page
+Time,Time spent per visit,Yes,"The ‘Time spent per visit’ dimensions record the amount of time a visitor spent on the entire visit. It uses the following steps to measure calculation:
+
+Look at the timestamp of the first hit of the visit.
+Compare this hit with the timestamp of the last hit of the visit.
+The amount of time that elapsed between these two hits contributes to the time spent.
+These dimensions are valuable when you want to understand how long visitors interact with your site in general.","less than 1 minute	
+1 to 5 minutes
+5 to 10 minutes
+10 to 30 minutes
+30 to 60 minutes","Unit: Seconds
+Calculation: Total seconds spent / (visit-bounces)
+
+Bounced visits are excluded from time spent calculations.
+
+Since this represents the time between hits, it must be used with a segment built at the visit level.",N/A,"1. 'Concatenate post_visid_high, post_visid_low, visit_num, and visit_start_time_gmt.
+2. Sort by this concatenated value, then apply a secondary sort by visit_page_num.
+3. If a hit is not the last one in a visit, subtract the post_cust_hit_time value from the subsequent hit’s post_cust_hit_time value.
+This number is the amount of time spent (in seconds) for the hit. Filters can be applied to focus on dimension items or events.
+
+CAST(MAX(cust_hit_time_gmt) AS BIGINT) - CAST(MIN(visit_start_time_gmt) AS BIGINT) group by visitID",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/time-spent-per-visit
+Traffic Source,Referrer,No,The ‘Referrer’ dimension reports which URLs visitors were on when clicking through to reach your site. This dimension is useful to understand which specific URLs drive the most traffic to your site. A link must exist on the external URL and a visitor must click it in order for the dimension item to show up.,"https://www.google.com/
+https://youtube.com/
+http://instagram.com/","Traffic may appear 'Typed/Bookmarked' in the following cases:
+1. When the user types the URL directly into the address bar
+2. Visits via browser bookmarks
+3. Inbound traffic from mobile applications (e.g., KakaoTalk, Naver Band, company-owned apps)
+4. Clicks from links embedded in non-web documents such as PDFs or PowerPoint files
+5. Links clicked within SMS messages or QR code scans
+6. Access via desktop programs like Outlook or Teams",referrer,Referrer where referrer not like '%samsung%',https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referrer
+Traffic Source,Referring domain,Yes,The ‘Referring domain’ dimension reports which domains visitors click through to reach your site. This dimension is useful to understand which third-party sites drive the most traffic to yours. A link must exist on the external site and a visitor must click it in order for the dimension item to show up.,"google.com
+youtube.com
+facebook.com",-,ref_domain,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referring-domain
+Traffic Source,Referrer type,No,"The ‘Referrer type’ dimension reports which generic channels visitors clicked through to arrive at your site. Adobe maintains the rules for each dimension item, unlike Marketing channels, where your organization maintains rules for each channel.","Search Engines
+Other Web Sites
+Social Networks
+Typed/Bookmarked",-,ref_type,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/referrer-type
+Traffic Source,Paid search,No,The ‘Paid search’ dimension lets you look at any metric and compare it between paid search and natural search. All other hits outside search engines are omitted. This dimension is helpful to understand how your paid search efforts compare with organic search.,"Natural
+Paid","The 'Paid Search' and 'Marketing Channel' dimensions may both show Paid Search traffic, but they are defined differently, which can lead to slight differences in numbers.
+
+The Paid Search dimension captures traffic that comes from a search engine domain and includes a 'cid' parameter in the URL.
+
+The Marketing Channel dimension, on the other hand, uses Marketing Channel Processing Rules. For example, traffic may be classified as Paid Search if the cid contains values like “ppc” or “sem”.
+
+Since the rules and conditions are slightly different, the traffic counts for Paid Search can vary between the two dimensions.",N/A,"paid_search where search_engine != 0, 1=paid, 0=natural ",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/paid-search
+Traffic Source,Search engine,No,"The ‘Search engine’ dimension reports the search engines that visitors use to reach your site. A referrer must meet both of the following to classify as a search engine:
+
+The referring domain is recognized by Adobe as a valid search engine;
+A keyword query string parameter exists in the referring URL. The query string parameter can be blank (as is the case with several search engines due to privacy practices).","Google
+Google Search App
+Naver
+Microsoft Bing
+Yandex Russia",-,post_search_engine,'Use search_engines.tsv to match the values.,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/search-engine
+Traffic Sources,Search keyword,No,"The ‘Search keyword’ dimension reports the search keywords that visitors use to reach your site.
+A referrer must meet both of the following to classify as a search keyword:
+
+The referring domain is recognized by Adobe as a valid Search engine;
+A keyword query string parameter exists in the referring URL. If the keyword query string exists but does not contain a value, it groups under the dimension item ""Keyword unavailable"".","Keyword Unavailable
+galaxy s
+galaxy fold",-,	visit_keywords,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/search-keyword
+Visit Behavior,Hit depth,No,"The ‘Hit depth’ dimension reports how far into a visit a given hit is. This dimension is valuable in understanding how far into a visit that visitors perform actions on your site. Hit depth counts all types of hits, including page views and link tracking hits.","Hit Depth 1
+Hit Depth 2
+Hit Depth 3
+Hit Depth 4
+Hit Depth 5","Each user interaction is captured as a distinct hit with an incremental sequence number, making it effective for tracking the complete behavior of a specific visitor.
+
+""Hit depth is greated than 1 (excluding visit-level segment)"" indicates the bounces.",visit_page_num,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/hit-depth
+Visitor Profile,Browser,No,"The ‘Browser’ dimension reports the name and version of the browser sending the hit. This dimension is useful when you want to measure the most common browsers that visitors use. When testing new versions of your site, you can run those tests on the top browsers in this dimension to maximize quality control efforts.","Chrome 134.0
+Samsung Browser 27.0
+Chrome 135.0","Since visits and visitors are cookie-based, switching browser results in a new visit being recorded.",browser,Use browser.tsv to match numeric values.,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/browser
+Visitor Profile,Browser type,No,The ‘Browser type’ dimension lists the organizations who made the browser that the visitor uses. This dimension is useful when you want to see which overarching browsers visitors use. It provides value over the ‘Browsers’ dimension in that it does not list different versions of the same browser as separate dimension items.,"Google
+Samsung
+Apple",-,browser,Use browser_type.tsv to match numeric values.,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/browser-type
+Visitor Profile,Language,No,The ‘Language’ dimension shows the top languages that visitors prefer to see content in. This dimension is valuable when you want to understand the most frequent preferred languages of visitors to aid in localization efforts.,"English (United Kingdom)
+English (United States)
+English (Australia)",-,language,Use language.tsv to match numeric values.,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/language
+Visitor Profile,Operating system types,No,"The ‘Operating system types’ dimension shows the overarching OS that the visitor used, regardless of specific versions. This dimension is useful to understand not just which specific operating system and version is most common, but which typical OS platform visitors use.","Google Android
+Microsoft Windows
+Apple iOS
+Apple Macintosh
+GNU/Linux","Android Traffic: Operating System Types = ""Google Android""
+IOS Traffic: Operating System Types = ""Apple iOS""",N/A,"To retrieve the necessary information, use the os column and request the operating_system_type.tsv file from Adobe. Then, refer to the operating system type column within the operating_system_type.tsv data.",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/operating-system-types
+Visitor Profile,Operating systems,Yes,"The ‘Operating system’ dimension shows the operating system and version that the visitor used. If you have features on your web-property that are OS-specific, this dimension helps you understand which operating systems are most common.","Android 14.0.0
+Android 10
+Windows 10
+iOS 18.3.2",-,N/A,"To retrieve the necessary information, use the mobile_id column and request the mobile_attribution.tsv file from Adobe. Then, refer to the operating system column within the mobile_attribution.tsv data.","https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/operating-systems
+
+Datafeed: https://experienceleague.adobe.com/en/docs/analytics/export/analytics-data-feed/data-feed-contents/dynamic-lookups "
+Visitor Retention,Visit number,Yes,"The ‘Visit number’ dimension reports which visit the visitor is currently on. When a new visit starts, this dimension item increases by 1. This dimension is helpful when you want to understand how engaged visitors are when returning to your site. It is a visit-based dimension, meaning that it contains the same value for the entire visit and cannot change. It applies to the lifetime of the visitor, regardless of project date range.","Visit Number 1
+Visit Number 2
+Visit Number 3",First Visit can be defined as 'Visit Number' = 1 and Return Visit can be defined as 'Visit Number' greater than 1.,visit_num,-,https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/visit-number
+Visitor Retention,Return frequency,No,"The ‘Return frequency’ dimension shows the length of time that passes between visits from returning visitors. When a visitor returns to your site, Adobe looks at how long ago the previous visit was, and buckets the hit in the appropriate dimension item. This dimension is valuable to help gauge your website’s appeal and relevance to visitors over time. It can also help identify the impact of your site’s content and promotions on your visitors.","less than 1 day
+1 to 3 days
+3 to 7 days
+7 to 14 days
+14 days to 1 month
+longer than 1 month",-,N/A,"floor((cast(cust_hit_time_gmt as bigint) -cast(last_hit_time_gmt as bigint))/ 86400)  
+    WHEN value <= 1 THEN '≤1'
+    WHEN value > 1 AND value <= 3 THEN '1~3'
+    WHEN value > 3 AND value <= 7 THEN '3~7'
+    WHEN value > 7 AND value <= 14 THEN '7~14'
+    WHEN value > 14 AND value <= 30 THEN '14~30'
+    ELSE '>30'",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/return-frequency
+Visitor Retention,Customer loyalty,Yes,"The ‘Customer loyalty’ dimension reports the number of visitors to your site that have made 0 prior purchases, 1 prior purchase, 2 prior purchases, or 3+ prior purchases. This dimension is valuable to understand how your site affects purchasing behavior. You can also use this dimension in a segment to focus on visitors that return to make a purchase, so that you can encourage similar behavior for new visitors.","Not a Customer
+New Customers
+Return Customers	
+Loyal Customers","Customer loyalty is a visit-level dimension that is retroactively applied to all hits within the visit, including those that occurred before the purchase.
+For example, if a 'Not a Customer' makes a purchase, the entire visit is classified as a 'New Customers' visit. Likewise, if a 'New Customer' makes a repeat purchase, that visit is reclassified as a 'Return Customer' visit.
+In other words, each visit is assigned only one customer loyalty classification.",last_purchase_num,"	The Customer loyalty dimension. The number of previous purchases the visitor has made.
+0: No prior purchases (not a customer)
+1: 1 prior purchase (new customer)
+2: 2 prior purchases (return customer)
+3: 3 or more prior purchases (loyal customer)",https://experienceleague.adobe.com/en/docs/analytics/components/dimensions/customer-loyalty

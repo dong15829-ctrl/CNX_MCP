@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "eProm_head_count": 289,
+      "eProm_sale_rev": 404091.502783497,
+      "chat_missed": 72.0,
+      "eStore_sale_rev": 8646912.466030622,
+      "eProm_missed_offerd_volume": 5296.0,
+      "eProm_chat_missed": 72.0,
+      "contribution": 4.7,
+      "survey_count": 318.0,
+      "eProm_chat_offered": 5296.0,
+      "csat_numerator": 278.0,
+      "convert_date": "02.08",
+      "missed_chat_rate": 1.4,
+      "chat_handled": 5224.0,
+      "eStore_rev_aov": 8646912.466030566,
+      "traffic": 0.0,
+      "conversion": 12.9,
+      "eProm_order_count_c": 697.0,
+      "eStore_order_count": 29221.0,
+      "chat_offered": 5296.0,
+      "eProm_revenue": 404092.0,
+      "total_visit": 0.0,
+      "eProm_unit_sold": 946.0,
+      "eStore_AOV": 295.9143241514858,
+      "eProm_order_count": 697.0,
+      "AOV_Rate": 95.9,
+      "eProm_per_revenue": 1398.0,
+      "eProm_rev_aov": 404091.5027834969,
+      "total_chat_offered": 30933.0,
+      "eProm_total_chat_offered": 30933.0,
+      "eProm_AOV": 579.7582536348593,
+      "unit_sold": 946.0,
+      "visit_chat_rate": 0.0,
+      "eProm_chat_handled": 5224.0,
+      "no_division_order_count": 673.0
+    }
+  ]
+}

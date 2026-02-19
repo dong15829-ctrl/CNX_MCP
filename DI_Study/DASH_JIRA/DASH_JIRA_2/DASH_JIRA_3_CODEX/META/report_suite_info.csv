@@ -1,0 +1,199 @@
+Region,Subsidiary,Country,Country Code (Site Code),Report Suite ID(s.account),Report Suite Name,Base URL,Time Zone,Currency Code,Currency Name,Character Set,Language Code,Language,Launch Date
+Global,-,MST Global,mstglobal,sssamsung4mstglobal,P6 WEB - MST Global,samsung.com,GMT+09.00,USD,Global Report Suite,UTF-8,en,English,2014.03.27
+"APAC
+(12 + JP)",SEAU,Australia,au,sssamsung4au,P6 WEB - Australia,samsung.com,GMT+10.00,AUD,Australia Dollars,UTF-8,en,English,2014.06.24
+"APAC
+(12 + JP)",SIEL,Bangladesh,bd,sssamsung4bd,P6 WEB - Bangladesh,samsung.com,GMT+06:00 (Dhaka),BDT,Bangladeshi Taka,UTF-8,en,English,2021.07.07
+"APAC
+(12 + JP)",SIEL,India,in,sssamsung4in,P6 WEB - India,samsung.com,GMT+05:30 (Bombay),INR,India Rupees,UTF-8,en,English,2014.08.28
+"APAC
+(12 + JP)",SEIN,Indonesia,id,sssamsung4id,P6 WEB - Indonesia,samsung.com,GMT+07:00 (Bangkok),IDR,Indonesia Rupiahs,UTF-8,id,Indonesian,2014.08.28
+"APAC
+(12 + JP)",SME,Malaysia,my,sssamsung4my,P6 WEB - Malaysia,samsung.com,GMT+08:00 (Hongkong),MYR,Malaysia Ringgits,UTF-8,en,English,2014.08.28
+"APAC
+(12 + JP)",SENZ,New Zealand,nz,sssamsung4nz,P6 WEB - New Zealand,samsung.com,GMT+12.00,NZD,New Zealand Dollars,UTF-8,en,English,2014.06.24
+"APAC
+(12 + JP)",SEPCO,Philippines,ph,sssamsung4ph,P6 WEB - Philippines,samsung.com,GMT+08:00 (Hongkong),PHP,Philippines Pesos,UTF-8,en,English,2014.08.28
+"APAC
+(12 + JP)",SESP,Singapore,sg,sssamsung4sg,P6 WEB - Singapore,samsung.com,GMT+08:00 (Hongkong),SGD,Singapore Dollars,UTF-8,en,English,2014.08.28
+"APAC
+(12 + JP)",TSE,Thailand,th,sssamsung4th,P6 WEB - Thailand,samsung.com,GMT+07:00 (Bangkok),THB,Thailand Baht,UTF-8,th,Thai,2014.08.28
+"APAC
+(12 + JP)",SAVINA,Vietnam,vn,sssamsung4vn,P6 WEB - Vietnam,samsung.com,GMT+07:00 (Bangkok),VND,Vietnam Dong,UTF-8,vi,Vietnamese,2014.08.28
+"APAC
+(12 + JP)",SEC,Korea,sec,sssamsung4sec,P6 WEB - Korea,samsung.com,GMT+09.00,KRW,South Korea Won,UTF-8,ko,Korean,2015.01.22
+"APAC
+(12 + JP)",TSE,Myanmar,mm,sssamsung4mm,P6 WEB - Myanmar,samsung.com,GMT+07:00,MMK,Myanmar Kyat,UTF-8,my,Burmese,2017.03.##
+"APAC
+(12 + JP)",SEJ,Japan,jp,sssamsung4jp,P6 WEB - Japan,samsung.com,GMT+09.00,JPY,Japan Yen,UTF-8,ja,Japanese,2014.04.11
+"China
+(4)",SCIC,China,cn,sssamsung4cn,P6 WEB - China,samsung.com,GMT+08:00 (Beijing),CNY,China Yuan Renminbi,UTF-8,zh1,Chinese,2014.08.27
+"China
+(4)",SEHK,HongKong,hk,sssamsung4hk,P6 WEB - HongKong,samsung.com,GMT+08:00 (Hongkong),HKD,Hong Kong Dollars,UTF-8,zh2,Chinese,2014.08.27
+"China
+(4)",SEHK,HongKong (English),hk_en,sssamsung4hken,P6 WEB - HongKong (English),samsung.com,GMT+08:00 (Hongkong),HKD,Hong Kong Dollars,UTF-8,en,English,2014.08.27
+"China
+(4)",SET,Taiwan,tw,sssamsung4tw,P6 WEB - Taiwan,samsung.com,GMT+08:00 (Hongkong),TWD,Taiwan New Dollars,UTF-8,zh ,Chinese,2014.08.27
+"CIS
+(9)",SERC,Azerbaijan,az,sssamsung4az,P6 WEB - Azerbaijan ,samsung.com,GMT+04:00,AZN,Azerbaijani Manat,UTF-8,az,Azerbaijani,2021.07.06
+"CIS
+(9)",SECE,Kazakhstan (Russian),kz_ru,sssamsung4kzru,P6 WEB - Kazakhstan ,samsung.com,GMT+06:00 (Almaty),KZT,Kazakhstan Tenge,UTF-8,ru,Russian,2014.08.28
+"CIS
+(9)",SECE,Kazakhstan (Kazakh),kz_kz,sssamsung4kzkz,P6 WEB - Kazakhstan (Kazakh),samsung.com,GMT+06:00 (Almaty),KZT,Kazakhstan Tenge,UTF-8,kk,Kazakh,2018.03.
+"CIS
+(9)",SERC,Georgia,ge,sssamsung4ge,P6 WEB - Georgia,samsung.com,GMT+03.00(Moscow),GEL,Georgian Lari,UTF-8,ka,Kavkaz languages,2023.3.31
+"CIS
+(9)",SECE,Mongolia,mn,sssamsung4mn,P6 WEB - Mongolia,samsung.com,GMT+06:00 (Almaty),MNT,Mongolian Tugrug,UTF-8,mn,Mongolian,2023.02.22
+"CIS
+(9)",SERC,Russia,ru,sssamsung4ru,P6 WEB - Russia,samsung.com,GMT+03.00(Moscow),RUB,Russia Rubles,UTF-8,ru,Russian,2014.08.28
+"CIS
+(9)",SEUC,Ukraine,ua,sssamsung4ua,P6 WEB - Ukraine,samsung.com,GMT+02:00 (Eastern Europe),UAH,Ukraine Hryvnia,UTF-8,uk,Ukrainian,2014.08.28
+"CIS
+(9)",SEUZ,Uzbekistan (Russian),uz_ru,sssamsung4uzru,P6 WEB - Uzbekistan (Russian),samsung.com,GMT+05:00 (Tashkent),UZS,Uzbekistani Som,UTF-8,ru,Russian,2020.01.10
+"CIS
+(9)",SEUZ,Uzbekistan (Uzbekistan),uz_uz,sssamsung4uzuz,P6 WEB - Uzbekistan,samsung.com,GMT+05:00 (Tashkent),UZS,Uzbekistani Som,UTF-8,uz,Uzbekistan,2020.01.10
+"MEA
+(20)",SCA,Africa Pan (en),africa_en,sssamsung4africaen,P6 WEB - Africa (en),samsung.com,GMT+02:00 (Cairo),USD,United States Dollars,UTF-8,en,English,2014.08.28
+"MEA
+(20)",SCA,Africa Pan (fr),africa_fr,sssamsung4africafr,P6 WEB - Africa (fr),samsung.com,GMT+02:00 (Cairo),USD,United States Dollars,UTF-8,fr,French,2014.08.28
+"MEA
+(20)",SEEG-S,Egypt,eg,sssamsung4eg,P6 WEB - Egypt,samsung.com,GMT+02:00 (Cairo),EGP,Egypt Pounds,UTF-8,ar,Arabian,2014.08.28
+"MEA
+(20)",Iran,Iran,iran,sssamsung4iran,P6 WEB - Iran,samsung.com,GMT+03:30 (Tehran),IRR,Iran Rials,UTF-8,fa,Persian,2014.08.28
+"MEA
+(20)",SEIL,Israel,il,sssamsung4il,P6 WEB - Israel,samsung.com,GMT+02:00 (Israel),ILS,Israel New Shekels,UTF-8,he,Hebrew,2014.08.28
+"MEA
+(20)",SELV,Kurdistan,iq_ku,sssamsung4ku,P6 WEB - Kurdistan,samsung.com,GMT+03.00,IQD,Iraqi dinar,UTF-8,ku,	Kurdish,2022.07.07
+"MEA
+(20)",SELV,Iraq,iq_ar,sssamsung4iqar,P6 WEB - Iraq,samsung.com,GMT+03.00,IQD,Iraqi dinar,UTF-8,ar,Arabian,2022.07.07
+"MEA
+(20)",SELV,Levant,levant,sssamsung4levant,P6 WEB - Levant,samsung.com,GMT+03.00,JD,Jordanian Dinar,UTF-8,en,English,2014.08.28
+"MEA
+(20)",SELV,Levant (ar),levant_ar,sssamsung4levantar,P6 WEB - Levant (ar),samsung.com,GMT+03.00,JD,Jordanian Dinar,UTF-8,ar,Arabian,2019.01.11
+"MEA
+(20)",SCA,Africa Pan (pt),africa_pt,sssamsung4africapt,P6 WEB - Africa (pt),samsung.com,GMT+02:00 (Cairo),USD,United States Dollars,UTF-8,pt,Portuguese,2014.08.28
+"MEA
+(20)",SEMAG,North Africa,n_africa,sssamsung4nafrica,P6 WEB - North Africa,samsung.com,GMT+02:00 (Cairo),USD,United States Dollars,UTF-8,fr,French,2014.08.28
+"MEA
+(20)",SEPAK,Pakistan,pk,sssamsung4pk,P6 WEB - Pakistan,samsung.com,GMT+05:00 (Islamabad),PKR,Pakistan Rupees,UTF-8,en,English,2014.08.28
+"MEA
+(20)",SEIL,Palestine,ps,sssamsung4ps,P6 WEB - Palestine,samsung.com,GMT+02:00,LBP,Lebanon Pounds,UTF-8,ar,Arabian,2020.06.24
+"MEA
+(20)",SESAR,Saudi Arabia,sa,sssamsung4sa,P6 WEB - Saudi Arabia,samsung.com,GMT+03:00 (Baghdad),SAR,Saudi Arabia Riyals,UTF-8,ar,Arabian,2014.08.28
+"MEA
+(20)",SETK,Turkey,tr,sssamsung4tr,P6 WEB - Turkey,samsung.com,GMT+03.00(Istanbul),TRY,Turkey Lira,UTF-8,tr,Turkish,2014.08.28
+"MEA
+(20)",SGE,UAE,ae,sssamsung4ae,P6 WEB - UAE,samsung.com,GMT+04:00 (Abu Dhabi),AED,United Arab Emirates Dirhams,UTF-8,en,English,2014.08.28
+"MEA
+(20)",SGE,UAE (ar),ae_ar,sssamsung4aear,P6 WEB - UAE (ar),samsung.com,GMT+04:00 (Abu Dhabi),AED,United Arab Emirates Dirhams,UTF-8,ar,Arabian,2014.08.28
+"MEA
+(20)",SESAR,Saudi Arabia (en),sa_en,sssamsung4saen,P6 WEB - Saudi Arabia (en),samsung.com,GMT+03:00 (Baghdad),SAR,Saudi Arabia Riyals,UTF-8,en,English,2014.08.28
+"MEA
+(20)",SSA,South Africa,za,sssamsung4za,P6 WEB - South Africa,samsung.com,GMT+02:00 (Harare),ZAR,South Africa Rand,UTF-8,en,English,2014.08.28
+"MEA
+(20)",SELV,Lebanon,lb,sssamsung4lb,P6 WEB - Lebanon,samsung.com,GMT+02:00,LBP,Lebanon Pounds,UTF-8,en,English,2022.07.07
+"Europe
+(32)",SEAS,Austria,at,sssamsung4at,P6 WEB - Austria,samsung.com,GMT+01.00 (Vienna),EUR,Euro,UTF-8,de,German,2014.07.22
+"Europe
+(32)",SEBN,Belgium(NL),"be
+be_fr",sssamsung4be,P6 WEB - Belgium(NL),samsung.com,GMT+01.00 (Brussels),EUR,Euro,UTF-8,nl,Dutch,2014.07.22
+"Europe
+(32)",SEAD,Bosnia,ba,sssamsung4ba,P6 WEB - Bosnia,samsung.com,GMT+02.00 (Sarajevo),BAM,Bosnian Mark,UTF-8,ba,Bosnian,2020.07.09
+"Europe
+(32)",SEROM,Bulgaria,bg,sssamsung4bg,P6 WEB - Bulgaria,samsung.com,GMT+02.00 (Eastern Europe),BGN,Bulgaria Leva,UTF-8,bg,Bulgarian,2014.07.22
+"Europe
+(32)",SEAD,Croatia,hr,sssamsung4hr,P6 WEB - Croatia,samsung.com,GMT+01.00 (Warsaw),EUR,Croatia Kuna,UTF-8,hr,Croatian,2014.07.22
+"Europe
+(32)",SECZ,Czech,cz,sssamsung4cz,P6 WEB - Czech,samsung.com,"GMT+01.00 (Prague,Bratislava)",CZK,Czech Republic Koruny,UTF-8,cs,Czech,2014.07.22
+"Europe
+(32)",SENA,Denmark,dk,sssamsung4dk,P6 WEB - Denmark,samsung.com,"GMT+01.00 (Prague,Bratislava)",DKK,Denmark Kroner,UTF-8,da,Danish,2014.07.22
+"Europe
+(32)",SEB,Estonia,ee,sssamsung4ee,P6 WEB - Estonia,samsung.com,GMT+02.00 (Athene),EUR,Euro,UTF-8,et,Estonian,2014.07.22
+"Europe
+(32)",SENA,Finland,fi,sssamsung4fi,P6 WEB - Finland,samsung.com,GMT+02.00 (Helsinki),EUR,Euro,UTF-8,fi,Finnish,2014.07.22
+"Europe
+(32)",SEF,France,fr,sssamsung4fr,P6 WEB - France,samsung.com,GMT+01.00 (Paris),EUR,Euro,UTF-8,fr,French,2014.06.26
+"Europe
+(32)",SEG,Germany,de,sssamsung4de,P6 WEB - Germany,samsung.com,GMT+01.00 (Berlin),EUR,Euro,UTF-8,de,German,2014.06.22
+"Europe
+(32)",SEGR,Greece,gr,sssamsung4gr,P6 WEB - Greece,samsung.com,GMT+02.00 (Athene),EUR,Euro,UTF-8,el,Greek,2014.07.22
+"Europe
+(32)",SEH,Hungary,hu,sssamsung4hu,P6 WEB - Hungary,samsung.com,"GMT+01.00 (Prague,Bratislava)",HUF,Hungary Forint,UTF-8,hu,Hungarian,2014.07.22
+"Europe
+(32)",SEUK,Ireland,ie,sssamsung4ie,P6 WEB - Ireland,samsung.com,GMT,EUR,Euro,UTF-8,en,English,2014.06.26
+"Europe
+(32)",SEI,Italy,it,sssamsung4it,P6 WEB - Italy,samsung.com,GMT+01.00 (Rome),EUR,Euro,UTF-8,it,Italian,2014.06.19
+"Europe
+(32)",SEB,Latvia,lv,sssamsung4lv,P6 WEB - Latvia,samsung.com,GMT+02.00 (Eastern Europe),LVL,Latvia Lati,UTF-8,lv,Latvian,2014.07.22
+"Europe
+(32)",SEB,Lithuania,lt,sssamsung4lt,P6 WEB - Lithuania,samsung.com,GMT+02.00 (Eastern Europe),LTL,Lithuania Litai,UTF-8,lt,Lithuania,2014.07.22
+"Europe
+(32)",SEAD,Macedonia,mk,sssamsung4mk,P6 WEB - Macedonia,samsung.com,GMT+02.00 (Eastern Europe),MKD,Macedonian Denar,UTF-8,mk,Macedonian,2019.06.13
+"Europe
+(32)",SEBN,Netherlands,nl,sssamsung4nl,P6 WEB - Netherlands,samsung.com,GMT+01.00 (Amsterdam),EUR,Euro,UTF-8,nl,Dutch,2014.07.22
+"Europe
+(32)",SENA,Norway,no,sssamsung4no,P6 WEB - Norway,samsung.com,GMT+01.00 (Berlin),NOK,Norway Kroner,UTF-8,no,Norwegian,2014.07.22
+"Europe
+(32)",SEPOL,Poland,pl,sssamsung4pl,P6 WEB - Poland,samsung.com,GMT+01.00 (Warsaw),PLN,Poland Zlotych,UTF-8,pl,Polish,2014.07.22
+"Europe
+(32)",SEIB,Portugal,pt,sssamsung4pt,P6 WEB - Portugal,samsung.com,GMT,EUR,Euro,UTF-8,pt,Portuguese,2014.07.22
+"Europe
+(32)",SEROM,Romania,ro,sssamsung4ro,P6 WEB - Romania,samsung.com,GMT+02.00 (Eastern Europe),RON,Romania New Lei,UTF-8,ro,Romanian,2014.07.22
+"Europe
+(32)",SEAD,Serbia,rs,sssamsung4rs,P6 WEB - Serbia,samsung.com,GMT+01.00 (Warsaw),RSD,Serbia Dinars,UTF-8,rs,Serbian,2014.07.22
+"Europe
+(32)",SECZ,Slovakia,sk,sssamsung4sk,P6 WEB - Slovakia,samsung.com,"GMT+01.00 (Prague,Bratislava)",EUR,Euro,UTF-8,sk ,Slovak,2014.07.22
+"Europe
+(32)",SEAD,Slovenia,si,sssamsung4si,P6 WEB - Slovenia,samsung.com,GMT+01.00 (GMT+01.00),EUR,Euro,UTF-8,si,Slovenian,2014.12.23
+"Europe
+(32)",SEIB,Spain,es,sssamsung4es,P6 WEB - Spain,samsung.com,GMT+01.00 (Madrid),EUR,Euro,UTF-8,es,Spanish,2014.06.24
+"Europe
+(32)",SENA,Sweden,se,sssamsung4se,P6 WEB - Sweden,samsung.com,GMT+01.00 (Stockholm),SEK,Sweden Kronor,UTF-8,sv,Swedish,2014.07.22
+"Europe
+(32)",SEAS,Switzerland,ch,sssamsung4ch,P6 WEB - Switzerland,samsung.com,GMT+01.00 (Bern),CHF,Switzerland Francs,UTF-8,de,German,2014.07.22
+"Europe
+(32)",SEAS,Switzerland-FR,ch_fr,sssamsung4chfr,P6 WEB - Switzerland(FR),samsung.com,GMT+01.00 (Bern),CHF,Switzerland Francs,UTF-8,fr,French,2014.07.22
+"Europe
+(32)",SEUK,United Kingdom,uk,sssamsung4uk,P6 WEB - UK,samsung.com,GMT,GBP,United Kingdom Pounds,UTF-8,en,English,2014.03.27
+"Europe
+(32)",SEAD,Albania,al,sssamsung4al,P6 WEB - Albania,samsung.com,GMT+01.00,ALL,Albania leku,UTF-8,el,Greek,2017.03.##
+"Latin America
+(9)",SEASA,Argentina,ar,sssamsung4ar,P6 WEB - Argentina,samsung.com,GMT-03:00 (Buenos Aires),ARS,Argentina Pesos,UTF-8,es,Spanish,2014.08.28
+"Latin America
+(9)",SEDA,Brazil,br,sssamsung4br,P6 WEB - Brazil,samsung.com,GMT-03:00 (Brasilia),BRL,Brazil Reais,UTF-8,pt,Portuguese,2014.08.28
+"Latin America
+(9)",SECH,Chile,cl,sssamsung4cl,P6 WEB - Chile,samsung.com,GMT-04:00 (Chile),CLP,Chile Pesos,UTF-8,es,Spanish,2014.08.28
+"Latin America
+(9)",SAMCOL,Colombia,co,sssamsung4co,P6 WEB - Colombia,samsung.com,GMT-05:00 (Botoga),COP,Colombia Pesos,UTF-8,es,Spanish,2014.08.28
+"Latin America
+(9)",SELA,Panama (English),latin_en,sssamsung4latinen,P6 WEB - Panama (English),samsung.com,GMT-05:00 (Botoga),USD,Panama Balboas,UTF-8,en,English,2014.08.28
+"Latin America
+(9)",SELA,Panama (Spanish),latin,sssamsung4latin,P6 WEB - Panama (Spanish),samsung.com,GMT-05:00 (Botoga),USD,Panama Balboas,UTF-8,es,Spanish,2014.08.28
+"Latin America
+(9)",SEPR,Peru,pe,sssamsung4pe,P6 WEB - Peru,samsung.com,GMT-05:00 (Botoga),PEN,Peru Nuevos Soles,UTF-8,es,Spanish,2014.08.28
+"Latin America
+(9)",SELA,Uruguay,uy,sssamsung4uy,P6 WEB - Uruguay,samsung.com,GMT-03.00,UYU,Uruguayan Peso,UTF-8,es,Spanish,2015.10.01
+"Latin America
+(9)",SELA,Paraguay,py,sssamsung4py,P6 WEB - Paraguay,samsung.com,GMT-04.00,PYG,Paraguayan Guarani,UTF-8,es,Spanish,2015.10.01
+"North America
+(3 + US)",SECA,Canada,ca,sssamsung4ca,P6 WEB - Canada,samsung.com,GMT-05:00 (US Eastern Time),CAD,Canada Dollars,UTF-8,en,English,2014.08.28
+"North America
+(3 + US)",SECA,Canada(FR),ca_fr,sssamsung4cafr,P6 WEB - Canada(FR),samsung.com,GMT-05:00 (US Eastern Time),CAD,Canada Dollars,UTF-8,fr,French,2014.08.28
+"North America
+(3 + US)",SEM,Mexico,mx,sssamsung4mx,P6 WEB - Mexico,samsung.com,GMT-06:00 (Mexico),MXN,Mexico Pesos,UTF-8,es,Spanish,2014.08.28
+"North America
+(3 + US)",SEA,US,us,sssamsungnewus,Samsung.com - US New,samsung.com,GMT-05:00 (US Eastern Time),USD,United States Dollars,UTF-8,en,English,**2014.01 : PC & Mobile Integration was begun
+Total,,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite,1 Global Report Suite + 92 Country Report Suite
+B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy,B2B Global + Global Microsite + Galaxy
+B2B,-,B2B GBM Global (P4.0),b2bglobal,sssamsung4b2bglobal,P6 WEB B2B Global - GBM,samsung.com,GMT+09.00 (Seoul),USD,,UTF-8,en,English,2014.11.17
+B2B,-,B2B Semi - Production,b2bsemi,sssamsung4b2bsemi,B2B Semi - Production (P4),samsung.com,GMT,USD,,UTF-8,en,English,2015.08.20
+B2B,-,B2B Semi - CN,cn,sssamsung4b2bsemicn,B2B Semi - China,samsung.com,GMT+08:00 (Beijing),CNY,China Yuan Renminbi,UTF-8,zh1,Chinese,
+B2C,-,B2C Semi - Production,b2csemi,sssamsung4b2csemi,B2C Semi - Production (P4),samsung.com,GMT+09.00 (Seoul),KWD,,UTF-8,en,English,2016.07.14
+B2B,-,B2B Semi - SSD,b2bsemissd,sssamsungb2bsemissd,B2B Semi - SSD,samsung.com,GMT+09.00 (Seoul),USD,,UTF-8,en,English,
+Microsite,-,P3 WEB Microsite,global,sssamsung3global,P3 WEB Global Microsite,samsung.com,GMT+09.00 (Seoul),USD,,UTF-8,en,English,
+Galaxy,-,P4 WEB - Galaxy,galaxy,sssamsung4galaxy,P4 WEB - Galaxy,samsung.com,GMT+09.00 (Seoul),USD,,UTF-8,en,English,
+EBDC,-,P6 WEB - Download Center,global,sssamsung4ebdc,P6 WEB - Download Center,samsung.com,GMT+09.00 (Seoul),USD,,UTF-8,en,English,2025.04.04
+Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites,Dev Report Suites
+Global,-,MST Global Test,mstglobaldev,sssamsung4mstglobaldev,P6 WEB - MST Global (Dev),samsung.com,GMT+09.00 (Seoul),USD,,UTF-8,en,English,2014.03.27
+Next Test,-,Next Gen Test,N/A,sssamsungnexttest,NextGen - Test Report Suite,samsung.com,GMT+09.00 (Seoul),GBP,United Kingdom Pounds,UTF-8,en,English,
+Microsite,-,Microsite Test,N/A,ssmicrositetest,Microsite Test - Non US&US (Global),samsung.com,GMT,USD,,UTF-8,en,English,

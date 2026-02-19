@@ -1,0 +1,2611 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Division Summary</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/googleChart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <!-- //datepicker -->
+
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="css/datatables.css">
+    <script type="text/javascript" src="js/datatables.js"></script>
+    <!-- //datatable -->
+
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css"><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script></head>
+<body>
+<div class="body_wrap">
+    <!-- header -->
+    
+
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+    svg > g > g:last-child { pointer-events: none }
+</style>
+
+<div class="gnb_wrap">
+    <div class="gnb_top">
+        <button class="gnb_hbg"></button>
+        <div class="gnb_tit">Division Summary</div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Region / Local / Site:</div>
+            <ul class="gnb_option_sum">
+                <li class="icon"></li>
+                
+                
+                
+                
+                    
+                    
+                    
+                        <li class="region" id="region">All</li>
+                    
+                    
+                    
+                
+                
+                
+                <li class="country" id="country">All</li>
+                <li class="site" id="site">66</li>
+                <li class="icon_extension"></li>
+            </ul>
+
+            
+            <div class="region_wrap" style="display: none;">
+                <div class="section_wrap">
+                    <div class="section" id="tit_region">
+                        <div class="tit">Region</div>
+                    </div>
+                    <div class="section" id="tit_country">
+                        <div class="tit">Local</div>
+                    </div>
+                    <div class="section" id="tit_site">
+                        <div class="tit">Site</div>
+                    </div>
+                </div>
+                <div class="section_body">
+                    <ul class="txt region" id="txt_region">
+                        
+                        
+                        
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq0" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq0" style="cursor: pointer;">All<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq1" type="checkbox" vpromoter="0" audio="1" sns="0" style="">
+                                            <label for="rhq1" style="cursor: pointer;">AFRICA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq2" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq2" style="cursor: pointer;">Americas<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq3" type="checkbox" vpromoter="1" audio="0" sns="1" style="">
+                                            <label for="rhq3" style="cursor: pointer;">APAC<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq4" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq4" style="cursor: pointer;">EHQ<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq5" type="checkbox" vpromoter="1" audio="1" sns="0" style="">
+                                            <label for="rhq5" style="cursor: pointer;">G.CN<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq6" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq6" style="cursor: pointer;">KOREA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq7" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq7" style="cursor: pointer;">MENA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq8" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq8" style="cursor: pointer;">SWA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                        
+                        
+                    </ul>
+                    <ul class="txt country" id="txt_country"><li>   <input name="country" id="country0" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country0" style="cursor:pointer" data-id="All">All<span></span></label></li><li>   <input name="country" id="country1" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country1" style="cursor:pointer" data-id="SAMCOL">SAMCOL<span></span></label></li><li>   <input name="country" id="country2" type="checkbox" vpromoter="1" audio="0" sns="0" style="">   <label for="country2" style="cursor:pointer" data-id="SAVINA">SAVINA<span></span></label></li><li>   <input name="country" id="country3" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country3" style="cursor:pointer" data-id="SEAD">SEAD<span></span></label></li><li>   <input name="country" id="country4" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country4" style="cursor:pointer" data-id="SEAS">SEAS<span></span></label></li><li>   <input name="country" id="country5" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country5" style="cursor:pointer" data-id="SEAU">SEAU<span></span></label></li><li>   <input name="country" id="country6" type="checkbox" vpromoter="1" audio="1" sns="0" style="">   <label for="country6" style="cursor:pointer" data-id="SEB">SEB<span></span></label></li><li>   <input name="country" id="country7" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country7" style="cursor:pointer" data-id="SEBN">SEBN<span></span></label></li><li>   <input name="country" id="country8" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country8" style="cursor:pointer" data-id="SEC">SEC<span></span></label></li><li>   <input name="country" id="country9" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country9" style="cursor:pointer" data-id="SECA">SECA<span></span></label></li><li>   <input name="country" id="country10" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country10" style="cursor:pointer" data-id="SECH">SECH<span></span></label></li><li>   <input name="country" id="country11" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country11" style="cursor:pointer" data-id="SECZ">SECZ<span></span></label></li><li>   <input name="country" id="country12" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country12" style="cursor:pointer" data-id="SEDA">SEDA<span></span></label></li><li>   <input name="country" id="country13" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country13" style="cursor:pointer" data-id="SEEG">SEEG<span></span></label></li><li>   <input name="country" id="country14" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country14" style="cursor:pointer" data-id="SEF">SEF<span></span></label></li><li>   <input name="country" id="country15" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country15" style="cursor:pointer" data-id="SEG">SEG<span></span></label></li><li>   <input name="country" id="country16" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country16" style="cursor:pointer" data-id="SEGR">SEGR<span></span></label></li><li>   <input name="country" id="country17" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country17" style="cursor:pointer" data-id="SEH">SEH<span></span></label></li><li>   <input name="country" id="country18" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country18" style="cursor:pointer" data-id="SEHK">SEHK<span></span></label></li><li>   <input name="country" id="country19" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country19" style="cursor:pointer" data-id="SEI">SEI<span></span></label></li><li>   <input name="country" id="country20" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country20" style="cursor:pointer" data-id="SEIB">SEIB<span></span></label></li><li>   <input name="country" id="country21" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country21" style="cursor:pointer" data-id="SEIL">SEIL<span></span></label></li><li>   <input name="country" id="country22" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country22" style="cursor:pointer" data-id="SEIN">SEIN<span></span></label></li><li>   <input name="country" id="country23" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country23" style="cursor:pointer" data-id="SELV">SELV<span></span></label></li><li>   <input name="country" id="country24" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country24" style="cursor:pointer" data-id="SEM">SEM<span></span></label></li><li>   <input name="country" id="country25" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country25" style="cursor:pointer" data-id="SEMAG">SEMAG<span></span></label></li><li>   <input name="country" id="country26" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country26" style="cursor:pointer" data-id="SENA">SENA<span></span></label></li><li>   <input name="country" id="country27" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country27" style="cursor:pointer" data-id="SENZ">SENZ<span></span></label></li><li>   <input name="country" id="country28" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country28" style="cursor:pointer" data-id="SEPAK">SEPAK<span></span></label></li><li>   <input name="country" id="country29" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country29" style="cursor:pointer" data-id="SEPCO">SEPCO<span></span></label></li><li>   <input name="country" id="country30" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country30" style="cursor:pointer" data-id="SEPOL">SEPOL<span></span></label></li><li>   <input name="country" id="country31" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country31" style="cursor:pointer" data-id="SEPR">SEPR<span></span></label></li><li>   <input name="country" id="country32" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country32" style="cursor:pointer" data-id="SEROM">SEROM<span></span></label></li><li>   <input name="country" id="country33" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country33" style="cursor:pointer" data-id="SESAR">SESAR<span></span></label></li><li>   <input name="country" id="country34" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country34" style="cursor:pointer" data-id="SESP">SESP<span></span></label></li><li>   <input name="country" id="country35" type="checkbox" vpromoter="1" audio="1" sns="0" style="">   <label for="country35" style="cursor:pointer" data-id="SET">SET<span></span></label></li><li>   <input name="country" id="country36" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country36" style="cursor:pointer" data-id="SETK">SETK<span></span></label></li><li>   <input name="country" id="country37" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country37" style="cursor:pointer" data-id="SEUK">SEUK<span></span></label></li><li>   <input name="country" id="country38" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country38" style="cursor:pointer" data-id="SGE">SGE<span></span></label></li><li>   <input name="country" id="country39" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country39" style="cursor:pointer" data-id="SIEL">SIEL<span></span></label></li><li>   <input name="country" id="country40" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country40" style="cursor:pointer" data-id="SME">SME<span></span></label></li><li>   <input name="country" id="country41" type="checkbox" vpromoter="0" audio="1" sns="0" style="">   <label for="country41" style="cursor:pointer" data-id="SSA">SSA<span></span></label></li><li>   <input name="country" id="country42" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country42" style="cursor:pointer" data-id="TSE">TSE<span></span></label></li></ul>
+                    <ul class="txt site" id="txt_site"><li>   <input name="site" id="site0" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site0" style="cursor:pointer" data-id="All"><span class="site_span">All</span><span></span></label></li><li>   <input name="site" id="site1" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site1" style="cursor:pointer" data-id="AE"><span class="site_span">AE</span><span></span></label></li><li>   <input name="site" id="site2" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site2" style="cursor:pointer" data-id="AE_AR"><span class="site_span">AE_AR</span><span></span></label></li><li>   <input name="site" id="site3" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site3" style="cursor:pointer" data-id="AL"><span class="site_span">AL</span><span></span></label></li><li>   <input name="site" id="site4" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label class="has_noti" for="site4" style="cursor:pointer" data-id="AT"><span class="site_span">AT</span><span></span></label></li><li>   <input name="site" id="site5" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label class="has_noti" for="site5" style="cursor:pointer" data-id="AU"><span class="site_span">AU</span><span></span></label></li><li>   <input name="site" id="site6" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site6" style="cursor:pointer" data-id="BA"><span class="site_span">BA</span><span></span></label></li><li>   <input name="site" id="site7" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site7" style="cursor:pointer" data-id="BE"><span class="site_span">BE</span><span></span></label></li><li>   <input name="site" id="site8" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site8" style="cursor:pointer" data-id="BE_FR"><span class="site_span">BE_FR</span><span></span></label></li><li>   <input name="site" id="site9" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site9" style="cursor:pointer" data-id="BG"><span class="site_span">BG</span><span></span></label></li><li>   <input name="site" id="site10" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site10" style="cursor:pointer" data-id="BR"><span class="site_span">BR</span><span></span></label></li><li>   <input name="site" id="site11" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site11" style="cursor:pointer" data-id="CA"><span class="site_span">CA</span><span></span></label></li><li>   <input name="site" id="site12" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site12" style="cursor:pointer" data-id="CA_FR"><span class="site_span">CA_FR</span><span></span></label></li><li>   <input name="site" id="site13" type="checkbox" vpromoter="1" audio="0" sns="0" checked="" style="">   <label for="site13" style="cursor:pointer" data-id="CH"><span class="site_span">CH</span><span></span></label></li><li>   <input name="site" id="site14" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site14" style="cursor:pointer" data-id="CH_FR"><span class="site_span">CH_FR</span><span></span></label></li><li>   <input name="site" id="site15" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site15" style="cursor:pointer" data-id="CL"><span class="site_span">CL</span><span></span></label></li><li>   <input name="site" id="site16" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site16" style="cursor:pointer" data-id="CO"><span class="site_span">CO</span><span></span></label></li><li>   <input name="site" id="site17" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site17" style="cursor:pointer" data-id="CZ"><span class="site_span">CZ</span><span></span></label></li><li>   <input name="site" id="site18" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site18" style="cursor:pointer" data-id="DE"><span class="site_span">DE</span><span></span></label></li><li>   <input name="site" id="site19" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site19" style="cursor:pointer" data-id="DK"><span class="site_span">DK</span><span></span></label></li><li>   <input name="site" id="site20" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site20" style="cursor:pointer" data-id="EE"><span class="site_span">EE</span><span></span></label></li><li>   <input name="site" id="site21" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site21" style="cursor:pointer" data-id="EG"><span class="site_span">EG</span><span></span></label></li><li>   <input name="site" id="site22" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site22" style="cursor:pointer" data-id="ES"><span class="site_span">ES</span><span></span></label></li><li>   <input name="site" id="site23" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site23" style="cursor:pointer" data-id="FI"><span class="site_span">FI</span><span></span></label></li><li>   <input name="site" id="site24" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site24" style="cursor:pointer" data-id="FR"><span class="site_span">FR</span><span></span></label></li><li>   <input name="site" id="site25" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site25" style="cursor:pointer" data-id="GR"><span class="site_span">GR</span><span></span></label></li><li>   <input name="site" id="site26" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site26" style="cursor:pointer" data-id="HK"><span class="site_span">HK</span><span></span></label></li><li>   <input name="site" id="site27" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site27" style="cursor:pointer" data-id="HK_EN"><span class="site_span">HK_EN</span><span></span></label></li><li>   <input name="site" id="site28" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site28" style="cursor:pointer" data-id="HR"><span class="site_span">HR</span><span></span></label></li><li>   <input name="site" id="site29" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site29" style="cursor:pointer" data-id="HU"><span class="site_span">HU</span><span></span></label></li><li>   <input name="site" id="site30" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site30" style="cursor:pointer" data-id="ID"><span class="site_span">ID</span><span></span></label></li><li>   <input name="site" id="site31" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site31" style="cursor:pointer" data-id="IE"><span class="site_span">IE</span><span></span></label></li><li>   <input name="site" id="site32" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site32" style="cursor:pointer" data-id="IL"><span class="site_span">IL</span><span></span></label></li><li>   <input name="site" id="site33" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site33" style="cursor:pointer" data-id="IN"><span class="site_span">IN</span><span></span></label></li><li>   <input name="site" id="site34" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site34" style="cursor:pointer" data-id="IQ_AR"><span class="site_span">IQ_AR</span><span></span></label></li><li>   <input name="site" id="site35" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site35" style="cursor:pointer" data-id="IT"><span class="site_span">IT</span><span></span></label></li><li>   <input name="site" id="site36" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site36" style="cursor:pointer" data-id="KR"><span class="site_span">KR</span><span></span></label></li><li>   <input name="site" id="site37" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site37" style="cursor:pointer" data-id="LEVANT"><span class="site_span">LEVANT</span><span></span></label></li><li>   <input name="site" id="site38" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site38" style="cursor:pointer" data-id="LEVANT_AR"><span class="site_span">LEVANT_AR</span><span></span></label></li><li>   <input name="site" id="site39" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site39" style="cursor:pointer" data-id="LT"><span class="site_span">LT</span><span></span></label></li><li>   <input name="site" id="site40" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site40" style="cursor:pointer" data-id="LV"><span class="site_span">LV</span><span></span></label></li><li>   <input name="site" id="site41" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site41" style="cursor:pointer" data-id="MK"><span class="site_span">MK</span><span></span></label></li><li>   <input name="site" id="site42" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site42" style="cursor:pointer" data-id="MX"><span class="site_span">MX</span><span></span></label></li><li>   <input name="site" id="site43" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site43" style="cursor:pointer" data-id="MY"><span class="site_span">MY</span><span></span></label></li><li>   <input name="site" id="site44" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site44" style="cursor:pointer" data-id="NL"><span class="site_span">NL</span><span></span></label></li><li>   <input name="site" id="site45" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site45" style="cursor:pointer" data-id="NO"><span class="site_span">NO</span><span></span></label></li><li>   <input name="site" id="site46" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site46" style="cursor:pointer" data-id="NZ"><span class="site_span">NZ</span><span></span></label></li><li>   <input name="site" id="site47" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site47" style="cursor:pointer" data-id="N_AFRICA"><span class="site_span">N_AFRICA</span><span></span></label></li><li>   <input name="site" id="site48" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site48" style="cursor:pointer" data-id="PE"><span class="site_span">PE</span><span></span></label></li><li>   <input name="site" id="site49" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site49" style="cursor:pointer" data-id="PH"><span class="site_span">PH</span><span></span></label></li><li>   <input name="site" id="site50" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site50" style="cursor:pointer" data-id="PK"><span class="site_span">PK</span><span></span></label></li><li>   <input name="site" id="site51" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site51" style="cursor:pointer" data-id="PL"><span class="site_span">PL</span><span></span></label></li><li>   <input name="site" id="site52" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site52" style="cursor:pointer" data-id="PT"><span class="site_span">PT</span><span></span></label></li><li>   <input name="site" id="site53" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site53" style="cursor:pointer" data-id="RO"><span class="site_span">RO</span><span></span></label></li><li>   <input name="site" id="site54" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site54" style="cursor:pointer" data-id="RS"><span class="site_span">RS</span><span></span></label></li><li>   <input name="site" id="site55" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site55" style="cursor:pointer" data-id="SA"><span class="site_span">SA</span><span></span></label></li><li>   <input name="site" id="site56" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site56" style="cursor:pointer" data-id="SA_EN"><span class="site_span">SA_EN</span><span></span></label></li><li>   <input name="site" id="site57" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site57" style="cursor:pointer" data-id="SE"><span class="site_span">SE</span><span></span></label></li><li>   <input name="site" id="site58" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site58" style="cursor:pointer" data-id="SG"><span class="site_span">SG</span><span></span></label></li><li>   <input name="site" id="site59" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site59" style="cursor:pointer" data-id="SI"><span class="site_span">SI</span><span></span></label></li><li>   <input name="site" id="site60" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site60" style="cursor:pointer" data-id="SK"><span class="site_span">SK</span><span></span></label></li><li>   <input name="site" id="site61" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site61" style="cursor:pointer" data-id="TH"><span class="site_span">TH</span><span></span></label></li><li>   <input name="site" id="site62" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site62" style="cursor:pointer" data-id="TR"><span class="site_span">TR</span><span></span></label></li><li>   <input name="site" id="site63" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site63" style="cursor:pointer" data-id="TW"><span class="site_span">TW</span><span></span></label></li><li>   <input name="site" id="site64" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site64" style="cursor:pointer" data-id="UK"><span class="site_span">UK</span><span></span></label></li><li>   <input name="site" id="site65" type="checkbox" vpromoter="1" audio="0" sns="0" checked="" style="">   <label for="site65" style="cursor:pointer" data-id="VN"><span class="site_span">VN</span><span></span></label></li><li>   <input name="site" id="site66" type="checkbox" vpromoter="0" audio="1" sns="0" checked="" style="">   <label for="site66" style="cursor:pointer" data-id="ZA"><span class="site_span">ZA</span><span></span></label></li></ul>
+                </div>
+                <div class="gnb_btn_update_wrap">
+                    <button class="gnb_btn_update" onclick="getUpdate()">Update</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Date :</div>
+            <ul class="gnb_option_sum_date">
+                <li>
+                    <input class="" type="text" name="daterange" value="" id="date" autocomplete="off" readonly="" style="">
+                </li>
+            </ul>
+        </div>
+        
+        <div class="gnb_option_wrap noti_box">
+            <table class="data_type_table">
+                <tbody>
+                <tr>
+                    
+                        
+                        
+                            <td class="data_type" data-period="day">
+                                Daily
+                            </td>
+                            <td class="data_type" data-period="week">
+                                Weekly
+                            </td>
+                            <td class="data_type" data-period="month">
+                                Monthly
+                            </td>
+                            <td class="data_type" data-period="quarter">
+                                Quarterly
+                            </td>
+                        
+                    
+                </tr>
+                </tbody>
+            </table>
+            <span class="box_inner" style="position:absolute;top:12px;right: 0;">
+                    <span class="icon_noti">
+                        <div class="noti_tooltip lefty caution">
+                            When click Daily/Weekly/Monthly/Quarterly, the indicators on the top line and the ranking tables will shown as average of selected data period.
+                        </div>
+                    </span>
+                </span>
+        </div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_user_wrap">
+                <div class="icon_user"></div>
+                <!-- 20200624 ë¡ê·¸ìì -->
+                <div class="wrap_pop_user_pwd">
+                    <span class="pop_user_id">
+                        
+                        dongil.kim
+                        
+                    </span>
+                    <button class="btn_chg_pwd">Change Password</button>
+                    <div class="wrap_chg_pwd">
+                        <input type="password" placeholder="Current Password" class="chg_pwd_input" id="current_pw" autocomplete="off" style="">
+                        <input type="password" placeholder="New Password" class="chg_pwd_input" id="new_pw" autocomplete="off" style="">
+                        <input type="password" placeholder="Re-type New Password" class="chg_pwd_input" id="renew_pw" autocomplete="off" style="">
+                        <button class="btn_user_confirm" id="passwordChange">Confirm</button>
+                    </div>
+                    <span class="pop_border_bottom"></span>
+                    <button class="btn_logout">Log out</button>
+                </div>
+                <!-- 20200624 ë¡ê·¸ìì -->
+                <div class="user_name">
+                    
+                    dongil.kim
+                </div>
+            </div>
+            
+                <button class="btn_down_load" id="headerDownload">Download</button>
+            
+            <div class="last_update">Last Update : <span>2026.02.08</span>  </div>
+        </div>
+    </div>
+
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $(".has_noti").hover(function(e) {
+            $("#tit_site").append("<div class='test'>In case there are more than one Site in the selected Local, sales related indicators and graphs will be shown as a combined result of each site.</div>");
+            $(".test").css("display","block");
+            //   var pageX = $(this).offset().left -40;
+            //   var pageY = $(this).offset().top - 60;
+            //   $(".test").css({left : pageX + "px", top : pageY + "px"});
+        }, function() {
+            $(".test").remove();
+        });
+
+        function getCookie(name) {
+            var parts = document.cookie.split(name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+
+        function expireCookie(name) {
+            document.cookie = name + "="+encodeURIComponent("FALSE")+"; expires=";
+        }
+
+        var downloadTimer;
+
+        function blockUI() {
+            expireCookie("fileDownloadToken");
+            document.getElementById("loading-page").style.display ="block";
+            downloadTimer = setInterval(function() {
+                var token = getCookie("fileDownloadToken");
+                if(token == "TRUE") {
+                    unBlockUI();
+                }
+            }, 1000 );
+        }
+
+        function unBlockUI() {
+            document.getElementById("loading-page").style.display ="none";
+            clearInterval(downloadTimer);
+        }
+
+        $('#headerDownload').off();
+        $('#headerDownload').on('click',function(){
+            blockUI();
+            var param = getParam();
+            param.type ='0';
+            param.product_division = 'ALL';
+            let form = document.createElement('form');
+            form.setAttribute("method","POST");
+            form.setAttribute("action","/globaldashboard/CommonExcelDownload");
+            let hiddenField = document.createElement('input');
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "data");
+            hiddenField.setAttribute("value", JSON.stringify(param));
+
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+
+            form.submit();
+        });
+
+        $('#passwordChange').off();
+        $('#passwordChange').on('click',function(){
+            let current_pw = $('#current_pw').val();
+            let new_pw = $('#new_pw').val();
+            let renew_pw = $('#renew_pw').val();
+
+            if(current_pw == ''){
+                alert('Please input Current Password.');
+                return;
+            }
+
+            if(new_pw == ''){
+                alert('Please input New Password.');
+                return;
+            }
+
+            if(renew_pw == ''){
+                alert('Please input Re-type New Password.');
+                return;
+            }
+
+            if(new_pw != renew_pw){
+                alert('New Password and Re-type New Password do not Macth.');
+                return;
+            }
+
+            let param = {
+                current_pw : md5(current_pw),
+                new_pw : new_pw
+            }
+
+            ajax.post("/changePassword",param,"",function(respon){
+                if(respon.ok){
+                    let data = respon.data;
+                    if(data == 'Failed'){
+                        alert('Current Password do not Macth');
+                        return;
+                    }else{
+                        alert('Your password has been changed. Please log in again.');
+                        location.href = '/globaldashboard';
+                    }
+                }
+            })
+
+        });
+
+        $('.btn_logout').off();
+        $('.btn_logout').on('click',function(){
+            if(confirm('Are you sure you want to log out?')){
+                location.href = '/globaldashboard';
+            }
+        })
+    })
+
+    function getUpdate(){
+        if(document.querySelectorAll('input[name="site"]:checked').length == 0){
+            alert('Please Select Site');
+            return;
+        }
+
+        getCurrentSite();
+    }
+    function getCurrentSite() {
+        document.querySelector('.gnb_selected_info').innerHTML = '';
+
+        let html = '';
+        let site = '';
+
+        if(document.getElementById('region').innerText == 'All' && document.getElementById('country').innerText == 'All' && document.getElementById('site').innerText == 'All') {
+            document.querySelector('.gnb_selected_info').innerHTML = '<span class="icon_noti selected">';
+        } else {
+
+            if (document.querySelectorAll('input[name="site"]:checked').length != 0) {
+                document.querySelectorAll('input[name="site"]:checked').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="site"]:checked').length - 1 == i) {
+                            site += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                        }
+                    } else if (document.querySelectorAll('input[name="site"]:checked').length == 1) {
+                        if (e.nextSibling.nextSibling.innerText == 'All') {
+                            document.querySelectorAll('input[name="site"]').forEach((e, i) => {
+                                if (e.nextSibling.nextSibling.innerText != 'All') {
+                                    if (document.querySelectorAll('input[name="site"]').length - 1 == i) {
+                                        site += e.nextSibling.nextSibling.dataset.id;
+                                    } else {
+                                        site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                                    }
+                                }
+                            })
+                        }
+                    }
+                })
+            } else {
+                document.querySelectorAll('input[name="site"]').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="site"]').length - 1 == i) {
+                            site += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                        }
+                    }
+                })
+            }
+
+            html += 'Now : <span class="site_val">' + site + '</span>';
+            html += '<span class="icon_noti selected">...';
+            html += '<div class="noti_tooltip center">' + site + '</div></span></div>';
+
+            document.querySelector('.gnb_selected_info').innerHTML = html;
+
+            document.querySelector('.icon_noti.selected').style.display = site.length > 120 ? 'inline' : 'none';
+        }
+
+        getData();
+    }
+
+    function getVpromoterCount() {
+        let vPromoterSite = 0;
+        let audioSite = 0;
+        let snsSite = 0;
+
+        // ì íëê² ìì ê²½ì°
+        if(document.querySelectorAll('input[name="site"]:checked').length == 0) {
+            // vPromoter êµ­ê° ì¹´ì´í
+            document.querySelectorAll('input[name="site"]').forEach(e=> {
+                if(e.nextSibling.nextSibling.innerText != 'All') {
+                    if(e.getAttribute('vpromoter') == 1) {
+                        vPromoterSite++;
+                    }
+                    if(e.getAttribute('audio') == 1) {
+                        audioSite++;
+                    }
+                    if(e.getAttribute('sns') == 1) {
+                        snsSite++;
+                    }
+                }
+            });
+        } else if(document.querySelectorAll('input[name="site"]:checked').length == 1) {
+            if(document.querySelector('input[name="site"]:checked').nextSibling.nextSibling.innerText == 'All') {
+                document.querySelectorAll('input[name="site"]').forEach(e=> {
+                    if(e.nextSibling.nextSibling.innerText != 'All') {
+                        if(e.getAttribute('vpromoter') == 1) {
+                            vPromoterSite++;
+                        }
+                        if(e.getAttribute('audio') == 1) {
+                            audioSite++;
+                        }
+                        if(e.getAttribute('sns') == 1) {
+                            snsSite++;
+                        }
+                    }
+                });
+            } else {
+                vPromoterSite = document.querySelector('input[name="site"]:checked').getAttribute('vpromoter');
+                audioSite = document.querySelector('input[name="site"]:checked').getAttribute('audio');
+                snsSite = document.querySelector('input[name="site"]:checked').getAttribute('sns');
+            }
+        } else {
+            document.querySelectorAll('input[name="site"]:checked').forEach(e=> {
+                if(e.getAttribute('vpromoter') == 1) {
+                    vPromoterSite++;
+                }
+                if(e.getAttribute('audio') == 1) {
+                    audioSite++;
+                }
+                if(e.getAttribute('sns') == 1) {
+                    snsSite++;
+                }
+            })
+        }
+
+        // vpromoter, audio, sns ì¡´ì¬ ì¬ë¶ì ë°ë¼ tab show & hide
+            document.querySelectorAll('.gnb_new_tab li')[1].style.display = vPromoterSite != 0 ? 'block' : 'none';
+            document.querySelectorAll('.gnb_new_tab li')[2].style.display = audioSite != 0 ? 'block' : 'none';
+            document.querySelectorAll('.gnb_new_tab li')[3].style.display = snsSite != 0 ? 'block' : 'none';
+    }
+
+    let lastUpdated = '2026-02-08';
+    let currentRegionArray = [];
+    let currentLocalArray = [];
+    let currentSiteArray = [];
+    let vLocalCount = '';
+    let vSiteCount = '';
+    let currentRetailerRegionArray =[];
+    let currentRetailerLocalArray =[];
+    let currentRetailerSiteArray=[];
+
+    let sessionRegionArray;
+    let sessionLocalArray;
+    let sessionSiteArray;
+
+    let first = true;
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+
+    
+
+    document.querySelectorAll('.last_update span')[0].innerHTML = lastUpdated.replaceAll('-', '.');
+
+    
+
+    let host = 'server';
+</script>
+
+
+
+    
+    <div class="gnb_new_tab_wrap">
+        <ul class="gnb_new_tab">
+            <li data-id="con1" class="on" onclick="moveDevision()">All</li>
+            <li data-id="con2" onclick="moveDevision_im()">MX</li>
+            <li data-id="con3" onclick="moveDevision_vd()">VD</li>
+            <li data-id="con4" onclick="moveDevision_da()">DA</li>
+
+
+            <div class="gnb_selected_info os">Now : <span class="site_val">AE / AE_AR / AL / AT / AU / BA / BE / BE_FR / BG / BR / CA / CA_FR / CH / CH_FR / CL / CO / CZ / DE / DK / EE / EG / ES / FI / FR / GR / HK / HK_EN / HR / HU / ID / IE / IL / IN / IQ_AR / IT / KR / LEVANT / LEVANT_AR / LT / LV / MK / MX / MY / NL / NO / NZ / N_AFRICA / PE / PH / PK / PL / PT / RO / RS / SA / SA_EN / SE / SG / SI / SK / TH / TR / TW / UK / VN / ZA</span><span class="icon_noti selected" style="display: inline;">...<div class="noti_tooltip center">AE / AE_AR / AL / AT / AU / BA / BE / BE_FR / BG / BR / CA / CA_FR / CH / CH_FR / CL / CO / CZ / DE / DK / EE / EG / ES / FI / FR / GR / HK / HK_EN / HR / HU / ID / IE / IL / IN / IQ_AR / IT / KR / LEVANT / LEVANT_AR / LT / LV / MK / MX / MY / NL / NO / NZ / N_AFRICA / PE / PH / PK / PL / PT / RO / RS / SA / SA_EN / SE / SG / SI / SK / TH / TR / TW / UK / VN / ZA</div></span></div>
+
+            <div class="btn_down_kpi on">
+                <button class="btn_down_load_type2" onclick="ExcelDownload('1')">Download</button>
+            </div>
+        </ul>
+        <div id="con1" class="conbox on">
+            <!-- content 1 -->
+
+            <div class="content_wrap">
+                <!-- sm 1단 -->
+                <ul class="summary_wrap new">
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Promoter Revenue
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Total Dollar Amount of Revenue Sold by Promoter
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">404.1K</div>
+                        <div class="summary_down">60.8%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>1,030,831</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>404,092</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Promoter Unit sold
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Total Number of Unit Sold by Promoter
+
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">946</div>
+                        <div class="summary_down">57.5%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>2,226</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>946</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Promoter Order
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Total number of Unique Order Sold by Promoter
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">673</div>
+                        <div class="summary_down">56.8%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>1,558</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>673</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Promoter AOV
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Promoter AOV = Promoter Sales Revenue / Promoter Unique Order Count
+
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">$600</div>
+                        <div class="summary_down">9.3%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>662</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>600</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit v2">
+                            e-Store Revenue
+                        </div>
+                        <div class="summary_circle">8.6M</div>
+                        <div class="summary_box v2 down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>12.4M</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>8.6M</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit v2">
+                            e-Store Unit Sold
+                        </div>
+                        <div class="summary_circle">35.9K</div>
+                        <div class="summary_box v2 down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>43.7K</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>35.9K</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit v2">
+                            e-Store Order
+                        </div>
+                        <div class="summary_circle">29.2K</div>
+                        <div class="summary_box v2 down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>34.7K</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>29.2K</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit v2">
+                            e-Store AOV
+                        </div>
+                        <div class="summary_circle">$296</div>
+                        <div class="summary_box v2 down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>357</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>296</p>
+                        </div>
+                    </li>
+                </ul>
+                <ul class="summary_wrap new">
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Handled Chat
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Total chat handled by Promoter
+
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">5.2K</div>
+                        <div class="summary_down">52.4%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>10,976</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>5,224</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Contribution Rate
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Promoter Contribution Rate = Promoter Sales Revenue / e-Store Revenue
+
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">4.7%</div>
+                        <div class="summary_down">3.6%p</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>8.3%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>4.7%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit type2">
+                            Conversion Rate
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Conversion Rate (Order) = Unique Order / Handled Chat
+
+                                    </div>
+                                </span>
+                            <br><pre>          (Order)</pre>
+                        </div>
+                        <div class="summary_big">12.9%</div>
+                        <div class="summary_down">1.3%p</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>14.2%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>12.9%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit type2">
+                            Conversion Rate
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Conversion Rate (Unit Sold) = Unit sold / Handled Chat
+
+                                    </div>
+                                </span>
+                            <br><pre>       (Unit Sold)</pre>
+                        </div>
+                        <div class="summary_big">18.1%</div>
+                        <div class="summary_down">2.2%p</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>20.3%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>18.1%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Revenue per Promoter
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Revenue per Promoter = Promoter Sales Revenue / Promoter Promoter H/C<br>
+
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">1.4K</div>
+                        <div class="summary_down">26.8%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>1,909</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>1,398</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Premium Portion
+                        </div>
+                        <div class="summary_big">32.1%</div>
+                        <div class="summary_down">11.7%p</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>43.8%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>32.1%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            CSAT
+                        </div>
+                        <div class="summary_big">87.4%</div>
+                        <div class="summary_up">0.1%p</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>87.3%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>87.4%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Promoter H/C
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Promoter head count is based on agent ID extracted from chat data
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">289</div>
+                        <div class="summary_down">46.5%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>540</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>289</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <!--  -->
+                <div class="layout_full">
+                    <div class="half_1st overview mg_r20 layout_border">
+                        <div class="content_tit">Promoter Handled Chat – by Division
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                       Division handled chat = (Division chat) +1/3 (Cross product chat) based on agent marked on macro.
+                                    </div>
+                                </span>
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('5')">Download</button>
+                        </div>
+
+                        <div class="graph_indicators">
+                            <span class="ep_08 square">Total</span>
+                            <span class="ep_09 square">MX</span>
+                            <span class="ep_02 square">VD</span>
+                            <span class="ep_03 square">DA</span>
+                            <span class="ep_04 square">Cross Products</span>
+                            <span class="ep_06 square">Not Applicable</span>
+                        </div>
+
+                        <div class="graph_wrap" id="handled_division_column" style="padding-top: 4%;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 386px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="386" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_4"><clipPath id="_ABSTRACT_RENDERER_ID_5"><rect x="57" y="39" width="763" height="282"></rect></clipPath></defs><rect x="0" y="0" width="820" height="386" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="57" y="39" width="763" height="282" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/divisionSummary#_ABSTRACT_RENDERER_ID_5)"><g><rect x="57" y="320" width="763" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="57" y="226" width="763" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="57" y="133" width="763" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="57" y="39" width="763" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="57" y="273" width="763" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="57" y="180" width="763" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="57" y="86" width="763" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="203" y="76" width="78" height="244" stroke="none" stroke-width="0" fill="#d0e0fc"></rect><rect x="282" y="231" width="77" height="89" stroke="none" stroke-width="0" fill="#80aefa"></rect><rect x="360" y="294" width="78" height="26" stroke="none" stroke-width="0" fill="#ffb121"></rect><rect x="439" y="297" width="78" height="23" stroke="none" stroke-width="0" fill="#ff6857"></rect><rect x="518" y="316" width="77" height="4" stroke="none" stroke-width="0" fill="#0bb99e"></rect><rect x="596" y="299" width="78" height="21" stroke="none" stroke-width="0" fill="#bfbfbf"></rect></g><g><rect x="57" y="320" width="763" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="438.5" y="338.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02/08</text></g><g><text text-anchor="end" x="45" y="324.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="end" x="45" y="231.0333" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">2K</text></g><g><text text-anchor="end" x="45" y="137.36669999999998" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">4K</text></g><g><text text-anchor="end" x="45" y="43.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">6K</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>Total</th><th>MX</th><th>VD</th><th>DA</th><th>Cross Products</th><th>Non Product</th></tr></thead><tbody><tr><td>02/08</td><td>5,224</td><td>1,927.333</td><td>578.333</td><td>517.333</td><td>103</td><td>474</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 396px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">6K</div><div></div></div></div>
+
+                    </div>
+
+                    <div class="half_1st overview layout_border chart_pbx" style="height:508.792px !important">
+                        <div class="content_tit" style="margin-bottom: 14px;">Conversion (Order) / Contribution
+                        
+                        </div>
+                        <div class="graph_indicators" style="visibility: hidden;">
+                            <span class="ep_01">Conversion Rate (Order)</span>
+                            <span class="ep_08">Contribution</span>
+                        </div>
+                        <div class="graph_indicators percent4">
+                            <span class="ep_01"></span>
+                            <span class="ep_08"></span>
+                        </div>
+                        <div class="funnel_table_wrap rank_list visible_on">
+                            <div id="rank_type3_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table rank_type3 dataTable" aria-describedby="rank_type3_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Rank" style="width: 62.5938px;">Rank</th><th class="sorting" tabindex="0" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 252.453px;">Country</th><th id="promoter_conversion_column" class="sorting sorting_desc" tabindex="0" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Conversion Rate (Order): activate to sort column ascending" style="width: 252.453px;" aria-sort="descending">Conversion Rate (Order)</th><th class="sorting" tabindex="0" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Contribution Rate: activate to sort column ascending" style="width: 252.5px;">Contribution Rate</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 295px; width: 100%;"><table class="f_t_table rank_type3 dataTable" id="rank_type3" aria-describedby="rank_type3_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Rank" style="width: 62.5938px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 252.453px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Country</div></th><th id="promoter_conversion_column" class="sorting sorting_asc" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Conversion Rate (Order): activate to sort column descending" style="width: 252.453px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Conversion Rate (Order)</div></th><th class="sorting" aria-controls="rank_type3" rowspan="1" colspan="1" aria-label="Contribution Rate: activate to sort column ascending" style="width: 252.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Contribution Rate</div></th></tr>
+                                </thead><tfoot id="total_order_table"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 62.5938px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 252.453px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 252.453px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">12.9%</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 252.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">4.7%</div></th></tr></tfoot>
+                                
+                                <tbody id="order_table"><tr class="odd"><td class="">1</td><td>Norway</td><td class="sorting_1">400%</td><td>23%</td></tr><tr class="even"><td class="">2</td><td>Taiwan</td><td class="sorting_1">43.8%</td><td>16.5%</td></tr><tr class="odd"><td class="">3</td><td>Hungary</td><td class="sorting_1">25%</td><td>14.5%</td></tr><tr class="even"><td class="">4</td><td>Belgium</td><td class="sorting_1">25%</td><td>2.9%</td></tr><tr class="odd"><td class="">5</td><td>New Zealand</td><td class="sorting_1">23.3%</td><td>25.5%</td></tr><tr class="even"><td class="">6</td><td>Czech</td><td class="sorting_1">22.2%</td><td>1.9%</td></tr><tr class="odd"><td class="">7</td><td>Australia</td><td class="sorting_1">19.1%</td><td>12%</td></tr><tr class="even"><td class="">8</td><td>Mexico</td><td class="sorting_1">18.6%</td><td>26.2%</td></tr><tr class="odd"><td class="">9</td><td>Netherlands</td><td class="sorting_1">17.9%</td><td>1.5%</td></tr><tr class="even"><td class="">10</td><td>Peru</td><td class="sorting_1">17.3%</td><td>24.8%</td></tr><tr class="odd"><td class="">11</td><td>Colombia</td><td class="sorting_1">16.7%</td><td>21.7%</td></tr><tr class="even"><td class="">12</td><td>Hong Kong</td><td class="sorting_1">15.8%</td><td>4.1%</td></tr><tr class="odd"><td class="">13</td><td>Italy</td><td class="sorting_1">15.4%</td><td>3.7%</td></tr><tr class="even"><td class="">14</td><td>Korea</td><td class="sorting_1">15.4%</td><td>1.3%</td></tr><tr class="odd"><td class="">15</td><td>Sweden</td><td class="sorting_1">15.4%</td><td>1.4%</td></tr><tr class="even"><td class="">16</td><td>UK</td><td class="sorting_1">14.6%</td><td>7%</td></tr><tr class="odd"><td class="">17</td><td>Chile</td><td class="sorting_1">13.8%</td><td>16.8%</td></tr><tr class="even"><td class="">18</td><td>Germany</td><td class="sorting_1">11.5%</td><td>3.2%</td></tr><tr class="odd"><td class="">19</td><td>UAE</td><td class="sorting_1">11.1%</td><td>9.6%</td></tr><tr class="even"><td class="">20</td><td>Malaysia</td><td class="sorting_1">9.1%</td><td>11.3%</td></tr><tr class="odd"><td class="">21</td><td>Saudi Arabia</td><td class="sorting_1">8.7%</td><td>7%</td></tr><tr class="even"><td class="">22</td><td>Slovakia</td><td class="sorting_1">7.7%</td><td>1.2%</td></tr><tr class="odd"><td class="">23</td><td>Turkey</td><td class="sorting_1">6.8%</td><td>6.6%</td></tr><tr class="even"><td class="">24</td><td>Canada</td><td class="sorting_1">6.7%</td><td>10.5%</td></tr><tr class="odd"><td class="">25</td><td>Israel</td><td class="sorting_1">5.9%</td><td>31.5%</td></tr><tr class="even"><td class="">26</td><td>Indonesia</td><td class="sorting_1">5.8%</td><td>4.3%</td></tr><tr class="odd"><td class="">27</td><td>Singapore</td><td class="sorting_1">3.8%</td><td>9.9%</td></tr><tr class="even"><td class="">28</td><td>Thailand</td><td class="sorting_1">3.7%</td><td>5.2%</td></tr><tr class="odd"><td class="">29</td><td>Pakistan</td><td class="sorting_1">3.6%</td><td>17.2%</td></tr><tr class="even"><td class="">30</td><td>India</td><td class="sorting_1">2.8%</td><td>7.3%</td></tr><tr class="odd"><td class="">31</td><td>Egypt</td><td class="sorting_1">2.5%</td><td>10.5%</td></tr><tr class="even"><td class="">32</td><td>Levant</td><td class="sorting_1">1.9%</td><td>7.4%</td></tr><tr class="odd"><td class="">33</td><td>Philippines</td><td class="sorting_1">0.9%</td><td>2.1%</td></tr><tr class="even"><td class="">34</td><td>Brazil</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">35</td><td>Serbia</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">36</td><td>Bosnia</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">37</td><td>Denmark</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">38</td><td>Latvia</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">39</td><td>North Africa</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">40</td><td>Switzerland</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">41</td><td>Romania</td><td class="sorting_1">0%</td><td>3.7%</td></tr><tr class="even"><td class="">42</td><td>Austria</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">43</td><td>Croatia</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">44</td><td>Greece</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">45</td><td>Portugal</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">46</td><td>Spain</td><td class="sorting_1">0%</td><td>7.4%</td></tr><tr class="odd"><td class="">47</td><td>Vietnam</td><td class="sorting_1">0%</td><td>3.2%</td></tr><tr class="even"><td class="">48</td><td>Poland</td><td class="sorting_1">0%</td><td>12.2%</td></tr><tr class="odd"><td class="">49</td><td>South Africa</td><td class="sorting_1">0%</td><td>5.8%</td></tr><tr class="even"><td class="">50</td><td>Albania</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">51</td><td>France</td><td class="sorting_1">0%</td><td>3.1%</td></tr><tr class="even"><td class="">52</td><td>Ireland</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">53</td><td>Slovenia</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">54</td><td>Finland</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">55</td><td>Iraq</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">56</td><td>Macedonia</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">57</td><td>Bulgaria</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="even"><td class="">58</td><td>Estonia</td><td class="sorting_1">0%</td><td>0%</td></tr><tr class="odd"><td class="">59</td><td>Lithuania</td><td class="sorting_1">0%</td><td>0%</td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table rank_type3 dataTable" aria-describedby="rank_type3_info" style="margin-left: 0px; width: 820px;"><tfoot id="total_order_table"><tr><th rowspan="1" colspan="1" style="width: 62.5938px;">-</th><th rowspan="1" colspan="1" style="width: 252.453px;">Total</th><th rowspan="1" colspan="1" style="width: 252.453px;">12.9%</th><th rowspan="1" colspan="1" style="width: 252.5px;">4.7%</th></tr></tfoot></table></div></div></div></div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="layout_full">
+                    <div class="half_1st overview mg_r20 layout_border">
+
+
+                        <div class="content_tit">Promoter Revenue(Flagship)
+
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('2')">Download</button>
+                        </div>
+
+
+                        <div class="graph_indicators">
+                            <span class="ep_01 square">Promoter Revenue</span>
+                            <span class="ep_03">Premium Portion</span>
+
+                        </div>
+                        <div class="graph_indicators percent3">
+                            <span>Rev. ($)</span>
+                            <span>Premium Portion (%)</span>
+                        </div>
+                        <div class="graph_wrap" id="flagship_combo"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 366px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="366" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clipPath id="_ABSTRACT_RENDERER_ID_1"><rect x="62" y="49" width="697" height="267"></rect></clipPath></defs><rect x="0" y="0" width="820" height="366" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="49" width="697" height="267" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/divisionSummary#_ABSTRACT_RENDERER_ID_1)"><g><rect x="62" y="315" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="315" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="249" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="182" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="116" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="49" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="282" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="215" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="149" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="82" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="195" y="101" width="431" height="214" stroke="none" stroke-width="0" fill="#4771d3"></rect></g><g><rect x="62" y="315" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect><rect x="62" y="315" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g><g><g></g></g></g><g><circle cx="410.5" cy="102.03499999999997" r="3.5" stroke="none" stroke-width="0" fill="#ff6857"></circle></g><g><g><text text-anchor="middle" x="410.5" y="333.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02/08</text></g><g><text text-anchor="end" x="50" y="319.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="end" x="50" y="266.5" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">100K</text></g><g><text text-anchor="end" x="50" y="213.29999999999998" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">200K</text></g><g><text text-anchor="end" x="50" y="160.1" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">300K</text></g><g><text text-anchor="end" x="50" y="106.9" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">400K</text></g><g><text text-anchor="end" x="50" y="53.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">500K</text></g><g><text text-anchor="start" x="771" y="319.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0%</text></g><g><text text-anchor="start" x="771" y="253.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">10%</text></g><g><text text-anchor="start" x="771" y="186.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">20%</text></g><g><text text-anchor="start" x="771" y="120.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">30%</text></g><g><text text-anchor="start" x="771" y="53.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">40%</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>Promoter Revenue</th><th>Premium Portion</th></tr></thead><tbody><tr><td>02/08</td><td>404,092</td><td>32.1%</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 376px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">40%</div><div></div></div></div>
+                    </div>
+
+                    <div class="half_1st overview layout_border">
+                        <div class="content_tit">Promoter Revenue (Flagship) by Division
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('3')">Download</button>
+                        </div>
+                        <div class="graph_indicators">
+                            <span class="ep_03">Galaxy S / Z</span>
+                            <span class="ep_02">QLED</span>
+                            <span class="ep_06">Bespoke</span>
+                        </div>
+                        <div class="graph_indicators percent">
+                            <span>Rev. ($)</span>
+                        </div>
+                        <div class="graph_wrap" id="flagship_line"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 366px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="366" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"><clipPath id="_ABSTRACT_RENDERER_ID_3"><rect x="62" y="49" width="697" height="267"></rect></clipPath></defs><rect x="0" y="0" width="820" height="366" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="49" width="697" height="267" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/divisionSummary#_ABSTRACT_RENDERER_ID_3)"><g><rect x="62" y="315" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="271" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="226" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="182" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="138" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="93" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="49" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect></g><g><rect x="62" y="315" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect></g><g><g></g><g></g><g></g></g></g><g><circle cx="410.5" cy="85.824963325532" r="3.5" stroke="none" stroke-width="0" fill="#ff6857"></circle><circle cx="410.5" cy="315.5" r="3.5" stroke="none" stroke-width="0" fill="#ffb121"></circle><circle cx="410.5" cy="89.81970134750134" r="3.5" stroke="none" stroke-width="0" fill="#bfbfbf"></circle></g><g><g><text text-anchor="middle" x="410.5" y="333.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02/08</text></g><g><text text-anchor="end" x="50" y="319.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="end" x="50" y="275.3667" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">25K</text></g><g><text text-anchor="end" x="50" y="231.0333" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">50K</text></g><g><text text-anchor="end" x="50" y="186.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">75K</text></g><g><text text-anchor="end" x="50" y="142.36669999999998" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">100K</text></g><g><text text-anchor="end" x="50" y="98.0333" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">125K</text></g><g><text text-anchor="end" x="50" y="53.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">150K</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>Galaxy S / Z</th><th>QLED</th><th>Bespoke</th></tr></thead><tbody><tr><td>02/08</td><td>129,515.998</td><td>0</td><td>127,263.326</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 376px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">150K</div><div></div></div></div>
+                    </div>
+
+                </div>
+                <div class="layout_full">
+                    <div class="half_1st mg_r20 overview layout_border">
+                        <div class="content_tit">Promoter Revenue / Promoter H/C / Revenue per Promoter
+                            
+                        </div>
+
+                        <div class="graph_indicators" style="visibility: hidden;">
+                            <span class="ep_01"></span>
+                            <span class="ep_08"></span>
+                        </div>
+                        <div id="rank_type4_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table rank_type4 dataTable" aria-describedby="rank_type4_info" style="margin-left: 0px; width: 820px;"><thead>
+                            <tr><th class="sorting_disabled" tabindex="0" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px;">Rank</th><th class="sorting" tabindex="0" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 189.625px;">Country</th><th id="promoter_revenue_column" class="sorting sorting_desc" tabindex="0" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Promoter revenue: activate to sort column ascending" style="width: 189.625px;" aria-sort="descending">Promoter revenue</th><th class="sorting" tabindex="0" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Promoter H/C: activate to sort column ascending" style="width: 189.625px;">Promoter H/C</th><th class="sorting" tabindex="0" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Revenue per promoter: activate to sort column ascending" style="width: 189.625px;">Revenue per promoter</th></tr>
+                            </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 295px; width: 100%;"><table class="f_t_table rank_type4 dataTable" id="rank_type4" aria-describedby="rank_type4_info" style="width: 100%;"><thead>
+                            <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Country</div></th><th id="promoter_revenue_column" class="sorting sorting_asc" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Promoter revenue: activate to sort column descending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Promoter revenue</div></th><th class="sorting" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Promoter H/C: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Promoter H/C</div></th><th class="sorting" aria-controls="rank_type4" rowspan="1" colspan="1" aria-label="Revenue per promoter: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Revenue per promoter</div></th></tr>
+                            </thead><tfoot id="revenue_total_tfoot"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 61.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;"></div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">404,092</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">289</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">1,398</div></th></tr></tfoot>
+                            
+                            <tbody id="revenue_table"><tr class="odd"><td class="">1</td><td>Mexico</td><td class="sorting_1">76,263</td><td>23</td><td>3,316</td></tr><tr class="even"><td class="">2</td><td>UK</td><td class="sorting_1">63,958</td><td>41</td><td>1,560</td></tr><tr class="odd"><td class="">3</td><td>Korea</td><td class="sorting_1">45,401</td><td>2</td><td>22,701</td></tr><tr class="even"><td class="">4</td><td>Peru</td><td class="sorting_1">25,562</td><td>12</td><td>2,130</td></tr><tr class="odd"><td class="">5</td><td>Australia</td><td class="sorting_1">22,060</td><td>12</td><td>1,838</td></tr><tr class="even"><td class="">6</td><td>Turkey</td><td class="sorting_1">16,598</td><td>7</td><td>2,371</td></tr><tr class="odd"><td class="">7</td><td>Colombia</td><td class="sorting_1">16,540</td><td>4</td><td>4,135</td></tr><tr class="even"><td class="">8</td><td>Germany</td><td class="sorting_1">14,858</td><td>6</td><td>2,476</td></tr><tr class="odd"><td class="">9</td><td>France</td><td class="sorting_1">12,339</td><td>0</td><td>0</td></tr><tr class="even"><td class="">10</td><td>Poland</td><td class="sorting_1">12,221</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">11</td><td>Spain</td><td class="sorting_1">11,882</td><td>0</td><td>0</td></tr><tr class="even"><td class="">12</td><td>Canada</td><td class="sorting_1">9,952</td><td>44</td><td>226</td></tr><tr class="odd"><td class="">13</td><td>New Zealand</td><td class="sorting_1">9,093</td><td>2</td><td>4,547</td></tr><tr class="even"><td class="">14</td><td>Taiwan</td><td class="sorting_1">6,856</td><td>2</td><td>3,428</td></tr><tr class="odd"><td class="">15</td><td>India</td><td class="sorting_1">6,010</td><td>42</td><td>143</td></tr><tr class="even"><td class="">16</td><td>Italy</td><td class="sorting_1">5,786</td><td>1</td><td>5,786</td></tr><tr class="odd"><td class="">17</td><td>Norway</td><td class="sorting_1">5,699</td><td>2</td><td>2,850</td></tr><tr class="even"><td class="">18</td><td>Chile</td><td class="sorting_1">5,227</td><td>5</td><td>1,045</td></tr><tr class="odd"><td class="">19</td><td>Hungary</td><td class="sorting_1">4,974</td><td>2</td><td>2,487</td></tr><tr class="even"><td class="">20</td><td>UAE</td><td class="sorting_1">3,740</td><td>9</td><td>416</td></tr><tr class="odd"><td class="">21</td><td>Saudi Arabia</td><td class="sorting_1">3,086</td><td>17</td><td>182</td></tr><tr class="even"><td class="">22</td><td>Malaysia</td><td class="sorting_1">3,082</td><td>4</td><td>771</td></tr><tr class="odd"><td class="">23</td><td>Hong Kong</td><td class="sorting_1">2,959</td><td>3</td><td>986</td></tr><tr class="even"><td class="">24</td><td>Netherlands</td><td class="sorting_1">2,374</td><td>3</td><td>791</td></tr><tr class="odd"><td class="">25</td><td>Singapore</td><td class="sorting_1">2,074</td><td>3</td><td>691</td></tr><tr class="even"><td class="">26</td><td>Thailand</td><td class="sorting_1">1,981</td><td>3</td><td>660</td></tr><tr class="odd"><td class="">27</td><td>Belgium</td><td class="sorting_1">1,824</td><td>3</td><td>608</td></tr><tr class="even"><td class="">28</td><td>Vietnam</td><td class="sorting_1">1,727</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">29</td><td>Romania</td><td class="sorting_1">1,650</td><td>0</td><td>0</td></tr><tr class="even"><td class="">30</td><td>Egypt</td><td class="sorting_1">1,467</td><td>6</td><td>245</td></tr><tr class="odd"><td class="">31</td><td>Israel</td><td class="sorting_1">1,377</td><td>15</td><td>92</td></tr><tr class="even"><td class="">32</td><td>Sweden</td><td class="sorting_1">1,117</td><td>2</td><td>559</td></tr><tr class="odd"><td class="">33</td><td>Indonesia</td><td class="sorting_1">1,039</td><td>4</td><td>260</td></tr><tr class="even"><td class="">34</td><td>South Africa</td><td class="sorting_1">977</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">35</td><td>Levant</td><td class="sorting_1">891</td><td>11</td><td>81</td></tr><tr class="even"><td class="">36</td><td>Czech</td><td class="sorting_1">588</td><td>2</td><td>294</td></tr><tr class="odd"><td class="">37</td><td>Slovakia</td><td class="sorting_1">393</td><td>2</td><td>197</td></tr><tr class="even"><td class="">38</td><td>Philippines</td><td class="sorting_1">255</td><td>4</td><td>64</td></tr><tr class="odd"><td class="">39</td><td>Pakistan</td><td class="sorting_1">209</td><td>1</td><td>209</td></tr><tr class="even"><td class="">40</td><td>North Africa</td><td class="sorting_1">0</td><td>5</td><td>0</td></tr><tr class="odd"><td class="">41</td><td>Bosnia</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">42</td><td>Lithuania</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">43</td><td>Ireland</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">44</td><td>Greece</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">45</td><td>Finland</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">46</td><td>Denmark</td><td class="sorting_1">0</td><td>1</td><td>0</td></tr><tr class="odd"><td class="">47</td><td>Bulgaria</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">48</td><td>Albania</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">49</td><td>Iraq</td><td class="sorting_1">0</td><td>3</td><td>0</td></tr><tr class="even"><td class="">50</td><td>Switzerland</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">51</td><td>Estonia</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">52</td><td>Brazil</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">53</td><td>Austria</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">54</td><td>Macedonia</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">55</td><td>Latvia</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">56</td><td>Slovenia</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">57</td><td>Serbia</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="even"><td class="">58</td><td>Portugal</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr><tr class="odd"><td class="">59</td><td>Croatia</td><td class="sorting_1">0</td><td>0</td><td>0</td></tr></tbody>
+                            
+                        </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table rank_type4 dataTable" aria-describedby="rank_type4_info" style="margin-left: 0px; width: 820px;"><tfoot id="revenue_total_tfoot"><tr><th rowspan="1" colspan="1" style="width: 61.5px;"></th><th rowspan="1" colspan="1" style="width: 189.625px;">Total</th><th rowspan="1" colspan="1" style="width: 189.625px;">404,092</th><th rowspan="1" colspan="1" style="width: 189.625px;">289</th><th rowspan="1" colspan="1" style="width: 189.625px;">1,398</th></tr></tfoot></table></div></div></div></div>
+                    </div>
+                    <div class="half_1st overview layout_border chart_pbx" style="height:486px !important">
+
+                        <div class="content_tit" style="margin-bottom: 19px;">Conversion (Order) / Contribution / Visit to chat (All) / Missed chat Rates
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('7')">Download</button>
+                        </div>
+
+                        <div class="graph_indicators" style="visibility: hidden;">
+                            <span class="ep_01">Conversion Rate (Order)</span>
+                            <span class="ep_08">Contribution</span>
+                        </div>
+                        <div class="graph_indicators percent4">
+                            <span class="ep_01"></span>
+                            <span class="ep_08"></span>
+                        </div>
+                        <div class="funnel_table_wrap rank_list visible_on">
+                            <div id="rank_type5_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table rank_type5 dataTable" aria-describedby="rank_type5_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px;">Rank</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 151.688px;">Country</th><th id="promoter_conversion_column2" class="sorting sorting_desc" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Conversion (Order): activate to sort column ascending" style="width: 151.688px;" aria-sort="descending">Conversion (Order)</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Contribution: activate to sort column ascending" style="width: 151.688px;">Contribution</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Visit to chat: activate to sort column ascending" style="width: 151.688px;">Visit to chat</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Missed chat: activate to sort column ascending" style="width: 151.75px;">Missed chat</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 295px; width: 100%;"><table class="f_t_table rank_type5 dataTable" id="rank_type5" aria-describedby="rank_type5_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 151.688px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Country</div></th><th id="promoter_conversion_column2" class="sorting sorting_asc" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Conversion (Order): activate to sort column descending" style="width: 151.688px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Conversion (Order)</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Contribution: activate to sort column ascending" style="width: 151.688px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Contribution</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Visit to chat: activate to sort column ascending" style="width: 151.688px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Visit to chat</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Missed chat: activate to sort column ascending" style="width: 151.75px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Missed chat</div></th></tr>
+                                </thead><tfoot id="total_all_table"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 61.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 151.688px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 151.688px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">12.9%</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 151.688px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">4.7%</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 151.688px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">0.00%</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 151.75px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">1.4%</div></th></tr></tfoot>
+                                
+                                <tbody id="all_table"><tr class="odd"><td class="">1</td><td>Norway</td><td class="sorting_1">400%</td><td>23%</td><td>0%</td><td>25%</td></tr><tr class="even"><td class="">2</td><td>Taiwan</td><td class="sorting_1">43.8%</td><td>16.5%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">3</td><td>Hungary</td><td class="sorting_1">25%</td><td>14.5%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">4</td><td>Belgium</td><td class="sorting_1">25%</td><td>2.9%</td><td>0%</td><td>11.1%</td></tr><tr class="odd"><td class="">5</td><td>New Zealand</td><td class="sorting_1">23.3%</td><td>25.5%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">6</td><td>Czech</td><td class="sorting_1">22.2%</td><td>1.9%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">7</td><td>Australia</td><td class="sorting_1">19.1%</td><td>12%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">8</td><td>Mexico</td><td class="sorting_1">18.6%</td><td>26.2%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">9</td><td>Netherlands</td><td class="sorting_1">17.9%</td><td>1.5%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">10</td><td>Peru</td><td class="sorting_1">17.3%</td><td>24.8%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">11</td><td>Colombia</td><td class="sorting_1">16.7%</td><td>21.7%</td><td>0%</td><td>10%</td></tr><tr class="even"><td class="">12</td><td>Hong Kong</td><td class="sorting_1">15.8%</td><td>4.1%</td><td>0%</td><td>17.4%</td></tr><tr class="odd"><td class="">13</td><td>Italy</td><td class="sorting_1">15.4%</td><td>3.7%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">14</td><td>Korea</td><td class="sorting_1">15.4%</td><td>1.3%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">15</td><td>Sweden</td><td class="sorting_1">15.4%</td><td>1.4%</td><td>0%</td><td>13.3%</td></tr><tr class="even"><td class="">16</td><td>UK</td><td class="sorting_1">14.6%</td><td>7%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">17</td><td>Chile</td><td class="sorting_1">13.8%</td><td>16.8%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">18</td><td>Germany</td><td class="sorting_1">11.5%</td><td>3.2%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">19</td><td>UAE</td><td class="sorting_1">11.1%</td><td>9.6%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">20</td><td>Malaysia</td><td class="sorting_1">9.1%</td><td>11.3%</td><td>0%</td><td>2.2%</td></tr><tr class="odd"><td class="">21</td><td>Saudi Arabia</td><td class="sorting_1">8.7%</td><td>7%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">22</td><td>Slovakia</td><td class="sorting_1">7.7%</td><td>1.2%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">23</td><td>Turkey</td><td class="sorting_1">6.8%</td><td>6.6%</td><td>0%</td><td>1.3%</td></tr><tr class="even"><td class="">24</td><td>Canada</td><td class="sorting_1">6.7%</td><td>10.5%</td><td>0%</td><td>5.9%</td></tr><tr class="odd"><td class="">25</td><td>Israel</td><td class="sorting_1">5.9%</td><td>31.5%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">26</td><td>Indonesia</td><td class="sorting_1">5.8%</td><td>4.3%</td><td>0%</td><td>1.4%</td></tr><tr class="odd"><td class="">27</td><td>Singapore</td><td class="sorting_1">3.8%</td><td>9.9%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">28</td><td>Thailand</td><td class="sorting_1">3.7%</td><td>5.2%</td><td>0%</td><td>2.4%</td></tr><tr class="odd"><td class="">29</td><td>Pakistan</td><td class="sorting_1">3.6%</td><td>17.2%</td><td>0%</td><td>39.1%</td></tr><tr class="even"><td class="">30</td><td>India</td><td class="sorting_1">2.8%</td><td>7.3%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">31</td><td>Egypt</td><td class="sorting_1">2.5%</td><td>10.5%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">32</td><td>Levant</td><td class="sorting_1">1.9%</td><td>7.4%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">33</td><td>Philippines</td><td class="sorting_1">0.9%</td><td>2.1%</td><td>0%</td><td>1.8%</td></tr><tr class="even"><td class="">34</td><td>Brazil</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">35</td><td>Serbia</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">36</td><td>Bosnia</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">37</td><td>Denmark</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>33.3%</td></tr><tr class="even"><td class="">38</td><td>Latvia</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>100%</td></tr><tr class="odd"><td class="">39</td><td>North Africa</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">40</td><td>Switzerland</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">41</td><td>Romania</td><td class="sorting_1">0%</td><td>3.7%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">42</td><td>Austria</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">43</td><td>Croatia</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">44</td><td>Greece</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">45</td><td>Portugal</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">46</td><td>Spain</td><td class="sorting_1">0%</td><td>7.4%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">47</td><td>Vietnam</td><td class="sorting_1">0%</td><td>3.2%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">48</td><td>Poland</td><td class="sorting_1">0%</td><td>12.2%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">49</td><td>South Africa</td><td class="sorting_1">0%</td><td>5.8%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">50</td><td>Albania</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">51</td><td>France</td><td class="sorting_1">0%</td><td>3.1%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">52</td><td>Ireland</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">53</td><td>Slovenia</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">54</td><td>Finland</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">55</td><td>Iraq</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">56</td><td>Macedonia</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">57</td><td>Bulgaria</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="even"><td class="">58</td><td>Estonia</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>0%</td></tr><tr class="odd"><td class="">59</td><td>Lithuania</td><td class="sorting_1">0%</td><td>0%</td><td>0%</td><td>100%</td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table rank_type5 dataTable" aria-describedby="rank_type5_info" style="margin-left: 0px; width: 820px;"><tfoot id="total_all_table"><tr><th rowspan="1" colspan="1" style="width: 61.5px;">-</th><th rowspan="1" colspan="1" style="width: 151.688px;">Total</th><th rowspan="1" colspan="1" style="width: 151.688px;">12.9%</th><th rowspan="1" colspan="1" style="width: 151.688px;">4.7%</th><th rowspan="1" colspan="1" style="width: 151.688px;">0.00%</th><th rowspan="1" colspan="1" style="width: 151.75px;">1.4%</th></tr></tfoot></table></div></div></div></div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                    <!--  -->
+                </div>
+            </div>
+        </div>
+
+        <!-- HCE popup -->
+        <div class="pop_hce_wrap">
+            <button class="close_pop cancel"></button>
+            <div class="pop_head">
+                Promoter Head Count Edit
+            </div>
+            <div class="pop_body_wrap">
+                <table class="hce_table">
+                    <tbody><tr>
+                        <th>Subsidiary</th>
+                        <td>
+                            <input class="hce_sub_dis" disabled="" value="" style="">
+                        </td>
+                    </tr>
+                    
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                            
+                        
+                    
+                    </tbody>
+                </table>
+            </div>
+            <div class="save_chk">
+                <input type="checkbox" id="save_chk" checked="" style="">
+                <label for="save_chk" class="sp">
+                    <span>It will be saved as above. Do you want to proceed?</span>
+                </label>
+                <!-- 인풋 값이 0이 아닌 null인 경우 type1-->
+                <div class="noti_warn type1">
+                    Please make sure only enter digits and no other characters
+                </div>
+                <!-- 체크박스 값이 없을 경우 type2-->
+                <div class="noti_warn type2">
+                    Please confirm and select the check box.
+                </div>
+            </div>
+            <div class="pop_btn_wrap" style="margin-top:45px;">
+                <button class="cancel">Cancel</button>
+                <!-- <button class="delete">Delete</button> -->
+                <button class="apply" onclick="insertHC()">OK</button>
+            </div>
+        </div>
+    </div>
+    <!-- lnb -->
+    
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<div class="gnb_extension">
+    <div class="lnb_dimed"></div>
+    <div class="lnb_wrap">
+        <div class="lnb_top_wrap">
+            <button class="lnb_close"></button>
+            <div class="lnb_logo">
+                <img src="img/new_logo.jpg">
+            </div>
+        </div>
+        <ul class="lnb_menu">
+            <li class="home">
+                <a href="javascript:moveMain()">Home</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveExecutive()">Executive Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+            <li class="menu_li active">
+                
+                
+                <a href="javascript:moveDevision()">Division Summary</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveSalesAll()">Sales Summary</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveOperationAll()">Operation Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveShopappOperation()">ShopApp Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveBotjourneyOperation()">Bot / AI Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveEpp_operation()">EPP / SMB Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+                
+                    <li class="menu_li">
+                
+                <a href="javascript:moveRetailer_operation()">Retailer Summary</a>
+                </li>
+            
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveMxFlagshipSummary()">MX Flagship Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:movePerformanceSummary()">Performance Summary</a>
+            </li>
+            <li class="menu_li">
+                <a href="javascript:fileDown()">Manual &amp; FAQ Download</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
+
+
+
+    
+
+
+
+<div id="loading-page" style="display: none;">
+    <div class="loading">
+        <div class="circle1 circle"></div>
+        <div class="circle2 circle"></div>
+        <div class="circle3 circle"></div>
+        <div class="circle4 circle"></div>
+        <div class="circle5 circle"></div>
+        <div class="circle6 circle"></div>
+        <div class="circle7 circle"></div>
+        <div class="circle8 circle"></div>
+        <div class="circle9 circle"></div>
+        <div class="circle10 circle"></div>
+        <div class="circle11 circle"></div>
+        <div class="circle12 circle"></div>
+    </div>
+</div>
+<script>
+    // 취소 누를 경우 초기화
+    document.querySelectorAll('.cancel').forEach(e=> {
+        e.addEventListener('click', () => {
+            
+            document.querySelectorAll('#Albania .im')[0].value = 0;
+            document.querySelectorAll('#Albania .vd')[0].value = 0;
+            document.querySelectorAll('#Albania .da')[0].value = 0;
+            
+            document.querySelectorAll('#Australia .im')[0].value = 25;
+            document.querySelectorAll('#Australia .vd')[0].value = 20;
+            document.querySelectorAll('#Australia .da')[0].value = 19;
+            
+            document.querySelectorAll('#Austria .im')[0].value = 5;
+            document.querySelectorAll('#Austria .vd')[0].value = 3;
+            document.querySelectorAll('#Austria .da')[0].value = 3;
+            
+            document.querySelectorAll('#Belgium .im')[0].value = 8;
+            document.querySelectorAll('#Belgium .vd')[0].value = 5;
+            document.querySelectorAll('#Belgium .da')[0].value = 7;
+            
+            document.querySelectorAll('#Bosnia .im')[0].value = 0;
+            document.querySelectorAll('#Bosnia .vd')[0].value = 0;
+            document.querySelectorAll('#Bosnia .da')[0].value = 0;
+            
+            document.querySelectorAll('#Brazil .im')[0].value = 43;
+            document.querySelectorAll('#Brazil .vd')[0].value = 41;
+            document.querySelectorAll('#Brazil .da')[0].value = 30;
+            
+            document.querySelectorAll('#Bulgaria .im')[0].value = 4;
+            document.querySelectorAll('#Bulgaria .vd')[0].value = 3;
+            document.querySelectorAll('#Bulgaria .da')[0].value = 3;
+            
+            document.querySelectorAll('#Canada .im')[0].value = 76;
+            document.querySelectorAll('#Canada .vd')[0].value = 35;
+            document.querySelectorAll('#Canada .da')[0].value = 22;
+            
+            document.querySelectorAll('#Chile .im')[0].value = 12;
+            document.querySelectorAll('#Chile .vd')[0].value = 22;
+            document.querySelectorAll('#Chile .da')[0].value = 9;
+            
+            document.querySelectorAll('#Colombia .im')[0].value = 8;
+            document.querySelectorAll('#Colombia .vd')[0].value = 8;
+            document.querySelectorAll('#Colombia .da')[0].value = 8;
+            
+            document.querySelectorAll('#Croatia .im')[0].value = 5;
+            document.querySelectorAll('#Croatia .vd')[0].value = 2;
+            document.querySelectorAll('#Croatia .da')[0].value = 1;
+            
+            document.querySelectorAll('#Czech .im')[0].value = 6;
+            document.querySelectorAll('#Czech .vd')[0].value = 5;
+            document.querySelectorAll('#Czech .da')[0].value = 4;
+            
+            document.querySelectorAll('#Denmark .im')[0].value = 6;
+            document.querySelectorAll('#Denmark .vd')[0].value = 4;
+            document.querySelectorAll('#Denmark .da')[0].value = 1;
+            
+            document.querySelectorAll('#Egypt .im')[0].value = 4;
+            document.querySelectorAll('#Egypt .vd')[0].value = 4;
+            document.querySelectorAll('#Egypt .da')[0].value = 1;
+            
+            document.querySelectorAll('#Estonia .im')[0].value = 2;
+            document.querySelectorAll('#Estonia .vd')[0].value = 2;
+            document.querySelectorAll('#Estonia .da')[0].value = 1;
+            
+            document.querySelectorAll('#Finland .im')[0].value = 7;
+            document.querySelectorAll('#Finland .vd')[0].value = 4;
+            document.querySelectorAll('#Finland .da')[0].value = 1;
+            
+            document.querySelectorAll('#France .im')[0].value = 64;
+            document.querySelectorAll('#France .vd')[0].value = 56;
+            document.querySelectorAll('#France .da')[0].value = 36;
+            
+            document.querySelectorAll('#Germany .im')[0].value = 55;
+            document.querySelectorAll('#Germany .vd')[0].value = 39;
+            document.querySelectorAll('#Germany .da')[0].value = 37;
+            
+            document.querySelectorAll('#Greece .im')[0].value = 5;
+            document.querySelectorAll('#Greece .vd')[0].value = 2;
+            document.querySelectorAll('#Greece .da')[0].value = 0;
+            
+            document.querySelectorAll('#Hong Kong .im')[0].value = 4;
+            document.querySelectorAll('#Hong Kong .vd')[0].value = 4;
+            document.querySelectorAll('#Hong Kong .da')[0].value = 3;
+            
+            document.querySelectorAll('#Hungary .im')[0].value = 2;
+            document.querySelectorAll('#Hungary .vd')[0].value = 2;
+            document.querySelectorAll('#Hungary .da')[0].value = 2;
+            
+            document.querySelectorAll('#India .im')[0].value = 152;
+            document.querySelectorAll('#India .vd')[0].value = 116;
+            document.querySelectorAll('#India .da')[0].value = 119;
+            
+            document.querySelectorAll('#Indonesia .im')[0].value = 11;
+            document.querySelectorAll('#Indonesia .vd')[0].value = 9;
+            document.querySelectorAll('#Indonesia .da')[0].value = 12;
+            
+            document.querySelectorAll('#Iraq .im')[0].value = 2;
+            document.querySelectorAll('#Iraq .vd')[0].value = 2;
+            document.querySelectorAll('#Iraq .da')[0].value = 0;
+            
+            document.querySelectorAll('#Ireland .im')[0].value = 0;
+            document.querySelectorAll('#Ireland .vd')[0].value = 0;
+            document.querySelectorAll('#Ireland .da')[0].value = 0;
+            
+            document.querySelectorAll('#Israel .im')[0].value = 10;
+            document.querySelectorAll('#Israel .vd')[0].value = 0;
+            document.querySelectorAll('#Israel .da')[0].value = 0;
+            
+            document.querySelectorAll('#Italy .im')[0].value = 13;
+            document.querySelectorAll('#Italy .vd')[0].value = 12;
+            document.querySelectorAll('#Italy .da')[0].value = 14;
+            
+            document.querySelectorAll('#Korea .im')[0].value = 0;
+            document.querySelectorAll('#Korea .vd')[0].value = 0;
+            document.querySelectorAll('#Korea .da')[0].value = 0;
+            
+            document.querySelectorAll('#Latvia .im')[0].value = 2;
+            document.querySelectorAll('#Latvia .vd')[0].value = 2;
+            document.querySelectorAll('#Latvia .da')[0].value = 3;
+            
+            document.querySelectorAll('#Levant .im')[0].value = 6;
+            document.querySelectorAll('#Levant .vd')[0].value = 4;
+            document.querySelectorAll('#Levant .da')[0].value = 5;
+            
+            document.querySelectorAll('#Lithuania .im')[0].value = 2;
+            document.querySelectorAll('#Lithuania .vd')[0].value = 2;
+            document.querySelectorAll('#Lithuania .da')[0].value = 2;
+            
+            document.querySelectorAll('#Macedonia .im')[0].value = 0;
+            document.querySelectorAll('#Macedonia .vd')[0].value = 0;
+            document.querySelectorAll('#Macedonia .da')[0].value = 0;
+            
+            document.querySelectorAll('#Malaysia .im')[0].value = 13;
+            document.querySelectorAll('#Malaysia .vd')[0].value = 7;
+            document.querySelectorAll('#Malaysia .da')[0].value = 7;
+            
+            document.querySelectorAll('#Mexico .im')[0].value = 20;
+            document.querySelectorAll('#Mexico .vd')[0].value = 13;
+            document.querySelectorAll('#Mexico .da')[0].value = 10;
+            
+            document.querySelectorAll('#Netherlands .im')[0].value = 12;
+            document.querySelectorAll('#Netherlands .vd')[0].value = 8;
+            document.querySelectorAll('#Netherlands .da')[0].value = 7;
+            
+            document.querySelectorAll('#New Zealand .im')[0].value = 3;
+            document.querySelectorAll('#New Zealand .vd')[0].value = 3;
+            document.querySelectorAll('#New Zealand .da')[0].value = 4;
+            
+            document.querySelectorAll('#North Africa .im')[0].value = 4;
+            document.querySelectorAll('#North Africa .vd')[0].value = 1;
+            document.querySelectorAll('#North Africa .da')[0].value = 2;
+            
+            document.querySelectorAll('#Norway .im')[0].value = 5;
+            document.querySelectorAll('#Norway .vd')[0].value = 5;
+            document.querySelectorAll('#Norway .da')[0].value = 3;
+            
+            document.querySelectorAll('#Pakistan .im')[0].value = 4;
+            document.querySelectorAll('#Pakistan .vd')[0].value = 1;
+            document.querySelectorAll('#Pakistan .da')[0].value = 1;
+            
+            document.querySelectorAll('#Peru .im')[0].value = 17;
+            document.querySelectorAll('#Peru .vd')[0].value = 16;
+            document.querySelectorAll('#Peru .da')[0].value = 15;
+            
+            document.querySelectorAll('#Philippines .im')[0].value = 7;
+            document.querySelectorAll('#Philippines .vd')[0].value = 6;
+            document.querySelectorAll('#Philippines .da')[0].value = 6;
+            
+            document.querySelectorAll('#Poland .im')[0].value = 16;
+            document.querySelectorAll('#Poland .vd')[0].value = 12;
+            document.querySelectorAll('#Poland .da')[0].value = 13;
+            
+            document.querySelectorAll('#Portugal .im')[0].value = 4;
+            document.querySelectorAll('#Portugal .vd')[0].value = 4;
+            document.querySelectorAll('#Portugal .da')[0].value = 4;
+            
+            document.querySelectorAll('#Romania .im')[0].value = 4;
+            document.querySelectorAll('#Romania .vd')[0].value = 3;
+            document.querySelectorAll('#Romania .da')[0].value = 3;
+            
+            document.querySelectorAll('#Saudi Arabia .im')[0].value = 20;
+            document.querySelectorAll('#Saudi Arabia .vd')[0].value = 5;
+            document.querySelectorAll('#Saudi Arabia .da')[0].value = 1;
+            
+            document.querySelectorAll('#Serbia .im')[0].value = 0;
+            document.querySelectorAll('#Serbia .vd')[0].value = 0;
+            document.querySelectorAll('#Serbia .da')[0].value = 0;
+            
+            document.querySelectorAll('#Singapore .im')[0].value = 11;
+            document.querySelectorAll('#Singapore .vd')[0].value = 6;
+            document.querySelectorAll('#Singapore .da')[0].value = 6;
+            
+            document.querySelectorAll('#Slovakia .im')[0].value = 6;
+            document.querySelectorAll('#Slovakia .vd')[0].value = 5;
+            document.querySelectorAll('#Slovakia .da')[0].value = 5;
+            
+            document.querySelectorAll('#Slovenia .im')[0].value = 2;
+            document.querySelectorAll('#Slovenia .vd')[0].value = 2;
+            document.querySelectorAll('#Slovenia .da')[0].value = 0;
+            
+            document.querySelectorAll('#South Africa .im')[0].value = 3;
+            document.querySelectorAll('#South Africa .vd')[0].value = 3;
+            document.querySelectorAll('#South Africa .da')[0].value = 3;
+            
+            document.querySelectorAll('#Spain .im')[0].value = 27;
+            document.querySelectorAll('#Spain .vd')[0].value = 23;
+            document.querySelectorAll('#Spain .da')[0].value = 22;
+            
+            document.querySelectorAll('#Sweden .im')[0].value = 14;
+            document.querySelectorAll('#Sweden .vd')[0].value = 10;
+            document.querySelectorAll('#Sweden .da')[0].value = 7;
+            
+            document.querySelectorAll('#Switzerland .im')[0].value = 3;
+            document.querySelectorAll('#Switzerland .vd')[0].value = 3;
+            document.querySelectorAll('#Switzerland .da')[0].value = 3;
+            
+            document.querySelectorAll('#Taiwan .im')[0].value = 7;
+            document.querySelectorAll('#Taiwan .vd')[0].value = 7;
+            document.querySelectorAll('#Taiwan .da')[0].value = 6;
+            
+            document.querySelectorAll('#Thailand .im')[0].value = 11;
+            document.querySelectorAll('#Thailand .vd')[0].value = 10;
+            document.querySelectorAll('#Thailand .da')[0].value = 9;
+            
+            document.querySelectorAll('#Turkey .im')[0].value = 0;
+            document.querySelectorAll('#Turkey .vd')[0].value = 0;
+            document.querySelectorAll('#Turkey .da')[0].value = 0;
+            
+            document.querySelectorAll('#UAE .im')[0].value = 11;
+            document.querySelectorAll('#UAE .vd')[0].value = 2;
+            document.querySelectorAll('#UAE .da')[0].value = 1;
+            
+            document.querySelectorAll('#UK .im')[0].value = 114;
+            document.querySelectorAll('#UK .vd')[0].value = 70;
+            document.querySelectorAll('#UK .da')[0].value = 66;
+            
+            document.querySelectorAll('#Vietnam .im')[0].value = 11;
+            document.querySelectorAll('#Vietnam .vd')[0].value = 8;
+            document.querySelectorAll('#Vietnam .da')[0].value = 11;
+            
+        })
+    });
+
+    function insertHC() {
+        if(document.getElementById('save_chk').checked) {
+            let flag = 0;
+            let totalHc = [];
+
+            document.querySelectorAll('.hc_country > td > div > input').forEach(i=> {
+                if(flag > 0) {
+                    return;
+                }
+                if(i.value.length == 0) {
+                    if(i.classList.contains('im')) {
+                        document.querySelector('.type1').innerHTML = '';
+                        document.querySelector('.type1').innerHTML = 'Please enter digit in IM field';
+
+                        flag = 1;
+                    } else if(i.classList.contains('vd')) {
+                        document.querySelector('.type1').innerHTML = '';
+                        document.querySelector('.type1').innerHTML = 'Please enter digit in VD field';
+
+                        flag = 1;
+                    } else if(i.classList.contains('da')) {
+                        document.querySelector('.type1').innerHTML = '';
+                        document.querySelector('.type1').innerHTML = 'Please enter digit in DA field';
+
+                        flag = 1;
+                    }
+                }
+            })
+
+            if(flag > 0) {
+                return;
+            }
+
+            document.querySelectorAll('.hc_country').forEach(i=> {
+                let countryHc = {};
+                // 국가명
+                countryHc.country = i.children[0].innerText;
+                let td = Array.from(i.children[1].children);
+
+                td.forEach((k,v)=> {
+                    // 국가별 헤드카운트
+                    if(v == 0) {
+                        countryHc.IM = k.childNodes[1].value;
+                    } else if(v == 1) {
+                        countryHc.VD = k.childNodes[1].value;
+                    } else {
+                        countryHc.DA = k.childNodes[1].value;
+                    }
+                })
+                totalHc.push(countryHc);
+            })
+            let param = {
+                "totalHc" : totalHc
+            };
+
+            ajax.post("/engagementSummary/ajax/headCount",param,"",function(respon){
+                if(respon.ok){
+                    let result = respon.data;
+
+                    if(totalHc.length == result) {
+                        console.log(1);
+
+                        document.querySelectorAll('.hce_val').forEach(i=> {
+                            i.value = 0;
+                        })
+
+                        $(".lnb_dimed").hide();
+                        $(".pop_hce_wrap").hide();
+                        window.location.reload();
+                    }
+
+                }
+            });
+
+        } else {
+            document.querySelector('.type1').innerHTML = '';
+            document.querySelector('.type1').innerHTML = 'Please confirm and select the check box';
+        }
+    }
+
+    let PieChartOptions = {
+        legend : {
+            position: 'none'
+        },
+        height: 122,
+        width: 180,
+        lineWidth: defaultSetting.lineWidth,
+        fontName: defaultSetting.fontName,
+        fontSize: defaultSetting.fontSize,
+
+        chartArea: {
+            width: "100%",
+            height: "150%",
+            // left: "15%",
+            // top: "5%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+        },
+        tooltip : {
+            trigger: 'none'
+        },
+        backgroundColor: 'transparent',
+        colors: ['#fd695c', '#ebebeb'],
+        pieHole: 0.4,
+        pieStartAngle: 270,
+        pieSliceText: 'none',
+        pieSliceBorderColor: {
+            color: 'transparent'
+        },
+        pieSliceTextStyle: {
+            color: 'transparent'
+        },
+        slices: {
+            // 3: {
+            //     color: 'transparent'
+            // }
+            0 : {color: "#385AC9"},
+            1 : {color: "#FD5046"},
+            2 : {color: "#6E9CFB"}
+        }
+    }
+    let PieChartOptions2 = {
+        legend : {
+            position: 'none'
+        },
+        height: 122,
+        width: 180,
+        lineWidth: defaultSetting.lineWidth,
+        fontName: defaultSetting.fontName,
+        fontSize: defaultSetting.fontSize,
+
+        chartArea: {
+            width: "100%",
+            height: "150%",
+            // left: "15%",
+            // top: "5%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+        },
+        tooltip : {
+            trigger: 'none'
+        },
+        backgroundColor: 'transparent',
+        colors: ['#4a74d0', '#ebebeb'],
+        pieHole: 0.4,
+        pieStartAngle: 270,
+        pieSliceText: 'none',
+        pieSliceBorderColor: {
+            color: 'transparent'
+        },
+        pieSliceTextStyle: {
+            color: 'transparent'
+        },
+        slices: {
+            // 3: {
+            //     color: 'transparent'
+            // }
+            0 : {color: "#385AC9"},
+            1 : {color: "#FD5046"},
+            2 : {color: "#6E9CFB"}
+        }
+    }
+
+    var lineChartOption = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 392,
+
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "70%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+        },
+        vAxis: {
+            textStyle: {
+                color: '#9b9b9b',
+            },
+            gridlines: {count: 6, color: "#e0e0e0"},
+            format: 'short',
+
+            baselineColor: "#e0e0e0",
+        },
+        explorer: {
+            axis: 'vertical',
+            maxZoomIn: .5,
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        series: getLineColorTable()
+    };
+
+    var lineChartOption2 = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 366,
+
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "73%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+        },
+        vAxis: {
+            textStyle: {
+                color: '#9b9b9b',
+            },
+            gridlines: {count: 6, color: "#e0e0e0"},
+            format: 'short',
+
+            baselineColor: "#e0e0e0",
+        },
+        explorer: {
+            axis: 'vertical',
+            maxZoomIn: .5,
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        series:{
+            0: { pointSize: 5,color: '#ff6857'},
+            1: { pointSize: 5,color: '#ffb121'},
+            2: {pointSize :5,  color: '#bfbfbf'}
+        }
+
+    };
+
+
+    var ComboChartOption = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 366,
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "73%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                // maxValue : 100,
+                format: 'short',
+                gridlines: {count: 1},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                // maxValue : 100,
+                format : "#.#\'%\'"
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'bars',
+        series: {
+            0: { pointSize: 5, targetAxisIndex:0, color: '#4771d3'},
+            1: { pointSize: 5, targetAxisIndex:1, type:'line', color: '#ff6857'},
+            2: {pointSize :5, targetAxisIndex:1, type:'line', color: '#ffb121'},
+            3: {pointSize :5, targetAxisIndex:1, type:'line', color: '#bfbfbf'}
+        },
+
+    };
+
+    var columnChartOptions = {
+        legend: {
+            position: 'none',
+            textStyle: {
+                color: '#9b9b9b'
+            }
+        },
+        // width: 369,
+        // height: 216,
+        height: 386,
+        fontSize: 12,
+
+        chartArea: {
+            width: "95%",
+            height: "73%",
+            left: "7%",
+            top: "10%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxis: {
+            textStyle: { color: '#9b9b9b' },
+            minValue: 0,
+            format: 'short',
+            gridlines: {count: 4},
+        },
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'bars',
+        series: {
+            0: { pointSize: 5,color: '#d0e0fc'},
+            1: { pointSize: 5,color: '#80aefa'},
+            2: { pointSize: 5,color: '#ffb121'},
+            3: { pointSize: 5,color: '#ff6857'},
+            4: { pointSize: 5,color: '#0bb99e'},
+            5: { pointSize: 5,color: '#bfbfbf'},
+
+
+        },
+    }
+
+    let title = 'Division Summary';
+    let graphDivisionData;
+    let divisionGraphData=[];
+    let startDate = '2026-02-08';
+    let endDate = '2026-02-08';
+    let defaultDate = '2026-02-08';
+    let dateMod;
+    let handled_date;
+
+
+    function getBaseData(){
+        document.getElementById("loading-page").style.display ="block";
+        document.querySelector(".region_wrap").style.display ="none";
+
+        pendingCheck(()=>{
+            getChatType((result)=>{
+                getChangeDivisionTab(result);
+                getDevisionData();
+            })
+        });
+    }
+
+    function getDevisionData() {
+        let param = getParam();
+        param.title = "All";
+
+        ajax.post("/divisionSummary/ajax/getDivisionData", param, "", function (respon) {
+
+            if (respon.ok) {
+
+                graphDivisionData = respon.data;
+
+                let current_date = respon.data.current_date;
+                let prev_date = respon.data.prev_date;
+
+                let actualData = graphDivisionData.divisionData;
+
+                dateMod = getDateMod();
+
+
+                graphDivisionData["eStore_rev_c"]  = actualData.eStore_all_sale_rev_c / dateMod;
+                graphDivisionData["prom_rev_c"]  =  Math.round(actualData.prom_sale_rev_c / dateMod)  ;
+                graphDivisionData["eStore_unit_c"]  = actualData.eStore_all_unit_sold_c / dateMod;
+                graphDivisionData["prom_unit_c"]  = actualData.prom_unit_sold_c / dateMod;
+                graphDivisionData["eStore_order_c"]  = actualData.eStore_all_order_c / dateMod;
+                graphDivisionData["prom_order_c"]  = actualData.no_division_prom_order_count_c / dateMod;
+                graphDivisionData["prom_chat_handled_c"]  = actualData.prom_chat_handled_c / dateMod;
+                graphDivisionData["prom_AOV_c"] = actualData.no_division_prom_order_count_c / dateMod  == 0 ? 0 : Number(( (actualData.prom_sale_rev_c / dateMod) / (actualData.no_division_prom_order_count_c / dateMod)).toFixed(1)); // eProm AOV$ => (eProm Rev for AOV ÷ eProm Order Count)
+                graphDivisionData["eStore_AOV_c"] = actualData.eStore_all_order_count_c / dateMod == 0 ? 0 : (actualData.eStore_all_rev_aov_c / dateMod) / (actualData.eStore_all_order_count_c / dateMod); // eStore AOV$ => (eStore Rev for AOV ÷ eStore Order Count)
+                graphDivisionData["conversion_rate_order_c"]  = actualData.prom_chat_handled_c / dateMod== 0 ? 0 : Number(( (graphDivisionData["prom_order_c"] / dateMod) / (actualData.prom_chat_handled_c / dateMod) *100).toFixed(1)) ;
+                graphDivisionData["conversion_rate_c"]  = actualData.prom_chat_handled_c / dateMod== 0 ? 0 : Number(( (actualData.prom_unit_sold_c / dateMod) / (actualData.prom_chat_handled_c / dateMod) *100).toFixed(1)) ; // conversion rate => eProm unit sold % chat handled
+                graphDivisionData["contribution_rate_c"]  = actualData.eStore_all_sale_rev_c / dateMod == 0 ? 0 : Number(( (actualData.prom_sale_rev_c / dateMod) / (actualData.eStore_all_sale_rev_c / dateMod) *100).toFixed(1));
+                graphDivisionData["revenue_per_c"] = actualData.prom_head_count_c / dateMod ==0 ? 0 : Number(( (actualData.prom_sale_rev_c / dateMod) / (actualData.prom_head_count_c / dateMod) ).toFixed(1));
+                graphDivisionData["head_count_c"] = actualData.prom_head_count_c ;
+                graphDivisionData["csat_c"] = actualData.survey_count_c / dateMod == 0 ? 0 : Number(( (actualData.csat_numerator_c / dateMod) / (actualData.survey_count_c / dateMod)*100).toFixed(1));
+                graphDivisionData["prom_flag_rev_c"]  = actualData.prom_sale_rev_c / dateMod == 0 ? 0 : Number(( (actualData.prom_flag_rev_c / dateMod) / (actualData.prom_sale_rev_c / dateMod) *100));
+
+                graphDivisionData["visit_chat_rate_c"] = actualData.total_visit_c / dateMod == 0 ? 0 : Number(((actualData.offerd_volume_c / dateMod) / (actualData.total_visit_c / dateMod) * 100).toFixed(2));
+                graphDivisionData["missed_rate_c"] = actualData.offerd_volume_p == 0 ? 0 : Number(((actualData.missed_chat_c / actualData.offerd_volume_c) * 100).toFixed(1));
+
+
+                graphDivisionData["eStore_rev_p"]  = actualData.eStore_all_sale_rev_p / dateMod;
+                graphDivisionData["prom_rev_p"]  =  Math.round(actualData.prom_sale_rev_p) / dateMod;
+                graphDivisionData["prom_unit_p"]  = actualData.prom_unit_sold_p / dateMod;
+                graphDivisionData["eStore_order_p"]  = actualData.eStore_all_order_p / dateMod;
+                graphDivisionData["prom_order_p"]  = actualData.no_division_prom_order_count_p / dateMod;
+                graphDivisionData["prom_chat_handled_p"]  = actualData.prom_chat_handled_p / dateMod;
+                graphDivisionData["eStore_unit_p"]  = actualData.eStore_all_unit_sold_p / dateMod;
+                graphDivisionData["prom_AOV_p"] = actualData.no_division_prom_order_count_p / dateMod == 0 ? 0 : Number(( (actualData.prom_sale_rev_p / dateMod) / (actualData.no_division_prom_order_count_p / dateMod)).toFixed(1)); // eProm AOV$ => (eProm Rev for AOV ÷ eProm Order Count)
+                graphDivisionData["eStore_AOV_p"] = actualData.eStore_all_order_count_p / dateMod == 0 ? 0 : (actualData.eStore_all_rev_aov_p / dateMod) / (actualData.eStore_all_order_count_p / dateMod); // eStore AOV$ => (eStore Rev for AOV ÷ eStore Order Count)
+                graphDivisionData["conversion_rate_order_p"]  = actualData.prom_chat_handled_p / dateMod== 0 ? 0 : Number(( ( graphDivisionData["prom_order_p"]   / dateMod) / (actualData.prom_chat_handled_p / dateMod) *100).toFixed(1)) ;
+                graphDivisionData["conversion_rate_p"]  = actualData.prom_chat_handled_p / dateMod== 0 ? 0 : Number(( (actualData.prom_unit_sold_p / dateMod) / (actualData.prom_chat_handled_p / dateMod) *100).toFixed(1)) ; // conversion rate => eProm unit sold % chat handled
+                graphDivisionData["contribution_rate_p"]  = actualData.eStore_all_sale_rev_p / dateMod == 0 ? 0 : Number(( (actualData.prom_sale_rev_p / dateMod) / (actualData.eStore_all_sale_rev_p / dateMod) *100).toFixed(1));
+                graphDivisionData["revenue_per_p"] = actualData.prom_head_count_p / dateMod ==0 ? 0 : Number(( (actualData.prom_sale_rev_p / dateMod) / (actualData.prom_head_count_p / dateMod)).toFixed(1));
+                graphDivisionData["head_count_p"] = actualData.prom_head_count_p ;
+                graphDivisionData["csat_p"] = actualData.survey_count_p / dateMod == 0 ? 0 : Number(( (actualData.csat_numerator_p / dateMod) / (actualData.survey_count_p / dateMod)*100).toFixed(1));
+                graphDivisionData["prom_flag_rev_p"]  = actualData.prom_sale_rev_p / dateMod == 0 ? 0 : Number(( (actualData.prom_flag_rev_p / dateMod) / (actualData.prom_sale_rev_p / dateMod) *100).toFixed(1));
+
+                graphDivisionData["visit_chat_rate_p"] = actualData.total_visit_p / dateMod == 0 ? 0 : Number(((actualData.offerd_volume_p / dateMod) / (actualData.total_visit_p / dateMod) * 100).toFixed(2));
+                graphDivisionData["missed_rate_p"] = actualData.offerd_volume_p == 0 ? 0 : Number(((actualData.missed_chat_p / actualData.offerd_volume_p) * 100).toFixed(1));
+
+                let summary_big = document.querySelectorAll(".summary_li .summary_big");
+                let s_pipe_blank = document.querySelectorAll(".summary_li .summary_circle");
+
+                summary_big[0].innerText = shortCutNum(graphDivisionData["prom_rev_c"].toFixed(0));
+                summary_big[1].innerText = shortCutNum(graphDivisionData["prom_unit_c"].toFixed(0));
+                summary_big[2].innerText = shortCutNum(graphDivisionData["prom_order_c"].toFixed(0));
+                summary_big[3].innerText = '$'+setComma(graphDivisionData["prom_AOV_c"].toFixed(0));
+                s_pipe_blank[0].innerText = setComma(shortCutNum(graphDivisionData["eStore_rev_c"].toFixed(0)));
+                s_pipe_blank[1].innerText = setComma(shortCutNum(graphDivisionData["eStore_unit_c"].toFixed(0)));
+                s_pipe_blank[2].innerText = setComma(shortCutNum(graphDivisionData["eStore_order_c"].toFixed(0)));
+                s_pipe_blank[3].innerText = '$'+setComma(shortCutNum(graphDivisionData["eStore_AOV_c"].toFixed(0)));
+
+                summary_big[4].innerText = shortCutNum(graphDivisionData["prom_chat_handled_c"].toFixed(0));
+                summary_big[5].innerText = graphDivisionData["contribution_rate_c"].toFixed(1)+'%';
+                summary_big[6].innerText = graphDivisionData["conversion_rate_order_c"].toFixed(1)+'%';
+                summary_big[7].innerText = graphDivisionData["conversion_rate_c"].toFixed(1)+'%';
+                summary_big[8].innerText = shortCutNum(graphDivisionData["revenue_per_c"].toFixed(0));
+                summary_big[9].innerText = graphDivisionData["prom_flag_rev_c"].toFixed(1)+'%';
+                summary_big[10].innerText = graphDivisionData["csat_c"].toFixed(1)+'%';
+                summary_big[11].innerText = setComma(graphDivisionData["head_count_c"].toFixed(0));
+
+                let prom_rev_growth = graphDivisionData["prom_rev_p"] == 0 ? 0 : (graphDivisionData["prom_rev_c"] / graphDivisionData["prom_rev_p"] -1)*100;
+                let eStore_rev_growth =  graphDivisionData["eStore_rev_c"] - graphDivisionData["eStore_rev_p"] ;
+
+                let prom_unit_growth= graphDivisionData["prom_unit_p"] == 0 ? 0 : (graphDivisionData["prom_unit_c"] / graphDivisionData["prom_unit_p"] -1)*100;
+                let portion_growth= graphDivisionData["prom_flag_rev_c"] - graphDivisionData["prom_flag_rev_p"];
+                let eStore_unit_growth=  graphDivisionData["eStore_unit_c"] - graphDivisionData["eStore_unit_p"];
+
+                let prom_order_growth=  graphDivisionData["prom_order_p"] == 0 ? 0 : (graphDivisionData["prom_order_c"] / graphDivisionData["prom_order_p"] -1)*100;
+                let eStore_order_growth= graphDivisionData["eStore_order_c"] - graphDivisionData["eStore_order_p"];
+                let csat_growth = graphDivisionData["csat_c"] - graphDivisionData["csat_p"];
+
+                let prom_handled_growth = graphDivisionData["prom_chat_handled_p"] == 0 ? 0 : (graphDivisionData["prom_chat_handled_c"] / graphDivisionData["prom_chat_handled_p"] -1)*100;
+                let prom_aov_growth = graphDivisionData["prom_AOV_p"] == 0 ? 0 : (graphDivisionData["prom_AOV_c"] / graphDivisionData["prom_AOV_p"] -1)*100;
+                let contribution_growth = graphDivisionData["contribution_rate_c"] - graphDivisionData["contribution_rate_p"];
+                let conversion_order_growth = graphDivisionData["conversion_rate_order_c"] - graphDivisionData["conversion_rate_order_p"];
+                let conversion_growth = graphDivisionData["conversion_rate_c"] - graphDivisionData["conversion_rate_p"];
+                let revenue_per_growth= graphDivisionData["revenue_per_p"] == 0 ? 0 : (graphDivisionData["revenue_per_c"] / graphDivisionData["revenue_per_p"] -1)*100;
+                let head_count_growth= graphDivisionData["head_count_p"] == 0 ? 0 : (graphDivisionData["head_count_c"] / graphDivisionData["head_count_p"] -1)*100;
+                let eStore_aov_growth = graphDivisionData["eStore_AOV_c"] - graphDivisionData["eStore_AOV_p"];
+
+                getGrwoth(0,prom_rev_growth);
+                getGrwoth(1,prom_unit_growth);
+                getGrwoth(2,prom_order_growth);
+                getGrwoth(3,prom_aov_growth);
+                getArrow(4,eStore_rev_growth);
+                getArrow(5,eStore_unit_growth);
+                getArrow(6,eStore_order_growth);
+                getArrow(7,eStore_aov_growth);
+                // //
+                getGrwoth(8,prom_handled_growth);
+                getGrwoth3(9,contribution_growth,graphDivisionData["contribution_rate_p"],"%p");
+                getGrwoth3(10,conversion_order_growth,graphDivisionData["conversion_rate_order_p"],"%p");
+                getGrwoth3(11,conversion_growth,graphDivisionData["conversion_rate_p"],"%p");
+                getGrwoth(12,revenue_per_growth);
+                getGrwoth3(13,portion_growth,graphDivisionData["prom_flag_rev_p"],"%p");
+                getGrwoth3(14,csat_growth,graphDivisionData["csat_p"],"%p");
+                getGrwoth(15,head_count_growth);
+
+                let prev_value = document.querySelectorAll(".summary_box p.prev");
+
+                prev_value[0].innerHTML = '<span class="prev_date"></span>' + setComma(graphDivisionData["prom_rev_p"].toFixed(0));
+                prev_value[1].innerHTML = '<span class="prev_date"></span>' + setComma(graphDivisionData["prom_unit_p"].toFixed(0));
+                prev_value[2].innerHTML = '<span class="prev_date"></span>' + setComma(graphDivisionData["prom_order_p"].toFixed(0));
+                prev_value[3].innerHTML = '<span class="prev_date"></span>' + setComma(graphDivisionData["prom_AOV_p"].toFixed(0));
+
+                prev_value[4].innerHTML = '<span class="prev_date"></span>' + setComma(shortCutNum(graphDivisionData["eStore_rev_p"].toFixed(0)));
+                prev_value[5].innerHTML = '<span class="prev_date"></span>' + setComma(shortCutNum(graphDivisionData["eStore_unit_p"].toFixed(0)));
+                prev_value[6].innerHTML = '<span class="prev_date"></span>' + setComma(shortCutNum(graphDivisionData["eStore_order_p"].toFixed(0)));
+                prev_value[7].innerHTML = '<span class="prev_date"></span>' + setComma(shortCutNum(graphDivisionData["eStore_AOV_p"].toFixed(0)));
+
+                prev_value[8].innerHTML = '<span class="prev_date"></span>' + setComma(graphDivisionData["prom_chat_handled_p"].toFixed(0));
+                prev_value[9].innerHTML = '<span class="prev_date"></span>' + graphDivisionData["contribution_rate_p"].toFixed(1)+'%';
+                prev_value[10].innerHTML = '<span class="prev_date"></span>' + graphDivisionData["conversion_rate_order_p"].toFixed(1)+'%';
+                prev_value[11].innerHTML = '<span class="prev_date"></span>' + graphDivisionData["conversion_rate_p"].toFixed(1)+'%';
+                prev_value[12].innerHTML = '<span class="prev_date"></span>' + setComma(graphDivisionData["revenue_per_p"].toFixed(0));
+                prev_value[13].innerHTML = '<span class="prev_date"></span>' + graphDivisionData["prom_flag_rev_p"].toFixed(1)+'%';
+                prev_value[14].innerHTML = '<span class="prev_date"></span>' + graphDivisionData["csat_p"].toFixed(1)+'%';
+                prev_value[15].innerHTML ='<span class="prev_date"></span>' + graphDivisionData["head_count_p"].toFixed(0);
+
+
+                let current_value = document.querySelectorAll(".summary_box p.current");
+
+                current_value[0].innerHTML = '<span class="current_date"></span>' + setComma(graphDivisionData["prom_rev_c"].toFixed(0));
+                current_value[1].innerHTML = '<span class="current_date"></span>' + setComma(graphDivisionData["prom_unit_c"].toFixed(0));
+                current_value[2].innerHTML = '<span class="current_date"></span>' + setComma(graphDivisionData["prom_order_c"].toFixed(0));
+                current_value[3].innerHTML = '<span class="current_date"></span>' + setComma(graphDivisionData["prom_AOV_c"].toFixed(0));
+                current_value[4].innerHTML = '<span class="current_date"></span>' + setComma(shortCutNum(graphDivisionData["eStore_rev_c"].toFixed(0)));
+                current_value[5].innerHTML = '<span class="current_date"></span>' + setComma(shortCutNum(graphDivisionData["eStore_unit_c"].toFixed(0)));
+                current_value[6].innerHTML ='<span class="current_date"></span>' +  setComma(shortCutNum(graphDivisionData["eStore_order_c"].toFixed(0)));
+                current_value[7].innerHTML = '<span class="current_date"></span>' + setComma(shortCutNum(graphDivisionData["eStore_AOV_c"].toFixed(0)));
+
+                current_value[8].innerHTML = '<span class="current_date"></span>' + setComma(graphDivisionData["prom_chat_handled_c"].toFixed(0));
+                current_value[9].innerHTML = '<span class="current_date"></span>' + graphDivisionData["contribution_rate_c"].toFixed(1)+'%';
+                current_value[10].innerHTML = '<span class="current_date"></span>' + graphDivisionData["conversion_rate_order_c"].toFixed(1)+'%';
+                current_value[11].innerHTML = '<span class="current_date"></span>' + graphDivisionData["conversion_rate_c"].toFixed(1)+'%';
+                current_value[12].innerHTML = '<span class="current_date"></span>' + setComma(graphDivisionData["revenue_per_c"].toFixed(0));
+                current_value[13].innerHTML = '<span class="current_date"></span>' + graphDivisionData["prom_flag_rev_c"].toFixed(1)+'%';
+                current_value[14].innerHTML = '<span class="current_date"></span>' + graphDivisionData["csat_c"].toFixed(1)+'%';
+                current_value[15].innerHTML ='<span class="current_date"></span>' + graphDivisionData["head_count_c"].toFixed(0);
+
+                let prev= document.querySelectorAll(".summary_box span.prev_date");
+                let current= document.querySelectorAll(".summary_box span.current_date");
+
+                prev.forEach(e=>{
+                    e.innerText = prev_date;
+                })
+
+                current.forEach(e=>{
+                    e.innerText = current_date;
+                })
+
+                // 타겟 달성 여부에 따른 툴팁 아이콘 설정
+                // let icon_noti = document.querySelectorAll(".summary_li .icon_noti");
+                // icon_noti[0].classList.remove('exc', 'chk');
+                // icon_noti[1].classList.remove('exc', 'chk');
+                // icon_noti[2].classList.remove('exc', 'chk');
+                // icon_noti[3].classList.remove('exc', 'chk');
+                // icon_noti[4].classList.remove('exc', 'chk');
+                // icon_noti[5].classList.remove('exc', 'chk');
+                // icon_noti[6].classList.remove('exc', 'chk');
+                // icon_noti[7].classList.remove('exc', 'chk');
+                // icon_noti[8].classList.remove('exc', 'chk');
+
+                // graphDivisionData["prom_rev_growth"] = graphDivisionData["prom_rev_p"] - graphDivisionData["prom_rev_c"];
+                // graphDivisionData["eProm_rev_growth"] = graphDivisionData["eProm_rev_p"] - graphDivisionData["eProm_rev_c"];
+                // graphDivisionData["vProm_rev_growth"] = graphDivisionData["vProm_rev_p"] - graphDivisionData["vProm_rev_c"];
+                // graphDivisionData["audio_rev_growth"] = graphDivisionData["audio_rev_p"] - graphDivisionData["audio_rev_c"];
+                // graphDivisionData["sns_rev_growth"] = graphDivisionData["sns_rev_p"] - graphDivisionData["sns_rev_c"];
+                //
+                // graphDivisionData["prom_unit_growth"] = graphDivisionData["prom_unit_p"] - graphDivisionData["prom_unit_c"];
+                // graphDivisionData["eProm_unit_growth"] = graphDivisionData["eProm_unit_p"] - graphDivisionData["eProm_unit_c"];
+                // graphDivisionData["vProm_unit_growth"] = graphDivisionData["vProm_unit_p"] - graphDivisionData["vProm_unit_c"];
+                // graphDivisionData["audio_unit_growth"] = graphDivisionData["audio_unit_p"] - graphDivisionData["audio_unit_c"];
+                // graphDivisionData["sns_unit_growth"] = graphDivisionData["sns_unit_p"] - graphDivisionData["sns_unit_c"];
+                // graphDivisionData["portion_growth"] = graphDivisionData["prom_flag_rev_p"] - graphDivisionData["prom_flag_rev_c"];
+                //
+                // graphDivisionData["prom_order_growth"] = graphDivisionData["prom_order_p"] - graphDivisionData["prom_order_c"];
+                // graphDivisionData["eProm_order_growth"] = graphDivisionData["eProm_order_p"] - graphDivisionData["eProm_order_c"];
+                // graphDivisionData["vProm_order_growth"] = graphDivisionData["vProm_order_p"] - graphDivisionData["vProm_order_c"];
+                // graphDivisionData["audio_order_growth"] = graphDivisionData["audio_order_p"] - graphDivisionData["audio_order_c"];
+                // graphDivisionData["sns_order_growth"] = graphDivisionData["sns_order_p"] - graphDivisionData["sns_order_c"];
+                //
+                // graphDivisionData["AOV_growth"] = graphDivisionData["prom_AOV_p"] - graphDivisionData["prom_AOV_c"];
+                // graphDivisionData["contribution_growth"] = graphDivisionData["contribution_rate_p"] - graphDivisionData["contribution_rate_c"];
+                // graphDivisionData["conversion_growth"] = graphDivisionData["conversion_rate_p"] - graphDivisionData["conversion_rate_c"];
+                // graphDivisionData["revenue_per_growth"] = graphDivisionData["revenue_per_p"] - graphDivisionData["revenue_per_c"];
+                // graphDivisionData["handled_growth"] = graphDivisionData["prom_chat_handled_p"] - graphDivisionData["prom_chat_handled_c"];
+                // graphDivisionData["csat_growth"]=  graphDivisionData["csat_p"] - graphDivisionData["csat_c"];
+                // graphDivisionData["head_count_growth"]=  graphDivisionData["head_count_p"] - graphDivisionData["head_count_c"];
+                //
+                // graphDivisionData["prom_rev_growth"] > 0 ? icon_noti[0].classList.add('exc') : icon_noti[0].classList.add('chk');
+                // graphDivisionData["prom_unit_growth"]  > 0 ? icon_noti[1].classList.add('exc') : icon_noti[1].classList.add('chk');
+                // graphDivisionData["prom_order_growth"]  > 0 ? icon_noti[2].classList.add('exc') : icon_noti[2].classList.add('chk');
+                // graphDivisionData["AOV_growth"]  > 0 ? icon_noti[3].classList.add('exc') : icon_noti[3].classList.add('chk');
+                // graphDivisionData["handled_growth"]  > 0 ? icon_noti[4].classList.add('exc') : icon_noti[4].classList.add('chk');
+                // graphDivisionData["contribution_growth"] > 0 ? icon_noti[5].classList.add('exc') : icon_noti[5].classList.add('chk');
+                // graphDivisionData["conversion_growth"]> 0 ? icon_noti[6].classList.add('exc') : icon_noti[6].classList.add('chk');
+                // graphDivisionData["revenue_per_growth"] > 0 ? icon_noti[7].classList.add('exc') : icon_noti[7].classList.add('chk');
+                // graphDivisionData["head_count_growth"]  > 0 ? icon_noti[8].classList.add('exc') : icon_noti[8].classList.add('chk');
+
+                getDivisionTableData();
+
+            }
+        });
+    }
+
+
+    function getDivisionTableData(){
+        let param = getParam();
+        param.title = 'All';
+        ajax.post("/divisionSummary/ajax/getDivisionTableData",param, "",function(respon){
+            if (respon.ok) {
+                let data = respon.data;
+                let orderData = data.divisionOrderData;
+                let revenueData = data.divisionRevenueData;
+
+                $('#rank_type5').DataTable().clear().destroy();
+                $('#rank_type4').DataTable().clear().destroy();
+                $('#rank_type3').DataTable().clear().destroy();
+
+                let html = '';
+                let html2 = '';
+
+                html2 += '<tr>';
+                html2 += '<th>-</th>';
+                html2 += '<th>Total</th>';
+                html2 +='<th>'+graphDivisionData["conversion_rate_order_c"].toFixed(1)+'%</th>';
+                html2 +='<th>'+graphDivisionData["contribution_rate_c"].toFixed(1)+'%</th>';
+                html2 +='<th>'+graphDivisionData["visit_chat_rate_c"].toFixed(2)+'%</th>';
+                html2 +='<th>'+graphDivisionData["missed_rate_c"].toFixed(1)+'%</th>';
+                html2 += '</tr>';
+
+
+                $('#total_all_table').html(html2);
+
+                $.each(orderData, function(key,val){
+
+
+                    html += '<tr>';
+                    html += '<td>'+key+'</td>';
+                    html += '<td>'+val.country+'</td>';
+                    if(val.chat_handled /dateMod != 0) html += '<td>'+  Number((( (val.no_division_order_count /dateMod) / (val.chat_handled /dateMod))*100).toFixed(1))+'%</td>';
+                    else html += '<td>0%</td>';
+                    if(val.estore_sales_revenue /dateMod !=0) html += '<td>'+ Number((( (val.sales_revenue/ dateMod)/ (val.estore_sales_revenue /dateMod))*100).toFixed(1))+'%</td>';
+                    else html += '<td>0%</td>';
+                    if(val.total_visit /dateMod !=0) html += '<td>'+ Number((( (val.offerd_volume/ dateMod)/ (val.total_visit /dateMod))*100).toFixed(2))+'%</td>';
+                    else html += '<td>0%</td>';
+                    if(val.offerd_volume /dateMod !=0) html += '<td>'+ Number((( (val.missed_chat/ dateMod)/ (val.offerd_volume /dateMod))*100).toFixed(1))+'%</td>';
+                    else html += '<td>0%</td>';
+                    html += '</tr>';
+
+                })
+
+                $('#all_table').html(html);
+
+                getAllRankTable();
+                document.getElementById("promoter_conversion_column2").click();
+                document.getElementById("promoter_conversion_column2").click();
+
+                html = '';
+                html2 = '';
+
+                html2 += '<tr>';
+                html2 += '<th>-</th>';
+                html2 += '<th>Total</th>';
+                html2 +='<th>'+graphDivisionData["conversion_rate_order_c"].toFixed(1)+'%</th>';
+                html2 +='<th>'+graphDivisionData["contribution_rate_c"].toFixed(1)+'%</th>';
+                html2 += '</tr>';
+
+
+                $('#total_order_table').html(html2);
+
+                $.each(orderData, function(key,val){
+
+
+                    html += '<tr>';
+                    html += '<td>'+key+'</td>';
+                    html += '<td>'+val.country+'</td>';
+                    if(val.chat_handled /dateMod != 0) html += '<td>'+  Number((( (val.no_division_order_count /dateMod) / (val.chat_handled /dateMod))*100).toFixed(1))+'%</td>';
+                    else html += '<td>0%</td>';
+                    if(val.estore_sales_revenue /dateMod !=0) html += '<td>'+ Number((( (val.sales_revenue/ dateMod)/ (val.estore_sales_revenue /dateMod))*100).toFixed(1))+'%</td>';
+                    else html += '<td>0%</td>';
+                    html += '</tr>';
+
+                })
+
+                $('#order_table').html(html);
+
+                getConversionRankTable();
+                document.getElementById("promoter_conversion_column").click();
+                document.getElementById("promoter_conversion_column").click();
+
+                html = '';
+                html2 = '';
+                let total_value = 0;
+
+
+                html2 += '<tr>';
+                html2 += '<th></th>';
+                html2 += '<th>Total</th>';
+                html2 += '<th>'+setComma(graphDivisionData["prom_rev_c"])+'</th>';
+
+                html2 += '<th>'+setComma(graphDivisionData["head_count_c"].toFixed(0))+'</th>';
+                html2 += '<th>'+setComma(graphDivisionData["revenue_per_c"].toFixed(0))+'</th>';
+                html2 += '</tr>';
+
+
+                $('#revenue_total_tfoot').html(html2);
+                $.each(revenueData, function(key,val){
+
+                    let revenue_per_promoter = (val.head_count / dateMod) == 0 ? 0 : Math.round((val.sales_revenue /dateMod) / (val.head_count / dateMod));
+                    html += '<tr>';
+                    html += '<td>'+key+'</td>';
+                    html += '<td>'+val.country+'</td>';
+                    html += '<td>'+setComma(Math.round(val.sales_revenue / dateMod))+'</td>';
+                    html += '<td>'+setComma((val.head_count / dateMod ).toFixed(0))+'</td>';
+                    html += '<td>'+setComma(revenue_per_promoter)+'</td>';
+
+                    html += '</tr>';
+
+                });
+                $('#revenue_table').html(html);
+
+                getRevenueRankTable();
+                document.getElementById("promoter_revenue_column").click();
+                document.getElementById("promoter_revenue_column").click();
+
+                getDivisionGraphData();
+
+            }
+
+        });
+    }
+
+    function getDivisionGraphData(){
+        let param = getParam();
+
+        ajax.post("/divisionSummary/ajax/getDivisionGraphData", param, "", function (respon) {
+
+            if (respon.ok) {
+                divisionGraphData = respon.data.divisionSummaryActual;
+
+                let current_date = respon.data.current_date;
+                let prev_date = respon.data.prev_date;
+
+                handled_date = getHandledLogicCheck();
+
+                $.each(divisionGraphData, function(key,val){
+
+                    val["conversion_rate"] = val.prom_chat_handled == 0 ? 0 : Number(((val.prom_unit_sold / val.prom_chat_handled) *100).toFixed(1));
+                    val["contribution_rate"] = val.estore_revenue == 0 ? 0 : Number(((val.prom_revenue / val.estore_revenue) *100).toFixed(1));
+                    val["prom_revenue"] = Math.round(val.prom_revenue);
+                    val["all_im_tooltip"] = val.im_prom_revenue == 0 ? "Galaxy S / Z : "+shortCutNum(Math.round(val.galaxy))+" (0%)" : "Galaxy S / Z : "+shortCutNum(Math.round(val.galaxy))+" ("+((val.galaxy / val.im_prom_revenue)*100).toFixed(1)+"%)"
+                    val["all_vd_tooltip"] = val.vd_prom_revenue == 0 ? "QLED : "+shortCutNum(Math.round(val.qled))+" (0%)" : "QLED : "+shortCutNum(Math.round(val.qled))+" ("+((val.qled / val.vd_prom_revenue)*100).toFixed(1)+"%)"
+                    val["all_da_tooltip"] = val.da_prom_revenue == 0 ? "Bespoke : "+shortCutNum(Math.round(val.bespoke))+" (0%)" : "Bespoke : "+shortCutNum(Math.round(val.bespoke))+" ("+((val.bespoke / val.da_prom_revenue)*100).toFixed(1)+"%)"
+                    val["flagship_rev"] = val.prom_revenue == 0 ? 0 : Number(((val.flagship_rev / val.prom_revenue) *100).toFixed(1));
+
+
+                    if(handled_date == 0){
+                        val["im_handled_chat"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled * (val.prom_chat_handled_mx / val.prom_chat_handled_macro))).toFixed(0));
+                        val["vd_handled_chat"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled * (val.prom_chat_handled_vd / val.prom_chat_handled_macro))).toFixed(0));
+                        val["da_handled_chat"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled * (val.prom_chat_handled_da / val.prom_chat_handled_macro))).toFixed(0));
+                        val["not_applicable_handled_chat"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled * (val.prom_chat_handled_applicable / val.prom_chat_handled_macro))).toFixed(0));
+
+                        val["im_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled_mx / val.prom_chat_handled_macro) *100).toFixed(1));
+                        val["vd_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled_vd / val.prom_chat_handled_macro) *100).toFixed(1));
+                        val["da_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled_da / val.prom_chat_handled_macro) *100).toFixed(1));
+                        val["not_applicable_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val.prom_chat_handled_applicable / val.prom_chat_handled_macro) *100).toFixed(1));
+
+                    }else{
+                        val["im_handled_chat"] = val.prom_chat_handled_mx + (val.cross_prom_chat_handled / 3);
+                        val["vd_handled_chat"] = val.prom_chat_handled_vd + (val.cross_prom_chat_handled / 3);
+                        val["da_handled_chat"] = val.prom_chat_handled_da + (val.cross_prom_chat_handled / 3);
+                        val["not_applicable_handled_chat"] =val.prom_chat_handled_applicable;
+                        val["cross_product"] =val.cross_prom_chat_handled;
+
+                        val["im_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number((( val["im_handled_chat"] / val.prom_chat_handled_macro) *100).toFixed(1));
+                        val["vd_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val["vd_handled_chat"]/ val.prom_chat_handled_macro) *100).toFixed(1));
+                        val["da_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val["da_handled_chat"] / val.prom_chat_handled_macro) *100).toFixed(1));
+                        val["not_applicable_percentage"] = val.prom_chat_handled_macro == 0 ? 0 : Number(((val["not_applicable_handled_chat"] / val.prom_chat_handled_macro) *100).toFixed(1));
+
+                    }
+
+                    val["im_percentage_tooltip"] =  "MX : "+setComma(Number(val["im_handled_chat"]).toFixed(0))+" ("+val["im_percentage"] + "%)";
+                    val["vd_percentage_tooltip"] =  "VD : "+setComma(Number(val["vd_handled_chat"]).toFixed(0))+" ("+val["vd_percentage"] + "%)";
+                    val["da_percentage_tooltip"] =  "DA : "+setComma(Number(val["da_handled_chat"]).toFixed(0))+" ("+val["da_percentage"] + "%)";
+                    val["cross_product_tooltip"] =  "Cross Products : "+setComma(Number(val["cross_product"]).toFixed(0));
+                    val["not_percentage_tooltip"] =  "Not Applicable : "+setComma(Number(val["not_applicable_handled_chat"]).toFixed(0))+" ("+val["not_applicable_percentage"] + "%)";
+
+                });
+
+                google.charts.setOnLoadCallback(setGraph);
+            }
+        });
+
+    }
+
+
+
+    function getLineColorTable(){
+        return {
+            0: { pointSize: 5, color: '#4771d3'},
+            1: { pointSize: 5, color: '#d0e0fc'},
+            2: { pointSize: 5, color: '#ffb121'},
+            3: { pointSize :5, color: '#bfbfbf'}
+
+        }
+    }
+    function getPercentageColorTable(){
+        return {
+            0: { pointSize: 5,color: '#80aefa'},
+            1: { pointSize: 5,color: '#ffb121'},
+            2: { pointSize: 5,color: '#ff6857'},
+            3: { pointSize :5, color: '#bfbfbf'}
+        }
+    }
+    function getColorChangeOption(options,value){
+        if(value <= 0)
+            options.colors[0] = '#4a74d0';
+        else
+            options.colors[0] = '#fd695c';
+
+        return options;
+    }
+
+    function setGraph(){
+
+        // Sales Revenue
+        // let prom_sales_doughnut = document.getElementById("prom_sales_doughnut");
+        // let prom_sales_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,'prom_rev_c','eProm','Sales Revenue');
+        // drawChart(prom_sales_doughnut, 'doughnut', prom_sales_doughnut_data, getColorChangeOption(PieChartOptions,graphDivisionData['prom_rev_growth']), false);
+        //
+        // // //Unit Sold
+        // let prom_unit_doughnut = document.getElementById("prom_unit_doughnut");
+        // let prom_unit_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,'prom_unit_c','unit','Unit Sold');
+        // drawChart(prom_unit_doughnut, 'doughnut', prom_unit_doughnut_data, getColorChangeOption(PieChartOptions,graphDivisionData['prom_unit_growth']), false);
+        //
+        // //order
+        // let prom_order_doughnut = document.getElementById("prom_order_doughnut");
+        // let prom_order_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,'prom_order_c','order','Order');
+        // drawChart(prom_order_doughnut, 'doughnut', prom_order_doughnut_data, getColorChangeOption(PieChartOptions,graphDivisionData['prom_order_growth']), false);
+        //
+        // if(graphDivisionData["prom_AOV_c"] > 0) {
+        //     let aov_doughnut = document.getElementById("aov_doughnut");
+        //     let aov_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData, ['prom_AOV_c'], ['AOV'], 'AOV', '%');
+        //     drawChart(aov_doughnut, 'doughnut', aov_doughnut_data, getColorChangeOption(PieChartOptions2, graphDivisionData['AOV_growth']), false);
+        // }
+        //
+        // let handled_doughnut = document.getElementById("handled_doughnut");
+        // let handled_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,'prom_chat_handled_c','handled','Handled');
+        // drawChart(handled_doughnut, 'doughnut', handled_doughnut_data, getColorChangeOption(PieChartOptions,graphDivisionData['handled_growth']), false);
+        //
+        // let contri_doughnut = document.getElementById("contri_doughnut");
+        // let contri_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,'contribution_rate_c','contribution',false,'%');
+        // drawChart(contri_doughnut, 'doughnut', contri_doughnut_data, getColorChangeOption(PieChartOptions2,graphDivisionData['contribution_growth']), false);
+        //
+        // let conver_doughnut = document.getElementById("conver_doughnut");
+        // let conver_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,'conversion_rate_c','conversion','Conversion Rate','%');
+        // drawChart(conver_doughnut, 'doughnut', conver_doughnut_data, getColorChangeOption(PieChartOptions2,graphDivisionData['conversion_growth']), false);
+        //
+        // let revenue_per_doughnut = document.getElementById("revenue_per_doughnut");
+        // let revenue_per_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,['revenue_per_c'],['revenue per'],'Revenue per','%');
+        // drawChart(revenue_per_doughnut, 'doughnut', revenue_per_doughnut_data, getColorChangeOption(PieChartOptions2,graphDivisionData['revenue_per_growth']), false);
+        //
+        // let portion_doughnut = document.getElementById("portion_doughnut");
+        // let portion_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,'prom_flag_rev_p','portion','Portion');
+        // drawChart(portion_doughnut, 'doughnut', portion_doughnut_data, getColorChangeOption(PieChartOptions,graphDivisionData['portion_growth']), false);
+        //
+        // let csat_doughnut = document.getElementById("csat_dougnut");
+        // let cast_doughnut_data = getGoogleChartDoughnutDataSet(graphDivisionData,['csat_c'],['CSAT Actual'],'CSAT','%');
+        // drawChart(csat_doughnut, 'doughnut', cast_doughnut_data, getColorChangeOption(PieChartOptions,graphDivisionData['csat_growth']), false);
+
+
+        // let order_line = document.getElementById("order_line");
+        // let order_line_data = getGoogleChartDataSet(divisionGraphData,['conversion_rate','contribution_rate'],['Promoter Conversion Rate','Promoter Contribution Rate']);
+        //
+        // drawChart(order_line,'line',order_line_data,lineChartOption,false,true,[1,2],false,function(chart,opt,data){
+        //     let indicatorList = document.querySelectorAll('#order_con span');
+        //     indicatorList = document.querySelectorAll('#order_con span');
+        //     indicatorList.forEach(elem=>{
+        //         elem.addEventListener('click',e=>{
+        //             let $this = e.target;
+        //             let hides = [];
+        //             let newColor = [];
+        //             indicatorList.forEach((elem,index)=>{
+        //                 let check = elem.classList.contains("dis");
+        //                 if(check){
+        //                     hides.push(index+1);
+        //                 }else{
+        //
+        //                     newColor.push(getLineColorTable()[index]);
+        //                 }
+        //             })
+        //             if(newColor.length ==0){
+        //                 hides =[];
+        //                 newColor.push(getLineColorTable()[0]);
+        //                 newColor.push(getLineColorTable()[1]);
+        //                 document.querySelector("#order_con .ep_01").classList.remove("dis");
+        //                 document.querySelector("#order_con .ep_08").classList.remove("dis");
+        //             }
+        //             opt.series = newColor;
+        //             let view = new google.visualization.DataView(data);
+        //             view.hideColumns(hides);
+        //             chart.draw(view, opt);
+        //         })
+        //     })
+        // });
+
+        let flagship_combo = document.getElementById("flagship_combo");
+        let flagship_combo_data  = getGoogleChartDataSet(divisionGraphData,['prom_revenue','flagship_rev'],['Promoter Revenue','Premium Portion']);
+
+        drawChart(flagship_combo,'combo',flagship_combo_data,ComboChartOption,false,true,2);
+
+        let flagship_line = document.getElementById("flagship_line");
+        let flagship_line_data  = getGoogleChartDataSet(divisionGraphData,['galaxy','all_im_tooltip','qled','all_vd_tooltip','bespoke','all_da_tooltip'],['Galaxy S / Z',{type: 'string', role: 'tooltip'},'QLED',{type: 'string', role: 'tooltip'},'Bespoke',{type: 'string', role: 'tooltip'}]);
+        drawChart(flagship_line ,'combo',flagship_line_data,lineChartOption2,false);
+
+        let handled_division_column = document.getElementById("handled_division_column");
+        $('#handled_division_column').css('padding-top','4%');
+        let handled_division_column_data = getGoogleChartDataSet(divisionGraphData,['prom_chat_handled','im_handled_chat','im_percentage_tooltip','vd_handled_chat','vd_percentage_tooltip','da_handled_chat','da_percentage_tooltip','cross_product','cross_product_tooltip','not_applicable_handled_chat','not_percentage_tooltip'],['Total','MX',{type: 'string', role: 'tooltip'},'VD',{type: 'string', role: 'tooltip'},'DA',{type: 'string', role: 'tooltip'},'Cross Products',{type: 'string', role: 'tooltip'},'Non Product',{type: 'string', role: 'tooltip'}]);
+        drawChart(handled_division_column,'column',handled_division_column_data,columnChartOptions,false);
+        //
+        // let handled_percentage_line = document.getElementById("handled_percentage_line");
+        // let handled_percentage_line_data = getGoogleChartDataSet(divisionGraphData,['im_percentage','vd_percentage','da_percentage','non_product_percentage'],['MX','VD','DA','Non Product']);
+        // drawChart(handled_percentage_line,'line',handled_percentage_line_data,lineChartOption2,false,true,[1,2,3,4],false,function(chart,opt,data){
+        //     let indicatorList = document.querySelectorAll('#percentage_con span');
+        //     indicatorList = document.querySelectorAll('#percentage_con span');
+        //     indicatorList.forEach(elem=>{
+        //         elem.addEventListener('click',e=>{
+        //             let $this = e.target;
+        //             let hides = [];
+        //             let newColor = [];
+        //             indicatorList.forEach((elem,index)=>{
+        //                 let check = elem.classList.contains("dis");
+        //                 if(check){
+        //                     hides.push(index+1);
+        //                 }else{
+        //
+        //                     newColor.push(getPercentageColorTable()[index]);
+        //                 }
+        //             })
+        //             if(newColor.length ==0){
+        //                 hides =[];
+        //                 newColor.push(getPercentageColorTable()[0]);
+        //                 newColor.push(getPercentageColorTable()[1]);
+        //                 newColor.push(getPercentageColorTable()[2]);
+        //                 newColor.push(getPercentageColorTable()[3]);
+        //                 document.querySelector("#percentage_con .ep_09").classList.remove("dis");
+        //                 document.querySelector("#percentage_con .ep_02").classList.remove("dis");
+        //                 document.querySelector("#percentage_con .ep_03").classList.remove("dis");
+        //                 document.querySelector("#percentage_con .ep_06").classList.remove("dis");
+        //             }
+        //             opt.series = newColor;
+        //             let view = new google.visualization.DataView(data);
+        //             view.hideColumns(hides);
+        //             chart.draw(view, opt);
+        //         })
+        //     })
+        // });
+
+
+        document.getElementById("loading-page").style.display ="none";
+
+    }
+
+    function getCookie(name) {
+        var parts = document.cookie.split(name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+
+    function expireCookie(name) {
+        document.cookie = name + "="+encodeURIComponent("FALSE")+"; expires=";
+    }
+
+    var downloadTimer;
+
+    function blockUI() {
+        expireCookie("fileDownloadToken");
+        document.getElementById("loading-page").style.display ="block";
+        downloadTimer = setInterval(function() {
+            var token = getCookie("fileDownloadToken");
+            if(token == "TRUE") {
+                unBlockUI();
+            }
+        }, 1000 );
+    }
+
+    function unBlockUI() {
+        document.getElementById("loading-page").style.display ="none";
+        clearInterval(downloadTimer);
+        expireCookie("fileDownloadToken");
+    }
+    function ExcelDownload(type) {
+        blockUI();
+
+        var param = getParam();
+        param.type = type;
+        param.excelTitle ="All";
+        param.product_division = "IM,VD,DA,HA";
+        param.handledLogicCheck = handled_date;
+        param.chat_division = "All";
+        let form = document.createElement('form');
+        form.setAttribute("method","POST");
+        form.setAttribute("action","/globaldashboard/DivisionExcelDownload");
+        let hiddenField = document.createElement('input');
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "data");
+        hiddenField.setAttribute("value", JSON.stringify(param));
+
+        form.appendChild(hiddenField);
+        document.body.appendChild(form);
+
+        form.submit();
+    }
+
+    function getAllRankTable(){
+        $('#rank_type5').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            scrollCollapse: true,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "295px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+                null,
+                null,
+            ]
+        });
+
+        tableColumnRankInitialize('rank_type5');
+    }
+
+    function getConversionRankTable(){
+        $('#rank_type3').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            scrollCollapse: true,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "295px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+            ]
+        });
+
+        tableColumnRankInitialize('rank_type3');
+    }
+
+    function getRevenueRankTable(){
+        $('#rank_type4').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            scrollCollapse: true,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "295px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+                null,
+            ]
+        });
+
+        tableColumnRankInitialize('rank_type4');
+    }
+
+
+</script>
+
+
+
+<div class="daterangepicker ltr show-ranges show-calendar opensright"><div class="date-ouput-wrap"><ul style="display: none;"><li class="tit">Start : </li><li class="txt"><span class="drp-selected" id="option-date-from"></span></li></ul><ul style="display: none;"><li class="tit">End : </li><li class="txt"><span class="drp-selected" id="option-date-to"></span></li></ul></div><div class="calendar-wrap"><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div></div><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 14 Days">Last 14 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="Last Week">Last Week</li><li data-range-key="Last Month">Last Month</li></ul></div><div class="drp-buttons"><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div></body></html>

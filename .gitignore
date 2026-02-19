@@ -1,0 +1,36 @@
+__pycache__/
+*.pyc
+.env
+.vscode/
+node_modules/
+*.log
+.DS_Store
+
+# Python virtual environments
+venv/
+.venv/
+env/
+
+# Node.js / Next.js
+.next/
+dist/
+build/
+
+# Large data files
+*.zip
+*.tar.gz
+*.sqlite
+*.db
+dataset_modeling.csv
+
+# Embedded git repos
+DI_Study/SLCC_NEW/
+DI_Study/korean-parallel-corpora/
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db

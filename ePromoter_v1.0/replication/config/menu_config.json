@@ -1,0 +1,160 @@
+{
+  "basePath": "/globaldashboard",
+  "menus": [
+    {
+      "order": 0,
+      "id": "main",
+      "label": "Main (Home)",
+      "path": "/main",
+      "fullPath": "/globaldashboard/main",
+      "iconClass": null,
+      "iconPath": null,
+      "description": "인덱스, 메뉴 선택만"
+    },
+    {
+      "order": 1,
+      "id": "executive",
+      "label": "Executive Summary",
+      "path": "/executiveSummary",
+      "fullPath": "/globaldashboard/executiveSummary",
+      "iconClass": "icon_area img01",
+      "iconPath": "img/main_icon/icon_01_off.png",
+      "dataApi": "/executiveSummary/ajax/getExecutiveData",
+      "graphApi": "/executiveSummary/ajax/getExecutiveGraphData",
+      "description": "경영진 요약"
+    },
+    {
+      "order": 2,
+      "id": "division",
+      "label": "Division Summary",
+      "path": "/divisionSummary",
+      "fullPath": "/globaldashboard/divisionSummary",
+      "iconClass": "icon_area img12",
+      "iconPath": "img/main_icon/icon_12_off.png",
+      "extraApi": ["/getChatType"],
+      "dataApi": "/divisionSummary/ajax/getDivisionData",
+      "tableApi": "/divisionSummary/ajax/getDivisionTableData",
+      "graphApi": "/divisionSummary/ajax/getDivisionGraphData",
+      "description": "사업부별 요약"
+    },
+    {
+      "order": 3,
+      "id": "sales",
+      "label": "Sales Summary",
+      "path": "/sales_all2",
+      "fullPath": "/globaldashboard/sales_all2",
+      "iconClass": "icon_area img02",
+      "iconPath": "img/main_icon/icon_02_off.png",
+      "extraApi": ["/getHybrisType"],
+      "dataApi": "/Sales/ajax/getSalesSummaryDataNew",
+      "graphApi": "/Sales/ajax/getSalesSummaryGraphDataNew",
+      "description": "영업 요약"
+    },
+    {
+      "order": 4,
+      "id": "operation",
+      "label": "Operation Summary",
+      "path": "/operation_all2",
+      "fullPath": "/globaldashboard/operation_all2",
+      "iconClass": "icon_area img03",
+      "iconPath": "img/main_icon/icon_03_off.png",
+      "extraApi": ["/getHybrisType"],
+      "dataApi": "/operationSummary/ajax/getOperationDataNew",
+      "tableApi": "/operationSummary/ajax/getOperationTableData",
+      "graphApi": "/operationSummary/ajax/getOperationAllGraphData",
+      "description": "운영 요약"
+    },
+    {
+      "order": 5,
+      "id": "shopapp",
+      "label": "ShopApp Summary",
+      "path": "/shopapp_operation",
+      "fullPath": "/globaldashboard/shopapp_operation",
+      "iconClass": "icon_area img15",
+      "iconPath": "img/main_icon/icon_15_off.png",
+      "dataApi": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "tableApi": "/ShopApp/ajax/getOperationTableData",
+      "graphApi": "/ShopApp/ajax/getOperationAllGraphData",
+      "description": "ShopApp 운영"
+    },
+    {
+      "order": 6,
+      "id": "botjourney",
+      "label": "Bot / AI Summary",
+      "path": "/botjourney_operation",
+      "fullPath": "/globaldashboard/botjourney_operation",
+      "iconClass": "icon_area img16",
+      "iconPath": "img/main_icon/icon_16_off.png",
+      "dataApi": "/BotJourney/ajax/getBotJourneyOperationSummaryData",
+      "tableApi": "/BotJourney/ajax/getOperationTableData",
+      "graphApi": "/BotJourney/ajax/getOperationAllGraphData",
+      "description": "봇/AI 저니"
+    },
+    {
+      "order": 7,
+      "id": "epp",
+      "label": "EPP / SMB Summary",
+      "path": "/epp_operation",
+      "fullPath": "/globaldashboard/epp_operation",
+      "iconClass": "icon_area img11",
+      "iconPath": "img/main_icon/icon_11_off.png",
+      "dataApi": "/Epp/ajax/getOperationData",
+      "tableApi": "/Epp/ajax/getOperationTableData",
+      "graphApi": "/Epp/ajax/getOperationGraphData",
+      "description": "EPP/SMB 운영"
+    },
+    {
+      "order": 8,
+      "id": "retailer",
+      "label": "Retailer Summary",
+      "path": "/retailer_operation",
+      "fullPath": "/globaldashboard/retailer_operation",
+      "iconClass": "icon_area img10",
+      "iconPath": "img/main_icon/icon_10_off.png",
+      "dataApi": "/Retailer/ajax/getRetailerOperationData",
+      "graphApi": "/Retailer/ajax/getRetailerOperationGraphData",
+      "description": "리테일러 운영"
+    },
+    {
+      "order": 9,
+      "id": "mxflagship",
+      "label": "MX Flagship Summary",
+      "path": "/mxFlagshipSummary_pre",
+      "fullPath": "/globaldashboard/mxFlagshipSummary_pre",
+      "iconClass": "icon_area h75 img14",
+      "iconPath": "img/main_icon/icon_14_off.png",
+      "tableApi": "/MxFlagship/ajax/getFlagshipPreTableData",
+      "description": "MX 플래그십"
+    },
+    {
+      "order": 10,
+      "id": "performance",
+      "label": "Performance Summary",
+      "path": "/performanceSummary",
+      "fullPath": "/globaldashboard/performanceSummary",
+      "iconClass": "icon_area img13",
+      "iconPath": "img/main_icon/icon_13_off.png",
+      "dataApis": [
+        "/PerformanceSummary/ajax/getPerformanceFunnelData",
+        "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+        "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+        "/PerformanceSummary/ajax/getPerformanceHandledChatTableData"
+      ],
+      "description": "성과 요약"
+    }
+  ],
+  "subnavFunctions": {
+    "moveMain": "/globaldashboard/main",
+    "moveExecutive": "/globaldashboard/executiveSummary",
+    "moveDevision": "/globaldashboard/divisionSummary",
+    "moveSalesAll": "/globaldashboard/sales_all2",
+    "moveOperationAll": "/globaldashboard/operation_all2",
+    "moveShopappOperation": "/globaldashboard/shopapp_operation",
+    "moveBotjourneyOperation": "/globaldashboard/botjourney_operation",
+    "moveEpp_operation": "/globaldashboard/epp_operation",
+    "moveRetailer_operation": "/globaldashboard/retailer_operation",
+    "moveMxFlagshipSummary": "/globaldashboard/mxFlagshipSummary_pre",
+    "movePerformanceSummary": "/globaldashboard/performanceSummary",
+    "fileDown": "Manual & FAQ Download (별도 URL)"
+  }
+}

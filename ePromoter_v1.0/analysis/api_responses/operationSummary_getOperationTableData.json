@@ -1,0 +1,789 @@
+{
+  "ok": true,
+  "data": {
+    "operationTableData": [
+      {
+        "visit_rate": 0.0,
+        "offered_volume": 5296.0,
+        "chat_handled": 5224.0,
+        "site_code": "TOTAL",
+        "missed_chat": 72.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Denmark",
+        "visit_rate": 0.0,
+        "offered_volume": 3.0,
+        "chat_handled": 2.0,
+        "missed_chat": 1.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Saudi Arabia",
+        "visit_rate": 0.0,
+        "offered_volume": 46.0,
+        "chat_handled": 46.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Colombia",
+        "visit_rate": 0.0,
+        "offered_volume": 200.0,
+        "chat_handled": 180.0,
+        "missed_chat": 20.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Poland",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Bulgaria",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Pakistan",
+        "visit_rate": 0.0,
+        "offered_volume": 46.0,
+        "chat_handled": 28.0,
+        "missed_chat": 18.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Belgium",
+        "visit_rate": 0.0,
+        "offered_volume": 9.0,
+        "chat_handled": 8.0,
+        "missed_chat": 1.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "New Zealand",
+        "visit_rate": 0.0,
+        "offered_volume": 43.0,
+        "chat_handled": 43.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Albania",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Malaysia",
+        "visit_rate": 0.0,
+        "offered_volume": 45.0,
+        "chat_handled": 44.0,
+        "missed_chat": 1.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Levant",
+        "visit_rate": 0.0,
+        "offered_volume": 53.0,
+        "chat_handled": 53.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Italy",
+        "visit_rate": 0.0,
+        "offered_volume": 52.0,
+        "chat_handled": 52.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Vietnam",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Iraq",
+        "visit_rate": 0.0,
+        "offered_volume": 5.0,
+        "chat_handled": 5.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Turkey",
+        "visit_rate": 0.0,
+        "offered_volume": 224.0,
+        "chat_handled": 221.0,
+        "missed_chat": 3.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Hungary",
+        "visit_rate": 0.0,
+        "offered_volume": 24.0,
+        "chat_handled": 24.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Switzerland",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Germany",
+        "visit_rate": 0.0,
+        "offered_volume": 148.0,
+        "chat_handled": 148.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "South Africa",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Estonia",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Singapore",
+        "visit_rate": 0.0,
+        "offered_volume": 53.0,
+        "chat_handled": 53.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Czech",
+        "visit_rate": 0.0,
+        "offered_volume": 9.0,
+        "chat_handled": 9.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Romania",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Chile",
+        "visit_rate": 0.0,
+        "offered_volume": 29.0,
+        "chat_handled": 29.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Philippines",
+        "visit_rate": 0.0,
+        "offered_volume": 111.0,
+        "chat_handled": 109.0,
+        "missed_chat": 2.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Brazil",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Norway",
+        "visit_rate": 0.0,
+        "offered_volume": 4.0,
+        "chat_handled": 3.0,
+        "missed_chat": 1.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Austria",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Netherlands",
+        "visit_rate": 0.0,
+        "offered_volume": 28.0,
+        "chat_handled": 28.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Macedonia",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Latvia",
+        "visit_rate": 0.0,
+        "offered_volume": 1.0,
+        "chat_handled": 0.0,
+        "missed_chat": 1.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Israel",
+        "visit_rate": 0.0,
+        "offered_volume": 34.0,
+        "chat_handled": 34.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "UK",
+        "visit_rate": 0.0,
+        "offered_volume": 582.0,
+        "chat_handled": 582.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Indonesia",
+        "visit_rate": 0.0,
+        "offered_volume": 70.0,
+        "chat_handled": 69.0,
+        "missed_chat": 1.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Thailand",
+        "visit_rate": 0.0,
+        "offered_volume": 84.0,
+        "chat_handled": 82.0,
+        "missed_chat": 2.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Hong Kong",
+        "visit_rate": 0.0,
+        "offered_volume": 23.0,
+        "chat_handled": 19.0,
+        "missed_chat": 4.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Sweden",
+        "visit_rate": 0.0,
+        "offered_volume": 15.0,
+        "chat_handled": 13.0,
+        "missed_chat": 2.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "France",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Slovenia",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Egypt",
+        "visit_rate": 0.0,
+        "offered_volume": 163.0,
+        "chat_handled": 163.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Serbia",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Croatia",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Portugal",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Canada",
+        "visit_rate": 0.0,
+        "offered_volume": 238.0,
+        "chat_handled": 224.0,
+        "missed_chat": 14.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Peru",
+        "visit_rate": 0.0,
+        "offered_volume": 214.0,
+        "chat_handled": 214.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Bosnia",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "North Africa",
+        "visit_rate": 0.0,
+        "offered_volume": 40.0,
+        "chat_handled": 40.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Australia",
+        "visit_rate": 0.0,
+        "offered_volume": 152.0,
+        "chat_handled": 152.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Mexico",
+        "visit_rate": 0.0,
+        "offered_volume": 574.0,
+        "chat_handled": 574.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Lithuania",
+        "visit_rate": 0.0,
+        "offered_volume": 1.0,
+        "chat_handled": 0.0,
+        "missed_chat": 1.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Korea",
+        "visit_rate": 0.0,
+        "offered_volume": 1039.0,
+        "chat_handled": 1039.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Ireland",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "UAE",
+        "visit_rate": 0.0,
+        "offered_volume": 72.0,
+        "chat_handled": 72.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "India",
+        "visit_rate": 0.0,
+        "offered_volume": 817.0,
+        "chat_handled": 817.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Taiwan",
+        "visit_rate": 0.0,
+        "offered_volume": 32.0,
+        "chat_handled": 32.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Greece",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Spain",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Finland",
+        "visit_rate": 0.0,
+        "offered_volume": 0.0,
+        "chat_handled": 0.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      },
+      {
+        "country": "Slovakia",
+        "visit_rate": 0.0,
+        "offered_volume": 13.0,
+        "chat_handled": 13.0,
+        "missed_chat": 0.0,
+        "traffic": 0.0
+      }
+    ],
+    "transferTableData": [
+      {
+        "promoter_cs_volume": 18.0,
+        "cs_promoter_volume": 255.0,
+        "site_code": "TOTAL"
+      },
+      {
+        "country": "UK",
+        "promoter_cs_volume": 6.0,
+        "cs_promoter_volume": 241.0
+      },
+      {
+        "country": "Mexico",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 8.0
+      },
+      {
+        "country": "Canada",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 4.0
+      },
+      {
+        "country": "Taiwan",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 2.0
+      },
+      {
+        "country": "Chile",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Philippines",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Belgium",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "New Zealand",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Lithuania",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Israel",
+        "promoter_cs_volume": 3.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Hungary",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Switzerland",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Finland",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Slovakia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Croatia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Portugal",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Brazil",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Norway",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Albania",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Malaysia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Korea",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Indonesia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Thailand",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Germany",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "South Africa",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Denmark",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Saudi Arabia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Peru",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Austria",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Netherlands",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Levant",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Ireland",
+        "promoter_cs_volume": 6.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "UAE",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Hong Kong",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Sweden",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Estonia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Singapore",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Colombia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Poland",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Bosnia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "North Africa",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Macedonia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Italy",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Vietnam",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "India",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "France",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Slovenia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Czech",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Romania",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Bulgaria",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Pakistan",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Australia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Latvia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Iraq",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Turkey",
+        "promoter_cs_volume": 3.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Greece",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Spain",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Egypt",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      },
+      {
+        "country": "Serbia",
+        "promoter_cs_volume": 0.0,
+        "cs_promoter_volume": 0.0
+      }
+    ]
+  }
+}

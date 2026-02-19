@@ -1,0 +1,22 @@
+{
+  "ok": true,
+  "data": {
+    "portionGraphData": {
+      "total_offered_volume": 6210.0,
+      "sns_offered_volume": 790.0,
+      "text_offered_volume": 3276.0,
+      "audio_offered_volume": 0.0,
+      "video_offered_volume": 0.0
+    },
+    "graphArray": [
+      {
+        "proactive_chat": 16214.0,
+        "reactive_chat": 12269.0,
+        "convert_date": "02.08",
+        "offered_volume": 5296.0,
+        "missed_chat": 72.0,
+        "traffic": 0.0
+      }
+    ]
+  }
+}

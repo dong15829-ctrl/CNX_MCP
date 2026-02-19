@@ -1,0 +1,70 @@
+{
+  "baseUrl": "https://www.globalsess.com/globaldashboard",
+  "login": {
+    "method": "POST",
+    "path": "/login",
+    "bodyKeys": ["user_id", "user_pw"]
+  },
+  "common": [
+    { "method": "POST", "path": "/ajax/getCountry", "description": "Region 목록" },
+    { "method": "POST", "path": "/ajax/getSiteCode", "description": "Local/Site 목록" },
+    { "method": "POST", "path": "/checkPending", "description": "데이터 처리 중 여부" },
+    { "method": "POST", "path": "/switchTable", "description": "테이블 스위치" },
+    { "method": "POST", "path": "/changePassword", "description": "비밀번호 변경" }
+  ],
+  "download": [
+    { "method": "POST", "path": "/globaldashboard/CommonExcelDownload", "description": "공통 엑셀 다운로드 (form)" },
+    { "method": "GET", "path": "/globaldashboard/ExecutiveExcelDownload", "description": "Executive 전용 엑셀 (예시)" }
+  ],
+  "menuApis": {
+    "executiveSummary": [
+      "/executiveSummary/ajax/getExecutiveData",
+      "/executiveSummary/ajax/getExecutiveGraphData"
+    ],
+    "divisionSummary": [
+      "/getChatType",
+      "/divisionSummary/ajax/getDivisionData",
+      "/divisionSummary/ajax/getDivisionTableData",
+      "/divisionSummary/ajax/getDivisionGraphData"
+    ],
+    "sales_all2": [
+      "/getHybrisType",
+      "/Sales/ajax/getSalesSummaryDataNew",
+      "/Sales/ajax/getSalesSummaryGraphDataNew"
+    ],
+    "operation_all2": [
+      "/getHybrisType",
+      "/operationSummary/ajax/getOperationDataNew",
+      "/operationSummary/ajax/getOperationTableData",
+      "/operationSummary/ajax/getOperationAllGraphData"
+    ],
+    "shopapp_operation": [
+      "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "/ShopApp/ajax/getOperationTableData",
+      "/ShopApp/ajax/getOperationAllGraphData"
+    ],
+    "botjourney_operation": [
+      "/BotJourney/ajax/getBotJourneyOperationSummaryData",
+      "/BotJourney/ajax/getOperationTableData",
+      "/BotJourney/ajax/getOperationAllGraphData"
+    ],
+    "epp_operation": [
+      "/Epp/ajax/getOperationData",
+      "/Epp/ajax/getOperationTableData",
+      "/Epp/ajax/getOperationGraphData"
+    ],
+    "retailer_operation": [
+      "/Retailer/ajax/getRetailerOperationData",
+      "/Retailer/ajax/getRetailerOperationGraphData"
+    ],
+    "mxFlagshipSummary_pre": [
+      "/MxFlagship/ajax/getFlagshipPreTableData"
+    ],
+    "performanceSummary": [
+      "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "/PerformanceSummary/ajax/getPerformanceHandledChatTableData"
+    ]
+  }
+}

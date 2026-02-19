@@ -1,0 +1,43 @@
+Category,Marketing Channel,Definitions
+"Paid Channel
+('_pd_')",Affiliate Marketing,"Traffic from third-party affiliates, promoting Samsung.com and its products (Tracking code: '_affiliate_')"
+"Paid Channel
+('_pd_')",Paid Others,Traffic from paid external campaigns that are not predefined in Samsung.com Data Governance 
+"Paid Channel
+('_pd_')",Pmax,"Traffic from an AI-powered campaign that runs across all Google or Bing Ads channels, separate from Paid Search (Tracking code: '_pmax_')"
+"Paid Channel
+('_pd_')",Video,"Traffic from a video-based Ad format delivered across online streaming platforms such as YouTube, Hulu, Disney+, and Netflix (Tracking code: '_olv_')"
+"Paid Channel
+('_pd_')",Demand Gen,Traffic from a campaign type designed for visually engaging platforms to drive demand to Samsung.com (Tracking code: '_demgen_')
+"Paid Channel
+('_pd_')",Paid Search,"Traffic from paid keyword marketing, where users click search engine Ads to visit Samsung.com (Tracking code: '_search_')"
+"Paid Channel
+('_pd_')",Display ,Traffic from banner ads linking to Samsung.com (tracking code: '_display_')
+"Paid Channel
+('_pd_')",Social Media Campaigns,Traffic from paid Ads on social media platforms (Tracking code: '_social_')
+"Paid Channel
+('_pd_')",QR Code (Paid),Traffic from users scanning QR codes placed on marketing materials (Tracking code: '_qrcode_')
+"Owned Channel
+('_ow_')",Owned Social,"Traffic from Samsung’s official social media posts and content, distinct from paid social media campaigns  (tracking code: '_ow_' & 'social')"
+"Owned Channel
+('_ow_')",QR Code (Owned),Traffic from users scanning QR codes embedded in Samsung-owned marketing assets  (Tracking code:  '_qrcode_')
+"Owned Channel
+('_ow_')",Email,Traffic from marketing emails sent to customers (Tracking code: '_email_')
+"Owned Channel
+('_ow_')",EPP,[US Only] Traffic from Employee Purchase Program (EPP) marketing campaigns to Samsung.com
+"Owned Channel
+('_ow_')",Mobile Application,"Traffic from links within Samsung-owned apps (e.g., Samsung Pay, SmartThings, Samsung Members) (Tracking code: '_app_')"
+"Owned Channel
+('_ow_')",Push,Traffic from push notifications linking to Samsung.com. (Tracking code: '_push_' )
+"Owned Channel
+('_ow_')",SMS,Traffic from text message campaigns directing users to Samsung.com (Tracking code: '_sms_')
+"Owned Channel
+('_ow_')",Samsung Web,[MobileApp only] Traffic from Samsung.com (web) leading to the Shop App (Tracking code: '_scom_') 
+"Owned Channel
+('_ow_')",Owned Others,Traffic from owned channel campaigns with a tracking code that are not predefined in Samsung.com Data Governance 
+Organic Channel ,Direct,Traffic reaching Samsung.com without a tracking code or referrer information
+Organic Channel ,Natural Search,Traffic from organic search engine clicks that are not part of paid keyword marketing
+Organic Channel ,Session Refresh,Traffic where the referrer indicates an internal Samsung.com URL
+Organic Channel ,Other,"Traffic from non-marketing sources entering Samsung.com without a tracking code. If a referrer exists, it comes from channels other than Natural Search or Social Network Referrals"
+Organic Channel ,Social Network Referrals,Traffic from social media platforms linking to Samsung.com without a tracking code
+Organic Channel ,Gen AI Search,"Traffic from generative AI platforms directing users to Samsung.com. This includes AI-driven search engines and AI-generated content recommendations that result in website visits (Referrer contains 'chaptgpt.com', copilot.microsoft.com, etc.)"

@@ -1,0 +1,9 @@
+{
+  "description": "getCountry API 요청 body",
+  "method": "POST",
+  "path": "/ajax/getCountry",
+  "body": {
+    "rhqArray": ["AFRICA", "Americas", "APAC", "EHQ", "G.CN", "KOREA", "MENA", "SWA"],
+    "title": "Executive Summary"
+  }
+}

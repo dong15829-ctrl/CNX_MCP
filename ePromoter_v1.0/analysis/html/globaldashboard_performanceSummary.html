@@ -1,0 +1,1221 @@
+<!DOCTYPE html><html lang="en"><head><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css"><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script></head><body><div>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Performance Summary</title>
+
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common_performance.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/googleChart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <!-- //datepicker -->
+
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="css/datatables.css">
+    <script type="text/javascript" src="js/datatables.js"></script>
+    <!-- //datatable -->
+
+
+
+<div>
+<div class="body_wrap">
+    <!-- header -->
+    
+
+
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="js/tether.min.js"></script>
+    <script src="js/datePicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/picker.css">
+
+<style>
+    svg > g > g:last-child { pointer-events: none }
+</style>
+
+<div class="gnb_wrap">
+    <div class="gnb_top">
+        <button class="gnb_hbg"></button>
+        <div class="gnb_tit">Performance Summary</div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Region / Subsidiary:</div>
+            <ul class="gnb_option_sum">
+                <li class="icon"></li>
+                
+                    
+                    
+                    
+                        <li class="region" id="region">All</li>
+                    
+                    
+                    
+                
+                <li class="country" id="country">All</li>
+                <!-- <li class="site">All</li> -->
+                <li class="icon_extension"></li>
+            </ul>
+            <div class="region_wrap type2" style="display: none;">
+                <div class="section_wrap">
+                    <div class="section" id="tit_region">
+                        <div class="tit">Region</div>
+                    </div>
+                    <div class="section" id="tit_country">
+                        <div class="tit">Subsidiary</div>
+                    </div>
+                    <!-- <div class="section" id="tit_partner">
+                        <div class="tit">Partner</div>
+                    </div> -->
+                    <!-- <div class="section" id="tit_site">
+                        <div class="tit">Site</div>
+                    </div> -->
+                </div>
+                <div class="section_body">
+                    <ul class="txt region" id="txt_region">
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq0" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq0" style="cursor: pointer;">All<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq1" type="checkbox" vpromoter="0" audio="1" sns="0" style="">
+                                            <label for="rhq1" style="cursor: pointer;">AFRICA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq2" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq2" style="cursor: pointer;">Americas<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq3" type="checkbox" vpromoter="1" audio="0" sns="1" style="">
+                                            <label for="rhq3" style="cursor: pointer;">APAC<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq4" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq4" style="cursor: pointer;">EHQ<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq5" type="checkbox" vpromoter="1" audio="1" sns="0" style="">
+                                            <label for="rhq5" style="cursor: pointer;">G.CN<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq6" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq6" style="cursor: pointer;">KOREA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq7" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq7" style="cursor: pointer;">MENA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq8" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq8" style="cursor: pointer;">SWA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                    </ul>
+                    <ul class="txt country" id="txt_country"><li>   <input name="country" id="country0" type="checkbox" style="">   <label for="country0" style="cursor:pointer" data-id="All">All<span></span></label></li><li>   <input name="country" id="country1" type="checkbox" checked="" style="">   <label for="country1" style="cursor:pointer" data-id="SAMCOL">SAMCOL<span></span></label></li><li>   <input name="country" id="country2" type="checkbox" checked="" style="">   <label for="country2" style="cursor:pointer" data-id="SAVINA">SAVINA<span></span></label></li><li>   <input name="country" id="country3" type="checkbox" checked="" style="">   <label for="country3" style="cursor:pointer" data-id="SEAD">SEAD<span></span></label></li><li>   <input name="country" id="country4" type="checkbox" checked="" style="">   <label for="country4" style="cursor:pointer" data-id="SEAS">SEAS<span></span></label></li><li>   <input name="country" id="country5" type="checkbox" checked="" style="">   <label for="country5" style="cursor:pointer" data-id="SEAU">SEAU<span></span></label></li><li>   <input name="country" id="country6" type="checkbox" checked="" style="">   <label for="country6" style="cursor:pointer" data-id="SEB">SEB<span></span></label></li><li>   <input name="country" id="country7" type="checkbox" checked="" style="">   <label for="country7" style="cursor:pointer" data-id="SEBN">SEBN<span></span></label></li><li>   <input name="country" id="country8" type="checkbox" checked="" style="">   <label for="country8" style="cursor:pointer" data-id="SEC">SEC<span></span></label></li><li>   <input name="country" id="country9" type="checkbox" checked="" style="">   <label for="country9" style="cursor:pointer" data-id="SECA">SECA<span></span></label></li><li>   <input name="country" id="country10" type="checkbox" checked="" style="">   <label for="country10" style="cursor:pointer" data-id="SECH">SECH<span></span></label></li><li>   <input name="country" id="country11" type="checkbox" checked="" style="">   <label for="country11" style="cursor:pointer" data-id="SECZ">SECZ<span></span></label></li><li>   <input name="country" id="country12" type="checkbox" checked="" style="">   <label for="country12" style="cursor:pointer" data-id="SEDA">SEDA<span></span></label></li><li>   <input name="country" id="country13" type="checkbox" checked="" style="">   <label for="country13" style="cursor:pointer" data-id="SEEG">SEEG<span></span></label></li><li>   <input name="country" id="country14" type="checkbox" checked="" style="">   <label for="country14" style="cursor:pointer" data-id="SEF">SEF<span></span></label></li><li>   <input name="country" id="country15" type="checkbox" checked="" style="">   <label for="country15" style="cursor:pointer" data-id="SEG">SEG<span></span></label></li><li>   <input name="country" id="country16" type="checkbox" checked="" style="">   <label for="country16" style="cursor:pointer" data-id="SEGR">SEGR<span></span></label></li><li>   <input name="country" id="country17" type="checkbox" checked="" style="">   <label for="country17" style="cursor:pointer" data-id="SEH">SEH<span></span></label></li><li>   <input name="country" id="country18" type="checkbox" checked="" style="">   <label for="country18" style="cursor:pointer" data-id="SEHK">SEHK<span></span></label></li><li>   <input name="country" id="country19" type="checkbox" checked="" style="">   <label for="country19" style="cursor:pointer" data-id="SEI">SEI<span></span></label></li><li>   <input name="country" id="country20" type="checkbox" checked="" style="">   <label for="country20" style="cursor:pointer" data-id="SEIB">SEIB<span></span></label></li><li>   <input name="country" id="country21" type="checkbox" checked="" style="">   <label for="country21" style="cursor:pointer" data-id="SEIL">SEIL<span></span></label></li><li>   <input name="country" id="country22" type="checkbox" checked="" style="">   <label for="country22" style="cursor:pointer" data-id="SEIN">SEIN<span></span></label></li><li>   <input name="country" id="country23" type="checkbox" checked="" style="">   <label for="country23" style="cursor:pointer" data-id="SELV">SELV<span></span></label></li><li>   <input name="country" id="country24" type="checkbox" checked="" style="">   <label for="country24" style="cursor:pointer" data-id="SEM">SEM<span></span></label></li><li>   <input name="country" id="country25" type="checkbox" checked="" style="">   <label for="country25" style="cursor:pointer" data-id="SEMAG">SEMAG<span></span></label></li><li>   <input name="country" id="country26" type="checkbox" checked="" style="">   <label for="country26" style="cursor:pointer" data-id="SENA">SENA<span></span></label></li><li>   <input name="country" id="country27" type="checkbox" checked="" style="">   <label for="country27" style="cursor:pointer" data-id="SENZ">SENZ<span></span></label></li><li>   <input name="country" id="country28" type="checkbox" checked="" style="">   <label for="country28" style="cursor:pointer" data-id="SEPAK">SEPAK<span></span></label></li><li>   <input name="country" id="country29" type="checkbox" checked="" style="">   <label for="country29" style="cursor:pointer" data-id="SEPCO">SEPCO<span></span></label></li><li>   <input name="country" id="country30" type="checkbox" checked="" style="">   <label for="country30" style="cursor:pointer" data-id="SEPOL">SEPOL<span></span></label></li><li>   <input name="country" id="country31" type="checkbox" checked="" style="">   <label for="country31" style="cursor:pointer" data-id="SEPR">SEPR<span></span></label></li><li>   <input name="country" id="country32" type="checkbox" checked="" style="">   <label for="country32" style="cursor:pointer" data-id="SEROM">SEROM<span></span></label></li><li>   <input name="country" id="country33" type="checkbox" checked="" style="">   <label for="country33" style="cursor:pointer" data-id="SESAR">SESAR<span></span></label></li><li>   <input name="country" id="country34" type="checkbox" checked="" style="">   <label for="country34" style="cursor:pointer" data-id="SESP">SESP<span></span></label></li><li>   <input name="country" id="country35" type="checkbox" checked="" style="">   <label for="country35" style="cursor:pointer" data-id="SET">SET<span></span></label></li><li>   <input name="country" id="country36" type="checkbox" checked="" style="">   <label for="country36" style="cursor:pointer" data-id="SETK">SETK<span></span></label></li><li>   <input name="country" id="country37" type="checkbox" checked="" style="">   <label for="country37" style="cursor:pointer" data-id="SEUK">SEUK<span></span></label></li><li>   <input name="country" id="country38" type="checkbox" checked="" style="">   <label for="country38" style="cursor:pointer" data-id="SGE">SGE<span></span></label></li><li>   <input name="country" id="country39" type="checkbox" checked="" style="">   <label for="country39" style="cursor:pointer" data-id="SIEL">SIEL<span></span></label></li><li>   <input name="country" id="country40" type="checkbox" checked="" style="">   <label for="country40" style="cursor:pointer" data-id="SME">SME<span></span></label></li><li>   <input name="country" id="country41" type="checkbox" checked="" style="">   <label for="country41" style="cursor:pointer" data-id="SSA">SSA<span></span></label></li><li>   <input name="country" id="country42" type="checkbox" checked="" style="">   <label for="country42" style="cursor:pointer" data-id="TSE">TSE<span></span></label></li></ul>
+                    <!-- <ul class="txt site" id="txt_site">
+                        <li>
+                            <input name="site" id="site1" type="radio">
+                            <label for="site1">ALL<span></span></label>
+                        </li>
+                        <li>
+                            <input name="site" id="site2" type="radio">
+                            <label for="site2">UK<span></span></label>
+                        </li>
+                        <li>
+                            <input name="site" id="site3" type="radio">
+                            <label for="site3">Germany<span></span></label>
+                        </li>
+                        <li>
+                            <input name="site" id="site4" type="radio">
+                            <label for="site4">Italy<span></span></label>
+                        </li>
+                        <li>
+                            <input name="site" id="site5" type="radio">
+                            <label for="site5">France<span></span></label>
+                        </li>
+                        <li>
+                            <input name="site" id="site6" type="radio">
+                            <label for="site6">Spain<span></span></label>
+                        </li>
+                        <li>
+                            <input name="site" id="site7" type="radio">
+                            <label for="site7">Albania<span></span></label>
+                        </li>
+                    </ul> -->
+
+                </div>
+                <div class="gnb_btn_update_wrap">
+                    <button class="gnb_btn_update" onclick="getUpdate()">Update</button>
+                </div>
+            </div>
+        </div>
+        
+            
+            
+                <div class="gnb_option_wrap" style="position:relative;">
+            
+        
+            <div class="gnb_option_tit">Date :</div>
+            <ul class="gnb_option_sum_date">
+                <li>
+
+                    <input class="tether-target tether-enabled tether-abutted tether-abutted-left tether-element-attached-top tether-element-attached-left tether-target-attached-bottom tether-target-attached-left" type="text" name="daterange" id="manad" autocomplete="off" readonly="" style="">
+
+                </li>
+
+                <!-- <li class="icon"></li>
+                <li> -->
+
+                <!-- </li> -->
+                <!-- <li class="s_date">2019.01.01</li>
+                <li class="e_date">2019.12.31</li> -->
+                <!-- <li class="icon_extension"></li> -->
+            </ul>
+            <div class="gnb_noti" style="position:absolute;right: 0;top: 12px;">
+                        <span class="icon_noti">
+                            <div class="noti_tooltip center caution">
+                                •	The sales data shown in Performance Summary may not be indicative of current results as the shown data is static (fixed) as of beginning of every month <br>
+                                •	To prevent discrepancy of sales data such as conversion rate depending on selected date range, static view is provided for performance summary only for performance analysis <br>
+                                •	Every 2nd of the month, the previous month's conversion and sales data is refreshed to account for any order status changes (i.e. Cancel, Refund)<br>
+                                •	The sales data in Executive Summary &amp; Sales Summary reflects the current D-1 status including Cancel and Return cases within 28 days<br>
+                            </div>
+                        </span>
+            </div>
+        </div>
+        <!-- <div class="gnb_option_wrap">
+            <table class="data_type_table">
+                <tbody>
+                    <tr>
+
+                        <td class="data_type on">
+                               Daily
+                        </td>
+                        <td class="data_type">
+                                Weekly
+                        </td>
+                        <td class="data_type">
+                                Monthly
+                        </td>
+                        <td class="data_type ">
+                            Quarterly
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>     -->
+
+        <div class="gnb_option_wrap">
+            <div class="gnb_user_wrap">
+                <div class="icon_user"></div>
+                <!-- 20200624 로그아웃 -->
+                <div class="wrap_pop_user_pwd">
+                    <span class="pop_user_id">
+                        
+                        dongil.kim
+                        
+                    </span>
+                    <button class="btn_chg_pwd">Change Password</button>
+                    <div class="wrap_chg_pwd">
+                        <input type="password" placeholder="Current Password" class="chg_pwd_input" id="current_pw" style="">
+                        <input type="password" placeholder="New Password" class="chg_pwd_input" id="new_pw" style="">
+                        <input type="password" placeholder="Re-type New Password" class="chg_pwd_input" id="renew_pw" style="">
+                        <button class="btn_user_confirm" id="passwordChange">Confirm</button>
+                    </div>
+                    <span class="pop_border_bottom"></span>
+                    <button class="btn_logout">Log out</button>
+                </div>
+                <!-- 20200624 로그아웃 -->
+                <div class="user_name">
+                    
+                    dongil.kim
+                </div>
+            </div>
+            
+            <div class="last_update">Last Update : <span>2026.02.08</span>  </div>
+        </div>
+    </div>
+
+</div>
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+    let startMonth = 1;
+    let endMonth = 1;
+    let startYear = 2026;
+    let endYear = 2026;
+    $(document).ready(function(){
+
+        $(".has_noti").hover(function(e) {
+            $("#tit_site").append("<div class='test'>In case there are more than one Site in the selected Local, sales related indicators and graphs will be shown as a combined result of each site.</div>");
+            $(".test").css("display","block");
+            //   var pageX = $(this).offset().left -40;
+            //   var pageY = $(this).offset().top - 60;
+            //   $(".test").css({left : pageX + "px", top : pageY + "px"});
+        }, function() {
+            $(".test").remove();
+        });
+
+        $(function(){
+            $(".gnb_new_tab li").click(function(){
+                $(".gnb_new_tab li").removeClass('on');
+                $(".conbox").removeClass('on');
+                $(this).addClass('on');
+                $("#"+$(this).data('id')).addClass('on');
+                if($('#con1').hasClass('on')){
+                    $('.btn_down_load_type_csat').removeClass('on');
+                    $('.btn_down_load_type_per').addClass('on');
+                }if($('#con2').hasClass('on')){
+                    $('.btn_down_load_type_csat').removeClass('on');
+                    $('.btn_down_load_type_per').addClass('on');
+                }else{
+                    $('.btn_down_load_type_csat').removeClass('on');
+                    $('.btn_down_load_type_per').addClass('on');
+                }
+
+            });
+        });
+
+        <!-- datepicker -->
+        let today = new Date();
+
+        $('#manad').rangePicker({ setDate:[[startMonth,startYear],[endMonth,endYear]], closeOnSelect:true, minDate:[6,2021] });
+
+
+        $('#headerDownload').off();
+        $('#headerDownload').on('click',function(){
+            blockUI();
+            var param = getParam();
+            param.type ='0';
+            param.product_division = 'ALL';
+            let form = document.createElement('form');
+            form.setAttribute("method","POST");
+            form.setAttribute("action","/globaldashboard/CommonExcelDownload");
+            let hiddenField = document.createElement('input');
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "data");
+            hiddenField.setAttribute("value", JSON.stringify(param));
+
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+
+            form.submit();
+        });
+
+        $('#passwordChange').off();
+        $('#passwordChange').on('click',function(){
+            let current_pw = $('#current_pw').val();
+            let new_pw = $('#new_pw').val();
+            let renew_pw = $('#renew_pw').val();
+
+            if(current_pw == ''){
+                alert('Please input Current Password.');
+                return;
+            }
+
+            if(new_pw == ''){
+                alert('Please input New Password.');
+                return;
+            }
+
+            if(renew_pw == ''){
+                alert('Please input Re-type New Password.');
+                return;
+            }
+
+            if(new_pw != renew_pw){
+                alert('New Password and Re-type New Password do not Macth.');
+                return;
+            }
+
+            let param = {
+                current_pw : md5(current_pw),
+                new_pw : new_pw
+            }
+
+            ajax.post("/changePassword",param,"",function(respon){
+                if(respon.ok){
+                    let data = respon.data;
+                    if(data == 'Failed'){
+                        alert('Current Password do not Macth');
+                        return;
+                    }else{
+                        alert('Your password has been changed. Please log in again.');
+                        location.href = '/globaldashboard';
+                    }
+                }
+            })
+
+        });
+
+        $('.btn_logout').off();
+        $('.btn_logout').on('click',function(){
+            if(confirm('Are you sure you want to log out?')){
+                location.href = '/globaldashboard';
+            }
+        })
+    })
+
+    function getUpdate(){
+        if(document.querySelectorAll('input[name="country"]:checked').length == 0){
+            alert('Please Select Country');
+            return;
+        }
+
+        getCurrentCountry();
+    }
+
+    function getCurrentCountry() {
+        document.querySelector('.gnb_selected_info').innerHTML = '';
+
+        let html = '';
+        let country = '';
+
+
+            if (document.querySelectorAll('input[name="country"]:checked').length != 0) {
+                document.querySelectorAll('input[name="country"]:checked').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="country"]:checked').length - 1 == i) {
+                            country += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            country += e.nextSibling.nextSibling.dataset.id + ' / ';
+                    }
+                    } else if (document.querySelectorAll('input[name="country"]:checked').length == 1) {
+                        if (e.nextSibling.nextSibling.innerText == 'All') {
+                            document.querySelectorAll('input[name="country"]').forEach((e, i) => {
+                                if (e.nextSibling.nextSibling.innerText != 'All') {
+                                    if (document.querySelectorAll('input[name="country"]').length - 1 == i) {
+                                        country += e.nextSibling.nextSibling.dataset.id;
+                                    } else {
+                                        country += e.nextSibling.nextSibling.dataset.id + ' / ';
+                                    }
+                                }
+                            })
+                        }
+                    }
+                })
+            } else {
+                document.querySelectorAll('input[name="country"]').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="country"]').length - 1 == i) {
+                            country += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            country += e.nextSibling.nextSibling.dataset.id + ' / ';
+                        }
+                    }
+                })
+            }
+
+            html += 'Now : <span class="site_val">' + country + '</span>';
+            html += '<span class="icon_noti selected">...';
+            html += '<div class="noti_tooltip center">' + country + '</div></span></div>';
+
+            document.querySelector('.gnb_selected_info').innerHTML = html;
+
+            document.querySelector('.icon_noti.selected').style.display = country.length > 120 ? 'inline' : 'none';
+
+
+        getData();
+    }
+
+    let lastUpdated = '2026-02-08';
+    let currentRegionArray = [];
+    let currentLocalArray = [];
+    let currentSiteArray = [];
+    let vLocalCount = '';
+    let vSiteCount = '';
+    let currentRetailerRegionArray =[];
+    let currentRetailerLocalArray =[];
+    let currentRetailerSiteArray=[];
+
+    let first = true;
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    document.querySelectorAll('.last_update span')[0].innerHTML = lastUpdated.replaceAll('-', '.');
+
+    
+
+    let host = 'server';
+</script>
+
+
+
+    
+    <div class="gnb_new_tab_wrap">
+        <ul class="gnb_new_tab">
+            <li data-id="con1" class="on" onclick="javascript:movePerformanceSummary()">Engagement</li>
+            <li data-id="con2" onclick="javascript:movePerformance_sales()">Sales</li>
+            <li data-id="con3" onclick="javascript:movePerformance_csat()">CSAT</li>
+            <li data-id="con4" onclick="javascript:movePerformance_trend()">Trend</li>
+            <!-- <li data-id="con4" >Audio Call</li>
+            <li data-id="con5" >SNS</li> -->
+
+            <!-- <div class="cr_tit">Conversion Rate
+                <button class="ep_c_date_select_btn">3</button>
+                <ul class="ep_c_date_ul_min">
+                    <li class="day" >5</li>
+                    <li class="week" >7</li>
+                    <li class="month">14</li>
+                    <li class="quarter">28</li>
+                </ul>
+                <script>
+                    $(function() {
+                        $('.ep_c_date_select_btn').click( function() {
+                            $('.ep_c_date_ul_min').toggleClass('on');
+                        });
+
+                    });
+
+                    $(function() {
+                        $('.ep_c_date_ul_min li.day').click( function() {
+                            $('.ep_c_date_select_btn').html('5');
+                            $(this).addClass('on');
+                            $('.ep_c_date_ul_min li.day').siblings().removeClass('on');
+                            $('.ep_c_date_ul_min').toggleClass('on');
+                        });
+                        $('.ep_c_date_ul_min li.week').click( function() {
+                            $('.ep_c_date_select_btn').html('7');
+                            $(this).addClass('on');
+                            $('.ep_c_date_ul_min li.week').siblings().removeClass('on');
+                            $('.ep_c_date_ul_min').toggleClass('on');
+                        });
+                        $('.ep_c_date_ul_min li.month').click( function() {
+                            $('.ep_c_date_select_btn').html('14');
+                            $(this).addClass('on');
+                            $('.ep_c_date_ul_min li.month').siblings().removeClass('on');
+                            $('.ep_c_date_ul_min').toggleClass('on');
+                        });
+                        $('.ep_c_date_ul_min li.quarter').click( function() {
+                            $('.ep_c_date_select_btn').html('28');
+                            $(this).addClass('on');
+                            $('.ep_c_date_ul_min li.quarter').siblings().removeClass('on');
+                            $('.ep_c_date_ul_min').toggleClass('on');
+                        });
+
+                    });
+                </script>
+            </div> -->
+
+            <div class="gnb_selected_info os">Now : <span class="site_val">SAMCOL / SAVINA / SEAD / SEAS / SEAU / SEB / SEBN / SEC / SECA / SECH / SECZ / SEDA / SEEG / SEF / SEG / SEGR / SEH / SEHK / SEI / SEIB / SEIL / SEIN / SELV / SEM / SEMAG / SENA / SENZ / SEPAK / SEPCO / SEPOL / SEPR / SEROM / SESAR / SESP / SET / SETK / SEUK / SGE / SIEL / SME / SSA / TSE</span><span class="icon_noti selected" style="display: inline;">...<div class="noti_tooltip center">SAMCOL / SAVINA / SEAD / SEAS / SEAU / SEB / SEBN / SEC / SECA / SECH / SECZ / SEDA / SEEG / SEF / SEG / SEGR / SEH / SEHK / SEI / SEIB / SEIL / SEIN / SELV / SEM / SEMAG / SENA / SENZ / SEPAK / SEPCO / SEPOL / SEPR / SEROM / SESAR / SESP / SET / SETK / SEUK / SGE / SIEL / SME / SSA / TSE</div></span></div>
+
+            <div class="btn_down_kpi on">
+                <!-- Operation Matrix <span>(by Subsidiary, by Channel)</span> -->
+                <button class="btn_down_load_type_per on" onclick="getPerformanceAllTabExcelData()">Download (All tabs)</button>
+            </div>
+        </ul>
+        <div id="con1" class="conbox on">
+            <!-- content 1 -->
+
+            <div class="content_wrap mg_t40">
+
+                <!-- 1단 -->
+                <div class="layout_full">
+                    <div class="half_1st overview mg_r20 layout_border" style="height:744px;">
+                        <!-- 신규 퍼널그래프 -->
+                        <!-- 퍼널 타이틀 -->
+                        <ul class="funnel_tit">
+                            <li>Conversion</li>
+                            <li>Visit to Chat</li>
+                        </ul>
+                        <div class="funnel_wrap">
+                            <!-- 토탈챗 -->
+                            <div class="funnel_sec">
+                                <div class="funnel_cvs">
+                                    <span class="funnel_conversion">20.6%</span>
+                                </div>
+                                <div class="funnel_center">
+                                    <span>Total Chat</span>
+                                    <span class="funnel_value">1,365,065</span>
+                                </div>
+                                <div class="funnel_vtc">
+                                    <span class="funnel_visit">1.41%</span>
+                                </div>
+                            </div>
+                            <!-- 오퍼챗 -->
+                            <div class="funnel_sec">
+                                <div class="funnel_cvs oc">
+                                    <span class="funnel_conversion">98.5%</span>
+                                </div>
+                                <div class="funnel_center">
+                                    <span>Offered Chat</span>
+                                    <span class="funnel_value">281,238</span>
+                                </div>
+                                <div class="funnel_vtc oc">
+                                    <span class="funnel_visit">0.29%</span>
+                                </div>
+                            </div>
+                            <!-- 핸들챗 -->
+                            <div class="funnel_sec ">
+                                <div class="funnel_cvs hc">
+                                    <span class="funnel_conversion">22.1%</span>
+                                </div>
+                                <div class="funnel_center">
+                                    <span>Handled Chat</span>
+                                    <span class="funnel_value">277,033</span>
+                                </div>
+                                <div class="funnel_vtc hc">
+                                    <span class="funnel_visit">0.29%</span>
+                                </div>
+                            </div>
+                            <!-- 유닛솔드 -->
+                            <div class="funnel_sec">
+                                <div class="funnel_cvs us">
+
+                                </div>
+                                <div class="funnel_center">
+                                    <span>Unit Sold</span>
+                                    <span class="funnel_value">61,351</span>
+                                </div>
+                                <div class="funnel_vtc us">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="half_2nd overview layout_border ">
+                        <div class="content_tit">Traffic (Chat Usage)
+                            <!-- <span class="icon_noti">
+                                <div class="noti_tooltip lefty">
+                                   text
+                                </div>
+                            </span> -->
+                            <!-- <button class="btn_down_load_type2">Download</button> -->
+                        </div>
+                        <!-- <div class="content_txt">List of not found page URLs and occurrences for selected date(s).</div> -->
+                        <div class="funnel_table_wrap">
+
+                            <div id="deccending_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table no-footer dataTable" aria-describedby="deccending_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Rank" style="width: 102.5px;">Rank</th><th class="sorting" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Subsidiary: activate to sort column ascending" style="width: 102.5px;">Subsidiary</th><th id="traffic_column" class="sorting sorting_desc" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Traffic(D2C): activate to sort column ascending" style="width: 102.5px;" aria-sort="descending">Traffic<br>(D2C)</th><th class="sorting" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Traffic(All): activate to sort column ascending" style="width: 102.5px;">Traffic<br>(All)</th><th class="sorting" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Total Chat: activate to sort column ascending" style="width: 102.5px;">Total Chat</th><th class="sorting" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Visit to Chat Rate(D2C): activate to sort column ascending" style="width: 102.5px;">Visit to Chat Rate<br>(D2C)</th><th class="sorting" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Visit to Chat Rate(All): activate to sort column ascending" style="width: 102.5px;">Visit to Chat Rate<br>(All)</th><th class="sorting" tabindex="0" aria-controls="deccending" rowspan="1" colspan="1" aria-label="MoM Growth(%): activate to sort column ascending" style="width: 102.5px;">MoM Growth(%)</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 570px; width: 100%;"><table id="deccending" class="f_t_table no-footer dataTable" aria-describedby="deccending_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Rank" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Subsidiary: activate to sort column ascending" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Subsidiary</div></th><th id="traffic_column" class="sorting sorting_asc" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Traffic(D2C): activate to sort column descending" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Traffic<br>(D2C)</div></th><th class="sorting" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Traffic(All): activate to sort column ascending" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Traffic<br>(All)</div></th><th class="sorting" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Total Chat: activate to sort column ascending" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total Chat</div></th><th class="sorting" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Visit to Chat Rate(D2C): activate to sort column ascending" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Visit to Chat Rate<br>(D2C)</div></th><th class="sorting" aria-controls="deccending" rowspan="1" colspan="1" aria-label="Visit to Chat Rate(All): activate to sort column ascending" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Visit to Chat Rate<br>(All)</div></th><th class="sorting" aria-controls="deccending" rowspan="1" colspan="1" aria-label="MoM Growth(%): activate to sort column ascending" style="width: 102.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MoM Growth(%)</div></th></tr>
+                                </thead><tfoot id="traffic_avg"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Avg.</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">2,300,730</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">2,951,682</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">32,502</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">0.29%</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">0.23%</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 102.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th></tr></tfoot>
+                                
+                                <tbody id="traffic_tbody"><tr class="odd"><td class="">1</td><td>SIEL</td><td class="sorting_1">14,918,416</td><td>22,318,848</td><td>79,677</td><td>0.20%</td><td>0.13%</td><td>-</td></tr><tr class="even"><td class="">2</td><td>SEC</td><td class="sorting_1">12,387,243</td><td>22,105,485</td><td>56,476</td><td>0.37%</td><td>0.20%</td><td>0.1%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">3</td><td>SEDA</td><td class="sorting_1">10,187,121</td><td>12,618,251</td><td>174,324</td><td>0.12%</td><td>0.09%</td><td>-</td></tr><tr class="even"><td class="">4</td><td>SEF</td><td class="sorting_1">6,522,950</td><td>2,566,818</td><td>55,579</td><td>0.18%</td><td>0.45%</td><td>0.1%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">5</td><td>SEM</td><td class="sorting_1">3,882,254</td><td>5,587,309</td><td>43,038</td><td>0.53%</td><td>0.37%</td><td>-</td></tr><tr class="even"><td class="">6</td><td>SEIN</td><td class="sorting_1">3,780,686</td><td>4,282,195</td><td>33,979</td><td>0.10%</td><td>0.09%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">7</td><td>SEPCO</td><td class="sorting_1">3,379,256</td><td>3,651,479</td><td>32,376</td><td>0.13%</td><td>0.12%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">8</td><td>SAVINA</td><td class="sorting_1">2,754,109</td><td>2,991,260</td><td>13,824</td><td>0.04%</td><td>0.03%</td><td>-</td></tr><tr class="odd"><td class="">9</td><td>TSE</td><td class="sorting_1">2,751,552</td><td>3,102,021</td><td>19,685</td><td>0.12%</td><td>0.11%</td><td>-</td></tr><tr class="even"><td class="">10</td><td>SECA</td><td class="sorting_1">2,600,898</td><td>3,168,009</td><td>14,973</td><td>0.36%</td><td>0.29%</td><td>0.3%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">11</td><td>SEUK</td><td class="sorting_1">2,284,728</td><td>3,149,875</td><td>43,707</td><td>1.12%</td><td>0.81%</td><td>0.2%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">12</td><td>SEAU</td><td class="sorting_1">2,095,440</td><td>2,756,724</td><td>37,080</td><td>0.25%</td><td>0.19%</td><td>-</td></tr><tr class="odd"><td class="">13</td><td>SEG</td><td class="sorting_1">1,874,313</td><td>2,604,067</td><td>30,517</td><td>0.40%</td><td>0.29%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">14</td><td>SSA</td><td class="sorting_1">1,728,069</td><td>1,840,072</td><td>8,109</td><td>0.06%</td><td>0.05%</td><td>-</td></tr><tr class="odd"><td class="">15</td><td>SGE</td><td class="sorting_1">1,673,267</td><td>2,242,661</td><td>29,843</td><td>0.14%</td><td>0.10%</td><td>-</td></tr><tr class="even"><td class="">16</td><td>SET</td><td class="sorting_1">1,549,237</td><td>1,779,233</td><td>20,610</td><td>0.21%</td><td>0.18%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">17</td><td>SEPAK</td><td class="sorting_1">1,453,672</td><td>1,468,707</td><td>32,090</td><td>0.13%</td><td>0.13%</td><td>-</td></tr><tr class="even"><td class="">18</td><td>SME</td><td class="sorting_1">1,404,217</td><td>1,623,171</td><td>12,499</td><td>0.13%</td><td>0.11%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">19</td><td>SEEG</td><td class="sorting_1">1,401,299</td><td>1,439,304</td><td>55,287</td><td>0.52%</td><td>0.50%</td><td>-</td></tr><tr class="even"><td class="">20</td><td>SEIB</td><td class="sorting_1">1,319,236</td><td>1,882,800</td><td>43,698</td><td>1.23%</td><td>0.86%</td><td>-</td></tr><tr class="odd"><td class="">21</td><td>SEPR</td><td class="sorting_1">1,281,593</td><td>2,280,344</td><td>102,085</td><td>0.65%</td><td>0.36%</td><td>0.1%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">22</td><td>SEMAG</td><td class="sorting_1">1,279,092</td><td>1,308,356</td><td>3,067</td><td>0.08%</td><td>0.08%</td><td>0.1%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">23</td><td>SAMCOL</td><td class="sorting_1">1,199,276</td><td>1,903,203</td><td>45,959</td><td>0.67%</td><td>0.42%</td><td>0.2%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">24</td><td>SEHK</td><td class="sorting_1">1,130,757</td><td>1,261,632</td><td>8,184</td><td>0.10%</td><td>0.09%</td><td>-</td></tr><tr class="odd"><td class="">25</td><td>SEBN</td><td class="sorting_1">1,119,429</td><td>1,345,741</td><td>21,124</td><td>0.36%</td><td>0.30%</td><td>-</td></tr><tr class="even"><td class="">26</td><td>SEI</td><td class="sorting_1">1,088,942</td><td>1,607,320</td><td>31,846</td><td>0.42%</td><td>0.28%</td><td>-</td></tr><tr class="odd"><td class="">27</td><td>SECH</td><td class="sorting_1">990,227</td><td>1,218,972</td><td>30,063</td><td>0.26%</td><td>0.21%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">28</td><td>SETK</td><td class="sorting_1">953,132</td><td>1,277,786</td><td>108,799</td><td>1.26%</td><td>0.94%</td><td>0.2%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">29</td><td>SELV</td><td class="sorting_1">933,909</td><td>558,662</td><td>18,000</td><td>0.16%</td><td>0.27%</td><td>0.1%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">30</td><td>SENA</td><td class="sorting_1">917,318</td><td>1,073,391</td><td>7,025</td><td>0.28%</td><td>0.24%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">31</td><td>SESAR</td><td class="sorting_1">845,395</td><td>1,041,220</td><td>36,724</td><td>0.47%</td><td>0.38%</td><td>0.2%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">32</td><td>SEPOL</td><td class="sorting_1">792,461</td><td>1,078,434</td><td>21,680</td><td>0.56%</td><td>0.41%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">33</td><td>SESP</td><td class="sorting_1">777,603</td><td>894,597</td><td>26,915</td><td>0.35%</td><td>0.30%</td><td>0.2%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">34</td><td>SEAS</td><td class="sorting_1">573,096</td><td>670,323</td><td>7,164</td><td>0.25%</td><td>0.21%</td><td>-</td></tr><tr class="odd"><td class="">35</td><td>SEROM</td><td class="sorting_1">468,222</td><td>645,565</td><td>5,544</td><td>0.26%</td><td>0.19%</td><td>-</td></tr><tr class="even"><td class="">36</td><td>SENZ</td><td class="sorting_1">446,345</td><td>557,638</td><td>5,348</td><td>0.32%</td><td>0.26%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">37</td><td>SECZ</td><td class="sorting_1">415,282</td><td>521,659</td><td>12,415</td><td>0.46%</td><td>0.37%</td><td>-</td></tr><tr class="even"><td class="">38</td><td>SEIL</td><td class="sorting_1">399,071</td><td>400,780</td><td>16,534</td><td>0.22%</td><td>0.22%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">39</td><td>SEAD</td><td class="sorting_1">392,538</td><td>397,520</td><td>6,566</td><td>0.48%</td><td>0.47%</td><td>-</td></tr><tr class="even"><td class="">40</td><td>SEH</td><td class="sorting_1">263,076</td><td>319,575</td><td>3,954</td><td>0.68%</td><td>0.56%</td><td>0.3%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">41</td><td>SEGR</td><td class="sorting_1">215,373</td><td>218,278</td><td>5,900</td><td>0.17%</td><td>0.17%</td><td>-</td></tr><tr class="even"><td class="">42</td><td>SEB</td><td class="sorting_1">200,548</td><td>211,379</td><td>2,798</td><td>0.54%</td><td>0.51%</td><td>-</td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table no-footer dataTable" aria-describedby="deccending_info" style="margin-left: 0px; width: 820px;"><tfoot id="traffic_avg"><tr><th rowspan="1" colspan="1" style="width: 102.5px;">-</th><th rowspan="1" colspan="1" style="width: 102.5px;">Avg.</th><th rowspan="1" colspan="1" style="width: 102.5px;">2,300,730</th><th rowspan="1" colspan="1" style="width: 102.5px;">2,951,682</th><th rowspan="1" colspan="1" style="width: 102.5px;">32,502</th><th rowspan="1" colspan="1" style="width: 102.5px;">0.29%</th><th rowspan="1" colspan="1" style="width: 102.5px;">0.23%</th><th rowspan="1" colspan="1" style="width: 102.5px;">-</th></tr></tfoot></table></div></div></div></div>
+                        </div>
+                    </div>
+                    <!-- 여기서부터 시작 -->
+                </div>
+
+                <!-- 2단 -->
+                <div class="layout_full">
+                    <div class="half_1st overview mg_r20 layout_border">
+                        <div class="content_tit">Missed Chat Rate
+                            <!-- <span class="icon_noti">
+                                <div class="noti_tooltip lefty">
+                                   text
+                                </div>
+                            </span> -->
+                            <!-- <button class="btn_down_load_type2">Download</button> -->
+                        </div>
+                        <!-- <div class="content_txt">List of not found page URLs and occurrences for selected date(s).</div> -->
+                        <div class="funnel_table_wrap">
+
+                            <div id="deccending2_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table no-footer dataTable" aria-describedby="deccending2_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Rank" style="width: 136.656px;">Rank</th><th class="sorting" tabindex="0" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Subsidiary: activate to sort column ascending" style="width: 136.656px;">Subsidiary</th><th id="total_chat_column" class="sorting sorting_desc" tabindex="0" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Total Chat: activate to sort column ascending" style="width: 136.656px;" aria-sort="descending">Total Chat</th><th class="sorting" tabindex="0" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Missed Chat: activate to sort column ascending" style="width: 136.656px;">Missed Chat</th><th class="sorting" tabindex="0" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 136.656px;">Missed Chat Rate</th><th class="sorting" tabindex="0" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="MoM Growth (%): activate to sort column ascending" style="width: 136.719px;">MoM Growth (%)</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 570px; height: 570px; width: 100%;"><table id="deccending2" class="f_t_table no-footer dataTable" aria-describedby="deccending2_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Rank" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Subsidiary: activate to sort column ascending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Subsidiary</div></th><th id="total_chat_column" class="sorting sorting_asc" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Total Chat: activate to sort column descending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total Chat</div></th><th class="sorting" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Missed Chat: activate to sort column ascending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Missed Chat</div></th><th class="sorting" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Missed Chat Rate</div></th><th class="sorting" aria-controls="deccending2" rowspan="1" colspan="1" aria-label="MoM Growth (%): activate to sort column ascending" style="width: 136.719px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">MoM Growth (%)</div></th></tr>
+                                </thead><tfoot id="missed_avg"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Avg.</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">32,502</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">100</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">1.5%</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.719px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">0.7%<span class="arrow_down"></span></div></th></tr></tfoot>
+                                
+                                <tbody id="missed_tbody"><tr class="odd"><td class="">1</td><td>SEDA</td><td class="sorting_1">174,324</td><td>-</td><td>-</td><td>0.2%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">2</td><td>SETK</td><td class="sorting_1">108,799</td><td>29</td><td>0.2%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">3</td><td>SEPR</td><td class="sorting_1">102,085</td><td>-</td><td>-</td><td>0.0%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">4</td><td>SIEL</td><td class="sorting_1">79,677</td><td>50</td><td>0.2%</td><td>0.2%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">5</td><td>SEC</td><td class="sorting_1">56,476</td><td>57</td><td>0.1%</td><td>0.0%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">6</td><td>SEF</td><td class="sorting_1">55,579</td><td>368</td><td>3.2%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">7</td><td>SEEG</td><td class="sorting_1">55,287</td><td>6</td><td>0.1%</td><td>0.2%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">8</td><td>SAMCOL</td><td class="sorting_1">45,959</td><td>153</td><td>1.9%</td><td>0.2%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">9</td><td>SEUK</td><td class="sorting_1">43,707</td><td>206</td><td>0.8%</td><td>0.4%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">10</td><td>SEIB</td><td class="sorting_1">43,698</td><td>745</td><td>4.6%</td><td>1.9%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">11</td><td>SEM</td><td class="sorting_1">43,038</td><td>5</td><td>-</td><td>0.0%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">12</td><td>SEAU</td><td class="sorting_1">37,080</td><td>13</td><td>0.2%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">13</td><td>SESAR</td><td class="sorting_1">36,724</td><td>2</td><td>0.1%</td><td>0.1%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">14</td><td>SEIN</td><td class="sorting_1">33,979</td><td>7</td><td>0.2%</td><td>0.3%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">15</td><td>SEPCO</td><td class="sorting_1">32,376</td><td>44</td><td>1.0%</td><td>0.4%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">16</td><td>SEPAK</td><td class="sorting_1">32,090</td><td>245</td><td>13.2%</td><td>2.3%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">17</td><td>SEI</td><td class="sorting_1">31,846</td><td>53</td><td>1.2%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">18</td><td>SEG</td><td class="sorting_1">30,517</td><td>60</td><td>0.8%</td><td>0.4%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">19</td><td>SECH</td><td class="sorting_1">30,063</td><td>-</td><td>-</td><td>0.3%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">20</td><td>SGE</td><td class="sorting_1">29,843</td><td>4</td><td>0.2%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">21</td><td>SESP</td><td class="sorting_1">26,915</td><td>115</td><td>4.3%</td><td>3.3%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">22</td><td>SEPOL</td><td class="sorting_1">21,680</td><td>-</td><td>-</td><td>2.1%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">23</td><td>SEBN</td><td class="sorting_1">21,124</td><td>277</td><td>7.0%</td><td>2.8%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">24</td><td>SET</td><td class="sorting_1">20,610</td><td>32</td><td>1.0%</td><td>0.8%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">25</td><td>TSE</td><td class="sorting_1">19,685</td><td>116</td><td>3.5%</td><td>0.8%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">26</td><td>SELV</td><td class="sorting_1">18,000</td><td>3</td><td>0.2%</td><td>0.1%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">27</td><td>SEIL</td><td class="sorting_1">16,534</td><td>-</td><td>-</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">28</td><td>SECA</td><td class="sorting_1">14,973</td><td>442</td><td>4.8%</td><td>1.7%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">29</td><td>SAVINA</td><td class="sorting_1">13,824</td><td>260</td><td>26.3%</td><td>25.5%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">30</td><td>SME</td><td class="sorting_1">12,499</td><td>19</td><td>1.1%</td><td>0.0%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">31</td><td>SECZ</td><td class="sorting_1">12,415</td><td>1</td><td>0.1%</td><td>0.0%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">32</td><td>SEHK</td><td class="sorting_1">8,184</td><td>86</td><td>7.8%</td><td>3.7%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">33</td><td>SSA</td><td class="sorting_1">8,109</td><td>18</td><td>1.9%</td><td>1.2%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">34</td><td>SEAS</td><td class="sorting_1">7,164</td><td>20</td><td>1.4%</td><td>1.6%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">35</td><td>SENA</td><td class="sorting_1">7,025</td><td>145</td><td>5.6%</td><td>0.0%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">36</td><td>SEAD</td><td class="sorting_1">6,566</td><td>76</td><td>4.0%</td><td>2.0%<span class="arrow_up"></span></td></tr><tr class="odd"><td class="">37</td><td>SEGR</td><td class="sorting_1">5,900</td><td>7</td><td>1.9%</td><td>0.5%<span class="arrow_down"></span></td></tr><tr class="even"><td class="">38</td><td>SEROM</td><td class="sorting_1">5,544</td><td>52</td><td>4.3%</td><td>0.3%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">39</td><td>SENZ</td><td class="sorting_1">5,348</td><td>16</td><td>1.1%</td><td>0.1%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">40</td><td>SEH</td><td class="sorting_1">3,954</td><td>367</td><td>20.4%</td><td>9.2%<span class="arrow_down"></span></td></tr><tr class="odd"><td class="">41</td><td>SEMAG</td><td class="sorting_1">3,067</td><td>-</td><td>-</td><td>0.3%<span class="arrow_up"></span></td></tr><tr class="even"><td class="">42</td><td>SEB</td><td class="sorting_1">2,798</td><td>106</td><td>9.8%</td><td>6.3%<span class="arrow_up"></span></td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table no-footer dataTable" aria-describedby="deccending2_info" style="margin-left: 0px; width: 820px;"><tfoot id="missed_avg"><tr><th rowspan="1" colspan="1" style="width: 136.656px;">-</th><th rowspan="1" colspan="1" style="width: 136.656px;">Avg.</th><th rowspan="1" colspan="1" style="width: 136.656px;">32,502</th><th rowspan="1" colspan="1" style="width: 136.656px;">100</th><th rowspan="1" colspan="1" style="width: 136.656px;">1.5%</th><th rowspan="1" colspan="1" style="width: 136.719px;">0.7%<span class="arrow_down"></span></th></tr></tfoot></table></div></div></div></div>
+                        </div>
+                    </div>
+                    <div class="half_2nd overview layout_border ">
+                        <div class="content_tit">Chat Handled per Promoter
+                            <!-- <span class="icon_noti">
+                                <div class="noti_tooltip lefty">
+                                   text
+                                </div>
+                            </span> -->
+                            <!-- <button class="btn_down_load_type2">Download</button> -->
+                        </div>
+                        <!-- <div class="content_txt">List of not found page URLs and occurrences for selected date(s).</div> -->
+                        <div class="funnel_table_wrap">
+                            <div id="deccending3_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table no-footer dataTable" aria-describedby="deccending3_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Rank" style="width: 136.656px;">Rank</th><th class="sorting" tabindex="0" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Subsidiary: activate to sort column ascending" style="width: 136.656px;">Subsidiary</th><th id="handled_chat_column" class="sorting sorting_desc" tabindex="0" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Handled Chat: activate to sort column ascending" style="width: 136.656px;" aria-sort="descending">Handled Chat</th><th class="sorting" tabindex="0" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Promoter H/C: activate to sort column ascending" style="width: 136.656px;">Promoter H/C</th><th class="sorting" tabindex="0" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Chat Handled per Promoter: activate to sort column ascending" style="width: 136.656px;">Chat Handled per Promoter</th><th class="sorting" tabindex="0" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 136.719px;">Missed Chat Rate</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 570px; height: 570px; width: 100%;"><table id="deccending3" class="f_t_table no-footer dataTable" aria-describedby="deccending3_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Rank" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Subsidiary: activate to sort column ascending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Subsidiary</div></th><th id="handled_chat_column" class="sorting sorting_asc" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Handled Chat: activate to sort column descending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Handled Chat</div></th><th class="sorting" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Promoter H/C: activate to sort column ascending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Promoter H/C</div></th><th class="sorting" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Chat Handled per Promoter: activate to sort column ascending" style="width: 136.656px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Chat Handled per Promoter</div></th><th class="sorting" aria-controls="deccending3" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 136.719px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Missed Chat Rate</div></th></tr>
+                                </thead><tfoot id="handled_avg"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Avg.</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">6,596</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">24</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.656px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">424</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 136.719px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">1.5%</div></th></tr></tfoot>
+                                
+                                <tbody id="handled_tbody"><tr class="odd"><td class="">1</td><td>SEC</td><td class="sorting_1">45,241</td><td>6</td><td>7,540</td><td>0.1%</td></tr><tr class="even"><td class="">2</td><td>SIEL</td><td class="sorting_1">29,603</td><td>80</td><td>370</td><td>0.2%</td></tr><tr class="odd"><td class="">3</td><td>SEUK</td><td class="sorting_1">25,437</td><td>107</td><td>238</td><td>0.8%</td></tr><tr class="even"><td class="">4</td><td>SEM</td><td class="sorting_1">20,486</td><td>32</td><td>640</td><td>-</td></tr><tr class="odd"><td class="">5</td><td>SEIB</td><td class="sorting_1">15,468</td><td>23</td><td>673</td><td>4.6%</td></tr><tr class="even"><td class="">6</td><td>SETK</td><td class="sorting_1">11,971</td><td>64</td><td>187</td><td>0.2%</td></tr><tr class="odd"><td class="">7</td><td>SEDA</td><td class="sorting_1">11,915</td><td>31</td><td>384</td><td>-</td></tr><tr class="even"><td class="">8</td><td>SEF</td><td class="sorting_1">11,295</td><td>66</td><td>171</td><td>3.2%</td></tr><tr class="odd"><td class="">9</td><td>SECA</td><td class="sorting_1">8,800</td><td>88</td><td>100</td><td>4.8%</td></tr><tr class="even"><td class="">10</td><td>SEPR</td><td class="sorting_1">8,306</td><td>17</td><td>489</td><td>-</td></tr><tr class="odd"><td class="">11</td><td>SAMCOL</td><td class="sorting_1">7,918</td><td>36</td><td>220</td><td>1.9%</td></tr><tr class="even"><td class="">12</td><td>SEG</td><td class="sorting_1">7,399</td><td>33</td><td>224</td><td>0.8%</td></tr><tr class="odd"><td class="">13</td><td>SEEG</td><td class="sorting_1">7,234</td><td>15</td><td>482</td><td>0.1%</td></tr><tr class="even"><td class="">14</td><td>SEAU</td><td class="sorting_1">5,252</td><td>19</td><td>276</td><td>0.2%</td></tr><tr class="odd"><td class="">15</td><td>SEI</td><td class="sorting_1">4,487</td><td>10</td><td>449</td><td>1.2%</td></tr><tr class="even"><td class="">16</td><td>SEPOL</td><td class="sorting_1">4,402</td><td>13</td><td>339</td><td>-</td></tr><tr class="odd"><td class="">17</td><td>SEPCO</td><td class="sorting_1">4,205</td><td>8</td><td>526</td><td>1.0%</td></tr><tr class="even"><td class="">18</td><td>SESAR</td><td class="sorting_1">3,974</td><td>29</td><td>137</td><td>0.1%</td></tr><tr class="odd"><td class="">19</td><td>SEBN</td><td class="sorting_1">3,700</td><td>10</td><td>370</td><td>7.0%</td></tr><tr class="even"><td class="">20</td><td>SEIN</td><td class="sorting_1">3,677</td><td>35</td><td>105</td><td>0.2%</td></tr><tr class="odd"><td class="">21</td><td>SET</td><td class="sorting_1">3,198</td><td>9</td><td>355</td><td>1.0%</td></tr><tr class="even"><td class="">22</td><td>TSE</td><td class="sorting_1">3,189</td><td>6</td><td>532</td><td>3.5%</td></tr><tr class="odd"><td class="">23</td><td>SESP</td><td class="sorting_1">2,588</td><td>7</td><td>370</td><td>4.3%</td></tr><tr class="even"><td class="">24</td><td>SECH</td><td class="sorting_1">2,572</td><td>11</td><td>234</td><td>-</td></tr><tr class="odd"><td class="">25</td><td>SENA</td><td class="sorting_1">2,457</td><td>31</td><td>79</td><td>5.6%</td></tr><tr class="even"><td class="">26</td><td>SGE</td><td class="sorting_1">2,283</td><td>31</td><td>74</td><td>0.2%</td></tr><tr class="odd"><td class="">27</td><td>SECZ</td><td class="sorting_1">1,924</td><td>8</td><td>240</td><td>0.1%</td></tr><tr class="even"><td class="">28</td><td>SEAD</td><td class="sorting_1">1,805</td><td>12</td><td>150</td><td>4.0%</td></tr><tr class="odd"><td class="">29</td><td>SME</td><td class="sorting_1">1,790</td><td>8</td><td>224</td><td>1.1%</td></tr><tr class="even"><td class="">30</td><td>SEPAK</td><td class="sorting_1">1,613</td><td>10</td><td>161</td><td>13.2%</td></tr><tr class="odd"><td class="">31</td><td>SELV</td><td class="sorting_1">1,497</td><td>25</td><td>60</td><td>0.2%</td></tr><tr class="even"><td class="">32</td><td>SEH</td><td class="sorting_1">1,429</td><td>15</td><td>95</td><td>20.4%</td></tr><tr class="odd"><td class="">33</td><td>SENZ</td><td class="sorting_1">1,416</td><td>8</td><td>177</td><td>1.1%</td></tr><tr class="even"><td class="">34</td><td>SEAS</td><td class="sorting_1">1,413</td><td>5</td><td>283</td><td>1.4%</td></tr><tr class="odd"><td class="">35</td><td>SEROM</td><td class="sorting_1">1,153</td><td>10</td><td>115</td><td>4.3%</td></tr><tr class="even"><td class="">36</td><td>SEMAG</td><td class="sorting_1">1,039</td><td>10</td><td>104</td><td>-</td></tr><tr class="odd"><td class="">37</td><td>SEHK</td><td class="sorting_1">1,012</td><td>10</td><td>101</td><td>7.8%</td></tr><tr class="even"><td class="">38</td><td>SEB</td><td class="sorting_1">975</td><td>11</td><td>89</td><td>9.8%</td></tr><tr class="odd"><td class="">39</td><td>SSA</td><td class="sorting_1">945</td><td>4</td><td>236</td><td>1.9%</td></tr><tr class="even"><td class="">40</td><td>SEIL</td><td class="sorting_1">875</td><td>25</td><td>35</td><td>-</td></tr><tr class="odd"><td class="">41</td><td>SAVINA</td><td class="sorting_1">727</td><td>11</td><td>66</td><td>26.3%</td></tr><tr class="even"><td class="">42</td><td>SEGR</td><td class="sorting_1">363</td><td>4</td><td>91</td><td>1.9%</td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table no-footer dataTable" aria-describedby="deccending3_info" style="margin-left: 0px; width: 820px;"><tfoot id="handled_avg"><tr><th rowspan="1" colspan="1" style="width: 136.656px;">-</th><th rowspan="1" colspan="1" style="width: 136.656px;">Avg.</th><th rowspan="1" colspan="1" style="width: 136.656px;">6,596</th><th rowspan="1" colspan="1" style="width: 136.656px;">24</th><th rowspan="1" colspan="1" style="width: 136.656px;">424</th><th rowspan="1" colspan="1" style="width: 136.719px;">1.5%</th></tr></tfoot></table></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- lnb -->
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<div class="gnb_extension">
+    <div class="lnb_dimed"></div>
+    <div class="lnb_wrap">
+        <div class="lnb_top_wrap">
+            <button class="lnb_close"></button>
+            <div class="lnb_logo">
+                <img src="img/new_logo.jpg">
+            </div>
+        </div>
+        <ul class="lnb_menu">
+            <li class="home">
+                <a href="javascript:moveMain()">Home</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveExecutive()">Executive Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveDevision()">Division Summary</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveSalesAll()">Sales Summary</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveOperationAll()">Operation Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveShopappOperation()">ShopApp Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveBotjourneyOperation()">Bot / AI Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveEpp_operation()">EPP / SMB Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+                
+                    <li class="menu_li">
+                
+                <a href="javascript:moveRetailer_operation()">Retailer Summary</a>
+                </li>
+            
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveMxFlagshipSummary()">MX Flagship Summary</a>
+            </li>
+            
+            <li class="menu_li active">
+                
+                
+                <a href="javascript:movePerformanceSummary()">Performance Summary</a>
+            </li>
+            <li class="menu_li">
+                <a href="javascript:fileDown()">Manual &amp; FAQ Download</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
+
+
+
+
+</div>
+
+<div id="loading-page" style="display: none;">
+    <div class="loading">
+        <div class="circle1 circle"></div>
+        <div class="circle2 circle"></div>
+        <div class="circle3 circle"></div>
+        <div class="circle4 circle"></div>
+        <div class="circle5 circle"></div>
+        <div class="circle6 circle"></div>
+        <div class="circle7 circle"></div>
+        <div class="circle8 circle"></div>
+        <div class="circle9 circle"></div>
+        <div class="circle10 circle"></div>
+        <div class="circle11 circle"></div>
+        <div class="circle12 circle"></div>
+    </div>
+</div>
+<script>
+    let title = 'Performance Summary';
+
+    let funnelData ='';
+    let tableData='';
+    let currentYear = '2026';
+    let lastMonth = '1';
+    let defaultDate = '2026-02-08';
+
+    function getBaseData(){
+        document.getElementById("loading-page").style.display ="block";
+        document.querySelector(".region_wrap").style.display ="none";
+
+
+        pendingCheck(function(){
+           getFunnelData();
+        });
+    }
+
+    function getFunnelData(){
+        let param = getParam();
+
+        ajax.post("/PerformanceSummary/ajax/getPerformanceFunnelData", param, "", function (respon) {
+
+            if (respon.ok) {
+
+                funnelData = respon.data;
+
+                document.querySelectorAll(".funnel_value")[0].innerText = setComma(funnelData.total_offered_volume);
+                document.querySelectorAll(".funnel_value")[1].innerText = setComma(funnelData.offered_volume);
+                document.querySelectorAll(".funnel_value")[2].innerText = setComma(funnelData.chat_handled);
+                document.querySelectorAll(".funnel_value")[3].innerText = setComma(funnelData.unit_sold);
+
+                document.querySelectorAll(".funnel_conversion")[0].innerText = funnelData.total_offered_volume ==0 ? 0 : Number((funnelData.offered_volume /funnelData.total_offered_volume*100).toFixed(1))+'%';
+                document.querySelectorAll(".funnel_conversion")[1].innerText = funnelData.offered_volume ==0 ? 0 : Number((funnelData.chat_handled /funnelData.offered_volume*100).toFixed(1))+'%';
+                document.querySelectorAll(".funnel_conversion")[2].innerText = funnelData.chat_handled ==0 ? 0 : Number((funnelData.unit_sold /funnelData.chat_handled*100).toFixed(1))+'%';
+
+                document.querySelectorAll(".funnel_visit")[0].innerText = funnelData.traffic ==0 ? 0 : Number((funnelData.total_offered_volume /funnelData.traffic*100)).toFixed(2)+'%';
+                document.querySelectorAll(".funnel_visit")[1].innerText = funnelData.traffic ==0 ? 0 : Number((funnelData.offered_volume /funnelData.traffic*100)).toFixed(2)+'%';
+                document.querySelectorAll(".funnel_visit")[2].innerText = funnelData.traffic ==0 ? 0 : Number((funnelData.chat_handled /funnelData.traffic*100)).toFixed(2)+'%';
+
+                getPerformanceTrafficTableData();
+            }
+
+        });
+    }
+    function getPerformanceTrafficTableData(){
+        let param = getParam();
+
+        ajax.post("/PerformanceSummary/ajax/getPerformanceTrafficTableData", param, "", function (respon) {
+
+            if (respon.ok) {
+                $('#deccending').DataTable().clear().destroy();
+                let html = '';
+                let trafficTableData = respon.data.tableData;
+                let trafficAvgData = respon.data.tableAvgData;
+
+                document.querySelector("#traffic_tbody").innerHTML ='';
+                document.querySelector("#traffic_avg").innerHTML ='';
+
+
+                trafficTableData.forEach(function(v,i){
+                    html +='<tr>';
+                    html += '<td>'+(i+1)+'</td>';
+                    html +='<td>'+ v.subsidiary+'</td>';
+                    if(v.traffic_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.traffic_c.toFixed(0))+'</td>';
+                    if(v.total_visit_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.total_visit_c.toFixed(0))+'</td>';
+                    if(v.total_offered_volume_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.total_offered_volume_c.toFixed(0))+'</td>';
+
+                    if(v.visit_to_chat_ratio_c ==0.0)  html +='<td>-</td>';
+                    else html +='<td>'+ v.visit_to_chat_ratio_c.toFixed(2) +'%</td>';
+                    if(v.visit_to_chat_ratio_all_c ==0.0)  html +='<td>-</td>';
+                    else html +='<td>'+ v.visit_to_chat_ratio_all_c.toFixed(2) +'%</td>';
+
+                    let growth =  v.visit_to_chat_ratio_p ==0 ? 0 : (v.visit_to_chat_ratio_c - v.visit_to_chat_ratio_p).toFixed(1);
+
+                    if(growth > 0) html +='<td>'+ growth+'%'+'<span class="arrow_up"></span></td>';
+                   else if(growth ==0.0) html +='<td>-</td>';
+                    else html +='<td>'+ Math.abs(growth).toFixed(1)+'%'+'<span class="arrow_down"></span></td>';
+                    html +='</tr>';
+                });
+                document.querySelector("#traffic_tbody").innerHTML =html;
+
+                html ='';
+                html +='<tr>';
+                html += '<th>-</th>';
+                html +=' <th>Avg.</th>';
+                if(trafficAvgData.traffic_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(trafficAvgData.traffic_c.toFixed(0))+'</th>';
+                if(trafficAvgData.total_visit_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(trafficAvgData.total_visit_c.toFixed(0))+'</th>';
+                if(trafficAvgData.total_offered_volume_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(trafficAvgData.total_offered_volume_c.toFixed(0))+'</th>';
+
+                if(trafficAvgData.visit_to_chat_ratio_avg ==0.0)  html +='<th>-</th>';
+                else html +='<th>'+ trafficAvgData.visit_to_chat_ratio_avg.toFixed(2) +'%</th>';
+                if(trafficAvgData.visit_to_chat_ratio_avg_all ==0.0)  html +='<th>-</th>';
+                else html +='<th>'+ trafficAvgData.visit_to_chat_ratio_avg_all.toFixed(2) +'%</th>';
+
+                let growth =  (trafficAvgData.visit_to_chat_ratio_c - trafficAvgData.visit_to_chat_ratio_p).toFixed(1);
+                if(growth > 0) html +='<th>'+ growth+'%'+'<span class="arrow_up"></span></th>';
+                else if(growth ==0.0) html +='<th>-</th>';
+                else html +='<th>'+ Math.abs(growth).toFixed(1)+'%'+'<span class="arrow_down"></span></th>';
+
+                html +='</tr>';
+
+                document.querySelector("#traffic_avg").innerHTML =html;
+
+                getTrafficDataTable();
+
+
+                document.getElementById("traffic_column").click();
+                document.getElementById("traffic_column").click();
+                getPerformanceMissedChatTableData();
+            }
+
+        });
+
+    }
+
+    function getPerformanceMissedChatTableData(){
+        let param = getParam();
+
+        ajax.post("/PerformanceSummary/ajax/getPerformanceMissedChatTableData", param, "", function (respon) {
+
+            if (respon.ok) {
+                $('#deccending2').DataTable().clear().destroy();
+                let html = '';
+                let tableData = respon.data.tableData;
+                let avgData = respon.data.tableAvgData;
+
+                document.querySelector("#missed_tbody").innerHTML ='';
+                document.querySelector("#missed_avg").innerHTML ='';
+
+
+                tableData.forEach(function(v,i){
+                    html +='<tr >';
+                    html += '<td>'+(i+1)+'</td>';
+                    html +='<td>'+ v.subsidiary+'</td>';
+                    if(v.total_offered_volume_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.total_offered_volume_c.toFixed(0))+'</td>';
+                    if(v.missed_chat_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.missed_chat_c.toFixed(0))+'</td>';
+
+                    if(v.missed_chat_rate_c ==0.0)  html +='<td>-</td>';
+                    else html +='<td>'+ v.missed_chat_rate_c.toFixed(1) +'%</td>';
+
+                    let growth = (v.missed_chat_rate_c - v.missed_chat_rate_p).toFixed(1);
+
+                    if(growth >= 0) html +='<td>'+ growth+'%'+'<span class="arrow_down"></span></td>';
+                    else if(growth ==0.0) html +='<td>-</td>';
+                    else html +='<td>'+ Math.abs(growth).toFixed(1)+'%'+'<span class="arrow_up"></span></td>';
+                    html +='</tr>';
+                });
+                document.querySelector("#missed_tbody").innerHTML =html;
+
+                html ='';
+                html +='<tr>';
+                html += '<th>-</th>';
+                html +=' <th>Avg.</th>';
+                if(avgData.total_offered_volume_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(avgData.total_offered_volume_c.toFixed(0))+'</th>';
+                if(avgData.missed_chat_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(avgData.missed_chat_c.toFixed(0))+'</th>';
+
+                if(avgData.missed_chat_rate_avg ==0.0)  html +='<th>-</th>';
+                else html +='<th>'+ avgData.missed_chat_rate_avg.toFixed(1) +'%</th>';
+
+                let growth =   (avgData.missed_chat_rate_c - avgData.missed_chat_rate_p).toFixed(1);
+                if(growth > 0) html +='<th>'+ growth+'%'+'<span class="arrow_down"></span></th>';
+                else if(growth ==0.0) html +='<th>-</th>';
+                else html +='<th>'+ Math.abs(growth).toFixed(1)+'%'+'<span class="arrow_up"></span></th>';
+
+                html +='</tr>';
+
+                document.querySelector("#missed_avg").innerHTML =html;
+
+                getMissedChatDataTable();
+                document.getElementById("total_chat_column").click();
+                document.getElementById("total_chat_column").click();
+                getPerformanceHandledChatTableData();
+            }
+
+        });
+
+
+    }
+
+    function getPerformanceHandledChatTableData(){
+        let param = getParam();
+
+        ajax.post("/PerformanceSummary/ajax/getPerformanceHandledChatTableData", param, "", function (respon) {
+
+            if (respon.ok) {
+                $('#deccending3').DataTable().clear().destroy();
+                let html = '';
+                let tableData = respon.data.tableData;
+                let avgData = respon.data.tableAvgData;
+
+                document.querySelector("#handled_tbody").innerHTML ='';
+                document.querySelector("#handled_avg").innerHTML ='';
+
+
+                tableData.forEach(function(v,i){
+                    html +='<tr>';
+                    html += '<td>'+(i+1)+'</td>';
+                    html +='<td>'+ v.subsidiary+'</td>';
+                    if(v.chat_handled_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.chat_handled_c.toFixed(0))+'</td>';
+                    if(v.head_count_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.head_count_c.toFixed(0))+'</td>';
+                    if(v.chat_handled_per_promoter_c ==0)  html +='<td>-</td>';
+                    else html +='<td>'+ setComma(v.chat_handled_per_promoter_c.toFixed(0))+'</td>';
+                    if(v.missed_chat_rate_c ==0.0)  html +='<td>-</td>';
+                    else html +='<td>'+ v.missed_chat_rate_c.toFixed(1) +'%</td>';
+
+                    html +='</tr>';
+                });
+                document.querySelector("#handled_tbody").innerHTML =html;
+
+                html ='';
+                html +='<tr>';
+                html += '<th>-</th>';
+                html +=' <th>Avg.</th>';
+                if(avgData.chat_handled_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(avgData.chat_handled_c.toFixed(0))+'</th>';
+                if(avgData.head_count_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(avgData.head_count_c.toFixed(0))+'</th>';
+                if(avgData.chat_handled_per_promoter_c ==0)  html +='<th>-</th>';
+                else html +='<th>'+ setComma(avgData.chat_handled_per_promoter_c.toFixed(0))+'</th>';
+                if(avgData.missed_chat_rate_avg ==0.0)  html +='<th>-</th>';
+                else html +='<th>'+ avgData.missed_chat_rate_avg.toFixed(1) +'%</th>';
+
+                html +='</tr>';
+
+                document.querySelector("#handled_avg").innerHTML =html;
+
+                getChatHandledDataTable();
+                document.getElementById("handled_chat_column").click();
+                document.getElementById("handled_chat_column").click();
+
+                document.getElementById("loading-page").style.display ="none";
+            }
+
+        });
+
+
+    }
+    function getTrafficDataTable(){
+        $('#deccending').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            scrollCollapse: true,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "570px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+            ]
+
+        });
+        tableColumnRankInitialize('deccending');
+    }
+
+    function getMissedChatDataTable(){
+        $('#deccending2').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "570px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+                null,
+                null,
+
+            ]
+        });
+        tableColumnRankInitialize('deccending2');
+    }
+
+    function getChatHandledDataTable(){
+        $('#deccending3').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "570px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+                null,
+                null,
+
+            ]
+        });
+        tableColumnRankInitialize('deccending3');
+    }
+
+</script>
+
+
+<div data-tether-id="0" style="top: 0px; left: 0px; position: absolute;"></div><div class="rangePicker tether-element tether-enabled tether-abutted tether-abutted-left tether-element-attached-top tether-element-attached-left tether-target-attached-bottom tether-target-attached-left custom" style="top: 0px; left: 0px; position: absolute; transform: translateX(776px) translateY(73px) translateZ(0px);">         				<div class="wrap"> 							<div class="preset set"><button type="button" value="1m">1 month</button><button type="button" value="3m">3 months</button><button type="button" value="6m">6 months</button><button type="button" value="12m">12 months</button><button type="button" value="custom" class="selected">Custom</button></div> 							<div class="custom"> 								<div class="calendar from"><strong><span>Jan 2026</span></strong><select><option value="2021">2021</option><option value="2022">2022</option><option value="2023">2023</option><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option></select><div class="months"><button class="selected">Jan</button><button disabled="">Feb</button><button disabled="">Mar</button><button disabled="">Apr</button><button disabled="">May</button><button disabled="">Jun</button><button disabled="">Jul</button><button disabled="">Aug</button><button disabled="">Sep</button><button disabled="">Oct</button><button disabled="">Nov</button><button disabled="">Dec</button></div></div> 								<div class="calendar to"><strong><span>Jan 2026</span></strong><select><option value="2021" style="display: none;">2021</option><option value="2022" style="display: none;">2022</option><option value="2023" style="display: none;">2023</option><option value="2024" style="display: none;">2024</option><option value="2025" style="display: none;">2025</option><option value="2026" style="">2026</option></select><div class="months"><button class="selected">Jan</button><button disabled="">Feb</button><button disabled="">Mar</button><button disabled="">Apr</button><button disabled="">May</button><button disabled="">Jun</button><button disabled="">Jul</button><button disabled="">Aug</button><button disabled="">Sep</button><button disabled="">Oct</button><button disabled="">Nov</button><button disabled="">Dec</button></div></div> 								<footer> 									<button type="button" class="confirm btn btn-primary">Apply</button> 									<button type="button" class="cancel btn">Cancel</button> 								</footer> 							</div> 						</div> 					</div></body></html>

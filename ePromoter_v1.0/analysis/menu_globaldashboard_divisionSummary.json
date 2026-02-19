@@ -1,0 +1,1177 @@
+{
+  "path": "/globaldashboard/divisionSummary",
+  "label": "Division Summary",
+  "url": "https://www.globalsess.com/globaldashboard/divisionSummary",
+  "title": "Division Summary",
+  "structure": {
+    "scripts": [
+      "js/jquery.js",
+      "js/common.js",
+      "js/util.js",
+      "js/googleChart.js",
+      "https://www.gstatic.com/charts/loader.js",
+      "https://cdn.jsdelivr.net/jquery/latest/jquery.min.js",
+      "https://cdn.jsdelivr.net/momentjs/latest/moment.min.js",
+      "js/daterangepicker.js",
+      "js/datatables.js",
+      "https://www.gstatic.com/charts/51/loader.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js",
+      "//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"
+    ],
+    "stylesheets": [
+      "css/reset.css",
+      "css/layout.css",
+      "css/style.css",
+      "css/daterangepicker.css",
+      "css/datatables.css",
+      "https://www.gstatic.com/charts/51/css/core/tooltip.css",
+      "https://www.gstatic.com/charts/51/css/util/util.css"
+    ],
+    "images": [
+      {
+        "src": "img/new_logo.jpg",
+        "alt": ""
+      }
+    ],
+    "forms": [],
+    "tables": [
+      {
+        "id": null,
+        "class": "data_type_table"
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": "f_t_table rank_type3 dataTable"
+      },
+      {
+        "id": "rank_type3",
+        "class": "f_t_table rank_type3 dataTable"
+      },
+      {
+        "id": null,
+        "class": "f_t_table rank_type3 dataTable"
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": "f_t_table rank_type4 dataTable"
+      },
+      {
+        "id": "rank_type4",
+        "class": "f_t_table rank_type4 dataTable"
+      },
+      {
+        "id": null,
+        "class": "f_t_table rank_type4 dataTable"
+      },
+      {
+        "id": null,
+        "class": "f_t_table rank_type5 dataTable"
+      },
+      {
+        "id": "rank_type5",
+        "class": "f_t_table rank_type5 dataTable"
+      },
+      {
+        "id": null,
+        "class": "f_t_table rank_type5 dataTable"
+      },
+      {
+        "id": null,
+        "class": "hce_table"
+      }
+    ],
+    "chart_containers": [
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "half_1st overview layout_border chart_pbx"
+      },
+      {
+        "tag": "DIV",
+        "id": null,
+        "class": "half_1st overview layout_border chart_pbx"
+      }
+    ],
+    "data_tables": [],
+    "selects": [],
+    "inputs": [
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq0"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq1"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq2"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq3"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq4"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq5"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq6"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq7"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq8"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country0"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country1"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country2"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country3"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country4"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country5"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country6"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country7"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country8"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country9"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country10"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country11"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country12"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country13"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country14"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country15"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country16"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country17"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country18"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country19"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country20"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country21"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country22"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country23"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country24"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country25"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country26"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country27"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country28"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country29"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country30"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country31"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country32"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country33"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country34"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country35"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country36"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country37"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country38"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country39"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country40"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country41"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country42"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site0"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site1"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site2"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site3"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site4"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site5"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site6"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site7"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site8"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site9"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site10"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site11"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site12"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site13"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site14"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site15"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site16"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site17"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site18"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site19"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site20"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site21"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site22"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site23"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site24"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site25"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site26"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site27"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site28"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site29"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site30"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site31"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site32"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site33"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site34"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site35"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site36"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site37"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site38"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site39"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site40"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site41"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site42"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site43"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site44"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site45"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site46"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site47"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site48"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site49"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site50"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site51"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site52"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site53"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site54"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site55"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site56"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site57"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site58"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site59"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site60"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site61"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site62"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site63"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site64"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site65"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site66"
+      },
+      {
+        "type": "text",
+        "name": "daterange",
+        "id": "date"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "id": "current_pw"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "id": "new_pw"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "id": "renew_pw"
+      },
+      {
+        "type": null,
+        "name": null,
+        "id": null
+      },
+      {
+        "type": "checkbox",
+        "name": null,
+        "id": "save_chk"
+      }
+    ]
+  },
+  "js_nav_and_apis": {
+    "nav_functions": [],
+    "ajax_or_fetch_patterns": [
+      {
+        "method": "POST",
+        "path": "/changePassword"
+      },
+      {
+        "method": "POST",
+        "path": "/engagementSummary/ajax/headCount"
+      },
+      {
+        "method": "POST",
+        "path": "/divisionSummary/ajax/getDivisionData"
+      },
+      {
+        "method": "POST",
+        "path": "/divisionSummary/ajax/getDivisionTableData"
+      },
+      {
+        "method": "POST",
+        "path": "/divisionSummary/ajax/getDivisionGraphData"
+      },
+      {
+        "path": "/globaldashboard/CommonExcelDownload"
+      },
+      {
+        "path": "/changePassword"
+      },
+      {
+        "path": "/globaldashboard"
+      },
+      {
+        "path": "/globaldashboard"
+      },
+      {
+        "path": "/engagementSummary/ajax/headCount"
+      },
+      {
+        "path": "/divisionSummary/ajax/getDivisionData"
+      },
+      {
+        "path": "/divisionSummary/ajax/getDivisionTableData"
+      },
+      {
+        "path": "/divisionSummary/ajax/getDivisionGraphData"
+      },
+      {
+        "path": "/globaldashboard/DivisionExcelDownload"
+      }
+    ]
+  },
+  "apis_this_page": [
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/divisionSummary",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_56.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_41.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_66.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/new_logo.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_hbg.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_global.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_arrow_down.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_date.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_noti.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_user.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/btn_down.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_download.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_up_arrow.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_summary_up.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_summary_down.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_close.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_b_arrow.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/images/dimmed.png",
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+      "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"Division Summary\"}"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+      "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"Division Summary\"}"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//switchTable",
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//checkPending",
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//getChatType",
+      "post_data": "{\"title\":\"Division Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//divisionSummary/ajax/getDivisionData",
+      "post_data": "{\"title\":\"All\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//divisionSummary/ajax/getDivisionTableData",
+      "post_data": "{\"title\":\"All\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_down_arrow.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/images/sort_both.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/images/sort_asc.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/images/sort_desc.png",
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//divisionSummary/ajax/getDivisionGraphData",
+      "post_data": "{\"title\":\"Division Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+    }
+  ],
+  "table_headers": [
+    {
+      "id": "",
+      "class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "Total",
+        "MX",
+        "VD",
+        "DA",
+        "Cross Products",
+        "Non Product",
+        "02/08",
+        "5,224",
+        "1,927.333",
+        "578.333",
+        "517.333",
+        "103",
+        "474"
+      ]
+    },
+    {
+      "id": "",
+      "class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion Rate (Order)",
+        "Contribution Rate"
+      ]
+    },
+    {
+      "id": "rank_type3",
+      "class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion Rate (Order)",
+        "Contribution Rate",
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%",
+        "1",
+        "Norway",
+        "400%",
+        "23%"
+      ]
+    },
+    {
+      "id": "",
+      "class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "Promoter Revenue",
+        "Premium Portion",
+        "02/08",
+        "404,092",
+        "32.1%"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "Galaxy S / Z",
+        "QLED",
+        "Bespoke",
+        "02/08",
+        "129,515.998",
+        "0",
+        "127,263.326"
+      ]
+    },
+    {
+      "id": "",
+      "class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Promoter revenue",
+        "Promoter H/C",
+        "Revenue per promoter"
+      ]
+    },
+    {
+      "id": "rank_type4",
+      "class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Promoter revenue",
+        "Promoter H/C",
+        "Revenue per promoter",
+        "Total",
+        "404,092",
+        "289",
+        "1,398",
+        "1",
+        "Mexico",
+        "76,263",
+        "23",
+        "3,316"
+      ]
+    },
+    {
+      "id": "",
+      "class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Total",
+        "404,092",
+        "289",
+        "1,398"
+      ]
+    },
+    {
+      "id": "",
+      "class": "f_t_table rank_type5 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion (Order)",
+        "Contribution",
+        "Visit to chat",
+        "Missed chat"
+      ]
+    },
+    {
+      "id": "rank_type5",
+      "class": "f_t_table rank_type5 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion (Order)",
+        "Contribution",
+        "Visit to chat",
+        "Missed chat",
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%",
+        "0.00%",
+        "1.4%",
+        "1",
+        "Norway",
+        "400%",
+        "23%",
+        "0%",
+        "25%"
+      ]
+    },
+    {
+      "id": "",
+      "class": "f_t_table rank_type5 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%",
+        "0.00%",
+        "1.4%"
+      ]
+    },
+    {
+      "id": "",
+      "class": "hce_table",
+      "headers": [
+        "Subsidiary"
+      ]
+    }
+  ],
+  "filter_elements": [
+    {
+      "type": "date_or_range",
+      "id": "date",
+      "name": "daterange",
+      "placeholder": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "region",
+      "id": "rhq0"
+    },
+    {
+      "type": "checkbox",
+      "name": "country",
+      "id": "country0"
+    },
+    {
+      "type": "checkbox",
+      "name": "site",
+      "id": "site0"
+    }
+  ],
+  "header_tooltips": [],
+  "chart_spec": [
+    {
+      "id": null,
+      "class": "half_1st overview layout_border chart_pbx",
+      "section_title": "Promoter Handled Chat – by Division \nDownload\nTotal MX VD DA Cross Products Not Applicable\n02/08\n0\n2K\n4K\n6K\ndate\tTotal\tM"
+    },
+    {
+      "id": null,
+      "class": "half_1st overview layout_border chart_pbx",
+      "section_title": "Promoter Revenue / Promoter H/C / Revenue per Promoter\nRank\tCountry\tPromoter revenue\tPromoter H/C\tRevenue per promoter\nR"
+    }
+  ]
+}

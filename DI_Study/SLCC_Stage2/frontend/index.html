@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLCC 심층 분석 · 자유 질의</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a2332;
+      --border: #2d3a4f;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --accent-hover: #79b8ff;
+      --success: #3fb950;
+      --danger: #f85149;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    .sub {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.95rem;
+      resize: vertical;
+    }
+    textarea::placeholder { color: var(--muted); }
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .presets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .presets button {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .presets button:hover,
+    .presets button.active {
+      border-color: var(--accent);
+      background: rgba(88, 166, 255, 0.08);
+    }
+    .row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .btn-primary {
+      padding: 12px 24px;
+      border-radius: 8px;
+      border: none;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .result-wrap {
+      margin-top: 24px;
+    }
+    .result-label {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .result-body {
+      white-space: pre-wrap;
+      word-break: break-word;
+      padding: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+    .result-body.empty {
+      display: block;
+      min-height: 80px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .result-body.empty::before {
+      content: '분석 요청 후 결과가 여기에 표시됩니다.';
+    }
+    .result-body h2, .result-body h3 {
+      margin-top: 1.2em;
+      margin-bottom: 0.5em;
+      font-size: 1.05rem;
+    }
+    .result-body p { margin: 0.5em 0; }
+    .result-body ul { margin: 0.5em 0; padding-left: 1.4em; }
+    .loading {
+      color: var(--muted);
+      padding: 20px;
+      text-align: center;
+    }
+    .error {
+      color: var(--danger);
+      padding: 12px;
+      background: rgba(248, 81, 73, 0.1);
+      border-radius: 8px;
+      margin-top: 12px;
+    }
+    .meta-result {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    .article-card {
+      margin-top: 8px;
+      padding: 16px;
+      background: var(--bg);
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .article-card .art-title { font-size: 1.15rem; margin: 0 0 12px; }
+    .article-card .art-lead { color: var(--muted); margin-bottom: 16px; line-height: 1.65; }
+    .article-card .art-section { margin-bottom: 16px; }
+    .article-card .art-subheads { margin: 0 0 10px; padding-left: 1.2em; color: var(--muted); font-size: 0.9rem; }
+    .article-card .art-attribution { margin: 0 0 8px; font-size: 0.8rem; color: var(--muted); }
+    .article-card .art-section h3 { font-size: 1rem; margin: 0 0 6px; color: var(--accent); }
+    .article-card .art-section p { margin: 0; white-space: pre-wrap; }
+    .article-card .art-closing { margin-top: 16px; white-space: pre-wrap; }
+    .article-card .art-datasource { margin-top: 20px; font-size: 0.8rem; color: var(--muted); }
+    .article-card .art-datasource pre { margin: 4px 0 0; white-space: pre-wrap; }
+    .btn-secondary {
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 12px;
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>심층 분석 · 자유 질의</h1>
+    <p class="sub">2026.1H 데일리 모니터링 데이터를 바탕으로 질의하세요. 핵심 이슈, 인사이트, 기사형 리포트·기획 기사까지.</p>
+
+    <div class="card">
+      <label>기획 기사</label>
+      <p style="color: var(--muted); font-size: 0.9rem; margin: 8px 0 12px;">데이터 기반 주간 기획 기사를 한 번에 생성합니다. (제목·리드·4개 섹션) <span style="color: var(--accent);">이 페이지는 SLCC 서버(http://localhost:8002)에서 열어야 합니다.</span></p>
+      <div class="row">
+        <button type="button" class="btn-primary" id="btn-article">기획 기사 생성</button>
+      </div>
+      <div id="article-loading" class="loading" style="display: none;">기획 기사 생성 중… (gpt-4o)</div>
+      <div id="article-error" class="error" style="display: none;"></div>
+      <div id="article-result" class="article-card" style="display: none;"></div>
+      <button type="button" class="btn-secondary" id="btn-download-html" style="display: none;">HTML로 저장</button>
+    </div>
+
+    <div class="card">
+      <label for="query">질의 (자유 입력)</label>
+      <textarea id="query" placeholder="예: 이번 주 가장 큰 버즈 드라이버는 무엇이고, 향후 리스크는 무엇인가?"></textarea>
+      <label style="margin-top: 14px;">응답 스타일</label>
+      <div class="presets">
+        <button type="button" data-style="free" class="style-btn">자유 질의</button>
+        <button type="button" data-style="issues" class="style-btn">핵심 이슈 요약</button>
+        <button type="button" data-style="insight" class="style-btn">심층 인사이트</button>
+        <button type="button" data-style="report" class="style-btn">기사형 심층 리포트</button>
+      </div>
+      <div class="row">
+        <button type="button" class="btn-primary" id="submit">분석 요청</button>
+        <span class="meta-result" id="meta"></span>
+      </div>
+    </div>
+
+    <div class="result-wrap">
+      <label class="result-label">분석 결과</label>
+      <div id="loading" class="loading" style="display: none;">분석 중입니다… (gpt-4o)</div>
+      <div id="error" class="error" style="display: none;"></div>
+      <div id="result" class="result-body empty" aria-live="polite"></div>
+    </div>
+  </div>
+
+  <script>
+    // API 베이스 (같은 서버에서 열면 빈 문자열. 다른 서버에서 열 때는 ?api=http://localhost:8002 로 지정)
+    const API_BASE = (() => {
+      const p = new URLSearchParams(location.search);
+      return (p.get('api') || '').replace(/\/$/, '');
+    })();
+
+    const queryEl = document.getElementById('query');
+    const submitBtn = document.getElementById('submit');
+    const loadingEl = document.getElementById('loading');
+    const errorEl = document.getElementById('error');
+    const resultEl = document.getElementById('result');
+    const metaEl = document.getElementById('meta');
+
+    const presetText = {
+      issues: '이번 기간 데이터에서 핵심 이슈·리스크·주의할 점을 우선순위 있게 정리해 주세요.',
+      insight: '데이터에서 도출할 수 있는 심층 인사이트 3~5개와 각각의 시사점을 설명해 주세요.',
+      report: '이번 주 버즈와 채널·드라이버를 정리한 기사형 심층 분석 리포트를 작성해 주세요.',
+      free: ''
+    };
+
+    let selectedStyle = 'free';
+    document.querySelectorAll('.presets button.style-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedStyle = btn.dataset.style;
+        document.querySelectorAll('.presets button.style-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        if (presetText[selectedStyle]) queryEl.value = presetText[selectedStyle];
+        queryEl.focus();
+      });
+    });
+    document.querySelector('.presets button[data-style="free"]').classList.add('active');
+
+    function showLoading(show) {
+      loadingEl.style.display = show ? 'block' : 'none';
+      submitBtn.disabled = show;
+      errorEl.style.display = 'none';
+      if (!show) resultEl.classList.add('empty');
+    }
+
+    function showError(msg) {
+      errorEl.textContent = msg;
+      errorEl.style.display = 'block';
+      resultEl.classList.add('empty');
+    }
+
+    function showResult(answer, style, hasContext) {
+      errorEl.style.display = 'none';
+      resultEl.textContent = answer;
+      resultEl.classList.remove('empty');
+      metaEl.textContent = hasContext
+        ? '데이터 기반 분석 완료 · ' + (style === 'free' ? '자유' : style)
+        : '참고: 분석 기간 데이터가 없을 수 있습니다.';
+    }
+
+    submitBtn.addEventListener('click', async () => {
+      const query = queryEl.value.trim();
+      if (!query) {
+        showError('질의를 입력하세요.');
+        return;
+      }
+      showLoading(true);
+      try {
+        const res = await fetch(API_BASE + '/api/analyze', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query, style: selectedStyle })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || res.statusText);
+        showResult(data.answer, data.style, data.has_context);
+      } catch (e) {
+        showError(e.message || '요청 실패');
+      } finally {
+        showLoading(false);
+      }
+    });
+
+    // 기획 기사
+    let lastArticle = null;
+    const articleLoading = document.getElementById('article-loading');
+    const articleError = document.getElementById('article-error');
+    const articleResult = document.getElementById('article-result');
+    const btnArticle = document.getElementById('btn-article');
+    const btnDownloadHtml = document.getElementById('btn-download-html');
+
+    btnArticle.addEventListener('click', async () => {
+      articleError.style.display = 'none';
+      articleResult.style.display = 'none';
+      btnDownloadHtml.style.display = 'none';
+      articleLoading.style.display = 'block';
+      btnArticle.disabled = true;
+      try {
+        const res = await fetch(API_BASE + '/api/generate-article', { method: 'POST' });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          const msg = data.detail || res.statusText || '오류';
+          if (res.status === 404) {
+            throw new Error('기획 기사 API를 찾을 수 없습니다(404). 이 페이지를 SLCC 서버에서 열어야 합니다. 터미널에서: cd SLCC_Stage2 && .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8002 실행 후 브라우저에서 http://localhost:8002 로 접속하세요.');
+          }
+          throw new Error(msg);
+        }
+        lastArticle = data;
+        articleResult.innerHTML = '';
+        if (data.subheads && data.subheads.length) {
+          const ul = document.createElement('ul');
+          ul.className = 'art-subheads';
+          data.subheads.forEach(t => {
+            const li = document.createElement('li');
+            li.textContent = t;
+            ul.appendChild(li);
+          });
+          articleResult.appendChild(ul);
+        }
+        if (data.attribution) {
+          const att = document.createElement('p');
+          att.className = 'art-attribution';
+          att.textContent = data.attribution;
+          articleResult.appendChild(att);
+        }
+        const title = document.createElement('h2');
+        title.className = 'art-title';
+        title.textContent = data.title || '기획 기사';
+        articleResult.appendChild(title);
+        if (data.lead) {
+          const lead = document.createElement('p');
+          lead.className = 'art-lead';
+          lead.textContent = data.lead.replace(/\\n/g, '\n');
+          articleResult.appendChild(lead);
+        }
+        (data.sections || []).forEach(sec => {
+          const div = document.createElement('div');
+          div.className = 'art-section';
+          const h3 = document.createElement('h3');
+          h3.textContent = sec.heading || '';
+          const p = document.createElement('p');
+          p.textContent = (sec.body || '').replace(/\\n/g, '\n');
+          div.appendChild(h3);
+          div.appendChild(p);
+          articleResult.appendChild(div);
+        });
+        if (data.closing) {
+          const close = document.createElement('p');
+          close.className = 'art-closing';
+          close.textContent = data.closing.replace(/\\n/g, '\n');
+          articleResult.appendChild(close);
+        }
+        if (data.data_source) {
+          const src = document.createElement('div');
+          src.className = 'art-datasource';
+          src.innerHTML = '<strong>[Data Source]</strong><pre>' + escapeHtml(data.data_source.replace(/\\n/g, '\n')) + '</pre>';
+          articleResult.appendChild(src);
+        }
+        articleResult.style.display = 'block';
+        btnDownloadHtml.style.display = 'inline-block';
+      } catch (e) {
+        articleError.innerHTML = (e.message || '생성 실패').replace(/\n/g, '<br>');
+        articleError.style.display = 'block';
+      } finally {
+        articleLoading.style.display = 'none';
+        btnArticle.disabled = false;
+      }
+    });
+
+    btnDownloadHtml.addEventListener('click', () => {
+      if (!lastArticle) return;
+      const d = lastArticle;
+      const lead = (d.lead || '').replace(/\\n/g, '\n');
+      const subheads = (d.subheads || []).length ? '<ul>' + (d.subheads || []).map(x => '<li>' + escapeHtml(x) + '</li>').join('') + '</ul>' : '';
+      const attribution = d.attribution ? '<p class="attribution">' + escapeHtml(d.attribution) + '</p>' : '';
+      const sections = (d.sections || []).map(s =>
+        '<section><h3>' + escapeHtml(s.heading || '') + '</h3><p>' + escapeHtml((s.body || '').replace(/\\n/g, '\n')) + '</p></section>'
+      ).join('\n');
+      const closing = d.closing ? '<p class="closing">' + escapeHtml((d.closing || '').replace(/\\n/g, '\n')) + '</p>' : '';
+      const dataSource = d.data_source ? '<div class="datasource"><strong>[Data Source]</strong><pre>' + escapeHtml((d.data_source || '').replace(/\\n/g, '\n')) + '</pre></div>' : '';
+      const html = `<!DOCTYPE html>
+<html lang="ko">
+<head><meta charset="utf-8"><title>${escapeHtml(d.title || '기획 기사')}</title>
+<style>body{font-family:sans-serif;max-width:720px;margin:24px auto;line-height:1.7;} .art-subheads{color:#666;} .attribution{font-size:0.85rem;color:#888;} h1{font-size:1.3rem;} .lead{color:#555;white-space:pre-wrap;} section{margin:20px 0;} h3{font-size:1.05rem;color:#2563eb;} section p{white-space:pre-wrap;} .closing{margin-top:1em;} .datasource{margin-top:1.5em;font-size:0.85rem;color:#888;} .datasource pre{white-space:pre-wrap;}</style>
+</head>
+<body>
+${subheads}
+${attribution}
+<h1>${escapeHtml(d.title || '기획 기사')}</h1>
+<p class="lead">${escapeHtml(lead)}</p>
+${sections}
+${closing}
+${dataSource}
+</body>
+</html>`;
+      const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = '기획기사_주간분석.html';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    });
+
+    function escapeHtml(s) {
+      const div = document.createElement('div');
+      div.textContent = s;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "ok": true,
+  "data": {
+    "total_offered_volume": 1365065.0,
+    "unit_sold": 61351.0,
+    "offered_volume": 281238.0,
+    "chat_handled": 277033.0,
+    "missed_chat": 4205.0,
+    "traffic": 96630648.0
+  }
+}

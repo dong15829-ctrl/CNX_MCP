@@ -1,0 +1,724 @@
+{
+  "ok": true,
+  "data": {
+    "salesSummaryActual": [
+      {
+        "eProm_rev_aov_c": 404091.5027834968,
+        "eProm_smb_order_count": 0.0,
+        "eProm_smb_sales": 0.0,
+        "Prom_b2c_sales": 3966306.021500137,
+        "eStore_order_count_all_c": 29221.0,
+        "eProm_chat_handled_c": 5224.0,
+        "convert_date": "02/08",
+        "eStore_epp_aov": 4277034.566589519,
+        "Prom_epp_sales": 4277034.566589517,
+        "eStore_smb_order_count": 52.0,
+        "eStore_rev_aov_c": 8646912.466030573,
+        "eProm_order_count_c": 673.0,
+        "eProm_smb_aov": 0.0,
+        "eStore_b2c_order_count": 20827.0,
+        "eProm_unit_sold_c": 946.0,
+        "eProm_epp_sales": 135380.31227872457,
+        "eStore_b2c_aov": 3966306.0215000804,
+        "eStore_smb_aov": 125279.40761317454,
+        "eProm_sale_rev_c": 404091.502783497,
+        "eProm_b2c_aov": 258622.08623047263,
+        "eProm_b2c_sales": 258622.08623047252,
+        "eStore_sale_rev_c": 8646912.466030622,
+        "eProm_epp_aov": 135380.31227872457,
+        "eStore_unit_sold_c": 35855.0,
+        "eStore_order_count_c": 28828.0,
+        "eProm_epp_order_count": 181.0,
+        "Prom_smb_sales": 125279.40761317451,
+        "eProm_b2c_order_count": 479.0,
+        "eStore_epp_order_count": 7531.0
+      }
+    ],
+    "salesChannelEprom": [
+      {
+        "product_sold": 58.0,
+        "product_name": "Others-Accessory"
+      },
+      {
+        "product_sold": 52.0,
+        "product_name": "Galaxy S25 Ultra"
+      },
+      {
+        "product_sold": 29.0,
+        "product_name": "Galaxy S25 FE"
+      },
+      {
+        "product_sold": 21.0,
+        "product_name": "Galaxy S25"
+      },
+      {
+        "product_sold": 18.0,
+        "product_name": "Others-APS"
+      },
+      {
+        "product_sold": 16.0,
+        "product_name": "Galaxy Z Fold7"
+      },
+      {
+        "product_sold": 16.0,
+        "product_name": "Galaxy Buds3"
+      },
+      {
+        "product_sold": 15.0,
+        "product_name": "Galaxy A56"
+      },
+      {
+        "product_sold": 14.0,
+        "product_name": "Galaxy Z Flip7"
+      },
+      {
+        "product_sold": 12.0,
+        "product_name": "Galaxy S25 Series Case"
+      },
+      {
+        "product_sold": 11.0,
+        "product_name": "Galaxy Watch8 Bluetooth (40mm)"
+      },
+      {
+        "product_sold": 10.0,
+        "product_name": "Galaxy Buds Core"
+      },
+      {
+        "product_sold": 10.0,
+        "product_name": "Réfrigérateur Américain"
+      },
+      {
+        "product_sold": 9.0,
+        "product_name": "Galaxy Watch8 Bluetooth (44mm)"
+      },
+      {
+        "product_sold": 10.0,
+        "product_name": "SMC"
+      },
+      {
+        "product_sold": 8.0,
+        "product_name": "Galaxy Tab S11"
+      },
+      {
+        "product_sold": 8.0,
+        "product_name": "TV The Frame Accessory"
+      },
+      {
+        "product_sold": 8.0,
+        "product_name": "RS5300TC"
+      },
+      {
+        "product_sold": 8.0,
+        "product_name": "Lave Linge"
+      },
+      {
+        "product_sold": 8.0,
+        "product_name": "Soundbar B-Series"
+      },
+      {
+        "product_sold": 8.0,
+        "product_name": "Galaxy S25+"
+      },
+      {
+        "product_sold": 7.0,
+        "product_name": "Galaxy Tab S10 Lite"
+      },
+      {
+        "product_sold": 7.0,
+        "product_name": "Galaxy Fit3"
+      },
+      {
+        "product_sold": 7.0,
+        "product_name": "Samsung Care+"
+      },
+      {
+        "product_sold": 6.0,
+        "product_name": "Accessory-Power"
+      },
+      {
+        "product_sold": 6.0,
+        "product_name": "Galaxy A36"
+      },
+      {
+        "product_sold": 6.0,
+        "product_name": "IBACI-PJT"
+      },
+      {
+        "product_sold": 5.0,
+        "product_name": "WW6000T"
+      },
+      {
+        "product_sold": 5.0,
+        "product_name": "Réfrigérateur Combiné"
+      },
+      {
+        "product_sold": 5.0,
+        "product_name": "Galaxy Buds3 Pro"
+      },
+      {
+        "product_sold": 5.0,
+        "product_name": "WF6000R"
+      },
+      {
+        "product_sold": 5.0,
+        "product_name": "Galaxy Tab S10 FE"
+      },
+      {
+        "product_sold": 5.0,
+        "product_name": "Galaxy A07"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Galaxy Watch8 Classic Bluetooth"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Galaxy Tab S11 Ultra"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Magnetic Power Ban"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Galaxy Watch Ultra (2025)"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Galaxy Tab S10 FE+"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "MW5500D"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "DV9400B"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Galaxy A26"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Galaxy Z Flip7 Case"
+      },
+      {
+        "product_sold": 4.0,
+        "product_name": "Galaxy Z Fold7 Case"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "WW7000B"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "Galaxy A17"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "Soundbar Q-Series"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "WW6100A"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "RT5300C"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "RF7000AC"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "Seche Linge Pompe Chaleur"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "Music Frame"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "O2 SIM"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "-"
+      },
+      {
+        "product_sold": 3.0,
+        "product_name": "PC Display Odyssey"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "NZ8500BM"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "55 QLED Q7F 4K Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "WA3000J"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Extension de Garantie"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Others-Tablet"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "58 Inch Crystal UHD U8000F 4K Samsung Vision AI Smart TV (2025)‎"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "BRR6000B"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "RS5300T"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "RF6500C"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Galaxy Ring"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "DV5000T"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "WDF900C"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Galaxy Buds3 FE Case"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "PC Display"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Pantalla 55 pulgadas OLED 4K, S90F, Vision AI, Smart TV (2025)"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "WW9000B"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "WW5100A"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Accroche murale"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "WW3000AM"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "RF9000JC"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Vodafone SIM"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Réfrigérateur Multi-portes"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "TV Remote"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "Seche Linge Optimal Dry"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "RT3000TH"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "VS9500AL"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "TV Crystal UHD"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "WW5000T"
+      },
+      {
+        "product_sold": 2.0,
+        "product_name": "MW4000D"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "10.0 kg Top Load Washing Machine with AI Wash and Ecobubble, WA80F10E2L"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy S24 FE"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "75 Crystal UHD U8000F 4K Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Four"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "1.08 m (43) UE84AF Crystal 4K UHD Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "65 The Frame Pro Neo QLED 4K Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Watch8 LTE (40mm)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "AR9500T"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "55 QLED Q8F 4K Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Aspirateur Jet 60 Turbo"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "WH9000D"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "VS9000RL"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "PC Viewfinity"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "WD6000T"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Maandelijks Samsung Care+ met Diefstal & Verlies (tot opzegging)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "85 QLED Q7F 4K Samsung Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "The Freestyle"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "VR5000RM"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "AX3100BM"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "‎65 Inch Crystal UHD U8000F 4K Samsung Vision AI Smart TV (2025)‎"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "NV7000B"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "55 Neo QLED QN1EF 4K  Samsung Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "G81SF"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "‎50 Inch Crystal UHD U8000F 4K Samsung Vision AI Smart TV (2025)‎"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Accessory-Case"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "85 Class Neo QLED QN1EF TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "7.4 Cu.Ft. 5500 Series Electric Dryer (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "ITFIT Rechargeable"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Accessoire BESPOKE"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "RF5000A"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "ITFIT Massage Gun"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "TV The Frame"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "RBF310G_3050"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "83 OLED S90F 4K Samsung Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "WD8000DK"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Buds 3 FE 行李箱造型保護殼"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Pantalla 55 pulgadas OLED 4K, S95F, Vision AI, Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "WA5000C"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Power Charging Kit"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "TV The Frame Pro"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "ITFIT True Wireless Earphones T12"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "RR7000M"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "S39D"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "ITFIT Smart Body Scale"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "DW5500MM"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "RTF380G_3050"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Watch7 44mm (Bluetooth)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "SSD"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Tab S10+ Book Cover Keyboard Slim - AI Key"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "RB5300D"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Tab S10+"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "WD6100B"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "NA3000H"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "NK8000AM"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Three SIM"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Watch7 Bluetooth (40mm)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "DV8600A"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "SD300"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Aspirateur BESPOKE AI"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "DV8000T"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "PC Gaming Odyssey OLED"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "65 OLED S90F 4K Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "AR5000HM"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "RR1500MH"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "55 Customizable Bezel For The Frame TV (2021)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "65 Neo QLED QN90F 4K Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Others-Smart"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Book5 Pro 360"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "MW7000K"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Filtre"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Soundbar S-Series"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "9.0 kg Front Load Washing Machine with SmartThings AI & Superspeed, WW90DG6U24AS"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Soundbar"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "DW7700B"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Q-series Soundbar Q930F (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "9.0 kg Front Load Washing Machine with SmartThings AI & Energy Mode, WW90DG5U24AX"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "DV6000R"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "DV6000T"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Watch8 LTE (44mm)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "8.0 kg Top Load Washing Machine with AI Wash and Ecobubble, WA80F08E2C"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "WA8700K"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "85 Neo QLED QN90F 4K Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Tab A11"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Memory Card"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "60.5 cm (24) HD Monitor with 120 Hz refresh rate, IPS Panel and borderless design"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "75 Neo QLED QN85F 4K Vision AI Smart TV (2025)"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy A16"
+      },
+      {
+        "product_sold": 1.0,
+        "product_name": "Galaxy Tab A9"
+      }
+    ]
+  }
+}

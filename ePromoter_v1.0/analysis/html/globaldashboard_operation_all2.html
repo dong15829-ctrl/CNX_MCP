@@ -1,0 +1,2356 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Operation Summary</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/layout.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/googleChart.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- datepicker -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <!-- //datepicker -->
+
+    <!-- datatable -->
+    <link rel="stylesheet" type="text/css" href="css/datatables.css">
+    <script type="text/javascript" src="js/datatables.js"></script>
+    <!-- //datatable -->
+<script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/loader.js"></script><link id="load-css-0" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/core/tooltip.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="https://www.gstatic.com/charts/51/css/util/util.css"><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js"></script><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js"></script></head>
+<body>
+<div class="body_wrap">
+    <!-- header -->
+    
+
+
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<style>
+    svg > g > g:last-child { pointer-events: none }
+</style>
+
+<div class="gnb_wrap">
+    <div class="gnb_top">
+        <button class="gnb_hbg"></button>
+        <div class="gnb_tit">Operation Summary</div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Region / Local / Site:</div>
+            <ul class="gnb_option_sum">
+                <li class="icon"></li>
+                
+                
+                
+                
+                    
+                    
+                    
+                        <li class="region" id="region">All</li>
+                    
+                    
+                    
+                
+                
+                
+                <li class="country" id="country">All</li>
+                <li class="site" id="site">66</li>
+                <li class="icon_extension"></li>
+            </ul>
+
+            
+            <div class="region_wrap" style="display: none;">
+                <div class="section_wrap">
+                    <div class="section" id="tit_region">
+                        <div class="tit">Region</div>
+                    </div>
+                    <div class="section" id="tit_country">
+                        <div class="tit">Local</div>
+                    </div>
+                    <div class="section" id="tit_site">
+                        <div class="tit">Site</div>
+                    </div>
+                </div>
+                <div class="section_body">
+                    <ul class="txt region" id="txt_region">
+                        
+                        
+                        
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq0" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq0" style="cursor: pointer;">All<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq1" type="checkbox" vpromoter="0" audio="1" sns="0" style="">
+                                            <label for="rhq1" style="cursor: pointer;">AFRICA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq2" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq2" style="cursor: pointer;">Americas<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq3" type="checkbox" vpromoter="1" audio="0" sns="1" style="">
+                                            <label for="rhq3" style="cursor: pointer;">APAC<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq4" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq4" style="cursor: pointer;">EHQ<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq5" type="checkbox" vpromoter="1" audio="1" sns="0" style="">
+                                            <label for="rhq5" style="cursor: pointer;">G.CN<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq6" type="checkbox" vpromoter="0" audio="0" sns="0" style="">
+                                            <label for="rhq6" style="cursor: pointer;">KOREA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq7" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq7" style="cursor: pointer;">MENA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                            
+                            
+                                
+                                
+                                    
+                                    
+                                        <li><input name="region" id="rhq8" type="checkbox" vpromoter="1" audio="1" sns="1" style="">
+                                            <label for="rhq8" style="cursor: pointer;">SWA<span></span></label>
+                                        </li>
+                                    
+                                
+                                
+                            
+                        
+                        
+                        
+                    </ul>
+                    <ul class="txt country" id="txt_country"><li>   <input name="country" id="country0" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country0" style="cursor:pointer" data-id="All">All<span></span></label></li><li>   <input name="country" id="country1" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country1" style="cursor:pointer" data-id="SAMCOL">SAMCOL<span></span></label></li><li>   <input name="country" id="country2" type="checkbox" vpromoter="1" audio="0" sns="0" style="">   <label for="country2" style="cursor:pointer" data-id="SAVINA">SAVINA<span></span></label></li><li>   <input name="country" id="country3" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country3" style="cursor:pointer" data-id="SEAD">SEAD<span></span></label></li><li>   <input name="country" id="country4" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country4" style="cursor:pointer" data-id="SEAS">SEAS<span></span></label></li><li>   <input name="country" id="country5" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country5" style="cursor:pointer" data-id="SEAU">SEAU<span></span></label></li><li>   <input name="country" id="country6" type="checkbox" vpromoter="1" audio="1" sns="0" style="">   <label for="country6" style="cursor:pointer" data-id="SEB">SEB<span></span></label></li><li>   <input name="country" id="country7" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country7" style="cursor:pointer" data-id="SEBN">SEBN<span></span></label></li><li>   <input name="country" id="country8" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country8" style="cursor:pointer" data-id="SEC">SEC<span></span></label></li><li>   <input name="country" id="country9" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country9" style="cursor:pointer" data-id="SECA">SECA<span></span></label></li><li>   <input name="country" id="country10" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country10" style="cursor:pointer" data-id="SECH">SECH<span></span></label></li><li>   <input name="country" id="country11" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country11" style="cursor:pointer" data-id="SECZ">SECZ<span></span></label></li><li>   <input name="country" id="country12" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country12" style="cursor:pointer" data-id="SEDA">SEDA<span></span></label></li><li>   <input name="country" id="country13" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country13" style="cursor:pointer" data-id="SEEG">SEEG<span></span></label></li><li>   <input name="country" id="country14" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country14" style="cursor:pointer" data-id="SEF">SEF<span></span></label></li><li>   <input name="country" id="country15" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country15" style="cursor:pointer" data-id="SEG">SEG<span></span></label></li><li>   <input name="country" id="country16" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country16" style="cursor:pointer" data-id="SEGR">SEGR<span></span></label></li><li>   <input name="country" id="country17" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country17" style="cursor:pointer" data-id="SEH">SEH<span></span></label></li><li>   <input name="country" id="country18" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country18" style="cursor:pointer" data-id="SEHK">SEHK<span></span></label></li><li>   <input name="country" id="country19" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country19" style="cursor:pointer" data-id="SEI">SEI<span></span></label></li><li>   <input name="country" id="country20" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country20" style="cursor:pointer" data-id="SEIB">SEIB<span></span></label></li><li>   <input name="country" id="country21" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country21" style="cursor:pointer" data-id="SEIL">SEIL<span></span></label></li><li>   <input name="country" id="country22" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country22" style="cursor:pointer" data-id="SEIN">SEIN<span></span></label></li><li>   <input name="country" id="country23" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country23" style="cursor:pointer" data-id="SELV">SELV<span></span></label></li><li>   <input name="country" id="country24" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country24" style="cursor:pointer" data-id="SEM">SEM<span></span></label></li><li>   <input name="country" id="country25" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country25" style="cursor:pointer" data-id="SEMAG">SEMAG<span></span></label></li><li>   <input name="country" id="country26" type="checkbox" vpromoter="0" audio="1" sns="1" style="">   <label for="country26" style="cursor:pointer" data-id="SENA">SENA<span></span></label></li><li>   <input name="country" id="country27" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country27" style="cursor:pointer" data-id="SENZ">SENZ<span></span></label></li><li>   <input name="country" id="country28" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country28" style="cursor:pointer" data-id="SEPAK">SEPAK<span></span></label></li><li>   <input name="country" id="country29" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country29" style="cursor:pointer" data-id="SEPCO">SEPCO<span></span></label></li><li>   <input name="country" id="country30" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country30" style="cursor:pointer" data-id="SEPOL">SEPOL<span></span></label></li><li>   <input name="country" id="country31" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country31" style="cursor:pointer" data-id="SEPR">SEPR<span></span></label></li><li>   <input name="country" id="country32" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country32" style="cursor:pointer" data-id="SEROM">SEROM<span></span></label></li><li>   <input name="country" id="country33" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country33" style="cursor:pointer" data-id="SESAR">SESAR<span></span></label></li><li>   <input name="country" id="country34" type="checkbox" vpromoter="1" audio="0" sns="1" style="">   <label for="country34" style="cursor:pointer" data-id="SESP">SESP<span></span></label></li><li>   <input name="country" id="country35" type="checkbox" vpromoter="1" audio="1" sns="0" style="">   <label for="country35" style="cursor:pointer" data-id="SET">SET<span></span></label></li><li>   <input name="country" id="country36" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country36" style="cursor:pointer" data-id="SETK">SETK<span></span></label></li><li>   <input name="country" id="country37" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country37" style="cursor:pointer" data-id="SEUK">SEUK<span></span></label></li><li>   <input name="country" id="country38" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country38" style="cursor:pointer" data-id="SGE">SGE<span></span></label></li><li>   <input name="country" id="country39" type="checkbox" vpromoter="1" audio="1" sns="1" style="">   <label for="country39" style="cursor:pointer" data-id="SIEL">SIEL<span></span></label></li><li>   <input name="country" id="country40" type="checkbox" vpromoter="0" audio="0" sns="1" style="">   <label for="country40" style="cursor:pointer" data-id="SME">SME<span></span></label></li><li>   <input name="country" id="country41" type="checkbox" vpromoter="0" audio="1" sns="0" style="">   <label for="country41" style="cursor:pointer" data-id="SSA">SSA<span></span></label></li><li>   <input name="country" id="country42" type="checkbox" vpromoter="0" audio="0" sns="0" style="">   <label for="country42" style="cursor:pointer" data-id="TSE">TSE<span></span></label></li></ul>
+                    <ul class="txt site" id="txt_site"><li>   <input name="site" id="site0" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site0" style="cursor:pointer" data-id="All"><span class="site_span">All</span><span></span></label></li><li>   <input name="site" id="site1" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site1" style="cursor:pointer" data-id="AE"><span class="site_span">AE</span><span></span></label></li><li>   <input name="site" id="site2" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site2" style="cursor:pointer" data-id="AE_AR"><span class="site_span">AE_AR</span><span></span></label></li><li>   <input name="site" id="site3" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site3" style="cursor:pointer" data-id="AL"><span class="site_span">AL</span><span></span></label></li><li>   <input name="site" id="site4" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label class="has_noti" for="site4" style="cursor:pointer" data-id="AT"><span class="site_span">AT</span><span></span></label></li><li>   <input name="site" id="site5" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label class="has_noti" for="site5" style="cursor:pointer" data-id="AU"><span class="site_span">AU</span><span></span></label></li><li>   <input name="site" id="site6" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site6" style="cursor:pointer" data-id="BA"><span class="site_span">BA</span><span></span></label></li><li>   <input name="site" id="site7" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site7" style="cursor:pointer" data-id="BE"><span class="site_span">BE</span><span></span></label></li><li>   <input name="site" id="site8" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site8" style="cursor:pointer" data-id="BE_FR"><span class="site_span">BE_FR</span><span></span></label></li><li>   <input name="site" id="site9" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site9" style="cursor:pointer" data-id="BG"><span class="site_span">BG</span><span></span></label></li><li>   <input name="site" id="site10" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site10" style="cursor:pointer" data-id="BR"><span class="site_span">BR</span><span></span></label></li><li>   <input name="site" id="site11" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site11" style="cursor:pointer" data-id="CA"><span class="site_span">CA</span><span></span></label></li><li>   <input name="site" id="site12" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site12" style="cursor:pointer" data-id="CA_FR"><span class="site_span">CA_FR</span><span></span></label></li><li>   <input name="site" id="site13" type="checkbox" vpromoter="1" audio="0" sns="0" checked="" style="">   <label for="site13" style="cursor:pointer" data-id="CH"><span class="site_span">CH</span><span></span></label></li><li>   <input name="site" id="site14" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site14" style="cursor:pointer" data-id="CH_FR"><span class="site_span">CH_FR</span><span></span></label></li><li>   <input name="site" id="site15" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site15" style="cursor:pointer" data-id="CL"><span class="site_span">CL</span><span></span></label></li><li>   <input name="site" id="site16" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site16" style="cursor:pointer" data-id="CO"><span class="site_span">CO</span><span></span></label></li><li>   <input name="site" id="site17" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site17" style="cursor:pointer" data-id="CZ"><span class="site_span">CZ</span><span></span></label></li><li>   <input name="site" id="site18" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site18" style="cursor:pointer" data-id="DE"><span class="site_span">DE</span><span></span></label></li><li>   <input name="site" id="site19" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site19" style="cursor:pointer" data-id="DK"><span class="site_span">DK</span><span></span></label></li><li>   <input name="site" id="site20" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site20" style="cursor:pointer" data-id="EE"><span class="site_span">EE</span><span></span></label></li><li>   <input name="site" id="site21" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site21" style="cursor:pointer" data-id="EG"><span class="site_span">EG</span><span></span></label></li><li>   <input name="site" id="site22" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site22" style="cursor:pointer" data-id="ES"><span class="site_span">ES</span><span></span></label></li><li>   <input name="site" id="site23" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site23" style="cursor:pointer" data-id="FI"><span class="site_span">FI</span><span></span></label></li><li>   <input name="site" id="site24" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site24" style="cursor:pointer" data-id="FR"><span class="site_span">FR</span><span></span></label></li><li>   <input name="site" id="site25" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site25" style="cursor:pointer" data-id="GR"><span class="site_span">GR</span><span></span></label></li><li>   <input name="site" id="site26" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site26" style="cursor:pointer" data-id="HK"><span class="site_span">HK</span><span></span></label></li><li>   <input name="site" id="site27" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site27" style="cursor:pointer" data-id="HK_EN"><span class="site_span">HK_EN</span><span></span></label></li><li>   <input name="site" id="site28" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site28" style="cursor:pointer" data-id="HR"><span class="site_span">HR</span><span></span></label></li><li>   <input name="site" id="site29" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site29" style="cursor:pointer" data-id="HU"><span class="site_span">HU</span><span></span></label></li><li>   <input name="site" id="site30" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site30" style="cursor:pointer" data-id="ID"><span class="site_span">ID</span><span></span></label></li><li>   <input name="site" id="site31" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site31" style="cursor:pointer" data-id="IE"><span class="site_span">IE</span><span></span></label></li><li>   <input name="site" id="site32" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site32" style="cursor:pointer" data-id="IL"><span class="site_span">IL</span><span></span></label></li><li>   <input name="site" id="site33" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site33" style="cursor:pointer" data-id="IN"><span class="site_span">IN</span><span></span></label></li><li>   <input name="site" id="site34" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site34" style="cursor:pointer" data-id="IQ_AR"><span class="site_span">IQ_AR</span><span></span></label></li><li>   <input name="site" id="site35" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site35" style="cursor:pointer" data-id="IT"><span class="site_span">IT</span><span></span></label></li><li>   <input name="site" id="site36" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site36" style="cursor:pointer" data-id="KR"><span class="site_span">KR</span><span></span></label></li><li>   <input name="site" id="site37" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site37" style="cursor:pointer" data-id="LEVANT"><span class="site_span">LEVANT</span><span></span></label></li><li>   <input name="site" id="site38" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site38" style="cursor:pointer" data-id="LEVANT_AR"><span class="site_span">LEVANT_AR</span><span></span></label></li><li>   <input name="site" id="site39" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site39" style="cursor:pointer" data-id="LT"><span class="site_span">LT</span><span></span></label></li><li>   <input name="site" id="site40" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site40" style="cursor:pointer" data-id="LV"><span class="site_span">LV</span><span></span></label></li><li>   <input name="site" id="site41" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site41" style="cursor:pointer" data-id="MK"><span class="site_span">MK</span><span></span></label></li><li>   <input name="site" id="site42" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site42" style="cursor:pointer" data-id="MX"><span class="site_span">MX</span><span></span></label></li><li>   <input name="site" id="site43" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site43" style="cursor:pointer" data-id="MY"><span class="site_span">MY</span><span></span></label></li><li>   <input name="site" id="site44" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site44" style="cursor:pointer" data-id="NL"><span class="site_span">NL</span><span></span></label></li><li>   <input name="site" id="site45" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site45" style="cursor:pointer" data-id="NO"><span class="site_span">NO</span><span></span></label></li><li>   <input name="site" id="site46" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site46" style="cursor:pointer" data-id="NZ"><span class="site_span">NZ</span><span></span></label></li><li>   <input name="site" id="site47" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site47" style="cursor:pointer" data-id="N_AFRICA"><span class="site_span">N_AFRICA</span><span></span></label></li><li>   <input name="site" id="site48" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site48" style="cursor:pointer" data-id="PE"><span class="site_span">PE</span><span></span></label></li><li>   <input name="site" id="site49" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site49" style="cursor:pointer" data-id="PH"><span class="site_span">PH</span><span></span></label></li><li>   <input name="site" id="site50" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site50" style="cursor:pointer" data-id="PK"><span class="site_span">PK</span><span></span></label></li><li>   <input name="site" id="site51" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site51" style="cursor:pointer" data-id="PL"><span class="site_span">PL</span><span></span></label></li><li>   <input name="site" id="site52" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site52" style="cursor:pointer" data-id="PT"><span class="site_span">PT</span><span></span></label></li><li>   <input name="site" id="site53" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site53" style="cursor:pointer" data-id="RO"><span class="site_span">RO</span><span></span></label></li><li>   <input name="site" id="site54" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site54" style="cursor:pointer" data-id="RS"><span class="site_span">RS</span><span></span></label></li><li>   <input name="site" id="site55" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site55" style="cursor:pointer" data-id="SA"><span class="site_span">SA</span><span></span></label></li><li>   <input name="site" id="site56" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site56" style="cursor:pointer" data-id="SA_EN"><span class="site_span">SA_EN</span><span></span></label></li><li>   <input name="site" id="site57" type="checkbox" vpromoter="0" audio="1" sns="1" checked="" style="">   <label for="site57" style="cursor:pointer" data-id="SE"><span class="site_span">SE</span><span></span></label></li><li>   <input name="site" id="site58" type="checkbox" vpromoter="1" audio="0" sns="1" checked="" style="">   <label for="site58" style="cursor:pointer" data-id="SG"><span class="site_span">SG</span><span></span></label></li><li>   <input name="site" id="site59" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site59" style="cursor:pointer" data-id="SI"><span class="site_span">SI</span><span></span></label></li><li>   <input name="site" id="site60" type="checkbox" vpromoter="0" audio="0" sns="1" checked="" style="">   <label for="site60" style="cursor:pointer" data-id="SK"><span class="site_span">SK</span><span></span></label></li><li>   <input name="site" id="site61" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site61" style="cursor:pointer" data-id="TH"><span class="site_span">TH</span><span></span></label></li><li>   <input name="site" id="site62" type="checkbox" vpromoter="0" audio="0" sns="0" checked="" style="">   <label for="site62" style="cursor:pointer" data-id="TR"><span class="site_span">TR</span><span></span></label></li><li>   <input name="site" id="site63" type="checkbox" vpromoter="1" audio="1" sns="0" checked="" style="">   <label for="site63" style="cursor:pointer" data-id="TW"><span class="site_span">TW</span><span></span></label></li><li>   <input name="site" id="site64" type="checkbox" vpromoter="1" audio="1" sns="1" checked="" style="">   <label for="site64" style="cursor:pointer" data-id="UK"><span class="site_span">UK</span><span></span></label></li><li>   <input name="site" id="site65" type="checkbox" vpromoter="1" audio="0" sns="0" checked="" style="">   <label for="site65" style="cursor:pointer" data-id="VN"><span class="site_span">VN</span><span></span></label></li><li>   <input name="site" id="site66" type="checkbox" vpromoter="0" audio="1" sns="0" checked="" style="">   <label for="site66" style="cursor:pointer" data-id="ZA"><span class="site_span">ZA</span><span></span></label></li></ul>
+                </div>
+                <div class="gnb_btn_update_wrap">
+                    <button class="gnb_btn_update" onclick="getUpdate()">Update</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gnb_option_wrap">
+            <div class="gnb_option_tit">Date :</div>
+            <ul class="gnb_option_sum_date">
+                <li>
+                    <input class="" type="text" name="daterange" value="" id="date" autocomplete="off" readonly="" style="">
+                </li>
+            </ul>
+        </div>
+        
+        <div class="gnb_option_wrap noti_box">
+            <table class="data_type_table">
+                <tbody>
+                <tr>
+                    
+                        
+                        
+                            <td class="data_type" data-period="day">
+                                Daily
+                            </td>
+                            <td class="data_type" data-period="week">
+                                Weekly
+                            </td>
+                            <td class="data_type" data-period="month">
+                                Monthly
+                            </td>
+                            <td class="data_type" data-period="quarter">
+                                Quarterly
+                            </td>
+                        
+                    
+                </tr>
+                </tbody>
+            </table>
+            <span class="box_inner" style="position:absolute;top:12px;right: 0;">
+                    <span class="icon_noti">
+                        <div class="noti_tooltip lefty caution">
+                            When click Daily/Weekly/Monthly/Quarterly, the indicators on the top line and the ranking tables will shown as average of selected data period.
+                        </div>
+                    </span>
+                </span>
+        </div>
+        <div class="gnb_option_wrap">
+            <div class="gnb_user_wrap">
+                <div class="icon_user"></div>
+                <!-- 20200624 ë¡ê·¸ìì -->
+                <div class="wrap_pop_user_pwd">
+                    <span class="pop_user_id">
+                        
+                        dongil.kim
+                        
+                    </span>
+                    <button class="btn_chg_pwd">Change Password</button>
+                    <div class="wrap_chg_pwd">
+                        <input type="password" placeholder="Current Password" class="chg_pwd_input" id="current_pw" autocomplete="off" style="">
+                        <input type="password" placeholder="New Password" class="chg_pwd_input" id="new_pw" autocomplete="off" style="">
+                        <input type="password" placeholder="Re-type New Password" class="chg_pwd_input" id="renew_pw" autocomplete="off" style="">
+                        <button class="btn_user_confirm" id="passwordChange">Confirm</button>
+                    </div>
+                    <span class="pop_border_bottom"></span>
+                    <button class="btn_logout">Log out</button>
+                </div>
+                <!-- 20200624 ë¡ê·¸ìì -->
+                <div class="user_name">
+                    
+                    dongil.kim
+                </div>
+            </div>
+            
+                <button class="btn_down_load" id="headerDownload">Download</button>
+            
+            <div class="last_update">Last Update : <span>2026.02.08</span>  </div>
+        </div>
+    </div>
+
+</div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
+<script>
+    $(document).ready(function(){
+
+        $(".has_noti").hover(function(e) {
+            $("#tit_site").append("<div class='test'>In case there are more than one Site in the selected Local, sales related indicators and graphs will be shown as a combined result of each site.</div>");
+            $(".test").css("display","block");
+            //   var pageX = $(this).offset().left -40;
+            //   var pageY = $(this).offset().top - 60;
+            //   $(".test").css({left : pageX + "px", top : pageY + "px"});
+        }, function() {
+            $(".test").remove();
+        });
+
+        function getCookie(name) {
+            var parts = document.cookie.split(name + "=");
+            if (parts.length == 2) return parts.pop().split(";").shift();
+        }
+
+        function expireCookie(name) {
+            document.cookie = name + "="+encodeURIComponent("FALSE")+"; expires=";
+        }
+
+        var downloadTimer;
+
+        function blockUI() {
+            expireCookie("fileDownloadToken");
+            document.getElementById("loading-page").style.display ="block";
+            downloadTimer = setInterval(function() {
+                var token = getCookie("fileDownloadToken");
+                if(token == "TRUE") {
+                    unBlockUI();
+                }
+            }, 1000 );
+        }
+
+        function unBlockUI() {
+            document.getElementById("loading-page").style.display ="none";
+            clearInterval(downloadTimer);
+        }
+
+        $('#headerDownload').off();
+        $('#headerDownload').on('click',function(){
+            blockUI();
+            var param = getParam();
+            param.type ='0';
+            param.product_division = 'ALL';
+            let form = document.createElement('form');
+            form.setAttribute("method","POST");
+            form.setAttribute("action","/globaldashboard/CommonExcelDownload");
+            let hiddenField = document.createElement('input');
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", "data");
+            hiddenField.setAttribute("value", JSON.stringify(param));
+
+            form.appendChild(hiddenField);
+            document.body.appendChild(form);
+
+            form.submit();
+        });
+
+        $('#passwordChange').off();
+        $('#passwordChange').on('click',function(){
+            let current_pw = $('#current_pw').val();
+            let new_pw = $('#new_pw').val();
+            let renew_pw = $('#renew_pw').val();
+
+            if(current_pw == ''){
+                alert('Please input Current Password.');
+                return;
+            }
+
+            if(new_pw == ''){
+                alert('Please input New Password.');
+                return;
+            }
+
+            if(renew_pw == ''){
+                alert('Please input Re-type New Password.');
+                return;
+            }
+
+            if(new_pw != renew_pw){
+                alert('New Password and Re-type New Password do not Macth.');
+                return;
+            }
+
+            let param = {
+                current_pw : md5(current_pw),
+                new_pw : new_pw
+            }
+
+            ajax.post("/changePassword",param,"",function(respon){
+                if(respon.ok){
+                    let data = respon.data;
+                    if(data == 'Failed'){
+                        alert('Current Password do not Macth');
+                        return;
+                    }else{
+                        alert('Your password has been changed. Please log in again.');
+                        location.href = '/globaldashboard';
+                    }
+                }
+            })
+
+        });
+
+        $('.btn_logout').off();
+        $('.btn_logout').on('click',function(){
+            if(confirm('Are you sure you want to log out?')){
+                location.href = '/globaldashboard';
+            }
+        })
+    })
+
+    function getUpdate(){
+        if(document.querySelectorAll('input[name="site"]:checked').length == 0){
+            alert('Please Select Site');
+            return;
+        }
+
+        getCurrentSite();
+    }
+    function getCurrentSite() {
+        document.querySelector('.gnb_selected_info').innerHTML = '';
+
+        let html = '';
+        let site = '';
+
+        if(document.getElementById('region').innerText == 'All' && document.getElementById('country').innerText == 'All' && document.getElementById('site').innerText == 'All') {
+            document.querySelector('.gnb_selected_info').innerHTML = '<span class="icon_noti selected">';
+        } else {
+
+            if (document.querySelectorAll('input[name="site"]:checked').length != 0) {
+                document.querySelectorAll('input[name="site"]:checked').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="site"]:checked').length - 1 == i) {
+                            site += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                        }
+                    } else if (document.querySelectorAll('input[name="site"]:checked').length == 1) {
+                        if (e.nextSibling.nextSibling.innerText == 'All') {
+                            document.querySelectorAll('input[name="site"]').forEach((e, i) => {
+                                if (e.nextSibling.nextSibling.innerText != 'All') {
+                                    if (document.querySelectorAll('input[name="site"]').length - 1 == i) {
+                                        site += e.nextSibling.nextSibling.dataset.id;
+                                    } else {
+                                        site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                                    }
+                                }
+                            })
+                        }
+                    }
+                })
+            } else {
+                document.querySelectorAll('input[name="site"]').forEach((e, i) => {
+                    if (e.nextSibling.nextSibling.innerText != 'All') {
+                        if (document.querySelectorAll('input[name="site"]').length - 1 == i) {
+                            site += e.nextSibling.nextSibling.dataset.id;
+                        } else {
+                            site += e.nextSibling.nextSibling.dataset.id + ' / ';
+                        }
+                    }
+                })
+            }
+
+            html += 'Now : <span class="site_val">' + site + '</span>';
+            html += '<span class="icon_noti selected">...';
+            html += '<div class="noti_tooltip center">' + site + '</div></span></div>';
+
+            document.querySelector('.gnb_selected_info').innerHTML = html;
+
+            document.querySelector('.icon_noti.selected').style.display = site.length > 120 ? 'inline' : 'none';
+        }
+
+        getData();
+    }
+
+    function getVpromoterCount() {
+        let vPromoterSite = 0;
+        let audioSite = 0;
+        let snsSite = 0;
+
+        // ì íëê² ìì ê²½ì°
+        if(document.querySelectorAll('input[name="site"]:checked').length == 0) {
+            // vPromoter êµ­ê° ì¹´ì´í
+            document.querySelectorAll('input[name="site"]').forEach(e=> {
+                if(e.nextSibling.nextSibling.innerText != 'All') {
+                    if(e.getAttribute('vpromoter') == 1) {
+                        vPromoterSite++;
+                    }
+                    if(e.getAttribute('audio') == 1) {
+                        audioSite++;
+                    }
+                    if(e.getAttribute('sns') == 1) {
+                        snsSite++;
+                    }
+                }
+            });
+        } else if(document.querySelectorAll('input[name="site"]:checked').length == 1) {
+            if(document.querySelector('input[name="site"]:checked').nextSibling.nextSibling.innerText == 'All') {
+                document.querySelectorAll('input[name="site"]').forEach(e=> {
+                    if(e.nextSibling.nextSibling.innerText != 'All') {
+                        if(e.getAttribute('vpromoter') == 1) {
+                            vPromoterSite++;
+                        }
+                        if(e.getAttribute('audio') == 1) {
+                            audioSite++;
+                        }
+                        if(e.getAttribute('sns') == 1) {
+                            snsSite++;
+                        }
+                    }
+                });
+            } else {
+                vPromoterSite = document.querySelector('input[name="site"]:checked').getAttribute('vpromoter');
+                audioSite = document.querySelector('input[name="site"]:checked').getAttribute('audio');
+                snsSite = document.querySelector('input[name="site"]:checked').getAttribute('sns');
+            }
+        } else {
+            document.querySelectorAll('input[name="site"]:checked').forEach(e=> {
+                if(e.getAttribute('vpromoter') == 1) {
+                    vPromoterSite++;
+                }
+                if(e.getAttribute('audio') == 1) {
+                    audioSite++;
+                }
+                if(e.getAttribute('sns') == 1) {
+                    snsSite++;
+                }
+            })
+        }
+
+        // vpromoter, audio, sns ì¡´ì¬ ì¬ë¶ì ë°ë¼ tab show & hide
+            document.querySelectorAll('.gnb_new_tab li')[1].style.display = vPromoterSite != 0 ? 'block' : 'none';
+            document.querySelectorAll('.gnb_new_tab li')[2].style.display = audioSite != 0 ? 'block' : 'none';
+            document.querySelectorAll('.gnb_new_tab li')[3].style.display = snsSite != 0 ? 'block' : 'none';
+    }
+
+    let lastUpdated = '2026-02-08';
+    let currentRegionArray = [];
+    let currentLocalArray = [];
+    let currentSiteArray = [];
+    let vLocalCount = '';
+    let vSiteCount = '';
+    let currentRetailerRegionArray =[];
+    let currentRetailerLocalArray =[];
+    let currentRetailerSiteArray=[];
+
+    let sessionRegionArray;
+    let sessionLocalArray;
+    let sessionSiteArray;
+
+    let first = true;
+
+    
+
+    
+
+
+    
+
+
+    
+
+    
+
+    
+
+    document.querySelectorAll('.last_update span')[0].innerHTML = lastUpdated.replaceAll('-', '.');
+
+    
+
+    let host = 'server';
+</script>
+
+
+
+    
+    <div class="gnb_new_tab_wrap">
+        <ul class="gnb_new_tab">
+            <li data-id="con0" onclick="javascript:moveOperationAll()" class="on">All</li>
+            <li data-id="con2" onclick="moveOperationD2C()" style="pointer-events: auto;">D2C</li>
+            <li data-id="con3" onclick="moveOperationEPP()" style="pointer-events: auto;">EPP</li>
+            <li data-id="con4" onclick="moveOperationSMB()" class="disabled" style="pointer-events: none; color: lightgray;">SMB</li>
+            <div class="gnb_selected_info os">Now : <span class="site_val">AE / AE_AR / AL / AT / AU / BA / BE / BE_FR / BG / BR / CA / CA_FR / CH / CH_FR / CL / CO / CZ / DE / DK / EE / EG / ES / FI / FR / GR / HK / HK_EN / HR / HU / ID / IE / IL / IN / IQ_AR / IT / KR / LEVANT / LEVANT_AR / LT / LV / MK / MX / MY / NL / NO / NZ / N_AFRICA / PE / PH / PK / PL / PT / RO / RS / SA / SA_EN / SE / SG / SI / SK / TH / TR / TW / UK / VN / ZA</span><span class="icon_noti selected" style="display: inline;">...<div class="noti_tooltip center">AE / AE_AR / AL / AT / AU / BA / BE / BE_FR / BG / BR / CA / CA_FR / CH / CH_FR / CL / CO / CZ / DE / DK / EE / EG / ES / FI / FR / GR / HK / HK_EN / HR / HU / ID / IE / IL / IN / IQ_AR / IT / KR / LEVANT / LEVANT_AR / LT / LV / MK / MX / MY / NL / NO / NZ / N_AFRICA / PE / PH / PK / PL / PT / RO / RS / SA / SA_EN / SE / SG / SI / SK / TH / TR / TW / UK / VN / ZA</div></span></div>
+            <div class="btn_down_kpi on">
+                <!-- Operation Matrix <span>(by Subsidiary, by Channel)</span> -->
+                <button class="btn_down_load_type2" onclick="ExcelDownloadNew('1')">Download</button>
+                
+            </div>
+        </ul>
+
+        <div id="con0" class="conbox on">
+            <div class="content_wrap">
+                <!-- 2023-07-17 add area-->
+                <div class="chatType_wrap">
+                    Chat Type :
+                    <select title="chatType select" id="select_chat">
+                        <option value="Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,">Select All</option>
+                        <option value="Text Chat" style="color: rgb(0, 0, 0);">Text Chat</option>
+                        <option value="Video Call" disabled="disabled" style="color: rgb(220, 220, 220);">Video Call</option>
+                        <option value="Audio Call" disabled="disabled" style="color: rgb(220, 220, 220);">Audio Call</option>
+                        <option value="Whatsapp" style="color: rgb(0, 0, 0);">Whatsapp</option>
+                        <option value="Facebook" style="color: rgb(0, 0, 0);">Facebook</option>
+                        <option value="Twitter" disabled="disabled" style="color: rgb(220, 220, 220);">Twitter</option>
+                        <option value="Instagram" disabled="disabled" style="color: rgb(220, 220, 220);">Instagram</option>
+                    </select>
+                </div>
+                <ul class="summary_wrap new">
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Traffic (D2C)
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip lefty" style="margin-left: -70px;">
+                                        S.com Shopper Visit
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">0</div>
+                        <div class="summary_neutral">0.0%</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>3,227,737</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>0</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            Total Chat
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip lefty">
+                                        Total numbers that clicks to start the chat bot journey
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">30.9K</div>
+                        <div class="summary_down">37.9%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>49,845</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>30,933</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            <span class="chat_call">Offered Chat</span>
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip lefty">
+                                        Number of  cases assigned to e-Promoter at e-Store
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">5.3K</div>
+                        <div class="summary_down">52.4%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>11,128</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>5,296</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            <span class="chat_call">Handled Chat</span>
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip lefty wide">
+                                        Number of chat cases handled by e-Promoter
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">5.2K</div>
+                        <div class="summary_down">52.4%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>10,976</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>5,224</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            <span class="chat_call">Missed Chat</span>
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Number of chats not handled by e-Promoter
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">72</div>
+                        <div class="summary_down_type2">52.6%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>152</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>72</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            <span class="chat_call">Missed Chat Rate</span>
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                         Missed Chat Rate =  Missed Chat / Offered Chat
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">1.4%</div>
+                        <div class="summary_neutral">0.0%p</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>1.4%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>1.4%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            <span class="chat_call">Visit to Chat Rate (D2C)</span>
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Visit to Chat Rate = Promoter Offered Chat / S.com Shopper Visit
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">0.00%</div>
+                        <div class="summary_down">0.34%</div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>0.34%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>0.00%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li" style="display:none">
+                        <div class="summary_tit">
+                            IRT
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Initial response time = The time a customer service rep responds to the customer - The time a customer submits a case
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">40.4<span>sec</span></div>
+                        <div class="summary_down_type2">2.7 </div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>43.1</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>40.4</p>
+                        </div>
+                    </li>
+                    <li class="summary_li" style="display:none">
+                        <div class="summary_tit">
+                            ART
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        ART = Response Time taken for agents to reply back to customers questions / Total Handled Chat Number
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">64.5<span>sec</span></div>
+                        <div class="summary_down_type2">1.4 </div>
+                        <div class="summary_box down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>65.9</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>64.5</p>
+                        </div>
+                    </li>
+                    <li class="summary_li" style="display:none">
+                        <div class="summary_tit">
+                            AHT
+                            <span class="icon_noti">
+                                    <div class="noti_tooltip center">
+                                        Actual duration of the chat (with stopwatch)
+                                    </div>
+                                </span>
+                        </div>
+                        <div class="summary_big">484.0<span>sec</span></div>
+                        <div class="summary_up_type2">113.4 </div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>370.6</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>484.0</p>
+                        </div>
+                    </li>
+                    <li class="summary_li">
+                        <div class="summary_tit">
+                            CSAT
+                            <span class="icon_noti">
+                                <div class="noti_tooltip center">
+                                    CSAT = (number of CSAT scored 3,4, 5) / (Total number of CSAT scored 1, 2, 3, 4, 5)
+                                </div>
+                            </span>
+                        </div>
+                        <div class="summary_big">87.4%</div>
+                        <div class="summary_up">0.1%p</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>87.3%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>87.4%</p>
+                        </div>
+                    </li>
+                    <li class="summary_li" style="display:none">
+                        <div class="summary_tit v2">
+                            H/C
+                        </div>
+                        <div class="summary_circle">289</div>
+                        <div class="summary_box v2 down">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>540</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>289</p>
+                        </div>
+                    </li>
+                    
+                    <li class="summary_li" style="padding-left: 0px;margin-top: 40px; width: 210px;">
+                        <div class="summary_tit">
+                            Traffic (All)
+                            <span class="icon_noti">
+                                <div class="noti_tooltip center">
+                                    Traffic (All) = Total Traffic (B2C + EPP + SMB), [WEB + APP] Shopper visit
+                                </div>
+                            </span>
+                        </div>
+                        <div class="summary_big">0</div>
+                        <div class="summary_neutral">0.0%</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>4,181,802</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>0</p>
+                        </div>
+                    </li>
+                    <li class="summary_li" style="border: 0px">
+                        <div class="summary_tit">
+                        </div>
+                    </li>
+                    <li class="summary_li" style="border: 0px">
+                        <div class="summary_tit">
+                        </div>
+                    </li>
+                    <li class="summary_li" style="border: 0px">
+                        <div class="summary_tit">
+                        </div>
+                    </li>
+                    <li class="summary_li" style="border: 0px">
+                        <div class="summary_tit">
+                        </div>
+                    </li>
+                    <li class="summary_li" style="border: 0px">
+                        <div class="summary_tit">
+                        </div>
+                    </li>
+                    <li class="summary_li" style="margin-top: 40px">
+                        <div class="summary_tit">
+                            Visit to Chat Rate (All)
+                            <span class="icon_noti">
+                                <div class="noti_tooltip center">
+                                    Visit to Chat Rate (All) = Total offered chat / Traffic (All)(B2C + EPP + SMB), [WEB + APP] Shopper visit
+
+                                </div>
+                            </span>
+                        </div>
+                        <div class="summary_big">0.00%</div>
+                        <div class="summary_down">0.27%</div>
+                        <div class="summary_box up">
+                            <p class="prev"><span class="prev_date">01/08 - 01/08</span>0.27%</p>
+                            <p class="current"><span class="current_date">02/08 - 02/08</span>0.00%</p>
+                        </div>
+                    </li>
+                    
+                </ul>
+
+                <div class="layout_full">
+                    <div class="half_1st sum mg_r20 layout_border" style="padding-bottom:32px!important">
+                        <div class="content_tit">Visit to Chat Ratio / Missed Chat
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('2')">Download</button>
+                        </div>
+                        <div class="graph_indicators clickable" id="traffic_con">
+                            <span class="ep_01">Visit to Chat Ratio</span>
+                            <span class="ep_08">Missed Chat</span>
+                        </div>
+                        <script>
+                            $(function() {
+                                $('#traffic_con .ep_01').click( function() {
+                                    $('#traffic_con .ep_01').toggleClass('dis');
+                                });
+
+                                $('#traffic_con .ep_08').click( function() {
+                                    $('#traffic_con .ep_08').toggleClass('dis');
+                                });
+                            });
+
+                        </script>
+                        <div class="graph_indicators percent3">
+                            <span><br>Missed Chat</span>
+                            <span>Visit to Chat<br>Ratio (%)</span>
+                        </div>
+                        <div class="graph_wrap" id="traffic_line"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 385px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="385" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_0"><clipPath id="_ABSTRACT_RENDERER_ID_1"><rect x="62" y="52" width="697" height="281"></rect></clipPath></defs><rect x="0" y="0" width="820" height="385" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="52" width="697" height="281" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/operation_all2#_ABSTRACT_RENDERER_ID_1)"><g><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="52" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="297" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="262" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="227" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="192" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="157" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="122" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="87" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="52" width="697" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="62" y="309" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="285" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="262" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="239" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="215" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="192" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="169" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="145" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="122" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="99" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect><rect x="62" y="75" width="697" height="1" stroke="none" stroke-width="0" fill="#ebebeb"></rect></g><g><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect><rect x="62" y="332" width="697" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g><g><g></g><g></g></g></g><g><circle cx="410.5" cy="332.5" r="3.5" stroke="none" stroke-width="0" fill="#4771d3"></circle><circle cx="410.5" cy="80.5" r="3.5" stroke="none" stroke-width="0" fill="#d0e0fc"></circle></g><g><g><text text-anchor="middle" x="410.5" y="350.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02.08</text></g><g><text text-anchor="end" x="50" y="336.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="end" x="50" y="266.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">20</text></g><g><text text-anchor="end" x="50" y="196.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">40</text></g><g><text text-anchor="end" x="50" y="126.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">60</text></g><g><text text-anchor="end" x="50" y="56.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">80</text></g><g><text text-anchor="start" x="771" y="336.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0</text></g><g><text text-anchor="start" x="771" y="290.0333" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">0.5</text></g><g><text text-anchor="start" x="771" y="243.36669999999998" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">1</text></g><g><text text-anchor="start" x="771" y="196.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">1.5</text></g><g><text text-anchor="start" x="771" y="150.0333" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">2</text></g><g><text text-anchor="start" x="771" y="103.36670000000001" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">2.5</text></g><g><text text-anchor="start" x="771" y="56.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">3</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>Visit to Chat Rate</th><th>Missed Chat</th></tr></thead><tbody><tr><td>02.08</td><td>0%</td><td>72</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 395px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">3</div><div></div></div></div>
+                    </div>
+                    <div class="half_2nd sum layout_border chart_pb">
+                        <div class="content_tit">Operation Key Metrics</div>
+                        <div class="graph_indicators percent4">
+                            <span class="ep_01"></span>
+                            <span class="ep_08"></span>
+                        </div>
+                        <div class="funnel_table_wrap rank_list visible_on">
+                            <div id="rank_type5_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table rank_type4 dataTable" aria-describedby="rank_type5_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px;">Rank</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 189.625px;">Country</th><th id="offerd_chat_column" class="sorting sorting_desc" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Offered Chat: activate to sort column ascending" style="width: 189.625px;" aria-sort="descending">Offered Chat</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Handled Chat: activate to sort column ascending" style="width: 189.625px;">Handled Chat</th><th class="sorting" tabindex="0" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 189.625px;">Missed Chat Rate</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 336px; width: 100%;"><table class="f_t_table rank_type4 dataTable" id="rank_type5" aria-describedby="rank_type5_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Rank" style="width: 61.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Country</div></th><th id="offerd_chat_column" class="sorting sorting_asc" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Offered Chat: activate to sort column descending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Offered Chat</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Handled Chat: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Handled Chat</div></th><th class="sorting" aria-controls="rank_type5" rowspan="1" colspan="1" aria-label="Missed Chat Rate: activate to sort column ascending" style="width: 189.625px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Missed Chat Rate</div></th></tr>
+                                </thead><tfoot id="traffic_total_table"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 61.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">5,296</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">5,224</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 189.625px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">1.4%</div></th></tr></tfoot>
+                                
+                                <tbody id="traffic_table"><tr class="odd"><td class="">1</td><td>Korea</td><td data-order="1039" class="sorting_1">1.0K</td><td data-order="1039">1.0K</td><td>0%</td></tr><tr class="even"><td class="">2</td><td>India</td><td data-order="817" class="sorting_1">817</td><td data-order="817">817</td><td>0%</td></tr><tr class="odd"><td class="">3</td><td>UK</td><td data-order="582" class="sorting_1">582</td><td data-order="582">582</td><td>0%</td></tr><tr class="even"><td class="">4</td><td>Mexico</td><td data-order="574" class="sorting_1">574</td><td data-order="574">574</td><td>0%</td></tr><tr class="odd"><td class="">5</td><td>Canada</td><td data-order="238" class="sorting_1">238</td><td data-order="224">224</td><td>5.9%</td></tr><tr class="even"><td class="">6</td><td>Turkey</td><td data-order="224" class="sorting_1">224</td><td data-order="221">221</td><td>1.3%</td></tr><tr class="odd"><td class="">7</td><td>Peru</td><td data-order="214" class="sorting_1">214</td><td data-order="214">214</td><td>0%</td></tr><tr class="even"><td class="">8</td><td>Colombia</td><td data-order="200" class="sorting_1">200</td><td data-order="180">180</td><td>10%</td></tr><tr class="odd"><td class="">9</td><td>Egypt</td><td data-order="163" class="sorting_1">163</td><td data-order="163">163</td><td>0%</td></tr><tr class="even"><td class="">10</td><td>Australia</td><td data-order="152" class="sorting_1">152</td><td data-order="152">152</td><td>0%</td></tr><tr class="odd"><td class="">11</td><td>Germany</td><td data-order="148" class="sorting_1">148</td><td data-order="148">148</td><td>0%</td></tr><tr class="even"><td class="">12</td><td>Philippines</td><td data-order="111" class="sorting_1">111</td><td data-order="109">109</td><td>1.8%</td></tr><tr class="odd"><td class="">13</td><td>Thailand</td><td data-order="84" class="sorting_1">84</td><td data-order="82">82</td><td>2.4%</td></tr><tr class="even"><td class="">14</td><td>UAE</td><td data-order="72" class="sorting_1">72</td><td data-order="72">72</td><td>0%</td></tr><tr class="odd"><td class="">15</td><td>Indonesia</td><td data-order="70" class="sorting_1">70</td><td data-order="69">69</td><td>1.4%</td></tr><tr class="even"><td class="">16</td><td>Levant</td><td data-order="53" class="sorting_1">53</td><td data-order="53">53</td><td>0%</td></tr><tr class="odd"><td class="">17</td><td>Singapore</td><td data-order="53" class="sorting_1">53</td><td data-order="53">53</td><td>0%</td></tr><tr class="even"><td class="">18</td><td>Italy</td><td data-order="52" class="sorting_1">52</td><td data-order="52">52</td><td>0%</td></tr><tr class="odd"><td class="">19</td><td>Saudi Arabia</td><td data-order="46" class="sorting_1">46</td><td data-order="46">46</td><td>0%</td></tr><tr class="even"><td class="">20</td><td>Pakistan</td><td data-order="46" class="sorting_1">46</td><td data-order="28">28</td><td>39.1%</td></tr><tr class="odd"><td class="">21</td><td>Malaysia</td><td data-order="45" class="sorting_1">45</td><td data-order="44">44</td><td>2.2%</td></tr><tr class="even"><td class="">22</td><td>New Zealand</td><td data-order="43" class="sorting_1">43</td><td data-order="43">43</td><td>0%</td></tr><tr class="odd"><td class="">23</td><td>North Africa</td><td data-order="40" class="sorting_1">40</td><td data-order="40">40</td><td>0%</td></tr><tr class="even"><td class="">24</td><td>Israel</td><td data-order="34" class="sorting_1">34</td><td data-order="34">34</td><td>0%</td></tr><tr class="odd"><td class="">25</td><td>Taiwan</td><td data-order="32" class="sorting_1">32</td><td data-order="32">32</td><td>0%</td></tr><tr class="even"><td class="">26</td><td>Chile</td><td data-order="29" class="sorting_1">29</td><td data-order="29">29</td><td>0%</td></tr><tr class="odd"><td class="">27</td><td>Netherlands</td><td data-order="28" class="sorting_1">28</td><td data-order="28">28</td><td>0%</td></tr><tr class="even"><td class="">28</td><td>Hungary</td><td data-order="24" class="sorting_1">24</td><td data-order="24">24</td><td>0%</td></tr><tr class="odd"><td class="">29</td><td>Hong Kong</td><td data-order="23" class="sorting_1">23</td><td data-order="19">19</td><td>17.4%</td></tr><tr class="even"><td class="">30</td><td>Sweden</td><td data-order="15" class="sorting_1">15</td><td data-order="13">13</td><td>13.3%</td></tr><tr class="odd"><td class="">31</td><td>Slovakia</td><td data-order="13" class="sorting_1">13</td><td data-order="13">13</td><td>0%</td></tr><tr class="even"><td class="">32</td><td>Belgium</td><td data-order="9" class="sorting_1">9</td><td data-order="8">8</td><td>11.1%</td></tr><tr class="odd"><td class="">33</td><td>Czech</td><td data-order="9" class="sorting_1">9</td><td data-order="9">9</td><td>0%</td></tr><tr class="even"><td class="">34</td><td>Iraq</td><td data-order="5" class="sorting_1">5</td><td data-order="5">5</td><td>0%</td></tr><tr class="odd"><td class="">35</td><td>Norway</td><td data-order="4" class="sorting_1">4</td><td data-order="3">3</td><td>25%</td></tr><tr class="even"><td class="">36</td><td>Denmark</td><td data-order="3" class="sorting_1">3</td><td data-order="2">2</td><td>33.3%</td></tr><tr class="odd"><td class="">37</td><td>Latvia</td><td data-order="1" class="sorting_1">1</td><td data-order="0">0</td><td>100%</td></tr><tr class="even"><td class="">38</td><td>Lithuania</td><td data-order="1" class="sorting_1">1</td><td data-order="0">0</td><td>100%</td></tr><tr class="odd"><td class="">39</td><td>Poland</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">40</td><td>Bulgaria</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">41</td><td>Albania</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">42</td><td>Vietnam</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">43</td><td>Switzerland</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">44</td><td>South Africa</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">45</td><td>Estonia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">46</td><td>Romania</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">47</td><td>Brazil</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">48</td><td>Austria</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">49</td><td>Macedonia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">50</td><td>France</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">51</td><td>Slovenia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">52</td><td>Serbia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">53</td><td>Croatia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">54</td><td>Portugal</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">55</td><td>Bosnia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">56</td><td>Ireland</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">57</td><td>Greece</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="even"><td class="">58</td><td>Spain</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr><tr class="odd"><td class="">59</td><td>Finland</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td><td>0%</td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table rank_type4 dataTable" aria-describedby="rank_type5_info" style="margin-left: 0px; width: 820px;"><tfoot id="traffic_total_table"><tr><th rowspan="1" colspan="1" style="width: 61.5px;">-</th><th rowspan="1" colspan="1" style="width: 189.625px;">Total</th><th rowspan="1" colspan="1" style="width: 189.625px;">5,296</th><th rowspan="1" colspan="1" style="width: 189.625px;">5,224</th><th rowspan="1" colspan="1" style="width: 189.625px;">1.4%</th></tr></tfoot></table></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout_full">
+                    <div class="half_1st sum mg_r20 layout_border">
+
+                        <div class="content_tit">Chat Usage(%)
+                            <!-- <span class="icon_noti">
+                                <div class="noti_tooltip lefty caution">
+                                    Sales Revenue of e-Promoter
+                                </div>
+                            </span> -->
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('3')">Download</button>
+                        </div>
+                        <!-- <div class="content_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div> -->
+
+                        <div class="graph_indicators clickable" id="active_con">
+                            <!-- <span class="ep_03">Visit to Promoter Chat Rate  </span> -->
+                            <span class="ep_01">Proactive Chat Usage(%) </span>
+                            <span class="ep_08">Reactive Chat Usage(%)</span>
+
+                        </div>
+                        <script>
+                            $(function() {
+                                $('#active_con .ep_01').click( function() {
+                                    $('#active_con .ep_01').toggleClass('dis');
+                                });
+
+                                $('#active_con .ep_08').click( function() {
+                                    $('#active_con .ep_08').toggleClass('dis');
+                                });
+
+
+                            });
+
+                        </script>
+                        <div class="graph_wrap" id="active_line" style="padding-top: 3%;"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 820px; height: 247px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="820" height="247" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_2"><clipPath id="_ABSTRACT_RENDERER_ID_3"><rect x="62" y="37" width="697" height="173"></rect></clipPath></defs><rect x="0" y="0" width="820" height="247" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><rect x="62" y="37" width="697" height="173" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://www.globalsess.com/globaldashboard/operation_all2#_ABSTRACT_RENDERER_ID_3)"><g><rect x="62" y="209" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="175" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="140" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="106" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="71" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="37" width="697" height="1" stroke="none" stroke-width="0" fill="#e0e0e0"></rect><rect x="62" y="192" width="697" height="1" stroke="none" stroke-width="0" fill="#f3f3f3"></rect><rect x="62" y="157" width="697" height="1" stroke="none" stroke-width="0" fill="#f3f3f3"></rect><rect x="62" y="123" width="697" height="1" stroke="none" stroke-width="0" fill="#f3f3f3"></rect><rect x="62" y="89" width="697" height="1" stroke="none" stroke-width="0" fill="#f3f3f3"></rect><rect x="62" y="54" width="697" height="1" stroke="none" stroke-width="0" fill="#f3f3f3"></rect></g><g><g></g><g></g></g></g><g><circle cx="410.5" cy="61.23599999999999" r="3.5" stroke="none" stroke-width="0" fill="#4771d3"></circle><circle cx="410.5" cy="189.37599999999998" r="3.5" stroke="none" stroke-width="0" fill="#d0e0fc"></circle></g><g><g><text text-anchor="middle" x="410.5" y="227.2" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">02.08</text></g><g><text text-anchor="end" x="50" y="213.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">220</text></g><g><text text-anchor="end" x="50" y="179.29999999999998" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">240</text></g><g><text text-anchor="end" x="50" y="144.89999999999998" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">260</text></g><g><text text-anchor="end" x="50" y="110.5" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">280</text></g><g><text text-anchor="end" x="50" y="76.10000000000001" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">300</text></g><g><text text-anchor="end" x="50" y="41.7" font-family="Arial" font-size="12" stroke="none" stroke-width="0" fill="#9b9b9b">320</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>Proactive Chat Usage(%)</th><th>Reactive Chat Usage(%)</th></tr></thead><tbody><tr><td>02.08</td><td>306.2%</td><td>231.7%</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 257px; left: 830px; white-space: nowrap; font-family: Arial; font-size: 12px;">320</div><div></div></div></div>
+                    </div>
+                    <div class="half_2nd sum layout_border pie" style="padding-bottom:29px!important">
+
+                        <div class="content_tit">Video / Text / Audio / SNS Portion(%) - Offered Chat
+                            <!-- <span class="icon_noti">
+                                <div class="noti_tooltip lefty caution">
+                                    Total Number of Offered Chats
+                                </div>
+                            </span> -->
+                            <button class="btn_down_load_type2" onclick="ExcelDownload('4')">Download</button>
+                        </div>
+                        <!-- <div class="content_txt">List of not found page URLs and occurrences for selected date(s).</div> -->
+                        <div class="graph_wrap" id="sns_line"><div style="position: relative;"><div dir="ltr" style="position: relative; width: 228px; height: 228px;"><div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"><svg width="228" height="228" aria-label="A chart." style="overflow: hidden;"><defs id="_ABSTRACT_RENDERER_ID_4"></defs><rect x="0" y="0" width="228" height="228" stroke="none" stroke-width="0" fill="#ffffff"></rect><g><path d="M115,117L21.063078466434504,82.70926112203533A100,100,0,0,1,115,17L115,117A0,0,0,0,0,115,117" stroke="#ffffff" stroke-width="1" fill="#9b9b9b"></path><text text-anchor="start" x="56.077517961505265" y="66.2570346293914" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#ffffff">19.4%</text></g><g><path d="M115,117L115,17A100,100,0,1,1,21.063078466434504,82.70926112203533L115,117A0,0,0,1,0,115,117" stroke="#ffffff" stroke-width="1" fill="#d0e0fc"></path><text text-anchor="start" x="133.9224820384947" y="177.5429653706086" font-family="Arial" font-size="14" stroke="none" stroke-width="0" fill="#ffffff">80.6%</text></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>date</th><th>Rate</th></tr></thead><tbody><tr><td>Video</td><td>0</td></tr><tr><td>Text</td><td>3,276</td></tr><tr><td>Audio</td><td>0</td></tr><tr><td>SNS</td><td>790</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 238px; left: 238px; white-space: nowrap; font-family: Arial; font-size: 14px;">19.4%</div><div></div></div></div>
+                        <div class="graph_indicators" id="sns_con">
+                            <span class="ep_01">Video</span>
+                            <span class="ep_08">Text </span>
+                            <span class="ep_02">Audio</span>
+                            <span class="ep_06">SNS</span>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="layout_full">
+                    <div class="half_1st sum mg_r20 layout_border chart_pb">
+                        <div class="content_tit">Chat Transfers</div>
+                        <div class="graph_indicators percent4">
+                            <span class="ep_01"></span>
+                            <span class="ep_08"></span>
+                        </div>
+                        <div class="funnel_table_wrap rank_list visible_on">
+                            <div id="rank_type6_wrapper" class="dataTables_wrapper"><div class="dataTables_scroll"><div class="dataTables_scrollHead" style="overflow: hidden; position: relative; border: 0px; width: 100%;"><div class="dataTables_scrollHeadInner" style="box-sizing: content-box; width: 820px; padding-right: 0px;"><table class="f_t_table rank_type3 dataTable" aria-describedby="rank_type6_info" style="margin-left: 0px; width: 820px;"><thead>
+                                <tr><th class="sorting_disabled" tabindex="0" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="Rank" style="width: 62.5938px;">Rank</th><th class="sorting" tabindex="0" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 252.453px;">Country</th><th id="cs_column" class="sorting sorting_desc" tabindex="0" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="CS to ePromoter Chat: activate to sort column ascending" style="width: 252.453px;" aria-sort="descending">CS to ePromoter Chat</th><th class="sorting" tabindex="0" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="ePromoter to CS Chat: activate to sort column ascending" style="width: 252.5px;">ePromoter to CS Chat</th></tr>
+                                </thead></table></div></div><div class="dataTables_scrollBody" style="position: relative; overflow: auto; max-height: 336px; width: 100%;"><table class="f_t_table rank_type3 dataTable" id="rank_type6" aria-describedby="rank_type6_info" style="width: 100%;"><thead>
+                                <tr style="height: 0px;"><th class="sorting_disabled" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="Rank" style="width: 62.5938px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Rank</div></th><th class="sorting" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="Country: activate to sort column ascending" style="width: 252.453px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Country</div></th><th id="cs_column" class="sorting sorting_asc" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="CS to ePromoter Chat: activate to sort column descending" style="width: 252.453px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" aria-sort="ascending"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">CS to ePromoter Chat</div></th><th class="sorting" aria-controls="rank_type6" rowspan="1" colspan="1" aria-label="ePromoter to CS Chat: activate to sort column ascending" style="width: 252.5px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">ePromoter to CS Chat</div></th></tr>
+                                </thead><tfoot id="transfer_total"><tr style="height: 0px;"><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 62.5938px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">-</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 252.453px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">Total</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 252.453px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">255</div></th><th rowspan="1" colspan="1" style="padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px; width: 252.5px;"><div class="dataTables_sizing" style="height: 0px; overflow: hidden;">18</div></th></tr></tfoot>
+                                
+                                <tbody id="transfer_tbody"><tr class="odd"><td class="">1</td><td>UK</td><td data-order="241" class="sorting_1">241</td><td data-order="6">6</td></tr><tr class="even"><td class="">2</td><td>Mexico</td><td data-order="8" class="sorting_1">8</td><td data-order="0">0</td></tr><tr class="odd"><td class="">3</td><td>Canada</td><td data-order="4" class="sorting_1">4</td><td data-order="0">0</td></tr><tr class="even"><td class="">4</td><td>Taiwan</td><td data-order="2" class="sorting_1">2</td><td data-order="0">0</td></tr><tr class="odd"><td class="">5</td><td>Chile</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">6</td><td>Philippines</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">7</td><td>Belgium</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">8</td><td>New Zealand</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">9</td><td>Lithuania</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">10</td><td>Israel</td><td data-order="0" class="sorting_1">0</td><td data-order="3">3</td></tr><tr class="odd"><td class="">11</td><td>Hungary</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">12</td><td>Switzerland</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">13</td><td>Finland</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">14</td><td>Slovakia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">15</td><td>Croatia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">16</td><td>Portugal</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">17</td><td>Brazil</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">18</td><td>Norway</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">19</td><td>Albania</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">20</td><td>Malaysia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">21</td><td>Korea</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">22</td><td>Indonesia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">23</td><td>Thailand</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">24</td><td>Germany</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">25</td><td>South Africa</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">26</td><td>Denmark</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">27</td><td>Saudi Arabia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">28</td><td>Peru</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">29</td><td>Austria</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">30</td><td>Netherlands</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">31</td><td>Levant</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">32</td><td>Ireland</td><td data-order="0" class="sorting_1">0</td><td data-order="6">6</td></tr><tr class="odd"><td class="">33</td><td>UAE</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">34</td><td>Hong Kong</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">35</td><td>Sweden</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">36</td><td>Estonia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">37</td><td>Singapore</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">38</td><td>Colombia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">39</td><td>Poland</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">40</td><td>Bosnia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">41</td><td>North Africa</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">42</td><td>Macedonia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">43</td><td>Italy</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">44</td><td>Vietnam</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">45</td><td>India</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">46</td><td>France</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">47</td><td>Slovenia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">48</td><td>Czech</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">49</td><td>Romania</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">50</td><td>Bulgaria</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">51</td><td>Pakistan</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">52</td><td>Australia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">53</td><td>Latvia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">54</td><td>Iraq</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">55</td><td>Turkey</td><td data-order="0" class="sorting_1">0</td><td data-order="3">3</td></tr><tr class="even"><td class="">56</td><td>Greece</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">57</td><td>Spain</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="even"><td class="">58</td><td>Egypt</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr><tr class="odd"><td class="">59</td><td>Serbia</td><td data-order="0" class="sorting_1">0</td><td data-order="0">0</td></tr></tbody>
+                                
+                            </table></div><div class="dataTables_scrollFoot" style="overflow: hidden; border: 0px; width: 100%;"><div class="dataTables_scrollFootInner" style="width: 820px; padding-right: 0px;"><table class="f_t_table rank_type3 dataTable" aria-describedby="rank_type6_info" style="margin-left: 0px; width: 820px;"><tfoot id="transfer_total"><tr><th rowspan="1" colspan="1" style="width: 62.5938px;">-</th><th rowspan="1" colspan="1" style="width: 252.453px;">Total</th><th rowspan="1" colspan="1" style="width: 252.453px;">255</th><th rowspan="1" colspan="1" style="width: 252.5px;">18</th></tr></tfoot></table></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layout_full" style="display:none">
+                    <div class="half_1st sum mg_r20 layout_border">
+                        <div class="content_tit">Offered / Handled / Missed Chat Rate
+                            <!-- <span class="icon_noti">
+                                <div class="noti_tooltip lefty">
+                                    Customer Satisfaction Rate
+                                </div>
+                            </span> -->
+                            <button class="btn_down_load_type2" onclick="ExcelDownloadNew('2')">Download</button>
+                        </div>
+                        <div class="graph_indicators">
+                            <span class="ep_03">Missed Chat Rate  </span>
+                            <span class="ep_01 square">Offered Chat  </span>
+                            <span class="ep_08 square">Handled Chat</span>
+                        </div>
+                        <div class="graph_indicators percent3">
+                            <span>Missed Chat Rate (%)</span>
+                            <span>Offered Chat &amp; <br>Handled Chat</span>
+                        </div>
+                        <div class="graph_wrap" id="chat_combo">
+                            <img src="img/epromoter/new/graph_37.jpg">
+                            <!-- <img src="img/epromoter/h_graph_06.jpg"> -->
+                        </div>
+                    </div>
+                    <div class="half_2nd sum layout_border ">
+                        <div class="content_tit">CSAT
+                            <button class="btn_down_load_type2" onclick="ExcelDownloadNew('3')">Download</button>
+                        </div>
+                        <!-- <div class="content_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div> -->
+                        <div class="graph_indicators">
+                            <!-- <span class="ep_03">PreSales CSAT Score</span> -->
+                            <span class="ep_03">CSAT</span>
+                            <span class="ep_01 square">Answered  </span>
+                            <span class="ep_08 square">Satisfied </span>
+                        </div>
+                        <div class="graph_indicators percent3">
+                            <span>CSAT(%)</span>
+                            <span>Answered &amp;<br> Satisfied</span>
+                        </div>
+                        <div class="graph_wrap" id="csat_combo">
+                            <img src="img/epromoter/h_graph_06.jpg">
+                        </div>
+                    </div>
+                </div>
+                <div class="layout_full" style="display:none">
+                    <div class="sum layout_border">
+                        <div class="content_tit">IRT / ART / Handled Chat
+                            <button class="btn_down_load_type2" onclick="ExcelDownloadNew('4')">Download</button>
+                        </div>
+                        <!-- <div class="content_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div> -->
+                        <div class="graph_indicators">
+                            <!-- <span class="ep_03">PreSales CSAT Score</span> -->
+                            <span class="ep_03">IRT   </span>
+                            <span class="ep_10">ART  </span>
+                            <span class="ep_01 square">Handled Chat</span>
+                        </div>
+                        <div class="graph_indicators percent3">
+                            <span>IRT &amp; ART (%)</span>
+                            <span>Handled Chat</span>
+                        </div>
+                        <div class="graph_wrap" id="irt_combo">
+                            <img src="img/epromoter/h_graph_06.jpg">
+                        </div>
+                    </div>
+                </div>
+                <!-- 2ë¨ -->
+                <div class="layout_full" style="display:none">
+                    <div class="sum layout_border">
+                        <div class="content_tit">AHT
+                            <button class="btn_down_load_type2" onclick="ExcelDownloadNew('4')">Download</button>
+                        </div>
+                        <!-- <div class="content_txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor</div> -->
+                        <div class="graph_indicators">
+                            <!-- <span class="ep_03">PreSales CSAT Score</span> -->
+                            <span class="ep_03">AHT</span>
+                            <span class="ep_01 square">Answered Call </span>
+                        </div>
+                        <div class="graph_indicators percent3">
+                            <span>AHT(%)</span>
+                            <span>Answered Call </span>
+                        </div>
+                        <div class="graph_wrap" id="AHT_combo">
+                            <img src="img/epromoter/h_graph_06.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- lnb -->
+    
+
+
+
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<div class="gnb_extension">
+    <div class="lnb_dimed"></div>
+    <div class="lnb_wrap">
+        <div class="lnb_top_wrap">
+            <button class="lnb_close"></button>
+            <div class="lnb_logo">
+                <img src="img/new_logo.jpg">
+            </div>
+        </div>
+        <ul class="lnb_menu">
+            <li class="home">
+                <a href="javascript:moveMain()">Home</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveExecutive()">Executive Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveDevision()">Division Summary</a>
+            </li>
+            
+            
+                <li class="menu_li">
+            
+                <a href="javascript:moveSalesAll()">Sales Summary</a>
+            </li>
+            
+            <li class="menu_li active">
+                
+            
+                <a href="javascript:moveOperationAll()">Operation Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveShopappOperation()">ShopApp Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveBotjourneyOperation()">Bot / AI Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveEpp_operation()">EPP / SMB Summary</a>
+            </li>
+            
+            
+                
+                
+            
+                
+                
+            
+            
+                
+                
+                    <li class="menu_li">
+                
+                <a href="javascript:moveRetailer_operation()">Retailer Summary</a>
+                </li>
+            
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:moveMxFlagshipSummary()">MX Flagship Summary</a>
+            </li>
+            
+                
+            <li class="menu_li">
+                
+                <a href="javascript:movePerformanceSummary()">Performance Summary</a>
+            </li>
+            <li class="menu_li">
+                <a href="javascript:fileDown()">Manual &amp; FAQ Download</a>
+            </li>
+            
+        </ul>
+    </div>
+
+</div>
+
+
+
+    
+    <div id="loading-page" style="display: none;">
+        <div class="loading">
+            <div class="circle1 circle"></div>
+            <div class="circle2 circle"></div>
+            <div class="circle3 circle"></div>
+            <div class="circle4 circle"></div>
+            <div class="circle5 circle"></div>
+            <div class="circle6 circle"></div>
+            <div class="circle7 circle"></div>
+            <div class="circle8 circle"></div>
+            <div class="circle9 circle"></div>
+            <div class="circle10 circle"></div>
+            <div class="circle11 circle"></div>
+            <div class="circle12 circle"></div>
+        </div>
+    </div>
+
+    
+
+
+
+<script>
+    let title = 'Operation Summary';
+    let graphSalesData;
+    let graphData = [];
+    let startDate = '2026-02-08';
+    let endDate = '2026-02-08';
+    let defaultDate = '2026-02-08';
+    let order_line_data;
+    let dateMod;
+    let portionData =[];
+    let get15Graph = [];
+
+    let selectAllNum = [0, 1, 2, 3, 4, 5, 6, 10,12,13,14,15,16,17,18];
+    let textChatNum = [2, 3, 4, 5, 7, 8, 10, 11];
+    let videoCallNum = [2, 3, 4, 5, 9, 10, 11];
+    let audioCallNum = [2, 3, 4, 5, 9, 10, 11];
+    let snsNum = [2, 3, 4, 5, 7, 8 ,10, 11];
+
+    let selectAllChartNum = [0, 1, 2];
+    let textChatChartNum = [3, 4];
+    let videoCallChartNum = [3, 5];
+    let audioCallChartNum = [3, 5];
+    let snsChartNum = [3,4];
+
+    let selectAllInfoNum = [0, 1, 2, 3, 4, 5, 6, 10, 11, 12];
+    let textChatInfoNum = [5, 7, 8];
+    let videoCallInfoNum = [5, 9];
+    let audioCallInfoNum = [5, 9];
+    let snsInfoNum = [5, 7, 8];
+
+
+    var lineChartOption2 = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 247,
+
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "70%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+        },
+        vAxis: {
+            textStyle: {
+                color: '#9b9b9b',
+            },
+            gridlines: {count: 6, color: "#e0e0e0"},
+            format: 'short',
+
+            baselineColor: "#e0e0e0",
+        },
+        explorer: {
+            axis: 'vertical',
+            maxZoomIn: .5,
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        series: getLineColorTable()
+    };
+    var ComboChartOption = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 200,
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "70%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                maxValue : 10,
+                format: 'short',
+                gridlines: {count: 1},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                // maxValue : 100,
+                format: 'short'
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'bars',
+        series: {
+            0: { pointSize: 5, targetAxisIndex:0,type:'line', color: '#ff6857'},
+            1: { pointSize: 5,targetAxisIndex:1, color: '#4771d3'},
+            2: {pointSize :5, targetAxisIndex:1,color: '#d0e0fc'}
+        },
+
+    };
+    var ComboChartOption2 = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 385,
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "73%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                // maxValue : 3,
+                format: 'short',
+                gridlines: {count: 2},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                maxValue : 3,
+                format: 'short',
+                gridlines: {count: 2}
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'line',
+        series: getLineColorTable2(),
+
+    };
+
+    var ComboChartOption3 = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+
+        height: 200,
+        fontSize: 12,
+        chartArea: {
+            width: "95%",
+            height: "73%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+
+                format: 'short',
+                gridlines: {count: 6, color: "#e0e0e0"},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                format: 'short'
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'bars',
+        series: {
+            0: { pointSize: 5,  targetAxisIndex:0,type:'line', color: '#ff6857'},
+            1: { pointSize: 5, targetAxisIndex:0,type:'line', color: '#d0e0fc'},
+            2: {pointSize :5,  targetAxisIndex:1,color: '#4771d3'}
+        },
+
+    };
+
+    var ComboChartOption4 = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 200,
+        fontSize: 12,
+        chartArea: {
+            width: "95%",
+            height: "73%",
+            // left: "3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                format: 'short',
+                gridlines: {count: 1},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                // maxValue : 100,
+                format: 'short'
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'bars',
+        series: {
+            0: { pointSize: 5,targetAxisIndex:0, type:'line', color: '#ff6857'},
+            1: { pointSize: 5,targetAxisIndex:1,color: '#4771d3'},
+
+        },
+
+    };
+
+    var ComboChartOptionCsat = {
+        legend : {
+            position: 'none'
+        },
+        // curveType: 'function',
+        height: 200,
+        fontSize: 12,
+        chartArea: {
+            width: "85%",
+            height: "70%",
+            // left: 3%",
+            // right: "3%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+
+        },
+        vAxes: {
+            0:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                maxValue : 100,
+                format: 'short',
+                gridlines: {count: 1},
+            },
+            1:{
+                textStyle: { color: '#9b9b9b' },
+                minValue: 0,
+                // maxValue : 100,
+                format: 'short'
+            }
+
+        },
+
+        annotations: {
+            alwaysOutside: false,
+            textStyle : {
+                fontSize : 10
+            },
+        },
+        seriesType : 'bars',
+        series: {
+            0: { pointSize: 5,targetAxisIndex:0, type:'line', color: '#ff6857'},
+            1: { pointSize: 5,targetAxisIndex:1,color: '#4771d3'},
+            2: {pointSize :5, targetAxisIndex:1,color: '#d0e0fc'}
+
+        },
+
+    };
+
+    var PieChartOptions3 = {
+        legend: {
+            position: 'none',
+            // alignment: 'center',
+            // textStyle: {
+            //     color: '#9b9b9b',
+            //     fontSize: 16
+            // }
+        },
+        height: '228',
+        width : '228',
+        lineWidth: '228',
+        fontName: defaultSetting.fontName,
+        fontSize: defaultSetting.fontSize,
+        chartArea: {
+            width: "88%",
+            height: "88%",
+            top: "7%"
+        },
+        hAxis: {
+            textStyle: {
+                color: '#9b9b9b'
+            },
+        },
+        slices: {
+            0: {color: '#0484D8'},
+            1: {color: '#d0e0fc'},
+            2: {color: '#ffb121'},
+            3: {color: '#9B9B9B'}
+        }
+    };
+
+    function getBaseData(){
+        document.getElementById("loading-page").style.display ="block";
+        document.querySelector(".region_wrap").style.display ="none";
+
+        pendingCheck(function(){
+            getHybrisType(function(result){
+                getChangeHybrisTab(result);
+                getChangeChatTypeSelectOption('ALL', result);
+                getOperationData();
+            })
+        });
+
+    }
+
+    $("#select_chat").change(ev=>{
+        let selectedChat = $("#select_chat option:selected").text();
+        let summaryLi = $('.summary_li');
+        let layoutFull = $('.layout_full');
+        let iconNoti = $('.content_wrap .icon_noti');
+        summaryLi.each((i, v)=>{
+            $(v).hide();
+        });
+        layoutFull.each((i, v)=>{
+            $(v).hide();
+        });
+        iconNoti.each((i, v)=>{
+            $(v).hide();
+        });
+        let selectedNums;
+        let selectedChartNums;
+        let selectedInfoNums;
+        if(selectedChat == 'Select All'){
+            selectedNums = selectAllNum;
+            selectedChartNums = selectAllChartNum;
+            selectedInfoNums = selectAllInfoNum;
+        } else if(selectedChat == 'Text Chat'){
+            selectedNums = textChatNum;
+            selectedChartNums = textChatChartNum;
+            selectedInfoNums = textChatInfoNum;
+        } else if(selectedChat =="Video Call"){
+            selectedNums = videoCallNum;
+            selectedChartNums = videoCallChartNum;
+            selectedInfoNums = videoCallInfoNum;
+        } else if(selectedChat =="Audio Call"){
+            selectedNums = audioCallNum;
+            selectedChartNums = audioCallChartNum;
+            selectedInfoNums = audioCallInfoNum;
+        } else if(selectedChat =="Whatsapp" || selectedChat =="Facebook" || selectedChat =="Twitter" || selectedChat =="Instagram"){
+            selectedNums = snsNum;
+            selectedChartNums = snsChartNum;
+            selectedInfoNums = snsInfoNum;
+        }
+        selectedNums.forEach((v, i)=>{
+            summaryLi.eq(v).show();
+        });
+        selectedChartNums.forEach((v, i)=>{
+            layoutFull.eq(v).show();
+        });
+        selectedInfoNums.forEach((v, i)=>{
+            iconNoti.eq(v).show();
+        });
+
+        let chatCallTag = $('.chat_call');
+        let offeredHandledMissedGraphTag = $('.layout_full').eq(3).find('.half_1st');
+
+        if(selectedChat =='Video Call' || selectedChat == 'Audio Call'){
+            chatCallTag.each((i,v)=>{
+               $(v).text($(v).text().replaceAll('Chat','Call'));
+            });
+            offeredHandledMissedGraphTag.html(offeredHandledMissedGraphTag.html().replaceAll('Chat','Call'))
+        } else {
+            chatCallTag.each((i,v)=>{
+                $(v).text($(v).text().replaceAll('Call','Chat'));
+            });
+            offeredHandledMissedGraphTag.html(offeredHandledMissedGraphTag.html().replaceAll('Call','Chat'))
+        }
+
+        changeInformation();
+        getBaseData();
+    });
+
+    function getOperationData() {
+        let param = getParam();
+
+        param.hybris_epp_category = 'ALL';
+
+        param.chat = $("#select_chat option:selected").val();
+        param.chat_missed = $("#select_chat option:selected").val() + ',total';
+
+        ajax.post("/operationSummary/ajax/getOperationDataNew", param, "", function (respon) {
+
+            if (respon.ok) {
+
+                graphSalesData = respon.data;
+
+                let current_date = respon.data.current_date;
+                let prev_date = respon.data.prev_date;
+
+                let actualData = graphSalesData.operationAllData;
+
+                dateMod = getDateMod();
+
+                graphSalesData["traffic_c"] = (actualData.traffic_c / dateMod).toFixed(0);
+                graphSalesData["traffic_type_c"] = actualData.traffic_type_c == undefined? 0 : (actualData.traffic_type_c / dateMod).toFixed(0);
+
+                graphSalesData["total_offered_volume_c"] = (actualData.total_offered_volume_c / dateMod).toFixed(0);
+                graphSalesData["offered_volume_c"] = (actualData.offered_volume_c / dateMod).toFixed(0);
+                graphSalesData["chat_handled_c"] = (actualData.chat_handled_c / dateMod).toFixed(0);
+                graphSalesData["missed_c"] = (actualData.missed_chat_c / dateMod).toFixed(0);
+                graphSalesData["missed_rate_c"] = actualData.missed_offerd_volume_c == 0 ? 0 : Number(((actualData.missed_chat_c / actualData.missed_offerd_volume_c) * 100).toFixed(1));
+                graphSalesData["visit_chat_rate_c"] = actualData.traffic_c / dateMod == 0 ? 0 : Number(((actualData.offered_volume_c / dateMod) / (actualData.traffic_c / dateMod) * 100).toFixed(4));
+                graphSalesData["visit_chat_rate_type_c"] = actualData.traffic_type_c == undefined? 0 : actualData.traffic_type_c / dateMod == 0 ? 0 : Number(((actualData.offered_volume_c / dateMod) / (actualData.traffic_type_c / dateMod) * 100).toFixed(4));
+                graphSalesData["irt_c"] = actualData.time_count_irt_c / dateMod == 0 ? 0 : Number(((actualData.wait_time_seconds_irt_c / dateMod) / (actualData.time_count_irt_c / dateMod)).toFixed(1));
+                graphSalesData["art_c"] = actualData.art_time_count_c / dateMod == 0 ? 0 : Number(((actualData.average_response_time_c / dateMod) / (actualData.art_time_count_c / dateMod)).toFixed(1));
+                graphSalesData["aht_c"] = actualData.time_count_c / dateMod == 0 ? 0 : Number(((actualData.aht_c / dateMod) / (actualData.time_count_c / dateMod)).toFixed(1));
+                graphSalesData["csat_c"] = actualData.survey_count_c / dateMod == 0 ? 0 : Number(((actualData.csat_numerator_c / dateMod) / (actualData.survey_count_c / dateMod) * 100).toFixed(1));
+                graphSalesData["head_count_c"] = actualData.head_count_c;
+                //console.log(actualData);
+                // graphSalesData["transfer_cs_promoter_c"] = (actualData.transfer_cs_promoter_c / dateMod).toFixed(0);
+                // graphSalesData["transfer_promoter_cs_c"] = (actualData.transfer_promoter_cs_c / dateMod).toFixed(0);
+
+                graphSalesData["traffic_p"] = (actualData.traffic_p / dateMod).toFixed(0);
+                graphSalesData["traffic_type_p"] = actualData.traffic_type_p == undefined? 0 :(actualData.traffic_type_p / dateMod).toFixed(0);
+                graphSalesData["total_offered_volume_p"] = (actualData.total_offered_volume_p / dateMod).toFixed(0);
+                graphSalesData["offered_volume_p"] = (actualData.offered_volume_p / dateMod).toFixed(0);
+                graphSalesData["chat_handled_p"] = (actualData.chat_handled_p / dateMod).toFixed(0);
+                graphSalesData["missed_p"] = (actualData.missed_chat_p / dateMod).toFixed(0);
+                graphSalesData["missed_rate_p"] = actualData.missed_offerd_volume_p == 0 ? 0 : Number(((actualData.missed_chat_p / actualData.missed_offerd_volume_p) * 100).toFixed(1));
+                graphSalesData["visit_chat_rate_p"] = actualData.traffic_p / dateMod == 0 ? 0 : Number(((actualData.offered_volume_p / dateMod) / (actualData.traffic_p / dateMod) * 100).toFixed(4));
+                graphSalesData["visit_chat_rate_type_p"] = actualData.traffic_type_p == undefined? 0 : actualData.traffic_type_p / dateMod == 0 ? 0 : Number(((actualData.offered_volume_p / dateMod) / (actualData.traffic_type_p / dateMod) * 100).toFixed(4));
+                graphSalesData["irt_p"] = actualData.time_count_irt_p / dateMod == 0 ? 0 : Number(((actualData.wait_time_seconds_irt_p / dateMod) / (actualData.time_count_irt_p / dateMod)).toFixed(1));
+                graphSalesData["art_p"] = actualData.art_time_count_p / dateMod == 0 ? 0 : Number(((actualData.average_response_time_p / dateMod) / (actualData.art_time_count_p / dateMod)).toFixed(1));
+                graphSalesData["aht_p"] = actualData.time_count_p / dateMod == 0 ? 0 : Number(((actualData.aht_p / dateMod) / (actualData.time_count_p / dateMod)).toFixed(1));
+                graphSalesData["csat_p"] = actualData.survey_count_p / dateMod == 0 ? 0 : Number(((actualData.csat_numerator_p / dateMod) / (actualData.survey_count_p / dateMod) * 100).toFixed(1));
+                graphSalesData["head_count_p"] = actualData.head_count_p;
+
+                // graphSalesData["transfer_cs_promoter_p"] = (actualData.transfer_cs_promoter_p / dateMod).toFixed(0);
+                // graphSalesData["transfer_promoter_cs_p"] = (actualData.transfer_promoter_cs_p / dateMod).toFixed(0) ;
+
+
+                let summary_big = document.getElementsByClassName("summary_big");
+                let s_pipe_blank = document.querySelectorAll(".summary_li .summary_circle");
+
+                summary_big[0].innerText = shortCutNum(graphSalesData["traffic_c"]);
+                summary_big[1].innerText = shortCutNum(graphSalesData["total_offered_volume_c"]);
+                summary_big[2].innerText = shortCutNum(graphSalesData["offered_volume_c"]);
+                summary_big[3].innerText = shortCutNum(graphSalesData["chat_handled_c"]);
+                summary_big[4].innerText = shortCutNum(graphSalesData["missed_c"]);
+                summary_big[5].innerText = graphSalesData["missed_rate_c"].toFixed(1) + '%';
+                summary_big[6].innerText = graphSalesData["visit_chat_rate_c"].toFixed(2) + '%';
+                summary_big[7].innerHTML = graphSalesData["irt_c"].toFixed(1) + '<span>sec</span>';
+                summary_big[8].innerHTML = graphSalesData["art_c"].toFixed(1) + '<span>sec</span>';
+                summary_big[9].innerHTML = graphSalesData["aht_c"].toFixed(1) + '<span>sec</span>';
+                summary_big[10].innerText = graphSalesData["csat_c"].toFixed(1) + '%';
+                // LINE:: ì´ë¶ë¶
+                summary_big[11].innerText = shortCutNum(graphSalesData["traffic_type_c"]);
+                summary_big[12].innerText = graphSalesData["visit_chat_rate_type_c"].toFixed(2) + '%';
+
+
+                s_pipe_blank[0].innerText = setComma(graphSalesData["head_count_c"]);
+
+
+                let traffic_growth = graphSalesData["traffic_p"] == 0 ? 0 : ((graphSalesData["traffic_c"] - graphSalesData["traffic_p"]) / graphSalesData["traffic_p"]) * 100;
+                let traffic_all_growth = graphSalesData["traffic_type_p"] == undefined ? 0 :graphSalesData["traffic_type_p"] == 0 ? 0 : ((graphSalesData["traffic_type_c"] - graphSalesData["traffic_type_p"]) / graphSalesData["traffic_type_p"]) * 100;
+                let total_offered_volume_growth = graphSalesData["total_offered_volume_p"] == 0 ? 0 : ((graphSalesData["total_offered_volume_c"] - graphSalesData["total_offered_volume_p"]) / graphSalesData["total_offered_volume_p"]) * 100;
+                let offered_volume_growth = graphSalesData["offered_volume_p"] == 0 ? 0 : (graphSalesData["offered_volume_c"] / graphSalesData["offered_volume_p"] - 1) * 100;
+                let chat_handled_growth = graphSalesData["chat_handled_p"] == 0 ? 0 : (graphSalesData["chat_handled_c"] / graphSalesData["chat_handled_p"] - 1) * 100;
+                let missed_growth = graphSalesData["missed_p"] == 0 ? 0 : (graphSalesData["missed_c"] / graphSalesData["missed_p"] - 1) * 100;
+                let missed_rate_growth = graphSalesData["missed_rate_c"] - graphSalesData["missed_rate_p"];
+                let visit_chat_rate_growth = graphSalesData["visit_chat_rate_c"] - graphSalesData["visit_chat_rate_p"];
+                let visit_chat_rate_all_growth = graphSalesData["visit_chat_rate_type_c"] - graphSalesData["visit_chat_rate_type_p"];
+                let irt_growth = graphSalesData["irt_c"] - graphSalesData["irt_p"];
+                let art_growth = graphSalesData["art_c"] - graphSalesData["art_p"];
+                let aht_growth = graphSalesData["aht_c"] - graphSalesData["aht_p"];
+                let csat_growth = graphSalesData["csat_c"] - graphSalesData["csat_p"];
+                let head_count_growth = graphSalesData["head_count_p"] == 0 ? 0 : (graphSalesData["head_count_c"] / graphSalesData["head_count_p"] - 1) * 100;
+                //let cs_promoter_growth = graphSalesData["transfer_cs_promoter_p"] == 0 ? 0 : ((graphSalesData["transfer_cs_promoter_c"] -graphSalesData["transfer_cs_promoter_p"]) / graphSalesData["transfer_cs_promoter_p"])*100;
+                //let promoter_cs_growth = graphSalesData["transfer_promoter_cs_p"] == 0 ? 0 : ((graphSalesData["transfer_promoter_cs_c"] - graphSalesData["transfer_promoter_cs_p"]) / graphSalesData["transfer_promoter_cs_p"])*100;
+
+                getGrwoth(0, traffic_growth);
+                getGrwoth(1, total_offered_volume_growth);
+                getGrwoth(2, offered_volume_growth);
+                getGrwoth(3, chat_handled_growth);
+                getGrwoth4(4, missed_growth, graphSalesData["missed_p"]);
+                getGrwoth4(5, missed_rate_growth, graphSalesData["missed_rate_p"], "%p");
+                getGrwoth3(6, visit_chat_rate_growth, graphSalesData["visit_chat_rate_p"], null, 2);
+                getGrwoth4(7, irt_growth, graphSalesData["irt_p"], " ");
+                getGrwoth4(8, art_growth, graphSalesData["art_p"], " ");
+                getGrwoth4(9, aht_growth, graphSalesData["aht_p"], " ");
+                getGrwoth3(10, csat_growth, graphSalesData["csat_p"], "%p");
+                getArrow(11, head_count_growth);
+                getGrwoth(12, traffic_all_growth);
+                getGrwoth3(18, visit_chat_rate_all_growth, graphSalesData["visit_chat_rate_type_p"], null, 2);
+
+                let prev_value = document.querySelectorAll(".summary_box p.prev");
+
+                prev_value[0].innerHTML = '<span class="prev_date"></span>' + setComma(graphSalesData["traffic_p"]);
+                prev_value[1].innerHTML = '<span class="prev_date"></span>' + setComma(graphSalesData["total_offered_volume_p"]);
+                prev_value[2].innerHTML = '<span class="prev_date"></span>' + setComma(graphSalesData["offered_volume_p"]);
+                prev_value[3].innerHTML = '<span class="prev_date"></span>' + setComma(graphSalesData["chat_handled_p"]);
+                prev_value[4].innerHTML = '<span class="prev_date"></span>' + setComma(graphSalesData["missed_p"]);
+                prev_value[5].innerHTML = '<span class="prev_date"></span>' + graphSalesData["missed_rate_p"].toFixed(1) + '%';
+                prev_value[6].innerHTML = '<span class="prev_date"></span>' + graphSalesData["visit_chat_rate_p"].toFixed(2) + '%';
+                prev_value[7].innerHTML = '<span class="prev_date"></span>' + graphSalesData["irt_p"].toFixed(1) + '';
+                prev_value[8].innerHTML = '<span class="prev_date"></span>' + graphSalesData["art_p"].toFixed(1) + '';
+                prev_value[9].innerHTML = '<span class="prev_date"></span>' + graphSalesData["aht_p"].toFixed(1) + '';
+                prev_value[10].innerHTML = '<span class="prev_date"></span>' + graphSalesData["csat_p"].toFixed(1) + '%';
+                prev_value[11].innerHTML = '<span class="prev_date"></span>' + setComma(graphSalesData["head_count_p"]);
+                prev_value[12].innerHTML = '<span class="prev_date"></span>' + setComma(graphSalesData["traffic_type_p"]);
+                prev_value[13].innerHTML = '<span class="prev_date"></span>' + graphSalesData["visit_chat_rate_type_p"].toFixed(2) + '%';
+
+
+                // prev_value[6].innerHTML ='<span class="prev_date"></span>' +  setComma( graphSalesData["transfer_cs_promoter_p"]);
+                // prev_value[7].innerHTML ='<span class="prev_date"></span>' +  setComma(graphSalesData["transfer_promoter_cs_p"]);
+
+                let current_value = document.querySelectorAll(".summary_box p.current");
+
+                current_value[0].innerHTML = '<span class="current_date"></span>' + setComma(graphSalesData["traffic_c"]);
+                current_value[1].innerHTML = '<span class="current_date"></span>' + setComma(graphSalesData["total_offered_volume_c"]);
+                current_value[2].innerHTML = '<span class="current_date"></span>' + setComma(graphSalesData["offered_volume_c"]);
+                current_value[3].innerHTML = '<span class="current_date"></span>' + setComma(graphSalesData["chat_handled_c"]);
+                current_value[4].innerHTML = '<span class="current_date"></span>' + setComma(graphSalesData["missed_c"]);
+                current_value[5].innerHTML = '<span class="current_date"></span>' + graphSalesData["missed_rate_c"].toFixed(1) + '%';
+                current_value[6].innerHTML = '<span class="current_date"></span>' + graphSalesData["visit_chat_rate_c"].toFixed(2) + '%';
+                current_value[7].innerHTML = '<span class="current_date"></span>' + graphSalesData["irt_c"].toFixed(1) + '';
+                current_value[8].innerHTML = '<span class="current_date"></span>' + graphSalesData["art_c"].toFixed(1) + '';
+                current_value[9].innerHTML = '<span class="current_date"></span>' + graphSalesData["aht_c"].toFixed(1) + '';
+                current_value[10].innerHTML = '<span class="current_date"></span>' + graphSalesData["csat_c"].toFixed(1) + '%';
+                current_value[11].innerHTML = '<span class="current_date"></span>' + setComma(graphSalesData["head_count_c"]);
+                current_value[12].innerHTML = '<span class="current_date"></span>' + setComma(graphSalesData["traffic_type_c"]);
+                current_value[13].innerHTML = '<span class="current_date"></span>' + graphSalesData["visit_chat_rate_type_c"].toFixed(2) + '%';
+                let prev = document.querySelectorAll(".summary_box span.prev_date");
+                let current = document.querySelectorAll(".summary_box span.current_date");
+
+                prev[0].innerText = prev_date;
+                prev[1].innerText = prev_date;
+                prev[2].innerText = prev_date;
+                prev[3].innerText = prev_date;
+                prev[4].innerText = prev_date;
+                prev[5].innerText = prev_date;
+                prev[6].innerText = prev_date;
+                prev[7].innerText = prev_date;
+                prev[8].innerText = prev_date;
+                prev[9].innerText = prev_date;
+                prev[10].innerText = prev_date;
+                prev[11].innerText = prev_date;
+                prev[12].innerText = prev_date;
+                prev[13].innerText = prev_date;
+
+                current[0].innerText = current_date;
+                current[1].innerText = current_date;
+                current[2].innerText = current_date;
+                current[3].innerText = current_date;
+                current[4].innerText = current_date;
+                current[5].innerText = current_date;
+                current[6].innerText = current_date;
+                current[7].innerText = current_date;
+                current[8].innerText = current_date;
+                current[9].innerText = current_date;
+                current[10].innerText = current_date;
+                current[11].innerText = current_date;
+                current[12].innerText = current_date;
+                current[13].innerText = current_date;
+
+
+                let selectedChat = $("#select_chat option:selected").text();
+                if (selectedChat == 'Select All') {
+                    //All
+                    getOperationTableData();
+                }
+                else {
+                    //D2C, EPP, SMB
+                    getOperationGraphData();
+                }
+
+
+             }
+         });
+    }
+
+    function getOperationTableData(){
+        let param = getParam();
+        ajax.post("/operationSummary/ajax/getOperationTableData",param, "",function(respon){
+            if (respon.ok) {
+                let data = respon.data;
+                let trafficData = data.operationTableData;
+                let transferData = data.transferTableData;
+                let html = '';
+                let html2 = '';
+                $('#rank_type5').DataTable().clear().destroy();
+                $('#rank_type6').DataTable().clear().destroy();
+
+                $.each(trafficData, function(key,val){
+                    if(key == 0){
+                        html2 += '<tr>';
+                        html2 += '<th>-</th>';
+                        html2 += '<th>Total</th>';
+                        html2 += '<th>'+setComma((val.offered_volume / dateMod).toFixed(0))+'</th>';
+                        html2 += '<th>'+setComma((val.chat_handled /dateMod).toFixed(0))+'</th>';
+                        if(val.offered_volume /dateMod != 0) html2 += '<th>'+  Number((( (val.missed_chat /dateMod) / (val.offered_volume /dateMod))*100).toFixed(1))+'%</th>';
+                        else html2 += '<th>0%</th>';
+                        html2 += '</tr>';
+
+                        $('#traffic_total_table').html(html2)
+                    }else{
+                        html += '<tr>';
+                        html += '<td>'+key+'</td>';
+                        html += '<td>'+val.country+'</td>';
+                        html += '<td data-order="'+(val.offered_volume / dateMod).toFixed(0)+'">'+shortCutNum((val.offered_volume / dateMod).toFixed(0))+'</td>';
+                        html += '<td data-order="'+(val.chat_handled / dateMod).toFixed(0)+'">'+shortCutNum((val.chat_handled / dateMod).toFixed(0))+'</td>';
+                        if(val.offered_volume /dateMod != 0) html += '<td>'+  Number((( (val.missed_chat /dateMod) / (val.offered_volume /dateMod))*100).toFixed(1))+'%</td>';
+                        else html += '<td>0%</td>';
+                        html += '</tr>';
+                    }
+                })
+                $('#traffic_table').html(html);
+
+                getOperationChatTable();
+                document.getElementById("offerd_chat_column").click();
+                document.getElementById("offerd_chat_column").click();
+
+                html = '';
+                html2 = '';
+
+                $.each(transferData, function(key,val){
+                    if(key == 0){
+                        html2 += '<tr>';
+                        html2 += '<th>-</th>';
+                        html2 += '<th>Total</th>';
+                        html2 += '<th>'+setComma((val.cs_promoter_volume / dateMod).toFixed(0))+'</th>';
+                        html2 += '<th>'+setComma((val.promoter_cs_volume /dateMod).toFixed(0))+'</th>';
+                        html2 += '</tr>';
+
+                        $('#transfer_total').html(html2)
+                    }else{
+                        html += '<tr>';
+                        html += '<td>'+key+'</td>';
+                        html += '<td>'+val.country+'</td>';
+                        html += '<td data-order="'+(val.cs_promoter_volume / dateMod).toFixed(0)+'">'+shortCutNum((val.cs_promoter_volume / dateMod).toFixed(0))+'</td>';
+                        html += '<td data-order="'+(val.promoter_cs_volume / dateMod).toFixed(0)+'">'+shortCutNum((val.promoter_cs_volume / dateMod).toFixed(0))+'</td>';
+                        html += '</tr>';
+                    }
+                })
+                $('#transfer_tbody').html(html);
+
+                getTransferChatTable();
+                document.getElementById("cs_column").click();
+                document.getElementById("cs_column").click();
+
+            }
+            getEngagementGraphData();
+
+        });
+    }
+
+    function getEngagementGraphData() {
+        let param = getParam();
+        ajax.post("/operationSummary/ajax/getOperationAllGraphData", param, "", function (respon) {
+
+            if (respon.ok) {
+
+                graphData = respon.data.graphArray;
+                let portionGraphData = respon.data.portionGraphData;
+
+                let current_date = respon.data.current_date;
+                let prev_date = respon.data.prev_date;
+
+                portionData=[];
+
+                $.each(graphData, function(key,val){
+                    val["visit_rate"] = val.traffic == 0 ? 0 : Number(((val.offered_volume / val.traffic) *100).toFixed(4));
+                    val["proactive_usage"] = val.offered_volume == 0 ? 0 : Number(((val.proactive_chat / val.offered_volume) *100).toFixed(1));
+                    val["reactive_usage"] = val.offered_volume == 0 ? 0 : Number(((val.reactive_chat / val.offered_volume) *100).toFixed(1));
+                });
+
+                let temp_data = {};
+                temp_data["convert_date"] = "Video";
+                temp_data["rate"] = portionGraphData.video_offered_volume;
+
+                portionData.push(temp_data);
+
+                temp_data = {};
+                temp_data["convert_date"] = "Text";
+                temp_data["rate"] = portionGraphData.text_offered_volume ;
+
+                portionData.push(temp_data);
+
+                temp_data = {};
+                temp_data["convert_date"] = "Audio";
+                temp_data["rate"] = portionGraphData.audio_offered_volume;
+
+                portionData.push(temp_data);
+
+                temp_data = {};
+                temp_data["convert_date"] = "SNS";
+                temp_data["rate"] = portionGraphData.sns_offered_volume;
+
+                portionData.push(temp_data);
+
+                google.charts.setOnLoadCallback(setGraphAll);
+            }
+        });
+    }
+
+
+    function getColorChangeOption(options,value){
+        if(value <= 0)
+            options.colors[0] = '#4a74d0';
+        else
+            options.colors[0] = '#fd695c';
+
+        return options;
+    }
+
+    function getColorTimeChangeOption(options,value){
+        if(value >= 0)
+            options.colors[0] = '#4a74d0';
+        else
+            options.colors[0] = '#fd695c';
+
+        return options;
+    }
+
+    function getLineColorTable(){
+        return {
+            0: { pointSize: 5, color: '#4771d3'},
+            1: { pointSize: 5, color: '#d0e0fc'},
+            2: { pointSize: 5, color: '#ffb121'},
+            3: { pointSize :5, color: '#bfbfbf'}
+
+        }
+    }
+
+    function getLineColorTable2(){
+        return {
+            0: { pointSize: 5, targetAxisIndex:1,  color: '#4771d3'},
+            1: { pointSize: 5, targetAxisIndex:0,  color: '#d0e0fc'},
+            2: {pointSize :5, targetAxisIndex:0,  color: '#ffb121'},
+            3: {pointSize :5, targetAxisIndex:1,  color: '#bfbfbf'}
+        }
+    }
+
+    function setGraphAll(){
+
+        let traffic_line = document.getElementById("traffic_line");
+        let traffic_line_data = getGoogleChartDataSet(graphData,['visit_rate','missed_chat'],['Visit to Chat Rate','Missed Chat']);
+        drawChart(traffic_line,'combo',traffic_line_data,ComboChartOption2,false,true,1,'#.##',function(chart,opt,data){
+            let indicatorList = document.querySelectorAll('#traffic_con span');
+            indicatorList = document.querySelectorAll('#traffic_con span');
+            indicatorList.forEach(elem=>{
+                elem.addEventListener('click',e=>{
+                    let $this = e.target;
+                    let hides = [];
+                    let newColor = [];
+                    indicatorList.forEach((elem,index)=>{
+                        let check = elem.classList.contains("dis");
+                        if(check){
+                            hides.push(index+1);
+                        }else{
+
+                            newColor.push(getLineColorTable2()[index]);
+                        }
+                    })
+                    if(newColor.length ==0){
+                        hides =[];
+                        newColor.push(getLineColorTable2()[0]);
+                        newColor.push(getLineColorTable2()[1]);
+                        // newColor.push(getLineColorTable2()[2]);
+                        document.querySelector("#traffic_con .ep_01").classList.remove("dis");
+                        document.querySelector("#traffic_con .ep_08").classList.remove("dis");
+                        document.querySelector("#traffic_con .ep_02").classList.remove("dis");
+                    }
+                    opt.series = newColor;
+                    let view = new google.visualization.DataView(data);
+                    view.hideColumns(hides);
+                    chart.draw(view, opt);
+                })
+            })
+        });
+
+        $('#active_line').css('padding-top','3%');
+        let active_line = document.getElementById("active_line");
+        let active_line_data = getGoogleChartDataSet(graphData,['proactive_usage','reactive_usage'],['Proactive Chat Usage(%)','Reactive Chat Usage(%)']);
+        drawChart(active_line,'line',active_line_data,lineChartOption2,false,true,[1,2],false,function(chart,opt,data){
+            let indicatorList = document.querySelectorAll('#active_con span');
+            indicatorList = document.querySelectorAll('#active_con span');
+            indicatorList.forEach(elem=>{
+                elem.addEventListener('click',e=>{
+                    let $this = e.target;
+                    let hides = [];
+                    let newColor = [];
+                    indicatorList.forEach((elem,index)=>{
+                        let check = elem.classList.contains("dis");
+                        if(check){
+                            hides.push(index+1);
+                        }else{
+
+                            newColor.push(getLineColorTable()[index]);
+                        }
+                    })
+                    if(newColor.length ==0){
+                        hides =[];
+                        newColor.push(getLineColorTable()[0]);
+                        newColor.push(getLineColorTable()[1]);
+                        document.querySelector("#active_con .ep_01").classList.remove("dis");
+                        document.querySelector("#active_con .ep_08").classList.remove("dis");
+                    }
+                    opt.series = newColor;
+                    let view = new google.visualization.DataView(data);
+                    view.hideColumns(hides);
+                    chart.draw(view, opt);
+                })
+            })
+        });
+
+        let sns_line = document.getElementById("sns_line");
+        let sns_line_data = getGoogleChartDataSet(portionData,['rate'],['Rate']);
+        drawChart(sns_line,'pie',sns_line_data,PieChartOptions3,false);
+
+        document.getElementById("loading-page").style.display ="none";
+    }
+
+    function getOperationGraphData(){
+        let param = getParam();
+
+        param.hybris_epp_category = 'ALL';
+        param.chat = $("#select_chat option:selected").val();
+        param.chat_missed = $("#select_chat option:selected").val() + ',total';
+
+        ajax.post("/operationSummary/ajax/get15GraphDataNew", param, "", function(respon){
+
+            if(respon.ok){
+                get15Graph = respon.data;
+                //console.log(get15Graph);
+                let dataArray = respon.data;
+                for(data of dataArray){
+                    let total_c = data.offerd_volume_c;
+                    let answer_c = data.chat_handled_c;
+                    let miss_c = total_c - answer_c;
+                    let miss_rate_c = total_c == 0 ? 0 :Number(Math.round((miss_c / total_c) *1000)/10.0).toFixed(1);
+                    let csat_c = data.csat_numerator_c;
+                    let survey_c = data.survey_count_c;
+                    let aht_c = Math.round(data.aht_c *10)/10.0;
+                    let csat_rate = survey_c == 0 ? 0 : Number(Math.round((csat_c / survey_c) *1000)/10.0).toFixed(1);
+
+                    data.miss_rate = Number(miss_rate_c);
+                    data.csat_rate = Number(csat_rate);
+                    data.vProm_aht_c = aht_c;
+                    data.miss_chat = miss_c;
+                    data.answer =answer_c;
+                    data.total =total_c;
+                    data.csat = csat_c;
+                    data.survey = survey_c;
+                }
+                graphData = dataArray;
+
+                google.charts.setOnLoadCallback(setGraph());
+
+            }
+        });
+    }
+
+    function setGraph(){
+
+        let selectedChat = $("#select_chat option:selected").text();
+        let chat_combo = document.getElementById("chat_combo");
+        let chat_combo_data;
+        if(selectedChat =='Video Call' || selectedChat == 'Audio Call') {
+            chat_combo_data = getGoogleChartDataSet(get15Graph, ['missed_rate_chat', 'offerd_volume_c', 'chat_handled_c'], ['Missed Call Rate ', 'Offered Call', 'Handled Call']);
+        } else {
+            chat_combo_data = getGoogleChartDataSet(get15Graph, ['missed_rate_chat', 'offerd_volume_c', 'chat_handled_c'], ['Missed Chat Rate ', 'Offered Chat', 'Handled Chat']);
+        }
+        drawChart(chat_combo,'combo',chat_combo_data,ComboChartOption,false,true,1);
+
+        let csat_combo = document.getElementById("csat_combo");
+        let csat_combo_data = getGoogleChartDataSet(get15Graph,['csat_rate','survey_count_c','csat_numerator_c'],['CSAT ','Answered ','Satisfied ']);
+        drawChart(csat_combo,'combo',csat_combo_data,ComboChartOptionCsat,false,true,1);
+
+        let irt_combo = document.getElementById("irt_combo");
+        let irt_combo_data = getGoogleChartDataSet(get15Graph,['wait_time_seconds_c','average_response_time_c','chat_handled_c'],['IRT','ART','Handled Chat']);
+        drawChart(irt_combo,'combo',irt_combo_data,ComboChartOption3,false,true);
+
+        // let AHT_combo = document.getElementById("AHT_combo");
+        // let AHT_combo_data = getGoogleChartDataSet(graphData,['vProm_aht_c','answer'],['AHT','Answered Call']);
+        // drawChart(AHT_combo,'combo',AHT_combo_data,ComboChartOption4,false);
+
+        let AHT_combo = document.getElementById("AHT_combo");
+        let AHT_combo_data = getGoogleChartDataSet(get15Graph,['aht_c','chat_handled_c'],['AHT','Answered Call']);
+        drawChart(AHT_combo,'combo',AHT_combo_data,ComboChartOption4,false);
+
+        document.getElementById("loading-page").style.display ="none";
+
+    }
+
+
+
+    function getCookie(name) {
+        var parts = document.cookie.split(name + "=");
+        if (parts.length == 2) return parts.pop().split(";").shift();
+    }
+
+    function expireCookie(name) {
+        document.cookie = name + "="+encodeURIComponent("FALSE")+"; expires=";
+    }
+
+    var downloadTimer;
+
+    function blockUI() {
+        expireCookie("fileDownloadToken");
+        document.getElementById("loading-page").style.display ="block";
+        downloadTimer = setInterval(function() {
+            var token = getCookie("fileDownloadToken");
+            if(token == "TRUE") {
+                unBlockUI();
+            }
+        }, 1000 );
+    }
+
+    function unBlockUI() {
+        document.getElementById("loading-page").style.display ="none";
+        clearInterval(downloadTimer);
+        expireCookie("fileDownloadToken");
+    }
+    function ExcelDownload(type) {
+        blockUI();
+
+        var param = getParam();
+        param.type = type;
+        param.hybris_epp_category = 'ALL';
+        param.chat = $("#select_chat option:selected").val();
+        param.chat_missed = $("#select_chat option:selected").val() + ',total';
+        param.excelTitle = 'All';
+        let form = document.createElement('form');
+        form.setAttribute("method","POST");
+        form.setAttribute("action","/globaldashboard/OperationExcelDownload");
+        let hiddenField = document.createElement('input');
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "data");
+        hiddenField.setAttribute("value", JSON.stringify(param));
+
+        form.appendChild(hiddenField);
+        document.body.appendChild(form);
+
+        form.submit();
+    }
+
+    function ExcelDownloadNew(type) {
+        blockUI();
+        var param = getParam();
+        if(type =='99'){ //performance ë¤ì´ë¡ë
+            param.chat_type = "Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,";
+            param.period2 = param.period;
+            param.period ='day';
+
+            let iframe = document.getElementById("downloadFrame");
+            if (!iframe) {
+                iframe = document.createElement("iframe");
+                iframe.style.display = "none";
+                iframe.id = "downloadFrame";
+                document.body.appendChild(iframe);
+            }
+        }
+        param.type = type;
+        param.hybris_epp_category = 'ALL';
+        param.chat = $("#select_chat option:selected").val();
+        param.chat_missed = $("#select_chat option:selected").val() + ',total';
+        param.excelTitle = $("#select_chat option:selected").text();
+
+        let form = document.createElement('form');
+        form.setAttribute("method","POST");
+        form.setAttribute("action","/globaldashboard/OperationExcelDownloadNew");
+
+        let hiddenField = document.createElement('input');
+        hiddenField.setAttribute("type", "hidden");
+        hiddenField.setAttribute("name", "data");
+        hiddenField.setAttribute("value", JSON.stringify(param));
+
+        form.appendChild(hiddenField);
+        document.body.appendChild(form);
+
+        form.submit();
+
+        document.getElementById("loading-page").style.display ="none";
+
+    }
+
+    function getOperationChatTable(){
+        $('#rank_type5').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            scrollCollapse: true,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "336px",
+            columns: [
+                { orderable: false },
+                null,
+                null,
+                null,
+                null,
+            ]
+        });
+
+        tableColumnRankInitialize('rank_type5');
+    }
+
+    function getTransferChatTable() {
+        $('#rank_type6').DataTable({
+            paging: false,
+            info: false,
+            filter: false,
+            searching: false,
+            scrollCollapse: true,
+            fixedHeader: {
+                footer: true
+            },
+            scrollY: "336px",
+            columns: [
+                {orderable: false},
+                null,
+                null,
+                null,
+            ]
+        });
+        tableColumnRankInitialize('rank_type6');
+    }
+
+    function changeInformation(){
+        let selectedChat = $("#select_chat option:selected").text();
+        if(selectedChat == 'Select All'){ //[0, 1, 2, 3, 4, 5, 6, 10]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Number of  cases assigned to e-Promoter at e-Store');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Number of chat cases handled by e-Promoter');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of chats not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate =  Missed Chat / Offered Chat ');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(6).text('Visit to Chat Rate = Promoter Offered Chat / S.com Shopper Visit ');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+            $('.summary_li .icon_noti .noti_tooltip').eq(12).text('Traffic (All) = Total Traffic (B2C + EPP + SMB), [WEB + APP] Shopper visit');
+        } else if(selectedChat == 'Text Chat'){ //[2, 3, 4, 5, 7, 8, 10, 11]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Number of Text Chat  cases assigned to e-Promoter at e-Store');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Number of Text Chat cases handled by e-Promoter');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of Text Chat not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate(Text Chat) = Missed Text Chat / Offered Text Chat ');
+            $('.summary_li .icon_noti .noti_tooltip').eq(7).text('Initial response time = The time a customer service rep responds to the customer - The time a customer submits a case');
+            $('.summary_li .icon_noti .noti_tooltip').eq(8).text('ART = Response Time taken for agents to reply back to customers questions / Total Handled Chat Number');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+        } else if(selectedChat =="Video Call"){ //[2, 3, 4, 5, 9, 10, 11]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Total call case count');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Total call case count assigned to Video Call');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of Video Call not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate(Video Call) = Missed Video Call / Offered Video Call ');
+            $('.summary_li .icon_noti .noti_tooltip').eq(9).text('Actual duration of the chat (with stopwatch) ');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+        } else if(selectedChat =="Audio Call"){ //[2, 3, 4, 5, 9, 10, 11]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Total number of offered audio call');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Total call Case Count assigned to audio call');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of Audio Call not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate(Video Call) = Missed Audio Call / Offered Audio Call ');
+            $('.summary_li .icon_noti .noti_tooltip').eq(9).text('Actual duration of the chat (with stopwatch) ');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+        } else if(selectedChat =="Whatsapp"){ //[2, 3, 4, 5, 7, 8 ,10, 11]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Number of SNS cases assigned to e-Promoter at e-Store');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Number of SNS cases handled by e-Promoter');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of SNS chats not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate(SNS Whatsapp) = Missed SNS Whatsapp Chat / Offered SNS Whatsapp Chat ');
+            $('.summary_li .icon_noti .noti_tooltip').eq(7).text('Initial response time = The time a customer service rep responds to the customer - The time a customer submits a case');
+            $('.summary_li .icon_noti .noti_tooltip').eq(8).text('ART = Response Time taken for agents to reply back to customers questions / Total Handled Chat Number');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+        } else if(selectedChat =="Facebook"){ //[2, 3, 4, 5, 7, 8 ,10, 11]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Number of SNS cases assigned to e-Promoter at e-Store');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Number of SNS cases handled by e-Promoter');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of SNS chats not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate(SNS Facebook) = Missed SNS Facebook Chat / Offered SNS Facebook Chat ');
+            $('.summary_li .icon_noti .noti_tooltip').eq(7).text('Initial response time = The time a customer service rep responds to the customer - The time a customer submits a case');
+            $('.summary_li .icon_noti .noti_tooltip').eq(8).text('ART = Response Time taken for agents to reply back to customers questions / Total Handled Chat Number');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+        } else if(selectedChat =="Twitter"){ //[2, 3, 4, 5, 7, 8 ,10, 11]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Number of SNS cases assigned to e-Promoter at e-Store');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Number of SNS cases handled by e-Promoter');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of SNS chats not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate(SNS Twitter) = Missed SNS Twitter Chat / Offered SNS Twitter Chat ');
+            $('.summary_li .icon_noti .noti_tooltip').eq(7).text('Initial response time = The time a customer service rep responds to the customer - The time a customer submits a case');
+            $('.summary_li .icon_noti .noti_tooltip').eq(8).text('ART = Response Time taken for agents to reply back to customers questions / Total Handled Chat Number');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+        } else if(selectedChat =="Instagram"){ //[2, 3, 4, 5, 7, 8 ,10, 11]
+            //$('.summary_li .icon_noti .noti_tooltip').eq(2).text('Number of SNS cases assigned to e-Promoter at e-Store');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(3).text('Number of SNS cases handled by e-Promoter');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(4).text('Number of SNS chats not handled by e-Promoter');
+            $('.summary_li .icon_noti .noti_tooltip').eq(5).text('Missed Chat Rate(SNS Instagram) = Missed SNS Instagram Chat / Offered SNS Instagram Chat ');
+            $('.summary_li .icon_noti .noti_tooltip').eq(7).text('Initial response time = The time a customer service rep responds to the customer - The time a customer submits a case');
+            $('.summary_li .icon_noti .noti_tooltip').eq(8).text('ART = Response Time taken for agents to reply back to customers questions / Total Handled Chat Number');
+            //$('.summary_li .icon_noti .noti_tooltip').eq(10).text('CSAT = (number of CSAT scored 3,4,5) / (Total number of CSAT scored 1, 2, 3, 4, 5)');
+        }
+    }
+
+</script></div><div class="daterangepicker ltr show-ranges show-calendar opensright"><div class="date-ouput-wrap"><ul style="display: none;"><li class="tit">Start : </li><li class="txt"><span class="drp-selected" id="option-date-from"></span></li></ul><ul style="display: none;"><li class="tit">End : </li><li class="txt"><span class="drp-selected" id="option-date-to"></span></li></ul></div><div class="calendar-wrap"><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div></div><div class="ranges"><ul><li data-range-key="Today">Today</li><li data-range-key="Yesterday">Yesterday</li><li data-range-key="Last 7 Days">Last 7 Days</li><li data-range-key="Last 14 Days">Last 14 Days</li><li data-range-key="Last 30 Days">Last 30 Days</li><li data-range-key="Last Week">Last Week</li><li data-range-key="Last Month">Last Month</li></ul></div><div class="drp-buttons"><button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button> </div></div></body></html>

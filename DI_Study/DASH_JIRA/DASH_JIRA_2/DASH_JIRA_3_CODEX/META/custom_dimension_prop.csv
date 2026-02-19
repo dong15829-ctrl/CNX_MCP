@@ -1,0 +1,237 @@
+Variable,Diemsion Name,Frequently Used,Paired Event,Description,Example,Notes,DataFeed
+Prop,Prop,,,"A prop is a traffic variable used to track user behavior on a hit-level basis. It captures values that are tied to a specific interaction (such as a page load or click) and does not persist beyond that individual hit.
+
+Unlike eVars, props are non-persistent and are not used for conversion attribution. Instead, they are ideal for understanding real-time behavior, page-level insights, or site structure analysis—such as identifying the page name, site section, or interaction at the exact moment it occurred.",-,"Props have a 100-byte limit in reports. 
+Adobe supports only 75 props.
+
+*Key Characteristics:
+- Non-persistent 
+- Not linked to eVar
+- Useful for pathing, page flow, and immediate user interactions",
+prop1,Site Code (p1),Yes,Page Views,"Site Code (p1) collects the first-depth Site Code information every time a page is loaded. This Site Code represents the primary categorization of the webpage, helping to identify which website the user is visiting.
+
+Since both Web and App data, as well as B2C and B2B data, are being ingested into a single Report Suite, this dimension serves as a key reference for distinguishing data by platform and business type.","prop1=""uk""
+prop1=""uk-app""
+prop1=""uk-smb""
+prop1=""uk-smb-app""
+prop1=""uk-epp""
+prop1=""uk-epp-app""","SMB: Pages with the URL pattern shop.samsung.com/uk/business/.
+
+EPP: Pages with URLs like www.samsung.com/uk/multistore/ or shop.samsung.com/uk/multistore/.
+
+The rest of pages including samsung.com/uk and samsung.com/uk/business are classified as B2C data and will be displayed under the 'uk' site code.",Post_prop1
+prop2,Site Top Navigation (p2),No,Page Views,"Site Top Navigation (p2) collects the second-level site section, typically representing the top-level category of the website (e.g., Mobile, TV, Home Appliances). This value is captured each time a page is loaded and is used to identify the major content area that the user is browsing.
+It is an essential dimension for understanding which high-level product category or service area the user is engaging with.
+*This variable is not generated for native app pages without URLs.","prop2=""uk:home""
+prop2=""uk:mobile""
+prop2=""uk:television""
+prop2=""uk:shop""
+prop2=""uk:mypage""","Based on Product IA; There are exceptional cases which the page depth is collected based on URL instead of Product IA.
+(eg. Non-flagship product pages that are not published as Standard PD)
+These hierarchical navigation variables allow analysts to trace the full user journey from top-level categories down to individual product pages. ",Post_prop2
+prop3,Third Level Site Section (p3),No,Page Views,"Third Level Site Section (p3) collects the third-level site section, indicating a sub-category under the top-level category. It provides a more detailed view of the user's navigation path, offering context on which sub-category the user is exploring within a specific business domain.
+*This variable is not generated for native app pages without URLs.","prop3=""uk:mobile:smartphones""
+prop3=""uk:mobile:watches""
+prop3=""uk:mobile:mobile accessories""
+prop3=""uk:television:tvs""
+prop3=""uk:shop:cart""","Based on Product IA; There are exceptional cases which the page depth is collected based on URL instead of Product IA.
+(eg. Non-flagship product pages that are not published as Standard PD)
+These hierarchical navigation variables allow analysts to trace the full user journey from top-level categories down to individual product pages. ",Post_prop3
+prop4,Fourth Level Site Section (p4),No,Page Views,"Fourth Level Site Section (p4) collects the fourth-level site section, typically reflecting a specific product line, series, or brand within a sub-category. 
+*This variable is not generated for native app pages without URLs.","prop4=""uk:mobile:smartphones:galaxy s""
+prop4=""uk:mobile:watches:finder""
+prop4=""uk:mobile:watches:galaxy fit""
+prop4=""uk:television:tvs:uhd 4k tv""
+prop4=""uk:display:monitors:gaming""","Based on Product IA; There are exceptional cases which the page depth is collected based on URL instead of Product IA.
+(eg. Non-flagship product pages that are not published as Standard PD )
+These hierarchical navigation variables allow analysts to trace the full user journey from top-level categories down to individual product pages. ",Post_prop4
+prop5,Fifth Level Site Section (p5),No,Page Views,"Fifth Level Site Section (p5)  collects the fifth-level site section, representing the most detailed layer in the navigation hierarchy. It is primarily used for tracking specific product variants, content modules, or detailed subcategories.
+*This variable is not generated for native app pages without URLs.","prop5=""uk:mobile:smartphones:galaxy s:galaxy-s25""
+prop5=""uk:mobile:smartphones:galaxy s:galaxy-s25-ultra""
+prop5=""uk:mobile:watches:galaxy watch:galaxy-watch7""
+prop5=""uk:mobile:rings:galaxy ring:galaxy-ring""
+prop5=""uk:computers:computers:galaxy book:galaxy-book5-pro""","Based on Product IA; There are exceptional cases which the page depth is collected based on URL instead of Product IA.
+(eg. Non-flagship product pages that are not published as Standard PD)
+These hierarchical navigation variables allow analysts to trace the full user journey from top-level categories down to individual product pages. ",Post_prop5
+prop6,All Page Track (p6),Yes,Page Views,"All Page Track (p6) categorizes each page into a specific page type, such as Home, Product Detail, Cart, etc. This classification enables analysts to segment traffic by the type of page being viewed.","prop6=""home""
+prop6=""product family showcase""
+prop6=""product detail""
+prop6=""flagship pdp""
+prop6=""shop cart""","To analyze Product Detail Page (PDP) traffic and performance using All Page Track, your segment should include all relevant PDP types such as ""product detail"", ""flagship pdp"", and ""buying configurator"".",Post_prop6
+prop7,GNB Tracking (p7),Yes,Occurrences,"GNB Tracking (p7) captures user interactions with elements within the Global Navigation Bar (GNB). This includes clicks on top-level and nested menu items, the site logo, search icons, and any promotional banners embedded in the GNB.
+This data helps analyze user navigation behavior and engagement with key entry points on the website.This variable helps analysts understand how users engage with the main site navigation and which categories or promotions are most frequently accessed.                                                                                                                                          ","prop7=""logo""
+prop7=""search""
+prop7=""mobile""
+prop7=""mobile:smartphones""
+prop7=“feature image:mobile:galaxy s25 ultra”",,Post_prop7
+prop8,Product Category (p8),No,Page views,"Product Category (p8) classifies each product-related page into a high-level product category, such as Mobile, TV, or Home Appliances. The value is determined based on the second-level depth of the page name at the time the page is loaded.","prop8=""mobile""
+prop8=""tv""
+prop8=""home appliances""
+prop8=""it""
+prop8=""memory and storage""","While similar to PVI Product Type (v11)—which is collected only on Product Detail (PD) pages based on PVI categorization—Product Category (p8) offers broader coverage, applying across various product-related pages throughout the site.
+*Not used in Shop pages.",Post_prop8
+prop9,disabled,-,-,-,-,-,-
+prop10,Is Logged In (p10),Yes,Page views,"Is Logged In (p10) captures the login status of the user each time a page is loaded on Samsung.com. This variable stores a binary value (e.g., “Logged In” or “Logged Out”) .
+
+Tracking login status enables analysis of user behavior across the site. It allows analysts to compare the browsing patterns, engagement levels, and conversion rates between logged-in and logged-out users. Additionally, this dimension is critical for understanding the effectiveness of personalization efforts, gated content access, and features that require user authentication—such as wishlists, order tracking, or loyalty benefits.","prop10=""logged out""
+prop10=""logged in""","This variable is only applicable in countries where login is managed through Samsung Account. Typically used in segmentation to compare logged-in user activity against logged-out user activity. Can be paired with other engagement metrics (e.g., purchases, wishlist additions) to analyze the impact of login status on user behavior.",Post_prop10
+prop11,Secondary Navi & Breadcrumb (p11),Yes,Occurrences,"Secondary Navi & Breadcrumb (p11) collects click interactions on various secondary navigation elements and breadcrumb links that support intra-site movement. It helps identify common user journeys, interaction points, and drop-off patterns across different stages of the funnel.","prop11=“breadcrumb:home”
+prop11=“secondary navi:buy now”
+prop11=“secondary navi:add to cart”
+prop11=“secondary navi:specs”","*Tracked Elements:
+Sticky Bar: Persistent navigation bar that remains visible while scrolling.
+Anchor Navigation: Links that allow users to jump to specific sections within a page.
+Breadcrumb Navigation: A hierarchical navigation aid that helps users understand their location within the site structure and return to previous pages.",Post_prop11
+prop12,disabled,-,-,-,-,-,-
+prop13,disabled,-,-,-,-,-,-
+prop14,disabled,-,-,-,-,-,-
+prop15,Implementation QA (p15),No,Occurrences,Implementation QA (p15) is used exclusively for internal quality assurance (QA) during the tagging implementation process.,"prop15=""testData""",-,Post_prop15
+prop16,Video Name (p16),No,Occurrences,Video Name (p16) captures the unique identifier (ID) of video content that is played on Samsung.com.,"prop16=""YouTube|XnG52JEFQfI|""",-,Post_prop16
+prop17,Footer Tracking (p17),No,Occurrences,"Footer Tracking (p17) captures user interactions with footer elements on Samsung.com. It records structured click data for various footer menu items, including categories such as informational links, support resources, legal notices, and social media buttons.","prop17=""about us:about samsung""
+prop17=""support:register your product""
+prop17=“bottom:country selector:locallist”
+prop17=“bottom:legal menu:accessibility help”
+prop17=“bottom:sns:facebook”",-,Post_prop17
+prop18,User Agent (p18),No,Occurrences,"User Agent (p18) captures the full User Agent string of the user's browser or device when visiting Samsung.com. The User Agent string includes detailed information such as the operating system, device type, browser name, and version.","prop18=""Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Mobile Sa""
+prop18=""Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/27.0 Chrome""",Specific RS Only: UK,Post_prop18
+prop19,undefined,-,-,-,-,-,-
+prop20,undefined,-,-,-,-,-,-
+prop21,No Search Result (p21),Yes,Site Search (e21),"No Search Result (p21) collects site search keywords that users enter into the Samsung.com search bar but do not return any results.
+This variable stores the searched keyword when no results are found.","prop21=“<search keywords>”
+prop21=“Google”
+prop21=“asdasdasd”",Site Search (v21) is used to collect the keywords which have search result,Post_prop21
+prop22,No Search Result_Store Locator (p22),No,Store Locator (e22),The No Search Result_Store Locator (p22) variable collects store locator search queries that return no results when a user searches for a store.,"prop22=“keyword:<keyword>”
+prop22=“keyword:Hogsmeade”",Store Locator (v22) collects successful store search keywords when searches return results,Post_prop22
+prop23,No Search Result_Support Search (p23),No,Support Search (e23),"No Search Result_Support Search (p23) captures keywords entered into the Support section search bar on Samsung.com that return no results. It is specifically used to track unsuccessful search attempts within support-related pages (e.g., Support Main, FAQ, Troubleshooting), providing insight into user needs that are not currently addressed by existing support content.","prop23=“<all page track>:<search keywords>”
+prop23=""support main:hahahaha""",Support Search (v23) is used to collect the keywords which have search result.,Post_prop23
+prop24,No Search Result_Support Service Locator (p24),No,Service Locator Search (e24),No Search Result_Support Service Locator (p24) captures keywords entered into the Service Locator (within the Support section of Samsung.com) that return no matching results. It is used to track failed search attempts when users try to locate service centers or support locations based on specific keywords or regions.,prop24=“keyword:<search keywords>”,Service Locator Search (v24) is used to collect the keywords which have search result,Post_prop24
+prop25,disabled,-,-,-,-,-,-
+prop26,Indication (p26),No,Occurrences,"Indication (p26) tracks minor user interaction events that do not involve content navigation to a new page but still reflect engagement with UI components. These include clicks or gestures on elements such as arrows, pagination dots, swipe actions, or ""view more"" buttons.","prop26=""carousel:arrow:kv right""
+prop26=“carousel:arrow:left”
+prop26=“carousel:index:1”
+prop26=“carousel:swipe:merchandising1""
+prop26=“view more”",-,Post_prop26
+prop27,Option Click (p27),Yes,Occurrences,"Option Click (p27) collects click action data from option selectors on various product-related components. This includes interactions with elements such as color chips, size options, capacity selections, carrier choices, calculators, and trade-in options. Helps in analyzing user preferences and engagement with customizable product features.","prop27=""pf product card:color:pink""
+prop27=""pd buying tool:case size:44mm”
+prop27=“pd buying tool:memory:512gb 12gb”",-,Post_prop27
+prop28,Undefined,-,-,-,-,-,-
+prop29,URL without Parameter (p29),Yes,Page Views,"URL without Parameter (p29) is used to track page traffic by capturing the core URL structure without unnecessary elements such query parameters, hypertext transfer protocols (https, http), trailing slashes, or anchors(/#reviews).
+By utilizing URL (p29) effectively, analysts can gain a clear picture of site traffic, understand page-level performance, and track user navigation behavior in a more granular way. 
+Additionally, Page(s) and URL (p39) dimensions can be used as alternatives to prop29, depending on the analysis requirements.","If a user visits https://www.samsung.com/uk/smartphones/all-smartphones/?galaxy-s,
+prop29= ""www.samsung.com/uk/smartphones/all-smartphones""
+
+If a user visits https://www.samsung.com/uk/tvs/qledtv-q950t/QE85Q950TSTXXU/#reviews,
+prop29=""www.samsung.com/uk/tvs/qledtv-q950t/QE85Q950TSTXXU""",-,Post_prop29
+prop30,Undefined,-,-,-,-,-,-
+prop31,Undefined,-,-,-,-,-,-
+prop32,Undefined,-,-,-,-,-,-
+prop33,Microsite Conversion Type (p33),No,Occurrences,"Microsite Conversion Type (p33) captures click action data within the Global Galaxy Site, particularly for elements inside campaign or feature-focused microsite areas. 
+(http://www.samsung.com/global/galaxy)","prop33=""global:galaxyhub:menu_open""
+prop33=""global:galaxyhub:menu_close""
+prop33=""global:galaxyhub:samsung galaxy main""
+prop33=""global:galaxyhub:menu_products_galaxy watch active2""
+prop33=""global:galaxyhub:new galaxy_s20""","Specific RS Only: MST, MST (dev), TEST, GALAXY",Post_prop33
+prop34,Undefined,-,-,-,-,-,-
+prop35,Undefined,-,-,-,-,-,-
+prop36,Undefined,-,-,-,-,-,-
+prop37,eCommerce- Delivery Option (p37),No,Order (purchase event),eCommerce- Delivery Option (p37) captures the specific delivery options selected for each product in multi-product eCommerce transactions. The values are structured to reflect both the device model and the delivery type chosen by the user.It is trriggered at the time when purchase event occurs,"prop37=""eb-u1200_ru-delivery-air-1-1:sm-a515f/dsm_ru-delivery-air-1-1“
+prop37=""sm-m115f_tw-delivery-standard“",,Post_prop37
+prop38,eCommerce - Coupon/Promotion Code (p38),Yes,Order (purchase event),"The Coupon/Promotion Code (p38) dimension captures whether a promo code, coupon code, or other discount types were applied at the time of purchase. It is triggered when the purchase event occurs and helps analysts understand the usage of promotional discounts in transactions. ","prop38=“promo code_yes:coupon_yes:point_no” 
+prop38=promo code_no:coupon_no:point_no""
+prop38=“promo code_no:coupon_yes:point_no""","* Promotion / Coupon / Samsung Point
+prop38 = ""promo code_<yes/no>:coupon_<yes/no>:point_<yes/no>""
+→ Use ""no"" if the relevant benefit is not available on the site.",Post_prop38
+prop39,URL (p39),Yes,Page Views,"The URL (p39) Captures the full URL of the current page when each page is loaded. This includes the domain, path, and any query parameters that may be present in the URL. ","prop39=""https://www.samsung.com/uk/smartphones/galaxy-s25-ultra/buy/?cid=gb_pd_display_youtube_f1h25_launch""","When filtering or creating segments using URL data, apply the ""contains"" condition to account for variations caused by parameters. For example, instead of filtering ""https://www.samsung.com/de/mobile-content-page/?ref=promo"", you should use ""contains 'mobile-content-page'"" to capture all variations.",Post_prop39
+prop40,disabled,-,-,-,-,-,-
+prop41,Previous Page (p41),Yes,Page Views,"The Previous Page (p41) dimension collects the name of the page that the user visited immediately before the current page when each page is loaded. When a user moves from Page A to Page B, the value stored in p41 on Page B is the name of Page A. This value is updated every time a new page loads, capturing the most recent previous page.","A user moves from a Home Page to a Flagship PDP
+pageName=""uk:mobile:smartphones:galaxy s:galaxy-s25-ultra:buy""
+previous page (p41)=""uk:home""","*Cross-Platform Navigation Limitation
+When navigating from the AEM area to the SHOP area, the Previous Page information is not captured. This is because the previous page URL is only tracked within the same platform. As a result, transitions between AEM and SHOP do not retain referrer or previous page data.",Post_prop41
+prop42,B2C Filter Tag (p42),No,Occurrences,B2C Filter Tag (p42) collects chip or tag of CO55_List Finder component to count how many times the chip (or tag) was clicked in B2C,"prop42=""t00002|@|s00005:L2NvbnRlbnQvc2Ftc3VuZy91ay9idXNpbmVzcy9pbnNpZ2h0cw==""",Created : 21. 05. 27,Post_prop42
+prop43,B2B Filter Tag (p43),No,Occurrences,B2B Filter Tag (p43) collects chip or tag of CO55_List Finder component to count how many times the chip (or tag) was clicked in B2B,"prop43=""t00002|@|s00005:L2NvbnRlbnQvc2Ftc3VuZy91ay9idXNpbmVzcy9pbnNpZ2h0cw==""",Created : 21. 05. 07,Post_prop43
+prop44,Undefined,-,-,-,-,-,-
+prop45,No Search Result_B2B Search (p45),No,B2B Search (e47),No Search Result_B2B Search (p45) captures B2B search keywords that return no results on the site. It helps identify gaps in on-site search coverage and user intent that is not being met.,prop45=“<search keywords>”,-,Post_prop45
+prop46,Undefined,-,-,-,-,-,-
+prop47,B2B Find My Device (p47),No,Occurrences,"Collects detail seleted values of B2B Request Submit and Support Product Selector tools
+
+B2B Find My Device (p47) captures detailed user selections made through B2B tools such as Request Submit and Support Product Selector. The values represent user-driven inputs during their journey to find or request specific products and solutions.","prop47=""result:mobile device;smart phone;galaxy s;sm-n960nzpaluo""
+prop47=""solution result:mobile device;smart phone;sm-a307gzkbzto""
+prop47=""make a request:product interest_MFP04:industry interest_SMB02""",-,Post_prop47
+prop48,Undefined,-,-,-,-,-,-
+prop49,Undefined,-,-,-,-,-,-
+prop50,Undefined,-,-,-,-,-,-
+prop51,Undefined,-,-,-,-,-,-
+prop52,Undefined,-,-,-,-,-,-
+prop53,Undefined,-,-,-,-,-,-
+prop54,Sale/Non Sale Product (p54),No,Product Views,Sale/Non Sale Product (p54) identifies whether a product is available for purchase on the online Shop at the time the Product Detail Page (PDP) is loaded.,"prop54=""sale""
+prop54=""no sale""
+prop54=""null""","sale – The product is available for purchase.
+no sale – The product is displayed but not available for purchase.
+null – The product’s sale status could not be determined due to the absence of Shop API integration.",Post_prop54
+prop55,Google Search Kwd- Type Page (p55),No,Occurrences,-,,,Post_prop55
+prop56,Undefined,-,-,-,-,-,-
+prop57,Undefined,-,-,-,-,-,-
+prop58,Undefined,-,-,-,-,-,-
+prop59,Undefined,-,-,-,-,-,-
+prop60,Undefined,-,-,-,-,-,-
+prop61,Undefined,-,-,-,-,-,-
+prop62,Undefined,-,-,-,-,-,-
+prop63,Undefined,-,-,-,-,-,-
+prop64,GDPR Consent (p64),Yes,Visits,"GDPR Consent (p64) is used to store cookie consent information in accordance with GDPR regulations. These variables capture which categories of cookies the user has consented to. 
+They are only meaningful in countries where TrustArc, Samsung’s cookie consent solution, has been implemented. These include EU countries, Canada (CA, CA_FR), and Turkey (TR). 
+","All consents given (1 to 4): 'permit 1,2,3,4'
+Consent given up to category 3: 'permit 1,2,3'
+Consent given only for categories 1 and 3: 'permit 1,3'
+Consent given only for categories 1 and 2 (functional cookies): 'permit 1,2 functional'
+All optional consents declined (required only): 'permit 1 required'
+In non-TrustArc markets (default): 'no consent' ","In non-TrustArc markets, 'no consent' is a default and should not be interpreted as actual rejection.
+
+In some cases, ""permit ..."" values may appear for non-TrustArc regions if users previously visited a consent-enabled region and didn't clear cache.
+
+In TrustArc markets, 'no consent' is recorded when there is no cookie value present. This can occur in situations where, even after consent has been initially given, the cookie is deleted—such as when the user manually clears their browser cookies or when an ad blocker deletes them.
+
+*France: A Special Case
+Unlike other EU countries, France allows AA data collection regardless of user consent due to local regulations and its specific TrustArc configuration.
+In France, analytics tools are categorized under category 2 (Performance Cookies) instead of category 3.
+To ensure consistency with other EU countries where only consented data is collected, the ""[FR] RGPD Consent Only"" segment was created.
+This segment filters data to include only sessions where eVar94 or prop64 contains ""2"", indicating user consent for analytics based on the French TrustArc setup.
+
+*India: 
+India collects  ‘permit 1,2,3,4’ value due to legacy issues. Please review or exclude this data to ensure reporting accuracy.
+
+Created : 21. 03. 18",Post_prop64
+prop65,Community User Information (p65),No,Visits,"Community User Information (p65) captures user-related metadata from the Community site, specifically focusing on user type and user grade.
+- user type : author, viewer
+- user grade : new member, observer, troubleshooter, etc.",-,"Created : 21. 01. 13
+",Post_prop65
+prop66,Undefined,-,-,-,-,-,-
+prop67,Tab Type (p67),No,Occurrences,Tab Type (p67) captures whether a page or event was loaded in a new browser tab or within the existing tab.,,"Specific RS Only: TEST, TH, UK, MST, MST (dev)",Post_prop67
+prop68,Navigation Type (p68),No,Page Views,"Navigation Type (p68) captures the method by which a user navigated to a page, providing insights into user behavior and browser mechanics. The possible values include:
+  - NAVIGATE: Normal navigation, typing the URL, clicking a link, opening a bookmark
+  - RELOAD: Page was refreshed / reloaded while already open in the browser tab.
+  - BACK, FORWARD: The page was retrieved from the browser history by using the Back or Forward button.
+  - OTHER: Any other way to navigate to the page.","prop68=""NAVIGATE""
+prop68=""RELOAD""
+prop68=""BACK""
+prop68=""FORWARD""
+prop68=""OTHER""","Specific RS Only: TEST, TH, UK, MST, MST (dev)",Post_prop68
+prop69,Visibility Status (p69),No,Page Views,"Visibility Status (p69) collects the visibility status whether the web page is 'visible' or 'hidden'
+  - visible: The page is the foreground tab of a non-minimized window
+  - hidden: The page is either a background tab or part of a minimized window, or the OS screen lock is active","prop69=""visible""
+prop69=""hidden""","Specific RS Only: TEST, TH, UK, MST, MST (dev)",Post_prop69
+prop70,Origin Platform (p70),Yes,Page Views,Origin Platform (p70) collects the origin platform type when a page is loaded. This means it identifies which type of platform the user came from landing on the current page.,"prop70=""web""
+prop70=""app"" 
+prop70=""mobileweb"" 
+prop70=""app:samsung sec""
+prop70=""app:samsung sec ios""","Origin Platform (v60) is used only when the platform is confidently identified as ""app"". If the platform cannot be reliably verified as app-based, eVar60 remains empty. Origin Platform (v60) stores only one value ""app"".",Post_prop70
+prop71,Timestamp (p71),No,Occurrences,"Timestamp (p71) captures the precise client-side timestamp at which a page view or event occurs. The timestamp is recorded in the format ""yyyy-MM-dd HH:mm:ss.SSS"", where:","prop71=""2019-09-03 17:03:28.883""","Specific RS Only: TEST, TH, UK, MST, MST (dev)",Post_prop71
+prop72,Undefined,-,-,-,-,-,-
+prop73,Get Percentage Page Viewed (p73),No,Previous page (p41),"Get Percentage Page Viewed (p73) captures the percentage of the previous page that a user viewed before navigating to the current page. It utilizes Adobe Analytics' getPercentPageViewed plug-in, which measures a visitor's scroll activity to determine how much of a page they viewed before moving on to another page","prop73=""50""",-,Post_prop73
+prop74,Explore Tag (p74),No,Occurrences,"Explore Tag (p74) captures the specific tags or topics that users interact with on the site. Each time a user clicks on an ""Explore Tag"" element—such as a hashtag, category label, or content filter—the associated tag value is recorded in prop74.","prop74=""teamgalaxy""
+prop74=""withgalaxy""
+prop74=""still photos""
+prop74=""video""
+prop74=""innovation""",Created : 20. 04. 03,Post_prop74
+prop75,Platform Version (p75),No,Page Views,Platform Version (p75) tracks the specific platform or system version associated with the page. It may capture platform identifiers such as shop platform names or phase version.,"prop75=""P6""
+prop75=""hybris""
+prop75=""gpv2""",-,Post_prop75

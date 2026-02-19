@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "data": {
+    "graphArray": [
+      {
+        "eProm_total_chat": 30933.0,
+        "eProm_missed_chat": 72.0,
+        "convert_date": "02.08",
+        "botJourney_total_chat": 128.0,
+        "eProm_chat_handled": 5224.0,
+        "botJourney_missed_chat": 0.0,
+        "botJourney_chat_handled": 128.0,
+        "traffic": 0.0
+      }
+    ]
+  }
+}

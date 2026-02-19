@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login · ES Contents Monitoring (Pro v1.0)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg: #0f1216; --bg-elevated: #181c22; --card: #1e2329; --border: rgba(255,255,255,0.1); --text: #f0f2f5; --text-secondary: #9ca3af; --lg-red: #C41E3A; --lg-red-hover: #a81930; --radius: 8px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 1rem; }
+    .login-box { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; width: 100%; max-width: 360px; }
+    .login-box h1 { margin: 0 0 0.5rem; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+    .login-box .logo { height: 28px; width: auto; }
+    .login-box .sub { color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1.5rem; }
+    .login-box label { display: block; font-size: 0.8125rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.35rem; }
+    .login-box input { width: 100%; padding: 0.6rem 0.75rem; border: 1px solid var(--border); border-radius: 6px; background: var(--bg-elevated); color: var(--text); font-size: 0.9375rem; margin-bottom: 1rem; }
+    .login-box input:focus { outline: none; border-color: var(--lg-red); }
+    .login-box button { width: 100%; padding: 0.65rem 1rem; background: var(--lg-red); color: #fff; border: none; border-radius: 6px; font-size: 0.9375rem; font-weight: 600; cursor: pointer; }
+    .login-box button:hover { background: var(--lg-red-hover); }
+    .login-box .error { color: #e53935; font-size: 0.8125rem; margin-top: 0.5rem; display: none; }
+    .login-box .error.show { display: block; }
+    .login-box .success { color: #4caf50; font-size: 0.8125rem; margin-top: 0.5rem; display: none; }
+    .login-box .success.show { display: block; }
+    .login-tabs { display: flex; gap: 0; margin-bottom: 1rem; border-bottom: 1px solid var(--border); }
+    .login-tabs a { flex: 1; padding: 0.5rem 1rem; text-align: center; color: var(--text-secondary); font-size: 0.9375rem; font-weight: 600; text-decoration: none; border-bottom: 2px solid transparent; }
+    .login-tabs a:hover { color: var(--text); }
+    .login-tabs a.active { color: var(--text); border-bottom-color: var(--lg-red); }
+    .login-panel { display: none; }
+    .login-panel.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1><img src="assets/images/lg-logo-white.svg" alt="LG" class="logo" /> ES Contents Monitoring</h1>
+    <p class="sub" id="loginSub">Sign in to use the dashboard.</p>
+    <nav class="login-tabs">
+      <a href="#" id="tabLogin" class="active">Login</a>
+      <a href="#" id="tabRegister">Register</a>
+    </nav>
+    <div id="panelLogin" class="login-panel active">
+      <form id="loginForm">
+        <label for="username">Email</label>
+        <input type="text" id="username" name="username" autocomplete="username" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required />
+        <p class="error" id="loginError"></p>
+        <button type="submit">Sign in</button>
+      </form>
+    </div>
+    <div id="panelRegister" class="login-panel">
+      <form id="registerForm">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" name="email" placeholder="user@example.com" autocomplete="email" required />
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" name="password" placeholder="Min. 6 characters" autocomplete="new-password" required />
+        <label for="regPasswordConfirm">Confirm password</label>
+        <input type="password" id="regPasswordConfirm" name="password_confirm" placeholder="Re-enter password" autocomplete="new-password" required />
+        <p class="error" id="registerError"></p>
+        <p class="success" id="registerSuccess"></p>
+        <button type="submit">Register</button>
+      </form>
+      <p class="sub" style="margin-top:1rem; font-size:0.75rem; color:var(--text-secondary);">You can sign in after an admin approves your account.</p>
+    </div>
+  </div>
+  <script>
+(function() {
+  var API = window.location.origin;
+  var tabLogin = document.getElementById('tabLogin');
+  var tabRegister = document.getElementById('tabRegister');
+  var panelLogin = document.getElementById('panelLogin');
+  var panelRegister = document.getElementById('panelRegister');
+  var loginSub = document.getElementById('loginSub');
+
+  tabLogin.addEventListener('click', function(e) {
+    e.preventDefault();
+    tabLogin.classList.add('active');
+    tabRegister.classList.remove('active');
+    panelLogin.classList.add('active');
+    panelRegister.classList.remove('active');
+    if (loginSub) loginSub.textContent = 'Sign in to use the dashboard.';
+  });
+  tabRegister.addEventListener('click', function(e) {
+    e.preventDefault();
+    tabRegister.classList.add('active');
+    tabLogin.classList.remove('active');
+    panelRegister.classList.add('active');
+    panelLogin.classList.remove('active');
+    if (loginSub) loginSub.textContent = 'Register with your email and wait for admin approval.';
+  });
+
+  var loginForm = document.getElementById('loginForm');
+  var loginError = document.getElementById('loginError');
+  loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    loginError.classList.remove('show');
+    loginError.textContent = '';
+    var username = (document.getElementById('username') || {}).value || '';
+    var password = (document.getElementById('password') || {}).value || '';
+    fetch(API + '/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username: username, password: password }), credentials: 'include' })
+      .then(function(r) { if (r.ok) return r.json(); return r.json().then(function(b) { throw new Error(b.detail || 'Login failed'); }); })
+      .then(function() { window.location.href = '/'; })
+      .catch(function(err) { loginError.textContent = err.message || 'Sign in failed.'; loginError.classList.add('show'); });
+  });
+
+  var registerForm = document.getElementById('registerForm');
+  var registerError = document.getElementById('registerError');
+  var registerSuccess = document.getElementById('registerSuccess');
+  registerForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    registerError.classList.remove('show');
+    registerSuccess.classList.remove('show');
+    registerError.textContent = '';
+    registerSuccess.textContent = '';
+    var email = (document.getElementById('regEmail') || {}).value || '';
+    var password = (document.getElementById('regPassword') || {}).value || '';
+    var confirm = (document.getElementById('regPasswordConfirm') || {}).value || '';
+    if (password !== confirm) {
+      registerError.textContent = 'Passwords do not match.';
+      registerError.classList.add('show');
+      return;
+    }
+    if (password.length < 6) {
+      registerError.textContent = 'Password must be at least 6 characters.';
+      registerError.classList.add('show');
+      return;
+    }
+    fetch(API + '/auth/register', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, password: password }), credentials: 'include' })
+      .then(function(r) { return r.json().then(function(b) { if (!r.ok) throw new Error(b.detail || 'Registration failed'); return b; }); })
+      .then(function(data) {
+        registerSuccess.textContent = data.message || 'Registration complete. You can sign in after admin approval.';
+        registerSuccess.classList.add('show');
+        registerForm.reset();
+      })
+      .catch(function(err) {
+        registerError.textContent = err.message || 'Registration failed.';
+        registerError.classList.add('show');
+      });
+  });
+})();
+  </script>
+</body>
+</html>

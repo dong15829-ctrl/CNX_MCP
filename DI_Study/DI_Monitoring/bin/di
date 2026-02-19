@@ -1,0 +1,310 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+die() {
+  echo "DI_Monitoring: $*" >&2
+  exit 1
+}
+
+usage() {
+  cat <<'USAGE'
+Usage:
+  DI_Monitoring/bin/di start [--name NAME] [--no-terminal] [--no-exec-hash]
+  DI_Monitoring/bin/di list
+  DI_Monitoring/bin/di show <session_id>
+  DI_Monitoring/bin/di autostart enable|disable|status
+
+Notes:
+  - start: monitored bash 세션을 열고, 종료 시 세션 요약을 생성합니다.
+  - list/show: 로컬 세션 로그를 조회합니다.
+  - autostart: CNX_MCP(접속 서버)에서 bash 접속 시 자동으로 모니터링 세션을 시작하도록 설정합니다.
+USAGE
+}
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DI_ROOT="$(cd "${SCRIPT_DIR}/../.." && pwd)"
+MONITOR_ROOT="${DI_ROOT}/DI_Monitoring"
+SESSIONS_DIR="${MONITOR_ROOT}/sessions"
+STATE_DIR="${MONITOR_ROOT}/.state"
+
+mkdir -p "${SESSIONS_DIR}" "${STATE_DIR}"
+
+cmd="${1:-help}"
+shift || true
+
+sanitize_name() {
+  local name="$1"
+  name="${name// /_}"
+  name="$(printf '%s' "${name}" | tr -cd '[:alnum:]_-')"
+  printf '%s' "${name}"
+}
+
+best_effort_git() {
+  local args=("$@")
+  timeout 3s git -C "${DI_ROOT}" "${args[@]}" 2>/dev/null || true
+}
+
+write_summary() {
+  local session_dir="$1"
+  local session_id="$2"
+
+  local start_time end_time
+  start_time="$(grep -E '^start_time=' "${session_dir}/meta.env" | head -n 1 | cut -d= -f2- || true)"
+  end_time="$(grep -E '^end_time=' "${session_dir}/meta.env" | head -n 1 | cut -d= -f2- || true)"
+
+  local commands_count executed_count
+  commands_count="$(awk 'END{print NR-1}' "${session_dir}/commands.tsv" 2>/dev/null || echo 0)"
+  executed_count="$(awk 'END{print NR-1}' "${session_dir}/executed_files.tsv" 2>/dev/null || echo 0)"
+
+  {
+    echo "# DI Session: ${session_id}"
+    echo
+    echo "- Started: ${start_time}"
+    echo "- Ended: ${end_time}"
+    echo "- Session dir: ${session_dir}"
+    echo "- Commands: ${commands_count}"
+    echo "- Executed files: ${executed_count}"
+    echo
+    echo "## Files"
+    echo
+    echo "- meta.env"
+    echo "- terminal.log / terminal.timing (scriptreplay 가능)"
+    echo "- commands.tsv"
+    echo "- executed_files.tsv"
+    echo "- notes.md"
+    echo
+    echo "## Git (best effort, tracked only)"
+    echo
+    echo '```'
+    best_effort_git rev-parse --show-toplevel
+    best_effort_git branch --show-current
+    best_effort_git rev-parse HEAD
+    best_effort_git status --porcelain=v1 -uno
+    best_effort_git diff --stat
+    echo '```'
+  } > "${session_dir}/summary.md"
+}
+
+start_session() {
+  umask 077
+
+  local name=""
+  local no_terminal=0
+  local no_exec_hash=0
+
+  while [[ "${#}" -gt 0 ]]; do
+    case "$1" in
+      --name)
+        shift
+        [[ "${#}" -gt 0 ]] || die "--name requires a value"
+        name="$1"
+        shift
+        ;;
+      --no-terminal)
+        no_terminal=1
+        shift
+        ;;
+      --no-exec-hash)
+        no_exec_hash=1
+        shift
+        ;;
+      -h|--help)
+        usage
+        return 0
+        ;;
+      *)
+        die "unknown option: $1"
+        ;;
+    esac
+  done
+
+  local ts rand session_id session_dir safe_name
+  ts="$(date +"%Y%m%d-%H%M%S")"
+  rand="$(printf '%04x' "${RANDOM}")"
+  session_id="${ts}-${rand}"
+  if [[ -n "${name}" ]]; then
+    safe_name="$(sanitize_name "${name}")"
+    if [[ -n "${safe_name}" ]]; then
+      session_id="${session_id}-${safe_name}"
+    fi
+  fi
+
+  session_dir="${SESSIONS_DIR}/${session_id}"
+  mkdir -p "${session_dir}"
+
+  {
+    echo "session_id=${session_id}"
+    echo "session_name=${name}"
+    echo "start_time=$(date -Iseconds)"
+    echo "start_pwd=$(pwd)"
+    echo "user=$(id -un)"
+    echo "uid=$(id -u)"
+    echo "host=$(hostname)"
+    echo "shell=${SHELL-}"
+    echo "di_root=${DI_ROOT}"
+    echo "monitor_root=${MONITOR_ROOT}"
+    echo "git_toplevel=$(best_effort_git rev-parse --show-toplevel)"
+    echo "git_branch=$(best_effort_git branch --show-current)"
+    echo "git_head=$(best_effort_git rev-parse HEAD)"
+  } > "${session_dir}/meta.env"
+
+  printf 'timestamp\texit\tpwd\tcommand\n' > "${session_dir}/commands.tsv"
+  printf 'timestamp\tpwd\texec_file\tsha256\tcommand\n' > "${session_dir}/executed_files.tsv"
+
+  cat > "${session_dir}/notes.md" <<'MD'
+# Notes
+
+- Goal:
+- Done:
+- Next:
+- Issues:
+MD
+
+  local rcfile="${session_dir}/session.bashrc"
+  cat > "${rcfile}" <<RC
+# shellcheck shell=bash
+export DI_MONITOR_AUTOSTART=0
+export DI_MONITOR_IN_SESSION=1
+if [[ -f "\$HOME/.bashrc" ]]; then
+  source "\$HOME/.bashrc"
+fi
+
+export DI_MONITOR_SESSION_DIR="$(printf '%s' "${session_dir}")"
+export DI_MONITOR_ENABLE_EXEC_HASH="$(printf '%s' "$([[ "${no_exec_hash}" -eq 1 ]] && echo 0 || echo 1)")"
+
+source "$(printf '%s' "${MONITOR_ROOT}/lib/bash_logger.sh")"
+di_monitor_install
+RC
+
+  echo "${session_id}" > "${STATE_DIR}/last_session"
+
+  if [[ "${no_terminal}" -eq 1 ]]; then
+    bash --rcfile "${rcfile}" -i
+  else
+    script -q -f -T "${session_dir}/terminal.timing" -c "bash --rcfile \"${rcfile}\" -i" "${session_dir}/terminal.log"
+  fi
+
+  {
+    echo "end_time=$(date -Iseconds)"
+  } >> "${session_dir}/meta.env"
+
+  write_summary "${session_dir}" "${session_id}"
+
+  echo "Session saved: ${session_dir}"
+}
+
+list_sessions() {
+  if [[ ! -d "${SESSIONS_DIR}" ]]; then
+    return 0
+  fi
+  ls -1 "${SESSIONS_DIR}" 2>/dev/null | tail -n 50 || true
+}
+
+show_session() {
+  local session_id="${1:-}"
+  [[ -n "${session_id}" ]] || die "show requires <session_id>"
+
+  local session_dir="${SESSIONS_DIR}/${session_id}"
+  [[ -d "${session_dir}" ]] || die "session not found: ${session_id}"
+
+  echo "session_dir=${session_dir}"
+  echo
+  sed -n '1,200p' "${session_dir}/meta.env" 2>/dev/null || true
+  echo
+  echo "summary=${session_dir}/summary.md"
+}
+
+autostart_enabled_file() {
+  printf '%s' "${XDG_CONFIG_HOME:-$HOME/.config}/di_monitoring/autostart.enabled"
+}
+
+ensure_bashrc_sources_autostart() {
+  local bashrc="${HOME}/.bashrc"
+  local marker_start="# >>> DI_Monitoring autostart >>>"
+  local marker_end="# <<< DI_Monitoring autostart <<<"
+  local autostart_path="${MONITOR_ROOT}/lib/autostart.sh"
+
+  mkdir -p "$(dirname "$(autostart_enabled_file)")"
+
+  if [[ ! -f "${bashrc}" ]]; then
+    : > "${bashrc}"
+  fi
+
+  if grep -qF "${marker_start}" "${bashrc}" 2>/dev/null; then
+    return 0
+  fi
+
+  {
+    echo
+    echo "${marker_start}"
+    echo "if [[ -f \"${autostart_path}\" ]]; then"
+    echo "  source \"${autostart_path}\""
+    echo "fi"
+    echo "${marker_end}"
+  } >> "${bashrc}"
+}
+
+autostart_enable() {
+  local enabled_file
+  enabled_file="$(autostart_enabled_file)"
+
+  ensure_bashrc_sources_autostart
+  mkdir -p "$(dirname "${enabled_file}")"
+  : > "${enabled_file}"
+
+  echo "Enabled. Open a new SSH/terminal session to auto-start DI_Monitoring."
+  echo "Disable: DI_Monitoring/bin/di autostart disable"
+}
+
+autostart_disable() {
+  local enabled_file
+  enabled_file="$(autostart_enabled_file)"
+
+  rm -f "${enabled_file}" 2>/dev/null || true
+  echo "Disabled. (The .bashrc hook remains; it is inert without ${enabled_file})"
+}
+
+autostart_status() {
+  local enabled_file bashrc marker_start
+  enabled_file="$(autostart_enabled_file)"
+  bashrc="${HOME}/.bashrc"
+  marker_start="# >>> DI_Monitoring autostart >>>"
+
+  if [[ -f "${enabled_file}" ]]; then
+    echo "autostart=enabled (${enabled_file})"
+  else
+    echo "autostart=disabled (${enabled_file} not found)"
+  fi
+
+  if [[ -f "${bashrc}" ]] && grep -qF "${marker_start}" "${bashrc}" 2>/dev/null; then
+    echo "bashrc_hook=present (${bashrc})"
+  else
+    echo "bashrc_hook=missing (${bashrc})"
+  fi
+
+  echo "autostart_script=${MONITOR_ROOT}/lib/autostart.sh"
+}
+
+autostart_cmd() {
+  local action="${1:-}"
+  shift || true
+
+  case "${action}" in
+    enable) autostart_enable ;;
+    disable) autostart_disable ;;
+    status) autostart_status ;;
+    -h|--help|help|"")
+      echo "Usage: DI_Monitoring/bin/di autostart enable|disable|status"
+      ;;
+    *) die "unknown autostart action: ${action}" ;;
+  esac
+}
+
+case "${cmd}" in
+  start) start_session "$@" ;;
+  list) list_sessions ;;
+  show) show_session "$@" ;;
+  autostart) autostart_cmd "$@" ;;
+  -h|--help|help|"") usage ;;
+  *) die "unknown command: ${cmd}" ;;
+esac

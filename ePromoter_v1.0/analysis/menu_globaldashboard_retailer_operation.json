@@ -1,0 +1,654 @@
+{
+  "path": "/globaldashboard/retailer_operation",
+  "label": "Retailer Summary",
+  "url": "https://www.globalsess.com/globaldashboard/retailer_operation",
+  "title": "Retailer Summary",
+  "structure": {
+    "scripts": [
+      "js/jquery.js",
+      "js/common.js",
+      "js/util.js",
+      "js/googleChart.js",
+      "https://www.gstatic.com/charts/loader.js",
+      "https://cdn.jsdelivr.net/jquery/latest/jquery.min.js",
+      "https://cdn.jsdelivr.net/momentjs/latest/moment.min.js",
+      "js/daterangepicker.js",
+      "https://www.gstatic.com/charts/51/loader.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_default_module.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_graphics_module.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_ui_module.js",
+      "https://www.gstatic.com/charts/51/js/jsapi_compiled_corechart_module.js",
+      "//cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"
+    ],
+    "stylesheets": [
+      "css/reset.css",
+      "css/layout.css",
+      "css/style.css",
+      "css/daterangepicker.css",
+      "https://www.gstatic.com/charts/51/css/core/tooltip.css",
+      "https://www.gstatic.com/charts/51/css/util/util.css"
+    ],
+    "images": [
+      {
+        "src": "img/new_logo.jpg",
+        "alt": ""
+      }
+    ],
+    "forms": [],
+    "tables": [
+      {
+        "id": null,
+        "class": "data_type_table"
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": null
+      },
+      {
+        "id": null,
+        "class": null
+      }
+    ],
+    "chart_containers": [],
+    "data_tables": [],
+    "selects": [],
+    "inputs": [
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq0"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq1"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq2"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq3"
+      },
+      {
+        "type": "checkbox",
+        "name": "region",
+        "id": "rhq4"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country0"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country1"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country2"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country3"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country4"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country5"
+      },
+      {
+        "type": "checkbox",
+        "name": "country",
+        "id": "country6"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site0"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site1"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site2"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site3"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site4"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site5"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site6"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site7"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site8"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site9"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site10"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site11"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site12"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site13"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site14"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site15"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site16"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site17"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site18"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site19"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site20"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site21"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site22"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site23"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site24"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site25"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site26"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site27"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site28"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site29"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site30"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site31"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site32"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site33"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site34"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site35"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site36"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site37"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site38"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site39"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site40"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site41"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site42"
+      },
+      {
+        "type": "checkbox",
+        "name": "site",
+        "id": "site43"
+      },
+      {
+        "type": "text",
+        "name": "daterange",
+        "id": "date"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "id": "current_pw"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "id": "new_pw"
+      },
+      {
+        "type": "password",
+        "name": null,
+        "id": "renew_pw"
+      }
+    ]
+  },
+  "js_nav_and_apis": {
+    "nav_functions": [],
+    "ajax_or_fetch_patterns": [
+      {
+        "method": "POST",
+        "path": "/changePassword"
+      },
+      {
+        "method": "POST",
+        "path": "/Retailer/ajax/getRetailerOperationData"
+      },
+      {
+        "method": "POST",
+        "path": "/Retailer/ajax/getRetailerOperationGraphData"
+      },
+      {
+        "path": "/globaldashboard/CommonExcelDownload"
+      },
+      {
+        "path": "/changePassword"
+      },
+      {
+        "path": "/globaldashboard"
+      },
+      {
+        "path": "/globaldashboard"
+      },
+      {
+        "path": "/Retailer/ajax/getRetailerOperationData"
+      },
+      {
+        "path": "/Retailer/ajax/getRetailerOperationGraphData"
+      },
+      {
+        "path": "/globaldashboard/RetailerExcelDownload"
+      }
+    ]
+  },
+  "apis_this_page": [
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/retailer_operation",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_44.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_46.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_47.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/new_logo.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_hbg.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_global.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_arrow_down.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_date.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_noti.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_user.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_download.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_down_arrow.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_summary_down.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_up_arrow.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_summary_up.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_close.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/icon_b_arrow.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/images/dimmed.png",
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+      "post_data": "{\"rhqArray\":[\"Americas\",\"APAC\",\"EHQ\",\"G.CN\"],\"title\":\"Retailer Summary\"}"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+      "post_data": "{\"localArray\":[\"SEAD\",\"SEIB\",\"SEIN\",\"SELA\",\"SET\",\"SME\"],\"title\":\"Retailer Summary\"}"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//switchTable",
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//checkPending",
+      "post_data": null
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//Retailer/ajax/getRetailerOperationData",
+      "post_data": "{\"title\":\"Retailer Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AL-Aztecho,AL-Gjirafa,AL-Globe,AL-Neptun,AL-Neptun-ks,BA-Domod,HR-Ekupi,HR-Mobis,HR-Samsung,HR-Sancta,ID-Blibli,ID-Erafone,LATIN-Amac,LATIN-Diun,LATIN-Elek,LATIN-Envi,LATIN-Goll,LATIN-Jets,LATIN-Lacu,LATIN-Marc,LATIN-Movil,LATIN-Movistar,LATIN-Mult,LATIN-Raen,LATIN-Riba,LATIN-Rode,LATIN-Tien,MK-Neptun,MK-Setec,MK-Tehnoma,MY-Senghen,MY-Senq,PT-Fnac,PT-PCDiga,PT-Worten,RS-Gigatro,RS-Multico,RS-Positiv,RS-Tehnoma,RS-Tehnome,SI-Harveyn,SI-Sgermob,TW-twsamsu\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+    },
+    {
+      "method": "POST",
+      "url": "https://www.globalsess.com/globaldashboard//Retailer/ajax/getRetailerOperationGraphData",
+      "post_data": "{\"title\":\"Retailer Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AL-Aztecho,AL-Gjirafa,AL-Globe,AL-Neptun,AL-Neptun-ks,BA-Domod,HR-Ekupi,HR-Mobis,HR-Samsung,HR-Sancta,ID-Blibli,ID-Erafone,LATIN-Amac,LATIN-Diun,LATIN-Elek,LATIN-Envi,LATIN-Goll,LATIN-Jets,LATIN-Lacu,LATIN-Marc,LATIN-Movil,LATIN-Movistar,LATIN-Mult,LATIN-Raen,LATIN-Riba,LATIN-Rode,LATIN-Tien,MK-Neptun,MK-Setec,MK-Tehnoma,MY-Senghen,MY-Senq,PT-Fnac,PT-PCDiga,PT-Worten,RS-Gigatro,RS-Multico,RS-Positiv,RS-Tehnoma,RS-Tehnome,SI-Harveyn,SI-Sgermob,TW-twsamsu\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+    }
+  ],
+  "table_headers": [
+    {
+      "id": "",
+      "class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "Missed Chat Rate",
+        "Handled Chat",
+        "Offered Chat",
+        "02/08",
+        "NaN",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "CSAT",
+        "Number of CSAT",
+        "02/08",
+        "0%",
+        "0"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "IRT",
+        "ART",
+        "Handled Chat",
+        "02/08",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "Missed call Rate",
+        "Number of Answered Call",
+        "Number of Offered Call",
+        "02/08",
+        "0%",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "CSAT",
+        "Number of CSAT",
+        "02/08",
+        "0%",
+        "0"
+      ]
+    },
+    {
+      "id": "",
+      "class": "",
+      "headers": [
+        "date",
+        "AHT",
+        "Number of Answered Call",
+        "02/08",
+        "0",
+        "0"
+      ]
+    }
+  ],
+  "filter_elements": [
+    {
+      "type": "date_or_range",
+      "id": "date",
+      "name": "daterange",
+      "placeholder": ""
+    },
+    {
+      "type": "checkbox",
+      "name": "region",
+      "id": "rhq0"
+    },
+    {
+      "type": "checkbox",
+      "name": "country",
+      "id": "country0"
+    },
+    {
+      "type": "checkbox",
+      "name": "site",
+      "id": "site0"
+    }
+  ],
+  "header_tooltips": [],
+  "chart_spec": []
+}

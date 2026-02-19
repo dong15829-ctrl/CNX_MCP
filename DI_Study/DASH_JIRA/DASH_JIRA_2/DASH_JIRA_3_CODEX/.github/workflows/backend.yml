@@ -1,0 +1,45 @@
+name: Backend CI
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend.yml'
+      - 'processed/**'
+      - 'README.md'
+  pull_request:
+    paths:
+      - 'backend/**'
+      - '.github/workflows/backend.yml'
+      - 'processed/**'
+      - 'README.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install backend dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Static analysis
+        run: python -m compileall backend/app
+
+      - name: Smoke test dataset loading
+        run: |
+          python - <<'PY'
+          from backend.app.services.data_loader import repository
+          summary = repository.get_summary()
+          assert summary["total_issues"] > 0, "Dataset should not be empty"
+          print("Loaded issues:", summary["total_issues"])
+          PY

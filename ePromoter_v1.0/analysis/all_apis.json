@@ -1,0 +1,592 @@
+[
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/main",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/new_logo.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_01_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_12_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_02_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_03_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_15_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_16_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_11_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_10_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_14_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_13_off.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_10.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/executiveSummary",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_30.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_31.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_32.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_63.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_hbg.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_global.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_arrow_down.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_date.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_noti.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_user.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/btn_down.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_download.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_up_arrow.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_summary_up.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_close.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_b_arrow.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/images/dimmed.png",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"Executive Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"Executive Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//switchTable",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//checkPending",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//executiveSummary/ajax/getExecutiveData",
+    "post_data": "{\"title\":\"Executive Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//executiveSummary/ajax/getExecutiveGraphData",
+    "post_data": "{\"title\":\"Executive Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_down_arrow.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_summary_down.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/divisionSummary",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_56.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_41.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_66.png",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"Division Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"Division Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//getChatType",
+    "post_data": "{\"title\":\"Division Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//divisionSummary/ajax/getDivisionData",
+    "post_data": "{\"title\":\"All\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//divisionSummary/ajax/getDivisionTableData",
+    "post_data": "{\"title\":\"All\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/images/sort_both.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/images/sort_asc.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/images/sort_desc.png",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//divisionSummary/ajax/getDivisionGraphData",
+    "post_data": "{\"title\":\"Division Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/sales_all2",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_34.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_16.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_36.jpg",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"Sales Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"Sales Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//getHybrisType",
+    "post_data": "{\"title\":\"Sales Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"28\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//Sales/ajax/getSalesSummaryDataNew",
+    "post_data": "{\"title\":\"Sales Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"28\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1},\"custom_order_type\":\"ALL\",\"chat\":\"Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//Sales/ajax/getSalesSummaryGraphDataNew",
+    "post_data": "{\"title\":\"Sales Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"28\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1},\"custom_order_type\":\"ALL\",\"chat\":\"Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,\"}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/operation_all2",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_38.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_39.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_37.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/h_graph_06.jpg",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"Operation Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"Operation Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//getHybrisType",
+    "post_data": "{\"title\":\"Operation Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//operationSummary/ajax/getOperationDataNew",
+    "post_data": "{\"title\":\"Operation Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1},\"hybris_epp_category\":\"ALL\",\"chat\":\"Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,\",\"chat_missed\":\"Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,,total\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//operationSummary/ajax/getOperationTableData",
+    "post_data": "{\"title\":\"Operation Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_down_arrow_type2.png",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//operationSummary/ajax/getOperationAllGraphData",
+    "post_data": "{\"title\":\"Operation Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/shopapp_operation",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_67.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_74.jpg",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"ShopApp Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"ShopApp Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ShopApp/ajax/getShopAppOperationSummaryData",
+    "post_data": "{\"title\":\"ShopApp Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ShopApp/ajax/getOperationTableData",
+    "post_data": "{\"title\":\"ShopApp Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ShopApp/ajax/getOperationAllGraphData",
+    "post_data": "{\"title\":\"ShopApp Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/botjourney_operation",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"Bot Journey Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"Bot Journey Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//BotJourney/ajax/getBotJourneyOperationSummaryData",
+    "post_data": "{\"title\":\"Bot Journey Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//BotJourney/ajax/getOperationTableData",
+    "post_data": "{\"title\":\"Bot Journey Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//BotJourney/ajax/getOperationAllGraphData",
+    "post_data": "{\"title\":\"Bot Journey Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/epp_operation",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_53.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_54.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_55.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_62.jpg",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"EPP / SMB Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SAMCOL\",\"SAVINA\",\"SEAD\",\"SEAS\",\"SEAU\",\"SEB\",\"SEBN\",\"SEC\",\"SECA\",\"SECH\",\"SECZ\",\"SEDA\",\"SEEG\",\"SEF\",\"SEG\",\"SEGR\",\"SEH\",\"SEHK\",\"SEI\",\"SEIB\",\"SEIL\",\"SEIN\",\"SELV\",\"SEM\",\"SEMAG\",\"SENA\",\"SENZ\",\"SEPAK\",\"SEPCO\",\"SEPOL\",\"SEPR\",\"SEROM\",\"SESAR\",\"SESP\",\"SET\",\"SETK\",\"SEUK\",\"SGE\",\"SIEL\",\"SME\",\"SSA\",\"TSE\"],\"title\":\"EPP / SMB Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//Epp/ajax/getOperationData",
+    "post_data": "{\"title\":\"EPP / SMB Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1},\"chat\":\"Text Chat,Video Call,Audio Call,Facebook,Whatsapp,Twitter,Instagram,\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//Epp/ajax/getOperationTableData",
+    "post_data": "{\"title\":\"EPP / SMB Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/icon_up_arrow_type2.png",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//Epp/ajax/getOperationGraphData",
+    "post_data": "{\"title\":\"EPP / SMB Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AE,AE_AR,AL,AT,AU,BA,BE,BE_FR,BG,BR,CA,CA_FR,CH,CH_FR,CL,CO,CZ,DE,DK,EE,EG,ES,FI,FR,GR,HK,HK_EN,HR,HU,ID,IE,IL,IN,IQ_AR,IT,KR,LEVANT,LEVANT_AR,LT,LV,MK,MX,MY,NL,NO,NZ,N_AFRICA,PE,PH,PK,PL,PT,RO,RS,SA,SA_EN,SE,SG,SI,SK,TH,TR,TW,UK,VN,ZA\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/retailer_operation",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_44.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_46.jpg",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/epromoter/new/graph_47.jpg",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"Americas\",\"APAC\",\"EHQ\",\"G.CN\"],\"title\":\"Retailer Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getSiteCode",
+    "post_data": "{\"localArray\":[\"SEAD\",\"SEIB\",\"SEIN\",\"SELA\",\"SET\",\"SME\"],\"title\":\"Retailer Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//Retailer/ajax/getRetailerOperationData",
+    "post_data": "{\"title\":\"Retailer Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AL-Aztecho,AL-Gjirafa,AL-Globe,AL-Neptun,AL-Neptun-ks,BA-Domod,HR-Ekupi,HR-Mobis,HR-Samsung,HR-Sancta,ID-Blibli,ID-Erafone,LATIN-Amac,LATIN-Diun,LATIN-Elek,LATIN-Envi,LATIN-Goll,LATIN-Jets,LATIN-Lacu,LATIN-Marc,LATIN-Movil,LATIN-Movistar,LATIN-Mult,LATIN-Raen,LATIN-Riba,LATIN-Rode,LATIN-Tien,MK-Neptun,MK-Setec,MK-Tehnoma,MY-Senghen,MY-Senq,PT-Fnac,PT-PCDiga,PT-Worten,RS-Gigatro,RS-Multico,RS-Positiv,RS-Tehnoma,RS-Tehnome,SI-Harveyn,SI-Sgermob,TW-twsamsu\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//Retailer/ajax/getRetailerOperationGraphData",
+    "post_data": "{\"title\":\"Retailer Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"period\":\"custom\",\"site_code\":\"AL-Aztecho,AL-Gjirafa,AL-Globe,AL-Neptun,AL-Neptun-ks,BA-Domod,HR-Ekupi,HR-Mobis,HR-Samsung,HR-Sancta,ID-Blibli,ID-Erafone,LATIN-Amac,LATIN-Diun,LATIN-Elek,LATIN-Envi,LATIN-Goll,LATIN-Jets,LATIN-Lacu,LATIN-Marc,LATIN-Movil,LATIN-Movistar,LATIN-Mult,LATIN-Raen,LATIN-Riba,LATIN-Rode,LATIN-Tien,MK-Neptun,MK-Setec,MK-Tehnoma,MY-Senghen,MY-Senq,PT-Fnac,PT-PCDiga,PT-Worten,RS-Gigatro,RS-Multico,RS-Positiv,RS-Tehnoma,RS-Tehnome,SI-Harveyn,SI-Sgermob,TW-twsamsu\",\"period_date\":\"\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/mxFlagshipSummary_pre",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"MX Flagship Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//MxFlagship/ajax/getFlagshipPreTableData",
+    "post_data": "{\"title\":\"MX Flagship Summary\",\"from\":\"2026-02-08\",\"to\":\"2026-02-08\",\"country\":\"SAMCOL,SAVINA,SEAD,SEAS,SEAU,SEB,SEBN,SEC,SECA,SECH,SECZ,SEDA,SEEG,SEF,SEG,SEGR,SEH,SEHK,SEI,SEIB,SEIL,SEIN,SELV,SEM,SEMAG,SENA,SENZ,SEPAK,SEPCO,SEPOL,SEPR,SEROM,SESAR,SESP,SET,SETK,SEUK,SGE,SIEL,SME,SSA,TSE\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/performanceSummary",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/funnel/funnel_bg.png",
+    "post_data": null
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/red_down.png",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//ajax/getCountry",
+    "post_data": "{\"rhqArray\":[\"AFRICA\",\"Americas\",\"APAC\",\"EHQ\",\"G.CN\",\"KOREA\",\"MENA\",\"SWA\"],\"title\":\"Performance Summary\"}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//PerformanceSummary/ajax/getPerformanceFunnelData",
+    "post_data": "{\"title\":\"Performance Summary\",\"from\":\"Jan 2026\",\"to\":\"Jan 2026\",\"country\":\"SAMCOL,SAVINA,SEAD,SEAS,SEAU,SEB,SEBN,SEC,SECA,SECH,SECZ,SEDA,SEEG,SEF,SEG,SEGR,SEH,SEHK,SEI,SEIB,SEIL,SEIN,SELV,SEM,SEMAG,SENA,SENZ,SEPAK,SEPCO,SEPOL,SEPR,SEROM,SESAR,SESP,SET,SETK,SEUK,SGE,SIEL,SME,SSA,TSE\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//PerformanceSummary/ajax/getPerformanceTrafficTableData",
+    "post_data": "{\"title\":\"Performance Summary\",\"from\":\"Jan 2026\",\"to\":\"Jan 2026\",\"country\":\"SAMCOL,SAVINA,SEAD,SEAS,SEAU,SEB,SEBN,SEC,SECA,SECH,SECZ,SEDA,SEEG,SEF,SEG,SEGR,SEH,SEHK,SEI,SEIB,SEIL,SEIN,SELV,SEM,SEMAG,SENA,SENZ,SEPAK,SEPCO,SEPOL,SEPR,SEROM,SESAR,SESP,SET,SETK,SEUK,SGE,SIEL,SME,SSA,TSE\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "GET",
+    "url": "https://www.globalsess.com/globaldashboard/img/green_up.png",
+    "post_data": null
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+    "post_data": "{\"title\":\"Performance Summary\",\"from\":\"Jan 2026\",\"to\":\"Jan 2026\",\"country\":\"SAMCOL,SAVINA,SEAD,SEAS,SEAU,SEB,SEBN,SEC,SECA,SECH,SECZ,SEDA,SEEG,SEF,SEG,SEGR,SEH,SEHK,SEI,SEIB,SEIL,SEIN,SELV,SEM,SEMAG,SENA,SENZ,SEPAK,SEPCO,SEPOL,SEPR,SEROM,SESAR,SESP,SET,SETK,SEUK,SGE,SIEL,SME,SSA,TSE\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  },
+  {
+    "method": "POST",
+    "url": "https://www.globalsess.com/globaldashboard//PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+    "post_data": "{\"title\":\"Performance Summary\",\"from\":\"Jan 2026\",\"to\":\"Jan 2026\",\"country\":\"SAMCOL,SAVINA,SEAD,SEAS,SEAU,SEB,SEBN,SEC,SECA,SECH,SECZ,SEDA,SEEG,SEF,SEG,SEGR,SEH,SEHK,SEI,SEIB,SEIL,SEIN,SELV,SEM,SEMAG,SENA,SENZ,SEPAK,SEPCO,SEPOL,SEPR,SEROM,SESAR,SESP,SET,SETK,SEUK,SGE,SIEL,SME,SSA,TSE\",\"switch_table\":{\"chat\":1,\"sales14\":2,\"sales\":1}}"
+  }
+]

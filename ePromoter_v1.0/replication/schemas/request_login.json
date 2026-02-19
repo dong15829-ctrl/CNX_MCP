@@ -1,0 +1,10 @@
+{
+  "description": "로그인 API 요청 body",
+  "method": "POST",
+  "url": "/globaldashboard/login",
+  "contentType": "application/json",
+  "body": {
+    "user_id": "user@example.com",
+    "user_pw": "your_password"
+  }
+}

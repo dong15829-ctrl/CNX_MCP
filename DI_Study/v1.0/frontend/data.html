@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon TV Market - Data View</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 12px 24px;
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+        }
+
+        .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+            font-weight: 600;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .full-table-container {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .full-table-container h2 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+                <h1>Detailed Data View</h1>
+                <p>Raw Data Tables by Category</p>
+            </div>
+            <a href="index.html" class="nav-btn">← Back to Dashboard</a>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('market')">Market Total</button>
+            <button class="tab-btn" onclick="openTab('product')">Product Segment</button>
+            <button class="tab-btn" onclick="openTab('size')">Size (75"+)</button>
+            <button class="tab-btn" onclick="openTab('price')">Price ($1500+)</button>
+        </div>
+
+        <!-- MARKET TAB -->
+        <div id="market" class="tab-content active">
+            <div class="full-table-container">
+                <h2>Market Total (Sales & Traffic)</h2>
+                <div class="table-responsive">
+                    <table id="marketTotalTable" class="mini-table"></table>
+                </div>
+            </div>
+            <div class="full-table-container">
+                <h2>Brand Breakdown</h2>
+                <div class="table-responsive">
+                    <table id="marketBreakdownTable" class="mini-table"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT TAB -->
+        <div id="product" class="tab-content">
+            <div class="full-table-container">
+                <h2>Product Segment Total</h2>
+                <div class="table-responsive">
+                    <table id="productTotalTable" class="mini-table"></table>
+                </div>
+            </div>
+            <div class="full-table-container">
+                <h2>Segment Breakdown</h2>
+                <div class="table-responsive">
+                    <table id="productBreakdownTable" class="mini-table"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIZE TAB -->
+        <div id="size" class="tab-content">
+            <div class="full-table-container">
+                <h2>Size (75"+) Total</h2>
+                <div class="table-responsive">
+                    <table id="sizeTotalTable" class="mini-table"></table>
+                </div>
+            </div>
+            <div class="full-table-container">
+                <h2>Size Breakdown</h2>
+                <div class="table-responsive">
+                    <table id="sizeBreakdownTable" class="mini-table"></table>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRICE TAB -->
+        <div id="price" class="tab-content">
+            <div class="full-table-container">
+                <h2>Price ($1500+) Total</h2>
+                <div class="table-responsive">
+                    <table id="priceTotalTable" class="mini-table"></table>
+                </div>
+            </div>
+            <div class="full-table-container">
+                <h2>Price Breakdown</h2>
+                <div class="table-responsive">
+                    <table id="priceBreakdownTable" class="mini-table"></table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="data.js"></script>
+</body>
+
+</html>

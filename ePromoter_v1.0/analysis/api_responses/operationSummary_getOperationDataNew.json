@@ -1,0 +1,43 @@
+{
+  "ok": true,
+  "data": {
+    "current_date": "02/08 - 02/08",
+    "operationAllData": {
+      "traffic_c": 0.0,
+      "traffic_type_p": 4181802.0,
+      "wait_time_seconds_irt_c": 150369.0,
+      "wait_time_seconds_p": 364824.0,
+      "total_offered_volume_c": 30933.0,
+      "chat_handled_p": 10976.0,
+      "missed_offerd_volume_p": 11128.0,
+      "missed_offerd_volume_c": 5296.0,
+      "survey_count_c": 318.0,
+      "time_count_irt_c": 3723.0,
+      "art_time_count_c": 3845.0,
+      "traffic_type_c": 0.0,
+      "traffic_p": 3227737.0,
+      "head_count_c": 289,
+      "csat_numerator_c": 278.0,
+      "wait_time_seconds_irt_p": 365260.0,
+      "aht_c": 1827541.0,
+      "survey_count_p": 909.0,
+      "aht_p": 3300221.0,
+      "time_count_irt_p": 8481.0,
+      "csat_numerator_p": 794.0,
+      "average_response_time_p": 601458.0,
+      "wait_time_seconds_c": 149981.0,
+      "missed_chat_p": 152.0,
+      "total_offered_volume_p": 49845.0,
+      "offered_volume_c": 5296.0,
+      "time_count_p": 8905.0,
+      "time_count_c": 3776.0,
+      "average_response_time_c": 247831.0,
+      "head_count_p": 540,
+      "chat_handled_c": 5224.0,
+      "offered_volume_p": 11128.0,
+      "art_time_count_p": 9131.0,
+      "missed_chat_c": 72.0
+    },
+    "prev_date": "01/08 - 01/08"
+  }
+}

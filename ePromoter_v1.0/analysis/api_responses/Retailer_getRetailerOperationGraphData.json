@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "eprom_missed_chat_c": 0.0,
+      "vProm_missed_c": 0.0,
+      "total_c": 1.0,
+      "vProm_total_c": 0.0,
+      "survey_count_c": 0.0,
+      "vProm_csat_c": 0.0,
+      "vProm_aht_c": 0.0,
+      "csat_numerator_c": 0.0,
+      "wait_time_seconds_c": 0.0,
+      "total_handled_c": 0.0,
+      "offerd_volume_c": 0.0,
+      "vProm_survey_c": 0.0,
+      "convert_date": "02/08",
+      "average_response_time_c": 0.0,
+      "chat_handled_c": 0.0,
+      "total_volume_c": 1.0,
+      "missed_chat_c": 0.0,
+      "vProm_answer_c": 0.0,
+      "eprom_missed_offerd_volume_c": 0.0
+    }
+  ]
+}

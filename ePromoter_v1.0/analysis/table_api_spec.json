@@ -1,0 +1,2397 @@
+{
+  "specs": [
+    {
+      "menu": "Bot / AI Summary",
+      "menu_path": "/globaldashboard/botjourney_operation",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/BotJourney/ajax/getBotJourneyOperationSummaryData",
+      "api_short_name": "getBotJourneyOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Bot / AI Summary",
+      "menu_path": "/globaldashboard/botjourney_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Bot Total Chat",
+        "ePromoter Total Chat",
+        "02.08",
+        "128",
+        "30,933"
+      ],
+      "data_api": "/BotJourney/ajax/getBotJourneyOperationSummaryData",
+      "api_short_name": "getBotJourneyOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Bot / AI Summary",
+      "menu_path": "/globaldashboard/botjourney_operation",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/BotJourney/ajax/getBotJourneyOperationSummaryData",
+      "api_short_name": "getBotJourneyOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Bot / AI Summary",
+      "menu_path": "/globaldashboard/botjourney_operation",
+      "table_id": "rank_type5",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat Rate",
+        "-",
+        "Total",
+        "128",
+        "128",
+        "0%",
+        "1",
+        "Pakistan",
+        "28",
+        "28",
+        "0%"
+      ],
+      "data_api": "/BotJourney/ajax/getBotJourneyOperationSummaryData",
+      "api_short_name": "getBotJourneyOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Bot / AI Summary",
+      "menu_path": "/globaldashboard/botjourney_operation",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "128",
+        "128",
+        "0%"
+      ],
+      "data_api": "/BotJourney/ajax/getBotJourneyOperationSummaryData",
+      "api_short_name": "getBotJourneyOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Total",
+        "MX",
+        "VD",
+        "DA",
+        "Cross Products",
+        "Non Product",
+        "02/08",
+        "5,224",
+        "1,927.333",
+        "578.333",
+        "517.333",
+        "103",
+        "474"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion Rate (Order)",
+        "Contribution Rate"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "rank_type3",
+      "table_class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion Rate (Order)",
+        "Contribution Rate",
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%",
+        "1",
+        "Norway",
+        "400%",
+        "23%"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Promoter Revenue",
+        "Premium Portion",
+        "02/08",
+        "404,092",
+        "32.1%"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Galaxy S / Z",
+        "QLED",
+        "Bespoke",
+        "02/08",
+        "129,515.998",
+        "0",
+        "127,263.326"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Promoter revenue",
+        "Promoter H/C",
+        "Revenue per promoter"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "rank_type4",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Promoter revenue",
+        "Promoter H/C",
+        "Revenue per promoter",
+        "Total",
+        "404,092",
+        "289",
+        "1,398",
+        "1",
+        "Mexico",
+        "76,263",
+        "23",
+        "3,316"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Total",
+        "404,092",
+        "289",
+        "1,398"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "f_t_table rank_type5 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion (Order)",
+        "Contribution",
+        "Visit to chat",
+        "Missed chat"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "rank_type5",
+      "table_class": "f_t_table rank_type5 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Conversion (Order)",
+        "Contribution",
+        "Visit to chat",
+        "Missed chat",
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%",
+        "0.00%",
+        "1.4%",
+        "1",
+        "Norway",
+        "400%",
+        "23%",
+        "0%",
+        "25%"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "f_t_table rank_type5 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "12.9%",
+        "4.7%",
+        "0.00%",
+        "1.4%"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Division Summary",
+      "menu_path": "/globaldashboard/divisionSummary",
+      "table_id": "",
+      "table_class": "hce_table",
+      "headers": [
+        "Subsidiary"
+      ],
+      "data_api": "/divisionSummary/ajax/getDivisionData",
+      "api_short_name": "getDivisionData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Missed Chat Rate",
+        "Offered Chat",
+        "Handled Chat",
+        "02/08",
+        "1.1%",
+        "470",
+        "465"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "IRT",
+        "ART",
+        "Handled Chat",
+        "02/08",
+        "59.4",
+        "89.9",
+        "465"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "CSAT",
+        "Answered",
+        "Satisfied",
+        "02/08",
+        "82.1%",
+        "39",
+        "32"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "f_t_table rank_type1 dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "EPP store name\n(EPP partner ID)",
+        "Total Chat",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat",
+        "Visit to Chat Rate",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "rank_type1",
+      "table_class": "f_t_table rank_type1 dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "EPP store name\n(EPP partner ID)",
+        "Total Chat",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat",
+        "Visit to Chat Rate",
+        "Missed Chat Rate",
+        "Total # of store count",
+        "-",
+        "-",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value",
+        "1",
+        "SEPR"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "f_t_table rank_type1 dataTable",
+      "headers": [
+        "Total # of store count",
+        "-",
+        "-",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value",
+        "Avg. value"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Missed Chat Rate",
+        "Offered Chat",
+        "Handled Chat",
+        "02/08",
+        "0%",
+        "0",
+        "0"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "IRT",
+        "ART",
+        "Handled Chat",
+        "02/08",
+        "0",
+        "0",
+        "0"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "EPP / SMB Summary",
+      "menu_path": "/globaldashboard/epp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "CSAT",
+        "Answered",
+        "Satisfied",
+        "02/08",
+        "0%",
+        "0",
+        "0"
+      ],
+      "data_api": "/Epp/ajax/getOperationData",
+      "api_short_name": "getOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/executiveSummary/ajax/getExecutiveData",
+      "api_short_name": "getExecutiveData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Visit to Chat Rate",
+        "02.08",
+        "0%"
+      ],
+      "data_api": "/executiveSummary/ajax/getExecutiveData",
+      "api_short_name": "getExecutiveData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Visit to Chat Rate",
+        "02.08",
+        "0%"
+      ],
+      "data_api": "/executiveSummary/ajax/getExecutiveData",
+      "api_short_name": "getExecutiveData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Missed Chat Rate",
+        "Offered Chat",
+        "Missed Chat",
+        "02.08",
+        "1.4%",
+        "5,296",
+        "72"
+      ],
+      "data_api": "/executiveSummary/ajax/getExecutiveData",
+      "api_short_name": "getExecutiveData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Contribution Rate",
+        "Conversion Rate",
+        "02.08",
+        "4.7%",
+        "12.9%"
+      ],
+      "data_api": "/executiveSummary/ajax/getExecutiveData",
+      "api_short_name": "getExecutiveData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Revenue per Promoter",
+        "Promoter Revenue",
+        "02.08",
+        "1,398",
+        "404,092"
+      ],
+      "data_api": "/executiveSummary/ajax/getExecutiveData",
+      "api_short_name": "getExecutiveData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "Executive Summary",
+      "menu_path": "/globaldashboard/executiveSummary",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "CSAT",
+        "02.08",
+        "87.4%"
+      ],
+      "data_api": "/executiveSummary/ajax/getExecutiveData",
+      "api_short_name": "getExecutiveData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": [
+        "ok",
+        "data"
+      ]
+    },
+    {
+      "menu": "MX Flagship Summary",
+      "menu_path": "/globaldashboard/mxFlagshipSummary_pre",
+      "table_id": "",
+      "table_class": "f_t_table mx_list dataTable",
+      "headers": [
+        "Rank",
+        "Region",
+        "Subsidiary",
+        "Date Period",
+        "Contribution\nRate",
+        "Conversion\nRate",
+        "Promoter\nOrder",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Visit to Chat\nRate(D2C)",
+        "Visit to Chat\nRate(All)",
+        "Handled\nChat",
+        "MX Handled\nChat",
+        "Missed Chat\nRate",
+        "MX\neStore Rev.",
+        "MX\nePromoter Rev.",
+        "Offered\nChat"
+      ],
+      "data_api": "/MxFlagship/ajax/getFlagshipPreTableData",
+      "api_short_name": "getFlagshipPreTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "MX Flagship Summary",
+      "menu_path": "/globaldashboard/mxFlagshipSummary_pre",
+      "table_id": "mx_type4",
+      "table_class": "f_t_table mx_list dataTable",
+      "headers": [
+        "Rank",
+        "Region",
+        "Subsidiary",
+        "Date Period",
+        "Contribution\nRate",
+        "Conversion\nRate",
+        "Promoter\nOrder",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Visit to Chat\nRate(D2C)",
+        "Visit to Chat\nRate(All)",
+        "Handled\nChat",
+        "MX Handled\nChat",
+        "Missed Chat\nRate",
+        "MX\neStore Rev.",
+        "MX\nePromoter Rev.",
+        "Offered\nChat",
+        "Total # of\nSub count",
+        "-",
+        "-"
+      ],
+      "data_api": "/MxFlagship/ajax/getFlagshipPreTableData",
+      "api_short_name": "getFlagshipPreTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "MX Flagship Summary",
+      "menu_path": "/globaldashboard/mxFlagshipSummary_pre",
+      "table_id": "",
+      "table_class": "f_t_table mx_list dataTable",
+      "headers": [
+        "Total # of\nSub count",
+        "-",
+        "-",
+        "-",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value"
+      ],
+      "data_api": "/MxFlagship/ajax/getFlagshipPreTableData",
+      "api_short_name": "getFlagshipPreTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "MX Flagship Summary",
+      "menu_path": "/globaldashboard/mxFlagshipSummary_pre",
+      "table_id": "",
+      "table_class": "f_t_table mx_list dataTable",
+      "headers": [
+        "Rank",
+        "Region",
+        "Subsidiary",
+        "Pre-order Period",
+        "Contribution\nRate",
+        "Conversion\nRate",
+        "Promoter\nOrder",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Visit to Chat\nRate(D2C)",
+        "Visit to Chat\nRate(All)",
+        "Handled\nChat",
+        "MX Handled\nChat",
+        "Missed Chat\nRate",
+        "MX\neStore Rev.",
+        "MX\nePromoter Rev.",
+        "Offered\nChat"
+      ],
+      "data_api": "/MxFlagship/ajax/getFlagshipPreTableData",
+      "api_short_name": "getFlagshipPreTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "MX Flagship Summary",
+      "menu_path": "/globaldashboard/mxFlagshipSummary_pre",
+      "table_id": "mx_type3",
+      "table_class": "f_t_table mx_list dataTable",
+      "headers": [
+        "Rank",
+        "Region",
+        "Subsidiary",
+        "Pre-order Period",
+        "Contribution\nRate",
+        "Conversion\nRate",
+        "Promoter\nOrder",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Visit to Chat\nRate(D2C)",
+        "Visit to Chat\nRate(All)",
+        "Handled\nChat",
+        "MX Handled\nChat",
+        "Missed Chat\nRate",
+        "MX\neStore Rev.",
+        "MX\nePromoter Rev.",
+        "Offered\nChat",
+        "Total # of\nSub count",
+        "-",
+        "-"
+      ],
+      "data_api": "/MxFlagship/ajax/getFlagshipPreTableData",
+      "api_short_name": "getFlagshipPreTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "MX Flagship Summary",
+      "menu_path": "/globaldashboard/mxFlagshipSummary_pre",
+      "table_id": "",
+      "table_class": "f_t_table mx_list dataTable",
+      "headers": [
+        "Total # of\nSub count",
+        "-",
+        "-",
+        "-",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value",
+        "Total value"
+      ],
+      "data_api": "/MxFlagship/ajax/getFlagshipPreTableData",
+      "api_short_name": "getFlagshipPreTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Visit to Chat Rate",
+        "Missed Chat",
+        "02.08",
+        "0%",
+        "72"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "rank_type5",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat Rate",
+        "-",
+        "Total",
+        "5,296",
+        "5,224",
+        "1.4%",
+        "1",
+        "Korea",
+        "1.0K",
+        "1.0K",
+        "0%"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "5,296",
+        "5,224",
+        "1.4%"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Proactive Chat Usage(%)",
+        "Reactive Chat Usage(%)",
+        "02.08",
+        "306.2%",
+        "231.7%"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Rate",
+        "Video",
+        "0"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "CS to ePromoter Chat",
+        "ePromoter to CS Chat"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "rank_type6",
+      "table_class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "CS to ePromoter Chat",
+        "ePromoter to CS Chat",
+        "-",
+        "Total",
+        "255",
+        "18",
+        "1",
+        "UK",
+        "241",
+        "6"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Operation Summary",
+      "menu_path": "/globaldashboard/operation_all2",
+      "table_id": "",
+      "table_class": "f_t_table rank_type3 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "255",
+        "18"
+      ],
+      "data_api": "/operationSummary/ajax/getOperationDataNew",
+      "api_short_name": "getOperationDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)",
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-",
+        "1",
+        "SIEL",
+        "14,918,416",
+        "22,318,848"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)",
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-",
+        "1",
+        "SIEL",
+        "14,918,416",
+        "22,318,848"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)",
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-",
+        "1",
+        "SIEL",
+        "14,918,416",
+        "22,318,848"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Traffic\n(D2C)",
+        "Traffic\n(All)",
+        "Total Chat",
+        "Visit to Chat Rate\n(D2C)",
+        "Visit to Chat Rate\n(All)",
+        "MoM Growth(%)",
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-",
+        "1",
+        "SIEL",
+        "14,918,416",
+        "22,318,848"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "2,300,730",
+        "2,951,682",
+        "32,502",
+        "0.29%",
+        "0.23%",
+        "-"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending2",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)",
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%",
+        "1",
+        "SEDA",
+        "174,324",
+        "-",
+        "-",
+        "0.2%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending2",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)",
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%",
+        "1",
+        "SEDA",
+        "174,324",
+        "-",
+        "-",
+        "0.2%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending2",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)",
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%",
+        "1",
+        "SEDA",
+        "174,324",
+        "-",
+        "-",
+        "0.2%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending2",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Total Chat",
+        "Missed Chat",
+        "Missed Chat Rate",
+        "MoM Growth (%)",
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%",
+        "1",
+        "SEDA",
+        "174,324",
+        "-",
+        "-",
+        "0.2%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "32,502",
+        "100",
+        "1.5%",
+        "0.7%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending3",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate",
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%",
+        "1",
+        "SEC",
+        "45,241",
+        "6",
+        "7,540",
+        "0.1%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending3",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate",
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%",
+        "1",
+        "SEC",
+        "45,241",
+        "6",
+        "7,540",
+        "0.1%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending3",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate",
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%",
+        "1",
+        "SEC",
+        "45,241",
+        "6",
+        "7,540",
+        "0.1%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "deccending3",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "Rank",
+        "Subsidiary",
+        "Handled Chat",
+        "Promoter H/C",
+        "Chat Handled per Promoter",
+        "Missed Chat Rate",
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%",
+        "1",
+        "SEC",
+        "45,241",
+        "6",
+        "7,540",
+        "0.1%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceFunnelData",
+      "api_short_name": "getPerformanceFunnelData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceTrafficTableData",
+      "api_short_name": "getPerformanceTrafficTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceMissedChatTableData",
+      "api_short_name": "getPerformanceMissedChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Performance Summary",
+      "menu_path": "/globaldashboard/performanceSummary",
+      "table_id": "",
+      "table_class": "f_t_table no-footer dataTable",
+      "headers": [
+        "-",
+        "Avg.",
+        "6,596",
+        "24",
+        "424",
+        "1.5%"
+      ],
+      "data_api": "/PerformanceSummary/ajax/getPerformanceHandledChatTableData",
+      "api_short_name": "getPerformanceHandledChatTableData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/Retailer/ajax/getRetailerOperationData",
+      "api_short_name": "getRetailerOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Missed Chat Rate",
+        "Handled Chat",
+        "Offered Chat",
+        "02/08",
+        "NaN",
+        "0",
+        "0"
+      ],
+      "data_api": "/Retailer/ajax/getRetailerOperationData",
+      "api_short_name": "getRetailerOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "CSAT",
+        "Number of CSAT",
+        "02/08",
+        "0%",
+        "0"
+      ],
+      "data_api": "/Retailer/ajax/getRetailerOperationData",
+      "api_short_name": "getRetailerOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "IRT",
+        "ART",
+        "Handled Chat",
+        "02/08",
+        "0",
+        "0",
+        "0"
+      ],
+      "data_api": "/Retailer/ajax/getRetailerOperationData",
+      "api_short_name": "getRetailerOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Missed call Rate",
+        "Number of Answered Call",
+        "Number of Offered Call",
+        "02/08",
+        "0%",
+        "0",
+        "0"
+      ],
+      "data_api": "/Retailer/ajax/getRetailerOperationData",
+      "api_short_name": "getRetailerOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "CSAT",
+        "Number of CSAT",
+        "02/08",
+        "0%",
+        "0"
+      ],
+      "data_api": "/Retailer/ajax/getRetailerOperationData",
+      "api_short_name": "getRetailerOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Retailer Summary",
+      "menu_path": "/globaldashboard/retailer_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "AHT",
+        "Number of Answered Call",
+        "02/08",
+        "0",
+        "0"
+      ],
+      "data_api": "/Retailer/ajax/getRetailerOperationData",
+      "api_short_name": "getRetailerOperationData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Contribution Rate",
+        "Promoter Revenue",
+        "e-Store Revenue",
+        "02/08",
+        "4.7%",
+        "404,092",
+        "8,646,912"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Conversion Rate",
+        "Promoter Order",
+        "Promoter Unit sold",
+        "02/08",
+        "12.9%",
+        "673",
+        "946"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "product_name",
+        "product_sold",
+        "Others-Accessory",
+        "58"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "D2C",
+        "EPP",
+        "SMB",
+        "02/08",
+        "258,622",
+        "135,380",
+        "0"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "D2C",
+        "EPP",
+        "SMB",
+        "02/08",
+        "3,966,306",
+        "4,277,035",
+        "125,279"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "D2C",
+        "EPP",
+        "SMB",
+        "02/08",
+        "540",
+        "748",
+        "0"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "Sales Summary",
+      "menu_path": "/globaldashboard/sales_all2",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "D2C",
+        "EPP",
+        "SMB",
+        "02/08",
+        "190",
+        "568",
+        "2,409"
+      ],
+      "data_api": "/Sales/ajax/getSalesSummaryDataNew",
+      "api_short_name": "getSalesSummaryDataNew",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "data_type_table",
+      "headers": [
+        "Daily",
+        "Weekly",
+        "Monthly",
+        "Quarterly"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "Visit to Chat Rate",
+        "Missed Chat",
+        "02.08",
+        "0%",
+        "8"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat Rate"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "rank_type5",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "Rank",
+        "Country",
+        "Offered Chat",
+        "Handled Chat",
+        "Missed Chat Rate",
+        "-",
+        "Total",
+        "1,119",
+        "1,111",
+        "0.7%",
+        "1",
+        "Korea",
+        "439",
+        "439",
+        "0%"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "f_t_table rank_type4 dataTable",
+      "headers": [
+        "-",
+        "Total",
+        "1,119",
+        "1,111",
+        "0.7%"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "ShopApp Total Chat",
+        "ePromoter Total Chat",
+        "02.08",
+        "1,727",
+        "30,933"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "ShopApp Offered Chat",
+        "ePromoter Offered Chat",
+        "02.08",
+        "1,119",
+        "5,296"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "ShopApp Handled Chat",
+        "ePromoter Handled Chat",
+        "02.08",
+        "1,111",
+        "5,224"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    },
+    {
+      "menu": "ShopApp Summary",
+      "menu_path": "/globaldashboard/shopapp_operation",
+      "table_id": "",
+      "table_class": "—",
+      "headers": [
+        "date",
+        "ShopApp Missed Chat",
+        "ePromoter Missed Chat",
+        "02.08",
+        "8",
+        "72"
+      ],
+      "data_api": "/ShopApp/ajax/getShopAppOperationSummaryData",
+      "api_short_name": "getShopAppOperationSummaryData",
+      "request_note": "from apis_this_page.post_data",
+      "response_schema_sample": "—"
+    }
+  ],
+  "source": "menu_*.json + menu_config.json + api_responses"
+}

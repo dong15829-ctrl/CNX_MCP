@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIRA 에이전트 대시보드</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>JIRA 에이전트 대시보드</h1>
+            <p>AI 기반 이슈 자동 분류 및 라우팅 시스템</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab(event, 'Simulation')">🚀 시뮬레이션 (Simulation)</button>
+            <button class="tab-btn" onclick="openTab(event, 'KnowledgeBase')">📚 지식 베이스 (Knowledge Base)</button>
+        </div>
+
+        <main>
+            <!-- Simulation Tab -->
+            <div id="Simulation" class="tab-content" style="display: block;">
+                <section class="card input-section">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                        <h2>신규 티켓 시뮬레이션</h2>
+                        <button id="loadTestBtn" class="btn secondary" style="width: auto;">🎲 테스트 데이터 불러오기</button>
+                    </div>
+                    <div class="form-group">
+                        <label for="summary">이슈 제목 (Summary)</label>
+                        <input type="text" id="summary" placeholder="예: 메모리 누수로 인한 시스템 크래시">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">상세 설명 (Description)</label>
+                        <textarea id="description" rows="5" placeholder="상세 내용을 입력하세요..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="region">지역 (Region - 선택사항)</label>
+                        <input type="text" id="region" placeholder="예: EU">
+                    </div>
+                    <button id="analyzeBtn" class="btn primary">분석 및 라우팅 시작</button>
+                </section>
+
+                <!-- Results Section (Same as before) -->
+                <div class="results-grid">
+                    <!-- AI Analysis -->
+                    <section class="card analysis-section">
+                        <h3>🤖 AI 분석 결과</h3>
+                        <div id="analysisResult" class="result-content">
+                            <p class="placeholder">"분석 및 라우팅 시작" 버튼을 눌러주세요.</p>
+                        </div>
+                    </section>
+
+                    <!-- Routing -->
+                    <section class="card routing-section">
+                        <h3>🚀 추천 담당 팀</h3>
+                        <div id="routingResult" class="result-content">
+                            <p class="placeholder">분석 대기 중...</p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Translation Comparison -->
+                <section class="card comparison-section">
+                    <h3>📝 원문 vs 번역 (Translation)</h3>
+                    <div class="comparison-grid">
+                        <div class="original-text">
+                            <h4>Original Description</h4>
+                            <div id="originalDesc" class="text-box"></div>
+                        </div>
+                        <div class="translated-text">
+                            <h4>Korean Translation</h4>
+                            <div id="translatedDesc" class="text-box"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Similar Cases -->
+                <section class="card search-section">
+                    <h3>🔍 유사 사례 검색 (Vector Search)</h3>
+                    <div id="searchResult" class="list-content">
+                        <p class="placeholder">유사한 사례가 없습니다.</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Knowledge Base Tab -->
+            <div id="KnowledgeBase" class="tab-content" style="display: none;">
+                <!-- Stats Dashboard -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <h3>Total Issues</h3>
+                        <div id="totalIssues" class="stat-number">-</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Top Issue Types</h3>
+                        <ul id="topIssueTypes" class="stat-list"></ul>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Top Priorities</h3>
+                        <ul id="topPriorities" class="stat-list"></ul>
+                    </div>
+                </div>
+
+                <section class="card">
+                    <h2>🗂️ 전체 이슈 목록 (7,000건)</h2>
+                    <div class="search-bar" style="margin-bottom: 20px;">
+                        <input type="text" id="kbSearch" placeholder="이슈 키 또는 제목 검색..." onkeyup="searchKB()">
+                    </div>
+                    <div class="table-container">
+                        <table id="kbTable">
+                            <thead>
+                                <tr>
+                                    <th>Key</th>
+                                    <th>Summary</th>
+                                    <th>Project</th>
+                                    <th>Type</th>
+                                    <th>Priority</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Rows will be populated by JS -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="pagination">
+                        <button id="prevPage" onclick="changePage(-1)">Previous</button>
+                        <span id="pageInfo">Page 1</span>
+                        <button id="nextPage" onclick="changePage(1)">Next</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Details Modal -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modalTitle">Case Details</h2>
+            <div class="comparison-grid">
+                <div class="original-text">
+                    <h4>Original Description</h4>
+                    <div id="modalOriginalDesc" class="text-box"></div>
+                </div>
+                <div class="translated-text">
+                    <h4>Korean Translation (AI)</h4>
+                    <div id="modalTranslatedDesc" class="text-box">
+                        <button id="modalTranslateBtn" class="btn primary small">번역하기 (Translate)</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

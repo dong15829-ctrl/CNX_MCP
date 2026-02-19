@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon TV Market Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="header-content" style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                    <h1>Market Insight Dashboard</h1>
+                    <p>Track Sales, Hitlists, and Market Share by Country</p>
+                </div>
+
+                <div class="controls" style="display: flex; gap: 10px; align-items: center;">
+                    <!-- Global Filters -->
+                    <select id="country-select" class="nav-btn" onchange="updateCountry()">
+                        <option value="US">🇺🇸 United States</option>
+                        <option value="UK">🇬🇧 United Kingdom</option>
+                        <option value="DE">🇩🇪 Germany</option>
+                        <option value="FR">🇫🇷 France</option>
+                        <option value="ES">🇪🇸 Spain</option>
+                        <option value="IT">🇮🇹 Italy</option>
+                        <option value="CA">🇨🇦 Canada</option>
+                    </select>
+
+                    <select id="month-select" class="nav-btn" onchange="updateDashboard()">
+                        <option value="">Latest Month</option>
+                    </select>
+
+                    <button class="nav-btn" onclick="openUploadModal()">📤 Admin Upload</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Upload Modal -->
+        <div id="upload-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeUploadModal()">&times;</span>
+                <h2>Upload Monthly Report</h2>
+                <form id="upload-form">
+                    <div class="form-group">
+                        <label>Country:</label>
+                        <select id="upload-country" required>
+                            <option value="US">🇺🇸 US</option>
+                            <option value="UK">🇬🇧 UK</option>
+                            <option value="DE">🇩🇪 DE</option>
+                            <option value="FR">🇫🇷 FR</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Report Month (e.g., 2025-10):</label>
+                        <input type="text" id="upload-month" placeholder="YYYY-MM" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Excel File:</label>
+                        <input type="file" id="upload-file" accept=".xlsx, .xlsm" required>
+                    </div>
+                    <button type="submit" class="nav-btn" style="background: #238636; color:white; width:100%;">Upload &
+                        Process</button>
+                </form>
+                <div id="upload-status" style="margin-top:10px;"></div>
+            </div>
+        </div>
+
+
+        <!-- Main Dashboard Tabs -->
+        <div class="tabs main-tabs">
+            <button class="tab-btn active" onclick="switchDashboardTab('market')">1) Market Total</button>
+            <button class="tab-btn" onclick="switchDashboardTab('product')">2) Product Segment</button>
+            <button class="tab-btn" onclick="switchDashboardTab('size')">3) 75" Up (Size)</button>
+            <button class="tab-btn" onclick="switchDashboardTab('price')">4) $1500 Up (Price)</button>
+        </div>
+
+        <section class="dashboard-content">
+
+            <!-- SECTION 1: MARKET TOTAL -->
+            <div id="tab-market" class="dashboard-tab-content active">
+                <div class="insight-column full-width-insight">
+                    <h3>Market Total Insights</h3>
+                    <ul id="market-insights-list"></ul>
+                </div>
+
+                <!-- AI Insight Box -->
+                <div class="insight-column ai-insight-box">
+                    <h3>AI Trend Analysis</h3>
+                    <div id="market-ai-loading" style="display:none; color: #8b949e;">Analyzing data with AI...</div>
+                    <ul id="market-ai-list">
+                        <!-- AI content will be loaded here -->
+                        <li><button class="ai-btn" onclick="loadAIAnalysis('market')">Generate AI Analysis</button></li>
+                    </ul>
+                </div>
+
+                <div class="card section-card full-view">
+                    <h2>1) Market Total Data</h2>
+                    <div class="sub-grid">
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('market')">View Data</button>
+                                <canvas id="marketTotalChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('market')">View Data</button>
+                                <canvas id="marketBreakdownChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hitlists Container -->
+                    <div id="market-hitlists" class="hitlists-container"></div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: PRODUCT SEGMENT -->
+            <div id="tab-product" class="dashboard-tab-content">
+                <div class="insight-column full-width-insight">
+                    <h3>Product Segment Insights</h3>
+                    <ul id="product-insights-list"></ul>
+                </div>
+
+                <!-- AI Insight Box -->
+                <div class="insight-column ai-insight-box">
+                    <h3>AI Trend Analysis</h3>
+                    <div id="product-ai-loading" style="display:none; color: #8b949e;">Analyzing data with AI...</div>
+                    <ul id="product-ai-list">
+                        <li><button class="ai-btn" onclick="loadAIAnalysis('product')">Generate AI Analysis</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="card section-card full-view">
+                    <h2>2) Product Segment (Premium)</h2>
+                    <div class="sub-grid">
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('product')">View Data</button>
+                                <canvas id="productTotalChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('product')">View Data</button>
+                                <canvas id="productBreakdownChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hitlists Container -->
+                    <div id="product-hitlists" class="hitlists-container"></div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: 75" UP -->
+            <div id="tab-size" class="dashboard-tab-content">
+                <div class="insight-column full-width-insight">
+                    <h3>75" Up Market Insights</h3>
+                    <ul id="size-insights-list"></ul>
+                </div>
+
+                <!-- AI Insight Box -->
+                <div class="insight-column ai-insight-box">
+                    <h3>AI Trend Analysis</h3>
+                    <div id="size-ai-loading" style="display:none; color: #8b949e;">Analyzing data with AI...</div>
+                    <ul id="size-ai-list">
+                        <li><button class="ai-btn" onclick="loadAIAnalysis('size')">Generate AI Analysis</button></li>
+                    </ul>
+                </div>
+
+                <div class="card section-card full-view">
+                    <h2>3) 75" Up (Large Screen)</h2>
+                    <div class="sub-grid">
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('size')">View Data</button>
+                                <canvas id="sizeTotalChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('size')">View Data</button>
+                                <canvas id="sizeBreakdownChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hitlists Container -->
+                    <div id="size-hitlists" class="hitlists-container"></div>
+                </div>
+            </div>
+
+            <!-- SECTION 4: 1500$ UP -->
+            <div id="tab-price" class="dashboard-tab-content">
+                <div class="insight-column full-width-insight">
+                    <h3>$1500 Up Market Insights</h3>
+                    <ul id="price-insights-list"></ul>
+                </div>
+
+                <!-- AI Insight Box -->
+                <div class="insight-column ai-insight-box">
+                    <h3>AI Trend Analysis</h3>
+                    <div id="price-ai-loading" style="display:none; color: #8b949e;">Analyzing data with AI...</div>
+                    <ul id="price-ai-list">
+                        <li><button class="ai-btn" onclick="loadAIAnalysis('price')">Generate AI Analysis</button></li>
+                    </ul>
+                </div>
+
+                <div class="card section-card full-view">
+                    <h2>4) 1500$ Up (Price)</h2>
+                    <div class="sub-grid">
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('price')">View Data</button>
+                                <canvas id="priceTotalChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="sub-col">
+                            <div class="chart-container-lg">
+                                <button class="view-data-btn" onclick="openDataView('price')">View Data</button>
+                                <canvas id="priceBreakdownChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hitlists Container -->
+                    <div id="price-hitlists" class="hitlists-container"></div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function openDataView(tab) {
+            window.open(`data.html?tab=${tab}`, '_blank');
+        }
+
+        function switchDashboardTab(tabName) {
+            document.querySelectorAll('.dashboard-tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + tabName).classList.add('active');
+            const buttons = document.querySelectorAll('.main-tabs .tab-btn');
+            buttons.forEach(btn => {
+                if (btn.onclick.toString().includes(tabName)) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

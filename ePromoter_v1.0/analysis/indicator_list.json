@@ -1,0 +1,2133 @@
+{
+  "indicators": [
+    {
+      "name": "0",
+      "menus": [
+        "Division Summary",
+        "EPP / SMB Summary",
+        "Operation Summary",
+        "Retailer Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0%",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "Retailer Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.00%",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.1%",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.11%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.13%",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.17%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.2%",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.20%",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.23%",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.29%",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "0.7%",
+      "menus": [
+        "Performance Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "02.08",
+      "menus": [
+        "Bot / AI Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "02/08",
+      "menus": [
+        "Division Summary",
+        "EPP / SMB Summary",
+        "Retailer Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "EPP / SMB Summary",
+        "MX Flagship Summary",
+        "Operation Summary",
+        "Performance Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,054,403",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,111",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,119",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,398",
+      "menus": [
+        "Division Summary",
+        "Executive Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,498,687",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,644",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,727",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,824,806",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1,927.333",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1.0K",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1.1%",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1.4%",
+      "menus": [
+        "Division Summary",
+        "Executive Summary",
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "1.5%",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "10.9%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "100",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "103",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "11,538,626",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "12.6%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "12.9%",
+      "menus": [
+        "Division Summary",
+        "Executive Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "125,279",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "127,263.326",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "128",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "129,515.998",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "135,380",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "14,918,416",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "174,324",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "18",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "190",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "2%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "2,217",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "2,300,730",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "2,409",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "2,488",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "2,849,031",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "2,951,682",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "22,318,848",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "23",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "23%",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "230,834",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "231.7%",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "24",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "241",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "25%",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "255",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "258,622",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "261%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "28",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "289",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "3,076",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "3,192",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "3,316",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "3,966,306",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "3.6%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "30,933",
+      "menus": [
+        "Bot / AI Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "306.2%",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "32",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "32,502",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "32.1%",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "336",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "39",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "4,277,035",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "4.7%",
+      "menus": [
+        "Division Summary",
+        "Executive Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "400%",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "404,092",
+      "menus": [
+        "Division Summary",
+        "Executive Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "424",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "439",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "45,241",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "465",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "470",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "474",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "5,224",
+      "menus": [
+        "Division Summary",
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "5,296",
+      "menus": [
+        "Executive Summary",
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "51%",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "517.333",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "540",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "568",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "578.333",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "58",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "59.4",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "6",
+      "menus": [
+        "Operation Summary",
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "6,596",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "630",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "659",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "673",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "7,540",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "72",
+      "menus": [
+        "Executive Summary",
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "748",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "76,263",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "79",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "79,677",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "8",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "8,366,180",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "8,646,912",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "8.0%",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "82.1%",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "87.4%",
+      "menus": [
+        "Executive Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "89.9",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "946",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "991",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "AHT",
+      "menus": [
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ART",
+      "menus": [
+        "EPP / SMB Summary",
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Answered",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Avg.",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Avg. value",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Bespoke",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Bot Total Chat",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "CS to ePromoter Chat",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "CSAT",
+      "menus": [
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Chat Handled per Promoter",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Contribution",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Contribution Rate",
+      "menus": [
+        "Division Summary",
+        "Executive Summary",
+        "MX Flagship Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Conversion (Order)",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Conversion Rate",
+      "menus": [
+        "Executive Summary",
+        "MX Flagship Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Conversion Rate (Order)",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Country",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Cross Products",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "D2C",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "DA",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Daily",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "Retailer Summary",
+        "Sales Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Date Period",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "EPP",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "EPP store name (EPP partner ID)",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Galaxy S / Z",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Handled Chat",
+      "menus": [
+        "Bot / AI Summary",
+        "EPP / SMB Summary",
+        "MX Flagship Summary",
+        "Operation Summary",
+        "Performance Summary",
+        "Retailer Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "IRT",
+      "menus": [
+        "EPP / SMB Summary",
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Korea",
+      "menus": [
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "MENA",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "MX",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "MX Handled Chat",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "MX ePromoter Rev.",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "MX eStore Rev.",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Mexico",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Missed Chat",
+      "menus": [
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "Performance Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Missed Chat Rate",
+      "menus": [
+        "Bot / AI Summary",
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "MX Flagship Summary",
+        "Operation Summary",
+        "Performance Summary",
+        "Retailer Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Missed call Rate",
+      "menus": [
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Missed chat",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "MoM Growth (%)",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "MoM Growth(%)",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Monthly",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "Retailer Summary",
+        "Sales Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "NaN",
+      "menus": [
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Non Product",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Norway",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Number of Answered Call",
+      "menus": [
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Number of CSAT",
+      "menus": [
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Number of Offered Call",
+      "menus": [
+        "Retailer Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Offered Chat",
+      "menus": [
+        "Bot / AI Summary",
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "MX Flagship Summary",
+        "Operation Summary",
+        "Retailer Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Others-Accessory",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Pakistan",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Pre-order Period",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Premium Portion",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Proactive Chat Usage(%)",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Promoter H/C",
+      "menus": [
+        "Division Summary",
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Promoter Order",
+      "menus": [
+        "MX Flagship Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Promoter Revenue",
+      "menus": [
+        "Division Summary",
+        "Executive Summary",
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Promoter Unit sold",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Promoter revenue",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "QLED",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Quarterly",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "Retailer Summary",
+        "Sales Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Rate",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Reactive Chat Usage(%)",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Region",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Revenue per Promoter",
+      "menus": [
+        "Executive Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Revenue per promoter",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "SEC",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "SEDA",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "SEPR",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "SGE",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "SIEL",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "SMB",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Satisfied",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ShopApp Handled Chat",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ShopApp Missed Chat",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ShopApp Offered Chat",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ShopApp Total Chat",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Subsidiary",
+      "menus": [
+        "Division Summary",
+        "EPP / SMB Summary",
+        "MX Flagship Summary",
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Total",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Total # of Sub count",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Total # of store count",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Total Chat",
+      "menus": [
+        "EPP / SMB Summary",
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Total value",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Traffic (All)",
+      "menus": [
+        "MX Flagship Summary",
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Traffic (D2C)",
+      "menus": [
+        "MX Flagship Summary",
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "UK",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "VD",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Video",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Visit to Chat Rate",
+      "menus": [
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Visit to Chat Rate (All)",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Visit to Chat Rate (D2C)",
+      "menus": [
+        "Performance Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Visit to Chat Rate(All)",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Visit to Chat Rate(D2C)",
+      "menus": [
+        "MX Flagship Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Visit to chat",
+      "menus": [
+        "Division Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "Weekly",
+      "menus": [
+        "Bot / AI Summary",
+        "Division Summary",
+        "EPP / SMB Summary",
+        "Executive Summary",
+        "Operation Summary",
+        "Retailer Summary",
+        "Sales Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "[필터] country",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "[필터] daterange",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "[필터] region",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "[필터] select_chat",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "[필터] site",
+      "menus": [
+        "Bot / AI Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "data",
+      "menus": [
+        "API"
+      ],
+      "definition": "API 응답 필드",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "e-Store Revenue",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ePromoter Handled Chat",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ePromoter Missed Chat",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ePromoter Offered Chat",
+      "menus": [
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ePromoter Total Chat",
+      "menus": [
+        "Bot / AI Summary",
+        "ShopApp Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ePromoter to CS Chat",
+      "menus": [
+        "Operation Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "membersshop",
+      "menus": [
+        "EPP / SMB Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "ok",
+      "menus": [
+        "API"
+      ],
+      "definition": "API 응답 필드",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "product_name",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    },
+    {
+      "name": "product_sold",
+      "menus": [
+        "Sales Summary"
+      ],
+      "definition": "",
+      "unit": "",
+      "notes": ""
+    }
+  ],
+  "source": "table_headers + filter_elements from menu_*.json"
+}

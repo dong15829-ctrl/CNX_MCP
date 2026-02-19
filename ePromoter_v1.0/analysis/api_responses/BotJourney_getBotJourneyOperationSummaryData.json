@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "data": {
+    "operationSummaryActual": {
+      "botJourney_CSAT_numerator_p": 0.0,
+      "botJourney_missed_chat_p": 0.0,
+      "botJourney_CSAT_numerator_c": 0.0,
+      "botJourney_chat_handled_c": 128.0,
+      "botJourney_chat_handled_p": 161.0,
+      "botJourney_survey_count_p": 0.0,
+      "botJourney_total_chat_c": 128.0,
+      "convert_date_p": "01/08 - 01/08",
+      "botJourney_survey_count_c": 0.0,
+      "botJourney_total_chat_p": 161.0,
+      "botJourney_missed_chat_c": 0.0,
+      "convert_date_c": "02/08 - 02/08"
+    }
+  }
+}

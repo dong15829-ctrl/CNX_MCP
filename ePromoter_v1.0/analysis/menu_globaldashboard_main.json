@@ -1,0 +1,108 @@
+{
+  "path": "/globaldashboard/main",
+  "label": "Main (Home)",
+  "url": "https://www.globalsess.com/globaldashboard/main",
+  "title": "Samsung Global Dashboard",
+  "structure": {
+    "scripts": [
+      "js/jquery.js",
+      "js/util.js",
+      "https://cdn.jsdelivr.net/jquery/latest/jquery.min.js",
+      "https://cdn.jsdelivr.net/momentjs/latest/moment.min.js",
+      "js/daterangepicker.js"
+    ],
+    "stylesheets": [
+      "css/reset.css",
+      "css/layout.css",
+      "css/style.css",
+      "css/daterangepicker.css"
+    ],
+    "images": [
+      {
+        "src": "./img/new_logo.jpg",
+        "alt": ""
+      }
+    ],
+    "forms": [],
+    "tables": [],
+    "chart_containers": [],
+    "data_tables": [],
+    "selects": [],
+    "inputs": []
+  },
+  "js_nav_and_apis": {
+    "nav_functions": [],
+    "ajax_or_fetch_patterns": []
+  },
+  "apis_this_page": [
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/main",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/new_logo.jpg",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_01_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_12_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_02_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_03_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_15_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_16_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_11_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_10_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_14_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_13_off.png",
+      "post_data": null
+    },
+    {
+      "method": "GET",
+      "url": "https://www.globalsess.com/globaldashboard/img/main_icon/icon_10.png",
+      "post_data": null
+    }
+  ],
+  "table_headers": [],
+  "filter_elements": [],
+  "header_tooltips": [],
+  "chart_spec": []
+}

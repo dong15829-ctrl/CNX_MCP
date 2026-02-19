@@ -1,0 +1,21 @@
+{
+  "ok": true,
+  "data": {
+    "operationSummaryActual": {
+      "shopApp_all_traffic_p": 863645.0,
+      "shopApp_chat_handled_c": 1111.0,
+      "shopApp_survey_count_p": 99.0,
+      "shopApp_missed_chat_c": 8.0,
+      "shopApp_total_chat_p": 2897.0,
+      "shopApp_survey_count_c": 30.0,
+      "shopApp_CSAT_numerator_p": 83.0,
+      "convert_date_c": "02/08 - 02/08",
+      "shopApp_chat_handled_p": 1963.0,
+      "shopApp_all_traffic_c": 0.0,
+      "shopApp_CSAT_numerator_c": 27.0,
+      "convert_date_p": "01/08 - 01/08",
+      "shopApp_total_chat_c": 1727.0,
+      "shopApp_missed_chat_p": 29.0
+    }
+  }
+}
